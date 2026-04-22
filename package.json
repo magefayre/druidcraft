@@ -1,0 +1,92 @@
+{
+  "name": "@newhighsco/template",
+  "description": "TODO:",
+  "version": "1.0.0",
+  "author": "New High Score",
+  "license": "ISC",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newhighsco/TODO:.git"
+  },
+  "homepage": "https://github.com/newhighsco/TODO:#readme",
+  "bugs": {
+    "url": "https://github.com/newhighsco/TODO:/issues"
+  },
+  "packageManager": "yarn@4.14.1",
+  "files": [
+    "public",
+    "src",
+    ".env",
+    "eslint.config.mjs",
+    "jsconfig.json",
+    "next-sitemap.js",
+    "next.config.js",
+    "postcss.config.js",
+    "site.config.js",
+    "svgr.config.js"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "clean": "rm -rf {.next,public/{robots.txt,sitemap*.xml}}",
+    "start": "next dev --webpack",
+    "build": "next build --webpack",
+    "postbuild": "next-sitemap",
+    "serve": "next start",
+    "lint": "concurrently 'yarn:lint:*'",
+    "lint:js": "eslint --cache .",
+    "lint:css": "stylelint --cache --ignore-path .gitignore '**/*.?(s)css'",
+    "format": "concurrently 'yarn:format:*'",
+    "format:js": "yarn lint:js --fix",
+    "format:css": "yarn lint:css --fix"
+  },
+  "dependencies": {
+    "@newhighsco/chipset": "7.0.0",
+    "@newhighsco/next-plugin-svgr": "3.0.168",
+    "@newhighsco/press-start": "*",
+    "next": "16.2.4",
+    "next-compose-plugins": "2.2.1",
+    "next-sitemap": "4.2.3",
+    "next-videos": "1.5.0",
+    "postcss": "8.5.10",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "sass": "1.99.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.5.0",
+    "@newhighsco/browserslist-config": "2.0.0",
+    "@newhighsco/commitlint-config": "1.1.52",
+    "@newhighsco/editor-config": "1.2.0",
+    "@newhighsco/eslint-config": "7.0.52",
+    "@newhighsco/postcss-config": "4.0.43",
+    "@newhighsco/prettier-config": "2.3.5",
+    "@newhighsco/release-config": "1.4.27",
+    "@newhighsco/stylelint-config": "4.0.37",
+    "@newhighsco/svgr-config": "1.0.0",
+    "@newhighsco/yarn-plugin-preset": "1.1.3",
+    "concurrently": "9.2.1",
+    "eslint": "10.2.1",
+    "husky": "9.1.7",
+    "prettier": "3.8.3",
+    "semantic-release": "25.0.3",
+    "stylelint": "17.8.0"
+  },
+  "browserslist": [
+    "extends @newhighsco/browserslist-config"
+  ],
+  "commitlint": {
+    "extends": [
+      "@newhighsco"
+    ]
+  },
+  "prettier": "@newhighsco/prettier-config",
+  "release": {
+    "extends": "@newhighsco/release-config"
+  },
+  "stylelint": {
+    "extends": [
+      "@newhighsco/stylelint-config"
+    ]
+  }
+}
