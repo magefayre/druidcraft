@@ -1,17 +1,17 @@
 {
-  "name": "@newhighsco/template",
-  "description": "TODO:",
+  "name": "@magefayre/druidcraft",
+  "description": "Wildshape? I was livid!",
   "version": "1.0.0",
-  "author": "New High Score",
+  "author": "Magefayre",
   "license": "ISC",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/newhighsco/TODO:.git"
+    "url": "https://github.com/magefayre/druidcraft.git"
   },
-  "homepage": "https://github.com/newhighsco/TODO:#readme",
+  "homepage": "https://github.com/magefayre/druidcraft#readme",
   "bugs": {
-    "url": "https://github.com/newhighsco/TODO:/issues"
+    "url": "https://github.com/magefayre/druidcraft/issues"
   },
   "packageManager": "yarn@4.14.1",
   "files": [
@@ -43,7 +43,7 @@
   "dependencies": {
     "@newhighsco/chipset": "7.0.0",
     "@newhighsco/next-plugin-svgr": "3.0.168",
-    "@newhighsco/press-start": "*",
+    "@newhighsco/press-start": "2.6.40",
     "next": "16.2.4",
     "next-compose-plugins": "2.2.1",
     "next-sitemap": "4.2.3",

@@ -5,17 +5,17 @@ import colors from '~styles/colors.module'
 
 const config = {
   url: process.env.NEXT_PUBLIC_SITE_URL,
-  name: 'Press Start',
+  name: 'Druidcraft',
   shortName: null,
-  title: 'Press Start - Chipset + Next.js site starter by New High Score',
-  description: 'Get a theme-able Next.js site up and running quickly',
+  title: 'Druidcraft - Wildshape? I was livid!',
+  description: 'TODO:',
   logo: { bitmap: logoBitmap.src, vector: logoVector },
   openGraphImage: openGraphImage.src,
   themeColor: colors.black,
-  twitterHandle: 'newhighsco',
+  twitterHandle: 'magefayre',
   socialLinks: {
-    github: 'https://github.com/newhighsco/press-start',
-    twitter: 'https://twitter.com/newhighsco'
+    github: 'https://github.com/magefayre/druidcraft',
+    twitter: 'https://x.com/magefayre'
   }
 }
 

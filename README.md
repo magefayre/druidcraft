@@ -1,6 +1,6 @@
-# TODO:
+# Druidcraft
 
-https://TODO:
+https://druidcraft.magefayre.com
 
 ## Setup
 
