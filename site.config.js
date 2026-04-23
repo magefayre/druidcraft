@@ -14,8 +14,8 @@ const config = {
   themeColor: colors.black,
   twitterHandle: 'magefayre',
   socialLinks: {
-    github: 'https://github.com/magefayre/druidcraft',
-    twitter: 'https://x.com/magefayre'
+    GitHub: 'https://github.com/magefayre/druidcraft',
+    X: 'https://x.com/magefayre'
   }
 }
 

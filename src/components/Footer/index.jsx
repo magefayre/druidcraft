@@ -1,5 +1,4 @@
 import {
-  CreditLockup,
   FooterContainer,
   Grid,
   Icon,
@@ -14,14 +13,7 @@ import footer from '~data/footer.json'
 import styles from './Footer.module.scss'
 
 const { name, socialLinks } = config
-const iconLinks = [
-  {
-    href: socialLinks.github,
-    text: `View ${name} on Github`,
-    name: 'simple-icons:github',
-    target: '_blank'
-  }
-]
+const iconLinks = { GitHub: { icon: 'simple-icons:github', verb: 'Star' } }
 
 const Footer = () => (
   <FooterContainer gutter theme={{ root: styles.root }}>
@@ -31,16 +23,24 @@ const Footer = () => (
       </Grid.Item>
       <Grid.Item sizes={['one-half']} align="right">
         <Navigation
-          links={iconLinks}
-          renderLink={({ text, name, ...rest }) => (
-            <SmartLink {...rest}>
-              <Icon name={name} theme={{ root: styles.icon }} alt={text} />
-            </SmartLink>
-          )}
+          links={Object.values(iconLinks)}
+          renderLink={(
+            { href, icon, verb = 'Follow', preposition = 'on' },
+            index
+          ) => {
+            const key = Object.keys(iconLinks).at(index)
+
+            return (
+              <SmartLink href={href ?? socialLinks[key]} target="_blank">
+                <Icon
+                  name={icon}
+                  theme={{ root: styles.icon }}
+                  alt={[verb, name, preposition, key].join(' ')}
+                />
+              </SmartLink>
+            )
+          }}
         />
-      </Grid.Item>
-      <Grid.Item className={styles.credits}>
-        <CreditLockup />
       </Grid.Item>
     </Grid>
   </FooterContainer>
