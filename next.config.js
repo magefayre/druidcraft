@@ -3,7 +3,14 @@ const withSvgr = require('@newhighsco/next-plugin-svgr')
 const withVideos = require('next-videos')
 
 const nextConfig = {
-  images: { formats: ['image/avif', 'image/webp'] },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      new URL(
+        'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-img/**'
+      )
+    ]
+  },
   i18n: { locales: ['en'], defaultLocale: 'en' },
   poweredByHeader: false,
   transpilePackages: ['@newhighsco/chipset', '@newhighsco/press-start'],

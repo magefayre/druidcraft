@@ -33,6 +33,9 @@
     "build": "next build --webpack",
     "postbuild": "next-sitemap",
     "serve": "next start",
+    "sync-with-5etools": "tsx scripts/sync-with-5etools --output src/data",
+    "postsync-with-5etools": "yarn format:js src/data",
+    "test": "yarn lint",
     "lint": "concurrently 'yarn:lint:*'",
     "lint:js": "eslint --cache .",
     "lint:css": "stylelint --cache --ignore-path .gitignore '**/*.?(s)css'",
@@ -70,7 +73,9 @@
     "husky": "9.1.7",
     "prettier": "3.8.3",
     "semantic-release": "25.0.3",
-    "stylelint": "17.9.0"
+    "stylelint": "17.9.0",
+    "tsx": "4.21.0",
+    "yargs": "18.0.0"
   },
   "browserslist": [
     "extends @newhighsco/browserslist-config"
