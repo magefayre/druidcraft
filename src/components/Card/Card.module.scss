@@ -13,3 +13,9 @@
   border-top: 1px solid color.adjust(colors.$black, $lightness: 75%);
   padding: 0.5em;
 }
+
+.image {
+  aspect-ratio: 1/1;
+  height: auto;
+  padding: 0.5em;
+}

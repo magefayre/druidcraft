@@ -3,16 +3,25 @@ import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import yargs from 'yargs'
 
+declare global {
+  var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
+}
+
 const BASE = new URL(
-  'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/main/data/bestiary/'
+  'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/main/'
 )
+const MAX_CR = Math.floor(20 / 3)
 
 type Source = string
 type Beast = { cr: string; name: string; source: Source }
-type Monster = Beast & { type: string }
-type Beastiary = { monster: Monster[] }
+type Book = { name: string; source: Source }
+type Books = { book: Book[] }
+type Monster = Beast & { type: string; _copy: Beast }
+type Monsters = { monster: Monster[] }
 
-const parseCR = (cr: string | Pick<Beast, 'cr'>): [number, string] => {
+const parseCR = (
+  cr: string | Pick<Beast, 'cr'>
+): [number, string | undefined] => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
   if (typeof cr === 'string') {
     if (!isNaN(cr as unknown as number)) return [Number(cr), cr]
@@ -24,25 +33,46 @@ const parseCR = (cr: string | Pick<Beast, 'cr'>): [number, string] => {
     }
   }
 
-  return [Number.MAX_SAFE_INTEGER, '']
+  return [Number.MAX_SAFE_INTEGER, undefined]
 }
 
-const fetchJson = async <T>(url: string = 'index.json'): Promise<T> => {
-  const res = await fetch(new URL(url, BASE))
+const fetchData = async <T>(...url: string[]): Promise<T> => {
+  const res = await fetch(new URL(url.join('/'), new URL('data/', BASE)))
 
-  if (!res.ok)
+  if (!res.ok) {
     throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
+  }
 
   return res.json()
 }
 
+const fetchScript = async (url: string) => {
+  const res = await fetch(new URL(url, new URL('js/', BASE)))
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
+  }
+
+  return eval(await res.text())
+}
+
 const filterBeasts = (monsters: Monster[]) =>
   monsters.reduce<Beast[]>((beasts, { cr, name, source, type }) => {
-    const [, label] = parseCR(cr)
+    const [value, label] = parseCR(cr)
 
-    return type === 'beast' && !!label
-      ? [...beasts, { cr: label, name, source }]
+    return type === 'beast' && value <= MAX_CR
+      ? [...beasts, { cr: label!, name, source }]
       : beasts
+  }, [])
+
+const filterCopies = (monsters: Monster[], existing: Beast[]) =>
+  monsters.reduce<Beast[]>((beasts, { _copy, cr, name, source }) => {
+    const [, label] = parseCR(cr)
+    const base = existing.find(
+      ({ name, source }) => _copy?.name === name && _copy?.source === source
+    )
+
+    return !!base ? [...beasts, { cr: label ?? base.cr, name, source }] : beasts
   }, [])
 
 const sortBeasts = (a: Beast, b: Beast) => {
@@ -61,16 +91,23 @@ const sortBeasts = (a: Beast, b: Beast) => {
     })
     .parse()
 
-  const sources = await fetchJson<Record<Source, string>>()
-  const beasts: Beast[] = []
+  const monsterURLs = await fetchData<Record<Source, string>>(
+    'bestiary',
+    'index.json'
+  )
+  const monsters: Monster[] = []
 
   await Promise.all(
-    Object.values(sources).map(async url => {
-      const { monster } = await fetchJson<Beastiary>(url)
+    Object.values(monsterURLs).map(async url => {
+      const { monster } = await fetchData<Monsters>('bestiary', url)
 
-      beasts.push(...filterBeasts(monster))
+      monsters.push(...monster)
     })
   )
+
+  const beasts: Beast[] = filterBeasts(monsters)
+
+  beasts.push(...filterCopies(monsters, beasts))
 
   if (!existsSync(outputDir)) {
     mkdirSync(outputDir, { recursive: true })
@@ -80,4 +117,17 @@ const sortBeasts = (a: Beast, b: Beast) => {
     join(outputDir, 'beasts.json'),
     JSON.stringify(beasts.sort(sortBeasts))
   )
+
+  await fetchScript('parser.js')
+
+  const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
+    (books, [source, name]) => {
+      return beasts.some(beast => beast.source === source)
+        ? { ...books, [source]: name }
+        : books
+    },
+    {}
+  )
+
+  await writeFile(join(outputDir, 'sources.json'), JSON.stringify(sources))
 })()

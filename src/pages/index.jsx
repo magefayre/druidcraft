@@ -1,6 +1,3 @@
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
-
 import { Card, List } from '@newhighsco/chipset'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 import { object } from 'prop-types'
@@ -10,10 +7,12 @@ import urlJoin from 'url-join'
 import PageContainer from '~components/PageContainer'
 import config from '~config'
 
+import { loadData } from '../utils'
+
 const { name, title, logo, socialLinks, url } = config
 const meta = { canonical: urlJoin(url, '/'), customTitle: true, title }
 
-const HomePage = ({ beasts }) => (
+const HomePage = ({ beasts, sources }) => (
   <PageContainer meta={meta}>
     <SocialProfileJsonLd
       type="Organization"
@@ -31,17 +30,17 @@ const HomePage = ({ beasts }) => (
       }}
     >
       {beasts.map(({ cr, name, source }) => (
-        <li key={name}>
+        <li key={`${source}/${name}`}>
           <Card
             heading={<h2>{name}</h2>}
             image={{
-              src: `https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-img/main/bestiary/${source}/${name}.webp`,
-              width: 100,
-              height: 100,
-              onError: e => (e.target.style.display = 'none')
+              src: `/tokens/${source}/${name.normalize('NFD').replace(/\p{Diacritic}/gu, '')}`,
+              width: 280,
+              height: 280
             }}
           >
-            <abbr title="Challenge Rating">CR: {cr}</abbr> <abbr>{source}</abbr>
+            <abbr title="Challenge Rating">CR</abbr> {cr}{' '}
+            <abbr title={sources[source]}>{source}</abbr>
           </Card>
         </li>
       ))}
@@ -52,12 +51,10 @@ const HomePage = ({ beasts }) => (
 HomePage.propTypes = { meta: object }
 
 export async function getStaticProps() {
-  const beasts = await readFile(
-    join(process.cwd(), 'src/data/beasts.json'),
-    'utf8'
-  ).then(content => JSON.parse(content))
+  const beasts = await loadData('beasts.json')
+  const sources = await loadData('sources.json')
 
-  return { props: { beasts } }
+  return { props: { beasts, sources } }
 }
 
 export default HomePage

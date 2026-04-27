@@ -7,7 +7,7 @@ const config = {
   url: process.env.NEXT_PUBLIC_SITE_URL,
   name: 'Druidcraft',
   shortName: null,
-  title: 'Druidcraft - Wildshape? I was livid!',
+  title: 'Druidcraft - Wild Shape? I was livid!',
   description: 'TODO:',
   logo: { bitmap: logoBitmap.src, vector: logoVector },
   openGraphImage: openGraphImage.src,
