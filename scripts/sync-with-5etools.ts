@@ -13,27 +13,28 @@ const BASE = new URL(
 const MAX_CR = Math.floor(20 / 3)
 
 type Source = string
-type Beast = { cr: string; name: string; source: Source }
-type Book = { name: string; source: Source }
-type Books = { book: Book[] }
-type Monster = Beast & { type: string; _copy: Beast }
+type Beast = {
+  cr: number
+  name: string
+  source: Source
+  speed: Record<string, any>
+}
+type Monster = Beast & { _copy: Partial<Beast>; cr: string; type: string }
 type Monsters = { monster: Monster[] }
 
-const parseCR = (
-  cr: string | Pick<Beast, 'cr'>
-): [number, string | undefined] => {
+const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
   if (typeof cr === 'string') {
-    if (!isNaN(cr as unknown as number)) return [Number(cr), cr]
+    if (!isNaN(cr as unknown as number)) return Number(cr)
 
     const parts = cr?.trim().split('/').filter(Boolean)
 
     if (parts?.length === 2) {
-      return [Number(parts[0]) / Number(parts[1]), cr]
+      return Number(parts[0]) / Number(parts[1])
     }
   }
 
-  return [Number.MAX_SAFE_INTEGER, undefined]
+  return undefined
 }
 
 const fetchData = async <T>(...url: string[]): Promise<T> => {
@@ -57,29 +58,35 @@ const fetchScript = async (url: string) => {
 }
 
 const filterBeasts = (monsters: Monster[]) =>
-  monsters.reduce<Beast[]>((beasts, { cr, name, source, type }) => {
-    const [value, label] = parseCR(cr)
+  monsters.reduce<Beast[]>((beasts, { cr, name, source, speed, type }) => {
+    const challenge = parseCR(cr)!
 
-    return type === 'beast' && value <= MAX_CR
-      ? [...beasts, { cr: label!, name, source }]
+    return type === 'beast' && challenge <= MAX_CR
+      ? [...beasts, { cr: challenge, name, source, speed }]
       : beasts
   }, [])
 
 const filterCopies = (monsters: Monster[], existing: Beast[]) =>
-  monsters.reduce<Beast[]>((beasts, { _copy, cr, name, source }) => {
-    const [, label] = parseCR(cr)
+  monsters.reduce<Beast[]>((beasts, { _copy, cr, ...rest }) => {
     const base = existing.find(
       ({ name, source }) => _copy?.name === name && _copy?.source === source
     )
 
-    return !!base ? [...beasts, { cr: label ?? base.cr, name, source }] : beasts
+    return !!base
+      ? [
+          ...beasts,
+          {
+            ...Object.entries(base).reduce<Beast>((beast, [key, value]) => {
+              return { ...beast, [key]: (rest as any)[key] ?? value }
+            }, {} as Beast),
+            cr: parseCR(cr) ?? base.cr
+          }
+        ]
+      : beasts
   }, [])
 
 const sortBeasts = (a: Beast, b: Beast) => {
-  const [crA] = parseCR(a)
-  const [crB] = parseCR(b)
-
-  if (crA != crB) return crA - crB
+  if (a.cr !== b.cr) return a.cr - b.cr
 
   return a.name.localeCompare(b.name)
 }

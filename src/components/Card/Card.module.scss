@@ -5,6 +5,11 @@
   border-radius: 0.5em;
   display: flex;
   flex-direction: column;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 }
 
 .content {
@@ -16,4 +21,10 @@
   aspect-ratio: 1/1;
   height: auto;
   padding: 0.5em;
+}
+
+.copy {
+  display: flex;
+  gap: 0.25em;
+  justify-content: space-between;
 }

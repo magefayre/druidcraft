@@ -1,279 +1,1247 @@
 [
-  { "cr": "0", "name": "Almiraj", "source": "ToA" },
-  { "cr": "0", "name": "Awakened Rat", "source": "WDH" },
-  { "cr": "0", "name": "Baboon", "source": "MM" },
-  { "cr": "0", "name": "Badger", "source": "MM" },
-  { "cr": "0", "name": "Bat", "source": "MM" },
-  { "cr": "0", "name": "Boontu Monkey", "source": "AWM" },
-  { "cr": "0", "name": "Cat", "source": "MM" },
-  { "cr": "0", "name": "Cat Skeleton", "source": "CoS" },
-  { "cr": "0", "name": "Chimeric Baboon", "source": "IDRotF" },
-  { "cr": "0", "name": "Chimeric Cat", "source": "IDRotF" },
-  { "cr": "0", "name": "Chimeric Fox", "source": "NRH-AVitW" },
-  { "cr": "0", "name": "Chimeric Fox", "source": "IDRotF" },
-  { "cr": "0", "name": "Chimeric Hare", "source": "IDRotF" },
-  { "cr": "0", "name": "Chimeric Rat", "source": "IDRotF" },
-  { "cr": "0", "name": "Chimeric Weasel", "source": "IDRotF" },
-  { "cr": "0", "name": "Crab", "source": "MM" },
-  { "cr": "0", "name": "Cranium Rat", "source": "VGM" },
-  { "cr": "0", "name": "Crow", "source": "WDMM" },
-  { "cr": "0", "name": "Deer", "source": "MM" },
-  { "cr": "0", "name": "Eagle", "source": "MM" },
-  { "cr": "0", "name": "Falcon", "source": "WDH" },
-  { "cr": "0", "name": "Fish", "source": "GoS" },
-  { "cr": "0", "name": "Flying Monkey", "source": "ToA" },
-  { "cr": "0", "name": "Fox", "source": "IDRotF" },
-  { "cr": "0", "name": "Frog", "source": "MM" },
-  { "cr": "0", "name": "Giant Fire Beetle", "source": "MM" },
-  { "cr": "0", "name": "Goat", "source": "MM" },
-  { "cr": "0", "name": "Hare", "source": "IDRotF" },
-  { "cr": "0", "name": "Haungharassk", "source": "WDMM" },
-  { "cr": "0", "name": "Hawk", "source": "MM" },
-  { "cr": "0", "name": "Hyena", "source": "MM" },
-  { "cr": "0", "name": "Jackal", "source": "MM" },
-  { "cr": "0", "name": "Kingsport", "source": "IDRotF" },
-  { "cr": "0", "name": "Knucklehead Trout", "source": "IDRotF" },
-  { "cr": "0", "name": "Lizard", "source": "MM" },
-  { "cr": "0", "name": "Macaw", "source": "PSX" },
-  { "cr": "0", "name": "Nene", "source": "JttRC" },
-  { "cr": "0", "name": "Octopus", "source": "MM" },
-  { "cr": "0", "name": "Onyx", "source": "OoW" },
-  { "cr": "0", "name": "Owl", "source": "MM" },
-  { "cr": "0", "name": "Parrot", "source": "PSX" },
-  { "cr": "0", "name": "Peacock", "source": "BGDIA" },
-  { "cr": "0", "name": "Piccolo", "source": "CoS" },
-  { "cr": "0", "name": "Pig", "source": "SKT" },
-  { "cr": "0", "name": "Piranha", "source": "PSX" },
-  { "cr": "0", "name": "Pollenella the Honeybee", "source": "WBtW" },
-  { "cr": "0", "name": "Quipper", "source": "MM" },
-  { "cr": "0", "name": "Rat", "source": "MM" },
-  { "cr": "0", "name": "Raven", "source": "MM" },
-  { "cr": "0", "name": "Rooster", "source": "JttRC" },
-  { "cr": "0", "name": "Scorpion", "source": "MM" },
-  { "cr": "0", "name": "Sea Horse", "source": "MM" },
-  { "cr": "0", "name": "Seal", "source": "IDRotF" },
-  { "cr": "0", "name": "Sheep", "source": "SKT" },
-  { "cr": "0", "name": "Space Guppy", "source": "BAM" },
-  { "cr": "0", "name": "Space Hamster", "source": "WDMM" },
-  { "cr": "0", "name": "Space Mollymawk", "source": "BAM" },
-  { "cr": "0", "name": "Spider", "source": "MM" },
-  { "cr": "0", "name": "Sylgar", "source": "WDH" },
-  { "cr": "0", "name": "Thopter (Bat)", "source": "PSK" },
-  { "cr": "0", "name": "Thopter (Eagle)", "source": "PSK" },
-  { "cr": "0", "name": "Thopter (Hawk)", "source": "PSK" },
-  { "cr": "0", "name": "Thopter (Owl)", "source": "PSK" },
-  { "cr": "0", "name": "Thopter (Raven)", "source": "PSK" },
-  { "cr": "0", "name": "Thopter (Vulture)", "source": "PSK" },
-  { "cr": "0", "name": "Trilobite", "source": "PSX" },
-  { "cr": "0", "name": "Vulture", "source": "MM" },
-  { "cr": "0", "name": "Weasel", "source": "MM" },
-  { "cr": "0", "name": "Wild Dog", "source": "ToA" },
-  { "cr": "0", "name": "Zombie Cat", "source": "PSI" },
-  { "cr": "0", "name": "Zombie Rat", "source": "PSI" },
-  { "cr": "1/8", "name": "Barnacle Bess", "source": "GoS" },
-  { "cr": "1/8", "name": "Blood Hawk", "source": "MM" },
-  { "cr": "1/8", "name": "Camel", "source": "MM" },
-  { "cr": "1/8", "name": "Clockwork Mule", "source": "SKT" },
-  { "cr": "1/8", "name": "Dolphin", "source": "MPMM" },
-  { "cr": "1/8", "name": "Dolphin", "source": "VGM" },
-  { "cr": "1/8", "name": "Flying Snake", "source": "MM" },
-  { "cr": "1/8", "name": "Giant Crab", "source": "MM" },
-  { "cr": "1/8", "name": "Giant Rat", "source": "MM" },
-  { "cr": "1/8", "name": "Giant Weasel", "source": "MM" },
-  { "cr": "1/8", "name": "Heartstabber Mosquito", "source": "PSZ" },
-  { "cr": "1/8", "name": "Mastiff", "source": "MM" },
-  { "cr": "1/8", "name": "Mountain Goat", "source": "IDRotF" },
-  { "cr": "1/8", "name": "Mule", "source": "MM" },
-  { "cr": "1/8", "name": "Poisonous Snake", "source": "MM" },
-  { "cr": "1/8", "name": "Pony", "source": "MM" },
-  { "cr": "1/8", "name": "Stirge", "source": "MM" },
-  { "cr": "1/8", "name": "Thopter (Blood Hawk)", "source": "PSK" },
-  { "cr": "1/8", "name": "Trilobite (Giant)", "source": "PSX" },
-  { "cr": "1/8", "name": "Wooden Donkey", "source": "WDMM" },
-  { "cr": "1/8", "name": "Zombie Snake", "source": "PSI" },
-  { "cr": "1/4", "name": "Aerosaur (Small)", "source": "PSX" },
-  { "cr": "1/4", "name": "Animated Jade Serpent", "source": "WDMM" },
-  { "cr": "1/4", "name": "Awakened Elk", "source": "WDMM" },
-  { "cr": "1/4", "name": "Axe Beak", "source": "MM" },
-  { "cr": "1/4", "name": "Birdsquirrel", "source": "AWM" },
-  { "cr": "1/4", "name": "Boar", "source": "MM" },
-  { "cr": "1/4", "name": "Cave Badger", "source": "OotA" },
-  { "cr": "1/4", "name": "Constrictor Snake", "source": "MM" },
-  { "cr": "1/4", "name": "Cow", "source": "VGM" },
-  { "cr": "1/4", "name": "Deep Rothé", "source": "VGM" },
-  { "cr": "1/4", "name": "Diatryma", "source": "WDH" },
-  { "cr": "1/4", "name": "Dimetrodon", "source": "VGM" },
-  { "cr": "1/4", "name": "Draft Horse", "source": "MM" },
-  { "cr": "1/4", "name": "Drake (Small)", "source": "PSZ" },
-  { "cr": "1/4", "name": "Drake (Small)", "source": "PSK" },
-  { "cr": "1/4", "name": "Elk", "source": "MM" },
-  { "cr": "1/4", "name": "Fastieth", "source": "ERLW" },
-  { "cr": "1/4", "name": "Giant Badger", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Bat", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Centipede", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Frog", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Lizard", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Owl", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Poisonous Snake", "source": "MM" },
-  { "cr": "1/4", "name": "Giant Riding Lizard", "source": "OotA" },
-  { "cr": "1/4", "name": "Giant Snail", "source": "WBtW" },
-  { "cr": "1/4", "name": "Giant Space Hamster", "source": "BAM" },
-  { "cr": "1/4", "name": "Giant Wolf Spider", "source": "MM" },
-  { "cr": "1/4", "name": "Golden Stag", "source": "HotDQ" },
-  { "cr": "1/4", "name": "Guthash", "source": "TftYP" },
-  { "cr": "1/4", "name": "Hadrosaur", "source": "PSX" },
-  { "cr": "1/4", "name": "Hadrosaurus", "source": "VGM" },
-  { "cr": "1/4", "name": "Hellwasp Grub", "source": "BGDIA" },
-  { "cr": "1/4", "name": "Horned Frog", "source": "PSX" },
-  { "cr": "1/4", "name": "Male Steeder", "source": "OotA" },
-  { "cr": "1/4", "name": "Maxeene", "source": "WDH" },
-  { "cr": "1/4", "name": "Ox", "source": "VGM" },
-  { "cr": "1/4", "name": "Panther", "source": "MM" },
-  { "cr": "1/4", "name": "Pteranodon", "source": "MM" },
-  { "cr": "1/4", "name": "Reindeer", "source": "IDRotF" },
-  { "cr": "1/4", "name": "Riding Horse", "source": "MM" },
-  { "cr": "1/4", "name": "Rothé", "source": "VGM" },
-  { "cr": "1/4", "name": "Skeletal Giant Owl", "source": "IMR" },
-  { "cr": "1/4", "name": "Skeletal Riding Horse", "source": "DIP" },
-  { "cr": "1/4", "name": "Sled Dog", "source": "RoT" },
-  { "cr": "1/4", "name": "Small Drake", "source": "PSA" },
-  { "cr": "1/4", "name": "Space Swine", "source": "BAM" },
-  { "cr": "1/4", "name": "Spiderfrog", "source": "MGELFT" },
-  { "cr": "1/4", "name": "Stench Kow", "source": "VGM" },
-  { "cr": "1/4", "name": "Szikzith", "source": "NRH-AWoL" },
-  { "cr": "1/4", "name": "Velociraptor", "source": "VGM" },
-  { "cr": "1/4", "name": "Walrus", "source": "IDRotF" },
-  { "cr": "1/4", "name": "Wolf", "source": "MM" },
-  { "cr": "1/4", "name": "Wolf of the Overworld", "source": "MCV3MC" },
-  { "cr": "1/4", "name": "Yak", "source": "SKT" },
-  { "cr": "1/4", "name": "Zebra", "source": "ToA" },
-  { "cr": "1/2", "name": "Ape", "source": "MM" },
-  { "cr": "1/2", "name": "Ashen Warhorse", "source": "KftGV" },
-  { "cr": "1/2", "name": "Awakened Giant Wasp", "source": "WDMM" },
-  { "cr": "1/2", "name": "Black Bear", "source": "MM" },
-  { "cr": "1/2", "name": "Crocodile", "source": "MM" },
-  { "cr": "1/2", "name": "Fiendish Giant Spider", "source": "OotA" },
-  { "cr": "1/2", "name": "Frilled Deathspitter", "source": "PSX" },
-  { "cr": "1/2", "name": "Giant Canary", "source": "FTD" },
-  { "cr": "1/2", "name": "Giant Dragonfly", "source": "WBtW" },
-  { "cr": "1/2", "name": "Giant Goat", "source": "MM" },
-  { "cr": "1/2", "name": "Giant Sea Eel", "source": "GoS" },
-  { "cr": "1/2", "name": "Giant Sea Horse", "source": "MM" },
-  { "cr": "1/2", "name": "Giant Wasp", "source": "MM" },
-  { "cr": "1/2", "name": "Gremlin", "source": "PSK" },
-  { "cr": "1/2", "name": "Hammerskull", "source": "PSX" },
-  { "cr": "1/2", "name": "Jaculi", "source": "ToA" },
-  { "cr": "1/2", "name": "Koi Prawn", "source": "JttRC" },
-  { "cr": "1/2", "name": "Metal Wasp", "source": "WDMM" },
-  { "cr": "1/2", "name": "Oxen", "source": "PSZ" },
-  { "cr": "1/2", "name": "Reef Shark", "source": "MM" },
-  { "cr": "1/2", "name": "Space Eel", "source": "BAM" },
-  { "cr": "1/2", "name": "Warhorse", "source": "MM" },
-  { "cr": "1", "name": "Awakened Brown Bear", "source": "WDMM" },
-  { "cr": "1", "name": "Brown Bear", "source": "MM" },
-  { "cr": "1", "name": "Clawfoot", "source": "ERLW" },
-  { "cr": "1", "name": "Deinonychus", "source": "VGM" },
-  { "cr": "1", "name": "Dire Wolf", "source": "MM" },
-  { "cr": "1", "name": "Drake (Large)", "source": "PSZ" },
-  { "cr": "1", "name": "Drake (Large)", "source": "PSK" },
-  { "cr": "1", "name": "Female Steeder", "source": "OotA" },
-  { "cr": "1", "name": "Giant Eagle", "source": "MM" },
-  { "cr": "1", "name": "Giant Flying Spider", "source": "WDMM" },
-  { "cr": "1", "name": "Giant Hyena", "source": "MM" },
-  { "cr": "1", "name": "Giant Octopus", "source": "MM" },
-  { "cr": "1", "name": "Giant Raven", "source": "SKT" },
-  { "cr": "1", "name": "Giant Rocktopus", "source": "OotA" },
-  { "cr": "1", "name": "Giant Spider", "source": "MM" },
-  { "cr": "1", "name": "Giant Swan", "source": "WBtW" },
-  { "cr": "1", "name": "Giant Toad", "source": "MM" },
-  { "cr": "1", "name": "Giant Vulture", "source": "MM" },
-  { "cr": "1", "name": "Gnarlid", "source": "PSZ" },
-  { "cr": "1", "name": "Hound of Ill Omen", "source": "XGE" },
-  { "cr": "1", "name": "Ice Spider", "source": "SKT" },
-  { "cr": "1", "name": "Large Drake", "source": "PSA" },
-  { "cr": "1", "name": "Lion", "source": "MM" },
-  { "cr": "1", "name": "Moorbounder", "source": "EGW" },
-  { "cr": "1", "name": "Old Croaker", "source": "EGW" },
-  { "cr": "1", "name": "Parvaz", "source": "ToFW" },
-  { "cr": "1", "name": "Sangzor", "source": "CoS" },
-  { "cr": "1", "name": "Snow Leopard", "source": "TftYP" },
-  { "cr": "1", "name": "Spider King", "source": "OotA" },
-  { "cr": "1", "name": "Tiger", "source": "MM" },
-  { "cr": "1", "name": "Two-Headed Crocodile", "source": "IMR" },
-  { "cr": "1", "name": "Young Winter Wolf", "source": "TftYP" },
-  { "cr": "2", "name": "Aerosaur (Large)", "source": "PSX" },
-  { "cr": "2", "name": "Allosaurus", "source": "MM" },
-  { "cr": "2", "name": "Animatronic Allosaurus", "source": "KftGV" },
-  { "cr": "2", "name": "Aurochs", "source": "VGM" },
-  { "cr": "2", "name": "Cave Bear", "source": "MM" },
-  { "cr": "2", "name": "Dinosaur Skeleton", "source": "JttRC" },
-  { "cr": "2", "name": "Ebonclaw", "source": "ToFW" },
-  { "cr": "2", "name": "Enormous Tentacle", "source": "OoW" },
-  { "cr": "2", "name": "Ferocidon", "source": "PSX" },
-  { "cr": "2", "name": "Giant Boar", "source": "MM" },
-  { "cr": "2", "name": "Giant Constrictor Snake", "source": "MM" },
-  { "cr": "2", "name": "Giant Crayfish", "source": "TftYP" },
-  { "cr": "2", "name": "Giant Elk", "source": "MM" },
-  { "cr": "2", "name": "Giant White Moray Eel", "source": "GoS" },
-  { "cr": "2", "name": "Great Cat", "source": "PSZ" },
-  { "cr": "2", "name": "Huge Polar Bear", "source": "TftYP" },
-  { "cr": "2", "name": "Hunter Shark", "source": "MM" },
-  { "cr": "2", "name": "Ice Spider Queen", "source": "SKT" },
-  { "cr": "2", "name": "Kavu Predator", "source": "PSD" },
-  { "cr": "2", "name": "Plesiosaurus", "source": "MM" },
-  { "cr": "2", "name": "Polar Bear", "source": "MM" },
-  { "cr": "2", "name": "Quetzalcoatlus", "source": "VGM" },
-  { "cr": "2", "name": "Relic Sloth", "source": "SCC" },
-  { "cr": "2", "name": "Rhinoceros", "source": "MM" },
-  { "cr": "2", "name": "River Serpent", "source": "PSA" },
-  { "cr": "2", "name": "Saber-Toothed Tiger", "source": "MM" },
-  { "cr": "2", "name": "Sharkbody Abomination", "source": "EGW" },
-  { "cr": "2", "name": "Shoal Serpent", "source": "PSZ" },
-  { "cr": "2", "name": "Skeletal Polar Bear", "source": "IMR" },
-  { "cr": "2", "name": "Young Bulette", "source": "PotA" },
-  { "cr": "3", "name": "Aegisaur", "source": "PSX" },
-  { "cr": "3", "name": "Amphisbaena", "source": "TftYP" },
-  { "cr": "3", "name": "Ankylosaurus", "source": "MM" },
-  { "cr": "3", "name": "Armored Saber-Toothed Tiger", "source": "CoS" },
-  { "cr": "3", "name": "Awakened White Moose", "source": "IDRotF" },
-  { "cr": "3", "name": "Bristled Moorbounder", "source": "EGW" },
-  { "cr": "3", "name": "Giant Lightning Eel", "source": "TftYP" },
-  { "cr": "3", "name": "Giant Scorpion", "source": "MM" },
-  { "cr": "3", "name": "Giant Snapping Turtle", "source": "ToA" },
-  { "cr": "3", "name": "Killer Whale", "source": "MM" },
-  { "cr": "3", "name": "Serpopard", "source": "PSA" },
-  { "cr": "3", "name": "Spotted Lion", "source": "BGG" },
-  { "cr": "3", "name": "Sword Spider", "source": "MaBJoV" },
-  { "cr": "3", "name": "Young Horizonback Tortoise", "source": "CRCotN" },
-  { "cr": "4", "name": "Armasaur", "source": "PSX" },
-  { "cr": "4", "name": "Elephant", "source": "MM" },
-  { "cr": "4", "name": "Giant Coral Snake", "source": "GoS" },
-  { "cr": "4", "name": "Giant Subterranean Lizard", "source": "TftYP" },
-  { "cr": "4", "name": "Giant Walrus", "source": "IDRotF" },
-  { "cr": "4", "name": "Hippopotamus", "source": "PSA" },
-  { "cr": "4", "name": "Lifecraft Elephant", "source": "PSK" },
-  { "cr": "4", "name": "Ophelia", "source": "ToFW" },
-  { "cr": "4", "name": "Steel Leaf Kavu", "source": "PSD" },
-  { "cr": "4", "name": "Stegosaurus", "source": "VGM" },
-  { "cr": "4", "name": "Two-Headed Plesiosaurus", "source": "TTP" },
-  { "cr": "5", "name": "Altisaur", "source": "PSX" },
-  { "cr": "5", "name": "Ammit", "source": "PSA" },
-  { "cr": "5", "name": "Baloth", "source": "PSZ" },
-  { "cr": "5", "name": "Brontodon", "source": "PSX" },
-  { "cr": "5", "name": "Brontosaurus", "source": "VGM" },
-  { "cr": "5", "name": "Ceratops", "source": "PSX" },
-  { "cr": "5", "name": "Elder Giant Lizard", "source": "TftYP" },
-  { "cr": "5", "name": "Giant Crocodile", "source": "MM" },
-  { "cr": "5", "name": "Giant Shark", "source": "MM" },
-  { "cr": "5", "name": "Hulking Crab", "source": "SKT" },
-  { "cr": "5", "name": "Moonshark", "source": "CRCotN" },
-  { "cr": "5", "name": "Obliteros", "source": "WDH" },
-  { "cr": "5", "name": "Sailback", "source": "PSX" },
-  { "cr": "5", "name": "Sky Whale", "source": "PSK" },
-  { "cr": "5", "name": "Titanothere", "source": "BGG" },
-  { "cr": "5", "name": "Triceratops", "source": "MM" },
-  { "cr": "5", "name": "Whirlwyrm", "source": "ToFW" },
-  { "cr": "6", "name": "Cerodon", "source": "PSA" },
-  { "cr": "6", "name": "Mammoth", "source": "MM" },
-  { "cr": "6", "name": "Terastodon", "source": "PSZ" }
+  { "cr": 0, "name": "Almiraj", "source": "ToA", "speed": { "walk": 50 } },
+  { "cr": 0, "name": "Awakened Rat", "source": "WDH", "speed": { "walk": 20 } },
+  {
+    "cr": 0,
+    "name": "Baboon",
+    "source": "MM",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Badger",
+    "source": "MM",
+    "speed": { "walk": 20, "burrow": 5 }
+  },
+  { "cr": 0, "name": "Bat", "source": "MM", "speed": { "walk": 5, "fly": 30 } },
+  {
+    "cr": 0,
+    "name": "Boontu Monkey",
+    "source": "AWM",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Cat",
+    "source": "MM",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Cat Skeleton",
+    "source": "CoS",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Baboon",
+    "source": "IDRotF",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Cat",
+    "source": "IDRotF",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Fox",
+    "source": "NRH-AVitW",
+    "speed": { "walk": 30, "burrow": 5 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Fox",
+    "source": "IDRotF",
+    "speed": { "walk": 30, "burrow": 5 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Hare",
+    "source": "IDRotF",
+    "speed": { "walk": 20, "burrow": 5, "fly": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Rat",
+    "source": "IDRotF",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Chimeric Weasel",
+    "source": "IDRotF",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Crab",
+    "source": "MM",
+    "speed": { "walk": 20, "swim": 20 }
+  },
+  { "cr": 0, "name": "Cranium Rat", "source": "VGM", "speed": { "walk": 30 } },
+  {
+    "cr": 0,
+    "name": "Crow",
+    "source": "WDMM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  { "cr": 0, "name": "Deer", "source": "MM", "speed": { "walk": 50 } },
+  {
+    "cr": 0,
+    "name": "Eagle",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0,
+    "name": "Falcon",
+    "source": "WDH",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  { "cr": 0, "name": "Fish", "source": "GoS", "speed": { "swim": 40 } },
+  {
+    "cr": 0,
+    "name": "Flying Monkey",
+    "source": "ToA",
+    "speed": { "walk": 30, "climb": 20, "fly": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Fox",
+    "source": "IDRotF",
+    "speed": { "walk": 30, "burrow": 5 }
+  },
+  {
+    "cr": 0,
+    "name": "Frog",
+    "source": "MM",
+    "speed": { "walk": 20, "swim": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Giant Fire Beetle",
+    "source": "MM",
+    "speed": { "walk": 30 }
+  },
+  { "cr": 0, "name": "Goat", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0,
+    "name": "Hare",
+    "source": "IDRotF",
+    "speed": { "walk": 20, "burrow": 5 }
+  },
+  {
+    "cr": 0,
+    "name": "Haungharassk",
+    "source": "WDMM",
+    "speed": { "walk": 10, "climb": 10 }
+  },
+  {
+    "cr": 0,
+    "name": "Hawk",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  { "cr": 0, "name": "Hyena", "source": "MM", "speed": { "walk": 50 } },
+  { "cr": 0, "name": "Jackal", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0,
+    "name": "Kingsport",
+    "source": "IDRotF",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 0,
+    "name": "Knucklehead Trout",
+    "source": "IDRotF",
+    "speed": { "walk": 0, "swim": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Lizard",
+    "source": "MM",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Macaw",
+    "source": "PSX",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0,
+    "name": "Nene",
+    "source": "JttRC",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0,
+    "name": "Octopus",
+    "source": "MM",
+    "speed": { "walk": 5, "swim": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Onyx",
+    "source": "OoW",
+    "speed": { "walk": 400, "climb": 200 }
+  },
+  { "cr": 0, "name": "Owl", "source": "MM", "speed": { "walk": 5, "fly": 60 } },
+  {
+    "cr": 0,
+    "name": "Parrot",
+    "source": "PSX",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0,
+    "name": "Peacock",
+    "source": "BGDIA",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0,
+    "name": "Piccolo",
+    "source": "CoS",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  { "cr": 0, "name": "Pig", "source": "SKT", "speed": { "walk": 30 } },
+  { "cr": 0, "name": "Piranha", "source": "PSX", "speed": { "swim": 40 } },
+  {
+    "cr": 0,
+    "name": "Pollenella the Honeybee",
+    "source": "WBtW",
+    "speed": { "walk": 5, "fly": 30 }
+  },
+  { "cr": 0, "name": "Quipper", "source": "MM", "speed": { "swim": 40 } },
+  { "cr": 0, "name": "Rat", "source": "MM", "speed": { "walk": 20 } },
+  {
+    "cr": 0,
+    "name": "Raven",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  { "cr": 0, "name": "Rooster", "source": "JttRC", "speed": { "walk": 10 } },
+  { "cr": 0, "name": "Scorpion", "source": "MM", "speed": { "walk": 10 } },
+  { "cr": 0, "name": "Sea Horse", "source": "MM", "speed": { "swim": 20 } },
+  {
+    "cr": 0,
+    "name": "Seal",
+    "source": "IDRotF",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  { "cr": 0, "name": "Sheep", "source": "SKT", "speed": { "walk": 30 } },
+  {
+    "cr": 0,
+    "name": "Space Guppy",
+    "source": "BAM",
+    "speed": { "walk": 0, "fly": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Space Hamster",
+    "source": "WDMM",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Space Mollymawk",
+    "source": "BAM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0,
+    "name": "Spider",
+    "source": "MM",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Sylgar",
+    "source": "WDH",
+    "speed": { "walk": 0, "swim": 40 }
+  },
+  {
+    "cr": 0,
+    "name": "Thopter (Bat)",
+    "source": "PSK",
+    "speed": { "walk": 5, "fly": 30 }
+  },
+  {
+    "cr": 0,
+    "name": "Thopter (Eagle)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0,
+    "name": "Thopter (Hawk)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0,
+    "name": "Thopter (Owl)",
+    "source": "PSK",
+    "speed": { "walk": 5, "fly": 60 }
+  },
+  {
+    "cr": 0,
+    "name": "Thopter (Raven)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0,
+    "name": "Thopter (Vulture)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0,
+    "name": "Trilobite",
+    "source": "PSX",
+    "speed": { "walk": 20, "swim": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Vulture",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  { "cr": 0, "name": "Weasel", "source": "MM", "speed": { "walk": 30 } },
+  { "cr": 0, "name": "Wild Dog", "source": "ToA", "speed": { "walk": 40 } },
+  {
+    "cr": 0,
+    "name": "Zombie Cat",
+    "source": "PSI",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  { "cr": 0, "name": "Zombie Rat", "source": "PSI", "speed": { "walk": 20 } },
+  {
+    "cr": 0.125,
+    "name": "Barnacle Bess",
+    "source": "GoS",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Blood Hawk",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  { "cr": 0.125, "name": "Camel", "source": "MM", "speed": { "walk": 50 } },
+  {
+    "cr": 0.125,
+    "name": "Clockwork Mule",
+    "source": "SKT",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Dolphin",
+    "source": "MPMM",
+    "speed": { "walk": 0, "swim": 60 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Dolphin",
+    "source": "VGM",
+    "speed": { "walk": 0, "swim": 60 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Flying Snake",
+    "source": "MM",
+    "speed": { "walk": 30, "fly": 60, "swim": 30 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Giant Crab",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  { "cr": 0.125, "name": "Giant Rat", "source": "MM", "speed": { "walk": 30 } },
+  {
+    "cr": 0.125,
+    "name": "Giant Weasel",
+    "source": "MM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Heartstabber Mosquito",
+    "source": "PSZ",
+    "speed": { "walk": 10, "fly": 40 }
+  },
+  { "cr": 0.125, "name": "Mastiff", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0.125,
+    "name": "Mountain Goat",
+    "source": "IDRotF",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  { "cr": 0.125, "name": "Mule", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0.125,
+    "name": "Poisonous Snake",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  { "cr": 0.125, "name": "Pony", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0.125,
+    "name": "Stirge",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 40 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Thopter (Blood Hawk)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Trilobite (Giant)",
+    "source": "PSX",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Wooden Donkey",
+    "source": "WDMM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Zombie Snake",
+    "source": "PSI",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Aerosaur (Small)",
+    "source": "PSX",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Animated Jade Serpent",
+    "source": "WDMM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Awakened Elk",
+    "source": "WDMM",
+    "speed": { "walk": 50 }
+  },
+  { "cr": 0.25, "name": "Axe Beak", "source": "MM", "speed": { "walk": 50 } },
+  {
+    "cr": 0.25,
+    "name": "Birdsquirrel",
+    "source": "AWM",
+    "speed": { "walk": 20, "fly": 30, "climb": 20 }
+  },
+  { "cr": 0.25, "name": "Boar", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0.25,
+    "name": "Cave Badger",
+    "source": "OotA",
+    "speed": { "walk": 30, "burrow": 15 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Constrictor Snake",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  { "cr": 0.25, "name": "Cow", "source": "VGM", "speed": { "walk": 30 } },
+  {
+    "cr": 0.25,
+    "name": "Deep Rothé",
+    "source": "VGM",
+    "speed": { "walk": 30 }
+  },
+  { "cr": 0.25, "name": "Diatryma", "source": "WDH", "speed": { "walk": 50 } },
+  {
+    "cr": 0.25,
+    "name": "Dimetrodon",
+    "source": "VGM",
+    "speed": { "walk": 30, "swim": 20 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Draft Horse",
+    "source": "MM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Drake (Small)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Drake (Small)",
+    "source": "PSZ",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  { "cr": 0.25, "name": "Elk", "source": "MM", "speed": { "walk": 50 } },
+  { "cr": 0.25, "name": "Fastieth", "source": "ERLW", "speed": { "walk": 50 } },
+  {
+    "cr": 0.25,
+    "name": "Giant Badger",
+    "source": "MM",
+    "speed": { "walk": 30, "burrow": 10 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Bat",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Centipede",
+    "source": "MM",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Frog",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Lizard",
+    "source": "MM",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Owl",
+    "source": "MM",
+    "speed": { "walk": 5, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Poisonous Snake",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Riding Lizard",
+    "source": "OotA",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Snail",
+    "source": "WBtW",
+    "speed": { "walk": 10, "climb": 10 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Space Hamster",
+    "source": "BAM",
+    "speed": { "walk": 30, "burrow": 10 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Giant Wolf Spider",
+    "source": "MM",
+    "speed": { "walk": 40, "climb": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Golden Stag",
+    "source": "HotDQ",
+    "speed": { "walk": 50 }
+  },
+  { "cr": 0.25, "name": "Guthash", "source": "TftYP", "speed": { "walk": 30 } },
+  { "cr": 0.25, "name": "Hadrosaur", "source": "PSX", "speed": { "walk": 40 } },
+  {
+    "cr": 0.25,
+    "name": "Hadrosaurus",
+    "source": "VGM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Hellwasp Grub",
+    "source": "BGDIA",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Horned Frog",
+    "source": "PSX",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Male Steeder",
+    "source": "OotA",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  { "cr": 0.25, "name": "Maxeene", "source": "WDH", "speed": { "walk": 40 } },
+  { "cr": 0.25, "name": "Ox", "source": "VGM", "speed": { "walk": 30 } },
+  {
+    "cr": 0.25,
+    "name": "Panther",
+    "source": "MM",
+    "speed": { "walk": 50, "climb": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Pteranodon",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Reindeer",
+    "source": "IDRotF",
+    "speed": { "walk": 50 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Riding Horse",
+    "source": "MM",
+    "speed": { "walk": 60 }
+  },
+  { "cr": 0.25, "name": "Rothé", "source": "VGM", "speed": { "walk": 30 } },
+  {
+    "cr": 0.25,
+    "name": "Skeletal Giant Owl",
+    "source": "IMR",
+    "speed": { "walk": 5, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Skeletal Riding Horse",
+    "source": "DIP",
+    "speed": { "walk": 60 }
+  },
+  { "cr": 0.25, "name": "Sled Dog", "source": "RoT", "speed": { "walk": 40 } },
+  {
+    "cr": 0.25,
+    "name": "Small Drake",
+    "source": "PSA",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Space Swine",
+    "source": "BAM",
+    "speed": { "walk": 40, "fly": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Spiderfrog",
+    "source": "MGELFT",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Stench Kow",
+    "source": "VGM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Szikzith",
+    "source": "NRH-AWoL",
+    "speed": { "walk": 40, "climb": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Velociraptor",
+    "source": "VGM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Walrus",
+    "source": "IDRotF",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  { "cr": 0.25, "name": "Wolf", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0.25,
+    "name": "Wolf of the Overworld",
+    "source": "MCV3MC",
+    "speed": { "walk": 40 }
+  },
+  { "cr": 0.25, "name": "Yak", "source": "SKT", "speed": { "walk": 50 } },
+  { "cr": 0.25, "name": "Zebra", "source": "ToA", "speed": { "walk": 60 } },
+  {
+    "cr": 0.5,
+    "name": "Ape",
+    "source": "MM",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Ashen Warhorse",
+    "source": "KftGV",
+    "speed": { "walk": 60 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Awakened Giant Wasp",
+    "source": "WDMM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Black Bear",
+    "source": "MM",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Crocodile",
+    "source": "MM",
+    "speed": { "walk": 20, "swim": 30 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Fiendish Giant Spider",
+    "source": "OotA",
+    "speed": { "walk": 40, "climb": 40 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Frilled Deathspitter",
+    "source": "PSX",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Giant Canary",
+    "source": "FTD",
+    "speed": { "walk": 30, "fly": 60 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Giant Dragonfly",
+    "source": "WBtW",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  { "cr": 0.5, "name": "Giant Goat", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 0.5,
+    "name": "Giant Sea Eel",
+    "source": "GoS",
+    "speed": { "walk": 0, "swim": 40 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Giant Sea Horse",
+    "source": "MM",
+    "speed": { "walk": 0, "swim": 40 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Giant Wasp",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  { "cr": 0.5, "name": "Gremlin", "source": "PSK", "speed": { "walk": 40 } },
+  {
+    "cr": 0.5,
+    "name": "Hammerskull",
+    "source": "PSX",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Jaculi",
+    "source": "ToA",
+    "speed": { "walk": 30, "climb": 20 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Koi Prawn",
+    "source": "JttRC",
+    "speed": { "walk": 0, "swim": 40 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Metal Wasp",
+    "source": "WDMM",
+    "speed": { "walk": 10, "fly": 50 }
+  },
+  { "cr": 0.5, "name": "Oxen", "source": "PSZ", "speed": { "walk": 40 } },
+  { "cr": 0.5, "name": "Reef Shark", "source": "MM", "speed": { "swim": 40 } },
+  {
+    "cr": 0.5,
+    "name": "Space Eel",
+    "source": "BAM",
+    "speed": { "walk": 10, "fly": 30 }
+  },
+  { "cr": 0.5, "name": "Warhorse", "source": "MM", "speed": { "walk": 60 } },
+  {
+    "cr": 1,
+    "name": "Awakened Brown Bear",
+    "source": "WDMM",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Brown Bear",
+    "source": "MM",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  { "cr": 1, "name": "Clawfoot", "source": "ERLW", "speed": { "walk": 40 } },
+  { "cr": 1, "name": "Deinonychus", "source": "VGM", "speed": { "walk": 40 } },
+  { "cr": 1, "name": "Dire Wolf", "source": "MM", "speed": { "walk": 50 } },
+  {
+    "cr": 1,
+    "name": "Drake (Large)",
+    "source": "PSK",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  {
+    "cr": 1,
+    "name": "Drake (Large)",
+    "source": "PSZ",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  {
+    "cr": 1,
+    "name": "Female Steeder",
+    "source": "OotA",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Eagle",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Flying Spider",
+    "source": "WDMM",
+    "speed": { "walk": 30, "climb": 30, "fly": 40 }
+  },
+  { "cr": 1, "name": "Giant Hyena", "source": "MM", "speed": { "walk": 50 } },
+  {
+    "cr": 1,
+    "name": "Giant Octopus",
+    "source": "MM",
+    "speed": { "walk": 10, "swim": 60 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Raven",
+    "source": "SKT",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Rocktopus",
+    "source": "OotA",
+    "speed": { "walk": 20, "climb": 10 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Spider",
+    "source": "MM",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Swan",
+    "source": "WBtW",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Toad",
+    "source": "MM",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 1,
+    "name": "Giant Vulture",
+    "source": "MM",
+    "speed": { "walk": 10, "fly": 60 }
+  },
+  {
+    "cr": 1,
+    "name": "Gnarlid",
+    "source": "PSZ",
+    "speed": { "walk": 40, "climb": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Hound of Ill Omen",
+    "source": "XGE",
+    "speed": { "walk": 50 }
+  },
+  {
+    "cr": 1,
+    "name": "Ice Spider",
+    "source": "SKT",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Large Drake",
+    "source": "PSA",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  { "cr": 1, "name": "Lion", "source": "MM", "speed": { "walk": 50 } },
+  { "cr": 1, "name": "Moorbounder", "source": "EGW", "speed": { "walk": 70 } },
+  {
+    "cr": 1,
+    "name": "Old Croaker",
+    "source": "EGW",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 1,
+    "name": "Parvaz",
+    "source": "ToFW",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  { "cr": 1, "name": "Sangzor", "source": "CoS", "speed": { "walk": 40 } },
+  {
+    "cr": 1,
+    "name": "Snow Leopard",
+    "source": "TftYP",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 1,
+    "name": "Spider King",
+    "source": "OotA",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  { "cr": 1, "name": "Tiger", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 1,
+    "name": "Two-Headed Crocodile",
+    "source": "IMR",
+    "speed": { "walk": 20, "swim": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Young Winter Wolf",
+    "source": "TftYP",
+    "speed": { "walk": 50 }
+  },
+  {
+    "cr": 2,
+    "name": "Aerosaur (Large)",
+    "source": "PSX",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  { "cr": 2, "name": "Allosaurus", "source": "MM", "speed": { "walk": 60 } },
+  {
+    "cr": 2,
+    "name": "Animatronic Allosaurus",
+    "source": "KftGV",
+    "speed": { "walk": 60 }
+  },
+  { "cr": 2, "name": "Aurochs", "source": "VGM", "speed": { "walk": 50 } },
+  {
+    "cr": 2,
+    "name": "Cave Bear",
+    "source": "MM",
+    "speed": { "walk": 40, "swim": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Dinosaur Skeleton",
+    "source": "JttRC",
+    "speed": { "walk": 60 }
+  },
+  { "cr": 2, "name": "Ebonclaw", "source": "ToFW", "speed": { "walk": 40 } },
+  {
+    "cr": 2,
+    "name": "Enormous Tentacle",
+    "source": "OoW",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  { "cr": 2, "name": "Ferocidon", "source": "PSX", "speed": { "walk": 60 } },
+  { "cr": 2, "name": "Giant Boar", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 2,
+    "name": "Giant Constrictor Snake",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Giant Crayfish",
+    "source": "TftYP",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  { "cr": 2, "name": "Giant Elk", "source": "MM", "speed": { "walk": 60 } },
+  {
+    "cr": 2,
+    "name": "Giant White Moray Eel",
+    "source": "GoS",
+    "speed": { "walk": 0, "swim": 40 }
+  },
+  { "cr": 2, "name": "Great Cat", "source": "PSZ", "speed": { "walk": 40 } },
+  {
+    "cr": 2,
+    "name": "Huge Polar Bear",
+    "source": "TftYP",
+    "speed": { "walk": 40, "swim": 30 }
+  },
+  { "cr": 2, "name": "Hunter Shark", "source": "MM", "speed": { "swim": 40 } },
+  {
+    "cr": 2,
+    "name": "Ice Spider Queen",
+    "source": "SKT",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Kavu Predator",
+    "source": "PSD",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Plesiosaurus",
+    "source": "MM",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 2,
+    "name": "Polar Bear",
+    "source": "MM",
+    "speed": { "walk": 40, "swim": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Quetzalcoatlus",
+    "source": "VGM",
+    "speed": { "walk": 10, "fly": 80 }
+  },
+  {
+    "cr": 2,
+    "name": "Relic Sloth",
+    "source": "SCC",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  { "cr": 2, "name": "Rhinoceros", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 2,
+    "name": "River Serpent",
+    "source": "PSA",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Saber-Toothed Tiger",
+    "source": "MM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 2,
+    "name": "Sharkbody Abomination",
+    "source": "EGW",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 2,
+    "name": "Shoal Serpent",
+    "source": "PSZ",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 2,
+    "name": "Skeletal Polar Bear",
+    "source": "IMR",
+    "speed": { "walk": 40, "swim": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Young Bulette",
+    "source": "PotA",
+    "speed": { "walk": 40 }
+  },
+  { "cr": 3, "name": "Aegisaur", "source": "PSX", "speed": { "walk": 30 } },
+  {
+    "cr": 3,
+    "name": "Amphisbaena",
+    "source": "TftYP",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  { "cr": 3, "name": "Ankylosaurus", "source": "MM", "speed": { "walk": 30 } },
+  {
+    "cr": 3,
+    "name": "Armored Saber-Toothed Tiger",
+    "source": "CoS",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 3,
+    "name": "Awakened White Moose",
+    "source": "IDRotF",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 3,
+    "name": "Bristled Moorbounder",
+    "source": "EGW",
+    "speed": { "walk": 70 }
+  },
+  {
+    "cr": 3,
+    "name": "Giant Lightning Eel",
+    "source": "TftYP",
+    "speed": { "walk": 5, "swim": 30 }
+  },
+  {
+    "cr": 3,
+    "name": "Giant Scorpion",
+    "source": "MM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 3,
+    "name": "Giant Snapping Turtle",
+    "source": "ToA",
+    "speed": { "walk": 30, "swim": 40 }
+  },
+  { "cr": 3, "name": "Killer Whale", "source": "MM", "speed": { "swim": 60 } },
+  { "cr": 3, "name": "Serpopard", "source": "PSA", "speed": { "walk": 40 } },
+  { "cr": 3, "name": "Spotted Lion", "source": "BGG", "speed": { "walk": 60 } },
+  {
+    "cr": 3,
+    "name": "Sword Spider",
+    "source": "MaBJoV",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 3,
+    "name": "Young Horizonback Tortoise",
+    "source": "CRCotN",
+    "speed": { "walk": 30 }
+  },
+  { "cr": 4, "name": "Armasaur", "source": "PSX", "speed": { "walk": 40 } },
+  { "cr": 4, "name": "Elephant", "source": "MM", "speed": { "walk": 40 } },
+  {
+    "cr": 4,
+    "name": "Giant Coral Snake",
+    "source": "GoS",
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "cr": 4,
+    "name": "Giant Subterranean Lizard",
+    "source": "TftYP",
+    "speed": { "walk": 30, "swim": 50 }
+  },
+  {
+    "cr": 4,
+    "name": "Giant Walrus",
+    "source": "IDRotF",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  {
+    "cr": 4,
+    "name": "Hippopotamus",
+    "source": "PSA",
+    "speed": { "walk": 40, "swim": 30 }
+  },
+  {
+    "cr": 4,
+    "name": "Lifecraft Elephant",
+    "source": "PSK",
+    "speed": { "walk": 40 }
+  },
+  { "cr": 4, "name": "Ophelia", "source": "ToFW", "speed": { "walk": 40 } },
+  {
+    "cr": 4,
+    "name": "Steel Leaf Kavu",
+    "source": "PSD",
+    "speed": { "walk": 40 }
+  },
+  { "cr": 4, "name": "Stegosaurus", "source": "VGM", "speed": { "walk": 40 } },
+  {
+    "cr": 4,
+    "name": "Two-Headed Plesiosaurus",
+    "source": "TTP",
+    "speed": { "walk": 20, "swim": 40 }
+  },
+  { "cr": 5, "name": "Altisaur", "source": "PSX", "speed": { "walk": 30 } },
+  {
+    "cr": 5,
+    "name": "Ammit",
+    "source": "PSA",
+    "speed": { "walk": 30, "swim": 50 }
+  },
+  { "cr": 5, "name": "Baloth", "source": "PSZ", "speed": { "walk": 50 } },
+  { "cr": 5, "name": "Brontodon", "source": "PSX", "speed": { "walk": 30 } },
+  { "cr": 5, "name": "Brontosaurus", "source": "VGM", "speed": { "walk": 30 } },
+  { "cr": 5, "name": "Ceratops", "source": "PSX", "speed": { "walk": 50 } },
+  {
+    "cr": 5,
+    "name": "Elder Giant Lizard",
+    "source": "TftYP",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 5,
+    "name": "Giant Crocodile",
+    "source": "MM",
+    "speed": { "walk": 30, "swim": 50 }
+  },
+  { "cr": 5, "name": "Giant Shark", "source": "MM", "speed": { "swim": 50 } },
+  {
+    "cr": 5,
+    "name": "Hulking Crab",
+    "source": "SKT",
+    "speed": { "walk": 20, "swim": 30 }
+  },
+  { "cr": 5, "name": "Moonshark", "source": "CRCotN", "speed": { "swim": 50 } },
+  {
+    "cr": 5,
+    "name": "Obliteros",
+    "source": "WDH",
+    "speed": { "walk": 0, "swim": 50 }
+  },
+  {
+    "cr": 5,
+    "name": "Sailback",
+    "source": "PSX",
+    "speed": { "walk": 30, "swim": 50 }
+  },
+  {
+    "cr": 5,
+    "name": "Sky Whale",
+    "source": "PSK",
+    "speed": {
+      "fly": { "number": 50, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  { "cr": 5, "name": "Titanothere", "source": "BGG", "speed": { "walk": 50 } },
+  { "cr": 5, "name": "Triceratops", "source": "MM", "speed": { "walk": 50 } },
+  {
+    "cr": 5,
+    "name": "Whirlwyrm",
+    "source": "ToFW",
+    "speed": { "walk": 30, "swim": 50 }
+  },
+  { "cr": 6, "name": "Cerodon", "source": "PSA", "speed": { "walk": 40 } },
+  { "cr": 6, "name": "Mammoth", "source": "MM", "speed": { "walk": 40 } },
+  { "cr": 6, "name": "Terastodon", "source": "PSZ", "speed": { "walk": 40 } }
 ]
