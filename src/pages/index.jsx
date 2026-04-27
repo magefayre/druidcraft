@@ -68,6 +68,10 @@ const HomePage = ({ beasts, sources }) => {
     }))
   }
 
+  if (!circleForms) {
+    beasts = beasts.filter(({ cr }) => cr <= 1)
+  }
+
   return (
     <PageContainer meta={meta}>
       <SocialProfileJsonLd
@@ -107,7 +111,6 @@ const HomePage = ({ beasts, sources }) => {
           </dl>
         </Grid.Item>
       </Grid>
-
       <List
         unstyled
         style={{
