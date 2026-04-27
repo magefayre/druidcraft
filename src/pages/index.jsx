@@ -13,6 +13,7 @@ const CR = { 0.125: '1/8', 0.25: '1/4', 0.5: '1/2' }
 const EMPTY = '-'
 const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 }
 const SUFFIXES = { one: 'st', two: 'nd', few: 'rd', other: 'th' }
+const VERBS = { swim: 'Swims', fly: 'Flies' }
 
 const pr = new Intl.PluralRules('en-US', { type: 'ordinal' })
 const { name, title, logo, socialLinks, url } = config
@@ -119,7 +120,7 @@ const HomePage = ({ beasts, sources }) => {
           const formatSpeed = key =>
             !!speed[key] && (
               <abbr title={`Requires ${formatOrdinals(LEVELS[key])} level`}>
-                {key}
+                {VERBS[key]}
               </abbr>
             )
           const speedLimit = key => level < LEVELS[key] && !!speed[key]
