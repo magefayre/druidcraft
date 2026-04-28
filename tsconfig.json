@@ -14,13 +14,14 @@
     "jsx": "react-jsx",
     "paths": {
       "~components/*": ["./src/components/*"],
+      "~constants": ["./src/constants"],
       "~config": ["./site.config"],
       "~data/*": ["./src/data/*"],
       "~images/*": ["./src/images/*"],
       "~styles/*": ["./src/styles/_*", "./src/styles/*"],
       "~theme": ["./src/theme"],
       "~types": ["./src/types"],
-      "~utils/*": ["./src/utils/*"]
+      "~utils": ["./src/utils"]
     }
   },
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*"],

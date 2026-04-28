@@ -1,51 +1,25 @@
 import { Card, Grid, List } from '@newhighsco/chipset'
 import type { GetStaticProps, NextPage } from 'next'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
+import type { ChangeEventHandler } from 'react'
 import React, { useEffect, useState } from 'react'
 import urlJoin from 'url-join'
 
 import PageContainer from '~components/PageContainer'
 import config from '~config'
+import { CR, LEVELS } from '~constants'
 import { loadData } from '~data/utils'
 import type { Beast, Source } from '~types'
+import {
+  formatCR,
+  formatSpeed,
+  formatSpeedLimits,
+  getMaxCR,
+  getSpeedLimit
+} from '~utils'
 
-const CR = { 0.125: '1/8', 0.25: '1/4', 0.5: '1/2' }
-const EMPTY = '-'
-const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 }
-const SUFFIXES = { one: 'st', two: 'nd', few: 'rd', other: 'th' }
-const VERBS = { swim: 'Swims', fly: 'Flies' }
-
-const pr = new Intl.PluralRules('en-US', { type: 'ordinal' })
 const { name, title, logo, socialLinks, url } = config
 const meta = { canonical: urlJoin(url, '/'), customTitle: true, title }
-
-const formatCR = (cr: number) => CR[cr] ?? cr ?? EMPTY
-
-const formatSpeedLimits = (level: number) => {
-  if (level < LEVELS.walk) return EMPTY
-  if (level < LEVELS.swim) return 'No flying or swimming speed'
-  if (level < LEVELS.fly) return 'No flying speed'
-
-  return EMPTY
-}
-
-const formatOrdinals = (n: number) => {
-  const suffix = SUFFIXES[pr.select(n)]
-
-  return `${n}${suffix}`
-}
-
-const getMaxCR = ({ level, circleForms = false }) => {
-  if (circleForms && level >= LEVELS.walk) {
-    return Math.max(LEVELS.min, Math.floor(level / 3))
-  }
-
-  if (level >= LEVELS.fly) return 1
-  if (level >= LEVELS.swim) return 0.5
-  if (level >= LEVELS.walk) return 0.25
-
-  return null
-}
 
 type Props = { beasts: Beast[]; sources: Record<Source, string> }
 
@@ -61,7 +35,7 @@ const HomePage: NextPage<Props> = ({ beasts, sources }) => {
     setMaxCR(getMaxCR(formData))
   }, [formData])
 
-  const handleChange = ({ target }) => {
+  const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
     const { name, value, checked, type } = target
 
     setFormData(formData => ({
@@ -71,7 +45,7 @@ const HomePage: NextPage<Props> = ({ beasts, sources }) => {
   }
 
   if (!circleForms) {
-    beasts = beasts.filter(({ cr }) => cr <= 1)
+    beasts = beasts.filter(({ cr }) => cr <= CR.fly)
   }
 
   return (
@@ -95,12 +69,16 @@ const HomePage: NextPage<Props> = ({ beasts, sources }) => {
                 type="number"
                 min={LEVELS.min}
                 max={LEVELS.max}
-                value={level}
+                defaultValue={level}
               />
             </label>
             <label>
               <span>Circle Forms</span>
-              <input name="circleForms" type="checkbox" checked={circleForms} />
+              <input
+                name="circleForms"
+                type="checkbox"
+                defaultChecked={circleForms}
+              />
             </label>
           </form>
         </Grid.Item>
@@ -122,16 +100,11 @@ const HomePage: NextPage<Props> = ({ beasts, sources }) => {
         }}
       >
         {beasts.map(({ cr, name, source, speed }) => {
-          const formatSpeed = (key: string) =>
-            !!speed[key] && (
-              <abbr title={`Requires ${formatOrdinals(LEVELS[key])} level`}>
-                {VERBS[key]}
-              </abbr>
-            )
-          const speedLimit = (key: string) =>
-            level < LEVELS[key] && !!speed[key]
           const disabled =
-            !maxCR || cr > maxCR || speedLimit('swim') || speedLimit('fly')
+            !maxCR ||
+            cr > maxCR ||
+            getSpeedLimit(level, speed, 'swim') ||
+            getSpeedLimit(level, speed, 'fly')
 
           return (
             <li key={`${source}/${name}`}>
@@ -146,8 +119,8 @@ const HomePage: NextPage<Props> = ({ beasts, sources }) => {
               >
                 <abbr title="Challenge Rating">CR {formatCR(cr)}</abbr>
                 <abbr title={sources[source]}>{source}</abbr>
-                {formatSpeed('swim')}
-                {formatSpeed('fly')}
+                {formatSpeed(speed, 'swim')}
+                {formatSpeed(speed, 'fly')}
               </Card>
             </li>
           )
