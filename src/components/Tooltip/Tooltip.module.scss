@@ -1,0 +1,14 @@
+@use '~styles/colors.module';
+
+.toggle[aria-expanded] {
+  cursor: help;
+}
+
+.content {
+  background: colors.$black;
+  border-radius: 0.25em;
+  color: colors.$white;
+  font-size: small;
+  margin: 0.125em;
+  padding: 0.125em 0.25em;
+}

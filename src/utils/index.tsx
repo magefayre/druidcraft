@@ -4,8 +4,7 @@ import {
   EMPTY,
   LEVEL_SUFFIXES,
   LEVELS,
-  PLURALS,
-  SPEED_VERBS
+  PLURALS
 } from '~constants'
 import type { Beast, Speed } from '~types'
 
@@ -13,13 +12,6 @@ export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
 export const formatLevel = (level: number) =>
   `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
-
-export const formatSpeed = (speed: Beast['speed'], type: Speed) =>
-  !!speed[type] && (
-    <abbr title={`Requires ${formatLevel(LEVELS[type])} level`}>
-      {SPEED_VERBS[type]}
-    </abbr>
-  )
 
 export const formatSpeedLimits = (level: number) => {
   if (level < LEVELS.walk) return EMPTY

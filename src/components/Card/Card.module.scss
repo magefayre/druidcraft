@@ -1,19 +1,25 @@
 @use '~styles/colors.module';
 
 .root {
-  border: 1px solid colors.$black;
+  --card-color: #{colors.$black};
+
+  border: 1px solid var(--card-color);
+  color: var(--card-color);
   border-radius: 0.5em;
   display: flex;
   flex-direction: column;
+  line-height: 1.25;
+  overflow: visible;
 
   &[disabled] {
+    --card-color: #{colors.$grey};
+
     cursor: not-allowed;
-    opacity: 0.5;
   }
 }
 
 .content {
-  border-top: 1px solid colors.$black;
+  border-top: 1px solid currentColor;
   padding: 0.5em;
 }
 
@@ -21,9 +27,15 @@
   aspect-ratio: 1/1;
   height: auto;
   padding: 0.5em;
+
+  [disabled] & {
+    opacity: 0.25;
+  }
 }
 
+.heading,
 .copy {
+  align-items: start;
   display: flex;
   gap: 0.25em;
   justify-content: space-between;
