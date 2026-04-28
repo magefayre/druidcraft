@@ -48,7 +48,7 @@
     "@newhighsco/chipset": "7.0.0",
     "@newhighsco/next-plugin-svgr": "3.0.168",
     "@newhighsco/press-start": "2.6.40",
-    "@newhighsco/ts-config": "1.0.2",
+    "@newhighsco/ts-config": "1.1.0",
     "@types/react": "19.2.14",
     "next": "16.2.4",
     "next-compose-plugins": "2.2.1",
