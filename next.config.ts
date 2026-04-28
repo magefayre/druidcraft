@@ -1,11 +1,12 @@
 import withSvgr from '@newhighsco/next-plugin-svgr'
+import type { NextConfig } from 'next'
 import withPlugins from 'next-compose-plugins'
+
+import { tokenURL } from '~components/Beast/utils'
 
 const BASE = new URL(
   'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-img/main/'
 )
-
-import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   images: {
@@ -16,7 +17,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   rewrites: () => [
     {
-      source: '/tokens/:source/:name',
+      source: tokenURL({ source: ':source', name: ':name' }),
       destination: new URL('bestiary/tokens/:source/:name.webp', BASE).href
     }
   ],

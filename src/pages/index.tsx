@@ -1,29 +1,24 @@
-import { Card, Grid, List } from '@newhighsco/chipset'
+import { Grid } from '@newhighsco/chipset'
 import type { GetStaticProps, NextPage } from 'next'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 import type { ChangeEventHandler } from 'react'
 import React, { useEffect, useState } from 'react'
 import urlJoin from 'url-join'
 
+import { BeastList } from '~components/Beast'
 import PageContainer from '~components/PageContainer'
 import config from '~config'
 import { CR, LEVELS } from '~constants'
 import { loadData } from '~data/utils'
-import type { Beast, Source } from '~types'
-import {
-  formatCR,
-  formatSpeed,
-  formatSpeedLimits,
-  getMaxCR,
-  getSpeedLimit
-} from '~utils'
+import type { Beast } from '~types'
+import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
 
 const { name, title, logo, socialLinks, url } = config
 const meta = { canonical: urlJoin(url, '/'), customTitle: true, title }
 
-type Props = { beasts: Beast[]; sources: Record<Source, string> }
+type Props = { beasts: Beast[] }
 
-const HomePage: NextPage<Props> = ({ beasts, sources }) => {
+const HomePage: NextPage<Props> = ({ beasts }) => {
   const [formData, setFormData] = useState({
     level: LEVELS.min,
     circleForms: false
@@ -91,50 +86,15 @@ const HomePage: NextPage<Props> = ({ beasts, sources }) => {
           </dl>
         </Grid.Item>
       </Grid>
-      <List
-        unstyled
-        style={{
-          display: 'grid',
-          gap: '1em',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(9em, 1fr))'
-        }}
-      >
-        {beasts.map(({ cr, name, source, speed }) => {
-          const disabled =
-            !maxCR ||
-            cr > maxCR ||
-            getSpeedLimit(level, speed, 'swim') ||
-            getSpeedLimit(level, speed, 'fly')
-
-          return (
-            <li key={`${source}/${name}`}>
-              <Card
-                heading={<h2>{name}</h2>}
-                image={{
-                  src: `/tokens/${source}/${name.normalize('NFD').replace(/\p{Diacritic}/gu, '')}`,
-                  width: 280,
-                  height: 280
-                }}
-                disabled={disabled}
-              >
-                <abbr title="Challenge Rating">CR {formatCR(cr)}</abbr>
-                <abbr title={sources[source]}>{source}</abbr>
-                {formatSpeed(speed, 'swim')}
-                {formatSpeed(speed, 'fly')}
-              </Card>
-            </li>
-          )
-        })}
-      </List>
+      <BeastList beasts={beasts} level={level} maxCR={maxCR} />
     </PageContainer>
   )
 }
 
 export const getStaticProps = (async () => {
   const beasts = await loadData('beasts.json')
-  const sources = await loadData('sources.json')
 
-  return { props: { beasts, sources } }
+  return { props: { beasts } }
 }) satisfies GetStaticProps<Props>
 
 export default HomePage
