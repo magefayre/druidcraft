@@ -2869,7 +2869,9 @@ __metadata:
     "@newhighsco/release-config": "npm:1.4.27"
     "@newhighsco/stylelint-config": "npm:4.0.39"
     "@newhighsco/svgr-config": "npm:1.0.0"
+    "@newhighsco/ts-config": "npm:1.0.2"
     "@newhighsco/yarn-plugin-preset": "npm:1.1.3"
+    "@types/react": "npm:19.2.14"
     concurrently: "npm:9.2.1"
     eslint: "npm:10.2.1"
     husky: "npm:9.1.7"
@@ -2885,6 +2887,7 @@ __metadata:
     semantic-release: "npm:25.0.3"
     stylelint: "npm:17.9.1"
     tsx: "npm:4.21.0"
+    typescript: "npm:6.0.3"
     yargs: "npm:18.0.0"
   languageName: unknown
   linkType: soft
@@ -3057,6 +3060,13 @@ __metadata:
   dependencies:
     "@newhighsco/svgo-config": "npm:1.0.2"
   checksum: 10c0/1b72ebc35cd1d9b6626a976bbcb0ac7fcab424c81bbd899e88410d60b41e0eb0eec923fae60ab9347c6088e9694e930e5eaba5a7bef594272bd1d43b6c296857
+  languageName: node
+  linkType: hard
+
+"@newhighsco/ts-config@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@newhighsco/ts-config@npm:1.0.2"
+  checksum: 10c0/b595035c8e5ce878231a7777072356e0b099ffe69ba37bd96f86c104f7a18a6db5524c7fcfea843de7f906590e6916d055e58e1392bfd5aa09d566b91a1d3e63
   languageName: node
   linkType: hard
 
@@ -4170,6 +4180,15 @@ __metadata:
   version: 2.4.4
   resolution: "@types/normalize-package-data@npm:2.4.4"
   checksum: 10c0/aef7bb9b015883d6f4119c423dd28c4bdc17b0e8a0ccf112c78b4fe0e91fbc4af7c6204b04bba0e199a57d2f3fbbd5b4a14bf8739bf9d2a39b2a0aad545e0f86
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:19.2.14":
+  version: 19.2.14
+  resolution: "@types/react@npm:19.2.14"
+  dependencies:
+    csstype: "npm:^3.2.2"
+  checksum: 10c0/7d25bf41b57719452d86d2ac0570b659210402707313a36ee612666bf11275a1c69824f8c3ee1fdca077ccfe15452f6da8f1224529b917050eb2d861e52b59b7
   languageName: node
   linkType: hard
 
@@ -5584,6 +5603,13 @@ __metadata:
   dependencies:
     css-tree: "npm:~2.2.0"
   checksum: 10c0/ab4beb1e97dd7e207c10e9925405b45f15a6cd1b4880a8686ad573aa6d476aed28b4121a666cffd26c37a26179f7b54741f7c257543003bfb244d06a62ad569b
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.2.2":
+  version: 3.2.3
+  resolution: "csstype@npm:3.2.3"
+  checksum: 10c0/cd29c51e70fa822f1cecd8641a1445bed7063697469d35633b516e60fe8c1bde04b08f6c5b6022136bb669b64c63d4173af54864510fbb4ee23281801841a3ce
   languageName: node
   linkType: hard
 
@@ -12166,6 +12192,26 @@ __metadata:
     eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
     typescript: ">=4.8.4 <6.1.0"
   checksum: 10c0/93f3d66e2a2427a719a19f7bfd5d21c76a6bdcf9cfe82ba14d37f869434893f7d4d62c75671a87a93a3ef13816636d2bfe79b2f145d6cbcda5efbfddd90c1c2d
+  languageName: node
+  linkType: hard
+
+"typescript@npm:6.0.3":
+  version: 6.0.3
+  resolution: "typescript@npm:6.0.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/4a25ff5045b984370f48f196b3a0120779b1b343d40b9a68d114ea5e5fff099809b2bb777576991a63a5cd59cf7bffd96ff6fe10afcefbcb8bd6fb96ad4b6606
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>":
+  version: 6.0.3
+  resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/2f25c74e65663c248fa1ade2b8459d9ce5372ff9dad07067310f132966ebec1d93f6c42f0baf77a6b6a7a91460463f708e6887013aaade22111037457c6b25df
   languageName: node
   linkType: hard
 

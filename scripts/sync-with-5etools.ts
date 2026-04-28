@@ -1,7 +1,10 @@
 import { existsSync, mkdirSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+
 import yargs from 'yargs'
+
+import type { Beast, Monster, Monsters, Source } from '~types'
 
 declare global {
   var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
@@ -12,15 +15,15 @@ const BASE = new URL(
 )
 const MAX_CR = Math.floor(20 / 3)
 
-type Source = string
-type Beast = {
-  cr: number
-  name: string
-  source: Source
-  speed: Record<string, any>
-}
-type Monster = Beast & { _copy: Partial<Beast>; cr: string; type: string }
-type Monsters = { monster: Monster[] }
+// type Source = string
+// type Beast = {
+//   cr: number
+//   name: string
+//   source: Source
+//   speed: Record<string, unknown>
+// }
+// type Monster = Beast & { _copy: Partial<Beast>; cr: string; type: string }
+// type Monsters = { monster: Monster[] }
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -77,7 +80,7 @@ const filterCopies = (monsters: Monster[], existing: Beast[]) =>
           ...beasts,
           {
             ...Object.entries(base).reduce<Beast>((beast, [key, value]) => {
-              return { ...beast, [key]: (rest as any)[key] ?? value }
+              return { ...beast, [key]: (rest as unknown)[key] ?? value }
             }, {} as Beast),
             cr: parseCR(cr) ?? base.cr
           }

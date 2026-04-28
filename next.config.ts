@@ -1,12 +1,13 @@
-const withPlugins = require('next-compose-plugins')
-const withSvgr = require('@newhighsco/next-plugin-svgr')
-const withVideos = require('next-videos')
+import withSvgr from '@newhighsco/next-plugin-svgr'
+import withPlugins from 'next-compose-plugins'
 
 const BASE = new URL(
   'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-img/main/'
 )
 
-const nextConfig = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [new URL('**', BASE)]
@@ -20,6 +21,7 @@ const nextConfig = {
     }
   ],
   transpilePackages: ['@newhighsco/chipset', '@newhighsco/press-start'],
+  typedRoutes: true,
   webpack: config => {
     config.module.rules.push({
       test: /\.(txt|xml|woff(2)?)$/,
@@ -30,7 +32,4 @@ const nextConfig = {
   }
 }
 
-module.exports = withPlugins(
-  [[withSvgr, { inlineImageLimit: -1 }], [withVideos]],
-  nextConfig
-)
+export default withPlugins([[withSvgr, { inlineImageLimit: -1 }]], nextConfig)

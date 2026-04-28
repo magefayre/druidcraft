@@ -1,13 +1,13 @@
 import { Card, Grid, List } from '@newhighsco/chipset'
+import type { GetStaticProps, NextPage } from 'next'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
-import { object } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import urlJoin from 'url-join'
 
 import PageContainer from '~components/PageContainer'
 import config from '~config'
-
-import { loadData } from '../data/utils'
+import { loadData } from '~data/utils'
+import type { Beast, Source } from '~types'
 
 const CR = { 0.125: '1/8', 0.25: '1/4', 0.5: '1/2' }
 const EMPTY = '-'
@@ -19,9 +19,9 @@ const pr = new Intl.PluralRules('en-US', { type: 'ordinal' })
 const { name, title, logo, socialLinks, url } = config
 const meta = { canonical: urlJoin(url, '/'), customTitle: true, title }
 
-const formatCR = cr => CR[cr] ?? cr ?? EMPTY
+const formatCR = (cr: number) => CR[cr] ?? cr ?? EMPTY
 
-const formatSpeedLimits = level => {
+const formatSpeedLimits = (level: number) => {
   if (level < LEVELS.walk) return EMPTY
   if (level < LEVELS.swim) return 'No flying or swimming speed'
   if (level < LEVELS.fly) return 'No flying speed'
@@ -29,7 +29,7 @@ const formatSpeedLimits = level => {
   return EMPTY
 }
 
-const formatOrdinals = n => {
+const formatOrdinals = (n: number) => {
   const suffix = SUFFIXES[pr.select(n)]
 
   return `${n}${suffix}`
@@ -47,7 +47,9 @@ const getMaxCR = ({ level, circleForms = false }) => {
   return null
 }
 
-const HomePage = ({ beasts, sources }) => {
+type Props = { beasts: Beast[]; sources: Record<Source, string> }
+
+const HomePage: NextPage<Props> = ({ beasts, sources }) => {
   const [formData, setFormData] = useState({
     level: LEVELS.min,
     circleForms: false
@@ -120,13 +122,14 @@ const HomePage = ({ beasts, sources }) => {
         }}
       >
         {beasts.map(({ cr, name, source, speed }) => {
-          const formatSpeed = key =>
+          const formatSpeed = (key: string) =>
             !!speed[key] && (
               <abbr title={`Requires ${formatOrdinals(LEVELS[key])} level`}>
                 {VERBS[key]}
               </abbr>
             )
-          const speedLimit = key => level < LEVELS[key] && !!speed[key]
+          const speedLimit = (key: string) =>
+            level < LEVELS[key] && !!speed[key]
           const disabled =
             !maxCR || cr > maxCR || speedLimit('swim') || speedLimit('fly')
 
@@ -154,13 +157,11 @@ const HomePage = ({ beasts, sources }) => {
   )
 }
 
-HomePage.propTypes = { meta: object }
-
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const beasts = await loadData('beasts.json')
   const sources = await loadData('sources.json')
 
   return { props: { beasts, sources } }
-}
+}) satisfies GetStaticProps<Props>
 
 export default HomePage
