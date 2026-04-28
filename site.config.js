@@ -8,7 +8,7 @@ const config = {
   name: 'Druidcraft',
   shortName: null,
   title: 'Druidcraft - Wild Shape? I was livid!',
-  description: 'TODO:',
+  description: 'Never struggle with choosing a Wild Shape again',
   logo: { bitmap: logoBitmap.src, vector: logoVector },
   openGraphImage: openGraphImage.src,
   themeColor: colors.black,
