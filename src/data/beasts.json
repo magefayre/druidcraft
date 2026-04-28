@@ -47,13 +47,13 @@
   {
     "cr": 0,
     "name": "Chimeric Fox",
-    "source": "NRH-AVitW",
+    "source": "IDRotF",
     "speed": { "walk": 30, "burrow": 5 }
   },
   {
     "cr": 0,
     "name": "Chimeric Fox",
-    "source": "IDRotF",
+    "source": "NRH-AVitW",
     "speed": { "walk": 30, "burrow": 5 }
   },
   {

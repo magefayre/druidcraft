@@ -85,8 +85,9 @@ const filterCopies = (monsters: Monster[], existing: Beast[]) =>
 
 const sortBeasts = (a: Beast, b: Beast) => {
   if (a.cr !== b.cr) return a.cr - b.cr
+  if (a.name !== b.name) return a.name.localeCompare(b.name)
 
-  return a.name.localeCompare(b.name)
+  return a.source.localeCompare(b.source)
 }
 
 ;(async () => {
