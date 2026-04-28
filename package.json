@@ -1,6 +1,6 @@
 {
   "name": "@magefayre/druidcraft",
-  "description": "Wild Shape? I was livid!",
+  "description": "Never struggle with choosing a Wild Shape again",
   "version": "1.0.0",
   "author": "Magefayre",
   "license": "ISC",
@@ -35,6 +35,7 @@
     "serve": "next start",
     "sync-with-5etools": "tsx scripts/sync-with-5etools --output src/data",
     "postsync-with-5etools": "yarn format:js src/data",
+    "pretest": "tsc --noEmit",
     "test": "yarn lint",
     "lint": "concurrently 'yarn:lint:*'",
     "lint:js": "eslint --cache .",
@@ -47,6 +48,8 @@
     "@newhighsco/chipset": "7.0.0",
     "@newhighsco/next-plugin-svgr": "3.0.168",
     "@newhighsco/press-start": "2.6.40",
+    "@newhighsco/ts-config": "1.0.2",
+    "@types/react": "19.2.14",
     "next": "16.2.4",
     "next-compose-plugins": "2.2.1",
     "next-sitemap": "4.2.3",
@@ -68,6 +71,7 @@
     "@newhighsco/stylelint-config": "4.0.39",
     "@newhighsco/svgr-config": "1.0.0",
     "@newhighsco/yarn-plugin-preset": "1.1.3",
+    "@types/react": "19.2.14",
     "concurrently": "9.2.1",
     "eslint": "10.2.1",
     "husky": "9.1.7",
@@ -75,6 +79,7 @@
     "semantic-release": "25.0.3",
     "stylelint": "17.9.1",
     "tsx": "4.21.0",
+    "typescript": "6.0.3",
     "yargs": "18.0.0"
   },
   "browserslist": [

@@ -1,7 +1,12 @@
 import { existsSync, mkdirSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+
 import yargs from 'yargs'
+
+import { LEVELS } from '~constants'
+import type { Beast, Monster, Monsters, Source } from '~types'
+import { getCircleFormsCR } from '~utils'
 
 declare global {
   var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
@@ -10,17 +15,7 @@ declare global {
 const BASE = new URL(
   'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/main/'
 )
-const MAX_CR = Math.floor(20 / 3)
-
-type Source = string
-type Beast = {
-  cr: number
-  name: string
-  source: Source
-  speed: Record<string, any>
-}
-type Monster = Beast & { _copy: Partial<Beast>; cr: string; type: string }
-type Monsters = { monster: Monster[] }
+const MAX_CR = getCircleFormsCR(LEVELS.max)
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -77,7 +72,10 @@ const filterCopies = (monsters: Monster[], existing: Beast[]) =>
           ...beasts,
           {
             ...Object.entries(base).reduce<Beast>((beast, [key, value]) => {
-              return { ...beast, [key]: (rest as any)[key] ?? value }
+              return {
+                ...beast,
+                [key]: (rest as unknown as Monster)[key] ?? value
+              }
             }, {} as Beast),
             cr: parseCR(cr) ?? base.cr
           }
@@ -87,8 +85,9 @@ const filterCopies = (monsters: Monster[], existing: Beast[]) =>
 
 const sortBeasts = (a: Beast, b: Beast) => {
   if (a.cr !== b.cr) return a.cr - b.cr
+  if (a.name !== b.name) return a.name.localeCompare(b.name)
 
-  return a.name.localeCompare(b.name)
+  return a.source.localeCompare(b.source)
 }
 
 ;(async () => {
