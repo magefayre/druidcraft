@@ -17,6 +17,7 @@
       "~constants": ["./src/constants"],
       "~config": ["./site.config"],
       "~data/*": ["./src/data/*"],
+      "~hooks/*": ["./src/hooks/*"],
       "~images/*": ["./src/images/*"],
       "~layouts/*": ["./src/layouts/*"],
       "~styles/*": ["./src/styles/_*", "./src/styles/*"],

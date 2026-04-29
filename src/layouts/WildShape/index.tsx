@@ -12,6 +12,7 @@ import PageContainer, {
 import Section from '~components/Section'
 import config from '~config'
 import { CR, LEVELS } from '~constants'
+import { useLocalStorage } from '~hooks/useLocalStorage'
 import type { Beast } from '~types'
 import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
 
@@ -26,7 +27,7 @@ export type WildShapeLayoutProps = {
 }
 
 const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useLocalStorage('wildshape', {
     level: LEVELS.min,
     circleForms: false
   })
