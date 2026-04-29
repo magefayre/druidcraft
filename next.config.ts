@@ -15,6 +15,13 @@ const nextConfig: NextConfig = {
   },
   i18n: { locales: ['en'], defaultLocale: 'en' },
   poweredByHeader: false,
+  redirects: () => [
+    {
+      source: '/beast/:source/:name',
+      destination: 'https://2014.5e.tools/bestiary/:name-:source.html',
+      permanent: true
+    }
+  ],
   rewrites: () => [
     {
       source: tokenURL({ source: ':source', name: ':name' }),

@@ -8,7 +8,7 @@ import { ReactComponent as SwimSvg } from '~images/swim.svg'
 import type { Beast, Speed } from '~types'
 import { formatCR, formatLevel } from '~utils'
 
-import { TOKEN_SIZE, tokenURL } from '.'
+import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './BeastCard.module.scss'
 
 const ICONS: Partial<Record<Speed, FC<SVGProps<SVGSVGElement>>>> = {
@@ -40,6 +40,7 @@ const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
         width: TOKEN_SIZE,
         height: TOKEN_SIZE
       }}
+      href={url({ source, name })}
       {...props}
     >
       <Tooltip
