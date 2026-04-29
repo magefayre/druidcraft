@@ -1,8 +1,7 @@
-@use '~styles/colors.module';
 @use '~styles/functions';
 
 .root {
-  border-bottom: 1px solid colors.$black;
+  border-bottom: 1px solid currentColor;
 }
 
 .content {
