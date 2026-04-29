@@ -1,20 +1,13 @@
 import { Card, Icon, Tooltip } from '@newhighsco/chipset'
-import type { FC, SVGProps } from 'react'
+import type { FC } from 'react'
 
 import { LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
-import { ReactComponent as FlySvg } from '~images/fly.svg'
-import { ReactComponent as SwimSvg } from '~images/swim.svg'
-import type { Beast, Speed } from '~types'
+import type { Beast } from '~types'
 import { formatCR, formatLevel } from '~utils'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './BeastCard.module.scss'
-
-const ICONS: Partial<Record<Speed, FC<SVGProps<SVGSVGElement>>>> = {
-  swim: SwimSvg,
-  fly: FlySvg
-}
 
 type Props = Beast & { disabled?: boolean }
 
@@ -51,7 +44,7 @@ const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
         Challenge Rating {crLabel}
       </Tooltip>
       <span className={styles.icons}>
-        {Object.entries(ICONS).map(([type, Svg]) => {
+        {Object.keys(SPEEDS).map(type => {
           if (!speed[type]) return null
 
           const { plural } = SPEEDS[type]
@@ -61,7 +54,9 @@ const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
               key={type}
               toggle={
                 <Icon alt={plural} className={styles.icon}>
-                  <Svg />
+                  <svg viewBox="0 0 95 82.3" role="img">
+                    <use xlinkHref={`#${type}`} />
+                  </svg>
                 </Icon>
               }
               manual={false}

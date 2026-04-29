@@ -2,14 +2,15 @@
 @use '~styles/functions';
 
 .header {
-  --shadow: 0 1px 0 0 currentColor;
+  --box-shadow: 0 1px 0 0 currentColor;
+  --z-index: 2;
 
   background: colors.$white;
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
   padding-block: functions.spacing(2);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: var(--z-index);
   width: 100%;
 
   @supports (animation-timeline: scroll()) {
@@ -28,10 +29,12 @@
 @keyframes shadow {
   0% {
     box-shadow: none;
+    z-index: auto;
   }
 
   100% {
-    box-shadow: var(--shadow);
+    box-shadow: var(--box-shadow);
+    z-index: var(--z-index);
   }
 }
 

@@ -1,6 +1,7 @@
 import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
+import { ReactComponent as BeastSprite } from '~images/beast.svg'
 import type { Beast } from '~types'
 import { getSpeedLimit } from '~utils'
 
@@ -13,22 +14,25 @@ const BeastList: FC<Props> = ({ beasts, level, maxCR }) => {
   if (!beasts.length) return null
 
   return (
-    <List unstyled className={styles.root}>
-      {beasts.map(beast => {
-        const { cr, name, source, speed } = beast
-        const disabled =
-          !maxCR ||
-          cr > maxCR ||
-          getSpeedLimit(level, speed, 'swim') ||
-          getSpeedLimit(level, speed, 'fly')
+    <>
+      <List unstyled className={styles.root}>
+        {beasts.map(beast => {
+          const { cr, name, source, speed } = beast
+          const disabled =
+            !maxCR ||
+            cr > maxCR ||
+            getSpeedLimit(level, speed, 'swim') ||
+            getSpeedLimit(level, speed, 'fly')
 
-        return (
-          <li key={`${source}/${name}`}>
-            <BeastCard {...beast} disabled={disabled} />
-          </li>
-        )
-      })}
-    </List>
+          return (
+            <li key={`${source}/${name}`}>
+              <BeastCard {...beast} disabled={disabled} />
+            </li>
+          )
+        })}
+      </List>
+      <BeastSprite />
+    </>
   )
 }
 
