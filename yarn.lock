@@ -2858,7 +2858,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:20.5.2"
     "@newhighsco/browserslist-config": "npm:2.0.0"
-    "@newhighsco/chipset": "npm:7.0.0"
+    "@newhighsco/chipset": "npm:7.0.1"
     "@newhighsco/commitlint-config": "npm:1.1.53"
     "@newhighsco/editor-config": "npm:1.2.0"
     "@newhighsco/eslint-config": "npm:7.0.54"
@@ -2911,6 +2911,21 @@ __metadata:
     react: 19.2.4
     react-dom: 19.2.4
   checksum: 10c0/f9b0231d6e58c5e697932ab952ab32fd591de37f28845f1e287c58d552e43c764e2054058dbb3a50687c8afd01666a922d9695ea1068c3ab6976fa0cb1c5a450
+  languageName: node
+  linkType: hard
+
+"@newhighsco/chipset@npm:7.0.1":
+  version: 7.0.1
+  resolution: "@newhighsco/chipset@npm:7.0.1"
+  dependencies:
+    "@dr.pogodin/react-themes": "npm:1.10.3"
+    "@iconify/react": "npm:6.0.2"
+    classnames: "npm:2.5.1"
+    react-device-detect: "npm:2.2.3"
+  peerDependencies:
+    react: 19.2.5
+    react-dom: 19.2.5
+  checksum: 10c0/0bcdda68962922c7bae4a12e0268fe97602e96b2e5c8a66b0f4061ecc322c0b87bd71cb9404e8bfaa0b3997ba8339c806dcecf5492e25ead44616fc513e9ed92
   languageName: node
   linkType: hard
 
