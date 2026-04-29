@@ -25,12 +25,12 @@
 }
 
 .image {
-  aspect-ratio: 1/1;
-  height: auto;
-  padding: functions.spacing(1.5);
-
   [disabled] & {
     opacity: 0.25;
+  }
+
+  img {
+    padding: functions.spacing(1.5);
   }
 }
 
