@@ -1,4 +1,5 @@
 @use '~styles/colors.module';
+@use '~styles/functions';
 
 .toggle[aria-expanded] {
   cursor: help;
@@ -6,9 +7,9 @@
 
 .content {
   background: colors.$black;
-  border-radius: 0.25em;
+  border-radius: functions.spacing(0.5);
   color: colors.$white;
   font-size: small;
-  margin: 0.125em;
-  padding: 0.125em 0.25em;
+  margin: functions.spacing(0.5);
+  padding: functions.spacing(0.5) functions.spacing(1);
 }

@@ -1,9 +1,10 @@
 @use '~styles/colors.module';
+@use '~styles/functions';
 
 .cr {
   position: absolute;
-  inset-block-start: 0.25em;
-  inset-inline-end: 0.25em;
+  inset-block-start: functions.spacing(0.5);
+  inset-inline-end: functions.spacing(0.5);
 }
 
 .crToggle {
@@ -15,21 +16,23 @@
   display: flex;
   font-size: small;
   justify-content: center;
-  outline: 0.25em solid currentColor;
-  padding: 0.5em;
+  outline: functions.spacing(0.5) solid currentColor;
+  width: functions.spacing(5.5);
 }
 
 .icons {
   position: absolute;
-  inset-block-start: 0.5em;
-  inset-inline-start: 0.5em;
+  inset-block-start: functions.spacing(1.5);
+  inset-inline-start: functions.spacing(1);
 }
 
 .icon {
-  width: 2em;
+  width: functions.spacing(4.5);
 }
 
 .source {
   font-size: small;
   font-style: italic;
+  position: relative;
+  z-index: 1;
 }

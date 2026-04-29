@@ -23,6 +23,7 @@ export const LEVEL_SUFFIXES = {
 
 export const PLURALS = new Intl.PluralRules('en', { type: 'ordinal' })
 
-export const SPEED_VERBS = { swim: 'Swims', fly: 'Flies' } as Readonly<
-  Record<Speed, string>
->
+export const SPEEDS = {
+  swim: { plural: 'Swims', verb: 'swimming' },
+  fly: { plural: 'Flies', verb: 'flying' }
+} as Readonly<Record<Speed, { plural: string; verb: string }>>

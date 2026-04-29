@@ -1,7 +1,7 @@
 import { Card, Icon, Tooltip } from '@newhighsco/chipset'
 import type { FC, SVGProps } from 'react'
 
-import { LEVELS, SPEED_VERBS } from '~constants'
+import { LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
 import { ReactComponent as FlySvg } from '~images/fly.svg'
 import { ReactComponent as SwimSvg } from '~images/swim.svg'
@@ -54,17 +54,19 @@ const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
         {Object.entries(ICONS).map(([type, Svg]) => {
           if (!speed[type]) return null
 
+          const { plural } = SPEEDS[type]
+
           return (
             <Tooltip
               key={type}
               toggle={
-                <Icon alt={SPEED_VERBS[type]} className={styles.icon}>
+                <Icon alt={plural} className={styles.icon}>
                   <Svg />
                 </Icon>
               }
               manual={false}
             >
-              Requires {formatLevel(LEVELS[type])} level
+              {plural}: Requires {formatLevel(LEVELS[type])} level
             </Tooltip>
           )
         })}

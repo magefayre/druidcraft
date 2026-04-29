@@ -3,6 +3,7 @@
 @use '~styles/colors.module';
 @use '~styles/fonts.module';
 @use '~styles/font-faces';
+@use '~styles/functions';
 
 body {
   background-color: colors.$white;
@@ -25,7 +26,7 @@ a {
 
 dl {
   display: grid;
-  gap: 0 0.25em;
+  gap: 0 functions.spacing(0.5);
   grid-template-columns: max-content;
 }
 
@@ -45,11 +46,11 @@ dd {
 form {
   align-items: center;
   display: flex;
-  gap: 0.5em;
+  gap: functions.spacing(1);
 }
 
 label {
   align-items: center;
   display: flex;
-  gap: 0.5em;
+  gap: functions.spacing(1);
 }
