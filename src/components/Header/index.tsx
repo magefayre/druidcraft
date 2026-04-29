@@ -12,12 +12,14 @@ import header from '~data/header.json'
 
 import styles from './Header.module.scss'
 
-type Props = { size?: string }
-
-const Header: FC<Props> = ({ size = 'desktopLarge' }) => (
+const Header: FC = () => (
   <>
     <HeaderContainer theme={{ root: styles.root }}>
-      <ContentContainer gutter size={size} theme={{ content: styles.content }}>
+      <ContentContainer
+        gutter
+        size="desktopLarge"
+        theme={{ content: styles.content }}
+      >
         <Grid flex valign="middle">
           <Grid.Item className={styles.logo}>
             <SmartLink href="/">

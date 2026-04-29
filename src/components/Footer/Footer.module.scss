@@ -17,5 +17,10 @@
 }
 
 .icon {
-  width: functions.spacing(4);
+  height: functions.spacing(4);
+  width: auto;
+}
+
+.iconLink {
+  padding-inline-start: functions.spacing(2);
 }

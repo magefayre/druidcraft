@@ -1,0 +1,72 @@
+@use '~styles/colors.module';
+@use '~styles/functions';
+
+.header {
+  --shadow: 0 1px 0 0 currentColor;
+
+  background: colors.$white;
+  box-shadow: var(--shadow);
+  padding-block: functions.spacing(2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+
+  @supports (animation-timeline: scroll()) {
+    animation: shadow linear both;
+    animation-timeline: scroll();
+    animation-range: 0 functions.spacing(8);
+  }
+}
+
+.headerContent {
+  align-items: center;
+  gap: functions.spacing(1);
+  justify-content: space-between;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: none;
+  }
+
+  100% {
+    box-shadow: var(--shadow);
+  }
+}
+
+.fieldset {
+  width: auto;
+
+  form {
+    align-items: center;
+    display: flex;
+    gap: functions.spacing(1);
+  }
+
+  label {
+    align-items: center;
+    display: flex;
+    gap: functions.spacing(1);
+  }
+}
+
+.filters {
+  width: auto;
+
+  dl {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: functions.spacing(0.5);
+    line-height: 1.1;
+  }
+
+  dt {
+    flex-shrink: 0;
+    font-weight: bold;
+
+    &::after {
+      content: ':';
+    }
+  }
+}

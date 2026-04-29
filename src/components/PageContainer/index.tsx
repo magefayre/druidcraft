@@ -6,19 +6,10 @@ import React, { type FC, type PropsWithChildren } from 'react'
 import Footer from '~components/Footer'
 import Header from '~components/Header'
 
-type Props = PropsWithChildren<{ size?: string; meta: NextSeoProps }>
+export type PageContainerProps = PropsWithChildren<{ meta: NextSeoProps }>
 
-const PageContainer: FC<Props> = ({
-  size = 'desktopLarge',
-  meta,
-  children
-}) => (
-  <ThemedPageContainer
-    header={<Header size={size} />}
-    footer={<Footer size={size} />}
-    size={size}
-    gutter
-  >
+const PageContainer: FC<PageContainerProps> = ({ meta, children }) => (
+  <ThemedPageContainer header={<Header />} footer={<Footer />}>
     <Meta {...meta} />
     {children}
   </ThemedPageContainer>

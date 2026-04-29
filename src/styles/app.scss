@@ -23,34 +23,3 @@ a {
     outline: none;
   }
 }
-
-dl {
-  display: grid;
-  gap: 0 functions.spacing(0.5);
-  grid-template-columns: max-content;
-}
-
-dt {
-  font-weight: bold;
-
-  &::after {
-    content: ':';
-  }
-}
-
-dd {
-  margin: 0;
-  grid-column-start: 2;
-}
-
-form {
-  align-items: center;
-  display: flex;
-  gap: functions.spacing(1);
-}
-
-label {
-  align-items: center;
-  display: flex;
-  gap: functions.spacing(1);
-}
