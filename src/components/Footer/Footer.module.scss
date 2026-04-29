@@ -1,8 +1,11 @@
-@use '~styles/colors.module';
 @use '~styles/functions';
 
 .root {
-  border-top: 1px solid colors.$black;
+  border-top: 1px solid currentColor;
+}
+
+.content {
+  padding-block: functions.spacing(2);
 }
 
 .link {

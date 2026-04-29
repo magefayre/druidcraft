@@ -1,7 +1,12 @@
+import slugify, { type Options } from '@sindresorhus/slugify'
+import transliterate from '@sindresorhus/transliterate'
+
 import type { Beast } from '~types'
 
-export const normalize = (name: string) =>
-  name.normalize('NFD').replace(/\p{Diacritic}/gu, '')
+type BeastURL = Pick<Beast, 'source' | 'name'>
 
-export const tokenURL = ({ source, name }: Pick<Beast, 'source' | 'name'>) =>
-  `/tokens/${source}/${normalize(name)}`
+export const tokenURL = ({ source, name }: BeastURL) =>
+  `/tokens/${source}/${transliterate(name)}`
+
+export const url = ({ source, name }: BeastURL, options?: Options) =>
+  `/beast/${slugify(source, { ...options, separator: '' })}/${slugify(name, options)}`

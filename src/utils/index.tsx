@@ -4,9 +4,12 @@ import {
   EMPTY,
   LEVEL_SUFFIXES,
   LEVELS,
-  PLURALS
+  PLURALS,
+  SPEEDS
 } from '~constants'
 import type { Beast, Speed } from '~types'
+
+const { fly, swim } = SPEEDS
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
@@ -15,8 +18,8 @@ export const formatLevel = (level: number) =>
 
 export const formatSpeedLimits = (level: number) => {
   if (level < LEVELS.walk) return EMPTY
-  if (level < LEVELS.swim) return 'No flying or swimming speed'
-  if (level < LEVELS.fly) return 'No flying speed'
+  if (level < LEVELS.swim) return `No ${fly.verb} or ${swim.verb} speed`
+  if (level < LEVELS.fly) return `No ${fly.verb} speed`
 
   return EMPTY
 }
