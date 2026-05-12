@@ -9,19 +9,28 @@ import {
 } from '~constants'
 import type { Beast, Speed } from '~types'
 
-const { fly, swim } = SPEEDS
-
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
 export const formatLevel = (level: number) =>
   `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
 
-export const formatSpeedLimits = (level: number) => {
+export const formatSpeedLimits = (level: number, locale?: string) => {
   if (level < LEVELS.walk) return EMPTY
-  if (level < LEVELS.swim) return `No ${fly.verb} or ${swim.verb} speed`
-  if (level < LEVELS.fly) return `No ${fly.verb} speed`
 
-  return EMPTY
+  const limits = Object.entries(SPEEDS).reduce<string[]>(
+    (limits, [key, { verb }]) =>
+      level < LEVELS[key] ? [verb, ...limits] : limits,
+    []
+  )
+
+  if (!limits.length) return EMPTY
+
+  const formatter = new Intl.ListFormat(locale, {
+    style: 'short',
+    type: 'disjunction'
+  })
+
+  return `No ${formatter.format(limits)} speed`
 }
 
 export const getCircleFormsCR = (level: number) =>

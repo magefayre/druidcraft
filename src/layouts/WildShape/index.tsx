@@ -6,12 +6,14 @@ import React, { useEffect, useState } from 'react'
 import urlJoin from 'url-join'
 
 import { BeastList } from '~components/Beast'
+import Icon from '~components/Icon/Icon'
 import PageContainer, {
   type PageContainerProps
 } from '~components/PageContainer'
 import Section from '~components/Section'
 import config from '~config'
 import { CR, LEVELS } from '~constants'
+import { ReactComponent as SpriteSvg } from '~images/sprite.svg'
 import type { Beast } from '~types'
 import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
 
@@ -83,7 +85,7 @@ const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
                 </select>
               </label>
               <label>
-                <span>Circle Forms</span>
+                <Icon name="moon" width={64} alt="Moon Druid" />
                 <input
                   name="circleForms"
                   type="checkbox"
@@ -105,6 +107,7 @@ const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
       <Section>
         <BeastList beasts={beasts} level={level} maxCR={maxCR} />
       </Section>
+      <SpriteSvg />
     </PageContainer>
   )
 }

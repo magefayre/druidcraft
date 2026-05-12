@@ -1,6 +1,7 @@
-import { Card, Icon, Tooltip } from '@newhighsco/chipset'
+import { Card, Tooltip } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
+import Icon from '~components/Icon/Icon'
 import { LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
 import type { Beast } from '~types'
@@ -11,7 +12,14 @@ import styles from './BeastCard.module.scss'
 
 type Props = Beast & { disabled?: boolean }
 
-const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
+const BeastCard: FC<Props> = ({
+  cr,
+  disabled,
+  name,
+  source,
+  speed,
+  ...props
+}) => {
   const crLabel = formatCR(cr)
 
   return (
@@ -33,7 +41,8 @@ const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
         width: TOKEN_SIZE,
         height: TOKEN_SIZE
       }}
-      href={url({ source, name })}
+      href={!disabled ? url({ source, name }) : undefined}
+      disabled={disabled}
       {...props}
     >
       <Tooltip
@@ -52,13 +61,7 @@ const BeastCard: FC<Props> = ({ cr, name, source, speed, ...props }) => {
           return (
             <Tooltip
               key={type}
-              toggle={
-                <Icon alt={plural} className={styles.icon}>
-                  <svg viewBox="0 0 95 82.3" role="img">
-                    <use xlinkHref={`#${type}`} />
-                  </svg>
-                </Icon>
-              }
+              toggle={<Icon name={type} alt={plural} className={styles.icon} />}
               manual={false}
             >
               {plural}: Requires {formatLevel(LEVELS[type])} level

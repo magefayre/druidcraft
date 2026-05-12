@@ -1,7 +1,6 @@
 import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
-import { ReactComponent as BeastSprite } from '~images/beast.svg'
 import type { Beast } from '~types'
 import { getSpeedLimit } from '~utils'
 
@@ -31,7 +30,6 @@ const BeastList: FC<Props> = ({ beasts, level, maxCR }) => {
           )
         })}
       </List>
-      <BeastSprite />
     </>
   )
 }
