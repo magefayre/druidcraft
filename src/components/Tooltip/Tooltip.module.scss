@@ -1,4 +1,3 @@
-@use '~styles/colors.module';
 @use '~styles/functions';
 
 .toggle[aria-expanded] {
@@ -6,9 +5,9 @@
 }
 
 .content {
-  background: colors.$black;
+  background: var(--dark-light);
   border-radius: functions.spacing(0.5);
-  color: colors.$white;
+  color: var(--light-dark);
   font-size: small;
   margin: functions.spacing(0.5);
   padding: functions.spacing(0.5) functions.spacing(1);

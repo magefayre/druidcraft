@@ -3,14 +3,14 @@ import urlJoin from 'url-join'
 
 import config from '~config'
 import { loadData } from '~data/utils'
-import Layout, { type WildShapeLayoutProps } from '~layouts/WildShape'
+import HomeLayout, { type HomeLayoutProps } from '~layouts/home'
 
 const { title, url } = config
 const meta = { canonical: urlJoin(url, '/'), customTitle: true, title }
 
-type Props = Omit<WildShapeLayoutProps, 'meta'>
+type Props = Omit<HomeLayoutProps, 'meta'>
 
-const HomePage: NextPage<Props> = props => <Layout meta={meta} {...props} />
+const HomePage: NextPage<Props> = props => <HomeLayout meta={meta} {...props} />
 
 export const getStaticProps = (async () => {
   const beasts = await loadData('beasts.json')

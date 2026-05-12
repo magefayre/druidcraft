@@ -1,11 +1,10 @@
-@use '~styles/colors.module';
 @use '~styles/functions';
 
 .header {
-  --box-shadow: 0 1px 0 0 currentColor;
+  --box-shadow: 0 1px 0 0 var(--border);
   --z-index: 2;
 
-  background: colors.$white;
+  background: var(--light-dark);
   box-shadow: var(--box-shadow);
   padding-block: functions.spacing(2);
   position: sticky;

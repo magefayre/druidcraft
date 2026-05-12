@@ -5,9 +5,19 @@
 @use '~styles/font-faces';
 @use '~styles/functions';
 
+:root {
+  --light: #{colors.$white};
+  --dark: #{colors.$black};
+  --border: #{colors.$grey};
+  --light-dark: light-dark(var(--light), var(--dark));
+  --dark-light: light-dark(var(--dark), var(--light));
+
+  color-scheme: light dark;
+}
+
 body {
-  background-color: colors.$white;
-  color: colors.$black;
+  background: var(--light-dark);
+  color: var(--dark-light);
   font-size: 18px;
   line-height: 1.5;
   font-family: fonts.$body;

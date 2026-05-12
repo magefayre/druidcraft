@@ -1,11 +1,8 @@
-@use '~styles/colors.module';
 @use '~styles/functions';
 
 .root {
-  --card-color: #{colors.$black};
-
-  border: 1px solid var(--card-color);
-  color: var(--card-color);
+  border: 1px solid var(--card-color, var(--border));
+  color: var(--card-color, var(--dark-light));
   border-radius: functions.spacing(1);
   display: flex;
   flex-direction: column;
@@ -13,14 +10,14 @@
   overflow: visible !important;
 
   &[disabled] {
-    --card-color: #{colors.$grey};
+    --card-color: rgb(from var(--border) r g b / 70%);
 
     cursor: not-allowed;
   }
 }
 
 .content {
-  border-top: 1px solid currentColor;
+  border-top: inherit;
   padding: functions.spacing(1);
 }
 

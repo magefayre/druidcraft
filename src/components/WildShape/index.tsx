@@ -1,43 +1,32 @@
 import { Grid } from '@newhighsco/chipset'
-import type { NextPage } from 'next'
-import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
-import type { ChangeEventHandler } from 'react'
-import React, { useEffect, useState } from 'react'
-import urlJoin from 'url-join'
+import type { ChangeEventHandler, FC } from 'react'
+import React from 'react'
 
 import { BeastList } from '~components/Beast'
 import Icon from '~components/Icon/Icon'
-import PageContainer, {
-  type PageContainerProps
-} from '~components/PageContainer'
 import Section from '~components/Section'
-import config from '~config'
 import { CR, LEVELS } from '~constants'
+import useLocalStorage from '~hooks/useLocalStorage'
 import { ReactComponent as SpriteSvg } from '~images/sprite.svg'
 import type { Beast } from '~types'
 import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
 
-import styles from './index.module.scss'
+import styles from './WildShape.module.scss'
 
-const { name, logo, socialLinks, url } = config
 const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 
-export type WildShapeLayoutProps = {
-  beasts: Beast[]
-  meta: PageContainerProps['meta']
-}
+type FormData = { level: number; circleForms: boolean }
 
-const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
-  const [formData, setFormData] = useState({
-    level: LEVELS.min,
-    circleForms: false
-  })
+export type WildShapeProps = { beasts: Beast[] }
+
+const WildShape: FC<WildShapeProps> = ({ beasts }) => {
+  const [formData, setFormData, mounted] = useLocalStorage<FormData>(
+    'wildshape',
+    { level: LEVELS.min, circleForms: false }
+  )
+
   const { level, circleForms } = formData
-  const [maxCR, setMaxCR] = useState(getMaxCR(formData))
-
-  useEffect(() => {
-    setMaxCR(getMaxCR(formData))
-  }, [formData])
+  const maxCR = getMaxCR(formData)
 
   const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
     const { name, value, checked, type } = target
@@ -53,23 +42,14 @@ const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
   }
 
   return (
-    <PageContainer meta={meta}>
-      <SocialProfileJsonLd
-        type="Organization"
-        name={name}
-        url={url}
-        sameAs={Object.values(socialLinks)}
-      />
-      {logo?.bitmap && (
-        <LogoJsonLd url={url} logo={urlJoin(url, logo.bitmap)} />
-      )}
+    <>
       <Section className={styles.header}>
         <Grid flex className={styles.headerContent}>
           <Grid.Item className={styles.fieldset}>
             <form onChange={handleChange}>
               <label>
                 <span>Level</span>
-                <select name="level" defaultValue={level}>
+                <select name="level" value={level} disabled={!mounted}>
                   {levels.map(level => (
                     <option
                       key={level}
@@ -89,7 +69,8 @@ const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
                 <input
                   name="circleForms"
                   type="checkbox"
-                  defaultChecked={circleForms}
+                  checked={circleForms}
+                  disabled={!mounted}
                 />
               </label>
             </form>
@@ -106,10 +87,10 @@ const WildShapeLayout: NextPage<WildShapeLayoutProps> = ({ beasts, meta }) => {
       </Section>
       <Section>
         <BeastList beasts={beasts} level={level} maxCR={maxCR} />
+        <SpriteSvg />
       </Section>
-      <SpriteSvg />
-    </PageContainer>
+    </>
   )
 }
 
-export default WildShapeLayout
+export default WildShape
