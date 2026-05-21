@@ -22,5 +22,7 @@ workflows:
       - newhighsco/release:
           <<: *only-main
           name: release
+          context:
+            - release
           requires:
             - test
