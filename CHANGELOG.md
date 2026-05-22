@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/magefayre/druidcraft/compare/v1.0.1...v1.0.2) (2026-05-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @newhighsco/ts-config to v1.2.2 ([#77](https://github.com/magefayre/druidcraft/issues/77)) ([4bd5dd3](https://github.com/magefayre/druidcraft/commit/4bd5dd3136f80a9af9c97736d9f4b8858a77a72f))
+
 ## [1.0.1](https://github.com/magefayre/druidcraft/compare/v1.0.0...v1.0.1) (2026-05-22)
 
 
