@@ -16,6 +16,5 @@
       "~utils": ["./src/utils"]
     }
   },
-  "include": ["**/*"],
-  "exclude": ["node_modules"]
+  "include": ["**/*"]
 }
