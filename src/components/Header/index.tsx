@@ -13,26 +13,24 @@ import header from '~data/header.json'
 import styles from './Header.module.scss'
 
 const Header: FC = () => (
-  <>
-    <HeaderContainer theme={{ root: styles.root }}>
-      <ContentContainer
-        gutter
-        size="desktopLarge"
-        theme={{ content: styles.content }}
-      >
-        <Grid flex valign="middle">
-          <Grid.Item className={styles.logo}>
-            <SmartLink href="/">
-              <LogoLockup />
-            </SmartLink>
-          </Grid.Item>
-          <Grid.Item className={styles.links}>
-            <Navigation links={header.links} theme={{ link: styles.link }} />
-          </Grid.Item>
-        </Grid>
-      </ContentContainer>
-    </HeaderContainer>
-  </>
+  <HeaderContainer theme={{ root: styles.root }}>
+    <ContentContainer
+      gutter
+      size="desktopLarge"
+      theme={{ content: styles.content }}
+    >
+      <Grid flex valign="middle">
+        <Grid.Item className={styles.logo}>
+          <SmartLink href="/">
+            <LogoLockup />
+          </SmartLink>
+        </Grid.Item>
+        <Grid.Item className={styles.links}>
+          <Navigation links={header.links} theme={{ link: styles.link }} />
+        </Grid.Item>
+      </Grid>
+    </ContentContainer>
+  </HeaderContainer>
 )
 
 export default Header
