@@ -1253,7 +1253,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.28.6, @babel/runtime@npm:^7.29.2":
+"@babel/runtime@npm:^7.29.2":
   version: 7.29.2
   resolution: "@babel/runtime@npm:7.29.2"
   checksum: 10c0/30b80a0140d16467792e1bbeb06f655b0dab70407da38dfac7fedae9c859f9ae9d846ef14ad77bd3814c064295fe9b1bc551f1541ea14646ae9f22b71a8bc17a
@@ -2180,18 +2180,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dr.pogodin/react-themes@npm:1.10.3":
-  version: 1.10.3
-  resolution: "@dr.pogodin/react-themes@npm:1.10.3"
-  dependencies:
-    "@babel/runtime": "npm:^7.28.6"
-  peerDependencies:
-    react: ^19.2.4
-    react-dom: ^19.2.4
-  checksum: 10c0/a76523c9b4f3850e65e1011bda99970f26c7a97780b2fefbca878dad4ebd3dfd5a27e42afff88ed2797495a8a8645d313fba855baec7f6ee853b54df0edde530
-  languageName: node
-  linkType: hard
-
 "@dr.pogodin/react-themes@npm:1.10.4":
   version: 1.10.4
   resolution: "@dr.pogodin/react-themes@npm:1.10.4"
@@ -2909,7 +2897,7 @@ __metadata:
     "@newhighsco/eslint-config": "npm:7.1.1"
     "@newhighsco/next-plugin-svgr": "npm:3.0.170"
     "@newhighsco/postcss-config": "npm:4.0.52"
-    "@newhighsco/press-start": "npm:2.6.42"
+    "@newhighsco/press-start": "npm:2.6.43"
     "@newhighsco/prettier-config": "npm:2.3.5"
     "@newhighsco/release-config": "npm:1.4.28"
     "@newhighsco/stylelint-config": "npm:4.0.43"
@@ -2942,21 +2930,6 @@ __metadata:
   version: 2.0.0
   resolution: "@newhighsco/browserslist-config@npm:2.0.0"
   checksum: 10c0/8fe5c9a2da2ee6ceea5e5423177674c8ff29bf4b27c3658b08f08f53de2ad44b27d38819aa4204067b25412fbbf4b374c2b912e3a9bbe69bcc46dbd54915eeea
-  languageName: node
-  linkType: hard
-
-"@newhighsco/chipset@npm:7.0.1":
-  version: 7.0.1
-  resolution: "@newhighsco/chipset@npm:7.0.1"
-  dependencies:
-    "@dr.pogodin/react-themes": "npm:1.10.3"
-    "@iconify/react": "npm:6.0.2"
-    classnames: "npm:2.5.1"
-    react-device-detect: "npm:2.2.3"
-  peerDependencies:
-    react: 19.2.5
-    react-dom: 19.2.5
-  checksum: 10c0/0bcdda68962922c7bae4a12e0268fe97602e96b2e5c8a66b0f4061ecc322c0b87bd71cb9404e8bfaa0b3997ba8339c806dcecf5492e25ead44616fc513e9ed92
   languageName: node
   linkType: hard
 
@@ -3052,15 +3025,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@newhighsco/press-start@npm:2.6.42":
-  version: 2.6.42
-  resolution: "@newhighsco/press-start@npm:2.6.42"
+"@newhighsco/press-start@npm:2.6.43":
+  version: 2.6.43
+  resolution: "@newhighsco/press-start@npm:2.6.43"
   dependencies:
-    "@newhighsco/chipset": "npm:7.0.1"
+    "@newhighsco/chipset": "npm:7.0.2"
     next-seo: "npm:6.8.0"
   peerDependencies:
     next: 16.2.6
-  checksum: 10c0/fcfd8ae1d49bbaebbe11bb848080464aa453726f7a403650d57c1fc2cecdd66342e773d1509ce5a52e3fb52b39cf5bc1ce4960e05bd8ca5ef42918114ef211a5
+  checksum: 10c0/dfaf7d7c841b9d652cfe162766ccabdf8ad1623fb6a435a55e84bb6315752a7e934189bbf8b112afa3d6c692047c46cdd2a7326604fe0d29386da07c7e71d47b
   languageName: node
   linkType: hard
 
