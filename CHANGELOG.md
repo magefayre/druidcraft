@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/magefayre/druidcraft/compare/v1.0.5...v1.0.6) (2026-06-02)
+
+### Bug Fixes
+
+* **deps:** update dependency @newhighsco/next-plugin-svgr to v3.0.171 ([#98](https://github.com/magefayre/druidcraft/issues/98)) ([3b8d74a](https://github.com/magefayre/druidcraft/commit/3b8d74a061ce50adbf35e028a598b6713c9b24dd))
+
 ## [1.0.5](https://github.com/magefayre/druidcraft/compare/v1.0.4...v1.0.5) (2026-06-02)
 
 ### Bug Fixes
