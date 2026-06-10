@@ -2896,7 +2896,7 @@ __metadata:
     "@newhighsco/editor-config": "npm:1.2.0"
     "@newhighsco/eslint-config": "npm:7.1.9"
     "@newhighsco/lint-staged-config": "npm:1.1.0"
-    "@newhighsco/next-plugin-svgr": "npm:3.0.171"
+    "@newhighsco/next-plugin-svgr": "npm:3.0.172"
     "@newhighsco/postcss-config": "npm:4.0.53"
     "@newhighsco/press-start": "npm:2.6.44"
     "@newhighsco/prettier-config": "npm:2.3.6"
@@ -3014,16 +3014,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@newhighsco/next-plugin-svgr@npm:3.0.171":
-  version: 3.0.171
-  resolution: "@newhighsco/next-plugin-svgr@npm:3.0.171"
+"@newhighsco/next-plugin-svgr@npm:3.0.172":
+  version: 3.0.172
+  resolution: "@newhighsco/next-plugin-svgr@npm:3.0.172"
   dependencies:
     "@svgr/webpack": "npm:8.1.0"
     file-loader: "npm:6.2.0"
     url-loader: "npm:4.1.1"
   peerDependencies:
-    next: 16.2.7
-  checksum: 10c0/db4672d2978f76cddb4adcff409eff13c9a5bad08aef7f5a3f78cf6eb996148a419c843f6ff318007cca29809dfd327dd27b0a5c1952c15908fa1c6ba247bb5d
+    next: 16.2.9
+  checksum: 10c0/fe229178ee9d37f99b52dc1a162322bfdcd0a7e9b3caad3a96897600b02a8f042143473ab2eda268603d5bacae5c287a980b611c37ac439edcd1a5f024c75441
   languageName: node
   linkType: hard
 
