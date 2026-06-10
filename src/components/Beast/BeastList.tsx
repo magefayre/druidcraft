@@ -15,7 +15,7 @@ const BeastList: FC<Props> = ({ beasts, level, maxCR }) => {
   return (
     <>
       <List unstyled className={styles.root}>
-        {beasts.map(beast => {
+        {beasts.map((beast, index) => {
           const { cr, name, source, speed } = beast
           const disabled =
             !maxCR ||
@@ -25,7 +25,7 @@ const BeastList: FC<Props> = ({ beasts, level, maxCR }) => {
 
           return (
             <li key={`${source}/${name}`}>
-              <BeastCard {...beast} disabled={disabled} />
+              <BeastCard {...beast} disabled={disabled} priority={index < 12} />
             </li>
           )
         })}

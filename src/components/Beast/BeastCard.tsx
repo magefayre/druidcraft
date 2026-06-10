@@ -9,12 +9,13 @@ import { formatCR, formatLevel } from '~utils'
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './BeastCard.module.scss'
 
-type Props = Beast & { disabled?: boolean }
+type Props = Beast & { disabled?: boolean; priority?: boolean }
 
 const BeastCard: FC<Props> = ({
   cr,
   disabled,
   name,
+  priority,
   source,
   speed,
   ...props
@@ -37,6 +38,7 @@ const BeastCard: FC<Props> = ({
       }
       image={{
         src: tokenURL({ source, name }),
+        priority,
         width: TOKEN_SIZE,
         height: TOKEN_SIZE
       }}
