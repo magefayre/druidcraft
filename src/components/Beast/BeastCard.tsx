@@ -60,6 +60,7 @@ const BeastCard: FC<Props> = ({
 
           return (
             <Tooltip
+              valign="bottom"
               key={type}
               toggle={
                 <Icon name={icon} alt={singular} className={styles.icon} />
