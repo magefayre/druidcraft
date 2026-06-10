@@ -1,5 +1,5 @@
 export type Source = string
-export type Speed = 'walk' | 'swim' | 'fly'
+export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 
 export type Beast = {
   cr: number

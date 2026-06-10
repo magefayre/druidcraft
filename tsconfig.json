@@ -14,7 +14,8 @@
       "~theme": ["./src/theme"],
       "~types": ["./src/types"],
       "~utils": ["./src/utils"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "include": ["**/*"]
 }

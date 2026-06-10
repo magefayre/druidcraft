@@ -10,7 +10,7 @@ export const CR_LABELS = {
 
 export const EMPTY = '-'
 
-export const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 } as Readonly<
+export const LEVELS = { min: 1, max: 20, swim: 4, fly: 8 } as Readonly<
   Record<'min' | 'max' | Speed, number>
 >
 
@@ -24,6 +24,9 @@ export const LEVEL_SUFFIXES = {
 export const PLURALS = new Intl.PluralRules('en', { type: 'ordinal' })
 
 export const SPEEDS = {
-  swim: { plural: 'Swims', verb: 'swimming' },
-  fly: { plural: 'Flies', verb: 'flying' }
-} as Readonly<Record<Speed, { plural: string; verb: string }>>
+  walk: { singular: 'Walks', continuous: 'walking' },
+  burrow: { singular: 'Burrows', continuous: 'burrowing' },
+  climb: { singular: 'Climbs', continuous: 'climbing' },
+  swim: { singular: 'Swims', continuous: 'swimming' },
+  fly: { singular: 'Flies', continuous: 'flying' }
+} as Readonly<Record<Speed, { singular: string; continuous: string }>>

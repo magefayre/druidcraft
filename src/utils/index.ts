@@ -15,11 +15,11 @@ export const formatLevel = (level: number) =>
   `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
 
 export const formatSpeedLimits = (level: number, locale?: string) => {
-  if (level < LEVELS.walk) return EMPTY
+  if (level === LEVELS.min) return EMPTY
 
   const limits = Object.entries(SPEEDS).reduce<string[]>(
-    (limits, [key, { verb }]) =>
-      level < LEVELS[key] ? [verb, ...limits] : limits,
+    (limits, [key, { continuous }]) =>
+      level < LEVELS[key] ? [continuous, ...limits] : limits,
     []
   )
 
@@ -37,10 +37,10 @@ export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
 
 export const getMaxCR = ({ level, circleForms = false }) => {
-  if (circleForms && level >= LEVELS.walk) return getCircleFormsCR(level)
+  if (circleForms && level > LEVELS.min) return getCircleFormsCR(level)
   if (level >= LEVELS.fly) return CR.fly
   if (level >= LEVELS.swim) return CR.swim
-  if (level >= LEVELS.walk) return CR.walk
+  if (level > LEVELS.min) return CR.walk
 
   return null
 }

@@ -37,7 +37,7 @@
     "sync-with-5etools": "tsx scripts/sync-with-5etools --output src/data",
     "postsync-with-5etools": "yarn format:js src/data",
     "pretest": "next typegen && tsc --noEmit",
-    "test": "yarn lint",
+    "test": "yarn lint && vitest run",
     "lint": "concurrently 'yarn:lint:*'",
     "lint:js": "eslint --cache .",
     "lint:css": "stylelint --cache --ignore-path .gitignore '**/*.?(s)css'",
@@ -85,6 +85,7 @@
     "stylelint": "17.13.0",
     "tsx": "4.22.4",
     "typescript": "6.0.3",
+    "vitest": "4.1.8",
     "yargs": "18.0.0"
   },
   "browserslist": [

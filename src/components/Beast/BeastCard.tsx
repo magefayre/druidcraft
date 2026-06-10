@@ -53,18 +53,18 @@ const BeastCard: FC<Props> = ({
         Challenge Rating {crLabel}
       </Tooltip>
       <span className={styles.icons}>
-        {Object.keys(SPEEDS).map(type => {
-          if (!speed[type]) return null
-
-          const { plural } = SPEEDS[type]
+        {Object.entries(SPEEDS).map(([type, { singular }]) => {
+          if (!LEVELS[type] || !speed[type]) return null
 
           return (
             <Tooltip
               key={type}
-              toggle={<Icon name={type} alt={plural} className={styles.icon} />}
+              toggle={
+                <Icon name={type} alt={singular} className={styles.icon} />
+              }
               manual={false}
             >
-              {plural}: Requires {formatLevel(LEVELS[type])} level
+              {singular}: Requires {formatLevel(LEVELS[type])} level
             </Tooltip>
           )
         })}

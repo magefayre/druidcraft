@@ -5,27 +5,27 @@ import React from 'react'
 import { BeastList } from '~components/Beast'
 import Icon from '~components/Icon/Icon'
 import Section from '~components/Section'
-import { CR, LEVELS } from '~constants'
+import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
 import { ReactComponent as SpriteSvg } from '~images/sprite.svg'
-import type { Beast } from '~types'
+import type { Beast, Speed } from '~types'
 import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
 
 import styles from './WildShape.module.scss'
 
 const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 
-type FormData = { level: number; circleForms: boolean }
+type FormData = { level: number; circleForms: boolean; speed: Speed }
 
 export type WildShapeProps = { beasts: Beast[] }
 
 const WildShape: FC<WildShapeProps> = ({ beasts }) => {
   const [formData, setFormData, mounted] = useLocalStorage<FormData>(
     'wildshape',
-    { level: LEVELS.min, circleForms: false }
+    { level: LEVELS.min, circleForms: false, speed: undefined }
   )
 
-  const { level, circleForms } = formData
+  const { level, circleForms, speed } = formData
   const maxCR = getMaxCR(formData)
 
   const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
@@ -39,6 +39,10 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
 
   if (!circleForms) {
     beasts = beasts.filter(({ cr }) => cr <= CR.fly)
+  }
+
+  if (speed) {
+    beasts = beasts.filter(beast => !!beast.speed[speed])
   }
 
   return (
@@ -72,6 +76,21 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
                   checked={circleForms}
                   disabled={!mounted}
                 />
+              </label>
+              <label>
+                <span>Speed</span>
+                <select name="speed" value={speed} disabled={!mounted}>
+                  <option value="">{EMPTY}</option>
+                  {Object.entries(SPEEDS).map(([key, { singular }]) => (
+                    <option
+                      key={key}
+                      value={key}
+                      disabled={level < LEVELS[key]}
+                    >
+                      {singular}
+                    </option>
+                  ))}
+                </select>
               </label>
             </form>
           </Grid.Item>
