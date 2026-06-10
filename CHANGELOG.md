@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/magefayre/druidcraft/compare/v1.0.11...v1.1.0) (2026-06-10)
+
+### Features
+
+* filter by speed ([4a19b00](https://github.com/magefayre/druidcraft/commit/4a19b007061b0e23cb795cf8ce72f4797f83d390))
+
 ## [1.0.11](https://github.com/magefayre/druidcraft/compare/v1.0.10...v1.0.11) (2026-06-10)
 
 ### Bug Fixes
