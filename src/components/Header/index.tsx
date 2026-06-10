@@ -26,7 +26,11 @@ const Header: FC = () => (
           </SmartLink>
         </Grid.Item>
         <Grid.Item className={styles.links}>
-          <Navigation links={header.links} theme={{ link: styles.link }} />
+          <Navigation
+            links={header.links}
+            theme={{ link: styles.link }}
+            inline
+          />
         </Grid.Item>
       </Grid>
     </ContentContainer>

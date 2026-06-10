@@ -9,6 +9,8 @@
 }
 
 .link {
+  padding-inline-end: functions.spacing(2);
+
   &:hover,
   &:active,
   &:focus {

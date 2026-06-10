@@ -463,10 +463,22 @@
   {
     "cr": 0.25,
     "name": "Deep Rothé",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Deep Rothé",
     "source": "VGM",
     "speed": { "walk": 30 }
   },
   { "cr": 0.25, "name": "Diatryma", "source": "WDH", "speed": { "walk": 50 } },
+  {
+    "cr": 0.25,
+    "name": "Dimetrodon",
+    "source": "MPMM",
+    "speed": { "walk": 30, "swim": 20 }
+  },
   {
     "cr": 0.25,
     "name": "Dimetrodon",
@@ -570,6 +582,12 @@
   {
     "cr": 0.25,
     "name": "Hadrosaurus",
+    "source": "MPMM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Hadrosaurus",
     "source": "VGM",
     "speed": { "walk": 40 }
   },
@@ -592,6 +610,7 @@
     "speed": { "walk": 30, "climb": 30 }
   },
   { "cr": 0.25, "name": "Maxeene", "source": "WDH", "speed": { "walk": 40 } },
+  { "cr": 0.25, "name": "Ox", "source": "MPMM", "speed": { "walk": 30 } },
   { "cr": 0.25, "name": "Ox", "source": "VGM", "speed": { "walk": 30 } },
   {
     "cr": 0.25,
@@ -617,6 +636,7 @@
     "source": "MM",
     "speed": { "walk": 60 }
   },
+  { "cr": 0.25, "name": "Rothé", "source": "CoA", "speed": { "walk": 30 } },
   { "cr": 0.25, "name": "Rothé", "source": "VGM", "speed": { "walk": 30 } },
   {
     "cr": 0.25,
@@ -660,6 +680,12 @@
     "name": "Szikzith",
     "source": "NRH-AWoL",
     "speed": { "walk": 40, "climb": 40 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Velociraptor",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
   },
   {
     "cr": 0.25,
@@ -802,6 +828,7 @@
     "speed": { "walk": 40, "climb": 30 }
   },
   { "cr": 1, "name": "Clawfoot", "source": "ERLW", "speed": { "walk": 40 } },
+  { "cr": 1, "name": "Deinonychus", "source": "MPMM", "speed": { "walk": 40 } },
   { "cr": 1, "name": "Deinonychus", "source": "VGM", "speed": { "walk": 40 } },
   { "cr": 1, "name": "Dire Wolf", "source": "MM", "speed": { "walk": 50 } },
   {
@@ -954,6 +981,7 @@
     "source": "KftGV",
     "speed": { "walk": 60 }
   },
+  { "cr": 2, "name": "Aurochs", "source": "MPMM", "speed": { "walk": 50 } },
   { "cr": 2, "name": "Aurochs", "source": "VGM", "speed": { "walk": 50 } },
   {
     "cr": 2,
@@ -1026,6 +1054,12 @@
     "name": "Polar Bear",
     "source": "MM",
     "speed": { "walk": 40, "swim": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Quetzalcoatlus",
+    "source": "MPMM",
+    "speed": { "walk": 10, "fly": 80 }
   },
   {
     "cr": 2,
@@ -1174,6 +1208,7 @@
     "source": "PSD",
     "speed": { "walk": 40 }
   },
+  { "cr": 4, "name": "Stegosaurus", "source": "MPMM", "speed": { "walk": 40 } },
   { "cr": 4, "name": "Stegosaurus", "source": "VGM", "speed": { "walk": 40 } },
   {
     "cr": 4,
@@ -1190,6 +1225,12 @@
   },
   { "cr": 5, "name": "Baloth", "source": "PSZ", "speed": { "walk": 50 } },
   { "cr": 5, "name": "Brontodon", "source": "PSX", "speed": { "walk": 30 } },
+  {
+    "cr": 5,
+    "name": "Brontosaurus",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
+  },
   { "cr": 5, "name": "Brontosaurus", "source": "VGM", "speed": { "walk": 30 } },
   { "cr": 5, "name": "Ceratops", "source": "PSX", "speed": { "walk": 50 } },
   {

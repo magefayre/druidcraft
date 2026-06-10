@@ -1,1 +1,6 @@
-{ "links": [{ "children": "Wild Shape", "href": "/", "target": "" }] }
+{
+  "links": [
+    { "children": "Wild Shape", "href": "/", "target": "" },
+    { "children": "Summon", "href": "/summon", "target": "" }
+  ]
+}

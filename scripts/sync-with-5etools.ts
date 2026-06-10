@@ -8,14 +8,11 @@ import { LEVELS } from '~constants'
 import type { Beast, Monster, Monsters, Source } from '~types'
 import { getCircleFormsCR } from '~utils'
 
+import { fetchData, fetchScript } from './utils'
+
 declare global {
   var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
 }
-
-const BASE = new URL(
-  'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/main/'
-)
-const MAX_CR = getCircleFormsCR(LEVELS.max)
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -32,32 +29,32 @@ const parseCR = (cr: string | { cr: string }): number | undefined => {
   return undefined
 }
 
-const fetchData = async <T>(...url: string[]): Promise<T> => {
-  const res = await fetch(new URL(url.join('/'), new URL('data/', BASE)))
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
+const parseType = (type: string | { type: string; swarmSize: string }) => {
+  if (
+    typeof type !== 'string' &&
+    type?.hasOwnProperty('type') &&
+    !type.swarmSize
+  ) {
+    return parseType(type.type)
   }
 
-  return res.json()
+  if (typeof type === 'string') return type
+
+  return undefined
 }
 
-const fetchScript = async (url: string) => {
-  const res = await fetch(new URL(url, new URL('js/', BASE)))
+const filterMonsters = (
+  monsters: Monster[],
+  filters: { type: string; cr?: number }
+) =>
+  monsters.reduce<Beast[]>((beasts, monster) => {
+    const { name, source, speed } = monster
+    const cr = parseCR(monster.cr)!
+    const type = parseType(monster.type)
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
-  }
-
-  return eval(await res.text())
-}
-
-const filterBeasts = (monsters: Monster[]) =>
-  monsters.reduce<Beast[]>((beasts, { cr, name, source, speed, type }) => {
-    const challenge = parseCR(cr)!
-
-    return type === 'beast' && challenge <= MAX_CR
-      ? [...beasts, { cr: challenge, name, source, speed }]
+    return type === filters.type &&
+      cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER)
+      ? [...beasts, { cr, name, source, speed }]
       : beasts
   }, [])
 
@@ -67,6 +64,7 @@ const filterCopies = (monsters: Monster[], existing: Beast[]) =>
       ({ name, source }) => _copy?.name === name && _copy?.source === source
     )
 
+    // Need to handle duplicate sources too
     return !!base
       ? [
           ...beasts,
@@ -97,6 +95,10 @@ const sortBeasts = (a: Beast, b: Beast) => {
     })
     .parse()
 
+  if (!existsSync(outputDir)) {
+    mkdirSync(outputDir, { recursive: true })
+  }
+
   const monsterURLs = await fetchData<Record<Source, string>>(
     'bestiary',
     'index.json'
@@ -111,19 +113,21 @@ const sortBeasts = (a: Beast, b: Beast) => {
     })
   )
 
-  const beasts: Beast[] = filterBeasts(monsters)
+  const beasts: Beast[] = filterMonsters(monsters, {
+    type: 'beast',
+    cr: getCircleFormsCR(LEVELS.max)
+  })
 
   beasts.push(...filterCopies(monsters, beasts))
-
-  if (!existsSync(outputDir)) {
-    mkdirSync(outputDir, { recursive: true })
-  }
 
   await writeFile(
     join(outputDir, 'beasts.json'),
     JSON.stringify(beasts.sort(sortBeasts))
   )
 
+  const feys = filterMonsters(monsters, { type: 'fey' })
+
+  await writeFile(join(outputDir, 'feys.json'), JSON.stringify(feys))
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
