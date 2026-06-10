@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/magefayre/druidcraft/compare/v1.1.0...v1.1.1) (2026-06-10)
+
+### Bug Fixes
+
+* priority images ([43de22f](https://github.com/magefayre/druidcraft/commit/43de22fac6790c0b4085d6180deebf5268e7b92e))
+
 ## [1.1.0](https://github.com/magefayre/druidcraft/compare/v1.0.11...v1.1.0) (2026-06-10)
 
 ### Features
