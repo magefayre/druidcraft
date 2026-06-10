@@ -47,9 +47,15 @@
   }
 
   label {
-    align-items: center;
-    display: flex;
-    gap: functions.spacing(1);
+    cursor: pointer;
+
+    &:has(+ select)::after {
+      content: ':';
+    }
+
+    &:has(+ [disabled]) {
+      cursor: not-allowed;
+    }
   }
 }
 

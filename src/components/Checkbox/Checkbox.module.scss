@@ -1,0 +1,17 @@
+@use '~styles/functions';
+@use '~styles/mixins';
+
+.input {
+  @include mixins.visually-hidden;
+}
+
+.icon {
+  [disabled] + & {
+    color: var(--border);
+    cursor: not-allowed;
+  }
+
+  :not([disabled]) + & {
+    cursor: pointer;
+  }
+}

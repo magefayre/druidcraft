@@ -1,7 +1,6 @@
-import { Card, Tooltip } from '@newhighsco/chipset'
+import { Card, Icon, Tooltip } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
-import Icon from '~components/Icon/Icon'
 import { LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
 import type { Beast } from '~types'
@@ -46,6 +45,7 @@ const BeastCard: FC<Props> = ({
       {...props}
     >
       <Tooltip
+        valign="bottom"
         toggle={<span>CR {crLabel}</span>}
         theme={{ root: styles.cr, toggle: styles.crToggle }}
         manual={false}
@@ -53,18 +53,18 @@ const BeastCard: FC<Props> = ({
         Challenge Rating {crLabel}
       </Tooltip>
       <span className={styles.icons}>
-        {Object.entries(SPEEDS).map(([type, { singular }]) => {
-          if (!LEVELS[type] || !speed[type]) return null
+        {Object.entries(SPEEDS).map(([type, { icon, singular }]) => {
+          if (!icon || !speed[type]) return null
 
           return (
             <Tooltip
               key={type}
               toggle={
-                <Icon name={type} alt={singular} className={styles.icon} />
+                <Icon name={icon} alt={singular} className={styles.icon} />
               }
               manual={false}
             >
-              {singular}: Requires {formatLevel(LEVELS[type])} level
+              Requires {formatLevel(LEVELS[type])} level
             </Tooltip>
           )
         })}

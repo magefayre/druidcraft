@@ -10,7 +10,7 @@ export const CR_LABELS = {
 
 export const EMPTY = '-'
 
-export const LEVELS = { min: 1, max: 20, swim: 4, fly: 8 } as Readonly<
+export const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 } as Readonly<
   Record<'min' | 'max' | Speed, number>
 >
 
@@ -27,6 +27,8 @@ export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
   burrow: { singular: 'Burrows', continuous: 'burrowing' },
   climb: { singular: 'Climbs', continuous: 'climbing' },
-  swim: { singular: 'Swims', continuous: 'swimming' },
-  fly: { singular: 'Flies', continuous: 'flying' }
-} as Readonly<Record<Speed, { singular: string; continuous: string }>>
+  swim: { icon: 'mdi:fish', singular: 'Swims', continuous: 'swimming' },
+  fly: { icon: 'mdi:bird', singular: 'Flies', continuous: 'flying' }
+} as Readonly<
+  Record<Speed, { icon?: string; singular: string; continuous: string }>
+>

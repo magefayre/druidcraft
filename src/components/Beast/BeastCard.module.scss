@@ -21,12 +21,15 @@
 
 .icons {
   position: absolute;
-  inset-block-start: functions.spacing(1.5);
-  inset-inline-start: functions.spacing(1);
+  inset-block-start: functions.spacing(0.25);
+  inset-inline-start: functions.spacing(0.5);
 }
 
 .icon {
-  width: functions.spacing(4.5);
+  paint-order: stroke;
+  stroke: var(--light-dark);
+  stroke-width: functions.spacing(0.25);
+  width: functions.spacing(5.5);
 }
 
 .source {

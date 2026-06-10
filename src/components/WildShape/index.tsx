@@ -3,11 +3,10 @@ import type { ChangeEventHandler, FC } from 'react'
 import React from 'react'
 
 import { BeastList } from '~components/Beast'
-import Icon from '~components/Icon/Icon'
+import Checkbox from '~components/Checkbox'
 import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
-import { ReactComponent as SpriteSvg } from '~images/sprite.svg'
 import type { Beast, Speed } from '~types'
 import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
 
@@ -24,7 +23,6 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
     'wildshape',
     { level: LEVELS.min, circleForms: false, speed: undefined }
   )
-
   const { level, circleForms, speed } = formData
   const maxCR = getMaxCR(formData)
 
@@ -51,47 +49,43 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
         <Grid flex className={styles.headerContent}>
           <Grid.Item className={styles.fieldset}>
             <form onChange={handleChange}>
-              <label>
-                <span>Level</span>
-                <select name="level" value={level} disabled={!mounted}>
-                  {levels.map(level => (
-                    <option
-                      key={level}
-                      value={level}
-                      disabled={
-                        level === LEVELS.min ||
-                        (!circleForms && level > LEVELS.fly)
-                      }
-                    >
-                      {level}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                <Icon name="moon" width={64} alt="Moon Druid" />
-                <input
-                  name="circleForms"
-                  type="checkbox"
-                  checked={circleForms}
-                  disabled={!mounted}
-                />
-              </label>
-              <label>
-                <span>Speed</span>
-                <select name="speed" value={speed} disabled={!mounted}>
-                  <option value="">{EMPTY}</option>
-                  {Object.entries(SPEEDS).map(([key, { singular }]) => (
-                    <option
-                      key={key}
-                      value={key}
-                      disabled={level < LEVELS[key]}
-                    >
-                      {singular}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <label htmlFor="level">Level</label>
+              <select id="level" name="level" value={level} disabled={!mounted}>
+                {levels.map(level => (
+                  <option
+                    key={level}
+                    value={level}
+                    disabled={
+                      level < LEVELS.walk ||
+                      (!circleForms && level > LEVELS.fly)
+                    }
+                  >
+                    {level}
+                  </option>
+                ))}
+              </select>
+              <label htmlFor="speed">Speed</label>
+              <select id="speed" name="speed" value={speed} disabled={!mounted}>
+                <option value="">{EMPTY}</option>
+                {Object.entries(SPEEDS).map(([key, { singular }]) => (
+                  <option
+                    key={key}
+                    value={key}
+                    disabled={level < (LEVELS[key] ?? LEVELS.walk)}
+                  >
+                    {singular}
+                  </option>
+                ))}
+              </select>
+              <Checkbox
+                name="circleForms"
+                icon={['boxicons:moon', circleForms && 'filled']
+                  .filter(Boolean)
+                  .join('-')}
+                alt="Moon Druid"
+                checked={circleForms}
+                disabled={!mounted}
+              />
             </form>
           </Grid.Item>
           <Grid.Item className={styles.filters}>
@@ -106,7 +100,6 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
       </Section>
       <Section>
         <BeastList beasts={beasts} level={level} maxCR={maxCR} />
-        <SpriteSvg />
       </Section>
     </>
   )

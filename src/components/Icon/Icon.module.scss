@@ -1,0 +1,5 @@
+@use '~styles/functions';
+
+.root {
+  width: functions.spacing(3);
+}
