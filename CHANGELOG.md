@@ -1,3 +1,9 @@
+## [1.0.10](https://github.com/magefayre/druidcraft/compare/v1.0.9...v1.0.10) (2026-06-10)
+
+### Bug Fixes
+
+* **deps:** update nextjs monorepo to v16.2.9 ([#114](https://github.com/magefayre/druidcraft/issues/114)) ([de48e53](https://github.com/magefayre/druidcraft/commit/de48e53eb6730ea79ee03247a2070578820be2d1))
+
 ## [1.0.9](https://github.com/magefayre/druidcraft/compare/v1.0.8...v1.0.9) (2026-06-05)
 
 ### Bug Fixes
