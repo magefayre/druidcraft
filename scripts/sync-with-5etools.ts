@@ -48,11 +48,19 @@ const filterMonsters = (
   filters: { type: string; cr?: number }
 ) =>
   monsters.reduce<Creature[]>((creatures, monster) => {
-    const { isNpc, name, source, speed, summonedBySpell: spell } = monster
+    const {
+      isNpc,
+      name,
+      reprintedAs,
+      source,
+      speed,
+      summonedBySpell: spell
+    } = monster
     const cr = parseCR(monster.cr)!
     const type = parseType(monster.type)
 
     return !isNpc &&
+      !reprintedAs &&
       type === filters.type &&
       (cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
       ? [...creatures, { cr, name, source, speed, spell }]
@@ -65,7 +73,6 @@ const filterCopies = (monsters: Monster[], existing: Creature[]) =>
       ({ name, source }) => _copy?.name === name && _copy?.source === source
     )
 
-    // Need to handle duplicate sources
     return !!base
       ? [
           ...creatures,

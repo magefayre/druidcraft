@@ -12,8 +12,9 @@ export type Monster = Creature & {
   _copy: Partial<Creature>
   cr: string
   isNpc?: boolean
-  type: string
+  reprintedAs?: string[]
   summonedBySpell?: string
+  type: string
 }
 
 export type Monsters = { monster: Monster[] }

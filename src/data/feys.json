@@ -25,12 +25,6 @@
   },
   {
     "cr": 0.125,
-    "name": "Boggle",
-    "source": "VGM",
-    "speed": { "walk": 30, "climb": 30 }
-  },
-  {
-    "cr": 0.125,
     "name": "Brigganock",
     "source": "WBtW",
     "speed": { "walk": 15 }
@@ -61,7 +55,6 @@
     "speed": { "walk": 10, "fly": 40 }
   },
   { "cr": 0.5, "name": "Darkling", "source": "MPMM", "speed": { "walk": 30 } },
-  { "cr": 0.5, "name": "Darkling", "source": "VGM", "speed": { "walk": 30 } },
   {
     "cr": 0.5,
     "name": "Faerie Borrower",
@@ -110,7 +103,6 @@
   },
   { "cr": 1, "name": "Nilbog", "source": "MPMM", "speed": { "walk": 30 } },
   { "cr": 1, "name": "Quickling", "source": "MPMM", "speed": { "walk": 120 } },
-  { "cr": 1, "name": "Quickling", "source": "VGM", "speed": { "walk": 120 } },
   {
     "cr": 1,
     "name": "Satyr Reveler",
@@ -131,12 +123,6 @@
   },
   {
     "cr": 2,
-    "name": "Darkling Elder",
-    "source": "VGM",
-    "speed": { "walk": 30 }
-  },
-  {
-    "cr": 2,
     "name": "Faerie Pathlighter",
     "source": "MCV4EC",
     "speed": {
@@ -153,7 +139,6 @@
     "speed": { "walk": 40 }
   },
   { "cr": 2, "name": "Meenlock", "source": "MPMM", "speed": { "walk": 30 } },
-  { "cr": 2, "name": "Meenlock", "source": "VGM", "speed": { "walk": 30 } },
   {
     "cr": 2,
     "name": "Naiad",
@@ -197,7 +182,6 @@
   { "cr": 3, "name": "Green Hag", "source": "MM", "speed": { "walk": 30 } },
   { "cr": 3, "name": "Lampad", "source": "MOT", "speed": { "walk": 30 } },
   { "cr": 3, "name": "Redcap", "source": "MPMM", "speed": { "walk": 25 } },
-  { "cr": 3, "name": "Redcap", "source": "VGM", "speed": { "walk": 25 } },
   {
     "cr": 3,
     "name": "Sirene",
@@ -230,23 +214,12 @@
     }
   },
   {
-    "cr": 4,
-    "name": "Yeth Hound",
-    "source": "VGM",
-    "speed": {
-      "walk": 40,
-      "fly": { "number": 40, "condition": "(hover)" },
-      "canHover": true
-    }
-  },
-  {
     "cr": 5,
     "name": "Riffler",
     "source": "BMT",
     "speed": { "walk": 30, "burrow": 20 }
   },
   { "cr": 6, "name": "Annis Hag", "source": "MPMM", "speed": { "walk": 40 } },
-  { "cr": 6, "name": "Annis Hag", "source": "VGM", "speed": { "walk": 40 } },
   { "cr": 6, "name": "Dandylion", "source": "MisMV1", "speed": { "walk": 50 } },
   { "cr": 6, "name": "Dusk Hag", "source": "ERLW", "speed": { "walk": 30 } },
   {
@@ -259,7 +232,6 @@
       "canHover": true
     }
   },
-  { "cr": 7, "name": "Bheur Hag", "source": "VGM", "speed": { "walk": 30 } },
   {
     "cr": 7,
     "name": "Goose Mother",
@@ -270,12 +242,6 @@
     "cr": 7,
     "name": "Korred",
     "source": "MPMM",
-    "speed": { "walk": 30, "burrow": 30 }
-  },
-  {
-    "cr": 7,
-    "name": "Korred",
-    "source": "VGM",
     "speed": { "walk": 30, "burrow": 30 }
   },
   {
@@ -298,20 +264,8 @@
   },
   {
     "cr": 10,
-    "name": "Autumn Eladrin",
-    "source": "MTF",
-    "speed": { "walk": 30 }
-  },
-  {
-    "cr": 10,
     "name": "Spring Eladrin",
     "source": "MPMM",
-    "speed": { "walk": 30 }
-  },
-  {
-    "cr": 10,
-    "name": "Spring Eladrin",
-    "source": "MTF",
     "speed": { "walk": 30 }
   },
   {
@@ -322,20 +276,8 @@
   },
   {
     "cr": 10,
-    "name": "Summer Eladrin",
-    "source": "MTF",
-    "speed": { "walk": 50 }
-  },
-  {
-    "cr": 10,
     "name": "Winter Eladrin",
     "source": "MPMM",
-    "speed": { "walk": 30 }
-  },
-  {
-    "cr": 10,
-    "name": "Winter Eladrin",
-    "source": "MTF",
     "speed": { "walk": 30 }
   },
   {
