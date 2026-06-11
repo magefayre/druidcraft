@@ -147,7 +147,9 @@ const sortCreatures = (a: Creature, b: Creature) => {
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
     (books, [source, name]) => {
       // TODO check all types
-      return beasts.some(beast => beast.source === source)
+      return [...beasts, ...feys].some(
+        creature => creature.source === source
+      ) && !books[source]
         ? { ...books, [source]: name }
         : books
     },
