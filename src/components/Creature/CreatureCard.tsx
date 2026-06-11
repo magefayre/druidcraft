@@ -4,7 +4,7 @@ import type { FC } from 'react'
 import { LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
 import type { Creature } from '~types'
-import { formatCR, formatLevel } from '~utils/monsters'
+import { formatCR, formatLevel } from '~utils/creatures'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'

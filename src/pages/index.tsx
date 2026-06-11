@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import config from '~config'
 import { loadData } from '~data/utils'
 import HomeLayout, { type HomeLayoutProps } from '~layouts/home'
+import type { Creature } from '~types'
 import { canonicalUrl } from '~utils/urls'
 
 const { title } = config
@@ -13,7 +14,9 @@ type Props = Omit<HomeLayoutProps, 'meta'>
 const HomePage: NextPage<Props> = props => <HomeLayout meta={meta} {...props} />
 
 export const getStaticProps = (async () => {
-  const beasts = await loadData('beasts.json')
+  const beasts = ((await loadData('beasts.json')) as Creature[]).filter(
+    ({ spell }) => !spell
+  )
 
   return { props: { beasts } }
 }) satisfies GetStaticProps<Props>

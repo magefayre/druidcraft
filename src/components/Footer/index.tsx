@@ -6,7 +6,7 @@ import {
   Navigation,
   SmartLink
 } from '@newhighsco/chipset'
-import React, { type FC } from 'react'
+import type { FC } from 'react'
 
 import config from '~config'
 import footer from '~data/footer.json'

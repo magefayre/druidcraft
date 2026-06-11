@@ -6,6 +6,7 @@ export type Creature = {
   name: string
   source: Source
   speed: Record<Speed, number>
+  spell?: string
 }
 
 export type Monster = Creature & {

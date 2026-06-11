@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
-import React from 'react'
 
 import PageContainer, {
   type PageContainerProps
@@ -12,10 +11,7 @@ import { canonicalUrl } from '~utils/urls'
 
 const { name, logo, socialLinks, url } = config
 
-export type HomeLayoutProps = {
-  beasts: WildShapeProps['beasts']
-  meta: PageContainerProps['meta']
-}
+export type HomeLayoutProps = WildShapeProps & Pick<PageContainerProps, 'meta'>
 
 const HomeLayout: NextPage<HomeLayoutProps> = ({ beasts, meta }) => (
   <PageContainer meta={meta}>

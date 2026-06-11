@@ -5,7 +5,7 @@ import {
   Navigation,
   SmartLink
 } from '@newhighsco/chipset'
-import React, { type FC } from 'react'
+import type { FC } from 'react'
 
 import LogoLockup from '~components/LogoLockup'
 import header from '~data/header.json'

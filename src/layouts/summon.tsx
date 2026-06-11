@@ -1,15 +1,15 @@
 import type { NextPage } from 'next'
-import React from 'react'
 
 import PageContainer, {
   type PageContainerProps
 } from '~components/PageContainer'
+import Summon, { type SummonProps } from '~components/Summon'
 
-export type SummonLayoutProps = { meta: PageContainerProps['meta'] }
+export type SummonLayoutProps = SummonProps & Pick<PageContainerProps, 'meta'>
 
-const SummonLayout: NextPage<SummonLayoutProps> = ({ meta }) => (
+const SummonLayout: NextPage<SummonLayoutProps> = ({ beasts, meta }) => (
   <PageContainer meta={meta}>
-    <p>TODO:</p>
+    <Summon beasts={beasts} />
   </PageContainer>
 )
 

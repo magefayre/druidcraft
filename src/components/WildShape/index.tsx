@@ -1,6 +1,5 @@
 import { Grid } from '@newhighsco/chipset'
 import type { ChangeEventHandler, FC } from 'react'
-import React from 'react'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
@@ -8,7 +7,7 @@ import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature, Speed } from '~types'
-import { formatCR, formatSpeedLimits, getMaxCR } from '~utils/monsters'
+import { formatCR, formatSpeedLimits, getMaxCR } from '~utils/creatures'
 
 import styles from './WildShape.module.scss'
 

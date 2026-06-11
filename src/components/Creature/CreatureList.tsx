@@ -2,7 +2,7 @@ import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
 import type { Creature } from '~types'
-import { getSpeedLimit } from '~utils/monsters'
+import { getSpeedLimit } from '~utils/creatures'
 
 import { CreatureCard } from '.'
 import styles from './CreatureList.module.scss'

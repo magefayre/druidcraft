@@ -1,5 +1,5 @@
 import { ContentContainer } from '@newhighsco/chipset'
-import React, { type FC, type PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 type Props = PropsWithChildren & { className?: string }
 

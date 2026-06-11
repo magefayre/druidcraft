@@ -1,6 +1,6 @@
 import { Icon } from '@newhighsco/chipset'
 import type PropTypes from 'prop-types'
-import React, { type ComponentPropsWithoutRef, type FC, useId } from 'react'
+import { type ComponentPropsWithoutRef, type FC, useId } from 'react'
 
 import styles from './Checkbox.module.scss'
 
