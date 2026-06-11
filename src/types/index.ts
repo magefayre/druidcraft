@@ -2,7 +2,7 @@ export type Source = string
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 
 export type Creature = {
-  cr: number
+  cr?: number
   name: string
   source: Source
   speed: Record<Speed, number>
@@ -11,6 +11,7 @@ export type Creature = {
 export type Monster = Creature & {
   _copy: Partial<Creature>
   cr: string
+  isNpc?: boolean
   type: string
   summonedBySpell?: string
 }

@@ -1,4 +1,15 @@
 [
+  {
+    "name": "Bestial Spirit",
+    "source": "TCE",
+    "speed": {
+      "walk": 30,
+      "climb": { "number": 30, "condition": "(land only)" },
+      "fly": { "number": 60, "condition": "(air only)" },
+      "swim": { "number": 30, "condition": "(water only)" }
+    },
+    "spell": "Summon Beast|TCE"
+  },
   { "cr": 0, "name": "Almiraj", "source": "ToA", "speed": { "walk": 50 } },
   { "cr": 0, "name": "Awakened Rat", "source": "WDH", "speed": { "walk": 20 } },
   {
@@ -134,24 +145,12 @@
   },
   {
     "cr": 0,
-    "name": "Haungharassk",
-    "source": "WDMM",
-    "speed": { "walk": 10, "climb": 10 }
-  },
-  {
-    "cr": 0,
     "name": "Hawk",
     "source": "MM",
     "speed": { "walk": 10, "fly": 60 }
   },
   { "cr": 0, "name": "Hyena", "source": "MM", "speed": { "walk": 50 } },
   { "cr": 0, "name": "Jackal", "source": "MM", "speed": { "walk": 40 } },
-  {
-    "cr": 0,
-    "name": "Kingsport",
-    "source": "IDRotF",
-    "speed": { "walk": 20, "swim": 40 }
-  },
   {
     "cr": 0,
     "name": "Knucklehead Trout",
@@ -209,12 +208,6 @@
   },
   { "cr": 0, "name": "Pig", "source": "SKT", "speed": { "walk": 30 } },
   { "cr": 0, "name": "Piranha", "source": "PSX", "speed": { "swim": 40 } },
-  {
-    "cr": 0,
-    "name": "Pollenella the Honeybee",
-    "source": "WBtW",
-    "speed": { "walk": 5, "fly": 30 }
-  },
   { "cr": 0, "name": "Quipper", "source": "MM", "speed": { "swim": 40 } },
   { "cr": 0, "name": "Rat", "source": "MM", "speed": { "walk": 20 } },
   {
@@ -256,12 +249,6 @@
     "name": "Spider",
     "source": "MM",
     "speed": { "walk": 20, "climb": 20 }
-  },
-  {
-    "cr": 0,
-    "name": "Sylgar",
-    "source": "WDH",
-    "speed": { "walk": 0, "swim": 40 }
   },
   {
     "cr": 0,
@@ -440,12 +427,6 @@
     "speed": { "walk": 50 }
   },
   { "cr": 0.25, "name": "Axe Beak", "source": "MM", "speed": { "walk": 50 } },
-  {
-    "cr": 0.25,
-    "name": "Birdsquirrel",
-    "source": "AWM",
-    "speed": { "walk": 20, "fly": 30, "climb": 20 }
-  },
   { "cr": 0.25, "name": "Boar", "source": "MM", "speed": { "walk": 40 } },
   {
     "cr": 0.25,
@@ -577,7 +558,6 @@
     "source": "HotDQ",
     "speed": { "walk": 50 }
   },
-  { "cr": 0.25, "name": "Guthash", "source": "TftYP", "speed": { "walk": 30 } },
   { "cr": 0.25, "name": "Hadrosaur", "source": "PSX", "speed": { "walk": 40 } },
   {
     "cr": 0.25,
@@ -609,7 +589,6 @@
     "source": "OotA",
     "speed": { "walk": 30, "climb": 30 }
   },
-  { "cr": 0.25, "name": "Maxeene", "source": "WDH", "speed": { "walk": 40 } },
   { "cr": 0.25, "name": "Ox", "source": "MPMM", "speed": { "walk": 30 } },
   { "cr": 0.25, "name": "Ox", "source": "VGM", "speed": { "walk": 30 } },
   {
@@ -1253,12 +1232,6 @@
     "speed": { "walk": 20, "swim": 30 }
   },
   { "cr": 5, "name": "Moonshark", "source": "CRCotN", "speed": { "swim": 50 } },
-  {
-    "cr": 5,
-    "name": "Obliteros",
-    "source": "WDH",
-    "speed": { "walk": 0, "swim": 50 }
-  },
   {
     "cr": 5,
     "name": "Sailback",

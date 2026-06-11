@@ -1,5 +1,11 @@
 [
   {
+    "name": "Fey Spirit",
+    "source": "TCE",
+    "speed": { "walk": 40 },
+    "spell": "Summon Fey|TCE"
+  },
+  {
     "cr": 0,
     "name": "Dohwar",
     "source": "BAM",
@@ -119,17 +125,6 @@
   },
   {
     "cr": 2,
-    "name": "Agdon Longscarf",
-    "source": "WBtW",
-    "speed": {
-      "walk": 35,
-      "alternate": {
-        "walk": [{ "number": 70, "condition": "while wearing his scarf" }]
-      }
-    }
-  },
-  {
-    "cr": 2,
     "name": "Darkling Elder",
     "source": "MPMM",
     "speed": { "walk": 30 }
@@ -205,12 +200,6 @@
   { "cr": 3, "name": "Redcap", "source": "VGM", "speed": { "walk": 25 } },
   {
     "cr": 3,
-    "name": "Siren",
-    "source": "TftYP",
-    "speed": { "walk": 30, "swim": 30 }
-  },
-  {
-    "cr": 3,
     "name": "Sirene",
     "source": "MaBJoV",
     "speed": { "walk": 30, "swim": 30 }
@@ -252,12 +241,6 @@
   },
   {
     "cr": 5,
-    "name": "Isolde",
-    "source": "VRGR",
-    "speed": { "walk": 30, "fly": 60 }
-  },
-  {
-    "cr": 5,
     "name": "Riffler",
     "source": "BMT",
     "speed": { "walk": 30, "burrow": 20 }
@@ -266,18 +249,6 @@
   { "cr": 6, "name": "Annis Hag", "source": "VGM", "speed": { "walk": 40 } },
   { "cr": 6, "name": "Dandylion", "source": "MisMV1", "speed": { "walk": 50 } },
   { "cr": 6, "name": "Dusk Hag", "source": "ERLW", "speed": { "walk": 30 } },
-  {
-    "cr": 6,
-    "name": "Endelyn Moongrave",
-    "source": "WBtW",
-    "speed": { "walk": 30, "climb": 30 }
-  },
-  {
-    "cr": 7,
-    "name": "Bavlorna Blightstraw",
-    "source": "WBtW",
-    "speed": { "walk": 30, "swim": 30 }
-  },
   {
     "cr": 7,
     "name": "Bheur Hag",
@@ -306,18 +277,6 @@
     "name": "Korred",
     "source": "VGM",
     "speed": { "walk": 30, "burrow": 30 }
-  },
-  {
-    "cr": 7,
-    "name": "Smiler the Defiler",
-    "source": "BGDIA",
-    "speed": { "walk": 30 }
-  },
-  {
-    "cr": 8,
-    "name": "Skabatha Nightshade",
-    "source": "WBtW",
-    "speed": { "walk": 30 }
   },
   {
     "cr": 9,
@@ -434,12 +393,6 @@
     "speed": { "walk": 30, "swim": 50 }
   },
   {
-    "cr": 12,
-    "name": "The Gardener",
-    "source": "QftIS",
-    "speed": { "walk": 30 }
-  },
-  {
     "cr": 13,
     "name": "Deadbark Dryad",
     "source": "VEoR",
@@ -455,27 +408,5 @@
       "canHover": true
     }
   },
-  {
-    "cr": 16,
-    "name": "Nintra Siotta",
-    "source": "CM",
-    "speed": {
-      "walk": 40,
-      "fly": { "number": 40, "condition": "(hover)" },
-      "canHover": true
-    }
-  },
-  {
-    "cr": 17,
-    "name": "Anacreda",
-    "source": "CoA",
-    "speed": { "walk": 40, "fly": 40 }
-  },
-  { "cr": 18, "name": "Trostani", "source": "GGR", "speed": { "walk": 30 } },
-  {
-    "cr": 20,
-    "name": "Iggwilv the Witch Queen",
-    "source": "WBtW",
-    "speed": { "walk": 30 }
-  }
+  { "cr": 18, "name": "Trostani", "source": "GGR", "speed": { "walk": 30 } }
 ]

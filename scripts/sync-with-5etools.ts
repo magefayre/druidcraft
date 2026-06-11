@@ -48,12 +48,13 @@ const filterMonsters = (
   filters: { type: string; cr?: number }
 ) =>
   monsters.reduce<Creature[]>((creatures, monster) => {
-    const { name, source, speed, summonedBySpell: spell } = monster
+    const { isNpc, name, source, speed, summonedBySpell: spell } = monster
     const cr = parseCR(monster.cr)!
     const type = parseType(monster.type)
 
-    return type === filters.type &&
-      cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER)
+    return !isNpc &&
+      type === filters.type &&
+      (cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
       ? [...creatures, { cr, name, source, speed, spell }]
       : creatures
   }, [])
@@ -83,7 +84,8 @@ const filterCopies = (monsters: Monster[], existing: Creature[]) =>
   }, [])
 
 const sortCreatures = (a: Creature, b: Creature) => {
-  if (a.cr !== b.cr) return a.cr - b.cr
+  if (a.cr !== b.cr)
+    return (a.cr ?? Number.MIN_SAFE_INTEGER) - (b.cr ?? Number.MIN_SAFE_INTEGER)
   if (a.name !== b.name) return a.name.localeCompare(b.name)
 
   return a.source.localeCompare(b.source)
