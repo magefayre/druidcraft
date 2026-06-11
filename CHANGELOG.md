@@ -1,3 +1,15 @@
+## [1.1.6](https://github.com/magefayre/druidcraft/compare/v1.1.5...v1.1.6) (2026-06-11)
+
+### Bug Fixes
+
+* **deps:** update dependency @newhighsco/chipset to v7.2.1 ([#123](https://github.com/magefayre/druidcraft/issues/123)) ([6f450e9](https://github.com/magefayre/druidcraft/commit/6f450e96d9abb13ccfbe965d917f885653a4b9e9))
+
+## [1.1.5](https://github.com/magefayre/druidcraft/compare/v1.1.4...v1.1.5) (2026-06-10)
+
+### Bug Fixes
+
+* **deps:** update dependency @newhighsco/press-start to v2.7.2 ([#121](https://github.com/magefayre/druidcraft/issues/121)) ([1752682](https://github.com/magefayre/druidcraft/commit/1752682872ba148b02a8a3c68109058adb803658))
+
 ## [1.1.4](https://github.com/magefayre/druidcraft/compare/v1.1.3...v1.1.4) (2026-06-10)
 
 ### Bug Fixes
