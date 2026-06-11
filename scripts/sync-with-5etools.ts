@@ -48,20 +48,11 @@ const filterMonsters = (
   filters: { type: string; cr?: number }
 ) =>
   monsters.reduce<Creature[]>((creatures, monster) => {
-    const {
-      isNpc,
-      name,
-      reprintedAs,
-      source,
-      speed,
-      summonedBySpell: spell
-    } = monster
+    const { name, source, speed, summonedBySpell: spell } = monster
     const cr = parseCR(monster.cr)!
     const type = parseType(monster.type)
 
-    return !isNpc &&
-      !reprintedAs &&
-      type === filters.type &&
+    return type === filters.type &&
       (cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
       ? [...creatures, { cr, name, source, speed, spell }]
       : creatures
@@ -119,7 +110,9 @@ const sortCreatures = (a: Creature, b: Creature) => {
     Object.values(monsterURLs).map(async url => {
       const { monster } = await fetchData<Monsters>('bestiary', url)
 
-      monsters.push(...monster)
+      monsters.push(
+        ...monster.filter(({ isNpc, reprintedAs }) => !isNpc && !reprintedAs)
+      )
     })
   )
 

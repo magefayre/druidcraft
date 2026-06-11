@@ -170,21 +170,9 @@
   },
   {
     "cr": 0,
-    "name": "Nene",
-    "source": "JttRC",
-    "speed": { "walk": 10, "fly": 60 }
-  },
-  {
-    "cr": 0,
     "name": "Octopus",
     "source": "MM",
     "speed": { "walk": 5, "swim": 30 }
-  },
-  {
-    "cr": 0,
-    "name": "Onyx",
-    "source": "OoW",
-    "speed": { "walk": 400, "climb": 200 }
   },
   { "cr": 0, "name": "Owl", "source": "MM", "speed": { "walk": 5, "fly": 60 } },
   {
@@ -198,12 +186,6 @@
     "name": "Peacock",
     "source": "BGDIA",
     "speed": { "walk": 10, "fly": 50 }
-  },
-  {
-    "cr": 0,
-    "name": "Piccolo",
-    "source": "CoS",
-    "speed": { "walk": 30, "climb": 30 }
   },
   { "cr": 0, "name": "Pig", "source": "SKT", "speed": { "walk": 30 } },
   { "cr": 0, "name": "Piranha", "source": "PSX", "speed": { "swim": 40 } },
@@ -306,12 +288,6 @@
     "speed": { "walk": 40, "climb": 30 }
   },
   { "cr": 0, "name": "Zombie Rat", "source": "PSI", "speed": { "walk": 20 } },
-  {
-    "cr": 0.125,
-    "name": "Barnacle Bess",
-    "source": "GoS",
-    "speed": { "walk": 30, "swim": 30 }
-  },
   {
     "cr": 0.125,
     "name": "Blood Hawk",
@@ -617,12 +593,6 @@
   },
   {
     "cr": 0.25,
-    "name": "Szikzith",
-    "source": "NRH-AWoL",
-    "speed": { "walk": 40, "climb": 40 }
-  },
-  {
-    "cr": 0.25,
     "name": "Velociraptor",
     "source": "MPMM",
     "speed": { "walk": 30 }
@@ -859,28 +829,9 @@
   { "cr": 1, "name": "Moorbounder", "source": "EGW", "speed": { "walk": 70 } },
   {
     "cr": 1,
-    "name": "Old Croaker",
-    "source": "EGW",
-    "speed": { "walk": 20, "swim": 40 }
-  },
-  {
-    "cr": 1,
-    "name": "Parvaz",
-    "source": "ToFW",
-    "speed": { "walk": 10, "fly": 80 }
-  },
-  { "cr": 1, "name": "Sangzor", "source": "CoS", "speed": { "walk": 40 } },
-  {
-    "cr": 1,
     "name": "Snow Leopard",
     "source": "TftYP",
     "speed": { "walk": 40 }
-  },
-  {
-    "cr": 1,
-    "name": "Spider King",
-    "source": "OotA",
-    "speed": { "walk": 30, "climb": 30 }
   },
   { "cr": 1, "name": "Tiger", "source": "MM", "speed": { "walk": 40 } },
   {
@@ -915,7 +866,6 @@
     "source": "JttRC",
     "speed": { "walk": 60 }
   },
-  { "cr": 2, "name": "Ebonclaw", "source": "ToFW", "speed": { "walk": 40 } },
   {
     "cr": 2,
     "name": "Enormous Tentacle",
@@ -1114,7 +1064,6 @@
     "source": "PSK",
     "speed": { "walk": 40 }
   },
-  { "cr": 4, "name": "Ophelia", "source": "ToFW", "speed": { "walk": 40 } },
   {
     "cr": 4,
     "name": "Steel Leaf Kavu",
