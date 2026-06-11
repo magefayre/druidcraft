@@ -7,7 +7,7 @@ import {
   PLURALS,
   SPEEDS
 } from '~constants'
-import type { Beast, Speed } from '~types'
+import type { Creature, Speed } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
@@ -47,6 +47,6 @@ export const getMaxCR = ({ level, circleForms = false }) => {
 
 export const getSpeedLimit = (
   level: number,
-  speed: Beast['speed'],
+  speed: Creature['speed'],
   type: Speed
 ) => level < LEVELS[type] && !!speed[type]

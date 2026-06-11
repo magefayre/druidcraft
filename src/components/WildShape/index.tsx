@@ -2,13 +2,13 @@ import { Grid } from '@newhighsco/chipset'
 import type { ChangeEventHandler, FC } from 'react'
 import React from 'react'
 
-import { BeastList } from '~components/Beast'
 import Checkbox from '~components/Checkbox'
+import { CreatureList } from '~components/Creature'
 import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
-import type { Beast, Speed } from '~types'
-import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
+import type { Creature, Speed } from '~types'
+import { formatCR, formatSpeedLimits, getMaxCR } from '~utils/monsters'
 
 import styles from './WildShape.module.scss'
 
@@ -16,7 +16,7 @@ const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 
 type FormData = { level: number; circleForms: boolean; speed: Speed }
 
-export type WildShapeProps = { beasts: Beast[] }
+export type WildShapeProps = { beasts: Creature[] }
 
 const WildShape: FC<WildShapeProps> = ({ beasts }) => {
   const [formData, setFormData, mounted] = useLocalStorage<FormData>(
@@ -99,7 +99,7 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
         </Grid>
       </Section>
       <Section>
-        <BeastList beasts={beasts} level={level} maxCR={maxCR} />
+        <CreatureList creatures={beasts} level={level} maxCR={maxCR} />
       </Section>
     </>
   )

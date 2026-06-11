@@ -1,12 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next'
-import urlJoin from 'url-join'
 
 import config from '~config'
 import { loadData } from '~data/utils'
 import HomeLayout, { type HomeLayoutProps } from '~layouts/home'
+import { canonicalUrl } from '~utils/urls'
 
-const { title, url } = config
-const meta = { canonical: urlJoin(url, '/'), customTitle: true, title }
+const { title } = config
+const meta = { canonical: canonicalUrl(), customTitle: true, title }
 
 type Props = Omit<HomeLayoutProps, 'meta'>
 

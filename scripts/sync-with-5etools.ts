@@ -5,8 +5,8 @@ import { join } from 'node:path'
 import yargs from 'yargs'
 
 import { LEVELS } from '~constants'
-import type { Beast, Monster, Monsters, Source } from '~types'
-import { getCircleFormsCR } from '~utils'
+import type { Creature, Monster, Monsters, Source } from '~types'
+import { getCircleFormsCR } from '~utils/monsters'
 
 import { fetchData, fetchScript } from './utils'
 
@@ -47,41 +47,42 @@ const filterMonsters = (
   monsters: Monster[],
   filters: { type: string; cr?: number }
 ) =>
-  monsters.reduce<Beast[]>((beasts, monster) => {
-    const { name, source, speed } = monster
+  monsters.reduce<Creature[]>((creatures, monster) => {
+    const { name, source, speed, summonedBySpell: spell } = monster
     const cr = parseCR(monster.cr)!
     const type = parseType(monster.type)
 
     return type === filters.type &&
       cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER)
-      ? [...beasts, { cr, name, source, speed }]
-      : beasts
+      ? [...creatures, { cr, name, source, speed, spell }]
+      : creatures
   }, [])
 
-const filterCopies = (monsters: Monster[], existing: Beast[]) =>
-  monsters.reduce<Beast[]>((beasts, { _copy, cr, ...rest }) => {
+const filterCopies = (monsters: Monster[], existing: Creature[]) =>
+  monsters.reduce<Creature[]>((creatures, { _copy, cr, ...rest }) => {
     const base = existing.find(
       ({ name, source }) => _copy?.name === name && _copy?.source === source
     )
 
-    // Need to handle duplicate sources too
+    // Need to handle duplicate sources
     return !!base
       ? [
-          ...beasts,
+          ...creatures,
           {
-            ...Object.entries(base).reduce<Beast>((beast, [key, value]) => {
-              return {
-                ...beast,
+            ...Object.entries(base).reduce<Creature>(
+              (creatures, [key, value]) => ({
+                ...creatures,
                 [key]: (rest as unknown as Monster)[key] ?? value
-              }
-            }, {} as Beast),
+              }),
+              {} as Creature
+            ),
             cr: parseCR(cr) ?? base.cr
           }
         ]
-      : beasts
+      : creatures
   }, [])
 
-const sortBeasts = (a: Beast, b: Beast) => {
+const sortCreatures = (a: Creature, b: Creature) => {
   if (a.cr !== b.cr) return a.cr - b.cr
   if (a.name !== b.name) return a.name.localeCompare(b.name)
 
@@ -113,7 +114,7 @@ const sortBeasts = (a: Beast, b: Beast) => {
     })
   )
 
-  const beasts: Beast[] = filterMonsters(monsters, {
+  const beasts: Creature[] = filterMonsters(monsters, {
     type: 'beast',
     cr: getCircleFormsCR(LEVELS.max)
   })
@@ -122,16 +123,21 @@ const sortBeasts = (a: Beast, b: Beast) => {
 
   await writeFile(
     join(outputDir, 'beasts.json'),
-    JSON.stringify(beasts.sort(sortBeasts))
+    JSON.stringify(beasts.sort(sortCreatures))
   )
 
-  const feys = filterMonsters(monsters, { type: 'fey' })
+  const feys: Creature[] = filterMonsters(monsters, { type: 'fey' })
 
-  await writeFile(join(outputDir, 'feys.json'), JSON.stringify(feys))
+  await writeFile(
+    join(outputDir, 'feys.json'),
+    JSON.stringify(feys.sort(sortCreatures))
+  )
+
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
     (books, [source, name]) => {
+      // TODO check all types
       return beasts.some(beast => beast.source === source)
         ? { ...books, [source]: name }
         : books

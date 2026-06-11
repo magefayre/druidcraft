@@ -1,15 +1,13 @@
 import type { GetStaticProps, NextPage } from 'next'
-import urlJoin from 'url-join'
 
-import config from '~config'
 import { loadData } from '~data/utils'
 import SummonLayout, { type SummonLayoutProps } from '~layouts/summon'
+import { canonicalUrl } from '~utils/urls'
 
-const { url } = config
 const meta = {
   title: 'Summon',
   description: 'TODO:',
-  canonical: urlJoin(url, '/summon')
+  canonical: canonicalUrl('summon')
 }
 
 type Props = Omit<SummonLayoutProps, 'meta'>

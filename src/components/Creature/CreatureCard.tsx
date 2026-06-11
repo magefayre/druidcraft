@@ -3,13 +3,13 @@ import type { FC } from 'react'
 
 import { LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
-import type { Beast } from '~types'
-import { formatCR, formatLevel } from '~utils'
+import type { Creature } from '~types'
+import { formatCR, formatLevel } from '~utils/monsters'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
-import styles from './BeastCard.module.scss'
+import styles from './CreatureCard.module.scss'
 
-type Props = Beast & { disabled?: boolean; priority?: boolean }
+type Props = Creature & { disabled?: boolean; priority?: boolean }
 
 const BeastCard: FC<Props> = ({
   cr,
