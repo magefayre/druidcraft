@@ -1,3 +1,9 @@
+## [1.1.6](https://github.com/magefayre/druidcraft/compare/v1.1.5...v1.1.6) (2026-06-11)
+
+### Bug Fixes
+
+* **deps:** update dependency @newhighsco/chipset to v7.2.1 ([#123](https://github.com/magefayre/druidcraft/issues/123)) ([6f450e9](https://github.com/magefayre/druidcraft/commit/6f450e96d9abb13ccfbe965d917f885653a4b9e9))
+
 ## [1.1.5](https://github.com/magefayre/druidcraft/compare/v1.1.4...v1.1.5) (2026-06-10)
 
 ### Bug Fixes
