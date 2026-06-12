@@ -1,0 +1,33 @@
+name: Sync with 5etools
+on:
+  workflow_dispatch:
+jobs:
+  sync-with-5etools:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node and restore dependencies
+        uses: ./.github/actions/setup
+      - name: Sync with 5etools
+        run: yarn sync-with-5etools
+      - name: Create pull request
+        id: pr
+        uses: peter-evans/create-pull-request@v8
+        with:
+          add-paths: src/data/**
+          base: main
+          body: |
+            - Created by [${{ github.workflow }}][1]
+            - Triggered by [${{ github.actor }}][2]
+
+            [1]: https://github.com/${{ github.workflow_ref }}
+            [2]: https://github.com/${{ github.actor }}
+          branch: sync-with-5etools
+          commit-message: 'feat: sync with 5etools'
+          delete-branch: true
+          team-reviewers: design-system-engineers
+          title: 'feat: sync with 5etools'
