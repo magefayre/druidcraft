@@ -5,7 +5,7 @@ import {
   Navigation,
   SmartLink
 } from '@newhighsco/chipset'
-import React, { type FC } from 'react'
+import type { FC } from 'react'
 
 import LogoLockup from '~components/LogoLockup'
 import header from '~data/header.json'
@@ -26,7 +26,11 @@ const Header: FC = () => (
           </SmartLink>
         </Grid.Item>
         <Grid.Item className={styles.links}>
-          <Navigation links={header.links} theme={{ link: styles.link }} />
+          <Navigation
+            links={header.links}
+            theme={{ link: styles.link }}
+            inline
+          />
         </Grid.Item>
       </Grid>
     </ContentContainer>

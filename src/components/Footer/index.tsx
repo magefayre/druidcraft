@@ -6,7 +6,7 @@ import {
   Navigation,
   SmartLink
 } from '@newhighsco/chipset'
-import React, { type FC } from 'react'
+import type { FC } from 'react'
 
 import config from '~config'
 import footer from '~data/footer.json'
@@ -34,7 +34,11 @@ const Footer: FC = () => (
     >
       <Grid valign="middle">
         <Grid.Item sizes={['one-half']}>
-          <Navigation links={footer.links} theme={{ link: styles.link }} />
+          <Navigation
+            links={footer.links}
+            theme={{ link: styles.link }}
+            inline
+          />
         </Grid.Item>
         <Grid.Item sizes={['one-half']} align="right">
           <Navigation

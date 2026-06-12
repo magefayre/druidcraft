@@ -2,20 +2,18 @@ import { existsSync, mkdirSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
+import plur from 'plur'
 import yargs from 'yargs'
 
 import { LEVELS } from '~constants'
-import type { Beast, Monster, Monsters, Source } from '~types'
-import { getCircleFormsCR } from '~utils'
+import type { Creature, Monster, Monsters, MonsterType, Source } from '~types'
+import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/creatures'
+
+import { fetchData, fetchScript } from './utils'
 
 declare global {
   var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
 }
-
-const BASE = new URL(
-  'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/main/'
-)
-const MAX_CR = getCircleFormsCR(LEVELS.max)
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -32,63 +30,68 @@ const parseCR = (cr: string | { cr: string }): number | undefined => {
   return undefined
 }
 
-const fetchData = async <T>(...url: string[]): Promise<T> => {
-  const res = await fetch(new URL(url.join('/'), new URL('data/', BASE)))
+const parseSpell = (summonedBySpell?: string) =>
+  summonedBySpell?.split('|').at(0)
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
+const parseType = (type: string | { type: string; swarmSize: string }) => {
+  if (
+    typeof type !== 'string' &&
+    type?.hasOwnProperty('type') &&
+    !type.swarmSize
+  ) {
+    return parseType(type.type)
   }
 
-  return res.json()
+  if (typeof type === 'string') return type
+
+  return undefined
 }
 
-const fetchScript = async (url: string) => {
-  const res = await fetch(new URL(url, new URL('js/', BASE)))
+type MonsterFilters = { type: MonsterType; maxCR?: number }
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch ${url}: ${res.status} ${res.statusText}`)
-  }
+const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
+  const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
+    const { name, source, speed } = monster
+    const cr = parseCR(monster.cr)!
+    const spell = parseSpell(monster.summonedBySpell)
+    const type = parseType(monster.type)
 
-  return eval(await res.text())
-}
-
-const filterBeasts = (monsters: Monster[]) =>
-  monsters.reduce<Beast[]>((beasts, { cr, name, source, speed, type }) => {
-    const challenge = parseCR(cr)!
-
-    return type === 'beast' && challenge <= MAX_CR
-      ? [...beasts, { cr: challenge, name, source, speed }]
-      : beasts
+    return type === filters.type &&
+      (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
+      ? [...creatures, { cr, name, source, speed, spell }]
+      : creatures
   }, [])
 
-const filterCopies = (monsters: Monster[], existing: Beast[]) =>
-  monsters.reduce<Beast[]>((beasts, { _copy, cr, ...rest }) => {
+  creatures.push(...filterCopies(monsters, creatures))
+
+  return creatures
+}
+
+const filterCopies = (monsters: Monster[], existing: Creature[]) =>
+  monsters.reduce<Creature[]>((creatures, { _copy, cr, ...rest }) => {
     const base = existing.find(
-      ({ name, source }) => _copy?.name === name && _copy?.source === source
+      ({ name, source }) =>
+        _copy?.name === name &&
+        _copy?.name !== rest.name &&
+        _copy?.source === source
     )
 
     return !!base
       ? [
-          ...beasts,
+          ...creatures,
           {
-            ...Object.entries(base).reduce<Beast>((beast, [key, value]) => {
-              return {
-                ...beast,
+            ...Object.entries(base).reduce<Creature>(
+              (creatures, [key, value]) => ({
+                ...creatures,
                 [key]: (rest as unknown as Monster)[key] ?? value
-              }
-            }, {} as Beast),
+              }),
+              {} as Creature
+            ),
             cr: parseCR(cr) ?? base.cr
           }
         ]
-      : beasts
+      : creatures
   }, [])
-
-const sortBeasts = (a: Beast, b: Beast) => {
-  if (a.cr !== b.cr) return a.cr - b.cr
-  if (a.name !== b.name) return a.name.localeCompare(b.name)
-
-  return a.source.localeCompare(b.source)
-}
 
 ;(async () => {
   const { outputDir } = await yargs(process.argv)
@@ -96,6 +99,10 @@ const sortBeasts = (a: Beast, b: Beast) => {
       outputDir: { alias: 'output', demandOption: true, type: 'string' }
     })
     .parse()
+
+  if (!existsSync(outputDir)) {
+    mkdirSync(outputDir, { recursive: true })
+  }
 
   const monsterURLs = await fetchData<Record<Source, string>>(
     'bestiary',
@@ -107,31 +114,41 @@ const sortBeasts = (a: Beast, b: Beast) => {
     Object.values(monsterURLs).map(async url => {
       const { monster } = await fetchData<Monsters>('bestiary', url)
 
-      monsters.push(...monster)
+      monsters.push(
+        ...monster.filter(({ isNpc, reprintedAs }) => !isNpc && !reprintedAs)
+      )
     })
   )
 
-  const beasts: Beast[] = filterBeasts(monsters)
+  const data: MonsterFilters[] = [
+    { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max) },
+    { type: 'elemental', maxCR: getTypeCR('elemental') },
+    { type: 'dragon', maxCR: Number.MIN_SAFE_INTEGER },
+    { type: 'fey', maxCR: getTypeCR('fey') },
+    { type: 'plant', maxCR: 2 }
+  ]
 
-  beasts.push(...filterCopies(monsters, beasts))
+  const creatures = await Promise.all(
+    data.map(async filters => {
+      const creatures = filterMonsters(monsters, filters)
 
-  if (!existsSync(outputDir)) {
-    mkdirSync(outputDir, { recursive: true })
-  }
+      await writeFile(
+        join(outputDir, `${plur(filters.type)}.json`),
+        JSON.stringify(creatures.sort(sortCreatures))
+      )
 
-  await writeFile(
-    join(outputDir, 'beasts.json'),
-    JSON.stringify(beasts.sort(sortBeasts))
+      return creatures
+    })
   )
 
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
-    (books, [source, name]) => {
-      return beasts.some(beast => beast.source === source)
+    (books, [source, name]) =>
+      creatures.flat().some(creature => creature.source === source) &&
+      !books[source]
         ? { ...books, [source]: name }
-        : books
-    },
+        : books,
     {}
   )
 

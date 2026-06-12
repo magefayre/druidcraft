@@ -1,0 +1,16 @@
+@use '~styles/functions';
+
+.root {
+  --columns: 9;
+  --gap: #{functions.spacing(2)};
+  --gap-total: calc(calc(var(--columns) - 1) * var(--gap));
+  --min-width: #{functions.spacing(20)};
+  --max-width: calc((100% - var(--gap-total)) / var(--columns));
+
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--min-width), var(--max-width)), 1fr)
+  );
+}

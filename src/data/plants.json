@@ -1,0 +1,215 @@
+[
+  {
+    "cr": 0,
+    "name": "Awakened Shrub",
+    "source": "MM",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0,
+    "name": "Awakened Shrub Totem Elemental",
+    "source": "PSX",
+    "speed": { "walk": 20 }
+  },
+  { "cr": 0, "name": "Campestri", "source": "WBtW", "speed": { "walk": 5 } },
+  {
+    "cr": 0,
+    "name": "Myconid Sprout",
+    "source": "MM",
+    "speed": { "walk": 10 }
+  },
+  { "cr": 0, "name": "Shrieker", "source": "MM", "speed": { "walk": 0 } },
+  {
+    "cr": 0.125,
+    "name": "Bridesmaid of Zuggtmoy",
+    "source": "OotA",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Drow Spore Servant",
+    "source": "OotA",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Gadabout",
+    "source": "MCV1SC",
+    "speed": {
+      "walk": 10,
+      "fly": { "number": 60, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 0.125,
+    "name": "Lycanthropickle",
+    "source": "RMBRE",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0.125,
+    "name": "Twig Blight",
+    "source": "MM",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Needle Blight",
+    "source": "MM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Vegepygmy",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Vegepygmy Scavenger",
+    "source": "QftIS",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 0.25,
+    "name": "Violet Fungus",
+    "source": "MM",
+    "speed": { "walk": 5 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Blight Totem Elemental",
+    "source": "PSX",
+    "speed": { "walk": 10 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Duergar Spore Servant",
+    "source": "OotA",
+    "speed": { "walk": 15 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Gas Spore",
+    "source": "MM",
+    "speed": {
+      "walk": 0,
+      "fly": { "number": 10, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 0.5,
+    "name": "Myconid Adult",
+    "source": "MM",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Needle Spawn",
+    "source": "MFF",
+    "speed": { "walk": 30, "climb": 20 }
+  },
+  { "cr": 0.5, "name": "Podling", "source": "VRGR", "speed": { "walk": 20 } },
+  {
+    "cr": 0.5,
+    "name": "Thorn Slinger",
+    "source": "TftYP",
+    "speed": { "walk": 10 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Tri-flower Frond",
+    "source": "ToA",
+    "speed": { "walk": 5 }
+  },
+  { "cr": 0.5, "name": "Vine Blight", "source": "MM", "speed": { "walk": 10 } },
+  {
+    "cr": 1,
+    "name": "Astral Blight",
+    "source": "LoX",
+    "speed": { "walk": 10 }
+  },
+  { "cr": 1, "name": "Jammer Leech", "source": "BAM", "speed": { "walk": 10 } },
+  { "cr": 1, "name": "Mantrap", "source": "ToA", "speed": { "walk": 5 } },
+  {
+    "cr": 1,
+    "name": "Quaggoth Spore Servant",
+    "source": "MM",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  {
+    "cr": 1,
+    "name": "Razorvine Blight",
+    "source": "MPP",
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "cr": 1,
+    "name": "Spore Servant Octopus",
+    "source": "DoSI",
+    "speed": { "walk": 5, "swim": 50 }
+  },
+  {
+    "cr": 1,
+    "name": "Thorny Vegepygmy",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Aartuk Starhorror",
+    "source": "BAM",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  {
+    "cr": 2,
+    "name": "Aartuk Weedling",
+    "source": "BAM",
+    "speed": { "walk": 20, "climb": 20 }
+  },
+  { "cr": 2, "name": "Awakened Tree", "source": "MM", "speed": { "walk": 20 } },
+  {
+    "cr": 2,
+    "name": "Awakened Zurkhwood",
+    "source": "OotA",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 2,
+    "name": "Chamberlain of Zuggtmoy",
+    "source": "OotA",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 2,
+    "name": "Myconid Sovereign",
+    "source": "MM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Treant Sapling",
+    "source": "WBtW",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Vegepygmy Chief",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 2,
+    "name": "Vegepygmy Thorny Hunter",
+    "source": "QftIS",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 2,
+    "name": "Yellow Musk Creeper",
+    "source": "ToA",
+    "speed": { "walk": 5, "climb": 5 }
+  }
+]

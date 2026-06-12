@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Draconic Spirit",
+    "source": "FTD",
+    "speed": { "walk": 30, "fly": 60, "swim": 30 },
+    "spell": "Summon Draconic Spirit"
+  }
+]

@@ -26,9 +26,17 @@
 }
 
 .icon {
+  font-size: x-large;
+  font-weight: bold;
   paint-order: stroke;
   stroke: var(--light-dark);
   stroke-width: functions.spacing(0.25);
+  text-align: left;
+  text-shadow:
+    1px 1px 0 var(--light-dark),
+    1px -1px 0 var(--light-dark),
+    -1px 1px 0 var(--light-dark),
+    -1px -1px 0 var(--light-dark);
   width: functions.spacing(5.5);
 }
 

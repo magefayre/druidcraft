@@ -1,7 +1,7 @@
 {
   "name": "@magefayre/druidcraft",
   "description": "Never struggle with choosing a Wild Shape again",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "author": "Magefayre",
   "license": "ISC",
   "private": true,
@@ -80,6 +80,7 @@
     "eslint": "10.4.1",
     "husky": "9.1.7",
     "lint-staged": "17.0.7",
+    "plur": "6.0.0",
     "prettier": "3.8.4",
     "semantic-release": "25.0.5",
     "stylelint": "17.13.0",
