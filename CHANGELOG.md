@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/magefayre/druidcraft/compare/v1.1.8...v1.2.0) (2026-06-12)
+
+### Features
+
+* summoning ([#120](https://github.com/magefayre/druidcraft/issues/120)) ([deafe3e](https://github.com/magefayre/druidcraft/commit/deafe3e1f9a83eaff799c8616e85f17282d572c0))
+
 ## [1.1.8](https://github.com/magefayre/druidcraft/compare/v1.1.7...v1.1.8) (2026-06-12)
 
 ### Bug Fixes
