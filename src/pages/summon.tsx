@@ -7,11 +7,7 @@ import type { Creature, MonsterType } from '~types'
 import { sortCreatures } from '~utils/creatures'
 import { canonicalUrl } from '~utils/urls'
 
-const meta = {
-  title: 'Summon',
-  description: 'TODO:',
-  canonical: canonicalUrl('summon')
-}
+const meta = { title: 'Summon', canonical: canonicalUrl('summon') }
 
 type Props = Omit<SummonLayoutProps, 'meta'>
 
