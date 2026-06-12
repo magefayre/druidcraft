@@ -13,7 +13,7 @@
       "~styles/*": ["./src/styles/_*", "./src/styles/*"],
       "~theme": ["./src/theme"],
       "~types": ["./src/types"],
-      "~utils": ["./src/utils"]
+      "~utils/*": ["./src/utils/*"]
     },
     "types": ["vitest/globals"]
   },

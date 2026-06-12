@@ -1,22 +1,24 @@
-import { Grid } from '@newhighsco/chipset'
 import type { ChangeEventHandler, FC } from 'react'
-import React from 'react'
 
-import { BeastList } from '~components/Beast'
 import Checkbox from '~components/Checkbox'
+import { CreatureList } from '~components/Creature'
+import Filter from '~components/Filter'
 import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
-import type { Beast, Speed } from '~types'
-import { formatCR, formatSpeedLimits, getMaxCR } from '~utils'
-
-import styles from './WildShape.module.scss'
+import type { Creature, Speed } from '~types'
+import {
+  formatCR,
+  formatSpeedLimits,
+  getMaxCR,
+  getSpeedLimit
+} from '~utils/creatures'
 
 const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 
 type FormData = { level: number; circleForms: boolean; speed: Speed }
 
-export type WildShapeProps = { beasts: Beast[] }
+export type WildShapeProps = { beasts: Creature[] }
 
 const WildShape: FC<WildShapeProps> = ({ beasts }) => {
   const [formData, setFormData, mounted] = useLocalStorage<FormData>(
@@ -45,61 +47,63 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
 
   return (
     <>
-      <Section className={styles.header}>
-        <Grid flex className={styles.headerContent}>
-          <Grid.Item className={styles.fieldset}>
-            <form onChange={handleChange}>
-              <label htmlFor="level">Level</label>
-              <select id="level" name="level" value={level} disabled={!mounted}>
-                {levels.map(level => (
-                  <option
-                    key={level}
-                    value={level}
-                    disabled={
-                      level < LEVELS.walk ||
-                      (!circleForms && level > LEVELS.fly)
-                    }
-                  >
-                    {level}
-                  </option>
-                ))}
-              </select>
-              <label htmlFor="speed">Speed</label>
-              <select id="speed" name="speed" value={speed} disabled={!mounted}>
-                <option value="">{EMPTY}</option>
-                {Object.entries(SPEEDS).map(([key, { singular }]) => (
-                  <option
-                    key={key}
-                    value={key}
-                    disabled={level < (LEVELS[key] ?? LEVELS.walk)}
-                  >
-                    {singular}
-                  </option>
-                ))}
-              </select>
-              <Checkbox
-                name="circleForms"
-                icon={['boxicons:moon', circleForms && 'filled']
-                  .filter(Boolean)
-                  .join('-')}
-                alt="Moon Druid"
-                checked={circleForms}
-                disabled={!mounted}
-              />
-            </form>
-          </Grid.Item>
-          <Grid.Item className={styles.filters}>
-            <dl>
-              <dt>Max. CR</dt>
-              <dd>{formatCR(maxCR)}</dd>
-              <dt>Limitations</dt>
-              <dd>{formatSpeedLimits(level)}</dd>
-            </dl>
-          </Grid.Item>
-        </Grid>
-      </Section>
+      <Filter>
+        <form onChange={handleChange}>
+          <label htmlFor="level">Level</label>
+          <select id="level" name="level" value={level} disabled={!mounted}>
+            {levels.map(level => (
+              <option
+                key={level}
+                value={level}
+                disabled={
+                  level < LEVELS.walk || (!circleForms && level > LEVELS.fly)
+                }
+              >
+                {level}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="speed">Speed</label>
+          <select id="speed" name="speed" value={speed} disabled={!mounted}>
+            <option value="">{EMPTY}</option>
+            {Object.entries(SPEEDS).map(([key, { singular }]) => (
+              <option
+                key={key}
+                value={key}
+                disabled={level < (LEVELS[key] ?? LEVELS.walk)}
+              >
+                {singular}
+              </option>
+            ))}
+          </select>
+          <Checkbox
+            name="circleForms"
+            icon={['boxicons:moon', circleForms && 'filled']
+              .filter(Boolean)
+              .join('-')}
+            alt="Moon Druid"
+            checked={circleForms}
+            disabled={!mounted}
+          />
+        </form>
+        <dl>
+          <dt>Max. CR</dt>
+          <dd>{formatCR(maxCR)}</dd>
+          <dt>Limitations</dt>
+          <dd>{formatSpeedLimits(level)}</dd>
+        </dl>
+      </Filter>
       <Section>
-        <BeastList beasts={beasts} level={level} maxCR={maxCR} />
+        <CreatureList
+          creatures={beasts}
+          isCreatureDisabled={({ cr, speed }) =>
+            !maxCR ||
+            cr > maxCR ||
+            getSpeedLimit(level, speed, 'swim') ||
+            getSpeedLimit(level, speed, 'fly')
+          }
+          speedLimits
+        />
       </Section>
     </>
   )

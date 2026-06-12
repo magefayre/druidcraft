@@ -1,4 +1,4 @@
-import type { Speed } from '~types'
+import type { MonsterType, Speed } from '~types'
 
 export const CR = { walk: 0.25, swim: 0.5, fly: 1 }
 
@@ -7,6 +7,13 @@ export const CR_LABELS = {
   [CR.walk]: '1/4',
   [CR.swim]: '1/2'
 } as Readonly<Record<number, string>>
+
+export const CR_LIMITS = {
+  [CR.walk]: 8,
+  [CR.swim]: 4,
+  [CR.fly]: 2,
+  2: 1
+} as Readonly<Record<number, number>>
 
 export const EMPTY = '-'
 
@@ -31,4 +38,49 @@ export const SPEEDS = {
   fly: { icon: 'mdi:bird', singular: 'Flies', continuous: 'flying' }
 } as Readonly<
   Record<Speed, { icon?: string; singular: string; continuous: string }>
+>
+
+export const SPELLS = {
+  'Summon Beast': { level: 2, spell: true, type: 'beast' },
+  'Conjure Animal': { level: 3, limit: true, maxCR: 2, type: 'beast' },
+  'Summon Fey': { level: 3, spell: true, type: 'fey' },
+  'Conjure Minor Elementals': {
+    level: 4,
+    limit: true,
+    maxCR: 2,
+    type: 'elemental'
+  },
+  'Conjure Woodland Being': { level: 4, limit: true, maxCR: 2, type: 'fey' },
+  'Giant Insect': {
+    creatures: {
+      'Giant Centipede': 10,
+      'Giant Spider': 3,
+      'Giant Wasp': 5,
+      'Giant Scorpion': 1
+    },
+    level: 4,
+    type: 'beast'
+  },
+  'Summon Elemental': { level: 4, spell: true, type: 'elemental' },
+  Awaken: {
+    creatures: { 'Awakened Shrub': 1, 'Awakened Tree': 1 },
+    level: 4,
+    type: 'plant'
+  },
+  'Conjure Elemental': { level: 5, limit: 1, maxCR: 5, type: 'elemental' },
+  'Summon Draconic Spirit': { level: 5, spell: true, type: 'dragon' },
+  'Conjure Fey': { level: 6, limit: 1, maxCR: 6, type: 'fey' },
+  'Druid Grove': { creatures: { 'Awakened Tree': 4 }, level: 6, type: 'plant' }
+} as Readonly<
+  Record<
+    string,
+    {
+      creatures?: Record<string, number>
+      level: number
+      limit?: boolean | number
+      maxCR?: number
+      spell?: boolean
+      type: MonsterType
+    }
+  >
 >

@@ -2,7 +2,7 @@ import withSvgr from '@newhighsco/next-plugin-svgr'
 import type { NextConfig } from 'next'
 import withPlugins from 'next-compose-plugins'
 
-import { tokenURL, url } from '~components/Beast/utils'
+import { tokenURL, url } from '~components/Creature/utils'
 
 const BASE = {
   html: new URL('https://2014.5e.tools/'),

@@ -2,7 +2,7 @@ import '~styles/app.scss'
 
 import { AppPage } from '@newhighsco/press-start'
 import { type AppProps } from 'next/app'
-import React, { type FC } from 'react'
+import type { FC } from 'react'
 
 import config from '~config'
 import theme from '~theme'

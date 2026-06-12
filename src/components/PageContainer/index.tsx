@@ -1,7 +1,7 @@
 import { PageContainer as ThemedPageContainer } from '@newhighsco/chipset'
 import { Meta } from '@newhighsco/press-start'
 import type { NextSeoProps } from 'next-seo'
-import React, { type FC, type PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
 import Footer from '~components/Footer'
 import Header from '~components/Header'

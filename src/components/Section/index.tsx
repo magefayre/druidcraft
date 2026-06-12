@@ -1,11 +1,16 @@
 import { ContentContainer } from '@newhighsco/chipset'
-import React, { type FC, type PropsWithChildren } from 'react'
+import type PropTypes from 'prop-types'
+import type { FC } from 'react'
 
-type Props = PropsWithChildren & { className?: string }
+type Props = PropTypes.InferProps<ContentContainer.propTypes>
 
-const Section: FC<Props> = ({ children, className }) => (
-  <ContentContainer className={className}>
-    <ContentContainer gutter size="desktopLarge">
+const Section: FC<Props> = ({ children, className, theme }) => (
+  <ContentContainer className={className} theme={{ root: theme?.root }}>
+    <ContentContainer
+      gutter
+      size="desktopLarge"
+      theme={{ content: theme?.content }}
+    >
       {children}
     </ContentContainer>
   </ContentContainer>

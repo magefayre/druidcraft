@@ -1,7 +1,0 @@
-@use '~styles/functions';
-
-.root {
-  display: grid;
-  gap: functions.spacing(2);
-  grid-template-columns: repeat(auto-fit, minmax(functions.spacing(20), 1fr));
-}
