@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/magefayre/druidcraft/compare/v1.2.0...v1.2.1) (2026-06-12)
+
+### Bug Fixes
+
+* **summon:** add meta description ([04c5431](https://github.com/magefayre/druidcraft/commit/04c5431c655be9d8bb0ce07ec0a036363fb9d3f8))
+
 ## [1.2.0](https://github.com/magefayre/druidcraft/compare/v1.1.8...v1.2.0) (2026-06-12)
 
 ### Features
