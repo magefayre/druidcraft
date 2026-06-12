@@ -6,7 +6,7 @@ import Section from '~components/Section'
 import { EMPTY, SPELLS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature, MonsterType } from '~types'
-import { formatCR, formatCRLimit } from '~utils/creatures'
+import { formatCR, formatCRLimit, formatLevel } from '~utils/creatures'
 
 type FormData = { spell: string }
 
@@ -48,8 +48,10 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
             disabled={!mounted}
           >
             <option value="">{EMPTY}</option>
-            {Object.keys(SPELLS).map(spell => (
-              <option key={spell}>{spell}</option>
+            {Object.entries(SPELLS).map(([spell, { level }]) => (
+              <option key={spell} value={spell}>
+                {spell} ({formatLevel(level)})
+              </option>
             ))}
           </select>
         </form>
@@ -65,6 +67,10 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
       <Section>
         <CreatureList
           creatures={summons}
+          isCreatureDisabled={({ cr }) =>
+            typeof filters.limit === 'boolean' &&
+            formatCRLimit(cr) === undefined
+          }
           isCreatureLimited={({ cr, name }) =>
             filters.creatures?.[name] ||
             (typeof filters.limit === 'boolean' && formatCRLimit(cr)) ||

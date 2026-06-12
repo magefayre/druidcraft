@@ -13,7 +13,13 @@ import type { Creature, MonsterType, Speed } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
-export const formatCRLimit = (cr: number) => CR_LIMITS[cr] ?? CR_LIMITS[CR.walk]
+export const formatCRLimit = (cr: number) => {
+  const min = Math.min(...(Object.keys(CR_LIMITS) as unknown as number[]))
+
+  if (cr < min) cr = min
+
+  return CR_LIMITS[cr]
+}
 
 export const formatLevel = (level: number) =>
   `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`

@@ -61,7 +61,7 @@ const BeastCard: FC<Props> = ({
           theme={{ root: styles.cr, toggle: styles.crToggle }}
           {...tooltipProps}
         >
-          Challenge&nbsp;Rating&nbsp;{crLabel}
+          Challenge Rating&nbsp;{crLabel}
         </Tooltip>
       )}
       <span className={styles.icons}>

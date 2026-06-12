@@ -41,11 +41,16 @@ export const SPEEDS = {
 >
 
 export const SPELLS = {
-  'Summon Beast': { spell: true, type: 'beast' },
-  'Conjure Animal': { limit: true, maxCR: 2, type: 'beast' },
-  'Summon Fey': { spell: true, type: 'fey' },
-  'Conjure Minor Elementals': { limit: true, maxCR: 2, type: 'elemental' },
-  'Conjure Woodland Being': { limit: true, maxCR: 2, type: 'fey' },
+  'Summon Beast': { level: 2, spell: true, type: 'beast' },
+  'Conjure Animal': { level: 3, limit: true, maxCR: 2, type: 'beast' },
+  'Summon Fey': { level: 3, spell: true, type: 'fey' },
+  'Conjure Minor Elementals': {
+    level: 4,
+    limit: true,
+    maxCR: 2,
+    type: 'elemental'
+  },
+  'Conjure Woodland Being': { level: 4, limit: true, maxCR: 2, type: 'fey' },
   'Giant Insect': {
     creatures: {
       'Giant Centipede': 10,
@@ -53,22 +58,25 @@ export const SPELLS = {
       'Giant Wasp': 5,
       'Giant Scorpion': 1
     },
+    level: 4,
     type: 'beast'
   },
-  'Summon Elemental': { spell: true, type: 'elemental' },
+  'Summon Elemental': { level: 4, spell: true, type: 'elemental' },
   Awaken: {
     creatures: { 'Awakened Shrub': 1, 'Awakened Tree': 1 },
+    level: 4,
     type: 'plant'
   },
-  'Conjure Elemental': { limit: 1, maxCR: 5, type: 'elemental' },
-  'Summon Draconic Spirit': { spell: true, type: 'dragon' },
-  'Conjure Fey': { limit: 1, maxCR: 6, type: 'fey' },
-  'Druid Grove': { creatures: { 'Awakened Tree': 4 }, type: 'plant' }
+  'Conjure Elemental': { level: 5, limit: 1, maxCR: 5, type: 'elemental' },
+  'Summon Draconic Spirit': { level: 5, spell: true, type: 'dragon' },
+  'Conjure Fey': { level: 6, limit: 1, maxCR: 6, type: 'fey' },
+  'Druid Grove': { creatures: { 'Awakened Tree': 4 }, level: 6, type: 'plant' }
 } as Readonly<
   Record<
     string,
     {
       creatures?: Record<string, number>
+      level: number
       limit?: boolean | number
       maxCR?: number
       spell?: boolean
