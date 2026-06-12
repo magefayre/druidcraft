@@ -1,80 +1,11 @@
 @use '~styles/functions';
 
 .header {
-  --box-shadow: 0 1px 0 0 var(--border);
-  --z-index: 2;
-
-  background: var(--light-dark);
-  box-shadow: var(--box-shadow);
-  padding-block: functions.spacing(2);
-  position: sticky;
-  top: 0;
-  z-index: var(--z-index);
-  width: 100%;
-
-  @supports (animation-timeline: scroll()) {
-    animation: shadow linear both;
-    animation-timeline: scroll();
-    animation-range: 0 functions.spacing(8);
-  }
-}
-
-.headerContent {
   align-items: center;
   gap: functions.spacing(1);
   justify-content: space-between;
-}
 
-@keyframes shadow {
-  0% {
-    box-shadow: none;
-    z-index: auto;
-  }
-
-  100% {
-    box-shadow: var(--box-shadow);
-    z-index: var(--z-index);
-  }
-}
-
-.fieldset {
-  width: auto;
-
-  form {
-    align-items: center;
-    display: flex;
-    gap: functions.spacing(1);
-  }
-
-  label {
-    cursor: pointer;
-
-    &:has(+ select)::after {
-      content: ':';
-    }
-
-    &:has(+ [disabled]) {
-      cursor: not-allowed;
-    }
-  }
-}
-
-.filters {
-  width: auto;
-
-  dl {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: functions.spacing(0.5);
-    line-height: 1.1;
-  }
-
-  dt {
-    flex-shrink: 0;
-    font-weight: bold;
-
-    &::after {
-      content: ':';
-    }
+  > * {
+    width: auto;
   }
 }

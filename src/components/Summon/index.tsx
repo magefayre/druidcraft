@@ -1,35 +1,65 @@
-import type { FC } from 'react'
+import type { ChangeEventHandler, FC } from 'react'
 
 import { CreatureList } from '~components/Creature'
+import Filter from '~components/Filter'
 import Section from '~components/Section'
 import { EMPTY } from '~constants'
+import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature } from '~types'
 
-export type SummonProps = { beasts: Creature[] }
+type FormData = { spell: string }
 
-const Summon: FC<SummonProps> = () => {
-  const creatures = []
+export type SummonProps = { beasts: Creature[]; feys: Creature[] }
+
+const SPELLS: Record<
+  string,
+  { type: string; maxCR?: number; spell?: boolean }
+> = {
+  'Summon Beast': { spell: true, type: 'beasts' },
+  'Conjure Animal': { maxCR: 2, type: 'beasts' },
+  'Summon Fey': { spell: true, type: 'feys' },
+  'Conjure Minor Elementals': { type: 'beasts' },
+  'Conjure Woodland Being': { type: 'beasts' },
+  'Giant Insect': { type: 'beasts' },
+  'Summon Elemental': { type: 'beasts' },
+  'Conjure Elemental': { type: 'beasts' },
+  'Summon Draconic Spirit': { type: 'beasts' },
+  'Conjure Fey': { type: 'beasts' }
+}
+
+const Summon: FC<SummonProps> = props => {
+  const [formData, setFormData, mounted] = useLocalStorage<FormData>('summon', {
+    spell: undefined
+  })
+  const { spell } = formData
+  const filters = SPELLS[spell]
+
+  const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
+    const { name, value } = target
+
+    setFormData(formData => ({ ...formData, [name]: value }))
+  }
+
+  const creatures = (props[filters?.type] as Creature[])?.filter(
+    ({ cr, spell }) =>
+      (filters.spell === undefined ||
+        (filters.spell && spell?.startsWith(formData.spell))) &&
+      (filters.maxCR === undefined || cr <= filters.maxCR)
+  )
 
   return (
     <>
-      <Section>
-        <form>
-          <label>Spell</label>
-          <select>
+      <Filter>
+        <form onChange={handleChange}>
+          <label htmlFor="spell">Spell</label>
+          <select id="spell" name="spell" value={spell} disabled={!mounted}>
             <option value="">{EMPTY}</option>
-            <option>Summon Beast</option>
-            <option>Conjure Animals</option>
-            <option>Summon Fey</option>
-            <option>Conjure Minor Elementals</option>
-            <option>Conjure Woodland Beings</option>
-            <option>Giant Insect</option>
-            <option>Summon Elemental</option>
-            <option>Conjure Elemental</option>
-            <option>Summon Draconic Spirit</option>
-            <option>Conjure Fey</option>
+            {Object.keys(SPELLS).map(spell => (
+              <option key={spell}>{spell}</option>
+            ))}
           </select>
         </form>
-      </Section>
+      </Filter>
       <Section>
         <CreatureList creatures={creatures} />
       </Section>

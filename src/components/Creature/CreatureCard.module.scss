@@ -1,5 +1,9 @@
 @use '~styles/functions';
 
+.root {
+  max-width: var(--card-width);
+}
+
 .cr {
   position: absolute;
   inset-block-start: functions.spacing(0.5);

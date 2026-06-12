@@ -1,7 +1,7 @@
 import { Card, Icon, Tooltip } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
-import { LEVELS, SPEEDS } from '~constants'
+import { EMPTY, LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
 import type { Creature } from '~types'
 import { formatCR, formatLevel } from '~utils/creatures'
@@ -44,16 +44,19 @@ const BeastCard: FC<Props> = ({
       }}
       href={!disabled ? url({ source, name }) : undefined}
       disabled={disabled}
+      className={styles.root}
       {...props}
     >
-      <Tooltip
-        valign="bottom"
-        toggle={<span>CR {crLabel}</span>}
-        theme={{ root: styles.cr, toggle: styles.crToggle }}
-        manual={false}
-      >
-        Challenge Rating {crLabel}
-      </Tooltip>
+      {crLabel !== EMPTY && (
+        <Tooltip
+          valign="bottom"
+          toggle={<span>CR {crLabel}</span>}
+          theme={{ root: styles.cr, toggle: styles.crToggle }}
+          manual={false}
+        >
+          Challenge Rating {crLabel}
+        </Tooltip>
+      )}
       <span className={styles.icons}>
         {Object.entries(SPEEDS).map(([type, { icon, singular }]) => {
           if (!icon || !speed[type]) return null

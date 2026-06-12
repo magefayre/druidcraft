@@ -1,7 +1,9 @@
 @use '~styles/functions';
 
 .root {
+  --card-width: #{functions.spacing(20)};
+
   display: grid;
   gap: functions.spacing(2);
-  grid-template-columns: repeat(auto-fit, minmax(functions.spacing(20), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
 }

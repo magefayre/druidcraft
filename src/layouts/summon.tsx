@@ -7,9 +7,9 @@ import Summon, { type SummonProps } from '~components/Summon'
 
 export type SummonLayoutProps = SummonProps & Pick<PageContainerProps, 'meta'>
 
-const SummonLayout: NextPage<SummonLayoutProps> = ({ beasts, meta }) => (
+const SummonLayout: NextPage<SummonLayoutProps> = ({ beasts, feys, meta }) => (
   <PageContainer meta={meta}>
-    <Summon beasts={beasts} />
+    <Summon beasts={beasts} feys={feys} />
   </PageContainer>
 )
 

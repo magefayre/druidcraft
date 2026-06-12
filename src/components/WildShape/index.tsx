@@ -3,11 +3,17 @@ import type { ChangeEventHandler, FC } from 'react'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
+import Filter from '~components/Filter'
 import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature, Speed } from '~types'
-import { formatCR, formatSpeedLimits, getMaxCR } from '~utils/creatures'
+import {
+  formatCR,
+  formatSpeedLimits,
+  getMaxCR,
+  getSpeedLimit
+} from '~utils/creatures'
 
 import styles from './WildShape.module.scss'
 
@@ -44,9 +50,9 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
 
   return (
     <>
-      <Section className={styles.header}>
-        <Grid flex className={styles.headerContent}>
-          <Grid.Item className={styles.fieldset}>
+      <Filter>
+        <Grid flex className={styles.header}>
+          <Grid.Item>
             <form onChange={handleChange}>
               <label htmlFor="level">Level</label>
               <select id="level" name="level" value={level} disabled={!mounted}>
@@ -87,7 +93,7 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
               />
             </form>
           </Grid.Item>
-          <Grid.Item className={styles.filters}>
+          <Grid.Item>
             <dl>
               <dt>Max. CR</dt>
               <dd>{formatCR(maxCR)}</dd>
@@ -96,9 +102,17 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
             </dl>
           </Grid.Item>
         </Grid>
-      </Section>
+      </Filter>
       <Section>
-        <CreatureList creatures={beasts} level={level} maxCR={maxCR} />
+        <CreatureList
+          creatures={beasts}
+          isCreatureDisabled={({ cr, speed }) =>
+            !maxCR ||
+            cr > maxCR ||
+            getSpeedLimit(level, speed, 'swim') ||
+            getSpeedLimit(level, speed, 'fly')
+          }
+        />
       </Section>
     </>
   )
