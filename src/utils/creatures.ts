@@ -1,15 +1,19 @@
 import {
   CR,
   CR_LABELS,
+  CR_LIMITS,
   EMPTY,
   LEVEL_SUFFIXES,
   LEVELS,
   PLURALS,
-  SPEEDS
+  SPEEDS,
+  SPELLS
 } from '~constants'
-import type { Creature, Speed } from '~types'
+import type { Creature, MonsterType, Speed } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
+
+export const formatCRLimit = (cr: number) => CR_LIMITS[cr] ?? CR_LIMITS[CR.walk]
 
 export const formatLevel = (level: number) =>
   `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
@@ -50,3 +54,24 @@ export const getSpeedLimit = (
   speed: Creature['speed'],
   type: Speed
 ) => level < LEVELS[type] && !!speed[type]
+
+export const getTypeCR = (type: MonsterType) =>
+  Object.values(SPELLS).reduce<number | undefined>(
+    (cr, current) =>
+      current.type === type && (cr === undefined || current.maxCR > cr)
+        ? current.maxCR
+        : cr,
+    undefined
+  )
+
+export const sortCreatures = (a: Creature, b: Creature) => {
+  if (a.cr !== b.cr) {
+    const fallback = Number.MIN_SAFE_INTEGER
+
+    return (a.cr ?? fallback) - (b.cr ?? fallback)
+  }
+
+  if (a.name !== b.name) return a.name.localeCompare(b.name)
+
+  return a.source.localeCompare(b.source)
+}

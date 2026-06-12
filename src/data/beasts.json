@@ -8,7 +8,7 @@
       "fly": { "number": 60, "condition": "(air only)" },
       "swim": { "number": 30, "condition": "(water only)" }
     },
-    "spell": "Summon Beast|TCE"
+    "spell": "Summon Beast"
   },
   { "cr": 0, "name": "Almiraj", "source": "ToA", "speed": { "walk": 50 } },
   { "cr": 0, "name": "Awakened Rat", "source": "WDH", "speed": { "walk": 20 } },

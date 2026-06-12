@@ -17,6 +17,8 @@
     animation: shadow linear both;
     animation-timeline: scroll();
     animation-range: 0 functions.spacing(8);
+    box-shadow: none;
+    z-index: auto;
   }
 
   dl {
@@ -54,13 +56,16 @@
 }
 
 @keyframes shadow {
-  0% {
-    box-shadow: none;
-    z-index: auto;
-  }
-
-  100% {
+  to {
     box-shadow: var(--box-shadow);
     z-index: var(--z-index);
   }
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: functions.spacing(1);
+  justify-content: space-between;
 }

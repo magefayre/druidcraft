@@ -1,4 +1,3 @@
-import { Grid } from '@newhighsco/chipset'
 import type { ChangeEventHandler, FC } from 'react'
 
 import Checkbox from '~components/Checkbox'
@@ -14,8 +13,6 @@ import {
   getMaxCR,
   getSpeedLimit
 } from '~utils/creatures'
-
-import styles from './WildShape.module.scss'
 
 const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 
@@ -51,57 +48,50 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
   return (
     <>
       <Filter>
-        <Grid flex className={styles.header}>
-          <Grid.Item>
-            <form onChange={handleChange}>
-              <label htmlFor="level">Level</label>
-              <select id="level" name="level" value={level} disabled={!mounted}>
-                {levels.map(level => (
-                  <option
-                    key={level}
-                    value={level}
-                    disabled={
-                      level < LEVELS.walk ||
-                      (!circleForms && level > LEVELS.fly)
-                    }
-                  >
-                    {level}
-                  </option>
-                ))}
-              </select>
-              <label htmlFor="speed">Speed</label>
-              <select id="speed" name="speed" value={speed} disabled={!mounted}>
-                <option value="">{EMPTY}</option>
-                {Object.entries(SPEEDS).map(([key, { singular }]) => (
-                  <option
-                    key={key}
-                    value={key}
-                    disabled={level < (LEVELS[key] ?? LEVELS.walk)}
-                  >
-                    {singular}
-                  </option>
-                ))}
-              </select>
-              <Checkbox
-                name="circleForms"
-                icon={['boxicons:moon', circleForms && 'filled']
-                  .filter(Boolean)
-                  .join('-')}
-                alt="Moon Druid"
-                checked={circleForms}
-                disabled={!mounted}
-              />
-            </form>
-          </Grid.Item>
-          <Grid.Item>
-            <dl>
-              <dt>Max. CR</dt>
-              <dd>{formatCR(maxCR)}</dd>
-              <dt>Limitations</dt>
-              <dd>{formatSpeedLimits(level)}</dd>
-            </dl>
-          </Grid.Item>
-        </Grid>
+        <form onChange={handleChange}>
+          <label htmlFor="level">Level</label>
+          <select id="level" name="level" value={level} disabled={!mounted}>
+            {levels.map(level => (
+              <option
+                key={level}
+                value={level}
+                disabled={
+                  level < LEVELS.walk || (!circleForms && level > LEVELS.fly)
+                }
+              >
+                {level}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="speed">Speed</label>
+          <select id="speed" name="speed" value={speed} disabled={!mounted}>
+            <option value="">{EMPTY}</option>
+            {Object.entries(SPEEDS).map(([key, { singular }]) => (
+              <option
+                key={key}
+                value={key}
+                disabled={level < (LEVELS[key] ?? LEVELS.walk)}
+              >
+                {singular}
+              </option>
+            ))}
+          </select>
+          <Checkbox
+            name="circleForms"
+            icon={['boxicons:moon', circleForms && 'filled']
+              .filter(Boolean)
+              .join('-')}
+            alt="Moon Druid"
+            checked={circleForms}
+            disabled={!mounted}
+          />
+        </form>
+        <dl>
+          <dt>Max. CR</dt>
+          <dd>{formatCR(maxCR)}</dd>
+          <dt>Limitations</dt>
+          <dd>{formatSpeedLimits(level)}</dd>
+        </dl>
       </Filter>
       <Section>
         <CreatureList
@@ -112,6 +102,7 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
             getSpeedLimit(level, speed, 'swim') ||
             getSpeedLimit(level, speed, 'fly')
           }
+          speedLimits
         />
       </Section>
     </>

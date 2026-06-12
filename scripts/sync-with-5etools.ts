@@ -2,11 +2,12 @@ import { existsSync, mkdirSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
+import plur from 'plur'
 import yargs from 'yargs'
 
 import { LEVELS } from '~constants'
-import type { Creature, Monster, Monsters, Source } from '~types'
-import { getCircleFormsCR } from '~utils/creatures'
+import type { Creature, Monster, Monsters, MonsterType, Source } from '~types'
+import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/creatures'
 
 import { fetchData, fetchScript } from './utils'
 
@@ -29,6 +30,9 @@ const parseCR = (cr: string | { cr: string }): number | undefined => {
   return undefined
 }
 
+const parseSpell = (summonedBySpell?: string) =>
+  summonedBySpell?.split('|').at(0)
+
 const parseType = (type: string | { type: string; swarmSize: string }) => {
   if (
     typeof type !== 'string' &&
@@ -43,25 +47,33 @@ const parseType = (type: string | { type: string; swarmSize: string }) => {
   return undefined
 }
 
-const filterMonsters = (
-  monsters: Monster[],
-  filters: { type: string; cr?: number }
-) =>
-  monsters.reduce<Creature[]>((creatures, monster) => {
-    const { name, source, speed, summonedBySpell: spell } = monster
+type MonsterFilters = { type: MonsterType; maxCR?: number }
+
+const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
+  const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
+    const { name, source, speed } = monster
     const cr = parseCR(monster.cr)!
+    const spell = parseSpell(monster.summonedBySpell)
     const type = parseType(monster.type)
 
     return type === filters.type &&
-      (cr <= (filters.cr ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
+      (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
       ? [...creatures, { cr, name, source, speed, spell }]
       : creatures
   }, [])
 
+  creatures.push(...filterCopies(monsters, creatures))
+
+  return creatures
+}
+
 const filterCopies = (monsters: Monster[], existing: Creature[]) =>
   monsters.reduce<Creature[]>((creatures, { _copy, cr, ...rest }) => {
     const base = existing.find(
-      ({ name, source }) => _copy?.name === name && _copy?.source === source
+      ({ name, source }) =>
+        _copy?.name === name &&
+        _copy?.name !== rest.name &&
+        _copy?.source === source
     )
 
     return !!base
@@ -80,14 +92,6 @@ const filterCopies = (monsters: Monster[], existing: Creature[]) =>
         ]
       : creatures
   }, [])
-
-const sortCreatures = (a: Creature, b: Creature) => {
-  if (a.cr !== b.cr)
-    return (a.cr ?? Number.MIN_SAFE_INTEGER) - (b.cr ?? Number.MIN_SAFE_INTEGER)
-  if (a.name !== b.name) return a.name.localeCompare(b.name)
-
-  return a.source.localeCompare(b.source)
-}
 
 ;(async () => {
   const { outputDir } = await yargs(process.argv)
@@ -116,36 +120,35 @@ const sortCreatures = (a: Creature, b: Creature) => {
     })
   )
 
-  const beasts: Creature[] = filterMonsters(monsters, {
-    type: 'beast',
-    cr: getCircleFormsCR(LEVELS.max)
-  })
+  const data: MonsterFilters[] = [
+    { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max) },
+    { type: 'elemental', maxCR: getTypeCR('elemental') },
+    { type: 'dragon', maxCR: Number.MIN_SAFE_INTEGER },
+    { type: 'fey', maxCR: getTypeCR('fey') },
+    { type: 'plant', maxCR: 2 }
+  ]
 
-  beasts.push(...filterCopies(monsters, beasts))
+  const creatures = await Promise.all(
+    data.map(async filters => {
+      const creatures = filterMonsters(monsters, filters)
 
-  await writeFile(
-    join(outputDir, 'beasts.json'),
-    JSON.stringify(beasts.sort(sortCreatures))
-  )
+      await writeFile(
+        join(outputDir, `${plur(filters.type)}.json`),
+        JSON.stringify(creatures.sort(sortCreatures))
+      )
 
-  const feys: Creature[] = filterMonsters(monsters, { type: 'fey' })
-
-  await writeFile(
-    join(outputDir, 'feys.json'),
-    JSON.stringify(feys.sort(sortCreatures))
+      return creatures
+    })
   )
 
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
-    (books, [source, name]) => {
-      // TODO check all types
-      return [...beasts, ...feys].some(
-        creature => creature.source === source
-      ) && !books[source]
+    (books, [source, name]) =>
+      creatures.flat().some(creature => creature.source === source) &&
+      !books[source]
         ? { ...books, [source]: name }
-        : books
-    },
+        : books,
     {}
   )
 

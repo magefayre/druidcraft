@@ -7,7 +7,9 @@ import styles from './Filter.module.scss'
 type Props = PropsWithChildren
 
 const Filter: FC<Props> = ({ children }) => (
-  <Section className={styles.root}>{children}</Section>
+  <Section theme={{ root: styles.root, content: styles.content }}>
+    {children}
+  </Section>
 )
 
 export default Filter

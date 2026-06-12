@@ -9,9 +9,16 @@ import styles from './CreatureList.module.scss'
 type Props = {
   creatures?: Creature[]
   isCreatureDisabled?: (creature: Creature) => boolean
+  isCreatureLimited?: (creature: Creature) => number
+  speedLimits?: boolean
 }
 
-const CreatureList: FC<Props> = ({ creatures, isCreatureDisabled }) => {
+const CreatureList: FC<Props> = ({
+  creatures,
+  isCreatureDisabled,
+  isCreatureLimited,
+  speedLimits
+}) => {
   if (!creatures?.length) return null
 
   return (
@@ -25,7 +32,9 @@ const CreatureList: FC<Props> = ({ creatures, isCreatureDisabled }) => {
               <CreatureCard
                 {...creature}
                 disabled={isCreatureDisabled?.(creature)}
+                limit={isCreatureLimited?.(creature)}
                 priority={index < 12}
+                speedLimits={speedLimits}
               />
             </li>
           )
