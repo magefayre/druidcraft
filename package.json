@@ -1,7 +1,7 @@
 {
   "name": "@magefayre/druidcraft",
   "description": "Never struggle with choosing a Wild Shape again",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "author": "Magefayre",
   "license": "ISC",
   "private": true,
@@ -59,14 +59,14 @@
     "postcss": "8.5.15",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "sass": "1.100.0"
+    "sass": "1.101.0"
   },
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
     "@newhighsco/browserslist-config": "3.0.0",
     "@newhighsco/commitlint-config": "1.3.1",
     "@newhighsco/editor-config": "1.2.0",
-    "@newhighsco/eslint-config": "7.1.9",
+    "@newhighsco/eslint-config": "7.1.10",
     "@newhighsco/lint-staged-config": "1.1.0",
     "@newhighsco/postcss-config": "4.0.54",
     "@newhighsco/prettier-config": "2.3.6",
