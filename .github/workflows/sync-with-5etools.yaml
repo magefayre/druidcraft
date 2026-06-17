@@ -29,5 +29,5 @@ jobs:
           branch: sync-with-5etools
           commit-message: 'feat: sync with 5etools'
           delete-branch: true
-          team-reviewers: design-system-engineers
+          team-reviewers: reviewers
           title: 'feat: sync with 5etools'
