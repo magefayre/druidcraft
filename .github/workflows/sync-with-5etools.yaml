@@ -5,4 +5,4 @@ jobs:
   sync-with-5etools:
     runs-on: ubuntu-latest
     steps:
-      - run: echo TODO:
+      - run: echo TODO
