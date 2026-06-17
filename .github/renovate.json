@@ -7,7 +7,7 @@
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "5etools-mirror-3/5etools-2014-src",
       "description": "Update 5etools version used by `sync-with-5etools`",
-      "managerFilePatterns": ["^scripts/constants.ts$"],
+      "managerFilePatterns": ["scripts/constants.ts"],
       "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"]
     }
   ]
