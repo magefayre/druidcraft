@@ -7,6 +7,7 @@ import {
   LEVELS,
   PLURALS,
   SPEEDS,
+  SPELL_LEVELS,
   SPELLS
 } from '~constants'
 import type { Creature, MonsterType, Speed } from '~types'
@@ -62,13 +63,14 @@ export const getSpeedLimit = (
 ) => level < LEVELS[type] && !!speed[type]
 
 export const getTypeCR = (type: MonsterType) =>
-  Object.values(SPELLS).reduce<number | undefined>(
-    (cr, current) =>
-      current.type === type && (cr === undefined || current.maxCR > cr)
-        ? current.maxCR
-        : cr,
-    undefined
-  )
+  Object.values(SPELLS).reduce<number | undefined>((cr, current) => {
+    const maxCR =
+      typeof current.upcast === 'boolean' ? SPELL_LEVELS.max : current.maxCR
+
+    return current.type === type && (cr === undefined || maxCR > cr)
+      ? maxCR
+      : cr
+  }, undefined)
 
 export const sortCreatures = (a: Creature, b: Creature) => {
   if (a.cr !== b.cr) {

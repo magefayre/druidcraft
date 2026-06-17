@@ -253,9 +253,101 @@
     "speed": { "walk": 20, "burrow": 20 }
   },
   {
+    "cr": 6,
+    "name": "Animated Breath",
+    "source": "FTD",
+    "speed": {
+      "walk": 30,
+      "fly": { "number": 30, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 6,
+    "name": "Galeb Duhr",
+    "source": "MM",
+    "speed": {
+      "walk": {
+        "number": 15,
+        "condition": "(30 ft. when rolling, 60 ft. rolling downhill)"
+      }
+    }
+  },
+  {
+    "cr": 6,
+    "name": "Invisible Stalker",
+    "source": "MM",
+    "speed": {
+      "walk": 50,
+      "fly": { "number": 50, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 6,
+    "name": "Mist Hulk",
+    "source": "BGG",
+    "speed": {
+      "walk": 0,
+      "fly": { "number": 40, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 7,
+    "name": "Air Elemental Myrmidon",
+    "source": "MPMM",
+    "speed": {
+      "walk": 30,
+      "fly": { "number": 30, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  { "cr": 7, "name": "Cinder Hulk", "source": "BGG", "speed": { "walk": 40 } },
+  {
+    "cr": 7,
+    "name": "Earth Elemental Myrmidon",
+    "source": "MPMM",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 7,
+    "name": "Fire Elemental Myrmidon",
+    "source": "MPMM",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 7,
+    "name": "Fluxcharger",
+    "source": "GGR",
+    "speed": { "walk": 0, "fly": 60 }
+  },
+  {
+    "cr": 7,
+    "name": "Water Elemental Myrmidon",
+    "source": "MPMM",
+    "speed": { "walk": 40, "swim": 40 }
+  },
+  {
     "cr": 8,
     "name": "Big Xorn",
     "source": "WDMM",
     "speed": { "walk": 20, "burrow": 20 }
+  },
+  {
+    "cr": 9,
+    "name": "Frost Salamander",
+    "source": "MPMM",
+    "speed": { "walk": 60, "burrow": 40, "climb": 40 }
+  },
+  {
+    "cr": 9,
+    "name": "Lightning Hulk",
+    "source": "BGG",
+    "speed": {
+      "walk": 0,
+      "fly": { "number": 90, "condition": "(hover)" },
+      "canHover": true
+    }
   }
 ]

@@ -3,30 +3,59 @@ import type { ChangeEventHandler, FC } from 'react'
 import { CreatureList } from '~components/Creature'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
-import { EMPTY, SPELLS } from '~constants'
+import { EMPTY, SPELL_LEVELS, SPELLS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
-import type { Creature, MonsterType } from '~types'
+import type { Creature, MonsterType, Spell } from '~types'
 import { formatCR, formatCRLimit, formatLevel } from '~utils/creatures'
 
-type FormData = { spell: string }
+const getMaxCR = (spell?: Spell, level?: number) => {
+  if (typeof spell?.upcast === 'boolean' && level) {
+    return level
+  }
+
+  return spell?.maxCR
+}
+
+const getUpcastLevels = ({ level, upcast }: Spell) => {
+  if (typeof upcast === 'boolean') {
+    return Array.from(
+      { length: SPELL_LEVELS.max - level },
+      (_, index) => level + index + 1
+    )
+  }
+
+  return Object.keys(upcast)
+}
+
+type FormData = { spell: string; upcast: number }
 
 export type SummonProps = { creatures: Record<MonsterType, Creature[]> }
 
 const Summon: FC<SummonProps> = ({ creatures }) => {
   const [formData, setFormData, mounted] = useLocalStorage<FormData>('summon', {
-    spell: undefined
+    spell: undefined,
+    upcast: undefined
   })
   const filters = SPELLS[formData.spell]
 
   const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
     const { name, value } = target
 
-    setFormData(formData => ({ ...formData, [name]: value }))
+    setFormData(formData => {
+      const updates = { [name]: value }
+
+      if (name === 'spell' && formData[name] !== value) {
+        updates['upcast'] = ''
+      }
+
+      return { ...formData, ...updates }
+    })
   }
 
+  const maxCR = getMaxCR(filters, formData.upcast)
   const summons = (creatures[filters?.type] as Creature[])?.filter(
     ({ cr, name, spell }) =>
-      (filters.maxCR === undefined || cr <= filters.maxCR) &&
+      (maxCR === undefined || cr <= maxCR) &&
       (filters.spell === undefined
         ? !spell
         : spell?.toLowerCase() === formData.spell.toLowerCase()) &&
@@ -54,12 +83,25 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
               </option>
             ))}
           </select>
+          {filters?.upcast && (
+            <>
+              <label htmlFor="upcast">Upcast</label>
+              <select id="upcast" name="upcast" value={formData.upcast}>
+                <option value="">{EMPTY}</option>
+                {getUpcastLevels(filters).map(level => (
+                  <option key={level} value={level}>
+                    {formatLevel(level)}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
         </form>
         <dl>
-          {filters?.maxCR && (
+          {maxCR && (
             <>
               <dt>Max. CR</dt>
-              <dd>{formatCR(filters.maxCR)}</dd>
+              <dd>{formatCR(maxCR)}</dd>
             </>
           )}
         </dl>
@@ -71,12 +113,16 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
             typeof filters.limit === 'boolean' &&
             formatCRLimit(cr) === undefined
           }
-          isCreatureLimited={({ cr, name }) =>
-            filters.creatures?.[name] ||
-            (typeof filters.limit === 'boolean' && formatCRLimit(cr)) ||
-            (typeof filters.limit === 'number' && filters.limit) ||
-            (filters.spell && 1)
-          }
+          isCreatureLimited={({ cr, name }) => {
+            const limit =
+              filters.creatures?.[name] ||
+              (typeof filters.limit === 'boolean' && formatCRLimit(cr)) ||
+              (typeof filters.limit === 'number' && filters.limit) ||
+              (filters.spell && 1)
+            const multiplier = filters.upcast?.[formData.upcast] ?? 1
+
+            return limit * multiplier
+          }}
         />
       </Section>
     </>

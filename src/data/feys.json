@@ -221,5 +221,39 @@
   },
   { "cr": 6, "name": "Annis Hag", "source": "MPMM", "speed": { "walk": 40 } },
   { "cr": 6, "name": "Dandylion", "source": "MisMV1", "speed": { "walk": 50 } },
-  { "cr": 6, "name": "Dusk Hag", "source": "ERLW", "speed": { "walk": 30 } }
+  { "cr": 6, "name": "Dusk Hag", "source": "ERLW", "speed": { "walk": 30 } },
+  {
+    "cr": 7,
+    "name": "Bheur Hag",
+    "source": "MPMM",
+    "speed": {
+      "walk": 30,
+      "fly": { "number": 50, "condition": "(hover, Graystaff magic)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 7,
+    "name": "Goose Mother",
+    "source": "MCV4EC",
+    "speed": { "walk": 40, "fly": 40 }
+  },
+  {
+    "cr": 7,
+    "name": "Korred",
+    "source": "MPMM",
+    "speed": { "walk": 30, "burrow": 30 }
+  },
+  {
+    "cr": 9,
+    "name": "Conclave Dryad",
+    "source": "GGR",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 9,
+    "name": "Coral",
+    "source": "MisMV1",
+    "speed": { "walk": 10, "fly": 60, "swim": 60 }
+  }
 ]
