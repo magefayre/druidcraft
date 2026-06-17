@@ -18,7 +18,8 @@ jobs:
       - name: Commit changes
         uses: github-actions-x/commit@v2.9
         with:
-          commit-message: 'feat: sync with 5etools'
+          commit-message: 'chore: sync with 5etools'
+          files: src/data/**
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: ${{ github.head_ref }}
           rebase: true
