@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import plur from 'plur'
 
+import { SPELLS } from '~constants'
 import { loadData } from '~data/utils'
 import SummonLayout, { type SummonLayoutProps } from '~layouts/summon'
 import type { Creature, MonsterType } from '~types'
@@ -20,7 +21,10 @@ const SummonPage: NextPage<Props> = props => (
 )
 
 export const getStaticProps = (async () => {
-  const types: MonsterType[] = ['beast', 'dragon', 'elemental', 'fey', 'plant']
+  const types = Object.values(SPELLS).reduce<MonsterType[]>(
+    (types, { type }) => (!types.includes(type) ? [...types, type] : types),
+    []
+  )
   const creatures: Record<MonsterType, Creature[]> = {} as Record<
     MonsterType,
     Creature[]
