@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/magefayre/druidcraft/compare/v1.3.0...v1.4.0) (2026-06-17)
+
+### Features
+
+* sync with 5etools ([#131](https://github.com/magefayre/druidcraft/issues/131)) ([9f40756](https://github.com/magefayre/druidcraft/commit/9f4075697bab8313a2dc941de662f006f0ca59c3)), closes [#130](https://github.com/magefayre/druidcraft/issues/130)
+
 ## [1.3.0](https://github.com/magefayre/druidcraft/compare/v1.2.1...v1.3.0) (2026-06-17)
 
 ### Features
