@@ -10,5 +10,11 @@
       "managerFilePatterns": ["scripts/constants.ts"],
       "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"]
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["5etools-mirror-3/5etools-2014-src"],
+      "semanticCommitType": "fix"
+    }
   ]
 }

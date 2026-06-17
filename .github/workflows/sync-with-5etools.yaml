@@ -1,10 +1,9 @@
 name: Sync with 5etools
 on:
-  schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+  pull_request:
 jobs:
   sync-with-5etools:
+    if: startsWith(github.head_ref, 'renovate/5etools-')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,20 +15,9 @@ jobs:
         uses: ./.github/actions/setup
       - name: Sync with 5etools
         run: yarn sync-with-5etools
-      - name: Create pull request
-        id: pr
-        uses: peter-evans/create-pull-request@v8
+      - name: Commit changes
+        uses: github-actions-x/commit@v2.9
         with:
-          add-paths: src/data/**
-          base: main
-          body: |
-            - Created by [${{ github.workflow }}][1]
-            - Triggered by [${{ github.actor }}][2]
-
-            [1]: https://github.com/${{ github.workflow_ref }}
-            [2]: https://github.com/${{ github.actor }}
-          branch: sync-with-5etools
           commit-message: 'feat: sync with 5etools'
-          delete-branch: true
-          team-reviewers: reviewers
-          title: 'feat: sync with 5etools'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: ${{ github.head_ref }}
