@@ -25,7 +25,7 @@ export type Spell = {
   creatures?: Record<string, number>
   level: number
   limit?: boolean | number
-  maxCR?: number
+  maxCR?: boolean | number
   spell?: boolean
   type: MonsterType
   upcast?: true | Record<number, number>

@@ -6,15 +6,12 @@ import Section from '~components/Section'
 import { EMPTY, SPELL_LEVELS, SPELLS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature, MonsterType, Spell } from '~types'
-import { formatCR, formatCRLimit, formatLevel } from '~utils/creatures'
-
-const getMaxCR = (spell?: Spell, level?: number) => {
-  if (typeof spell?.upcast === 'boolean' && level) {
-    return level
-  }
-
-  return spell?.maxCR
-}
+import {
+  formatCR,
+  formatCRLimit,
+  formatLevel,
+  getSpellCR
+} from '~utils/creatures'
 
 const getUpcastLevels = ({ level, upcast }: Spell) => {
   if (typeof upcast === 'boolean') {
@@ -52,7 +49,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     })
   }
 
-  const maxCR = getMaxCR(filters, formData.upcast)
+  const maxCR = getSpellCR(filters, formData.upcast)
   const summons = (creatures[filters?.type] as Creature[])?.filter(
     ({ cr, name, spell }) =>
       (maxCR === undefined || cr <= maxCR) &&

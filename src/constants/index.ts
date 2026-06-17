@@ -40,6 +40,8 @@ export const SPEEDS = {
   Record<Speed, { icon?: string; singular: string; continuous: string }>
 >
 
+export const SPELL_LEVELS = { max: 9 } as Readonly<Record<'max', number>>
+
 export const SPELLS = {
   'Summon Beast': { level: 2, spell: true, type: 'beast' },
   'Conjure Animal': {
@@ -47,7 +49,7 @@ export const SPELLS = {
     limit: true,
     maxCR: 2,
     type: 'beast',
-    upcast: { 5: 2, 7: 3, 9: 4 }
+    upcast: { 5: 2, 7: 3, [SPELL_LEVELS.max]: 4 }
   },
   'Summon Fey': { level: 3, spell: true, type: 'fey' },
   'Conjure Minor Elementals': {
@@ -83,13 +85,11 @@ export const SPELLS = {
   'Conjure Elemental': {
     level: 5,
     limit: 1,
-    maxCR: 5,
+    maxCR: true,
     type: 'elemental',
     upcast: true
   },
   'Summon Draconic Spirit': { level: 5, spell: true, type: 'dragon' },
-  'Conjure Fey': { level: 6, limit: 1, maxCR: 6, type: 'fey', upcast: true },
+  'Conjure Fey': { level: 6, limit: 1, maxCR: true, type: 'fey', upcast: true },
   'Druid Grove': { creatures: { 'Awakened Tree': 4 }, level: 6, type: 'plant' }
 } as Readonly<Record<string, Spell>>
-
-export const SPELL_LEVELS = { max: 9 } as Readonly<Record<'max', number>>
