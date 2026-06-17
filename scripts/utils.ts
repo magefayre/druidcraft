@@ -1,6 +1,4 @@
-const BASE = new URL(
-  'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/main/'
-)
+import { BASE } from './constants'
 
 export const fetchData = async <T>(...url: string[]): Promise<T> => {
   const res = await fetch(new URL(url.join('/'), new URL('data/', BASE)))
