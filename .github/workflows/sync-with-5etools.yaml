@@ -21,3 +21,4 @@ jobs:
           commit-message: 'feat: sync with 5etools'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: ${{ github.head_ref }}
+          rebase: true
