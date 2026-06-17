@@ -1,3 +1,9 @@
+## [1.4.5](https://github.com/magefayre/druidcraft/compare/v1.4.4...v1.4.5) (2026-06-17)
+
+### Bug Fixes
+
+* improved meta data ([2a4e7a9](https://github.com/magefayre/druidcraft/commit/2a4e7a9208e4aa4749a71e45578d408854372139))
+
 ## [1.4.4](https://github.com/magefayre/druidcraft/compare/v1.4.3...v1.4.4) (2026-06-17)
 
 ### Bug Fixes
