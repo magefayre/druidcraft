@@ -1,0 +1,8 @@
+name: Sync with 5etools
+on:
+  workflow_dispatch:
+jobs:
+  sync-with-5etools:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo TODO:
