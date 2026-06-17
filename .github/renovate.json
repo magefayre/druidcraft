@@ -4,11 +4,11 @@
   "customManagers": [
     {
       "customType": "regex",
+      "description": "Update 5etools version used by `sync-with-5etools`",
       "managerFilePatterns": ["^scripts/constants.ts$"],
-      "matchStrings": [
-        "renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)\\s.+v(?<currentValue>[\\d.]+)"
-      ]
+      "matchStrings": ["(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
+      "datasourceTemplate": "git-releases",
+      "depNameTemplate": "5etools-mirror-3/5etools-2014-src"
     }
-  ],
-  "enabledManagers": ["custom.regex"]
+  ]
 }
