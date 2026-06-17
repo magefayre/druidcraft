@@ -38,7 +38,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
   })
   const filters = SPELLS[formData.spell]
 
-  const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
+  const handleChange: ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
     const { name, value } = target
 
     setFormData(formData => {
@@ -68,13 +68,14 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
   return (
     <>
       <Filter>
-        <form onChange={handleChange}>
+        <form>
           <label htmlFor="spell">Spell</label>
           <select
             id="spell"
             name="spell"
             value={formData.spell}
             disabled={!mounted}
+            onChange={handleChange}
           >
             <option value="">{EMPTY}</option>
             {Object.entries(SPELLS).map(([spell, { level }]) => (
@@ -86,7 +87,12 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
           {filters?.upcast && (
             <>
               <label htmlFor="upcast">Upcast</label>
-              <select id="upcast" name="upcast" value={formData.upcast}>
+              <select
+                id="upcast"
+                name="upcast"
+                value={formData.upcast}
+                onChange={handleChange}
+              >
                 <option value="">{EMPTY}</option>
                 {getUpcastLevels(filters).map(level => (
                   <option key={level} value={level}>
