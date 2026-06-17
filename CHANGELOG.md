@@ -1,3 +1,9 @@
+## [1.4.4](https://github.com/magefayre/druidcraft/compare/v1.4.3...v1.4.4) (2026-06-17)
+
+### Bug Fixes
+
+* **summon:** generate data from spells ([f90c8f5](https://github.com/magefayre/druidcraft/commit/f90c8f527fe1176eaf988efd01adf899a4f930dd))
+
 ## [1.4.3](https://github.com/magefayre/druidcraft/compare/v1.4.2...v1.4.3) (2026-06-17)
 
 ### Bug Fixes
