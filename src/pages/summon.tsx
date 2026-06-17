@@ -10,7 +10,8 @@ import { canonicalUrl } from '~utils/urls'
 
 const meta = {
   title: 'Summon',
-  description: 'Never struggle with choosing what to summon again',
+  description:
+    'Druid summoning spells - Never struggle with choosing what to summon as a Druid in D&D 5e again',
   canonical: canonicalUrl('summon')
 }
 

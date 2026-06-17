@@ -7,8 +7,10 @@ const config = {
   url: process.env.NEXT_PUBLIC_SITE_URL,
   name: 'Druidcraft',
   shortName: null,
-  title: 'Druidcraft - Wild Shape? I was livid!',
-  description: 'Never struggle with choosing a Wild Shape again',
+  title:
+    'Druidcraft - Practical tools for managing Druid Wild Shape and summoning for D&D 5e',
+  description:
+    'Druid Wild Shape - Never struggle with choosing a Druid Wild Shape for D&D 5e again',
   logo: { bitmap: logoBitmap.src, vector: logoVector },
   openGraphImage: openGraphImage.src,
   themeColor: colors.black,
