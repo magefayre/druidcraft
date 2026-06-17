@@ -20,3 +20,13 @@ export type Monster = Creature & {
 }
 
 export type Monsters = { monster: Monster[] }
+
+export type Spell = {
+  creatures?: Record<string, number>
+  level: number
+  limit?: boolean | number
+  maxCR?: boolean | number
+  spell?: boolean
+  type: MonsterType
+  upcast?: true | Record<number, number>
+}

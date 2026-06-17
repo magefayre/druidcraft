@@ -7,9 +7,10 @@ import {
   LEVELS,
   PLURALS,
   SPEEDS,
+  SPELL_LEVELS,
   SPELLS
 } from '~constants'
-import type { Creature, MonsterType, Speed } from '~types'
+import type { Creature, MonsterType, Speed, Spell } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
@@ -55,6 +56,13 @@ export const getMaxCR = ({ level, circleForms = false }) => {
   return null
 }
 
+export const getSpellCR = (spell?: Spell, level?: number) => {
+  if (typeof spell?.upcast === 'boolean' && level) return level
+  if (typeof spell?.maxCR === 'boolean') return spell?.level
+
+  return spell?.maxCR
+}
+
 export const getSpeedLimit = (
   level: number,
   speed: Creature['speed'],
@@ -62,13 +70,11 @@ export const getSpeedLimit = (
 ) => level < LEVELS[type] && !!speed[type]
 
 export const getTypeCR = (type: MonsterType) =>
-  Object.values(SPELLS).reduce<number | undefined>(
-    (cr, current) =>
-      current.type === type && (cr === undefined || current.maxCR > cr)
-        ? current.maxCR
-        : cr,
-    undefined
-  )
+  Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
+    const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
+
+    return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
+  }, undefined)
 
 export const sortCreatures = (a: Creature, b: Creature) => {
   if (a.cr !== b.cr) {

@@ -1,4 +1,4 @@
-import type { MonsterType, Speed } from '~types'
+import type { Speed, Spell } from '~types'
 
 export const CR = { walk: 0.25, swim: 0.5, fly: 1 }
 
@@ -40,17 +40,32 @@ export const SPEEDS = {
   Record<Speed, { icon?: string; singular: string; continuous: string }>
 >
 
+export const SPELL_LEVELS = { max: 9 } as Readonly<Record<'max', number>>
+
 export const SPELLS = {
   'Summon Beast': { level: 2, spell: true, type: 'beast' },
-  'Conjure Animal': { level: 3, limit: true, maxCR: 2, type: 'beast' },
+  'Conjure Animal': {
+    level: 3,
+    limit: true,
+    maxCR: 2,
+    type: 'beast',
+    upcast: { 5: 2, 7: 3, [SPELL_LEVELS.max]: 4 }
+  },
   'Summon Fey': { level: 3, spell: true, type: 'fey' },
   'Conjure Minor Elementals': {
     level: 4,
     limit: true,
     maxCR: 2,
-    type: 'elemental'
+    type: 'elemental',
+    upcast: { 6: 2, 8: 3 }
   },
-  'Conjure Woodland Being': { level: 4, limit: true, maxCR: 2, type: 'fey' },
+  'Conjure Woodland Being': {
+    level: 4,
+    limit: true,
+    maxCR: 2,
+    type: 'fey',
+    upcast: { 6: 2, 8: 3 }
+  },
   'Giant Insect': {
     creatures: {
       'Giant Centipede': 10,
@@ -67,20 +82,14 @@ export const SPELLS = {
     level: 4,
     type: 'plant'
   },
-  'Conjure Elemental': { level: 5, limit: 1, maxCR: 5, type: 'elemental' },
+  'Conjure Elemental': {
+    level: 5,
+    limit: 1,
+    maxCR: true,
+    type: 'elemental',
+    upcast: true
+  },
   'Summon Draconic Spirit': { level: 5, spell: true, type: 'dragon' },
-  'Conjure Fey': { level: 6, limit: 1, maxCR: 6, type: 'fey' },
+  'Conjure Fey': { level: 6, limit: 1, maxCR: true, type: 'fey', upcast: true },
   'Druid Grove': { creatures: { 'Awakened Tree': 4 }, level: 6, type: 'plant' }
-} as Readonly<
-  Record<
-    string,
-    {
-      creatures?: Record<string, number>
-      level: number
-      limit?: boolean | number
-      maxCR?: number
-      spell?: boolean
-      type: MonsterType
-    }
-  >
->
+} as Readonly<Record<string, Spell>>
