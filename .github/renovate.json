@@ -1,4 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>magefayre/.github:renovate-config"]
+  "extends": ["local>magefayre/.github:renovate-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^scripts/constants\\.ts$/"],
+      "matchStrings": [
+        "renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)\\s.+v(?<currentValue>[\\d.]+)"
+      ]
+    }
+  ]
 }
