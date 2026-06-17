@@ -6,8 +6,8 @@
       "customType": "regex",
       "description": "Update 5etools version used by `sync-with-5etools`",
       "managerFilePatterns": ["^scripts/constants.ts$"],
-      "matchStrings": ["(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
-      "datasourceTemplate": "git-releases",
+      "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
+      "datasourceTemplate": "git-tags",
       "depNameTemplate": "5etools-mirror-3/5etools-2014-src"
     }
   ]
