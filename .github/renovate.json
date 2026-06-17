@@ -4,7 +4,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^scripts/constants\\.ts$/"],
+      "managerFilePatterns": ["scripts/constants\\.ts$"],
       "matchStrings": [
         "renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)\\s.+v(?<currentValue>[\\d.]+)"
       ]
