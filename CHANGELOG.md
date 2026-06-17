@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/magefayre/druidcraft/compare/v1.2.1...v1.3.0) (2026-06-17)
+
+### Features
+
+* **summon:** support upcasting ([#141](https://github.com/magefayre/druidcraft/issues/141)) ([2c2a0bb](https://github.com/magefayre/druidcraft/commit/2c2a0bb466df88f3c56d188d3fc6379356fbf972)), closes [#134](https://github.com/magefayre/druidcraft/issues/134)
+
 ## [1.2.1](https://github.com/magefayre/druidcraft/compare/v1.2.0...v1.2.1) (2026-06-12)
 
 ### Bug Fixes
