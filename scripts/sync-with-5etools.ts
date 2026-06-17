@@ -143,14 +143,16 @@ const filterCopies = (monsters: Monster[], existing: Creature[]) =>
 
   await fetchScript('parser.js')
 
-  const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL).reduce(
-    (books, [source, name]) =>
-      creatures.flat().some(creature => creature.source === source) &&
-      !books[source]
-        ? { ...books, [source]: name }
-        : books,
-    {}
-  )
+  const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL)
+    .sort()
+    .reduce(
+      (books, [source, name]) =>
+        creatures.flat().some(creature => creature.source === source) &&
+        !books[source]
+          ? { ...books, [source]: name }
+          : books,
+      {}
+    )
 
   await writeFile(join(outputDir, 'sources.json'), JSON.stringify(sources))
 })()
