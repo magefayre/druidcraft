@@ -8,6 +8,10 @@
   padding-block: functions.spacing(2);
 }
 
+.links {
+  width: auto;
+}
+
 .link {
   padding-inline-end: functions.spacing(2);
 
@@ -20,6 +24,12 @@
 
 .icon {
   height: functions.spacing(4);
+  width: auto;
+}
+
+.iconLinks {
+  flex-grow: 1;
+  text-align: right;
   width: auto;
 }
 

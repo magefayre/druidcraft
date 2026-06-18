@@ -39,7 +39,15 @@
   form {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: functions.spacing(1);
+
+    > div {
+      align-items: inherit;
+      display: inherit;
+      flex-wrap: inherit;
+      gap: inherit;
+    }
   }
 
   label {

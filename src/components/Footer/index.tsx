@@ -32,15 +32,15 @@ const Footer: FC = () => (
       size="desktopLarge"
       theme={{ content: styles.content }}
     >
-      <Grid valign="middle">
-        <Grid.Item sizes={['one-half']}>
+      <Grid flex valign="middle">
+        <Grid.Item className={styles.links}>
           <Navigation
             links={footer.links}
             theme={{ link: styles.link }}
             inline
           />
         </Grid.Item>
-        <Grid.Item sizes={['one-half']} align="right">
+        <Grid.Item className={styles.iconLinks}>
           <Navigation
             inline
             links={Object.values(iconLinks)}

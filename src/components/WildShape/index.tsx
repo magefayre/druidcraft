@@ -49,33 +49,37 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
     <>
       <Filter>
         <form onChange={handleChange}>
-          <label htmlFor="level">Level</label>
-          <select id="level" name="level" value={level} disabled={!mounted}>
-            {levels.map(level => (
-              <option
-                key={level}
-                value={level}
-                disabled={
-                  level < LEVELS.walk || (!circleForms && level > LEVELS.fly)
-                }
-              >
-                {level}
-              </option>
-            ))}
-          </select>
-          <label htmlFor="speed">Speed</label>
-          <select id="speed" name="speed" value={speed} disabled={!mounted}>
-            <option value="">{EMPTY}</option>
-            {Object.entries(SPEEDS).map(([key, { singular }]) => (
-              <option
-                key={key}
-                value={key}
-                disabled={level < (LEVELS[key] ?? LEVELS.walk)}
-              >
-                {singular}
-              </option>
-            ))}
-          </select>
+          <div>
+            <label htmlFor="level">Level</label>
+            <select id="level" name="level" value={level} disabled={!mounted}>
+              {levels.map(level => (
+                <option
+                  key={level}
+                  value={level}
+                  disabled={
+                    level < LEVELS.walk || (!circleForms && level > LEVELS.fly)
+                  }
+                >
+                  {level}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="speed">Speed</label>
+            <select id="speed" name="speed" value={speed} disabled={!mounted}>
+              <option value="">{EMPTY}</option>
+              {Object.entries(SPEEDS).map(([key, { singular }]) => (
+                <option
+                  key={key}
+                  value={key}
+                  disabled={level < (LEVELS[key] ?? LEVELS.walk)}
+                >
+                  {singular}
+                </option>
+              ))}
+            </select>
+          </div>
           <Checkbox
             name="circleForms"
             icon={['boxicons:moon', circleForms && 'filled']

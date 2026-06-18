@@ -66,23 +66,25 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     <>
       <Filter>
         <form>
-          <label htmlFor="spell">Spell</label>
-          <select
-            id="spell"
-            name="spell"
-            value={formData.spell}
-            disabled={!mounted}
-            onChange={handleChange}
-          >
-            <option value="">{EMPTY}</option>
-            {Object.entries(SPELLS).map(([spell, { level }]) => (
-              <option key={spell} value={spell}>
-                {spell} ({formatLevel(level)})
-              </option>
-            ))}
-          </select>
+          <div>
+            <label htmlFor="spell">Spell</label>
+            <select
+              id="spell"
+              name="spell"
+              value={formData.spell}
+              disabled={!mounted}
+              onChange={handleChange}
+            >
+              <option value="">{EMPTY}</option>
+              {Object.entries(SPELLS).map(([spell, { level }]) => (
+                <option key={spell} value={spell}>
+                  {spell} ({formatLevel(level)})
+                </option>
+              ))}
+            </select>
+          </div>
           {filters?.upcast && (
-            <>
+            <div>
               <label htmlFor="upcast">Upcast</label>
               <select
                 id="upcast"
@@ -97,7 +99,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
                   </option>
                 ))}
               </select>
-            </>
+            </div>
           )}
         </form>
         <dl>
