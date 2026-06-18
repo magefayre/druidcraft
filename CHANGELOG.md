@@ -1,3 +1,9 @@
+## [1.4.6](https://github.com/magefayre/druidcraft/compare/v1.4.5...v1.4.6) (2026-06-18)
+
+### Bug Fixes
+
+* wrapping issues ([6de2591](https://github.com/magefayre/druidcraft/commit/6de25919de544abf4713b5efefc7e9faf95989fc))
+
 ## [1.4.5](https://github.com/magefayre/druidcraft/compare/v1.4.4...v1.4.5) (2026-06-17)
 
 ### Bug Fixes
