@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/magefayre/druidcraft/compare/v1.4.9...v1.5.0) (2026-06-25)
+
+### Features
+
+* better social icons ([8bc28b6](https://github.com/magefayre/druidcraft/commit/8bc28b603ee89fc79c4b663a8bf513301caabe6f))
+
 ## [1.4.9](https://github.com/magefayre/druidcraft/compare/v1.4.8...v1.4.9) (2026-06-22)
 
 ### Bug Fixes
