@@ -5,7 +5,7 @@ import { SPELLS } from '~constants'
 import { loadData } from '~data/utils'
 import SummonLayout, { type SummonLayoutProps } from '~layouts/summon'
 import type { Creature, MonsterType } from '~types'
-import { sortCreatures } from '~utils/creatures'
+import { sortCreatures } from '~utils/5etools'
 import { canonicalUrl } from '~utils/urls'
 
 const meta = {

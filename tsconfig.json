@@ -10,6 +10,7 @@
       "~hooks/*": ["./src/hooks/*"],
       "~images/*": ["./src/images/*"],
       "~layouts/*": ["./src/layouts/*"],
+      "~scripts/*": ["./scripts/*"],
       "~styles/*": ["./src/styles/_*", "./src/styles/*"],
       "~theme": ["./src/theme"],
       "~types": ["./src/types"],

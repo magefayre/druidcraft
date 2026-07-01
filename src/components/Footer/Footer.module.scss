@@ -1,6 +1,8 @@
 @use '~styles/functions';
 
 .root {
+  --version: attr(data-version);
+
   border-top: 1px solid var(--border);
 }
 
@@ -8,12 +10,23 @@
   padding-block: functions.spacing(2);
 }
 
-.links {
-  width: auto;
+.columns {
+  gap: functions.spacing(2);
+  justify-content: space-between;
+
+  & > * {
+    width: auto;
+  }
 }
 
 .link {
   padding-inline-end: functions.spacing(2);
+
+  &[data-version] {
+    &::after {
+      content: ' ' var(--version);
+    }
+  }
 
   &:hover,
   &:active,
@@ -24,12 +37,6 @@
 
 .icon {
   height: functions.spacing(4);
-  width: auto;
-}
-
-.iconLinks {
-  flex-grow: 1;
-  text-align: right;
   width: auto;
 }
 

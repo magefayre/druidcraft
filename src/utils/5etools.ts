@@ -10,6 +10,7 @@ import {
   SPELL_LEVELS,
   SPELLS
 } from '~constants'
+import { BASE } from '~scripts/constants'
 import type { Creature, MonsterType, Speed, Spell } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
@@ -75,6 +76,8 @@ export const getTypeCR = (type: MonsterType) =>
 
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
+
+export const getVersion = () => BASE.pathname.split('/').filter(Boolean).at(-1)
 
 export const sortCreatures = (a: Creature, b: Creature) => {
   if (a.cr !== b.cr) {

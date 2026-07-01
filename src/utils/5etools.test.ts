@@ -1,5 +1,5 @@
 import { EMPTY } from '~constants'
-import { formatSpeedLimits, getMaxCR } from '~utils/creatures'
+import { formatSpeedLimits, getMaxCR } from '~utils/5etools'
 
 describe('formatSpeedLimits', () => {
   it('should format speed limitations', () => {
