@@ -1,3 +1,4 @@
+import { Tooltip } from '@newhighsco/chipset'
 import type { ChangeEventHandler, FC } from 'react'
 
 import Checkbox from '~components/Checkbox'
@@ -65,6 +66,24 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
               ))}
             </select>
           </div>
+          <Tooltip
+            manual={false}
+            toggle={
+              <Checkbox
+                name="circleForms"
+                icon={['boxicons:moon', circleForms && 'filled']
+                  .filter(Boolean)
+                  .join('-')}
+                alt="Moon Druid"
+                checked={circleForms}
+                disabled={!mounted}
+              />
+            }
+            align="right"
+            valign="middle"
+          >
+            Moon&nbsp;Druid:&nbsp;{circleForms ? 'Yes' : 'No'}
+          </Tooltip>
           <div>
             <label htmlFor="speed">Speed</label>
             <select id="speed" name="speed" value={speed} disabled={!mounted}>
@@ -80,15 +99,6 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
               ))}
             </select>
           </div>
-          <Checkbox
-            name="circleForms"
-            icon={['boxicons:moon', circleForms && 'filled']
-              .filter(Boolean)
-              .join('-')}
-            alt="Moon Druid"
-            checked={circleForms}
-            disabled={!mounted}
-          />
         </form>
         <dl>
           <dt>Max. CR</dt>

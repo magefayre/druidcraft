@@ -4,6 +4,10 @@
   cursor: help;
 }
 
+.root {
+  line-height: 1;
+}
+
 .content {
   background: var(--dark-light);
   border-radius: functions.spacing(0.5);
@@ -11,4 +15,12 @@
   font-size: small;
   margin: functions.spacing(0.5);
   padding: functions.spacing(0.5) functions.spacing(1);
+
+  &.center {
+    margin-inline: 0;
+  }
+
+  &.middle {
+    margin-block: 0;
+  }
 }
