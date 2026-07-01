@@ -7,7 +7,7 @@ import yargs from 'yargs'
 
 import { LEVELS } from '~constants'
 import type { Creature, Monster, Monsters, MonsterType, Source } from '~types'
-import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/creatures'
+import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/5etools'
 
 import { fetchData, fetchScript } from './utils'
 

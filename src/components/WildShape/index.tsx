@@ -12,7 +12,7 @@ import {
   formatSpeedLimits,
   getMaxCR,
   getSpeedLimit
-} from '~utils/creatures'
+} from '~utils/5etools'
 
 const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 

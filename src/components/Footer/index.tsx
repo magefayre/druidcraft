@@ -11,6 +11,7 @@ import type { FC } from 'react'
 import config from '~config'
 import footer from '~data/footer.json'
 import { ReactComponent as MagefayreSvg } from '~images/magefayre.svg'
+import { getVersion } from '~utils/5etools'
 
 import styles from './Footer.module.scss'
 
@@ -26,21 +27,21 @@ const iconLinks = {
 }
 
 const Footer: FC = () => (
-  <FooterContainer theme={{ root: styles.root }}>
+  <FooterContainer theme={{ root: styles.root }} data-version={getVersion()}>
     <ContentContainer
       gutter
       size="desktopLarge"
       theme={{ content: styles.content }}
     >
-      <Grid flex valign="middle">
-        <Grid.Item className={styles.links}>
+      <Grid flex valign="middle" className={styles.columns}>
+        <Grid.Item>
           <Navigation
             links={footer.links}
             theme={{ link: styles.link }}
             inline
           />
         </Grid.Item>
-        <Grid.Item className={styles.iconLinks}>
+        <Grid.Item>
           <Navigation
             inline
             links={Object.values(iconLinks)}

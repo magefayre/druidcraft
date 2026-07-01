@@ -1,1 +1,11 @@
-{ "links": [{ "children": "Top", "href": "#top", "target": "" }] }
+{
+  "links": [
+    { "children": "Top", "href": "#top", "target": "" },
+    {
+      "children": "Powered by 5etools",
+      "data-version": "",
+      "href": "https://2014.5e.tools/",
+      "target": "_blank"
+    }
+  ]
+}

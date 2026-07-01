@@ -11,7 +11,7 @@ import {
   formatCRLimit,
   formatLevel,
   getSpellCR
-} from '~utils/creatures'
+} from '~utils/5etools'
 
 const getUpcastLevels = ({ level, upcast }: Spell) => {
   if (typeof upcast === 'boolean') {
