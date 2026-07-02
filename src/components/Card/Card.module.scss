@@ -19,9 +19,17 @@
 .content {
   border-top: inherit;
   padding: functions.spacing(1);
+
+  &:first-child {
+    border-top: 0;
+  }
 }
 
 .image {
+  aspect-ratio: 1;
+  height: auto;
+  padding-bottom: unset;
+
   [disabled] & {
     opacity: 0.25;
   }

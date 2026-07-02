@@ -117,6 +117,7 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
             getSpeedLimit(level, speed, 'fly')
           }
           speedLimits
+          view="list"
         />
       </Section>
     </>

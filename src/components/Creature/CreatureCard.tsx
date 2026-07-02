@@ -4,22 +4,15 @@ import type { FC } from 'react'
 
 import { EMPTY, LEVELS, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
-import type { Creature } from '~types'
 import { formatCR, formatLevel } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
+import type { CreatureCardProps } from './types'
 
 const tooltipProps = { manual: false, valign: 'bottom' }
 
-type Props = Creature & {
-  disabled?: boolean
-  limit?: number
-  priority?: boolean
-  speedLimits?: boolean
-}
-
-const BeastCard: FC<Props> = ({
+const BeastCard: FC<CreatureCardProps> = ({
   cr,
   disabled,
   limit,
@@ -28,6 +21,7 @@ const BeastCard: FC<Props> = ({
   source,
   speed,
   speedLimits,
+  view,
   ...props
 }) => {
   const crLabel = formatCR(cr)
@@ -53,22 +47,21 @@ const BeastCard: FC<Props> = ({
       }}
       href={!disabled ? url({ source, name }) : undefined}
       disabled={disabled}
+      theme={{
+        root: styles[view],
+        content: styles.content,
+        copy: styles.copy,
+        image: styles.image
+      }}
       {...props}
     >
-      {crLabel !== EMPTY && (
-        <Tooltip
-          toggle={<span>CR {crLabel}</span>}
-          theme={{ root: styles.cr, toggle: styles.crToggle }}
-          {...tooltipProps}
-        >
-          Challenge Rating&nbsp;{crLabel}
-        </Tooltip>
-      )}
       <span className={styles.icons}>
         {limit && (
           <Tooltip
             toggle={<span className={styles.icon}>{limit}×</span>}
             {...tooltipProps}
+            align={view === 'grid' ? 'right' : 'left'}
+            valign="middle"
           >
             Summon&nbsp;{limit} {plur(name, limit)}
           </Tooltip>
@@ -84,12 +77,25 @@ const BeastCard: FC<Props> = ({
                   <Icon name={icon} alt={singular} className={styles.icon} />
                 }
                 {...tooltipProps}
+                align={view === 'grid' ? 'right' : 'left'}
+                valign="middle"
               >
                 Requires {formatLevel(LEVELS[type])} level
               </Tooltip>
             )
           })}
       </span>
+      {crLabel !== EMPTY && (
+        <Tooltip
+          toggle={<span>CR {crLabel}</span>}
+          theme={{ root: styles.cr, toggle: styles.crToggle }}
+          {...tooltipProps}
+          align="left"
+          valign="middle"
+        >
+          Challenge Rating&nbsp;{crLabel}
+        </Tooltip>
+      )}
     </Card>
   )
 }

@@ -1,40 +1,34 @@
-import { List } from '@newhighsco/chipset'
+import { classNames, List } from '@newhighsco/chipset'
 import type { FC } from 'react'
-
-import type { Creature } from '~types'
 
 import { CreatureCard } from '.'
 import styles from './CreatureList.module.scss'
+import type { CreatureListProps } from './types'
 
-type Props = {
-  creatures?: Creature[]
-  isCreatureDisabled?: (creature: Creature) => boolean
-  isCreatureLimited?: (creature: Creature) => number
-  speedLimits?: boolean
-}
-
-const CreatureList: FC<Props> = ({
+const CreatureList: FC<CreatureListProps> = ({
   creatures,
   isCreatureDisabled,
   isCreatureLimited,
-  speedLimits
+  speedLimits,
+  view = 'grid'
 }) => {
   if (!creatures?.length) return null
 
   return (
     <>
-      <List unstyled className={styles.root}>
+      <List unstyled className={classNames(styles.root, styles[view])}>
         {creatures.map((creature, index) => {
           const { name, source } = creature
 
           return (
-            <li key={`${source}/${name}`}>
+            <li key={`${source}/${name}`} className={styles.item}>
               <CreatureCard
                 {...creature}
                 disabled={isCreatureDisabled?.(creature)}
                 limit={isCreatureLimited?.(creature)}
                 priority={index < 12}
                 speedLimits={speedLimits}
+                view={view}
               />
             </li>
           )
