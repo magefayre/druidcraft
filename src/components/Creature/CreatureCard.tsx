@@ -25,6 +25,7 @@ const BeastCard: FC<Props> = ({
   limit,
   name,
   priority,
+  rating,
   source,
   speed,
   speedLimits,
@@ -36,7 +37,7 @@ const BeastCard: FC<Props> = ({
     <Card
       heading={
         <>
-          <h2>{name}</h2>
+          <h2 style={{ color: rating }}>{name}</h2>
           <Tooltip
             toggle={<span className={styles.source}>{source}</span>}
             {...tooltipProps}
