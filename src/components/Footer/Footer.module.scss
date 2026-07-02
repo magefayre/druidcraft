@@ -4,6 +4,10 @@
   --version: attr(data-version);
 
   border-top: 1px solid var(--border);
+
+  [data-version]::after {
+    content: ' ' var(--version);
+  }
 }
 
 .content {
@@ -19,27 +23,7 @@
   }
 }
 
-.link {
-  padding-inline-end: functions.spacing(2);
-
-  &[data-version] {
-    &::after {
-      content: ' ' var(--version);
-    }
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
 .icon {
   height: functions.spacing(4);
   width: auto;
-}
-
-.iconLink {
-  padding-inline-start: functions.spacing(2);
 }

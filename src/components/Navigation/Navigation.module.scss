@@ -1,0 +1,14 @@
+@use '~styles/functions';
+
+.inline {
+  display: inline-flex;
+  gap: functions.spacing(2);
+}
+
+.link {
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}

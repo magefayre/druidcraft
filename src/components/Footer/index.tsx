@@ -35,11 +35,7 @@ const Footer: FC = () => (
     >
       <Grid flex valign="middle" className={styles.columns}>
         <Grid.Item>
-          <Navigation
-            links={footer.links}
-            theme={{ link: styles.link }}
-            inline
-          />
+          <Navigation links={footer.links} inline />
         </Grid.Item>
         <Grid.Item>
           <Navigation
@@ -74,7 +70,6 @@ const Footer: FC = () => (
                 </SmartLink>
               )
             }}
-            theme={{ link: styles.iconLink }}
           />
         </Grid.Item>
       </Grid>

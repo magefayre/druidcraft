@@ -19,16 +19,16 @@ const Header: FC = () => (
       size="desktopLarge"
       theme={{ content: styles.content }}
     >
-      <Grid flex valign="middle">
-        <Grid.Item className={styles.logo}>
+      <Grid flex valign="middle" className={styles.columns}>
+        <Grid.Item>
           <SmartLink href="/">
             <LogoLockup />
           </SmartLink>
         </Grid.Item>
-        <Grid.Item className={styles.links}>
+        <Grid.Item>
           <Navigation
             links={header.links}
-            theme={{ link: styles.link }}
+            theme={{ list: styles.links, link: styles.link }}
             inline
           />
         </Grid.Item>

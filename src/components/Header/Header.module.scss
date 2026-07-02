@@ -8,22 +8,11 @@
   padding-block: functions.spacing(2);
 }
 
-.logo {
-  width: auto;
-}
+.columns {
+  gap: functions.spacing(2);
+  justify-content: space-between;
 
-.links {
-  flex-grow: 1;
-  text-align: right;
-  width: auto;
-}
-
-.link {
-  padding-inline-start: functions.spacing(2);
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: underline;
+  & > * {
+    width: auto;
   }
 }
