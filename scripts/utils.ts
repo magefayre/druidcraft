@@ -1,5 +1,5 @@
 import { selectAll } from 'css-select'
-import type { Document, Element } from 'domhandler'
+import type { Element } from 'domhandler'
 import { getAttributeValue, innerText } from 'domutils'
 import { parseDocument } from 'htmlparser2'
 
@@ -28,16 +28,16 @@ export const fetchRatings = async () => {
 
   validateResponse(res)
 
-  const ratings = selectAll<Document, Element>(
+  const ratings = selectAll(
     '*[class^="rating-"]',
     parseDocument(await res.text())
   ).reduce<MonsterRatings>(
     (rating, element) => ({
       ...rating,
-      [innerText(element)]: getAttributeValue(element, 'class').replace(
-        /rating-(\S+)/,
-        '$1'
-      ) as Rating
+      [innerText(element)]: getAttributeValue(
+        element as unknown as Element,
+        'class'
+      ).replace(/rating-(\S+)/, '$1') as Rating
     }),
     {}
   )
