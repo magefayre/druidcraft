@@ -57,6 +57,12 @@
   { "cr": 0.5, "name": "Darkling", "source": "MPMM", "speed": { "walk": 30 } },
   {
     "cr": 0.5,
+    "name": "Detached Shadow",
+    "source": "WBtW",
+    "speed": { "walk": 40 }
+  },
+  {
+    "cr": 0.5,
     "name": "Faerie Borrower",
     "source": "MCV4EC",
     "speed": { "walk": 10, "fly": 30 }
@@ -67,6 +73,7 @@
     "source": "BGG",
     "speed": { "walk": 30, "climb": 30 }
   },
+  { "cr": 0.5, "name": "Reflection", "source": "TCE", "speed": { "walk": 40 } },
   { "cr": 0.5, "name": "Satyr", "source": "MM", "speed": { "walk": 40 } },
   {
     "cr": 0.5,
