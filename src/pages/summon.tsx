@@ -35,7 +35,7 @@ export const getStaticProps = (async () => {
     types.map(async type => {
       creatures[type] = (
         (await loadData(`${plur(type)}.json`)) as Creature[]
-      ).sort(sortCreatures)
+      ).sort(sortCreatures())
     })
   )
 
