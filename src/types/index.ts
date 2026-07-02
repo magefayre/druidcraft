@@ -1,6 +1,7 @@
 export type Source = string
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
+export type View = 'grid' | 'list'
 
 export type Creature = {
   cr?: number

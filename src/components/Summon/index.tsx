@@ -128,6 +128,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
 
             return limit * multiplier
           }}
+          view="list"
         />
       </Section>
     </>
