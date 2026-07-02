@@ -118,7 +118,7 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
 
       await writeFile(
         join(outputDir, `${plur(filters.type)}.json`),
-        JSON.stringify(creatures.sort(sortCreatures))
+        JSON.stringify(creatures.sort(sortCreatures()))
       )
 
       return creatures
