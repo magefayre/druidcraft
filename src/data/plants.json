@@ -49,6 +49,12 @@
   },
   {
     "cr": 0.125,
+    "name": "Tribal Warrior Spore Servant",
+    "source": "IDRotF",
+    "speed": { "walk": 20 }
+  },
+  {
+    "cr": 0.125,
     "name": "Twig Blight",
     "source": "MM",
     "speed": { "walk": 20 }

@@ -42,7 +42,7 @@ const parseType = (type: string | { type: string; swarmSize: string }) => {
     return parseType(type.type)
   }
 
-  if (typeof type === 'string') return type
+  if (typeof type === 'string') return type as MonsterType
 
   return undefined
 }
@@ -51,6 +51,18 @@ type MonsterFilters = { type: MonsterType; maxCR?: number }
 
 const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
   const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
+    const { _copy } = monster
+    const base = monsters.find(
+      ({ name, source }) =>
+        _copy?.name === name &&
+        _copy?.name !== monster.name &&
+        _copy?.source === source
+    )
+
+    if (!!base) {
+      monster = { ...base, ...monster }
+    }
+
     const { name, source, speed } = monster
     const cr = parseCR(monster.cr)!
     const spell = parseSpell(monster.summonedBySpell)
@@ -62,36 +74,8 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
       : creatures
   }, [])
 
-  creatures.push(...filterCopies(monsters, creatures))
-
   return creatures
 }
-
-const filterCopies = (monsters: Monster[], existing: Creature[]) =>
-  monsters.reduce<Creature[]>((creatures, { _copy, cr, ...rest }) => {
-    const base = existing.find(
-      ({ name, source }) =>
-        _copy?.name === name &&
-        _copy?.name !== rest.name &&
-        _copy?.source === source
-    )
-
-    return !!base
-      ? [
-          ...creatures,
-          {
-            ...Object.entries(base).reduce<Creature>(
-              (creatures, [key, value]) => ({
-                ...creatures,
-                [key]: (rest as unknown as Monster)[key] ?? value
-              }),
-              {} as Creature
-            ),
-            cr: parseCR(cr) ?? base.cr
-          }
-        ]
-      : creatures
-  }, [])
 
 ;(async () => {
   const { outputDir } = await yargs(process.argv)

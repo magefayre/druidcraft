@@ -233,42 +233,6 @@
   },
   {
     "cr": 0,
-    "name": "Thopter (Bat)",
-    "source": "PSK",
-    "speed": { "walk": 5, "fly": 30 }
-  },
-  {
-    "cr": 0,
-    "name": "Thopter (Eagle)",
-    "source": "PSK",
-    "speed": { "walk": 10, "fly": 60 }
-  },
-  {
-    "cr": 0,
-    "name": "Thopter (Hawk)",
-    "source": "PSK",
-    "speed": { "walk": 10, "fly": 60 }
-  },
-  {
-    "cr": 0,
-    "name": "Thopter (Owl)",
-    "source": "PSK",
-    "speed": { "walk": 5, "fly": 60 }
-  },
-  {
-    "cr": 0,
-    "name": "Thopter (Raven)",
-    "source": "PSK",
-    "speed": { "walk": 10, "fly": 50 }
-  },
-  {
-    "cr": 0,
-    "name": "Thopter (Vulture)",
-    "source": "PSK",
-    "speed": { "walk": 10, "fly": 50 }
-  },
-  {
-    "cr": 0,
     "name": "Trilobite",
     "source": "PSX",
     "speed": { "walk": 20, "swim": 20 }
@@ -282,25 +246,12 @@
   { "cr": 0, "name": "Weasel", "source": "MM", "speed": { "walk": 30 } },
   { "cr": 0, "name": "Wild Dog", "source": "ToA", "speed": { "walk": 40 } },
   {
-    "cr": 0,
-    "name": "Zombie Cat",
-    "source": "PSI",
-    "speed": { "walk": 40, "climb": 30 }
-  },
-  { "cr": 0, "name": "Zombie Rat", "source": "PSI", "speed": { "walk": 20 } },
-  {
     "cr": 0.125,
     "name": "Blood Hawk",
     "source": "MM",
     "speed": { "walk": 10, "fly": 60 }
   },
   { "cr": 0.125, "name": "Camel", "source": "MM", "speed": { "walk": 50 } },
-  {
-    "cr": 0.125,
-    "name": "Clockwork Mule",
-    "source": "SKT",
-    "speed": { "walk": 40 }
-  },
   {
     "cr": 0.125,
     "name": "Dolphin",
@@ -355,26 +306,8 @@
   },
   {
     "cr": 0.125,
-    "name": "Thopter (Blood Hawk)",
-    "source": "PSK",
-    "speed": { "walk": 10, "fly": 60 }
-  },
-  {
-    "cr": 0.125,
     "name": "Trilobite (Giant)",
     "source": "PSX",
-    "speed": { "walk": 30, "swim": 30 }
-  },
-  {
-    "cr": 0.125,
-    "name": "Wooden Donkey",
-    "source": "WDMM",
-    "speed": { "walk": 40 }
-  },
-  {
-    "cr": 0.125,
-    "name": "Zombie Snake",
-    "source": "PSI",
     "speed": { "walk": 30, "swim": 30 }
   },
   {
@@ -382,12 +315,6 @@
     "name": "Aerosaur (Small)",
     "source": "PSX",
     "speed": { "walk": 10, "fly": 60 }
-  },
-  {
-    "cr": 0.25,
-    "name": "Animated Jade Serpent",
-    "source": "WDMM",
-    "speed": { "walk": 30, "swim": 30 }
   },
   {
     "cr": 0.25,
@@ -560,18 +487,6 @@
   },
   { "cr": 0.25, "name": "Rothé", "source": "CoA", "speed": { "walk": 30 } },
   { "cr": 0.25, "name": "Rothé", "source": "VGM", "speed": { "walk": 30 } },
-  {
-    "cr": 0.25,
-    "name": "Skeletal Giant Owl",
-    "source": "IMR",
-    "speed": { "walk": 5, "fly": 60 }
-  },
-  {
-    "cr": 0.25,
-    "name": "Skeletal Riding Horse",
-    "source": "DIP",
-    "speed": { "walk": 60 }
-  },
   { "cr": 0.25, "name": "Sled Dog", "source": "RoT", "speed": { "walk": 40 } },
   {
     "cr": 0.25,
@@ -617,12 +532,6 @@
     "name": "Ape",
     "source": "MM",
     "speed": { "walk": 30, "climb": 30 }
-  },
-  {
-    "cr": 0.5,
-    "name": "Ashen Warhorse",
-    "source": "KftGV",
-    "speed": { "walk": 60 }
   },
   {
     "cr": 0.5,
@@ -703,12 +612,6 @@
     "name": "Koi Prawn",
     "source": "JttRC",
     "speed": { "walk": 0, "swim": 40 }
-  },
-  {
-    "cr": 0.5,
-    "name": "Metal Wasp",
-    "source": "WDMM",
-    "speed": { "walk": 10, "fly": 50 }
   },
   { "cr": 0.5, "name": "Oxen", "source": "PSZ", "speed": { "walk": 40 } },
   { "cr": 0.5, "name": "Reef Shark", "source": "MM", "speed": { "swim": 40 } },
@@ -809,12 +712,6 @@
   },
   {
     "cr": 1,
-    "name": "Hound of Ill Omen",
-    "source": "XGE",
-    "speed": { "walk": 50 }
-  },
-  {
-    "cr": 1,
     "name": "Ice Spider",
     "source": "SKT",
     "speed": { "walk": 30, "climb": 30 }
@@ -847,24 +744,12 @@
     "speed": { "walk": 50 }
   },
   { "cr": 2, "name": "Allosaurus", "source": "MM", "speed": { "walk": 60 } },
-  {
-    "cr": 2,
-    "name": "Animatronic Allosaurus",
-    "source": "KftGV",
-    "speed": { "walk": 60 }
-  },
   { "cr": 2, "name": "Aurochs", "source": "MPMM", "speed": { "walk": 50 } },
   {
     "cr": 2,
     "name": "Cave Bear",
     "source": "MM",
     "speed": { "walk": 40, "swim": 30 }
-  },
-  {
-    "cr": 2,
-    "name": "Dinosaur Skeleton",
-    "source": "JttRC",
-    "speed": { "walk": 60 }
   },
   {
     "cr": 2,
@@ -952,21 +837,9 @@
   },
   {
     "cr": 2,
-    "name": "Sharkbody Abomination",
-    "source": "EGW",
-    "speed": { "walk": 20, "swim": 40 }
-  },
-  {
-    "cr": 2,
     "name": "Shoal Serpent",
     "source": "PSZ",
     "speed": { "walk": 20, "swim": 40 }
-  },
-  {
-    "cr": 2,
-    "name": "Skeletal Polar Bear",
-    "source": "IMR",
-    "speed": { "walk": 40, "swim": 30 }
   },
   {
     "cr": 2,
@@ -1057,12 +930,6 @@
     "name": "Hippopotamus",
     "source": "PSA",
     "speed": { "walk": 40, "swim": 30 }
-  },
-  {
-    "cr": 4,
-    "name": "Lifecraft Elephant",
-    "source": "PSK",
-    "speed": { "walk": 40 }
   },
   {
     "cr": 4,

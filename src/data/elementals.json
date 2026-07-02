@@ -37,6 +37,16 @@
   },
   {
     "cr": 0.25,
+    "name": "Ashen Flying Sword",
+    "source": "KftGV",
+    "speed": {
+      "walk": 0,
+      "fly": { "number": 50, "condition": "(hover)" },
+      "canHover": true
+    }
+  },
+  {
+    "cr": 0.25,
     "name": "Fume Drake",
     "source": "DoSI",
     "speed": { "walk": 30, "fly": 30 }
@@ -59,6 +69,12 @@
     "name": "Steam Mephit",
     "source": "MM",
     "speed": { "walk": 30, "fly": 30 }
+  },
+  {
+    "cr": 0.5,
+    "name": "Ashen Warhorse",
+    "source": "KftGV",
+    "speed": { "walk": 60 }
   },
   {
     "cr": 0.5,
@@ -85,6 +101,18 @@
     "speed": { "walk": 30, "fly": 30 }
   },
   { "cr": 0.5, "name": "Magmin", "source": "MM", "speed": { "walk": 30 } },
+  {
+    "cr": 1,
+    "name": "Animated Drow Statue",
+    "source": "OotA",
+    "speed": { "walk": 25 }
+  },
+  {
+    "cr": 1,
+    "name": "Ashen Animated Armor",
+    "source": "KftGV",
+    "speed": { "walk": 25 }
+  },
   { "cr": 1, "name": "Fire Snake", "source": "MM", "speed": { "walk": 30 } },
   {
     "cr": 1,
@@ -116,6 +144,18 @@
     "name": "Gargoyle",
     "source": "MM",
     "speed": { "walk": 30, "fly": 60 }
+  },
+  {
+    "cr": 3,
+    "name": "Ashen Knight",
+    "source": "KftGV",
+    "speed": { "walk": 30 }
+  },
+  {
+    "cr": 3,
+    "name": "Ashen Veteran",
+    "source": "KftGV",
+    "speed": { "walk": 30 }
   },
   { "cr": 3, "name": "Flail Snail", "source": "MPMM", "speed": { "walk": 10 } },
   { "cr": 3, "name": "Mud Hulk", "source": "BGG", "speed": { "walk": 40 } },
@@ -181,6 +221,12 @@
       "fly": { "number": 90, "condition": "(hover)" },
       "canHover": true
     }
+  },
+  {
+    "cr": 5,
+    "name": "Ashen Shambling Mound",
+    "source": "KftGV",
+    "speed": { "walk": 20, "swim": 20 }
   },
   {
     "cr": 5,
