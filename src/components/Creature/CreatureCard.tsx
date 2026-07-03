@@ -2,9 +2,9 @@ import { Card, Icon, Tooltip } from '@newhighsco/chipset'
 import plur from 'plur'
 import type { FC } from 'react'
 
-import { EMPTY, LEVELS, SPEEDS } from '~constants'
+import { EMPTY, SPEEDS } from '~constants'
 import sources from '~data/sources.json' with { type: 'json' }
-import { formatCR, formatLevel } from '~utils/5etools'
+import { formatCR } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
@@ -76,7 +76,7 @@ const BeastCard: FC<CreatureCardProps> = ({
               }
               {...tooltipProps}
             >
-              Requires {formatLevel(LEVELS[type])} level
+              <span aria-hidden>{singular}</span>
             </Tooltip>
           )
         })}
