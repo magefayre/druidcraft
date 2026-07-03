@@ -3,7 +3,8 @@ import type { Element } from 'domhandler'
 import { getAttributeValue, innerText } from 'domutils'
 import { parseDocument } from 'htmlparser2'
 
-import type { MonsterRatings, Rating } from '~types'
+import { RATINGS } from '~constants'
+import type { MonsterRating, MonsterRatings } from '~types'
 
 import { BASE } from './constants'
 
@@ -31,16 +32,14 @@ export const fetchRatings = async () => {
   const ratings = selectAll(
     '*[class^="rating-"]',
     parseDocument(await res.text())
-  ).reduce<MonsterRatings>(
-    (rating, element) => ({
-      ...rating,
-      [innerText(element)]: getAttributeValue(
-        element as unknown as Element,
-        'class'
-      ).replace(/rating-(\S+)/, '$1') as Rating
-    }),
-    {}
-  )
+  ).reduce<MonsterRatings>((ratings, element) => {
+    const rating = getAttributeValue(
+      element as unknown as Element,
+      'class'
+    ).replace(/rating-(\S+)/, '$1') as MonsterRating
+
+    return { ...ratings, [innerText(element)]: RATINGS[rating] }
+  }, {})
 
   return ratings
 }

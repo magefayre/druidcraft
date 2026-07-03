@@ -1,0 +1,18 @@
+@use '~styles/functions';
+
+.root {
+  aspect-ratio: 1;
+  display: grid;
+  font-size: 0;
+  grid-template-columns: repeat(2, 1fr);
+  height: functions.spacing(2.25);
+}
+
+.icon {
+  aspect-ratio: inherit;
+  width: 100%;
+
+  &[aria-disabled] {
+    color: var(--card-color, var(--border));
+  }
+}

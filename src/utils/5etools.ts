@@ -79,15 +79,23 @@ export const getTypeCR = (type: MonsterType) =>
 
 export const getVersion = () => BASE.pathname.split('/').filter(Boolean).at(-1)
 
-export const sortCreatures =
-  (sortBy: keyof Creature = 'cr') =>
-  (a: Creature, b: Creature) => {
-    if (sortBy === 'cr') {
-      if (a.cr !== b.cr) {
-        const fallback = Number.MIN_SAFE_INTEGER
+const sortNumerically = <T extends Creature>(key: keyof T, a: T, b: T) => {
+  if (a[key] !== b[key]) {
+    const fallback = Number.MIN_SAFE_INTEGER
 
-        return (a.cr ?? fallback) - (b.cr ?? fallback)
-      }
+    return Number(a[key] ?? fallback) - Number(b[key] ?? fallback)
+  }
+}
+
+export const sortCreatures =
+  <T extends Creature>(sortBy: keyof T = 'cr') =>
+  (a: T, b: T) => {
+    if (['cr', 'rating'].includes(sortBy as string)) {
+      return sortNumerically(sortBy, a, b)
+    }
+
+    if (typeof a[sortBy] === 'number') {
+      return sortNumerically(sortBy, a, b)
     }
 
     if (a.name !== b.name) return a.name.localeCompare(b.name)

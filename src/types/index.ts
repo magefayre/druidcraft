@@ -1,12 +1,12 @@
+export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
-export type Rating = 'red' | 'orange' | 'green' | 'blue'
 export type Source = string
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 
 export type Creature = {
   cr?: number
   name: string
-  rating?: Rating
+  rating?: number
   source: Source
   speed: Record<Speed, number>
   spell?: string
@@ -22,7 +22,7 @@ export type Monster = Creature & {
 }
 
 export type Monsters = { monster: Monster[] }
-export type MonsterRatings = Record<string, Rating>
+export type MonsterRatings = Record<string, number>
 
 export type Spell = {
   creatures?: Record<string, number>

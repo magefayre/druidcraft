@@ -6,6 +6,12 @@
 
 .root {
   line-height: 1;
+  z-index: 1;
+
+  &:hover,
+  &:focus-within {
+    z-index: 2;
+  }
 }
 
 .content {

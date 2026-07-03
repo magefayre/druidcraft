@@ -15,8 +15,15 @@
     cursor: not-allowed;
   }
 
-  &[role='link']:hover {
-    border-color: currentColor;
+  &[role='link'] {
+    &:hover,
+    &:focus-within {
+      border-color: currentColor;
+    }
+  }
+
+  &:hover {
+    z-index: 2;
   }
 }
 
