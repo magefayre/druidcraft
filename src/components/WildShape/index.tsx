@@ -1,5 +1,5 @@
 import { Tooltip } from '@newhighsco/chipset'
-import type { ChangeEventHandler, FC } from 'react'
+import { type ChangeEventHandler, type FC, Fragment } from 'react'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
@@ -12,21 +12,29 @@ import {
   formatCR,
   formatSpeedLimits,
   getMaxCR,
-  getSpeedLimit
+  getSpeedLimit,
+  sortCreatures
 } from '~utils/5etools'
+
+import { DESCENDING, SEPARATOR, SORTING } from './constants'
 
 const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
 
-type FormData = { level: number; circleForms: boolean; speed: Speed }
+type FormData = {
+  level: number
+  circleForms: boolean
+  sort: string
+  speed: Speed
+}
 
 export type WildShapeProps = { beasts: Creature[] }
 
 const WildShape: FC<WildShapeProps> = ({ beasts }) => {
   const [formData, setFormData, mounted] = useLocalStorage<FormData>(
     'wildshape',
-    { level: LEVELS.min, circleForms: false, speed: undefined }
+    { level: LEVELS.min, circleForms: false, sort: undefined, speed: undefined }
   )
-  const { level, circleForms, speed } = formData
+  const { level, circleForms, sort, speed } = formData
   const maxCR = getMaxCR(formData)
 
   const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
@@ -44,6 +52,16 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
 
   if (speed) {
     beasts = beasts.filter(beast => !!beast.speed[speed])
+  }
+
+  if (sort) {
+    const [sortBy, direction] = sort.split(SEPARATOR)
+
+    beasts = beasts.sort(sortCreatures(sortBy as keyof Creature))
+
+    if (direction === DESCENDING) {
+      beasts = beasts.reverse()
+    }
   }
 
   return (
@@ -97,6 +115,25 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
                   {singular}
                 </option>
               ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="sort">Sort</label>
+            <select id="sort" name="sort" value={sort} disabled={!mounted}>
+              {Object.entries(SORTING).map(([key, { min, max }]) => {
+                const value = key.toLowerCase()
+                const label = (a: string | number, b: string | number) =>
+                  `${key}: ${a}-${b}`
+
+                return (
+                  <Fragment key={key}>
+                    <option value={value}>{label(min, max)}</option>
+                    <option value={[value, DESCENDING].join(SEPARATOR)}>
+                      {label(max, min)}
+                    </option>
+                  </Fragment>
+                )
+              })}
             </select>
           </div>
         </form>
