@@ -1,9 +1,7 @@
 import slugify, { type Options } from '@sindresorhus/slugify'
 import transliterate from '@sindresorhus/transliterate'
 
-import type { Creature } from '~types'
-
-type CreatureURL = Pick<Creature, 'source' | 'name'>
+import type { CreatureURL } from './types'
 
 export const tokenURL = ({ source, name }: CreatureURL) =>
   `/tokens/${source}/${transliterate(name)}`

@@ -1,19 +1,11 @@
 import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
-import type { Creature } from '~types'
-
 import { CreatureCard } from '.'
 import styles from './CreatureList.module.scss'
+import type { CreatureListProps } from './types'
 
-type Props = {
-  creatures?: Creature[]
-  isCreatureDisabled?: (creature: Creature) => boolean
-  isCreatureLimited?: (creature: Creature) => number
-  speedLimits?: boolean
-}
-
-const CreatureList: FC<Props> = ({
+const CreatureList: FC<CreatureListProps> = ({
   creatures,
   isCreatureDisabled,
   isCreatureLimited,
@@ -28,7 +20,7 @@ const CreatureList: FC<Props> = ({
           const { name, source } = creature
 
           return (
-            <li key={`${source}/${name}`}>
+            <li key={`${source}/${name}`} className={styles.item}>
               <CreatureCard
                 {...creature}
                 disabled={isCreatureDisabled?.(creature)}

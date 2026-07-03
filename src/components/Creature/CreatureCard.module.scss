@@ -1,13 +1,35 @@
 @use '~styles/functions';
 
-.cr {
-  position: absolute;
-  inset-block-start: functions.spacing(0.5);
-  inset-inline-end: functions.spacing(0.5);
+.root {
+  align-items: center;
+  flex-direction: row;
 }
 
-.crToggle {
-  aspect-ratio: 1/1;
+.image {
+  width: functions.spacing(8);
+
+  img {
+    padding: functions.spacing(0.5);
+  }
+}
+
+.content {
+  align-items: inherit;
+  border-top: unset;
+  display: inherit;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.copy {
+  align-items: inherit;
+  display: inherit;
+  gap: inherit;
+}
+
+.cr {
+  aspect-ratio: 1;
   align-items: center;
   background: var(--card-color, var(--dark-light));
   border-radius: 100%;
@@ -19,25 +41,18 @@
   width: functions.spacing(5.5);
 }
 
-.icons {
-  position: absolute;
-  inset-block-start: functions.spacing(0.25);
-  inset-inline-start: functions.spacing(0.5);
-}
-
 .icon {
   font-size: x-large;
   font-weight: bold;
   paint-order: stroke;
   stroke: var(--light-dark);
   stroke-width: functions.spacing(0.25);
-  text-align: left;
   text-shadow:
     1px 1px 0 var(--light-dark),
     1px -1px 0 var(--light-dark),
     -1px 1px 0 var(--light-dark),
     -1px -1px 0 var(--light-dark);
-  width: functions.spacing(5.5);
+  width: functions.spacing(4);
 }
 
 .source {
