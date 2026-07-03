@@ -1,4 +1,4 @@
-import type { Creature, View } from '~types'
+import type { Creature } from '~types'
 
 export type CreatureURL = Pick<Creature, 'source' | 'name'>
 
@@ -7,7 +7,6 @@ export type CreatureListProps = {
   isCreatureDisabled?: (creature: Creature) => boolean
   isCreatureLimited?: (creature: Creature) => number
   speedLimits?: boolean
-  view?: View
 }
 
 export type CreatureCardProps = Creature & {
@@ -15,5 +14,4 @@ export type CreatureCardProps = Creature & {
   limit?: number
   priority?: boolean
   speedLimits?: boolean
-  view: View
 }

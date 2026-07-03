@@ -2,8 +2,10 @@
 @use '~styles/functions';
 
 .root {
+  --columns: 4;
   --gap: #{functions.spacing(1)};
   --gap-total: calc(calc(var(--columns) - 1) * var(--gap));
+  --min-width: #{breakpoints.$mobile};
   --max-width: calc((100% - var(--gap-total)) / var(--columns));
 
   display: grid;
@@ -12,14 +14,4 @@
     auto-fill,
     minmax(max(var(--min-width), var(--max-width)), 1fr)
   );
-}
-
-.grid {
-  --columns: 9;
-  --min-width: #{functions.spacing(20)};
-}
-
-.list {
-  --columns: 4;
-  --min-width: #{breakpoints.$mobile};
 }

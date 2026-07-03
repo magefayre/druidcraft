@@ -10,7 +10,7 @@ import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
 import type { CreatureCardProps } from './types'
 
-const tooltipProps = { manual: false, valign: 'bottom' }
+const tooltipProps = { manual: false, align: 'left', valign: 'middle' }
 
 const BeastCard: FC<CreatureCardProps> = ({
   cr,
@@ -21,7 +21,6 @@ const BeastCard: FC<CreatureCardProps> = ({
   source,
   speed,
   speedLimits,
-  view,
   ...props
 }) => {
   const crLabel = formatCR(cr)
@@ -34,6 +33,8 @@ const BeastCard: FC<CreatureCardProps> = ({
           <Tooltip
             toggle={<span className={styles.source}>{source}</span>}
             {...tooltipProps}
+            align="center"
+            valign="bottom"
           >
             {sources[source]}
           </Tooltip>
@@ -48,7 +49,7 @@ const BeastCard: FC<CreatureCardProps> = ({
       href={!disabled ? url({ source, name }) : undefined}
       disabled={disabled}
       theme={{
-        root: styles[view],
+        root: styles.root,
         content: styles.content,
         copy: styles.copy,
         image: styles.image
@@ -60,8 +61,6 @@ const BeastCard: FC<CreatureCardProps> = ({
           <Tooltip
             toggle={<span className={styles.icon}>{limit}×</span>}
             {...tooltipProps}
-            align={view === 'grid' ? 'right' : 'left'}
-            valign="middle"
           >
             Summon&nbsp;{limit} {plur(name, limit)}
           </Tooltip>
@@ -77,8 +76,6 @@ const BeastCard: FC<CreatureCardProps> = ({
                   <Icon name={icon} alt={singular} className={styles.icon} />
                 }
                 {...tooltipProps}
-                align={view === 'grid' ? 'right' : 'left'}
-                valign="middle"
               >
                 Requires {formatLevel(LEVELS[type])} level
               </Tooltip>
@@ -90,8 +87,6 @@ const BeastCard: FC<CreatureCardProps> = ({
           toggle={<span>CR {crLabel}</span>}
           theme={{ root: styles.cr, toggle: styles.crToggle }}
           {...tooltipProps}
-          align="left"
-          valign="middle"
         >
           Challenge Rating&nbsp;{crLabel}
         </Tooltip>

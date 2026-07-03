@@ -1,4 +1,4 @@
-import { classNames, List } from '@newhighsco/chipset'
+import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
 import { CreatureCard } from '.'
@@ -9,14 +9,13 @@ const CreatureList: FC<CreatureListProps> = ({
   creatures,
   isCreatureDisabled,
   isCreatureLimited,
-  speedLimits,
-  view = 'grid'
+  speedLimits
 }) => {
   if (!creatures?.length) return null
 
   return (
     <>
-      <List unstyled className={classNames(styles.root, styles[view])}>
+      <List unstyled className={styles.root}>
         {creatures.map((creature, index) => {
           const { name, source } = creature
 
@@ -28,7 +27,6 @@ const CreatureList: FC<CreatureListProps> = ({
                 limit={isCreatureLimited?.(creature)}
                 priority={index < 12}
                 speedLimits={speedLimits}
-                view={view}
               />
             </li>
           )

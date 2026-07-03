@@ -1,49 +1,31 @@
 @use '~styles/functions';
 
-.grid {
-  .cr {
-    position: absolute;
-    inset-block-start: functions.spacing(0.5);
-    inset-inline-end: functions.spacing(0.5);
-  }
+.root {
+  align-items: center;
+  flex-direction: row;
+}
 
-  .icons {
-    position: absolute;
-    inset-block-start: functions.spacing(0.5);
-    inset-inline-start: functions.spacing(0.5);
+.image {
+  width: functions.spacing(8);
+
+  img {
+    padding: functions.spacing(0.5);
   }
 }
 
-.list {
-  align-items: center;
-  flex-direction: row;
+.content {
+  align-items: inherit;
+  border-top: unset;
+  display: inherit;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: space-between;
+}
 
-  .content {
-    align-items: inherit;
-    border-top: unset;
-    display: inherit;
-    flex-grow: 1;
-    gap: 10px;
-    justify-content: space-between;
-  }
-
-  .copy {
-    align-items: inherit;
-    display: inherit;
-    gap: inherit;
-  }
-
-  .image {
-    width: functions.spacing(8);
-
-    img {
-      padding: functions.spacing(0.5);
-    }
-  }
-
-  .icon {
-    width: functions.spacing(4);
-  }
+.copy {
+  align-items: inherit;
+  display: inherit;
+  gap: inherit;
 }
 
 .crToggle {
@@ -70,7 +52,7 @@
     1px -1px 0 var(--light-dark),
     -1px 1px 0 var(--light-dark),
     -1px -1px 0 var(--light-dark);
-  width: functions.spacing(5.5);
+  width: functions.spacing(4);
 }
 
 .source {
