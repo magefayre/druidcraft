@@ -56,36 +56,34 @@ const BeastCard: FC<CreatureCardProps> = ({
       }}
       {...props}
     >
-      <span className={styles.icons}>
-        {limit && (
-          <Tooltip
-            toggle={<span className={styles.icon}>{limit}×</span>}
-            {...tooltipProps}
-          >
-            Summon&nbsp;{limit} {plur(name, limit)}
-          </Tooltip>
-        )}
-        {speedLimits &&
-          Object.entries(SPEEDS).map(([type, { icon, singular }]) => {
-            if (!icon || !speed[type]) return null
+      {limit && (
+        <Tooltip
+          toggle={<span className={styles.icon}>{limit}×</span>}
+          {...tooltipProps}
+        >
+          Summon&nbsp;{limit} {plur(name, limit)}
+        </Tooltip>
+      )}
+      {speedLimits &&
+        Object.entries(SPEEDS).map(([type, { icon, singular }]) => {
+          if (!icon || !speed[type]) return null
 
-            return (
-              <Tooltip
-                key={type}
-                toggle={
-                  <Icon name={icon} alt={singular} className={styles.icon} />
-                }
-                {...tooltipProps}
-              >
-                Requires {formatLevel(LEVELS[type])} level
-              </Tooltip>
-            )
-          })}
-      </span>
+          return (
+            <Tooltip
+              key={type}
+              toggle={
+                <Icon name={icon} alt={singular} className={styles.icon} />
+              }
+              {...tooltipProps}
+            >
+              Requires {formatLevel(LEVELS[type])} level
+            </Tooltip>
+          )
+        })}
       {crLabel !== EMPTY && (
         <Tooltip
           toggle={<span>CR {crLabel}</span>}
-          theme={{ root: styles.cr, toggle: styles.crToggle }}
+          theme={{ toggle: styles.cr }}
           {...tooltipProps}
         >
           Challenge Rating&nbsp;{crLabel}
