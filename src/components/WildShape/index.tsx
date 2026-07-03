@@ -7,7 +7,7 @@ import Filter from '~components/Filter'
 import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
 import useLocalStorage from '~hooks/useLocalStorage'
-import type { Creature, Speed } from '~types'
+import type { Creature, MonsterType, Speed } from '~types'
 import {
   formatCR,
   formatSpeedLimits,
@@ -27,15 +27,15 @@ type FormData = {
   speed: Speed
 }
 
-export type WildShapeProps = { beasts: Creature[] }
+export type WildShapeProps = {
+  creatures: Record<Extract<MonsterType, 'beast'>, Creature[]>
+}
 
-const WildShape: FC<WildShapeProps> = ({ beasts }) => {
+const WildShape: FC<WildShapeProps> = ({ creatures }) => {
   const [formData, setFormData, mounted] = useLocalStorage<FormData>(
     'wildshape',
     { level: LEVELS.min, circleForms: false, sort: undefined, speed: undefined }
   )
-  const { level, circleForms, sort, speed } = formData
-  const maxCR = getMaxCR(formData)
 
   const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
     const { name, value, checked, type } = target
@@ -45,6 +45,10 @@ const WildShape: FC<WildShapeProps> = ({ beasts }) => {
       [name]: type === 'checkbox' ? checked : value
     }))
   }
+
+  const { level, circleForms, sort, speed } = formData
+  const maxCR = getMaxCR(formData)
+  let beasts = creatures.beast
 
   if (!circleForms) {
     beasts = beasts.filter(({ cr }) => cr <= CR.fly)

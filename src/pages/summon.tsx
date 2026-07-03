@@ -1,11 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
-import plur from 'plur'
 
 import { SPELLS } from '~constants'
-import { loadData } from '~data/utils'
+import { loadCreatures } from '~data/utils'
 import SummonLayout, { type SummonLayoutProps } from '~layouts/summon'
-import type { Creature, MonsterType } from '~types'
-import { sortCreatures } from '~utils/5etools'
+import type { MonsterType } from '~types'
 import { canonicalUrl } from '~utils/urls'
 
 const meta = {
@@ -26,18 +24,7 @@ export const getStaticProps = (async () => {
     (types, { type }) => (!types.includes(type) ? [...types, type] : types),
     []
   )
-  const creatures: Record<MonsterType, Creature[]> = {} as Record<
-    MonsterType,
-    Creature[]
-  >
-
-  await Promise.all(
-    types.map(async type => {
-      creatures[type] = (
-        (await loadData(`${plur(type)}.json`)) as Creature[]
-      ).sort(sortCreatures())
-    })
-  )
+  const creatures = await loadCreatures(types)
 
   return { props: { creatures } }
 }) satisfies GetStaticProps<Props>
