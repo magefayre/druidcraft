@@ -1,10 +1,11 @@
+@use '~styles/breakpoints.module';
 @use '~styles/functions';
 
 .root {
-  --columns: 9;
-  --gap: #{functions.spacing(2)};
+  --columns: 4;
+  --gap: #{functions.spacing(1)};
   --gap-total: calc(calc(var(--columns) - 1) * var(--gap));
-  --min-width: #{functions.spacing(20)};
+  --min-width: #{breakpoints.$mobile};
   --max-width: calc((100% - var(--gap-total)) / var(--columns));
 
   display: grid;
