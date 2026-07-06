@@ -1,10 +1,10 @@
 import type { ChangeEventHandler, FC } from 'react'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { CreatureList } from '~components/Creature'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
 import { EMPTY, SPELL_LEVELS, SPELLS } from '~constants'
-import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature, MonsterType, Spell } from '~types'
 import {
   formatCR,
@@ -29,10 +29,11 @@ type FormData = { spell: string; upcast: number }
 export type SummonProps = { creatures: Record<MonsterType, Creature[]> }
 
 const Summon: FC<SummonProps> = ({ creatures }) => {
-  const [formData, setFormData, mounted] = useLocalStorage<FormData>('summon', {
-    spell: undefined,
-    upcast: undefined
-  })
+  const [formData, setFormData] = useLocalStorage<FormData>(
+    'summon',
+    { spell: undefined, upcast: undefined },
+    { initializeWithValue: false }
+  )
   const filters = SPELLS[formData.spell]
 
   const handleChange: ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
@@ -72,7 +73,6 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
               id="spell"
               name="spell"
               value={formData.spell}
-              disabled={!mounted}
               onChange={handleChange}
             >
               <option value="">{EMPTY}</option>

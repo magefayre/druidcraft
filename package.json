@@ -59,7 +59,8 @@
     "postcss": "8.5.16",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "sass": "1.101.0"
+    "sass": "1.101.0",
+    "usehooks-ts": "3.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "21.2.0",
