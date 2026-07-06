@@ -2961,6 +2961,7 @@ __metadata:
     stylelint: "npm:17.14.0"
     tsx: "npm:4.23.0"
     typescript: "npm:6.0.3"
+    usehooks-ts: "npm:3.1.1"
     vitest: "npm:4.1.9"
     yargs: "npm:18.0.0"
   languageName: unknown
@@ -13198,6 +13199,17 @@ __metadata:
     file-loader:
       optional: true
   checksum: 10c0/71b6300e02ce26c70625eae1a2297c0737635038c62691bb3007ac33e85c0130efc74bfb444baf5c6b3bad5953491159d31d66498967d1417865d0c7e7cd1a64
+  languageName: node
+  linkType: hard
+
+"usehooks-ts@npm:3.1.1":
+  version: 3.1.1
+  resolution: "usehooks-ts@npm:3.1.1"
+  dependencies:
+    lodash.debounce: "npm:^4.0.8"
+  peerDependencies:
+    react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
+  checksum: 10c0/8bbebf52b063f2e705eb27364f08ec2eff987b9e8d28d82a28248652dd89ef53cb514e1f2ee1cbc6ac6e083a8dce86310301c3e92a99902b98c32a26381202d7
   languageName: node
   linkType: hard
 
