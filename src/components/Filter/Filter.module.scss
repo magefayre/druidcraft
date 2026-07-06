@@ -24,6 +24,7 @@
   dl {
     display: inline-flex;
     flex-wrap: wrap;
+    font-size: smaller;
     gap: functions.spacing(0.5);
     line-height: 1.1;
   }
@@ -40,20 +41,14 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    font-size: smaller;
     gap: functions.spacing(1);
-
-    > div {
-      align-items: inherit;
-      display: inherit;
-      flex-wrap: inherit;
-      gap: inherit;
-    }
   }
 
   label {
     cursor: pointer;
 
-    &:has(+ select)::after {
+    &:has(+ *)::after {
       content: var(--content-colon);
     }
 
@@ -75,5 +70,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: functions.spacing(1);
+  row-gap: functions.spacing(2);
   justify-content: space-between;
+}
+
+.field {
+  align-items: inherit;
+  border: 1px solid var(--border);
+  border-radius: functions.spacing(0.5);
+  display: inherit;
+  flex-wrap: inherit;
+  gap: functions.spacing(0.5);
+  overflow: hidden;
+  padding: functions.spacing(0.5) functions.spacing(1);
+  position: relative;
+
+  &:focus-within {
+    border-color: currentColor;
+  }
 }

@@ -4,7 +4,8 @@ import { useLocalStorage } from 'usehooks-ts'
 import { CreatureList } from '~components/Creature'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
-import { EMPTY, SPELL_LEVELS, SPELLS } from '~constants'
+import Select from '~components/Select'
+import { SPELL_LEVELS, SPELLS } from '~constants'
 import type { Creature, MonsterType, Spell } from '~types'
 import {
   formatCR,
@@ -67,49 +68,45 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     <>
       <Filter>
         <form>
-          <div>
-            <label htmlFor="spell">Spell</label>
-            <select
-              id="spell"
-              name="spell"
-              value={formData.spell}
-              onChange={handleChange}
-            >
-              <option value="">{EMPTY}</option>
-              {Object.entries(SPELLS).map(([spell, { level }]) => (
-                <option key={spell} value={spell}>
-                  {spell} ({formatLevel(level)})
-                </option>
-              ))}
-            </select>
-          </div>
+          <Select
+            id="spell"
+            label="Spell"
+            value={formData.spell}
+            onChange={handleChange}
+            options={[
+              { value: '' },
+              ...Object.entries(SPELLS).map(([value, { level }]) => ({
+                value,
+                label: (
+                  <>
+                    {value} ({formatLevel(level)})
+                  </>
+                )
+              }))
+            ]}
+          />
           {filters?.upcast && (
-            <div>
-              <label htmlFor="upcast">Upcast</label>
-              <select
-                id="upcast"
-                name="upcast"
-                value={formData.upcast}
-                onChange={handleChange}
-              >
-                <option value="">{EMPTY}</option>
-                {getUpcastLevels(filters).map(level => (
-                  <option key={level} value={level}>
-                    {formatLevel(level)}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="upcast"
+              label="Upcast"
+              value={formData.upcast}
+              onChange={handleChange}
+              options={[
+                { value: '' },
+                ...getUpcastLevels(filters).map(value => ({
+                  value,
+                  label: formatLevel(value)
+                }))
+              ]}
+            />
           )}
         </form>
-        <dl>
-          {maxCR && (
-            <>
-              <dt>Max. CR</dt>
-              <dd>{formatCR(maxCR)}</dd>
-            </>
-          )}
-        </dl>
+        {maxCR && (
+          <dl>
+            <dt>Max. CR</dt>
+            <dd>{formatCR(maxCR)}</dd>
+          </dl>
+        )}
       </Filter>
       <Section>
         <CreatureList

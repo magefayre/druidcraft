@@ -1,12 +1,12 @@
-import { Tooltip } from '@newhighsco/chipset'
-import { type ChangeEventHandler, type FC, Fragment } from 'react'
+import { type ChangeEventHandler, type FC } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
-import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
+import Select from '~components/Select'
+import { CR, LEVELS, SPEEDS } from '~constants'
 import type { Creature, MonsterType, Speed } from '~types'
 import {
   formatCR,
@@ -34,12 +34,7 @@ export type WildShapeProps = {
 const WildShape: FC<WildShapeProps> = ({ creatures }) => {
   const [formData, setFormData] = useLocalStorage<FormData>(
     'wildshape',
-    {
-      level: LEVELS.walk,
-      circleForms: false,
-      sort: undefined,
-      speed: undefined
-    },
+    { level: LEVELS.walk, circleForms: false, sort: 'cr', speed: undefined },
     { initializeWithValue: false }
   )
 
@@ -82,84 +77,63 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
     <>
       <Filter>
         <form>
-          <div>
-            <label htmlFor="level">Level</label>
-            <select
-              id="level"
-              name="level"
-              value={level}
-              onChange={handleChange}
-            >
-              {levels.map(level => (
-                <option
-                  key={level}
-                  value={level}
-                  disabled={
-                    level < LEVELS.walk || (!circleForms && level > LEVELS.fly)
-                  }
-                >
-                  {level}
-                </option>
-              ))}
-            </select>
-          </div>
-          <Tooltip
-            manual={false}
-            toggle={
-              <Checkbox
-                name="circleForms"
-                icon={['boxicons:moon', circleForms && 'filled']
-                  .filter(Boolean)
-                  .join('-')}
-                alt="Moon Druid"
-                checked={circleForms}
-                onChange={handleChange}
-              />
-            }
-            align="right"
-            valign="middle"
-          >
-            Moon&nbsp;Druid:&nbsp;{circleForms ? 'Yes' : 'No'}
-          </Tooltip>
-          <div>
-            <label htmlFor="speed">Speed</label>
-            <select
-              id="speed"
-              name="speed"
-              value={speed}
-              onChange={handleChange}
-            >
-              <option value="">{EMPTY}</option>
-              {Object.entries(SPEEDS).map(([key, { singular }]) => (
-                <option
-                  key={key}
-                  value={key}
-                  disabled={level < (LEVELS[key] ?? LEVELS.walk)}
-                >
-                  {singular}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="sort">Sort</label>
-            <select id="sort" name="sort" value={sort} onChange={handleChange}>
-              {Object.entries(SORTING).map(([key, { min, max }]) => {
+          <Checkbox
+            id="circleForms"
+            label="Moon Druid"
+            icon={['boxicons:moon', circleForms && 'filled']
+              .filter(Boolean)
+              .join('-')}
+            checked={circleForms}
+            onChange={handleChange}
+          />
+          <Select
+            id="level"
+            label="Level"
+            value={level}
+            onChange={handleChange}
+            options={levels.map(value => ({
+              value,
+              disabled:
+                value < LEVELS.walk || (!circleForms && value > LEVELS.fly)
+            }))}
+          />
+          <Select
+            id="speed"
+            label="Speed"
+            value={speed}
+            onChange={handleChange}
+            options={[
+              { value: '' },
+              ...Object.entries(SPEEDS).map(([value, { singular }]) => ({
+                value,
+                label: singular,
+                disabled: level < (LEVELS[value] ?? LEVELS.walk)
+              }))
+            ]}
+          />
+          <Select
+            id="sort"
+            label="Sort"
+            value={sort}
+            onChange={handleChange}
+            options={Object.entries(SORTING).reduce(
+              (options, [key, { min, max }]) => {
                 const value = key.toLowerCase()
                 const label = (a: string | number, b: string | number) =>
                   `${key}: ${a}-${b}`
 
-                return (
-                  <Fragment key={key}>
-                    <option value={value}>{label(min, max)}</option>
-                    <option value={[value, DESCENDING].join(SEPARATOR)}>
-                      {label(max, min)}
-                    </option>
-                  </Fragment>
-                )
-              })}
-            </select>
-          </div>
+                return [
+                  ...options,
+                  { value, label: label(min, max) },
+                  {
+                    value: [value, DESCENDING].join(SEPARATOR),
+                    label: label(max, min)
+                  }
+                ]
+              },
+              []
+            )}
+          />
         </form>
         <dl>
           <dt>Max. CR</dt>

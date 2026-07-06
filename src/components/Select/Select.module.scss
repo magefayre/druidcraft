@@ -1,0 +1,13 @@
+.select {
+  appearance: none;
+  background: none;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+
+  option {
+    background: red;
+    margin-top: 100px;
+  }
+}

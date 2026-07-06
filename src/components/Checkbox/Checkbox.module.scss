@@ -6,6 +6,12 @@
 }
 
 .icon {
+  width: 1.1em;
+
+  :not(:checked) + & {
+    opacity: 0.5;
+  }
+
   [disabled] + & {
     color: var(--border);
     cursor: not-allowed;
