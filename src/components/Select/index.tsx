@@ -23,7 +23,13 @@ const getLabel = (option: Option) => {
 const Select: FC<Props> = ({ id, label, value, options, ...rest }) => {
   if (!options) return null
 
-  const selected = options.find(option => `${option.value}` === `${value}`)
+  let selected = undefined
+
+  if (Array.isArray(value) && value.length > 0) {
+    selected = { label: `(${value.length})` }
+  } else {
+    selected = options.find(option => `${option.value}` === `${value}`)
+  }
 
   return (
     <FilterField id={id} label={label}>

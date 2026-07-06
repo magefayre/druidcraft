@@ -1,3 +1,5 @@
+@use '~styles/functions';
+
 .select {
   appearance: none;
   background: none;
@@ -6,8 +8,29 @@
   inset: 0;
   padding: inherit;
 
+  @supports (appearance: base-select) {
+    &,
+    &::picker(select) {
+      appearance: base-select;
+      border: 1px solid var(--border);
+      margin-top: functions.spacing(0.25);
+    }
+  }
+
   option {
-    background: red;
-    margin-top: 100px;
+    display: flex;
+    gap: functions.spacing(0.5);
+    line-height: 1;
+    padding-block: functions.spacing(0.125);
+    padding-inline: functions.spacing(0.5) functions.spacing(1);
+
+    &::checkmark {
+      content: '';
+      width: functions.spacing(1.5);
+    }
+
+    &:checked::checkmark {
+      content: '✓';
+    }
   }
 }

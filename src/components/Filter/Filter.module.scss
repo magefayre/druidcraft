@@ -76,7 +76,7 @@
 
 .field {
   align-items: inherit;
-  border: 1px solid var(--border);
+  outline: 1px solid var(--border);
   border-radius: functions.spacing(0.5);
   display: inherit;
   flex-wrap: inherit;

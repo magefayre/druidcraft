@@ -7,7 +7,8 @@ import Filter from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
 import { CR, LEVELS, SPEEDS } from '~constants'
-import type { Creature, MonsterType, Speed } from '~types'
+import SOURCES from '~data/sources.json' with { type: 'json' }
+import type { Creature, MonsterType, Source, Speed } from '~types'
 import {
   formatCR,
   formatSpeedLimits,
@@ -24,17 +25,25 @@ type FormData = {
   level: number
   circleForms: boolean
   sort: string
+  source: string[]
   speed: Speed
 }
 
 export type WildShapeProps = {
   creatures: Record<Extract<MonsterType, 'beast'>, Creature[]>
+  sources: Source[]
 }
 
-const WildShape: FC<WildShapeProps> = ({ creatures }) => {
+const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
   const [formData, setFormData] = useLocalStorage<FormData>(
     'wildshape',
-    { level: LEVELS.walk, circleForms: false, sort: 'cr', speed: undefined },
+    {
+      level: LEVELS.walk,
+      circleForms: false,
+      sort: 'cr',
+      source: undefined,
+      speed: undefined
+    },
     { initializeWithValue: false }
   )
 
@@ -48,10 +57,18 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
       value = (target as HTMLFormElement).checked
     }
 
+    if (type === 'select-multiple') {
+      value = Array.from(target.options).reduce<string[]>(
+        (values, { selected, value }) =>
+          selected ? [...values, value] : values,
+        []
+      )
+    }
+
     setFormData(formData => ({ ...formData, [name]: value }))
   }
 
-  const { level, circleForms, sort, speed } = formData
+  const { level, circleForms, sort, source, speed } = formData
   const maxCR = getMaxCR(formData)
   let beasts = creatures.beast
 
@@ -61,6 +78,10 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
 
   if (speed) {
     beasts = beasts.filter(beast => !!beast.speed[speed])
+  }
+
+  if (!!source?.length) {
+    beasts = beasts.filter(beast => source.includes(beast.source))
   }
 
   if (sort) {
@@ -110,6 +131,15 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
                 disabled: level < (LEVELS[value] ?? LEVELS.walk)
               }))
             ]}
+          />
+          <Select
+            id="source"
+            label="Source"
+            value={source}
+            onChange={handleChange}
+            multiple
+            size={1}
+            options={sources?.map(value => ({ value, label: SOURCES[value] }))}
           />
           <Select
             id="sort"
