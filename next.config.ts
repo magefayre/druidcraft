@@ -2,20 +2,12 @@ import withSvgr from '@newhighsco/next-plugin-svgr'
 import type { NextConfig } from 'next'
 import withPlugins from 'next-compose-plugins'
 
-import { tokenURL, url } from '~components/Creature/utils'
+import { url } from '~components/Creature/utils'
 
-const BASE = {
-  html: new URL('https://2014.5e.tools/'),
-  img: new URL(
-    'https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-img/main/'
-  )
-}
+const BASE = new URL('https://2014.5e.tools/')
 
 const nextConfig: NextConfig = {
-  images: {
-    formats: ['image/avif', 'image/webp'],
-    remotePatterns: [new URL('**', BASE.img)]
-  },
+  images: { formats: ['image/avif', 'image/webp'] },
   i18n: { locales: ['en'], defaultLocale: 'en' },
   poweredByHeader: false,
   redirects: () => [
@@ -24,14 +16,8 @@ const nextConfig: NextConfig = {
         { source: ':source', name: ':name' },
         { preserveCharacters: [':'] }
       ),
-      destination: new URL('bestiary/:name-:source.html', BASE.html).href,
+      destination: new URL('bestiary/:name-:source.html', BASE).href,
       permanent: true
-    }
-  ],
-  rewrites: () => [
-    {
-      source: tokenURL({ source: ':source', name: ':name' }),
-      destination: new URL('bestiary/tokens/:source/:name.webp', BASE.img).href
     }
   ],
   transpilePackages: ['@newhighsco/chipset', '@newhighsco/press-start'],

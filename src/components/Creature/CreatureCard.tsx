@@ -44,7 +44,8 @@ const BeastCard: FC<CreatureCardProps> = ({
         src: tokenURL({ source, name }),
         priority,
         width: TOKEN_SIZE,
-        height: TOKEN_SIZE
+        height: TOKEN_SIZE,
+        sizes: '64px'
       }}
       href={!disabled ? url({ source, name }) : undefined}
       disabled={disabled}
