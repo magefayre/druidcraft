@@ -10,8 +10,6 @@ import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
 import type { CreatureCardProps } from './types'
 
-const tooltipProps = { manual: false, align: 'left', valign: 'middle' }
-
 const BeastCard: FC<CreatureCardProps> = ({
   cr,
   disabled,
@@ -24,6 +22,12 @@ const BeastCard: FC<CreatureCardProps> = ({
   ...props
 }) => {
   const crLabel = formatCR(cr)
+  const tooltipProps = {
+    disabled,
+    manual: disabled,
+    align: 'left',
+    valign: 'middle'
+  }
 
   return (
     <Card

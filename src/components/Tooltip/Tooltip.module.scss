@@ -1,11 +1,15 @@
 @use '~styles/functions';
 
-.toggle[aria-expanded] {
-  cursor: help;
-}
-
 .root {
   line-height: 1;
+}
+
+.toggle {
+  cursor: help;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
 }
 
 .content {
