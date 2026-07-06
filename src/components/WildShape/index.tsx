@@ -1,12 +1,12 @@
 import { Tooltip } from '@newhighsco/chipset'
 import { type ChangeEventHandler, type FC, Fragment } from 'react'
+import { useLocalStorage } from 'usehooks-ts'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
 import { CR, EMPTY, LEVELS, SPEEDS } from '~constants'
-import useLocalStorage from '~hooks/useLocalStorage'
 import type { Creature, MonsterType, Speed } from '~types'
 import {
   formatCR,
@@ -32,18 +32,28 @@ export type WildShapeProps = {
 }
 
 const WildShape: FC<WildShapeProps> = ({ creatures }) => {
-  const [formData, setFormData, mounted] = useLocalStorage<FormData>(
+  const [formData, setFormData] = useLocalStorage<FormData>(
     'wildshape',
-    { level: LEVELS.min, circleForms: false, sort: undefined, speed: undefined }
+    {
+      level: LEVELS.walk,
+      circleForms: false,
+      sort: undefined,
+      speed: undefined
+    },
+    { initializeWithValue: false }
   )
 
-  const handleChange: ChangeEventHandler<HTMLFormElement> = ({ target }) => {
-    const { name, value, checked, type } = target
+  const handleChange: ChangeEventHandler<
+    HTMLSelectElement | HTMLFormElement
+  > = ({ target }) => {
+    const { name, type } = target
+    let { value } = target
 
-    setFormData(formData => ({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value
-    }))
+    if (type === 'checkbox') {
+      value = (target as HTMLFormElement).checked
+    }
+
+    setFormData(formData => ({ ...formData, [name]: value }))
   }
 
   const { level, circleForms, sort, speed } = formData
@@ -71,10 +81,15 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
   return (
     <>
       <Filter>
-        <form onChange={handleChange}>
+        <form>
           <div>
             <label htmlFor="level">Level</label>
-            <select id="level" name="level" value={level} disabled={!mounted}>
+            <select
+              id="level"
+              name="level"
+              value={level}
+              onChange={handleChange}
+            >
               {levels.map(level => (
                 <option
                   key={level}
@@ -98,7 +113,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
                   .join('-')}
                 alt="Moon Druid"
                 checked={circleForms}
-                disabled={!mounted}
+                onChange={handleChange}
               />
             }
             align="right"
@@ -108,7 +123,12 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           </Tooltip>
           <div>
             <label htmlFor="speed">Speed</label>
-            <select id="speed" name="speed" value={speed} disabled={!mounted}>
+            <select
+              id="speed"
+              name="speed"
+              value={speed}
+              onChange={handleChange}
+            >
               <option value="">{EMPTY}</option>
               {Object.entries(SPEEDS).map(([key, { singular }]) => (
                 <option
@@ -123,7 +143,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           </div>
           <div>
             <label htmlFor="sort">Sort</label>
-            <select id="sort" name="sort" value={sort} disabled={!mounted}>
+            <select id="sort" name="sort" value={sort} onChange={handleChange}>
               {Object.entries(SORTING).map(([key, { min, max }]) => {
                 const value = key.toLowerCase()
                 const label = (a: string | number, b: string | number) =>
