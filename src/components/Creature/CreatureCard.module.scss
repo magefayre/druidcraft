@@ -56,8 +56,11 @@
 }
 
 .source {
+  display: block;
   font-size: small;
   font-style: italic;
+  line-height: 1.85;
+  min-width: 24px;
   position: relative;
   z-index: 1;
 }

@@ -48,7 +48,7 @@ const BeastCard: FC<CreatureCardProps> = ({
         sizes: '64px'
       }}
       href={!disabled ? url({ source, name }) : undefined}
-      disabled={disabled}
+      aria-disabled={disabled ? true : undefined}
       theme={{
         root: styles.root,
         content: styles.content,
