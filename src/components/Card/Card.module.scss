@@ -9,7 +9,7 @@
   line-height: 1.25;
   overflow: visible !important;
 
-  &[disabled] {
+  &[aria-disabled] {
     --card-color: rgb(from var(--border) r g b / 70%);
 
     cursor: not-allowed;
@@ -34,7 +34,7 @@
   height: auto;
   padding-bottom: unset;
 
-  [disabled] & {
+  [aria-disabled] & {
     opacity: 0.25;
   }
 
