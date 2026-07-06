@@ -9,7 +9,7 @@ import { LEVELS } from '~constants'
 import type { Creature, Monster, Monsters, MonsterType, Source } from '~types'
 import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/5etools'
 
-import { fetchData, fetchScript } from './utils'
+import { fetchData, fetchScript, fetchToken } from './utils'
 
 declare global {
   var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
@@ -119,6 +119,12 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
       await writeFile(
         join(outputDir, `${plur(filters.type)}.json`),
         JSON.stringify(creatures.sort(sortCreatures()))
+      )
+
+      await Promise.all(
+        creatures.map(async ({ name, source }) => {
+          await fetchToken({ name, source })
+        })
       )
 
       return creatures
