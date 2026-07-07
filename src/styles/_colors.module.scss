@@ -1,15 +1,19 @@
 $black: #000;
-$black-smoke: #262626;
-$black-mist: #464646;
+$midnight: #262626;
+$twilight: #464646;
+$night: #777;
+$dusk: #a6a6a6;
+$mist: #bbb;
+$smoke: #ddd;
 $white: #fff;
-$white-smoke: #f5f5f5;
-$white-mist: #e5e5e5;
 
 :export {
   black: $black;
-  black-smoke: $black-smoke;
-  black-mist: $black-mist;
+  midnight: $midnight;
+  twilight: $twilight;
+  night: $night;
+  dusk: $dusk;
+  mist: $mist;
+  smoke: $smoke;
   white: $white;
-  white-smoke: $white-smoke;
-  white-mist: $white-mist;
 }

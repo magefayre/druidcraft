@@ -2,9 +2,8 @@
 @use '~styles/mixins';
 
 .root {
-  &:hover,
   &:has(:checked) {
-    background: var(--muted);
+    background: var(--muted-background);
   }
 }
 
@@ -14,13 +13,4 @@
 
 .icon {
   width: 1.1em;
-
-  [disabled] + & {
-    color: var(--border);
-    cursor: not-allowed;
-  }
-
-  :not([disabled]) + & {
-    cursor: pointer;
-  }
 }

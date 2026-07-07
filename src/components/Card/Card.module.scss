@@ -10,9 +10,10 @@
   overflow: visible !important;
 
   &[aria-disabled] {
-    --card-color: var(--muted);
+    --card-color: var(--muted-foreground);
 
     cursor: not-allowed;
+    opacity: 0.25;
   }
 
   &[role='link']:hover {
@@ -33,10 +34,6 @@
   aspect-ratio: 1;
   height: auto;
   padding-bottom: unset;
-
-  [aria-disabled] & {
-    opacity: 0.25;
-  }
 
   img {
     padding: functions.spacing(1.5);

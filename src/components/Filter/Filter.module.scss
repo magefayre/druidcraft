@@ -44,18 +44,6 @@
     font-size: smaller;
     gap: functions.spacing(1);
   }
-
-  label {
-    cursor: pointer;
-
-    &:has(+ *)::after {
-      content: var(--content-colon);
-    }
-
-    &:has(+ [disabled]) {
-      cursor: not-allowed;
-    }
-  }
 }
 
 @keyframes shadow {
@@ -76,16 +64,35 @@
 
 .field {
   align-items: inherit;
-  outline: 1px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: functions.spacing(1);
+  cursor: pointer;
   display: inherit;
   flex-wrap: inherit;
   gap: functions.spacing(0.5);
   overflow: hidden;
-  padding: functions.spacing(0.5) functions.spacing(1);
+  padding: functions.spacing(0.5) functions.spacing(1.25);
   position: relative;
+
+  &:has(> :disabled) {
+    color: var(--muted-foreground);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    background: var(--muted-background);
+  }
 
   &:focus-within {
     border-color: currentColor;
+  }
+
+  label {
+    cursor: inherit;
+
+    &:has(+ *)::after {
+      content: var(--content-colon);
+    }
   }
 }

@@ -7,7 +7,7 @@
 .toggle {
   cursor: help;
 
-  &[disabled] {
+  &:disabled {
     cursor: not-allowed;
   }
 }

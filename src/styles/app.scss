@@ -8,8 +8,11 @@
 :root {
   --background: light-dark(#{colors.$white}, #{colors.$black});
   --foreground: light-dark(#{colors.$black}, #{colors.$white});
-  --muted: light-dark(#{colors.$white-smoke}, #{colors.$black-smoke});
-  --border: light-dark(#{colors.$white-mist}, #{colors.$black-mist});
+  --muted-background: light-dark(#{colors.$smoke}, #{colors.$midnight});
+  --muted-foreground: light-dark(#{colors.$night}, #{colors.$dusk});
+  --border: light-dark(#{colors.$mist}, #{colors.$twilight});
+  --selection: light-dark(#{colors.$white}, #{colors.$midnight});
+  --highlight: light-dark(#{colors.$smoke}, #{colors.$twilight});
 
   color-scheme: light dark;
 }
@@ -30,13 +33,5 @@ a {
 
   &:focus {
     outline: none;
-  }
-}
-
-select {
-  cursor: pointer;
-
-  &[disabled] {
-    cursor: not-allowed;
   }
 }
