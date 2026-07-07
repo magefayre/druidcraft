@@ -10,7 +10,7 @@ type Props = Omit<ComponentPropsWithoutRef<'input'>, 'type'> &
   PropTypes.InferProps<Icon.propTypes>
 
 const Checkbox: FC<Props> = ({ id, label, icon, ...rest }) => (
-  <FilterField id={id} label={label}>
+  <FilterField id={id} label={label} className={styles.root}>
     <input
       id={id}
       name={id}

@@ -1,16 +1,19 @@
 @use '~styles/functions';
 @use '~styles/mixins';
 
+.root {
+  &:hover,
+  &:has(:checked) {
+    background: var(--muted);
+  }
+}
+
 .input {
   @include mixins.visually-hidden;
 }
 
 .icon {
   width: 1.1em;
-
-  :not(:checked) + & {
-    opacity: 0.5;
-  }
 
   [disabled] + & {
     color: var(--border);

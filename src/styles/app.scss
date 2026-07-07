@@ -6,18 +6,17 @@
 @use '~styles/functions';
 
 :root {
-  --light: #{colors.$white};
-  --dark: #{colors.$black};
-  --border: #{colors.$grey};
-  --light-dark: light-dark(var(--light), var(--dark));
-  --dark-light: light-dark(var(--dark), var(--light));
+  --background: light-dark(#{colors.$white}, #{colors.$black});
+  --foreground: light-dark(#{colors.$black}, #{colors.$white});
+  --muted: light-dark(#{colors.$white-smoke}, #{colors.$black-smoke});
+  --border: light-dark(#{colors.$white-mist}, #{colors.$black-mist});
 
   color-scheme: light dark;
 }
 
 body {
-  background: var(--light-dark);
-  color: var(--dark-light);
+  background: var(--background);
+  color: var(--foreground);
   font-size: 18px;
   line-height: 1.5;
   font-family: fonts.$body;

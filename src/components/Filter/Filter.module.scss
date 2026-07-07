@@ -5,7 +5,7 @@
   --content-colon: ':';
   --z-index: 2;
 
-  background: var(--light-dark);
+  background: var(--background);
   box-shadow: var(--box-shadow);
   padding-block: functions.spacing(2);
   position: sticky;
@@ -77,7 +77,7 @@
 .field {
   align-items: inherit;
   outline: 1px solid var(--border);
-  border-radius: functions.spacing(0.5);
+  border-radius: functions.spacing(1);
   display: inherit;
   flex-wrap: inherit;
   gap: functions.spacing(0.5);
