@@ -122,9 +122,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
             value={source}
             onChange={handleChange}
             multiple
-            options={sources
-              ?.slice(0, 3)
-              .map(value => ({ value, label: SOURCES[value] }))}
+            options={sources.map(value => ({ value, label: SOURCES[value] }))}
           />
           <Select
             id="sort"
