@@ -1,7 +1,8 @@
-import type { ChangeEventHandler, FC } from 'react'
+import type { FC } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { CreatureList } from '~components/Creature'
+import type { FilterHandler } from '~components/Filter'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
@@ -37,13 +38,11 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
   )
   const filters = SPELLS[formData.spell]
 
-  const handleChange: ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
-    const { name, value } = target
-
+  const handleChange: FilterHandler = (id, value) => {
     setFormData(formData => {
-      const updates = { [name]: value }
+      const updates = { [id]: value }
 
-      if (name === 'spell' && formData[name] !== value) {
+      if (id === 'spell' && formData[id] !== value) {
         updates['upcast'] = ''
       }
 
@@ -89,7 +88,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
             <Select
               id="upcast"
               label="Upcast"
-              value={formData.upcast}
+              value={`${formData.upcast}`}
               onChange={handleChange}
               options={[
                 { value: '' },

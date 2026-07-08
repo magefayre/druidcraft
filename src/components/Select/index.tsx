@@ -1,18 +1,26 @@
-import type { ComponentPropsWithoutRef, FC, ReactNode } from 'react'
+import {
+  type ChangeEventHandler,
+  type FC,
+  type ReactNode,
+  useMemo
+} from 'react'
 
+import type { FilterFieldProps } from '~components/Filter'
 import { FilterField } from '~components/Filter'
 import { EMPTY } from '~constants'
 
 import styles from './Select.module.scss'
 
-type Option = { value: string | number; label?: ReactNode; disabled?: boolean }
+type Option = { value: string; label?: ReactNode; disabled?: boolean }
+type BaseProps = Omit<
+  FilterFieldProps<'select'>,
+  'children' | 'multiple' | 'value'
+> & { options?: Option[] }
+type SingleProps = BaseProps & { multiple?: undefined | false; value: string }
+type MultipleProps = BaseProps & { multiple: true; value: string[] }
+type Props = SingleProps | MultipleProps
 
-type Props = Omit<ComponentPropsWithoutRef<'select'>, 'children'> & {
-  label: string
-  options?: Option[]
-}
-
-const getLabel = (option: Option) => {
+const getLabel = (option: Partial<Option>) => {
   if (!option) return EMPTY
 
   const { label, value } = option
@@ -20,16 +28,38 @@ const getLabel = (option: Option) => {
   return label ?? (!!value ? value : EMPTY)
 }
 
-const Select: FC<Props> = ({ id, label, value, options, ...rest }) => {
+const Select: FC<Props> = ({
+  id,
+  label,
+  value,
+  multiple,
+  options,
+  onChange
+}) => {
+  const all = useMemo(() => options.map(({ value }) => value), [options])
+
   if (!options) return null
 
-  let selected = undefined
+  const handleChange: ChangeEventHandler<HTMLSelectElement> = e => {
+    let value: string | string[] = e.target.value
 
-  if (Array.isArray(value) && value.length > 0) {
-    selected = { label: `(${value.length})` }
-  } else {
-    selected = options.find(option => `${option.value}` === `${value}`)
+    if (multiple) {
+      const selected = Array.from(e.target.selectedOptions)
+
+      value = selected.map(({ value }) => value).filter(Boolean)
+
+      if (selected.some(({ dataset }) => !!dataset.toggleAll)) {
+        value = value.length !== all.length ? all : []
+      }
+    }
+
+    onChange?.(id, value)
   }
+
+  const selected =
+    multiple && value?.length > 0
+      ? { label: `(${value.length})` }
+      : options.find(option => option.value === value)
 
   return (
     <FilterField id={id} label={label}>
@@ -38,9 +68,25 @@ const Select: FC<Props> = ({ id, label, value, options, ...rest }) => {
         id={id}
         name={id}
         value={value}
+        multiple={multiple}
+        size={multiple ? 1 : undefined}
         className={styles.select}
-        {...rest}
+        onChange={handleChange}
       >
+        {multiple && (
+          <option
+            data-toggle-all
+            value=""
+            aria-checked={
+              value?.length > 0 && value.length < options.length
+                ? 'mixed'
+                : value?.length === all.length
+            }
+          >
+            Select all
+          </option>
+        )}
+
         {options.map(({ value, label, disabled }) => (
           <option key={value} value={value} disabled={disabled}>
             {getLabel({ label, value })}

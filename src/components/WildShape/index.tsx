@@ -1,8 +1,9 @@
-import { type ChangeEventHandler, type FC } from 'react'
+import type { FC } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
+import type { FilterHandler } from '~components/Filter'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
@@ -47,25 +48,8 @@ const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
     { initializeWithValue: false }
   )
 
-  const handleChange: ChangeEventHandler<
-    HTMLSelectElement | HTMLFormElement
-  > = ({ target }) => {
-    const { name, type } = target
-    let { value } = target
-
-    if (type === 'checkbox') {
-      value = (target as HTMLFormElement).checked
-    }
-
-    if (type === 'select-multiple') {
-      value = Array.from(target.options).reduce<string[]>(
-        (values, { selected, value }) =>
-          selected ? [...values, value] : values,
-        []
-      )
-    }
-
-    setFormData(formData => ({ ...formData, [name]: value }))
+  const handleChange: FilterHandler = (id, value) => {
+    setFormData(formData => ({ ...formData, [id]: value }))
   }
 
   const { level, circleForms, sort, source, speed } = formData
@@ -110,10 +94,10 @@ const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
           <Select
             id="level"
             label="Level"
-            value={level}
+            value={`${level}`}
             onChange={handleChange}
             options={levels.map(value => ({
-              value,
+              value: `${value}`,
               disabled:
                 value < LEVELS.walk || (!circleForms && value > LEVELS.fly)
             }))}
@@ -138,8 +122,9 @@ const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
             value={source}
             onChange={handleChange}
             multiple
-            size={1}
-            options={sources?.map(value => ({ value, label: SOURCES[value] }))}
+            options={sources
+              ?.slice(0, 3)
+              .map(value => ({ value, label: SOURCES[value] }))}
           />
           <Select
             id="sort"
@@ -149,8 +134,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
             options={Object.entries(SORTING).reduce(
               (options, [key, { min, max }]) => {
                 const value = key.toLowerCase()
-                const label = (a: string | number, b: string | number) =>
-                  `${key}: ${a}-${b}`
+                const label = (a: string, b: string) => `${key}: ${a}-${b}`
 
                 return [
                   ...options,

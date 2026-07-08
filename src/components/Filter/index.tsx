@@ -1,9 +1,22 @@
 import { classNames } from '@newhighsco/chipset'
-import type { FC, PropsWithChildren, ReactNode } from 'react'
+import type {
+  ComponentPropsWithoutRef,
+  ElementType,
+  FC,
+  PropsWithChildren,
+  ReactNode
+} from 'react'
 
 import Section from '~components/Section'
 
 import styles from './Filter.module.scss'
+
+export type FilterHandler = (id: string, value: string | string[]) => void
+
+export type FilterFieldProps<T extends ElementType> = Omit<
+  ComponentPropsWithoutRef<T>,
+  'onChange'
+> & { label: string; onChange?: FilterHandler }
 
 export const FilterField: FC<
   PropsWithChildren & { id: string; label: ReactNode; className?: string }

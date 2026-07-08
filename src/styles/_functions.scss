@@ -1,1 +1,5 @@
 @forward '~@newhighsco/chipset/styles/functions';
+
+@function icon($icon) {
+  @return url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="#{$icon}"/></svg>');
+}
