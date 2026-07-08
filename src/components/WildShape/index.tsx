@@ -20,14 +20,21 @@ import {
 
 import { DESCENDING, SEPARATOR, SORTING } from './constants'
 
-const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
-
 type FormData = {
   level: number
   circleForms: boolean
   sort: string
   source: string[]
   speed: Speed
+}
+
+const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
+const defaults: FormData = {
+  level: LEVELS.walk,
+  circleForms: false,
+  sort: 'cr',
+  source: undefined,
+  speed: undefined
 }
 
 export type WildShapeProps = {
@@ -38,13 +45,7 @@ export type WildShapeProps = {
 const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
   const [formData, setFormData] = useLocalStorage<FormData>(
     'wildshape',
-    {
-      level: LEVELS.walk,
-      circleForms: false,
-      sort: 'cr',
-      source: undefined,
-      speed: undefined
-    },
+    defaults,
     { initializeWithValue: false }
   )
 

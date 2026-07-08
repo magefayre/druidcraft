@@ -15,6 +15,10 @@ import {
   getSpellCR
 } from '~utils/5etools'
 
+type FormData = { spell: string; upcast: number }
+
+const defaults: FormData = { spell: undefined, upcast: undefined }
+
 const getUpcastLevels = ({ level, upcast }: Spell) => {
   if (typeof upcast === 'boolean') {
     return Array.from(
@@ -26,14 +30,12 @@ const getUpcastLevels = ({ level, upcast }: Spell) => {
   return Object.keys(upcast)
 }
 
-type FormData = { spell: string; upcast: number }
-
 export type SummonProps = { creatures: Record<MonsterType, Creature[]> }
 
 const Summon: FC<SummonProps> = ({ creatures }) => {
   const [formData, setFormData] = useLocalStorage<FormData>(
     'summon',
-    { spell: undefined, upcast: undefined },
+    defaults,
     { initializeWithValue: false }
   )
   const filters = SPELLS[formData.spell]
