@@ -48,7 +48,7 @@
   "dependencies": {
     "@newhighsco/chipset": "7.2.3",
     "@newhighsco/next-plugin-svgr": "3.0.173",
-    "@newhighsco/press-start": "2.8.2",
+    "@newhighsco/press-start": "2.8.3",
     "@newhighsco/ts-config": "1.2.2",
     "@sindresorhus/slugify": "3.0.0",
     "@sindresorhus/transliterate": "2.3.1",
