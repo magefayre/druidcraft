@@ -48,7 +48,13 @@ export const formatSpeedLimits = (level: number, locale?: string) => {
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
 
-export const getMaxCR = ({ level, circleForms = false }) => {
+export const getMaxCR = ({
+  level,
+  circleForms = false
+}: {
+  level: number
+  circleForms?: boolean
+}) => {
   if (circleForms && level >= LEVELS.walk) return getCircleFormsCR(level)
   if (level >= LEVELS.fly) return CR.fly
   if (level >= LEVELS.swim) return CR.swim
@@ -85,7 +91,8 @@ export const isCoreSource = (source: Source) =>
   !source.startsWith(Parser.SRC_PS_PREFIX) &&
   !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
 
-const sortAlphabetically = <T extends string>(a: T, b: T) => a.localeCompare(b)
+export const sortAlphabetically = <T extends string>(a: T, b: T) =>
+  a.localeCompare(b)
 
 export const sortCreatures =
   <T extends Creature>(sortBy: keyof T = 'cr') =>

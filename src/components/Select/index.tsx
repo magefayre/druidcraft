@@ -1,6 +1,8 @@
+import { Icon } from '@newhighsco/chipset'
 import {
   type ChangeEventHandler,
   type FC,
+  type MouseEventHandler,
   type ReactNode,
   useMemo
 } from 'react'
@@ -11,14 +13,25 @@ import { EMPTY } from '~constants'
 
 import styles from './Select.module.scss'
 
-type Option = { value: string; label?: ReactNode; disabled?: boolean }
+export type Option = { value: string; label?: ReactNode; disabled?: boolean }
+
 type BaseProps = Omit<
   FilterFieldProps<'select'>,
-  'children' | 'multiple' | 'value'
+  'children' | 'multiple' | 'value' | 'defaultValue'
 > & { options?: Option[] }
-type SingleProps = BaseProps & { multiple?: undefined | false; value: string }
-type MultipleProps = BaseProps & { multiple: true; value: string[] }
+type SingleProps = BaseProps & {
+  multiple?: undefined | false
+  value: string
+  defaultValue?: string
+}
+type MultipleProps = BaseProps & {
+  multiple: true
+  value: string[]
+  defaultValue?: string[]
+}
 type Props = SingleProps | MultipleProps
+
+const LABELS = { all: 'All', reset: 'Reset' }
 
 const getLabel = (option: Partial<Option>) => {
   if (!option) return EMPTY
@@ -33,6 +46,7 @@ const Select: FC<Props> = ({
   label,
   value,
   multiple,
+  defaultValue,
   options,
   onChange
 }) => {
@@ -49,17 +63,24 @@ const Select: FC<Props> = ({
       value = selected.map(({ value }) => value).filter(Boolean)
 
       if (selected.some(({ dataset }) => !!dataset.toggleAll)) {
-        value = !allSelected ? all : []
+        value = !allSelected ? all : defaultValue
       }
     }
 
     onChange?.(id, value)
   }
 
+  const handleReset: MouseEventHandler<HTMLButtonElement> = e => {
+    e.preventDefault()
+
+    // console.log(e.currentTarget.value)
+    onChange(e.currentTarget.value, defaultValue)
+  }
+
   const allSelected = multiple && value?.length === all.length
   const selected =
     multiple && value?.length > 0
-      ? { label: `(${value.length})` }
+      ? { label: allSelected ? LABELS.all : `(${value.length})` }
       : options.find(option => option.value === value)
 
   return (
@@ -84,7 +105,7 @@ const Select: FC<Props> = ({
                 : allSelected
             }
           >
-            {!allSelected ? 'All' : 'None'}
+            {LABELS.all}
           </option>
         )}
         {options.map(({ value, label, disabled }) => (
@@ -93,6 +114,16 @@ const Select: FC<Props> = ({
           </option>
         ))}
       </select>
+      {defaultValue !== undefined && !!selected?.label && (
+        <button
+          type="reset"
+          value={id}
+          className={styles.reset}
+          onClick={handleReset}
+        >
+          <Icon name="mdi:close" alt={LABELS.reset} className={styles.icon} />
+        </button>
+      )}
     </FilterField>
   )
 }
