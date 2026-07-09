@@ -3,33 +3,17 @@ import { useLocalStorage } from 'usehooks-ts'
 
 import Checkbox from '~components/Checkbox'
 import { CreatureList } from '~components/Creature'
-import type { FilterHandler } from '~components/Filter'
-import Filter from '~components/Filter'
+import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
-import { CR, LEVELS, SPEEDS } from '~constants'
-import SOURCES from '~data/sources.json' with { type: 'json' }
-import type { Creature, MonsterType, Source, Speed } from '~types'
-import {
-  formatCR,
-  formatSpeedLimits,
-  getMaxCR,
-  getSpeedLimit,
-  sortCreatures
-} from '~utils/5etools'
+import { LEVELS } from '~constants'
+import { formatCR, formatSpeedLimits, getSpeedLimit } from '~utils/5etools'
 
 import { DESCENDING, SEPARATOR, SORTING } from './constants'
+import { useBeasts, useLevels, useMaxCR, useSources, useSpeeds } from './hooks'
+import type { WildShapeFormData, WildShapeProps } from './types'
 
-type FormData = {
-  level: number
-  circleForms: boolean
-  sort: string
-  source: string[]
-  speed: Speed
-}
-
-const levels = Array.from(Array(LEVELS.max), (_, i) => i + 1)
-const defaults: FormData = {
+const defaults: WildShapeFormData = {
   level: LEVELS.walk,
   circleForms: false,
   sort: 'cr',
@@ -37,46 +21,21 @@ const defaults: FormData = {
   speed: undefined
 }
 
-export type WildShapeProps = {
-  creatures: Record<Extract<MonsterType, 'beast'>, Creature[]>
-  sources: Source[]
-}
-
-const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
-  const [formData, setFormData] = useLocalStorage<FormData>(
+const WildShape: FC<WildShapeProps> = ({ creatures }) => {
+  const [formData, setFormData] = useLocalStorage<WildShapeFormData>(
     'wildshape',
     defaults,
     { initializeWithValue: false }
   )
+  const { level, circleForms, sort, source, speed } = formData
+  const maxCR = useMaxCR(formData)
+  const beasts = useBeasts(creatures.beast, formData)
+  const levels = useLevels(circleForms)
+  const speeds = useSpeeds(level)
+  const sources = useSources(creatures.beast)
 
   const handleChange: FilterHandler = (id, value) => {
     setFormData(formData => ({ ...formData, [id]: value }))
-  }
-
-  const { level, circleForms, sort, source, speed } = formData
-  const maxCR = getMaxCR(formData)
-  let beasts = creatures.beast
-
-  if (!circleForms) {
-    beasts = beasts.filter(({ cr }) => cr <= CR.fly)
-  }
-
-  if (speed) {
-    beasts = beasts.filter(beast => !!beast.speed[speed])
-  }
-
-  if (!!source?.length) {
-    beasts = beasts.filter(beast => source.includes(beast.source))
-  }
-
-  if (sort) {
-    const [sortBy, direction] = sort.split(SEPARATOR)
-
-    beasts = beasts.sort(sortCreatures(sortBy as keyof Creature))
-
-    if (direction === DESCENDING) {
-      beasts = beasts.reverse()
-    }
   }
 
   return (
@@ -97,33 +56,23 @@ const WildShape: FC<WildShapeProps> = ({ creatures, sources }) => {
             label="Level"
             value={`${level}`}
             onChange={handleChange}
-            options={levels.map(value => ({
-              value: `${value}`,
-              disabled:
-                value < LEVELS.walk || (!circleForms && value > LEVELS.fly)
-            }))}
+            options={levels}
           />
           <Select
             id="speed"
             label="Speed"
             value={speed}
             onChange={handleChange}
-            options={[
-              { value: '' },
-              ...Object.entries(SPEEDS).map(([value, { singular }]) => ({
-                value,
-                label: singular,
-                disabled: level < (LEVELS[value] ?? LEVELS.walk)
-              }))
-            ]}
+            options={speeds}
           />
           <Select
             id="source"
             label="Source"
             value={source}
+            defaultValue={defaults.source}
             onChange={handleChange}
             multiple
-            options={sources.map(value => ({ value, label: SOURCES[value] }))}
+            options={sources}
           />
           <Select
             id="sort"

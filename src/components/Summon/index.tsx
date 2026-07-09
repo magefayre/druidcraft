@@ -2,10 +2,10 @@ import type { FC } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { CreatureList } from '~components/Creature'
-import type { FilterHandler } from '~components/Filter'
-import Filter from '~components/Filter'
+import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
+import { EMPTY_OPTION } from '~components/Select/constants'
 import { SPELL_LEVELS, SPELLS } from '~constants'
 import type { Creature, MonsterType, Spell } from '~types'
 import {
@@ -75,7 +75,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
             value={formData.spell}
             onChange={handleChange}
             options={[
-              { value: '' },
+              EMPTY_OPTION,
               ...Object.entries(SPELLS).map(([value, { level }]) => ({
                 value,
                 label: (
@@ -93,7 +93,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
               value={`${formData.upcast}`}
               onChange={handleChange}
               options={[
-                { value: '' },
+                EMPTY_OPTION,
                 ...getUpcastLevels(filters).map(value => ({
                   value,
                   label: formatLevel(value)

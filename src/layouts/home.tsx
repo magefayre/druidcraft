@@ -4,8 +4,8 @@ import { LogoJsonLd, SocialProfileJsonLd } from 'next-seo'
 import PageContainer, {
   type PageContainerProps
 } from '~components/PageContainer'
-import type { WildShapeProps } from '~components/WildShape'
 import WildShape from '~components/WildShape'
+import type { WildShapeProps } from '~components/WildShape/types'
 import config from '~config'
 import { canonicalUrl } from '~utils/urls'
 
