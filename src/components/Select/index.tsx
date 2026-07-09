@@ -49,13 +49,14 @@ const Select: FC<Props> = ({
       value = selected.map(({ value }) => value).filter(Boolean)
 
       if (selected.some(({ dataset }) => !!dataset.toggleAll)) {
-        value = value.length !== all.length ? all : []
+        value = !allSelected ? all : []
       }
     }
 
     onChange?.(id, value)
   }
 
+  const allSelected = multiple && value?.length === all.length
   const selected =
     multiple && value?.length > 0
       ? { label: `(${value.length})` }
@@ -78,15 +79,14 @@ const Select: FC<Props> = ({
             data-toggle-all
             value=""
             aria-checked={
-              value?.length > 0 && value.length < options.length
+              value?.length > 0 && value.length < all.length
                 ? 'mixed'
-                : value?.length === all.length
+                : allSelected
             }
           >
-            Select all
+            {!allSelected ? 'All' : 'None'}
           </option>
         )}
-
         {options.map(({ value, label, disabled }) => (
           <option key={value} value={value} disabled={disabled}>
             {getLabel({ label, value })}

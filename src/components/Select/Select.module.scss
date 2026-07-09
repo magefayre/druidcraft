@@ -48,11 +48,9 @@
     align-items: center;
     border-radius: functions.spacing(0.5);
     cursor: pointer;
-    flex-direction: row-reverse;
-    gap: functions.spacing(0.5);
+    gap: functions.spacing(0.75);
     line-height: 1;
-    justify-content: space-between;
-    padding: functions.spacing(0.25) functions.spacing(1);
+    padding: functions.spacing(0.25) functions.spacing(0.5);
 
     &::checkmark {
       background: currentColor;

@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
 
 import config from '~config'
+import SOURCES from '~data/sources.json' with { type: 'json' }
 import { loadCreatures } from '~data/utils'
 import HomeLayout, { type HomeLayoutProps } from '~layouts/home'
-import type { Source } from '~types'
 import { canonicalUrl } from '~utils/urls'
 
 const { title } = config
@@ -17,13 +17,9 @@ export const getStaticProps = (async () => {
   const creatures = await loadCreatures('beast', {
     beast: ({ spell }) => !spell
   })
-  const sources = creatures.beast
-    .reduce<Source[]>(
-      (sources, { source }) =>
-        !sources.includes(source) ? [...sources, source] : sources,
-      []
-    )
-    .sort()
+  const sources = Object.keys(SOURCES).filter(key =>
+    creatures.beast.some(({ source }) => source === key)
+  )
 
   return { props: { creatures, sources } }
 }) satisfies GetStaticProps<Props>

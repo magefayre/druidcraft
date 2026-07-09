@@ -1,3 +1,14 @@
+declare global {
+  var Parser: {
+    SOURCE_JSON_TO_FULL: Record<Source, string>
+    SOURCES_CORE_SUPPLEMENTS: Set<Source>
+    SOURCES_NON_STANDARD_WOTC: Set<Source>
+    SOURCES_VANILLA: Set<Source>
+    SRC_MCVX_PREFIX: string
+    SRC_PS_PREFIX: string
+  }
+}
+
 export type Source = string
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'

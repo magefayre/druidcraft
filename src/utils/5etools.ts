@@ -11,7 +11,7 @@ import {
   SPELLS
 } from '~constants'
 import { VERSION } from '~scripts/constants'
-import type { Creature, MonsterType, Speed, Spell } from '~types'
+import type { Creature, MonsterType, Source, Speed, Spell } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
@@ -79,9 +79,17 @@ export const getTypeCR = (type: MonsterType) =>
 
 export const getVersion = () => VERSION
 
+export const isCoreSource = (source: Source) =>
+  Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
+  !source.startsWith(Parser.SRC_MCVX_PREFIX) &&
+  !source.startsWith(Parser.SRC_PS_PREFIX) &&
+  !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
+
+const sortAlphabetically = <T extends string>(a: T, b: T) => a.localeCompare(b)
+
 export const sortCreatures =
-  (sortBy: keyof Creature = 'cr') =>
-  (a: Creature, b: Creature) => {
+  <T extends Creature>(sortBy: keyof T = 'cr') =>
+  (a: T, b: T) => {
     if (sortBy === 'cr') {
       if (a.cr !== b.cr) {
         const fallback = Number.MIN_SAFE_INTEGER
@@ -90,7 +98,10 @@ export const sortCreatures =
       }
     }
 
-    if (a.name !== b.name) return a.name.localeCompare(b.name)
+    if (a.name !== b.name) return sortAlphabetically(a.name, b.name)
 
-    return a.source.localeCompare(b.source)
+    return sortAlphabetically(a.source, b.source)
   }
+
+export const sortSources = <T extends [Source, string]>([, a]: T, [, b]: T) =>
+  sortAlphabetically(a, b)
