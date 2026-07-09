@@ -10,7 +10,7 @@ declare global {
 }
 
 export type Source = string
-export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
+export type Speed = '' | 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
 
 export type Creature = {

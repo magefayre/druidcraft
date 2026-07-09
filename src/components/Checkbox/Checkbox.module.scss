@@ -2,6 +2,8 @@
 @use '~styles/mixins';
 
 .root {
+  line-height: 0;
+
   &:has(:checked) {
     background: var(--muted-background);
   }

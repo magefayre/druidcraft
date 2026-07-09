@@ -1,6 +1,8 @@
+import { Icon } from '@newhighsco/chipset'
 import {
   type ChangeEventHandler,
   type FC,
+  type MouseEventHandler,
   type ReactNode,
   useMemo
 } from 'react'
@@ -43,8 +45,8 @@ const Select: FC<Props> = ({
   id,
   label,
   value,
-  defaultValue = [],
   multiple,
+  defaultValue,
   options,
   onChange
 }) => {
@@ -66,6 +68,13 @@ const Select: FC<Props> = ({
     }
 
     onChange?.(id, value)
+  }
+
+  const handleReset: MouseEventHandler<HTMLButtonElement> = e => {
+    e.preventDefault()
+
+    // console.log(e.currentTarget.value)
+    onChange(e.currentTarget.value, defaultValue)
   }
 
   const allSelected = multiple && value?.length === all.length
@@ -96,7 +105,7 @@ const Select: FC<Props> = ({
                 : allSelected
             }
           >
-            {!allSelected ? LABELS.all : LABELS.reset}
+            {LABELS.all}
           </option>
         )}
         {options.map(({ value, label, disabled }) => (
@@ -105,6 +114,16 @@ const Select: FC<Props> = ({
           </option>
         ))}
       </select>
+      {defaultValue !== undefined && !!selected?.label && (
+        <button
+          type="reset"
+          value={id}
+          className={styles.reset}
+          onClick={handleReset}
+        >
+          <Icon name="mdi:close" alt={LABELS.reset} className={styles.icon} />
+        </button>
+      )}
     </FilterField>
   )
 }

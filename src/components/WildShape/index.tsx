@@ -17,8 +17,8 @@ const defaults: WildShapeFormData = {
   level: LEVELS.walk,
   circleForms: false,
   sort: 'cr',
-  source: undefined,
-  speed: undefined
+  source: [],
+  speed: ''
 }
 
 const WildShape: FC<WildShapeProps> = ({ creatures }) => {
@@ -62,6 +62,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
             id="speed"
             label="Speed"
             value={speed}
+            defaultValue={defaults.speed}
             onChange={handleChange}
             options={speeds}
           />
