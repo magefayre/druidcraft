@@ -17,7 +17,7 @@ import {
 
 type FormData = { spell: string; upcast: number }
 
-const defaults: FormData = { spell: undefined, upcast: undefined }
+const defaults: FormData = { spell: '', upcast: Number.MIN_SAFE_INTEGER }
 
 const getUpcastLevels = ({ level, upcast }: Spell) => {
   if (typeof upcast === 'boolean') {
@@ -73,6 +73,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
             id="spell"
             label="Spell"
             value={formData.spell}
+            defaultValue={defaults.spell}
             onChange={handleChange}
             options={[
               EMPTY_OPTION,
@@ -91,6 +92,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
               id="upcast"
               label="Upcast"
               value={`${formData.upcast}`}
+              defaultValue={`${defaults.upcast}`}
               onChange={handleChange}
               options={[
                 EMPTY_OPTION,
