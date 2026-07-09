@@ -29,7 +29,7 @@
   "scripts": {
     "prepare": "husky",
     "clean": "rm -rf {.next,public/{robots.txt,sitemap*.xml}}",
-    "prestart": "yarn clean",
+    "prestart": "yarn clean || exit 0",
     "start": "next dev --webpack",
     "build": "next build --webpack",
     "postbuild": "next-sitemap",

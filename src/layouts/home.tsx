@@ -13,7 +13,7 @@ const { name, logo, socialLinks, url } = config
 
 export type HomeLayoutProps = WildShapeProps & Pick<PageContainerProps, 'meta'>
 
-const HomeLayout: NextPage<HomeLayoutProps> = ({ creatures, meta }) => (
+const HomeLayout: NextPage<HomeLayoutProps> = ({ meta, ...rest }) => (
   <PageContainer meta={meta}>
     <SocialProfileJsonLd
       type="Organization"
@@ -22,7 +22,7 @@ const HomeLayout: NextPage<HomeLayoutProps> = ({ creatures, meta }) => (
       sameAs={Object.values(socialLinks)}
     />
     {logo?.bitmap && <LogoJsonLd url={url} logo={canonicalUrl(logo.bitmap)} />}
-    <WildShape creatures={creatures} />
+    <WildShape {...rest} />
   </PageContainer>
 )
 

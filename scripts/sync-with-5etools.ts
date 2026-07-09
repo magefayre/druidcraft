@@ -7,13 +7,14 @@ import yargs from 'yargs'
 
 import { LEVELS } from '~constants'
 import type { Creature, Monster, Monsters, MonsterType, Source } from '~types'
-import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/5etools'
+import {
+  getCircleFormsCR,
+  getTypeCR,
+  sortCreatures,
+  sortSources
+} from '~utils/5etools'
 
 import { fetchData, fetchScript, fetchToken } from './utils'
-
-declare global {
-  var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
-}
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -134,7 +135,7 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL)
-    .sort()
+    .sort(sortSources)
     .reduce(
       (books, [source, name]) =>
         creatures.flat().some(creature => creature.source === source) &&

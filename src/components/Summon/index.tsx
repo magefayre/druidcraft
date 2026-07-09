@@ -1,10 +1,12 @@
-import type { ChangeEventHandler, FC } from 'react'
+import type { FC } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { CreatureList } from '~components/Creature'
+import type { FilterHandler } from '~components/Filter'
 import Filter from '~components/Filter'
 import Section from '~components/Section'
-import { EMPTY, SPELL_LEVELS, SPELLS } from '~constants'
+import Select from '~components/Select'
+import { SPELL_LEVELS, SPELLS } from '~constants'
 import type { Creature, MonsterType, Spell } from '~types'
 import {
   formatCR,
@@ -12,6 +14,10 @@ import {
   formatLevel,
   getSpellCR
 } from '~utils/5etools'
+
+type FormData = { spell: string; upcast: number }
+
+const defaults: FormData = { spell: undefined, upcast: undefined }
 
 const getUpcastLevels = ({ level, upcast }: Spell) => {
   if (typeof upcast === 'boolean') {
@@ -24,25 +30,21 @@ const getUpcastLevels = ({ level, upcast }: Spell) => {
   return Object.keys(upcast)
 }
 
-type FormData = { spell: string; upcast: number }
-
 export type SummonProps = { creatures: Record<MonsterType, Creature[]> }
 
 const Summon: FC<SummonProps> = ({ creatures }) => {
   const [formData, setFormData] = useLocalStorage<FormData>(
     'summon',
-    { spell: undefined, upcast: undefined },
+    defaults,
     { initializeWithValue: false }
   )
   const filters = SPELLS[formData.spell]
 
-  const handleChange: ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
-    const { name, value } = target
-
+  const handleChange: FilterHandler = (id, value) => {
     setFormData(formData => {
-      const updates = { [name]: value }
+      const updates = { [id]: value }
 
-      if (name === 'spell' && formData[name] !== value) {
+      if (id === 'spell' && formData[id] !== value) {
         updates['upcast'] = ''
       }
 
@@ -67,49 +69,45 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     <>
       <Filter>
         <form>
-          <div>
-            <label htmlFor="spell">Spell</label>
-            <select
-              id="spell"
-              name="spell"
-              value={formData.spell}
-              onChange={handleChange}
-            >
-              <option value="">{EMPTY}</option>
-              {Object.entries(SPELLS).map(([spell, { level }]) => (
-                <option key={spell} value={spell}>
-                  {spell} ({formatLevel(level)})
-                </option>
-              ))}
-            </select>
-          </div>
+          <Select
+            id="spell"
+            label="Spell"
+            value={formData.spell}
+            onChange={handleChange}
+            options={[
+              { value: '' },
+              ...Object.entries(SPELLS).map(([value, { level }]) => ({
+                value,
+                label: (
+                  <>
+                    {value} ({formatLevel(level)})
+                  </>
+                )
+              }))
+            ]}
+          />
           {filters?.upcast && (
-            <div>
-              <label htmlFor="upcast">Upcast</label>
-              <select
-                id="upcast"
-                name="upcast"
-                value={formData.upcast}
-                onChange={handleChange}
-              >
-                <option value="">{EMPTY}</option>
-                {getUpcastLevels(filters).map(level => (
-                  <option key={level} value={level}>
-                    {formatLevel(level)}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="upcast"
+              label="Upcast"
+              value={`${formData.upcast}`}
+              onChange={handleChange}
+              options={[
+                { value: '' },
+                ...getUpcastLevels(filters).map(value => ({
+                  value,
+                  label: formatLevel(value)
+                }))
+              ]}
+            />
           )}
         </form>
-        <dl>
-          {maxCR && (
-            <>
-              <dt>Max. CR</dt>
-              <dd>{formatCR(maxCR)}</dd>
-            </>
-          )}
-        </dl>
+        {maxCR && (
+          <dl>
+            <dt>Max. CR</dt>
+            <dd>{formatCR(maxCR)}</dd>
+          </dl>
+        )}
       </Filter>
       <Section>
         <CreatureList

@@ -32,13 +32,16 @@ export const fetchScript = async (url: string) => {
 }
 
 export const fetchToken = async ({ source, name }: Partial<Creature>) => {
+  const filename = join('public', tokenURL({ source, name }))
+
+  if (existsSync(filename)) return
+
   const res = await fetch(
     new URL(`bestiary/tokens/${source}/${transliterate(name)}.webp`, BASE.img)
   )
 
   validateResponse(res)
 
-  const filename = join('public', tokenURL({ source, name }))
   const dir = dirname(filename)
 
   if (!existsSync(dir)) {

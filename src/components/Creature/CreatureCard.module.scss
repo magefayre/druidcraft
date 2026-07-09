@@ -31,9 +31,9 @@
 .cr {
   aspect-ratio: 1;
   align-items: center;
-  background: var(--card-color, var(--dark-light));
+  background: var(--card-color, var(--foreground));
   border-radius: 100%;
-  color: var(--light-dark);
+  color: var(--background);
   display: flex;
   font-size: small;
   justify-content: center;
@@ -45,13 +45,13 @@
   font-size: x-large;
   font-weight: bold;
   paint-order: stroke;
-  stroke: var(--light-dark);
+  stroke: var(--background);
   stroke-width: functions.spacing(0.25);
   text-shadow:
-    1px 1px 0 var(--light-dark),
-    1px -1px 0 var(--light-dark),
-    -1px 1px 0 var(--light-dark),
-    -1px -1px 0 var(--light-dark);
+    1px 1px 0 var(--background),
+    1px -1px 0 var(--background),
+    -1px 1px 0 var(--background),
+    -1px -1px 0 var(--background);
   width: functions.spacing(4);
 }
 

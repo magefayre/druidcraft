@@ -1,17 +1,16 @@
 @use '~styles/functions';
 @use '~styles/mixins';
 
+.root {
+  &:has(:checked) {
+    background: var(--muted-background);
+  }
+}
+
 .input {
   @include mixins.visually-hidden;
 }
 
 .icon {
-  [disabled] + & {
-    color: var(--border);
-    cursor: not-allowed;
-  }
-
-  :not([disabled]) + & {
-    cursor: pointer;
-  }
+  width: 1.1em;
 }

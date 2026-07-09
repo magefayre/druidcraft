@@ -3,7 +3,7 @@ import plur from 'plur'
 import type { FC } from 'react'
 
 import { EMPTY, SPEEDS } from '~constants'
-import sources from '~data/sources.json' with { type: 'json' }
+import SOURCES from '~data/sources.json' with { type: 'json' }
 import { formatCR } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
@@ -40,7 +40,7 @@ const BeastCard: FC<CreatureCardProps> = ({
             align="center"
             valign="bottom"
           >
-            {sources[source]}
+            {SOURCES[source]}
           </Tooltip>
         </>
       }
