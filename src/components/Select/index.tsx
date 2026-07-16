@@ -73,7 +73,6 @@ const Select: FC<Props> = ({
   const handleReset: MouseEventHandler<HTMLButtonElement> = e => {
     e.preventDefault()
 
-    // console.log(e.currentTarget.value)
     onChange(e.currentTarget.value, defaultValue)
   }
 
