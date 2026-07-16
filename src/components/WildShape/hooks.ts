@@ -2,38 +2,12 @@ import { useMemo } from 'react'
 
 import type { Option } from '~components/Select'
 import { EMPTY_OPTION } from '~components/Select/constants'
-import { CR, LEVELS, SPEEDS } from '~constants'
+import { CR, DESCENDING, LEVELS, SEPARATOR, SPEEDS } from '~constants'
 import SOURCES from '~data/sources.json' with { type: 'json' }
 import type { Creature } from '~types'
 import { getMaxCR, sortAlphabetically, sortCreatures } from '~utils/5etools'
 
-import { DESCENDING, SEPARATOR } from './constants'
 import type { WildShapeFormData } from './types'
-
-export const useBeasts = <T extends Creature>(
-  creatures: T[],
-  { circleForms, speed, source, sort }: WildShapeFormData
-) =>
-  useMemo<T[]>(() => {
-    let filtered = creatures.filter(
-      creature =>
-        (!circleForms ? creature.cr <= CR.fly : true) &&
-        (speed ? !!creature.speed[speed] : true) &&
-        (!!source?.length ? source.includes(creature.source) : true)
-    )
-
-    if (sort) {
-      const [sortBy, direction] = sort.split(SEPARATOR)
-
-      filtered = filtered.sort(sortCreatures(sortBy as keyof T))
-
-      if (direction === DESCENDING) {
-        filtered = filtered.reverse()
-      }
-    }
-
-    return filtered
-  }, [circleForms, speed, source, sort])
 
 export const useLevels = (circleForms: boolean) =>
   useMemo<Option[]>(
@@ -79,3 +53,28 @@ export const useSpeeds = (level: number) =>
     ],
     [level]
   )
+
+export const useWildShapes = <T extends Creature>(
+  creatures: T[],
+  { circleForms, speed, source, sort }: WildShapeFormData
+) =>
+  useMemo<T[]>(() => {
+    let filtered = creatures.filter(
+      creature =>
+        (!circleForms ? creature.cr <= CR.fly : true) &&
+        (speed ? !!creature.speed[speed] : true) &&
+        (!!source?.length ? source.includes(creature.source) : true)
+    )
+
+    if (sort) {
+      const [sortBy, direction] = sort.split(SEPARATOR)
+
+      filtered = filtered.sort(sortCreatures(sortBy as keyof T))
+
+      if (direction === DESCENDING) {
+        filtered = filtered.reverse()
+      }
+    }
+
+    return filtered
+  }, [circleForms, speed, source, sort])

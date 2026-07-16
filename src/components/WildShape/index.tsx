@@ -7,10 +7,16 @@ import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
 import { LEVELS } from '~constants'
+import { useFormData, useSorting } from '~hooks'
 import { formatCR, formatSpeedLimits, getSpeedLimit } from '~utils/5etools'
 
-import { DESCENDING, SEPARATOR, SORTING } from './constants'
-import { useBeasts, useLevels, useMaxCR, useSources, useSpeeds } from './hooks'
+import {
+  useLevels,
+  useMaxCR,
+  useSources,
+  useSpeeds,
+  useWildShapes
+} from './hooks'
 import type { WildShapeFormData, WildShapeProps } from './types'
 
 const defaults: WildShapeFormData = {
@@ -27,12 +33,14 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
     defaults,
     { initializeWithValue: false }
   )
-  const { level, circleForms, sort, source, speed } = formData
-  const maxCR = useMaxCR(formData)
-  const beasts = useBeasts(creatures.beast, formData)
+  const selected = useFormData(formData, defaults)
+  const { level, circleForms, sort, source, speed } = selected
+  const maxCR = useMaxCR(selected)
+  const wildShapes = useWildShapes(creatures.beast, selected)
   const levels = useLevels(circleForms)
   const speeds = useSpeeds(level)
   const sources = useSources(creatures.beast)
+  const sorting = useSorting()
 
   const handleChange: FilterHandler = (id, value) => {
     setFormData(formData => ({ ...formData, [id]: value }))
@@ -80,22 +88,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
             label="Sort"
             value={sort}
             onChange={handleChange}
-            options={Object.entries(SORTING).reduce(
-              (options, [key, { min, max }]) => {
-                const value = key.toLowerCase()
-                const label = (a: string, b: string) => `${key}: ${a}-${b}`
-
-                return [
-                  ...options,
-                  { value, label: label(min, max) },
-                  {
-                    value: [value, DESCENDING].join(SEPARATOR),
-                    label: label(max, min)
-                  }
-                ]
-              },
-              []
-            )}
+            options={sorting}
           />
         </form>
         <dl>
@@ -107,7 +100,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
       </Filter>
       <Section>
         <CreatureList
-          creatures={beasts}
+          creatures={wildShapes}
           isCreatureDisabled={({ cr, speed }) =>
             !maxCR ||
             cr > maxCR ||

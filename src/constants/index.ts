@@ -15,6 +15,8 @@ export const CR_LIMITS = {
   2: 1
 } as Readonly<Record<number, number>>
 
+export const DESCENDING = 'des'
+
 export const EMPTY = '-'
 
 export const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 } as Readonly<
@@ -29,6 +31,13 @@ export const LEVEL_SUFFIXES = {
 } as Readonly<Record<Intl.LDMLPluralRule, string>>
 
 export const PLURALS = new Intl.PluralRules('en', { type: 'ordinal' })
+
+export const SEPARATOR = ':'
+
+export const SORTING = {
+  CR: { min: 'Low', max: 'High' },
+  Name: { min: 'A', max: 'Z' }
+}
 
 export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
