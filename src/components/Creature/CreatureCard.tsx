@@ -4,15 +4,12 @@ import type { FC } from 'react'
 
 import Rating from '~components/Rating'
 import { EMPTY, SPEEDS } from '~constants'
-import sources from '~data/sources.json' with { type: 'json' }
+import SOURCES from '~data/sources.json' with { type: 'json' }
 import { formatCR } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
 import type { CreatureCardProps } from './types'
-
-const tooltipHeading = { manual: false, align: 'center', valign: 'bottom' }
-const tooltipContent = { manual: false, align: 'left', valign: 'middle' }
 
 const CreatureCard: FC<CreatureCardProps> = ({
   cr,
@@ -27,6 +24,13 @@ const CreatureCard: FC<CreatureCardProps> = ({
   ...props
 }) => {
   const crLabel = formatCR(cr)
+  const tooltipHeading = {
+    disabled,
+    manual: disabled,
+    align: 'center',
+    valign: 'bottom'
+  }
+  const tooltipContent = { ...tooltipHeading, align: 'left', valign: 'middle' }
 
   return (
     <Card
@@ -40,7 +44,7 @@ const CreatureCard: FC<CreatureCardProps> = ({
             toggle={<span className={styles.source}>{source}</span>}
             {...tooltipHeading}
           >
-            {sources[source]}
+            {SOURCES[source]}
           </Tooltip>
         </>
       }
@@ -48,10 +52,11 @@ const CreatureCard: FC<CreatureCardProps> = ({
         src: tokenURL({ source, name }),
         priority,
         width: TOKEN_SIZE,
-        height: TOKEN_SIZE
+        height: TOKEN_SIZE,
+        sizes: '64px'
       }}
       href={!disabled ? url({ source, name }) : undefined}
-      disabled={disabled}
+      aria-disabled={disabled ? true : undefined}
       theme={{
         root: styles.root,
         content: styles.content,

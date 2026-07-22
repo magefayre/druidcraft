@@ -1,9 +1,19 @@
 $black: #000;
-$grey: #666;
+$midnight: #262626;
+$twilight: #464646;
+$night: #777;
+$dusk: #a6a6a6;
+$mist: #bbb;
+$smoke: #ddd;
 $white: #fff;
 
 :export {
   black: $black;
-  grey: $grey;
+  midnight: $midnight;
+  twilight: $twilight;
+  night: $night;
+  dusk: $dusk;
+  mist: $mist;
+  smoke: $smoke;
   white: $white;
 }

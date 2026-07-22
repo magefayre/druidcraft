@@ -3,7 +3,8 @@ import type { NextPage } from 'next'
 import PageContainer, {
   type PageContainerProps
 } from '~components/PageContainer'
-import Summon, { type SummonProps } from '~components/Summon'
+import Summon from '~components/Summon'
+import type { SummonProps } from '~components/Summon/types'
 
 export type SummonLayoutProps = SummonProps & Pick<PageContainerProps, 'meta'>
 

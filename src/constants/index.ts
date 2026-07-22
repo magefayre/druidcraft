@@ -15,6 +15,8 @@ export const CR_LIMITS = {
   2: 1
 } as Readonly<Record<number, number>>
 
+export const DESCENDING = 'des'
+
 export const EMPTY = '-'
 
 export const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 } as Readonly<
@@ -33,6 +35,14 @@ export const PLURALS = new Intl.PluralRules('en', { type: 'ordinal' })
 export const RATINGS = { red: 1, orange: 2, green: 3, blue: 4 } as Readonly<
   Record<MonsterRating, number>
 >
+
+export const SEPARATOR = ':'
+
+export const SORTING = {
+  CR: { min: 'Low', max: 'High' },
+  Name: { min: 'A', max: 'Z' },
+  Rating: { min: 'Low', max: 'High' }
+}
 
 export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },

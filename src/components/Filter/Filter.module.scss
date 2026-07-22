@@ -5,7 +5,7 @@
   --content-colon: ':';
   --z-index: 3;
 
-  background: var(--light-dark);
+  background: var(--background);
   box-shadow: var(--box-shadow);
   padding-block: functions.spacing(2);
   position: sticky;
@@ -24,6 +24,7 @@
   dl {
     display: inline-flex;
     flex-wrap: wrap;
+    font-size: smaller;
     gap: functions.spacing(0.5);
     line-height: 1.1;
   }
@@ -40,26 +41,8 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    font-size: smaller;
     gap: functions.spacing(1);
-
-    > div {
-      align-items: inherit;
-      display: inherit;
-      flex-wrap: inherit;
-      gap: inherit;
-    }
-  }
-
-  label {
-    cursor: pointer;
-
-    &:has(+ select)::after {
-      content: var(--content-colon);
-    }
-
-    &:has(+ [disabled]) {
-      cursor: not-allowed;
-    }
   }
 }
 
@@ -75,5 +58,41 @@
   display: flex;
   flex-wrap: wrap;
   gap: functions.spacing(1);
+  row-gap: functions.spacing(2);
   justify-content: space-between;
+}
+
+.field {
+  align-items: inherit;
+  border: 1px solid var(--border);
+  border-radius: functions.spacing(1);
+  cursor: pointer;
+  display: inherit;
+  flex-wrap: inherit;
+  gap: functions.spacing(0.5);
+  overflow: hidden;
+  padding: functions.spacing(0.5) functions.spacing(1.25);
+  position: relative;
+
+  &:has(> :disabled) {
+    color: var(--muted-foreground);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    background: var(--muted-background);
+  }
+
+  &:focus-within {
+    border-color: currentColor;
+  }
+
+  label {
+    cursor: inherit;
+
+    &:has(+ *)::after {
+      content: var(--content-colon);
+    }
+  }
 }

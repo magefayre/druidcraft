@@ -1,47 +1,38 @@
-import type { ChangeEventHandler, FC } from 'react'
+import type { FC } from 'react'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { CreatureList } from '~components/Creature'
-import Filter from '~components/Filter'
+import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
-import { EMPTY, SPELL_LEVELS, SPELLS } from '~constants'
-import useLocalStorage from '~hooks/useLocalStorage'
-import type { Creature, MonsterType, Spell } from '~types'
-import {
-  formatCR,
-  formatCRLimit,
-  formatLevel,
-  getSpellCR
-} from '~utils/5etools'
+import Select from '~components/Select'
+import { SPELLS } from '~constants'
+import { useFormData, useSorting } from '~hooks'
+import { formatCR, formatCRLimit } from '~utils/5etools'
 
-const getUpcastLevels = ({ level, upcast }: Spell) => {
-  if (typeof upcast === 'boolean') {
-    return Array.from(
-      { length: SPELL_LEVELS.max - level },
-      (_, index) => level + index + 1
-    )
-  }
+import { useMaxCR, useSpells, useSummons, useUpcasting } from './hooks'
+import type { SummonFormData, SummonProps } from './types'
 
-  return Object.keys(upcast)
-}
-
-type FormData = { spell: string; upcast: number }
-
-export type SummonProps = { creatures: Record<MonsterType, Creature[]> }
+const defaults: SummonFormData = { sort: 'cr', spell: '', upcast: undefined }
 
 const Summon: FC<SummonProps> = ({ creatures }) => {
-  const [formData, setFormData, mounted] = useLocalStorage<FormData>('summon', {
-    spell: undefined,
-    upcast: undefined
-  })
-  const filters = SPELLS[formData.spell]
+  const [formData, setFormData] = useLocalStorage<SummonFormData>(
+    'summon',
+    defaults,
+    { initializeWithValue: false }
+  )
+  const sorting = useSorting()
+  const spells = useSpells()
+  const selected = useFormData(formData, defaults)
+  const filters = SPELLS[selected.spell]
+  const upcasting = useUpcasting(filters)
+  const maxCR = useMaxCR(filters, selected.upcast)
+  const summons = useSummons({ creatures, filters, maxCR, selected })
 
-  const handleChange: ChangeEventHandler<HTMLSelectElement> = ({ target }) => {
-    const { name, value } = target
-
+  const handleChange: FilterHandler = (id, value) => {
     setFormData(formData => {
-      const updates = { [name]: value }
+      const updates = { [id]: value }
 
-      if (name === 'spell' && formData[name] !== value) {
+      if (id === 'spell' && formData[id] !== value) {
         updates['upcast'] = ''
       }
 
@@ -49,67 +40,44 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     })
   }
 
-  const maxCR = getSpellCR(filters, formData.upcast)
-  const summons = (creatures[filters?.type] as Creature[])?.filter(
-    ({ cr, name, spell }) =>
-      (maxCR === undefined || cr <= maxCR) &&
-      (filters.spell === undefined
-        ? !spell
-        : spell?.toLowerCase() === formData.spell.toLowerCase()) &&
-      (filters.creatures === undefined ||
-        Object.keys(filters.creatures).some(
-          creature => creature.toLowerCase() === name.toLowerCase()
-        ))
-  )
-
   return (
     <>
       <Filter>
         <form>
-          <div>
-            <label htmlFor="spell">Spell</label>
-            <select
-              id="spell"
-              name="spell"
-              value={formData.spell}
-              disabled={!mounted}
-              onChange={handleChange}
-            >
-              <option value="">{EMPTY}</option>
-              {Object.entries(SPELLS).map(([spell, { level }]) => (
-                <option key={spell} value={spell}>
-                  {spell} ({formatLevel(level)})
-                </option>
-              ))}
-            </select>
-          </div>
+          <Select
+            id="spell"
+            label="Spell"
+            value={selected.spell}
+            defaultValue={defaults.spell}
+            onChange={handleChange}
+            options={spells}
+          />
           {filters?.upcast && (
-            <div>
-              <label htmlFor="upcast">Upcast</label>
-              <select
-                id="upcast"
-                name="upcast"
-                value={formData.upcast}
-                onChange={handleChange}
-              >
-                <option value="">{EMPTY}</option>
-                {getUpcastLevels(filters).map(level => (
-                  <option key={level} value={level}>
-                    {formatLevel(level)}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <Select
+              id="upcast"
+              label="Upcast"
+              value={`${selected.upcast}`}
+              defaultValue={`${defaults.upcast}`}
+              onChange={handleChange}
+              options={upcasting}
+            />
+          )}
+          {selected.spell && (
+            <Select
+              id="sort"
+              label="Sort"
+              value={selected.sort}
+              onChange={handleChange}
+              options={sorting}
+            />
           )}
         </form>
-        <dl>
-          {maxCR && (
-            <>
-              <dt>Max. CR</dt>
-              <dd>{formatCR(maxCR)}</dd>
-            </>
-          )}
-        </dl>
+        {maxCR && (
+          <dl>
+            <dt>Max. CR</dt>
+            <dd>{formatCR(maxCR)}</dd>
+          </dl>
+        )}
       </Filter>
       <Section>
         <CreatureList
@@ -124,7 +92,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
               (typeof filters.limit === 'boolean' && formatCRLimit(cr)) ||
               (typeof filters.limit === 'number' && filters.limit) ||
               (filters.spell && 1)
-            const multiplier = filters.upcast?.[formData.upcast] ?? 1
+            const multiplier = filters.upcast?.[selected.upcast] ?? 1
 
             return limit * multiplier
           }}

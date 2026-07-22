@@ -14,13 +14,14 @@ import type {
   MonsterType,
   Source
 } from '~types'
-import { getCircleFormsCR, getTypeCR, sortCreatures } from '~utils/5etools'
+import {
+  getCircleFormsCR,
+  getTypeCR,
+  sortCreatures,
+  sortSources
+} from '~utils/5etools'
 
-import { fetchData, fetchRatings, fetchScript } from './utils'
-
-declare global {
-  var Parser: { SOURCE_JSON_TO_FULL: Record<Source, string> }
-}
+import { fetchData, fetchRatings, fetchScript, fetchToken } from './utils'
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -134,6 +135,12 @@ const filterMonsters = (
         JSON.stringify(creatures.sort(sortCreatures()))
       )
 
+      await Promise.all(
+        creatures.map(async ({ name, source }) => {
+          await fetchToken({ name, source })
+        })
+      )
+
       return creatures
     })
   )
@@ -141,7 +148,7 @@ const filterMonsters = (
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL)
-    .sort()
+    .sort(sortSources)
     .reduce(
       (books, [source, name]) =>
         creatures.flat().some(creature => creature.source === source) &&

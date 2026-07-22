@@ -10,8 +10,8 @@ import {
   SPELL_LEVELS,
   SPELLS
 } from '~constants'
-import { BASE } from '~scripts/constants'
-import type { Creature, MonsterType, Speed, Spell } from '~types'
+import { VERSION } from '~scripts/constants'
+import type { Creature, MonsterType, Source, Speed, Spell } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
@@ -48,7 +48,13 @@ export const formatSpeedLimits = (level: number, locale?: string) => {
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
 
-export const getMaxCR = ({ level, circleForms = false }) => {
+export const getMaxCR = ({
+  level,
+  circleForms = false
+}: {
+  level: number
+  circleForms?: boolean
+}) => {
   if (circleForms && level >= LEVELS.walk) return getCircleFormsCR(level)
   if (level >= LEVELS.fly) return CR.fly
   if (level >= LEVELS.swim) return CR.swim
@@ -77,7 +83,16 @@ export const getTypeCR = (type: MonsterType) =>
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
 
-export const getVersion = () => BASE.pathname.split('/').filter(Boolean).at(-1)
+export const getVersion = () => VERSION
+
+export const isCoreSource = (source: Source) =>
+  Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
+  !source.startsWith(Parser.SRC_MCVX_PREFIX) &&
+  !source.startsWith(Parser.SRC_PS_PREFIX) &&
+  !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
+
+export const sortAlphabetically = <T extends string>(a: T, b: T) =>
+  a.localeCompare(b)
 
 const sortNumerically = <T extends Creature>(key: keyof T, a: T, b: T) => {
   if (a[key] !== b[key]) {
@@ -98,7 +113,10 @@ export const sortCreatures =
       return sortNumerically(sortBy, a, b)
     }
 
-    if (a.name !== b.name) return a.name.localeCompare(b.name)
+    if (a.name !== b.name) return sortAlphabetically(a.name, b.name)
 
-    return a.source.localeCompare(b.source)
+    return sortAlphabetically(a.source, b.source)
   }
+
+export const sortSources = <T extends [Source, string]>([, a]: T, [, b]: T) =>
+  sortAlphabetically(a, b)

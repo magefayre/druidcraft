@@ -1,9 +1,5 @@
 @use '~styles/functions';
 
-.toggle[aria-expanded] {
-  cursor: help;
-}
-
 .root {
   line-height: 1;
   z-index: 1;
@@ -14,10 +10,18 @@
   }
 }
 
+.toggle {
+  cursor: help;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
 .content {
-  background: var(--dark-light);
+  background: var(--foreground);
   border-radius: functions.spacing(0.5);
-  color: var(--light-dark);
+  color: var(--background);
   font-size: small;
   margin: functions.spacing(0.5);
   padding: functions.spacing(0.5) functions.spacing(1);

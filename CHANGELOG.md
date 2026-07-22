@@ -1,3 +1,47 @@
+## [1.13.6](https://github.com/magefayre/druidcraft/compare/v1.13.5...v1.13.6) (2026-07-22)
+
+## [1.13.5](https://github.com/magefayre/druidcraft/compare/v1.13.4...v1.13.5) (2026-07-22)
+
+## [1.13.4](https://github.com/magefayre/druidcraft/compare/v1.13.3...v1.13.4) (2026-07-21)
+
+## [1.13.3](https://github.com/magefayre/druidcraft/compare/v1.13.2...v1.13.3) (2026-07-21)
+
+## [1.13.2](https://github.com/magefayre/druidcraft/compare/v1.13.1...v1.13.2) (2026-07-21)
+
+## [1.13.1](https://github.com/magefayre/druidcraft/compare/v1.13.0...v1.13.1) (2026-07-19)
+
+## [1.13.0](https://github.com/magefayre/druidcraft/compare/v1.12.8...v1.13.0) (2026-07-16)
+
+## [1.12.8](https://github.com/magefayre/druidcraft/compare/v1.12.7...v1.12.8) (2026-07-13)
+
+## [1.12.7](https://github.com/magefayre/druidcraft/compare/v1.12.6...v1.12.7) (2026-07-13)
+
+## [1.12.6](https://github.com/magefayre/druidcraft/compare/v1.12.5...v1.12.6) (2026-07-11)
+
+## [1.12.5](https://github.com/magefayre/druidcraft/compare/v1.12.4...v1.12.5) (2026-07-10)
+
+## [1.12.4](https://github.com/magefayre/druidcraft/compare/v1.12.3...v1.12.4) (2026-07-10)
+
+## [1.12.3](https://github.com/magefayre/druidcraft/compare/v1.12.2...v1.12.3) (2026-07-09)
+
+## [1.12.2](https://github.com/magefayre/druidcraft/compare/v1.12.1...v1.12.2) (2026-07-09)
+
+## [1.12.1](https://github.com/magefayre/druidcraft/compare/v1.12.0...v1.12.1) (2026-07-09)
+
+## [1.12.0](https://github.com/magefayre/druidcraft/compare/v1.11.0...v1.12.0) (2026-07-09)
+
+## [1.11.0](https://github.com/magefayre/druidcraft/compare/v1.10.0...v1.11.0) (2026-07-09)
+
+## [1.10.0](https://github.com/magefayre/druidcraft/compare/v1.9.1...v1.10.0) (2026-07-09)
+
+## [1.9.1](https://github.com/magefayre/druidcraft/compare/v1.9.0...v1.9.1) (2026-07-06)
+
+## [1.9.0](https://github.com/magefayre/druidcraft/compare/v1.8.2...v1.9.0) (2026-07-06)
+
+## [1.8.2](https://github.com/magefayre/druidcraft/compare/v1.8.1...v1.8.2) (2026-07-06)
+
+## [1.8.1](https://github.com/magefayre/druidcraft/compare/v1.8.0...v1.8.1) (2026-07-05)
+
 ## [1.8.0](https://github.com/magefayre/druidcraft/compare/v1.7.0...v1.8.0) (2026-07-03)
 
 ## [1.7.0](https://github.com/magefayre/druidcraft/compare/v1.6.5...v1.7.0) (2026-07-03)
