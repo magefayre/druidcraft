@@ -8,7 +8,7 @@ import Section from '~components/Section'
 import Select from '~components/Select'
 import { LEVELS } from '~constants'
 import { useFormData, useSorting } from '~hooks'
-import { formatCR, formatSpeedLimits, getSpeedLimit } from '~utils/5etools'
+import { formatCR, formatSpeedLimits, isSpeedLimited } from '~utils/5etools'
 
 import {
   useLevels,
@@ -104,8 +104,8 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           isCreatureDisabled={({ cr, speed }) =>
             !maxCR ||
             cr > maxCR ||
-            getSpeedLimit(level, speed, 'swim') ||
-            getSpeedLimit(level, speed, 'fly')
+            isSpeedLimited(level, speed, 'swim') ||
+            isSpeedLimited(level, speed, 'fly')
           }
           ratings
           speedLimits

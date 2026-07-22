@@ -17,8 +17,8 @@ import type {
 import {
   getCircleFormsCR,
   getTypeCR,
-  sortCreatures,
-  sortSources
+  sortAlphabetically,
+  sortCreatures
 } from '~utils/5etools'
 
 import { fetchData, fetchRatings, fetchScript, fetchToken } from './utils'
@@ -148,7 +148,7 @@ const filterMonsters = (
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL)
-    .sort(sortSources)
+    .sort(([, a], [, b]) => sortAlphabetically(a, b))
     .reduce(
       (books, [source, name]) =>
         creatures.flat().some(creature => creature.source === source) &&

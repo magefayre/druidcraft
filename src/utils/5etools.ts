@@ -15,17 +15,6 @@ import type { Creature, MonsterType, Source, Speed, Spell } from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
-export const formatCRLimit = (cr: number) => {
-  const min = Math.min(...(Object.keys(CR_LIMITS) as unknown as number[]))
-
-  if (cr < min) cr = min
-
-  return CR_LIMITS[cr]
-}
-
-export const formatLevel = (level: number) =>
-  `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
-
 export const formatSpeedLimits = (level: number, locale?: string) => {
   if (level < LEVELS.walk) return EMPTY
 
@@ -44,6 +33,9 @@ export const formatSpeedLimits = (level: number, locale?: string) => {
 
   return `No ${formatter.format(limits)} speed`
 }
+
+export const formatSpellLevel = (level: number) =>
+  level === 0 ? 'Cantrip' : `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
 
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
@@ -70,18 +62,20 @@ export const getSpellCR = (spell?: Spell, level?: number) => {
   return spell?.maxCR
 }
 
-export const getSpeedLimit = (
-  level: number,
-  speed: Creature['speed'],
-  type: Speed
-) => level < LEVELS[type] && !!speed[type]
-
 export const getTypeCR = (type: MonsterType) =>
   Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
     const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
 
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
+
+export const getSummonLimit = (cr: number) => {
+  const min = Math.min(...(Object.keys(CR_LIMITS) as unknown as number[]))
+
+  if (cr < min) cr = min
+
+  return CR_LIMITS[cr]
+}
 
 export const getVersion = () => VERSION
 
@@ -91,32 +85,43 @@ export const isCoreSource = (source: Source) =>
   !source.startsWith(Parser.SRC_PS_PREFIX) &&
   !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
 
-export const sortAlphabetically = <T extends string>(a: T, b: T) =>
-  a.localeCompare(b)
+export const isSpeedLimited = (
+  level: number,
+  speed: Creature['speed'],
+  type: Speed
+) => level < LEVELS[type] && !!speed[type]
 
-const sortNumerically = <T extends Creature>(key: keyof T, a: T, b: T) => {
-  if (a[key] !== b[key]) {
-    const fallback = Number.MIN_SAFE_INTEGER
+export const sortAlphabetically = <T extends string>(
+  a: T,
+  b: T,
+  descending?: boolean
+) => (descending ? sortAlphabetically(b, a) : a.localeCompare(b))
 
-    return Number(a[key] ?? fallback) - Number(b[key] ?? fallback)
-  }
+export const sortNumerically = <T extends Creature>(
+  key: keyof T,
+  a: T,
+  b: T,
+  descending?: boolean
+) => {
+  if (descending) return sortNumerically(key, b, a)
+
+  const fallback = Number.MIN_SAFE_INTEGER
+
+  return Number(a[key] ?? fallback) - Number(b[key] ?? fallback)
 }
 
 export const sortCreatures =
-  <T extends Creature>(sortBy: keyof T = 'cr') =>
+  <T extends Creature>(sortBy: keyof T = 'cr', descending?: boolean) =>
   (a: T, b: T) => {
-    if (['cr', 'rating'].includes(sortBy as string)) {
-      return sortNumerically(sortBy, a, b)
+    const isNumeric = ['cr', 'rating'].includes(sortBy as string)
+
+    if (isNumeric && a[sortBy] !== b[sortBy]) {
+      return sortNumerically(sortBy, a, b, descending)
     }
 
-    if (typeof a[sortBy] === 'number') {
-      return sortNumerically(sortBy, a, b)
+    if (a.name !== b.name) {
+      return sortAlphabetically(a.name, b.name, !isNumeric && descending)
     }
-
-    if (a.name !== b.name) return sortAlphabetically(a.name, b.name)
 
     return sortAlphabetically(a.source, b.source)
   }
-
-export const sortSources = <T extends [Source, string]>([, a]: T, [, b]: T) =>
-  sortAlphabetically(a, b)

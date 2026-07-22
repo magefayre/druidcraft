@@ -7,7 +7,7 @@ import Section from '~components/Section'
 import Select from '~components/Select'
 import { SPELLS } from '~constants'
 import { useFormData, useSorting } from '~hooks'
-import { formatCR, formatCRLimit } from '~utils/5etools'
+import { formatCR, getSummonLimit } from '~utils/5etools'
 
 import { useMaxCR, useSpells, useSummons, useUpcasting } from './hooks'
 import type { SummonFormData, SummonProps } from './types'
@@ -20,7 +20,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     defaults,
     { initializeWithValue: false }
   )
-  const sorting = useSorting()
+  const sorting = useSorting('rating')
   const spells = useSpells()
   const selected = useFormData(formData, defaults)
   const filters = SPELLS[selected.spell]
@@ -84,12 +84,12 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
           creatures={summons}
           isCreatureDisabled={({ cr }) =>
             typeof filters.limit === 'boolean' &&
-            formatCRLimit(cr) === undefined
+            getSummonLimit(cr) === undefined
           }
           isCreatureLimited={({ cr, name }) => {
             const limit =
               filters.creatures?.[name] ||
-              (typeof filters.limit === 'boolean' && formatCRLimit(cr)) ||
+              (typeof filters.limit === 'boolean' && getSummonLimit(cr)) ||
               (typeof filters.limit === 'number' && filters.limit) ||
               (filters.spell && 1)
             const multiplier = filters.upcast?.[selected.upcast] ?? 1

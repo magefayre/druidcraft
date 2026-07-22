@@ -19,7 +19,7 @@ export type Creature = {
   name: string
   rating?: number
   source: Source
-  speed: Record<Speed, number>
+  speed: Partial<Record<Speed, number>>
   spell?: string
 }
 

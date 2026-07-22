@@ -42,7 +42,7 @@ export const SORTING = {
   CR: { min: 'Low', max: 'High' },
   Name: { min: 'A', max: 'Z' },
   Rating: { min: 'Low', max: 'High' }
-}
+} as Readonly<Record<string, { min: string; max: string }>>
 
 export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
