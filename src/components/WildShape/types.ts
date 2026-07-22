@@ -3,7 +3,6 @@ import type { Creature, MonsterType, Speed } from '~types'
 export type WildShapeFormData = {
   level: number
   circleForms: boolean
-  elementalWildShapes: boolean
   sort: string
   source: string[]
   speed: Speed

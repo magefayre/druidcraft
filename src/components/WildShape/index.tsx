@@ -36,7 +36,9 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
   const selected = useFormData(formData, defaults)
   const { level, circleForms, sort, source, speed } = selected
   const maxCR = useMaxCR(selected)
-  const wildShapes = useWildShapes(creatures, selected)
+  const wildShapes = useWildShapes(creatures, selected, {
+    elementalForms: circleForms && Number(level) >= 10
+  })
   const levels = useLevels(circleForms)
   const speeds = useSpeeds(level)
   const sources = useSources(creatures.beast)
@@ -101,11 +103,12 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
       <Section>
         <CreatureList
           creatures={wildShapes}
-          isCreatureDisabled={({ cr, speed }) =>
-            !maxCR ||
-            cr > maxCR ||
-            isSpeedLimited(level, speed, 'swim') ||
-            isSpeedLimited(level, speed, 'fly')
+          isCreatureDisabled={({ cr, speed, features }) =>
+            !features?.elementalForms &&
+            (!maxCR ||
+              cr > maxCR ||
+              isSpeedLimited(level, speed, 'swim') ||
+              isSpeedLimited(level, speed, 'fly'))
           }
           ratings
           speedLimits

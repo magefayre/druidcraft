@@ -56,11 +56,10 @@ export const useSpeeds = (level: number) =>
 
 export const useWildShapes = <T extends Creature>(
   { beast, elemental }: WildShapeProps['creatures'],
-  { circleForms, speed, source, sort }: WildShapeFormData
+  { circleForms, speed, source, sort }: WildShapeFormData,
+  { elementalForms }: T['features']
 ) =>
   useMemo<Creature[]>(() => {
-    // const hasElementals = circleForms && level === 10
-
     let filtered = beast.filter(
       creature =>
         (!circleForms ? creature.cr <= CR.fly : true) &&
@@ -68,11 +67,14 @@ export const useWildShapes = <T extends Creature>(
         (!!source?.length ? source.includes(creature.source) : true)
     )
 
-    // if (hasElementals) {
-    //   filtered.push(
-    //     ...elemental.map(creature => ({ ...creature, disabled: false }))
-    //   )
-    // }
+    if (elementalForms) {
+      filtered = filtered.concat(
+        elemental.map(creature => ({
+          ...creature,
+          features: { elementalForms }
+        }))
+      )
+    }
 
     if (sort) {
       const [sortBy, direction] = sort.split(SEPARATOR)
@@ -83,4 +85,4 @@ export const useWildShapes = <T extends Creature>(
     }
 
     return filtered
-  }, [circleForms, speed, source, sort])
+  }, [circleForms, elementalForms, speed, source, sort])
