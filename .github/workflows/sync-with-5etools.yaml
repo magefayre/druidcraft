@@ -10,13 +10,13 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Setup Node and restore dependencies
         uses: ./.github/actions/setup
       - name: Sync with 5etools
         run: yarn sync-with-5etools
       - name: Commit changes
-        uses: github-actions-x/commit@v2.9
+        uses: github-actions-x/commit@722d56b8968bf00ced78407bbe2ead81062d8baa # v2.9
         with:
           commit-message: 'chore: sync with 5etools'
           files: public/tokens/** src/data/**
