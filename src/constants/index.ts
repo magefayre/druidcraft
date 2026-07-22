@@ -48,10 +48,10 @@ export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
   burrow: { singular: 'Burrows', continuous: 'burrowing' },
   climb: { singular: 'Climbs', continuous: 'climbing' },
-  swim: { icon: 'mdi:fish', singular: 'Swims', continuous: 'swimming' },
-  fly: { icon: 'mdi:bird', singular: 'Flies', continuous: 'flying' }
+  swim: { icon: true, singular: 'Swims', continuous: 'swimming' },
+  fly: { icon: true, singular: 'Flies', continuous: 'flying' }
 } as Readonly<
-  Record<Speed, { icon?: string; singular: string; continuous: string }>
+  Record<Speed, { icon?: boolean; singular: string; continuous: string }>
 >
 
 export const SPELL_LEVELS = { max: 9 } as Readonly<Record<'max', number>>
