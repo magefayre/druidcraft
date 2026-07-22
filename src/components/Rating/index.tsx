@@ -2,7 +2,6 @@ import { Icon, Tooltip } from '@newhighsco/chipset'
 import type PropTypes from 'prop-types'
 import type { FC } from 'react'
 
-import { RATINGS } from '~constants'
 import sprite from '~images/sprite.svg'
 
 import styles from './Rating.module.scss'
@@ -17,17 +16,13 @@ const Rating: FC<Props> = ({ children, ...rest }) => {
   return (
     <Tooltip
       theme={{ toggle: styles.root }}
-      toggle={Object.values(RATINGS).map(value => (
-        <Icon
-          key={value}
-          aria-disabled={value > rating ? true : undefined}
-          className={styles.icon}
-        >
+      toggle={
+        <Icon className={styles.icon} data-rating={rating}>
           <svg>
-            <use xlinkHref={`${sprite}#star`} />
+            <use xlinkHref={`${sprite}#rating`} />
           </svg>
         </Icon>
-      ))}
+      }
       {...rest}
     >
       {rating} Star Rating

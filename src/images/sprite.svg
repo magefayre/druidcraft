@@ -1,7 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <defs>
     <symbol id="star" viewBox="0 0 24 24">
       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z" />
+    </symbol>
+    <symbol id="rating" viewBox="0 0 24 24">
+      <use href="#star" width="50%" height="50%" fill="var(--star-1)" />
+      <use href="#star" x="50%" width="50%" height="50%" fill="var(--star-2)" />
+      <use href="#star" y="50%" width="50%" height="50%" fill="var(--star-3)" />
+      <use href="#star" x="50%" y="50%" width="50%" height="50%" fill="var(--star-4)" />
     </symbol>
   </defs>
 </svg>
