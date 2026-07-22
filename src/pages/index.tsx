@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 
+import { isElemental } from '~components/WildShape/utils'
 import config from '~config'
 import { loadCreatures } from '~data/utils'
 import HomeLayout, { type HomeLayoutProps } from '~layouts/home'
@@ -13,8 +14,9 @@ type Props = Omit<HomeLayoutProps, 'meta'>
 const HomePage: NextPage<Props> = props => <HomeLayout meta={meta} {...props} />
 
 export const getStaticProps = (async () => {
-  const creatures = await loadCreatures('beast', {
-    beast: ({ spell }) => !spell
+  const creatures = await loadCreatures(['beast', 'elemental'], {
+    beast: ({ spell }) => !spell,
+    elemental: isElemental
   })
 
   return { props: { creatures } }

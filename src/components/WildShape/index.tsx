@@ -36,7 +36,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
   const selected = useFormData(formData, defaults)
   const { level, circleForms, sort, source, speed } = selected
   const maxCR = useMaxCR(selected)
-  const wildShapes = useWildShapes(creatures.beast, selected)
+  const wildShapes = useWildShapes(creatures, selected)
   const levels = useLevels(circleForms)
   const speeds = useSpeeds(level)
   const sources = useSources(creatures.beast)

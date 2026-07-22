@@ -3,11 +3,12 @@ import type { Creature, MonsterType, Speed } from '~types'
 export type WildShapeFormData = {
   level: number
   circleForms: boolean
+  elementalWildShapes: boolean
   sort: string
   source: string[]
   speed: Speed
 }
 
 export type WildShapeProps = {
-  creatures: Record<Extract<MonsterType, 'beast'>, Creature[]>
+  creatures: Record<Extract<MonsterType, 'beast' | 'elemental'>, Creature[]>
 }

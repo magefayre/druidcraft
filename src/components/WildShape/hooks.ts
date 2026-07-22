@@ -7,7 +7,7 @@ import SOURCES from '~data/sources.json' with { type: 'json' }
 import type { Creature } from '~types'
 import { getMaxCR, sortAlphabetically, sortCreatures } from '~utils/5etools'
 
-import type { WildShapeFormData } from './types'
+import type { WildShapeFormData, WildShapeProps } from './types'
 
 export const useLevels = (circleForms: boolean) =>
   useMemo<Option[]>(
@@ -55,16 +55,24 @@ export const useSpeeds = (level: number) =>
   )
 
 export const useWildShapes = <T extends Creature>(
-  creatures: T[],
+  { beast, elemental }: WildShapeProps['creatures'],
   { circleForms, speed, source, sort }: WildShapeFormData
 ) =>
-  useMemo<T[]>(() => {
-    let filtered = creatures.filter(
+  useMemo<Creature[]>(() => {
+    // const hasElementals = circleForms && level === 10
+
+    let filtered = beast.filter(
       creature =>
         (!circleForms ? creature.cr <= CR.fly : true) &&
         (speed ? !!creature.speed[speed] : true) &&
         (!!source?.length ? source.includes(creature.source) : true)
     )
+
+    // if (hasElementals) {
+    //   filtered.push(
+    //     ...elemental.map(creature => ({ ...creature, disabled: false }))
+    //   )
+    // }
 
     if (sort) {
       const [sortBy, direction] = sort.split(SEPARATOR)
