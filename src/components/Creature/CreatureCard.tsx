@@ -2,43 +2,52 @@ import { Card, Icon, Tooltip } from '@newhighsco/chipset'
 import plur from 'plur'
 import type { FC } from 'react'
 
+import Rating from '~components/Rating'
 import { EMPTY, SPEEDS } from '~constants'
 import SOURCES from '~data/sources.json' with { type: 'json' }
+import sprite from '~images/sprite.svg'
 import { formatCR } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
 import type { CreatureCardProps } from './types'
 
-const BeastCard: FC<CreatureCardProps> = ({
+const CreatureCard: FC<CreatureCardProps> = ({
   cr,
   disabled,
   limit,
   name,
   priority,
+  rating,
   source,
   speed,
   speedLimits,
   ...props
 }) => {
   const crLabel = formatCR(cr)
-  const tooltipProps = {
+  const tooltipContent = {
     disabled,
     manual: disabled,
     align: 'left',
     valign: 'middle'
+  }
+  const tooltipHeading = {
+    ...tooltipContent,
+    align: 'center',
+    valign: 'bottom'
   }
 
   return (
     <Card
       heading={
         <>
-          <h2>{name}</h2>
+          <h2>
+            <Rating {...tooltipHeading}>{rating}</Rating>
+            {name}
+          </h2>
           <Tooltip
             toggle={<span className={styles.source}>{source}</span>}
-            {...tooltipProps}
-            align="center"
-            valign="bottom"
+            {...tooltipHeading}
           >
             {SOURCES[source]}
           </Tooltip>
@@ -57,6 +66,7 @@ const BeastCard: FC<CreatureCardProps> = ({
         root: styles.root,
         content: styles.content,
         copy: styles.copy,
+        heading: styles.heading,
         image: styles.image
       }}
       {...props}
@@ -64,7 +74,7 @@ const BeastCard: FC<CreatureCardProps> = ({
       {limit && (
         <Tooltip
           toggle={<span className={styles.icon}>{limit}×</span>}
-          {...tooltipProps}
+          {...tooltipContent}
         >
           Summon&nbsp;{limit} {plur(name, limit)}
         </Tooltip>
@@ -77,9 +87,13 @@ const BeastCard: FC<CreatureCardProps> = ({
             <Tooltip
               key={type}
               toggle={
-                <Icon name={icon} alt={singular} className={styles.icon} />
+                <Icon className={styles.icon}>
+                  <svg>
+                    <use xlinkHref={`${sprite}#${type}`} />
+                  </svg>
+                </Icon>
               }
-              {...tooltipProps}
+              {...tooltipContent}
             >
               <span aria-hidden>{singular}</span>
             </Tooltip>
@@ -89,7 +103,7 @@ const BeastCard: FC<CreatureCardProps> = ({
         <Tooltip
           toggle={<span>CR {crLabel}</span>}
           theme={{ toggle: styles.cr }}
-          {...tooltipProps}
+          {...tooltipContent}
         >
           Challenge Rating&nbsp;{crLabel}
         </Tooltip>
@@ -98,4 +112,4 @@ const BeastCard: FC<CreatureCardProps> = ({
   )
 }
 
-export default BeastCard
+export default CreatureCard

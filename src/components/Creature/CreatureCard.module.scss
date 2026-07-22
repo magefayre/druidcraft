@@ -5,6 +5,15 @@
   flex-direction: row;
 }
 
+.heading {
+  h2 {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: functions.spacing(0.5);
+  }
+}
+
 .image {
   width: functions.spacing(8);
 
@@ -42,6 +51,7 @@
 }
 
 .icon {
+  aspect-ratio: 1;
   font-size: x-large;
   font-weight: bold;
   paint-order: stroke;

@@ -6,15 +6,22 @@ import plur from 'plur'
 import yargs from 'yargs'
 
 import { LEVELS } from '~constants'
-import type { Creature, Monster, Monsters, MonsterType, Source } from '~types'
+import type {
+  Creature,
+  Monster,
+  MonsterRatings,
+  Monsters,
+  MonsterType,
+  Source
+} from '~types'
 import {
   getCircleFormsCR,
   getTypeCR,
-  sortCreatures,
-  sortSources
+  sortAlphabetically,
+  sortCreatures
 } from '~utils/5etools'
 
-import { fetchData, fetchScript, fetchToken } from './utils'
+import { fetchData, fetchRatings, fetchScript, fetchToken } from './utils'
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -48,9 +55,13 @@ const parseType = (type: string | { type: string; swarmSize: string }) => {
   return undefined
 }
 
-type MonsterFilters = { type: MonsterType; maxCR?: number }
+type MonsterFilters = { type: MonsterType; maxCR?: number; ratings?: boolean }
 
-const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
+const filterMonsters = (
+  monsters: Monster[],
+  filters: MonsterFilters,
+  ratings: MonsterRatings
+) => {
   const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
     const { _copy } = monster
     const base = monsters.find(
@@ -66,12 +77,13 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
 
     const { name, source, speed } = monster
     const cr = parseCR(monster.cr)!
+    const rating = filters.ratings ? ratings[base?.name ?? name] : undefined
     const spell = parseSpell(monster.summonedBySpell)
     const type = parseType(monster.type)
 
     return type === filters.type &&
       (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
-      ? [...creatures, { cr, name, source, speed, spell }]
+      ? [...creatures, { cr, name, rating, source, speed, spell }]
       : creatures
   }, [])
 
@@ -105,8 +117,9 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
     })
   )
 
+  const ratings = await fetchRatings()
   const data: MonsterFilters[] = [
-    { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max) },
+    { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max), ratings: true },
     { type: 'elemental', maxCR: getTypeCR('elemental') },
     { type: 'dragon', maxCR: Number.MIN_SAFE_INTEGER },
     { type: 'fey', maxCR: getTypeCR('fey') },
@@ -115,7 +128,7 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
 
   const creatures = await Promise.all(
     data.map(async filters => {
-      const creatures = filterMonsters(monsters, filters)
+      const creatures = filterMonsters(monsters, filters, ratings)
 
       await writeFile(
         join(outputDir, `${plur(filters.type)}.json`),
@@ -135,7 +148,7 @@ const filterMonsters = (monsters: Monster[], filters: MonsterFilters) => {
   await fetchScript('parser.js')
 
   const sources = Object.entries(globalThis.Parser.SOURCE_JSON_TO_FULL)
-    .sort(sortSources)
+    .sort(([, a], [, b]) => sortAlphabetically(a, b))
     .reduce(
       (books, [source, name]) =>
         creatures.flat().some(creature => creature.source === source) &&

@@ -2,10 +2,15 @@ import { createWriteStream, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
 import transliterate from '@sindresorhus/transliterate'
+import { selectAll } from 'css-select'
+import type { Element } from 'domhandler'
+import { getAttributeValue, innerText } from 'domutils'
+import { parseDocument } from 'htmlparser2'
 import { Readable } from 'stream'
 
 import { tokenURL } from '~components/Creature/utils'
-import type { Creature } from '~types'
+import { RATINGS } from '~constants'
+import type { Creature, MonsterRating, MonsterRatings } from '~types'
 
 import { BASE } from './constants'
 
@@ -21,6 +26,28 @@ export const fetchData = async <T>(...url: string[]): Promise<T> => {
   validateResponse(res)
 
   return res.json()
+}
+
+export const fetchRatings = async () => {
+  const res = await fetch(
+    new URL('https://rpgbot.net/dnd5/characters/classes/druid/wild-shape/')
+  )
+
+  validateResponse(res)
+
+  const ratings = selectAll(
+    '*[class^="rating-"]',
+    parseDocument(await res.text())
+  ).reduce<MonsterRatings>((ratings, element) => {
+    const rating = getAttributeValue(
+      element as unknown as Element,
+      'class'
+    ).replace(/rating-(\S+)/, '$1') as MonsterRating
+
+    return { ...ratings, [innerText(element)]: RATINGS[rating] }
+  }, {})
+
+  return ratings
 }
 
 export const fetchScript = async (url: string) => {

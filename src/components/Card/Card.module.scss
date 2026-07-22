@@ -16,8 +16,11 @@
     opacity: 0.25;
   }
 
-  &[role='link']:hover {
-    border-color: currentColor;
+  &[role='link'] {
+    &:hover,
+    &:focus-within {
+      border-color: currentColor;
+    }
   }
 }
 

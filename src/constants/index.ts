@@ -1,4 +1,4 @@
-import type { Speed, Spell } from '~types'
+import type { MonsterRating, Speed, Spell } from '~types'
 
 export const CR = { walk: 0.25, swim: 0.5, fly: 1 }
 
@@ -32,21 +32,26 @@ export const LEVEL_SUFFIXES = {
 
 export const PLURALS = new Intl.PluralRules('en', { type: 'ordinal' })
 
+export const RATINGS = { red: 1, orange: 2, green: 3, blue: 4 } as Readonly<
+  Record<MonsterRating, number>
+>
+
 export const SEPARATOR = ':'
 
 export const SORTING = {
   CR: { min: 'Low', max: 'High' },
-  Name: { min: 'A', max: 'Z' }
-}
+  Name: { min: 'A', max: 'Z' },
+  Rating: { min: 'Low', max: 'High' }
+} as Readonly<Record<string, { min: string; max: string }>>
 
 export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
   burrow: { singular: 'Burrows', continuous: 'burrowing' },
   climb: { singular: 'Climbs', continuous: 'climbing' },
-  swim: { icon: 'mdi:fish', singular: 'Swims', continuous: 'swimming' },
-  fly: { icon: 'mdi:bird', singular: 'Flies', continuous: 'flying' }
+  swim: { icon: true, singular: 'Swims', continuous: 'swimming' },
+  fly: { icon: true, singular: 'Flies', continuous: 'flying' }
 } as Readonly<
-  Record<Speed, { icon?: string; singular: string; continuous: string }>
+  Record<Speed, { icon?: boolean; singular: string; continuous: string }>
 >
 
 export const SPELL_LEVELS = { max: 9 } as Readonly<Record<'max', number>>

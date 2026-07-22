@@ -69,11 +69,9 @@ export const useWildShapes = <T extends Creature>(
     if (sort) {
       const [sortBy, direction] = sort.split(SEPARATOR)
 
-      filtered = filtered.sort(sortCreatures(sortBy as keyof T))
-
-      if (direction === DESCENDING) {
-        filtered = filtered.reverse()
-      }
+      filtered = filtered.sort(
+        sortCreatures(sortBy as keyof T, direction === DESCENDING)
+      )
     }
 
     return filtered

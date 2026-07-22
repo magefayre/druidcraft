@@ -9,6 +9,7 @@ const CreatureList: FC<CreatureListProps> = ({
   creatures,
   isCreatureDisabled,
   isCreatureLimited,
+  ratings,
   speedLimits
 }) => {
   if (!creatures?.length) return null
@@ -17,7 +18,7 @@ const CreatureList: FC<CreatureListProps> = ({
     <>
       <List unstyled className={styles.root}>
         {creatures.map((creature, index) => {
-          const { name, source } = creature
+          const { name, rating, source } = creature
 
           return (
             <li key={`${source}/${name}`} className={styles.item}>
@@ -26,6 +27,7 @@ const CreatureList: FC<CreatureListProps> = ({
                 disabled={isCreatureDisabled?.(creature)}
                 limit={isCreatureLimited?.(creature)}
                 priority={index < 12}
+                rating={ratings ? rating : undefined}
                 speedLimits={speedLimits}
               />
             </li>

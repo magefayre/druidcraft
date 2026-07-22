@@ -4,7 +4,7 @@ import type { Option } from '~components/Select'
 import { EMPTY_OPTION } from '~components/Select/constants'
 import { DESCENDING, SEPARATOR, SPELL_LEVELS, SPELLS } from '~constants'
 import type { Creature, MonsterType, Spell } from '~types'
-import { formatLevel, getSpellCR, sortCreatures } from '~utils/5etools'
+import { formatSpellLevel, getSpellCR, sortCreatures } from '~utils/5etools'
 
 import type { SummonFormData } from './types'
 
@@ -28,7 +28,7 @@ export const useSpells = () =>
       EMPTY_OPTION,
       ...Object.entries(SPELLS).map(([value, { level }]) => ({
         value,
-        label: `${value} (${formatLevel(level)})`
+        label: `${value} (${formatSpellLevel(level)})`
       }))
     ],
     []
@@ -60,11 +60,9 @@ export const useSummons = <T extends Creature>({
     if (sort) {
       const [sortBy, direction] = sort.split(SEPARATOR)
 
-      filtered = filtered?.sort(sortCreatures(sortBy as keyof T))
-
-      if (direction === DESCENDING) {
-        filtered = filtered?.reverse()
-      }
+      filtered = filtered?.sort(
+        sortCreatures(sortBy as keyof T, direction === DESCENDING)
+      )
     }
 
     return filtered
@@ -78,7 +76,7 @@ export const useUpcasting = (spell?: Spell) =>
             EMPTY_OPTION,
             ...getUpcastLevels(spell).map(level => ({
               value: `${level}`,
-              label: formatLevel(level)
+              label: formatSpellLevel(level)
             }))
           ]
         : undefined,

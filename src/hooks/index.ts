@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 
 import type { Option } from '~components/Select'
 import { DESCENDING, SEPARATOR, SORTING } from '~constants'
+import type { Creature } from '~types'
 
 export const useFormData = <T>(selected: T, defaults: T) =>
   useMemo<T>(
@@ -16,18 +17,23 @@ export const useFormData = <T>(selected: T, defaults: T) =>
     [selected]
   )
 
-export const useSorting = () =>
+export const useSorting = <T extends keyof Creature>(...exclude: T[]) =>
   useMemo<Option[]>(
     () =>
       Object.entries(SORTING).reduce((options, [key, { min, max }]) => {
         const value = key.toLowerCase()
         const label = (a: string, b: string) => `${key}: ${a}-${b}`
 
-        return [
-          ...options,
-          { value, label: label(min, max) },
-          { value: [value, DESCENDING].join(SEPARATOR), label: label(max, min) }
-        ]
+        return !exclude?.includes(value as T)
+          ? [
+              ...options,
+              { value, label: label(min, max) },
+              {
+                value: [value, DESCENDING].join(SEPARATOR),
+                label: label(max, min)
+              }
+            ]
+          : options
       }, []),
-    []
+    [exclude]
   )
