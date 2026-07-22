@@ -107,6 +107,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
             getSpeedLimit(level, speed, 'swim') ||
             getSpeedLimit(level, speed, 'fly')
           }
+          ratings
           speedLimits
         />
       </Section>
