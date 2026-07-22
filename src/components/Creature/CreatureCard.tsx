@@ -24,13 +24,17 @@ const CreatureCard: FC<CreatureCardProps> = ({
   ...props
 }) => {
   const crLabel = formatCR(cr)
-  const tooltipHeading = {
+  const tooltipContent = {
     disabled,
     manual: disabled,
+    align: 'left',
+    valign: 'middle'
+  }
+  const tooltipHeading = {
+    ...tooltipContent,
     align: 'center',
     valign: 'bottom'
   }
-  const tooltipContent = { ...tooltipHeading, align: 'left', valign: 'middle' }
 
   return (
     <Card
