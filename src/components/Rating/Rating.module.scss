@@ -2,8 +2,10 @@
 
 .root {
   aspect-ratio: 1;
+  margin: functions.spacing(-0.375);
   vertical-align: middle;
-  width: functions.spacing(2.25);
+  padding: functions.spacing(0.375);
+  width: functions.spacing(3);
 }
 
 .icon {

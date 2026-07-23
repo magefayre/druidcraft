@@ -87,7 +87,7 @@ const CreatureCard: FC<CreatureCardProps> = ({
             <Tooltip
               key={type}
               toggle={
-                <Icon className={styles.icon}>
+                <Icon alt={singular} className={styles.icon}>
                   <svg>
                     <use xlinkHref={`${sprite}#${type}`} />
                   </svg>

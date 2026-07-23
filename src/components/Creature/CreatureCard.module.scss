@@ -27,7 +27,7 @@
   border-top: unset;
   display: inherit;
   flex-grow: 1;
-  gap: 10px;
+  gap: functions.spacing(1);
   justify-content: space-between;
 }
 
@@ -70,7 +70,7 @@
   font-size: small;
   font-style: italic;
   line-height: 1.85;
-  min-width: 24px;
+  min-width: functions.spacing(3);
   position: relative;
   z-index: 1;
 }
