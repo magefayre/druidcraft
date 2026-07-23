@@ -12,12 +12,13 @@ const Rating: FC<Props> = ({ children, ...rest }) => {
   if (!children) return null
 
   const rating = Number(children)
+  const alt = `${rating} Star Rating`
 
   return (
     <Tooltip
       theme={{ toggle: styles.root }}
       toggle={
-        <Icon className={styles.icon} data-rating={rating}>
+        <Icon alt={alt} className={styles.icon} data-rating={rating}>
           <svg>
             <use xlinkHref={`${sprite}#rating`} />
           </svg>
@@ -25,7 +26,7 @@ const Rating: FC<Props> = ({ children, ...rest }) => {
       }
       {...rest}
     >
-      {rating} Star Rating
+      {alt}
     </Tooltip>
   )
 }
