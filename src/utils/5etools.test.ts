@@ -1,5 +1,5 @@
 import { EMPTY, SPELL_LEVELS } from '~constants'
-import type { Creature } from '~types'
+import type { Creature, Speeds } from '~types'
 import {
   formatCR,
   formatSpeedLimits,
@@ -12,7 +12,7 @@ import {
   sortCreatures
 } from '~utils/5etools'
 
-const speed: Creature['speed'] = { swim: 30, fly: 30 }
+const speed: Speeds = { swim: 30, fly: 30 }
 
 describe('formatCR', () => {
   it('should format CR as expected', () => {

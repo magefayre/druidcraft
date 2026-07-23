@@ -5,9 +5,10 @@ import { join } from 'node:path'
 import plur from 'plur'
 import yargs from 'yargs'
 
-import { LEVELS } from '~constants'
+import { ELEMENTAL_FORMS, LEVELS } from '~constants'
 import type {
   Creature,
+  Features,
   Monster,
   MonsterRatings,
   Monsters,
@@ -38,6 +39,18 @@ const parseCR = (cr: string | { cr: string }): number | undefined => {
   return undefined
 }
 
+const parseRating = (
+  name: string,
+  features: Features,
+  ratings: MonsterRatings
+) => {
+  if (features?.elementalForms) {
+    name = name.replace(ELEMENTAL_FORMS, '$1')
+  }
+
+  return ratings[name]
+}
+
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
@@ -55,7 +68,12 @@ const parseType = (type: string | { type: string; swarmSize: string }) => {
   return undefined
 }
 
-type MonsterFilters = { type: MonsterType; maxCR?: number; ratings?: boolean }
+type MonsterFilters = {
+  type: MonsterType
+  maxCR?: number
+  ratings?: boolean
+  features?: (name: string) => Features
+}
 
 const filterMonsters = (
   monsters: Monster[],
@@ -77,13 +95,16 @@ const filterMonsters = (
 
     const { name, source, speed } = monster
     const cr = parseCR(monster.cr)!
-    const rating = filters.ratings ? ratings[base?.name ?? name] : undefined
     const spell = parseSpell(monster.summonedBySpell)
     const type = parseType(monster.type)
+    const features = filters.features?.(name)
+    const rating = filters.ratings
+      ? parseRating(base?.name ?? name, features, ratings)
+      : undefined
 
     return type === filters.type &&
       (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
-      ? [...creatures, { cr, name, rating, source, speed, spell }]
+      ? [...creatures, { cr, features, name, rating, source, speed, spell }]
       : creatures
   }, [])
 
@@ -120,7 +141,13 @@ const filterMonsters = (
   const ratings = await fetchRatings()
   const data: MonsterFilters[] = [
     { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max), ratings: true },
-    { type: 'elemental', maxCR: getTypeCR('elemental') },
+    {
+      type: 'elemental',
+      maxCR: getTypeCR('elemental'),
+      ratings: true,
+      features: name =>
+        ELEMENTAL_FORMS.test(name) ? { elementalForms: true } : undefined
+    },
     { type: 'dragon', maxCR: Number.MIN_SAFE_INTEGER },
     { type: 'fey', maxCR: getTypeCR('fey') },
     { type: 'plant', maxCR: 2 }

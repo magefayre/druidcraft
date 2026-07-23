@@ -17,12 +17,7 @@ export const CR_LIMITS = {
 
 export const DESCENDING = 'des'
 
-export const ELEMENTALS = [
-  'Air Elemental',
-  'Earth Elemental',
-  'Fire Elemental',
-  'Water Elemental'
-] as Readonly<string[]>
+export const ELEMENTAL_FORMS = /^(Air|Earth|Fire|Water)\sElemental$/
 
 export const EMPTY = '-'
 

@@ -73,6 +73,7 @@
   {
     "cr": 0.5,
     "name": "Ashen Warhorse",
+    "rating": 3,
     "source": "KftGV",
     "speed": { "walk": 60 }
   },
@@ -206,7 +207,9 @@
   },
   {
     "cr": 5,
+    "features": { "elementalForms": true },
     "name": "Air Elemental",
+    "rating": 3,
     "source": "MM",
     "speed": {
       "fly": { "number": 90, "condition": "(hover)" },
@@ -250,7 +253,9 @@
   },
   {
     "cr": 5,
+    "features": { "elementalForms": true },
     "name": "Earth Elemental",
+    "rating": 2,
     "source": "MM",
     "speed": { "walk": 30, "burrow": 30 }
   },
@@ -262,7 +267,9 @@
   },
   {
     "cr": 5,
+    "features": { "elementalForms": true },
     "name": "Fire Elemental",
+    "rating": 4,
     "source": "MM",
     "speed": { "walk": 50 }
   },
@@ -282,7 +289,9 @@
   { "cr": 5, "name": "Salamander", "source": "MM", "speed": { "walk": 30 } },
   {
     "cr": 5,
+    "features": { "elementalForms": true },
     "name": "Water Elemental",
+    "rating": 4,
     "source": "MM",
     "speed": { "walk": 30, "swim": 90 }
   },
