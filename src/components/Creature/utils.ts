@@ -1,5 +1,5 @@
-import { urlJoin } from '@newhighsco/chipset'
 import slugify, { type Options } from '@sindresorhus/slugify'
+import urlJoin from 'url-join'
 
 import type { CreatureURL } from './types'
 

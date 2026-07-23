@@ -5,5 +5,3 @@ import config from '~config'
 const { url } = config
 
 export const canonicalUrl = (path?: string) => urlJoin(url, path)
-
-export { urlJoin }
