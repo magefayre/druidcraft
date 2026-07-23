@@ -4,7 +4,7 @@ import withPlugins from 'next-compose-plugins'
 
 import { url } from '~components/Creature/utils'
 
-const BASE = new URL('https://2014.5e.tools/')
+const preserveCharacters = [':', '*']
 
 const nextConfig: NextConfig = {
   images: { formats: ['image/avif', 'image/webp'] },
@@ -12,11 +12,13 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   redirects: () => [
     {
-      source: url(
-        { source: ':source', name: ':name' },
-        { preserveCharacters: [':'] }
-      ),
-      destination: new URL('bestiary/:name-:source.html', BASE).href,
+      source: '/beast/:slug*',
+      destination: url({ source: ':slug*', name: '' }, { preserveCharacters }),
+      permanent: true
+    },
+    {
+      source: url({ source: ':source', name: ':name' }, { preserveCharacters }),
+      destination: 'https://2014.5e.tools/bestiary/:name-:source.html',
       permanent: true
     }
   ],
