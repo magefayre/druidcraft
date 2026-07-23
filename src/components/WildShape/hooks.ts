@@ -4,10 +4,10 @@ import type { Option } from '~components/Select'
 import { EMPTY_OPTION } from '~components/Select/constants'
 import { CR, DESCENDING, LEVELS, SEPARATOR, SPEEDS } from '~constants'
 import SOURCES from '~data/sources.json' with { type: 'json' }
-import type { Creature } from '~types'
+import type { Creature, Features } from '~types'
 import { getMaxCR, sortAlphabetically, sortCreatures } from '~utils/5etools'
 
-import type { WildShapeFormData } from './types'
+import type { WildShapeFormData, WildShapeProps } from './types'
 
 export const useLevels = (circleForms: boolean) =>
   useMemo<Option[]>(
@@ -55,16 +55,21 @@ export const useSpeeds = (level: number) =>
   )
 
 export const useWildShapes = <T extends Creature>(
-  creatures: T[],
-  { circleForms, speed, source, sort }: WildShapeFormData
+  { beast, elemental }: WildShapeProps['creatures'],
+  { circleForms, speed, source, sort }: WildShapeFormData,
+  { elementalForms }: Features
 ) =>
-  useMemo<T[]>(() => {
-    let filtered = creatures.filter(
+  useMemo<Creature[]>(() => {
+    let filtered = beast.filter(
       creature =>
         (!circleForms ? creature.cr <= CR.fly : true) &&
         (speed ? !!creature.speed[speed] : true) &&
         (!!source?.length ? source.includes(creature.source) : true)
     )
+
+    if (elementalForms) {
+      filtered = filtered.concat(elemental)
+    }
 
     if (sort) {
       const [sortBy, direction] = sort.split(SEPARATOR)
@@ -75,4 +80,4 @@ export const useWildShapes = <T extends Creature>(
     }
 
     return filtered
-  }, [circleForms, speed, source, sort])
+  }, [circleForms, elementalForms, speed, source, sort])

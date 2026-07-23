@@ -17,6 +17,8 @@ export const CR_LIMITS = {
 
 export const DESCENDING = 'des'
 
+export const ELEMENTAL_FORMS = /^(Air|Earth|Fire|Water)\sElemental$/
+
 export const EMPTY = '-'
 
 export const LEVELS = { min: 1, max: 20, walk: 2, swim: 4, fly: 8 } as Readonly<

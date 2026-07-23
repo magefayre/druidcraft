@@ -6,4 +6,4 @@ export const tokenURL = ({ source, name }: CreatureURL) =>
   `/tokens/${source}-${name}.webp`
 
 export const url = ({ source, name }: CreatureURL, options?: Options) =>
-  `/creature/${slugify(source, { ...options, separator: '' })}/${slugify(name, options)}`
+  `/creature/${slugify(source, { ...options, separator: '' })}/${slugify(name, { ...options, customReplacements: [['-', '']], decamelize: false })}`

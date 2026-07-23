@@ -9,5 +9,5 @@ export type WildShapeFormData = {
 }
 
 export type WildShapeProps = {
-  creatures: Record<Extract<MonsterType, 'beast'>, Creature[]>
+  creatures: Record<Extract<MonsterType, 'beast' | 'elemental'>, Creature[]>
 }

@@ -9,17 +9,21 @@ declare global {
   }
 }
 
+export type Feature = 'elementalForms'
+export type Features = Partial<Record<Feature, boolean>>
 export type Source = string
 export type Speed = '' | 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
+export type Speeds = Partial<Record<Speed, number>>
 export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
 
 export type Creature = {
   cr?: number
+  features?: Features
   name: string
   rating?: number
   source: Source
-  speed: Partial<Record<Speed, number>>
+  speed: Speeds
   spell?: string
 }
 

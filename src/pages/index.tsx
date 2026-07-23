@@ -13,8 +13,9 @@ type Props = Omit<HomeLayoutProps, 'meta'>
 const HomePage: NextPage<Props> = props => <HomeLayout meta={meta} {...props} />
 
 export const getStaticProps = (async () => {
-  const creatures = await loadCreatures('beast', {
-    beast: ({ spell }) => !spell
+  const creatures = await loadCreatures(['beast', 'elemental'], {
+    beast: ({ spell }) => !spell,
+    elemental: ({ features }) => features?.elementalForms
   })
 
   return { props: { creatures } }

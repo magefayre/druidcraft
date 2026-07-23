@@ -11,7 +11,14 @@ import {
   SPELLS
 } from '~constants'
 import { VERSION } from '~scripts/constants'
-import type { Creature, MonsterType, Source, Speed, Spell } from '~types'
+import type {
+  Creature,
+  MonsterType,
+  Source,
+  Speed,
+  Speeds,
+  Spell
+} from '~types'
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
@@ -85,11 +92,8 @@ export const isCoreSource = (source: Source) =>
   !source.startsWith(Parser.SRC_PS_PREFIX) &&
   !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
 
-export const isSpeedLimited = (
-  level: number,
-  speed: Creature['speed'],
-  type: Speed
-) => level < LEVELS[type] && !!speed[type]
+export const isSpeedLimited = (level: number, speed: Speeds, type: Speed) =>
+  level < LEVELS[type] && !!speed[type]
 
 export const sortAlphabetically = <T extends string>(
   a: T,
