@@ -1,8 +1,13 @@
 @use '~styles/functions';
 
 .inline {
+  align-items: center;
+  column-rule: 1px solid var(--border);
   display: inline-flex;
-  gap: functions.spacing(2);
+  gap: functions.spacing(2.5);
+  row-gap: functions.spacing(1);
+  line-height: 1.1;
+  flex-wrap: wrap;
 }
 
 .link {

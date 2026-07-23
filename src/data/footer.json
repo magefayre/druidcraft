@@ -1,18 +1,15 @@
 {
   "links": [
-    { "children": "Top", "href": "#top", "target": "" },
+    { "children": "Top", "href": "#top" },
     {
-      "children": "5etools",
-      "data-version": "",
+      "children": "Powered by 5etools",
       "href": "https://2014.5e.tools/",
-      "target": "_blank",
-      "title": "Powered by 5etools"
+      "target": "_blank"
     },
     {
-      "children": "RPGBOT",
+      "children": "Ratings by RPGBOT",
       "href": "https://rpgbot.net/dnd5/characters/classes/druid/wild-shape/",
-      "target": "_blank",
-      "title": "Wild Shape ratings by RPGBOT"
+      "target": "_blank"
     }
   ]
 }

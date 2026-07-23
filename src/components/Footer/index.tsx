@@ -11,7 +11,6 @@ import type { FC } from 'react'
 import config from '~config'
 import footer from '~data/footer.json'
 import { ReactComponent as MagefayreSvg } from '~images/magefayre.svg'
-import { getVersion } from '~utils/5etools'
 
 import styles from './Footer.module.scss'
 
@@ -27,7 +26,7 @@ const iconLinks = {
 }
 
 const Footer: FC = () => (
-  <FooterContainer theme={{ root: styles.root }} data-version={getVersion()}>
+  <FooterContainer theme={{ root: styles.root }}>
     <ContentContainer
       gutter
       size="desktopLarge"

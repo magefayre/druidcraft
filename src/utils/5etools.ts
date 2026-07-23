@@ -10,7 +10,6 @@ import {
   SPELL_LEVELS,
   SPELLS
 } from '~constants'
-import { VERSION } from '~scripts/constants'
 import type {
   Creature,
   MonsterType,
@@ -83,8 +82,6 @@ export const getSummonLimit = (cr: number) => {
 
   return CR_LIMITS[cr]
 }
-
-export const getVersion = () => VERSION
 
 export const isCoreSource = (source: Source) =>
   Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
