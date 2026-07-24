@@ -79,7 +79,7 @@
     "@newhighsco/yarn-plugin-preset": "1.1.4",
     "@types/react": "19.2.17",
     "@vitest/coverage-v8": "4.1.10",
-    "concurrently": "10.0.3",
+    "concurrently": "10.0.4",
     "css-select": "7.0.0",
     "domhandler": "6.0.1",
     "domutils": "4.0.2",
