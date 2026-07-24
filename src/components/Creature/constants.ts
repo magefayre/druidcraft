@@ -1,1 +1,1 @@
-export const TOKEN_SIZE = 280
+export const TOKEN_SIZE = 64
