@@ -57,8 +57,7 @@ const CreatureCard: FC<CreatureCardProps> = ({
         src: tokenURL({ source, name }),
         priority,
         width: TOKEN_SIZE,
-        height: TOKEN_SIZE,
-        sizes: '64px'
+        height: TOKEN_SIZE
       }}
       href={!disabled ? url({ source, name }) : undefined}
       aria-disabled={disabled ? true : undefined}
