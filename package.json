@@ -93,7 +93,7 @@
     "tsx": "4.23.1",
     "typescript": "6.0.3",
     "vitest": "4.1.10",
-    "yargs": "18.0.0"
+    "yargs": "18.1.0"
   },
   "browserslist": [
     "extends @newhighsco/browserslist-config"
