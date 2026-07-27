@@ -1,8 +1,8 @@
-import { Icon, Tooltip } from '@newhighsco/chipset'
+import { Tooltip } from '@newhighsco/chipset'
 import type PropTypes from 'prop-types'
 import type { FC } from 'react'
 
-import sprite from '~images/sprite.svg'
+import Sprite from '~components/Sprite'
 
 import styles from './Rating.module.scss'
 
@@ -18,11 +18,12 @@ const Rating: FC<Props> = ({ children, ...rest }) => {
     <Tooltip
       theme={{ toggle: styles.root }}
       toggle={
-        <Icon alt={alt} className={styles.icon} data-rating={rating}>
-          <svg>
-            <use xlinkHref={`${sprite}#rating`} />
-          </svg>
-        </Icon>
+        <Sprite
+          id="rating"
+          alt={alt}
+          className={styles.icon}
+          data-rating={rating}
+        />
       }
       {...rest}
     >

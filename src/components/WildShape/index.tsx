@@ -55,9 +55,10 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           <Checkbox
             id="circleForms"
             label="Moon Druid"
-            icon={['boxicons:moon', circleForms && 'filled']
-              .filter(Boolean)
-              .join('-')}
+            // icon={['boxicons:moon', circleForms && 'filled']
+            //   .filter(Boolean)
+            //   .join('-')}
+            icon="moon"
             checked={circleForms}
             onChange={handleChange}
           />

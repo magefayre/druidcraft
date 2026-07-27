@@ -1,4 +1,3 @@
-import { Icon } from '@newhighsco/chipset'
 import {
   type ChangeEventHandler,
   type FC,
@@ -9,6 +8,7 @@ import {
 
 import type { FilterFieldProps } from '~components/Filter'
 import { FilterField } from '~components/Filter'
+import Sprite from '~components/Sprite'
 import { EMPTY } from '~constants'
 
 import styles from './Select.module.scss'
@@ -120,7 +120,7 @@ const Select: FC<Props> = ({
           className={styles.reset}
           onClick={handleReset}
         >
-          <Icon name="mdi:close" alt={LABELS.reset} className={styles.icon} />
+          <Sprite id="close" alt={LABELS.reset} />
         </button>
       )}
     </FilterField>

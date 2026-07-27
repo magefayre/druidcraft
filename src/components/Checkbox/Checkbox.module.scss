@@ -3,6 +3,8 @@
 
 .root {
   &:has(:checked) {
+    --checked: currentColor;
+
     background: var(--muted-background);
   }
 }

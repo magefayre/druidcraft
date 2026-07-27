@@ -1,11 +1,11 @@
-import { Card, Icon, Tooltip } from '@newhighsco/chipset'
+import { Card, Tooltip } from '@newhighsco/chipset'
 import plur from 'plur'
 import type { FC } from 'react'
 
 import Rating from '~components/Rating'
+import Sprite from '~components/Sprite'
 import { EMPTY, SPEEDS } from '~constants'
 import SOURCES from '~data/sources.json' with { type: 'json' }
-import sprite from '~images/sprite.svg'
 import { formatCR } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
@@ -86,11 +86,7 @@ const CreatureCard: FC<CreatureCardProps> = ({
             <Tooltip
               key={type}
               toggle={
-                <Icon alt={singular} className={styles.icon}>
-                  <svg>
-                    <use xlinkHref={`${sprite}#${type}`} />
-                  </svg>
-                </Icon>
+                <Sprite id={type} alt={singular} className={styles.icon} />
               }
               {...tooltipContent}
             >
