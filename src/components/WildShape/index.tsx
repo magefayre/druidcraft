@@ -6,6 +6,7 @@ import { CreatureList } from '~components/Creature'
 import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
+import { Sprites } from '~components/Sprite'
 import { LEVELS } from '~constants'
 import { useFormData, useSorting } from '~hooks'
 import { formatCR, formatSpeedLimits, isSpeedLimited } from '~utils/5etools'
@@ -55,9 +56,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           <Checkbox
             id="circleForms"
             label="Moon Druid"
-            icon={['boxicons:moon', circleForms && 'filled']
-              .filter(Boolean)
-              .join('-')}
+            icon="moon"
             checked={circleForms}
             onChange={handleChange}
           />
@@ -113,6 +112,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           ratings
           speedLimits
         />
+        <Sprites />
       </Section>
     </>
   )

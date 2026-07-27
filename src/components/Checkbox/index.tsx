@@ -1,9 +1,10 @@
-import { Icon } from '@newhighsco/chipset'
+import type { Icon } from '@newhighsco/chipset'
 import type PropTypes from 'prop-types'
 import type { ChangeEventHandler, FC } from 'react'
 
 import type { FilterFieldProps } from '~components/Filter'
 import { FilterField } from '~components/Filter'
+import Sprite from '~components/Sprite'
 
 import styles from './Checkbox.module.scss'
 
@@ -24,7 +25,7 @@ const Checkbox: FC<Props> = ({ id, label, icon, onChange }) => {
         className={styles.input}
         onChange={handleChange}
       />
-      <Icon name={icon} className={styles.icon} />
+      <Sprite id={icon} className={styles.icon} />
     </FilterField>
   )
 }
