@@ -12,6 +12,7 @@
       "~layouts/*": ["./src/layouts/*"],
       "~scripts/*": ["./scripts/*"],
       "~styles/*": ["./src/styles/_*", "./src/styles/*"],
+      "~testing": ["./src/testing"],
       "~theme": ["./src/theme"],
       "~types": ["./src/types"],
       "~utils/*": ["./src/utils/*"]
