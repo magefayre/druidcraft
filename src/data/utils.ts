@@ -5,7 +5,7 @@ import plur from 'plur'
 
 import type { Creature, MonsterType } from '~types'
 
-const loadData = async <T>(file: string): Promise<T> =>
+export const loadData = async <T>(file: string): Promise<T> =>
   await readFile(join(process.cwd(), 'src/data', `${file}.json`), 'utf8').then(
     JSON.parse
   )

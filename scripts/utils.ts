@@ -1,5 +1,6 @@
 import { createWriteStream, existsSync, mkdirSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { writeFile } from 'node:fs/promises'
+import { dirname, join, parse } from 'node:path'
 
 import transliterate from '@sindresorhus/transliterate'
 import { selectAll } from 'css-select'
@@ -10,6 +11,7 @@ import { Readable } from 'stream'
 
 import { tokenURL } from '~components/Creature/utils'
 import { RATINGS } from '~constants'
+import { loadData } from '~data/utils'
 import type { Creature, MonsterRating, MonsterRatings } from '~types'
 
 import { BASE } from './constants'
@@ -28,7 +30,13 @@ export const fetchData = async <T>(...url: string[]): Promise<T> => {
   return res.json()
 }
 
-export const fetchRatings = async () => {
+export const fetchRatings = async (outputDir: string) => {
+  const filename = join(outputDir, 'ratings.json')
+
+  if (existsSync(filename)) {
+    return await loadData<MonsterRatings>(parse(filename).name)
+  }
+
   const res = await fetch(
     new URL('https://rpgbot.net/dnd5/characters/classes/druid/wild-shape/')
   )
@@ -46,6 +54,8 @@ export const fetchRatings = async () => {
 
     return { ...ratings, [innerText(element)]: RATINGS[rating] }
   }, {})
+
+  await writeFile(filename, JSON.stringify(ratings))
 
   return ratings
 }
