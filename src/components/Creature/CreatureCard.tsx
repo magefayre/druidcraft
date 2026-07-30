@@ -27,6 +27,7 @@ const CreatureCard: FC<CreatureCardProps> = ({
   const crLabel = formatCR(cr)
   const tooltipContent = {
     disabled,
+    described: false,
     manual: disabled,
     align: 'left',
     valign: 'middle'
@@ -40,18 +41,19 @@ const CreatureCard: FC<CreatureCardProps> = ({
   return (
     <Card
       heading={
-        <>
-          <h2>
-            <Rating {...tooltipHeading}>{rating}</Rating>
-            {name}
-          </h2>
+        <span className={styles.heading}>
+          <h2>{name}</h2>
           <Tooltip
-            toggle={<span className={styles.source}>{source}</span>}
+            toggle={source}
+            theme={{ root: styles.source, toggle: styles.sourceToggle }}
             {...tooltipHeading}
           >
             {SOURCES[source]}
           </Tooltip>
-        </>
+          <Rating className={styles.rating} {...tooltipHeading}>
+            {rating}
+          </Rating>
+        </span>
       }
       image={{
         src: tokenURL({ source, name }),
@@ -65,14 +67,14 @@ const CreatureCard: FC<CreatureCardProps> = ({
         root: styles.root,
         content: styles.content,
         copy: styles.copy,
-        heading: styles.heading,
         image: styles.image
       }}
       {...props}
     >
       {limit && (
         <Tooltip
-          toggle={<span className={styles.icon}>{limit}×</span>}
+          toggle={`${limit}×`}
+          theme={{ toggle: styles.icon }}
           {...tooltipContent}
         >
           Summon&nbsp;{limit} {plur(name, limit)}
@@ -85,18 +87,16 @@ const CreatureCard: FC<CreatureCardProps> = ({
           return (
             <Tooltip
               key={type}
-              toggle={
-                <Sprite id={type} alt={singular} className={styles.icon} />
-              }
+              toggle={<Sprite id={type} className={styles.icon} />}
               {...tooltipContent}
             >
-              <span aria-hidden>{singular}</span>
+              {singular}
             </Tooltip>
           )
         })}
       {crLabel !== EMPTY && (
         <Tooltip
-          toggle={<span>CR {crLabel}</span>}
+          toggle={`CR ${crLabel}`}
           theme={{ toggle: styles.cr }}
           {...tooltipContent}
         >

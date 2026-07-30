@@ -16,14 +16,10 @@ const Rating: FC<Props> = ({ children, ...rest }) => {
 
   return (
     <Tooltip
+      described={false}
       theme={{ toggle: styles.root }}
       toggle={
-        <Sprite
-          id="rating"
-          alt={alt}
-          className={styles.icon}
-          data-rating={rating}
-        />
+        <Sprite id="rating" className={styles.icon} data-rating={rating} />
       }
       {...rest}
     >
