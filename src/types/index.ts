@@ -23,7 +23,7 @@ export type Creature = {
   name: string
   rating?: number
   source: Source
-  speed: Speeds
+  speed?: Speeds
   spell?: string
 }
 
