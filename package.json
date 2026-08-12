@@ -95,7 +95,7 @@
     "prettier": "3.9.6",
     "semantic-release": "25.0.8",
     "stylelint": "17.14.1",
-    "tsx": "4.23.5",
+    "tsx": "4.23.12",
     "typescript": "6.0.3",
     "vitest": "4.1.10",
     "yargs": "18.1.0"
