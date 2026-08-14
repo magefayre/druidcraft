@@ -15,11 +15,6 @@ const nextConfig: NextConfig = {
       source: '/beast/:slug*',
       destination: url({ source: ':slug*', name: '' }, { preserveCharacters }),
       permanent: true
-    },
-    {
-      source: url({ source: ':source', name: ':name' }, { preserveCharacters }),
-      destination: 'https://2014.5e.tools/bestiary/:name-:source.html',
-      permanent: true
     }
   ],
   transpilePackages: ['@newhighsco/chipset', '@newhighsco/press-start'],

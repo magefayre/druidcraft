@@ -5,7 +5,7 @@ export type WildShapeFormData = {
   circleForms: boolean
   sort: string
   source: string[]
-  speed: Speed
+  speed: Speed | ''
 }
 
 export type WildShapeProps = {

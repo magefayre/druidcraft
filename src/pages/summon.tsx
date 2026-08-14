@@ -27,6 +27,6 @@ export const getStaticProps = (async () => {
   const creatures = await loadCreatures(types)
 
   return { props: { creatures } }
-}) satisfies GetStaticProps<Props>
+}) satisfies GetStaticProps
 
 export default SummonPage
