@@ -1,0 +1,45 @@
+{
+  "name": "Dusk Hag",
+  "ability": {
+    "str": 11,
+    "dex": 14,
+    "con": 12,
+    "int": 17,
+    "wis": 16,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The hag makes two Nightmare Touch attacks."]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage."
+      ]
+    },
+    {
+      "name": "Nightmare Touch",
+      "entries": [
+        "{@atk ms} {@hit 7} to hit, reach 5 ft., one creature. {@h}18 ({@damage 4d6 + 4}) psychic damage. If the target is {@condition unconscious}, it takes an extra 10 ({@damage 3d6}) psychic damage and is cursed until the hag dies or the curse is removed. The cursed creature's hit point maximum decreases by 5 ({@dice 1d10}) whenever it finishes a long rest."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 82, "formula": "15d8 + 15" },
+  "senses": ["blindsight 60 ft."],
+  "skill": { "deception": "+7", "insight": "+6", "perception": "+6" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hag has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 6,
+  "speed": { "walk": 30 }
+}

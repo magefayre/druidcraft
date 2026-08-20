@@ -1,0 +1,72 @@
+{
+  "name": "Bheur Hag",
+  "ability": {
+    "str": 13,
+    "dex": 16,
+    "con": 14,
+    "int": 12,
+    "wis": 13,
+    "cha": 16
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The hag makes two Slam or Frost Shard attacks."]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d8 + 1}) bludgeoning damage plus 18 ({@damage 4d8}) cold damage."
+      ]
+    },
+    {
+      "name": "Frost Shard",
+      "entries": [
+        "{@atk rs} {@hit 6} to hit, range 60 ft., one target. {@h}30 ({@damage 6d8 + 3}) cold damage, and the target's speed is reduced by 10 feet until the start of the hag's next turn."
+      ]
+    },
+    {
+      "name": "Horrific Feast",
+      "entries": [
+        "The hag feeds on the corpse of one enemy within reach that died within the past minute. Each creature of the hag's choice that is within 60 feet and able to see the feeding must succeed on a {@dc 15} Wisdom saving throw or be {@condition frightened} of the hag for 1 minute. While {@condition frightened} in this way, a creature is {@condition incapacitated}, can't understand what others say, can't read, and speaks only in gibberish. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the hag's Horrific Feast for the next 24 hours."
+      ]
+    }
+  ],
+  "alignment": ["C", "E"],
+  "hp": { "average": 91, "formula": "14d8 + 28" },
+  "senses": ["darkvision 60 ft."],
+  "skill": {
+    "nature": "+4",
+    "perception": "+4",
+    "stealth": "+6",
+    "survival": "+4"
+  },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Control Weather (1/Day)",
+      "entries": [
+        "The hag can cast the {@spell control weather} spell, requiring no material components and using Charisma as the spellcasting ability."
+      ]
+    },
+    {
+      "name": "Graystaff Magic",
+      "entries": [
+        "The hag carries a graystaff, a magic staff. The hag can use its flying speed only while astride the staff. If the staff is lost or destroyed, the hag must craft another, which takes a year and a day. Only a bheur hag can use a graystaff"
+      ]
+    },
+    {
+      "name": "Ice Walk",
+      "entries": [
+        "The hag can move across and climb icy surfaces without needing to make an ability check, and {@quickref difficult terrain||3} composed of ice or snow doesn't cost the hag extra movement."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 7,
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 50, "condition": "(hover, Graystaff magic)" },
+    "canHover": true
+  }
+}

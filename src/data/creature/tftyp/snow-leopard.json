@@ -1,0 +1,41 @@
+{
+  "name": "Snow Leopard",
+  "ability": { "str": 17, "dex": 15, "con": 14, "int": 3, "wis": 12, "cha": 8 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d10 + 3}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 37, "formula": "5d10 + 10" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+3", "stealth": "+6" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The tiger has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the tiger can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 1,
+  "rating": 1,
+  "speed": { "walk": 40 }
+}

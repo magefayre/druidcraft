@@ -1,0 +1,32 @@
+{
+  "name": "Fey Spirit",
+  "ability": {
+    "str": 13,
+    "dex": 16,
+    "con": 14,
+    "int": 14,
+    "wis": 11,
+    "cha": 16
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fey makes a number of attacks equal to half this spell's level (rounded down)."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target. {@h}{@damage 1d6 + 3 + summonSpellLevel} piercing damage {@damage + 1d6} force damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "special": "30 + 10 for each spell level above 3rd" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["S"],
+  "type": "fey",
+  "speed": { "walk": 40 },
+  "spell": "Summon Fey"
+}

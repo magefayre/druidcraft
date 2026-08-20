@@ -1,10 +1,10 @@
-import { existsSync, mkdirSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
 import plur from 'plur'
 import yargs from 'yargs'
 
+import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
 import type {
   Creature,
@@ -22,7 +22,13 @@ import {
   sortCreatures
 } from '~utils/5etools'
 
-import { fetchData, fetchRatings, fetchScript, fetchToken } from './utils'
+import {
+  ensureDir,
+  fetchData,
+  fetchRatings,
+  fetchScript,
+  fetchToken
+} from './utils'
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -102,9 +108,33 @@ const filterMonsters = (
       ? parseRating(base?.name ?? name, features, ratings)
       : undefined
 
+    const details = {
+      ability: {
+        str: monster.str,
+        dex: monster.dex,
+        con: monster.con,
+        int: monster.int,
+        wis: monster.wis,
+        cha: monster.cha
+      },
+      ac: monsters.ac,
+      action: monster.action,
+      alignment: monster.alignment,
+      hp: monster.hp,
+      // passive: monster.passive,
+      senses: monster.senses,
+      skill: monster.skill,
+      size: monster.size,
+      trait: monster.trait,
+      type
+    }
+
     return type === filters.type &&
       (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
-      ? [...creatures, { cr, features, name, rating, source, speed, spell }]
+      ? [
+          ...creatures,
+          { cr, details, features, name, rating, source, speed, spell }
+        ]
       : creatures
   }, [])
 
@@ -118,9 +148,7 @@ const filterMonsters = (
     })
     .parse()
 
-  if (!existsSync(outputDir)) {
-    mkdirSync(outputDir, { recursive: true })
-  }
+  ensureDir(outputDir)
 
   const monsterURLs = await fetchData<Record<Source, string>>(
     'bestiary',
@@ -163,7 +191,15 @@ const filterMonsters = (
       )
 
       await Promise.all(
-        creatures.map(async ({ name, source }) => {
+        creatures.map(async ({ name, source, details, ...rest }) => {
+          const filename = join(outputDir, `${url({ source, name })}.json`)
+
+          ensureDir(filename)
+
+          await writeFile(
+            filename,
+            JSON.stringify({ name, ...details, ...rest })
+          )
           await fetchToken({ name, source })
         })
       )

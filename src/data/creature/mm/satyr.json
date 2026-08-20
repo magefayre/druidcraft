@@ -1,0 +1,46 @@
+{
+  "name": "Satyr",
+  "ability": {
+    "str": 12,
+    "dex": 16,
+    "con": 11,
+    "int": 12,
+    "wis": 10,
+    "cha": 14
+  },
+  "action": [
+    {
+      "name": "Ram",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "{@atk rw} {@hit 5} to hit, range 80/320 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 31, "formula": "7d8" },
+  "skill": { "perception": "+2", "performance": "+6", "stealth": "+5" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The satyr has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 0.5,
+  "speed": { "walk": 40 }
+}

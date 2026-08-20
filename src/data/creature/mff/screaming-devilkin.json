@@ -1,0 +1,40 @@
+{
+  "name": "Screaming Devilkin",
+  "ability": { "str": 4, "dex": 16, "con": 13, "int": 5, "wis": 8, "cha": 11 },
+  "action": [
+    {
+      "name": "Barbed Tail",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["L", "E"],
+  "hp": { "average": 18, "formula": "4d6 + 4" },
+  "senses": ["darkvision 30 ft."],
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Agile Flier",
+      "entries": [
+        "Opportunity attacks against the screaming devilkin have disadvantage while it is flying."
+      ]
+    },
+    {
+      "name": "Ceaseless Screaming",
+      "entries": [
+        "Any creature other than a screaming devilkin that starts its turn within 30 feet of one or more screaming devilkins and can hear it must make a {@dc 10}",
+        "Wisdom saving throw. On a failure the creature is {@condition incapacitated} until the start of its next turn. On a success, the creature suffers no effect."
+      ]
+    },
+    {
+      "name": "Stunted Legs",
+      "entries": [
+        "The screaming devilkin has disadvantage on attack rolls and all attack rolls made against it gain advantage while the devilkin isn't flying."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 1,
+  "speed": { "walk": 0, "fly": 40 }
+}

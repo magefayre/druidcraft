@@ -1,0 +1,47 @@
+{
+  "name": "Pech",
+  "ability": {
+    "str": 19,
+    "dex": 11,
+    "con": 18,
+    "int": 11,
+    "wis": 14,
+    "cha": 10
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The pech makes two Fortified Pickaxe attacks. If it hits a Large or smaller creature with both attacks, the target must succeed on a {@dc 14} Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Fortified Pickaxe",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) force damage. If the target is a Construct or an object, the attack is automatically a critical hit."
+      ]
+    }
+  ],
+  "alignment": ["N", "G"],
+  "hp": { "average": 82, "formula": "11d6 + 44" },
+  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "skill": { "athletics": "+6", "perception": "+4", "survival": "+4" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The pech has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the pech has disadvantage on attack rolls."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 4,
+  "speed": { "walk": 30, "burrow": 20 }
+}

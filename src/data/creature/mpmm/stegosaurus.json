@@ -1,0 +1,19 @@
+{
+  "name": "Stegosaurus",
+  "ability": { "str": 20, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "action": [
+    {
+      "name": "Tail",
+      "entries": [
+        "{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}26 ({@damage 6d6 + 5}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 76, "formula": "8d12 + 24" },
+  "size": ["H"],
+  "type": "beast",
+  "cr": 4,
+  "rating": 2,
+  "speed": { "walk": 40 }
+}

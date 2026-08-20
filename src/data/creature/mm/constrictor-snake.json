@@ -1,0 +1,26 @@
+{
+  "name": "Constrictor Snake",
+  "ability": { "str": 15, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Constrict",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}6 ({@damage 1d8 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 14}). Until this grapple ends, the creature is {@condition restrained}, and the snake can't constrict another target."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 13, "formula": "2d10 + 2" },
+  "senses": ["blindsight 10 ft."],
+  "size": ["L"],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 1,
+  "speed": { "walk": 30, "swim": 30 }
+}

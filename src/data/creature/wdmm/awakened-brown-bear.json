@@ -1,0 +1,39 @@
+{
+  "name": "Awakened Brown Bear",
+  "ability": { "str": 19, "dex": 10, "con": 16, "int": 2, "wis": 13, "cha": 7 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bear makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 34, "formula": "4d10 + 12" },
+  "skill": { "perception": "+3" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 1,
+  "speed": { "walk": 40, "climb": 30 }
+}

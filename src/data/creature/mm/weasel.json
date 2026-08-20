@@ -1,0 +1,28 @@
+{
+  "name": "Weasel",
+  "ability": { "str": 3, "dex": 16, "con": 8, "int": 2, "wis": 12, "cha": 3 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "skill": { "perception": "+3", "stealth": "+5" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The weasel has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 2,
+  "speed": { "walk": 30 }
+}

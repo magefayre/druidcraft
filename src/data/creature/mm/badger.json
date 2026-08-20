@@ -1,0 +1,28 @@
+{
+  "name": "Badger",
+  "ability": { "str": 4, "dex": 11, "con": 12, "int": 2, "wis": 12, "cha": 5 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}1 piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 3, "formula": "1d4 + 1" },
+  "senses": ["darkvision 30 ft."],
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The badger has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 2,
+  "speed": { "walk": 20, "burrow": 5 }
+}

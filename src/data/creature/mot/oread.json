@@ -1,0 +1,50 @@
+{
+  "name": "Oread",
+  "ability": {
+    "str": 14,
+    "dex": 14,
+    "con": 12,
+    "int": 11,
+    "wis": 13,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The oread attacks twice with its fiery touch or fire bolt."]
+    },
+    {
+      "name": "Fiery Touch",
+      "entries": [
+        "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Bolt (Cantrip)",
+      "entries": [
+        "{@atk rs} {@hit 6} to hit, range 120 ft., one target. {@h}5 ({@damage 1d10}) fire damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "E"],
+  "hp": { "average": 49, "formula": "9d8 + 9" },
+  "skill": { "acrobatics": "+4", "athletics": "+4", "performance": "+6" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Invisible in Fire",
+      "entries": [
+        "The oread is {@condition invisible} while fully immersed in fire."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The oread has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 4,
+  "speed": { "walk": 30 }
+}

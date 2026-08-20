@@ -1,0 +1,27 @@
+{
+  "name": "Pixie",
+  "ability": { "str": 2, "dex": 20, "con": 8, "int": 10, "wis": 14, "cha": 15 },
+  "action": [
+    {
+      "name": "Superior Invisibility",
+      "entries": [
+        "The pixie magically turns {@condition invisible} until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment the pixie wears or carries is {@condition invisible} with it."
+      ]
+    }
+  ],
+  "alignment": ["N", "G"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "skill": { "perception": "+4", "stealth": "+7" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The pixie has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 0.25,
+  "speed": { "walk": 10, "fly": 30 }
+}

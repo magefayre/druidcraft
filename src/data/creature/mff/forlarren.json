@@ -1,0 +1,53 @@
+{
+  "name": "Forlarren",
+  "ability": {
+    "str": 14,
+    "dex": 16,
+    "con": 17,
+    "int": 12,
+    "wis": 11,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The forlarren makes two claw attacks and one gore attack, or it makes three chromatic ray attacks."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage."
+      ]
+    },
+    {
+      "name": "Gore",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
+      ]
+    },
+    {
+      "name": "Chromatic Ray",
+      "entries": [
+        "{@atk rs} {@hit 6} to hit, range 60 ft., one target. {@h}3 ({@damage 1d6}) lightning damage plus 3 ({@damage 1d6}) fire damage plus 3 ({@damage 1d6}) cold damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 45, "formula": "6d8 + 18" },
+  "senses": ["darkvision 30 ft."],
+  "skill": { "acrobatics": "+5", "deception": "+8", "stealth": "+5" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The forlarren has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 3,
+  "speed": { "walk": 40 }
+}

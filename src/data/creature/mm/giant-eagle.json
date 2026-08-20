@@ -1,0 +1,47 @@
+{
+  "name": "Giant Eagle",
+  "ability": {
+    "str": 16,
+    "dex": 17,
+    "con": 13,
+    "int": 8,
+    "wis": 14,
+    "cha": 10
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The eagle makes two attacks: one with its beak and one with its talons."
+      ]
+    },
+    {
+      "name": "Beak",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+      ]
+    },
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["N", "G"],
+  "hp": { "average": 26, "formula": "4d10 + 4" },
+  "skill": { "perception": "+4" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The eagle has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 1,
+  "rating": 3,
+  "speed": { "walk": 10, "fly": 80 }
+}

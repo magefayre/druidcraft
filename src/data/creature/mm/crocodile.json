@@ -1,0 +1,26 @@
+{
+  "name": "Crocodile",
+  "ability": { "str": 15, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}7 ({@damage 1d10 + 2}) piercing damage, and the target is {@condition grappled} (escape {@dc 12}). Until this grapple ends, the target is {@condition restrained}, and the crocodile can't bite another target"
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "skill": { "stealth": "+2" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The crocodile can hold its breath for 15 minutes."]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.5,
+  "rating": 3,
+  "speed": { "walk": 20, "swim": 30 }
+}

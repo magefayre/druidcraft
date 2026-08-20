@@ -1,0 +1,33 @@
+{
+  "name": "Goat",
+  "ability": { "str": 12, "dex": 10, "con": 11, "int": 2, "wis": 10, "cha": 5 },
+  "action": [
+    {
+      "name": "Ram",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 4, "formula": "1d8" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 ({@damage 1d4}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 10} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 1,
+  "speed": { "walk": 40 }
+}

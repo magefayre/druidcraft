@@ -1,0 +1,52 @@
+{
+  "name": "Myconid Adult",
+  "ability": {
+    "str": 10,
+    "dex": 10,
+    "con": 12,
+    "int": 10,
+    "wis": 13,
+    "cha": 7
+  },
+  "action": [
+    {
+      "name": "Fist",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}5 ({@damage 2d4}) bludgeoning damage plus 5 ({@damage 2d4}) poison damage."
+      ]
+    },
+    {
+      "name": "Pacifying Spores (3/Day)",
+      "entries": [
+        "The myconid ejects spores at one creature it can see within 5 feet of it. The target must succeed on a {@dc 11} Constitution saving throw or be {@condition stunned} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Rapport Spores",
+      "entries": [
+        "A 20-foot radius of spores extends from the myconid. These spores can go around corners and affect only creatures with an Intelligence of 2 or higher that aren't undead, constructs, or elementals. Affected creatures can communicate telepathically with one another while they are within 30 feet of each other. The effect lasts for 1 hour."
+      ]
+    }
+  ],
+  "alignment": ["L", "N"],
+  "hp": { "average": 22, "formula": "4d8 + 4" },
+  "senses": ["darkvision 120 ft."],
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Distress Spores",
+      "entries": [
+        "When the myconid takes damage, all other myconids within 240 feet of it can sense its pain."
+      ]
+    },
+    {
+      "name": "Sun Sickness",
+      "entries": [
+        "While in sunlight, the myconid has disadvantage on ability checks, attack rolls, and saving throws. The myconid dies if it spends more than 1 hour in direct sunlight."
+      ]
+    }
+  ],
+  "type": "plant",
+  "cr": 0.5,
+  "speed": { "walk": 20 }
+}

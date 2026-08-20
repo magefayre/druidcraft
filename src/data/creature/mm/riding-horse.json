@@ -1,0 +1,19 @@
+{
+  "name": "Riding Horse",
+  "ability": { "str": 16, "dex": 10, "con": 12, "int": 2, "wis": 11, "cha": 7 },
+  "action": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}8 ({@damage 2d4 + 3}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 13, "formula": "2d10 + 2" },
+  "size": ["L"],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 1,
+  "speed": { "walk": 60 }
+}

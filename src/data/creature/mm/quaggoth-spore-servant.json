@@ -1,0 +1,23 @@
+{
+  "name": "Quaggoth Spore Servant",
+  "ability": { "str": 17, "dex": 12, "con": 16, "int": 2, "wis": 6, "cha": 1 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The spore servant makes two claw attacks."]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 45, "formula": "6d8 + 18" },
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "size": ["M"],
+  "type": "plant",
+  "cr": 1,
+  "speed": { "walk": 20, "climb": 20 }
+}

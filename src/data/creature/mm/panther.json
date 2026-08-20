@@ -1,0 +1,40 @@
+{
+  "name": "Panther",
+  "ability": { "str": 14, "dex": 15, "con": 10, "int": 3, "wis": 14, "cha": 7 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 13, "formula": "3d8" },
+  "skill": { "perception": "+4", "stealth": "+6" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The panther has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the panther moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the panther can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 2,
+  "speed": { "walk": 50, "climb": 40 }
+}

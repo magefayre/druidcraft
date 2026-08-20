@@ -1,0 +1,46 @@
+{
+  "name": "Boggle",
+  "ability": { "str": 8, "dex": 18, "con": 13, "int": 6, "wis": 12, "cha": 7 },
+  "action": [
+    {
+      "name": "Pummel",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Oil Puddle",
+      "entries": [
+        "The boggle creates a puddle of nonflammable oil. The puddle is 1 inch deep and covers the ground in the boggle's space. The puddle is {@quickref difficult terrain||3} for all creatures except boggles and lasts for 1 hour. The oil has one of the following additional effects of the boggle's choice:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "name": "Slippery Oil",
+              "type": "item",
+              "entries": [
+                "Any non-boggle creature that enters the puddle or starts its turn there must succeed on a {@dc 11} Dexterity saving throw or fall {@condition prone}."
+              ]
+            },
+            {
+              "name": "Sticky Oil",
+              "type": "item",
+              "entries": [
+                "Any non-boggle creature that enters the puddle or starts its turn there must succeed on a {@dc 11} Strength saving throw or be {@condition restrained}. On its turn, a creature can use an action to try to extricate itself, ending the effect and moving into the nearest unoccupied space of its choice with a successful {@dc 11} Strength check."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 18, "formula": "4d6 + 4" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+5", "sleight of hand": "+6", "stealth": "+6" },
+  "size": ["S"],
+  "type": "fey",
+  "cr": 0.125,
+  "speed": { "walk": 30, "climb": 30 }
+}

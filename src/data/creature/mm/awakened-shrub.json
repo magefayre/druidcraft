@@ -1,0 +1,26 @@
+{
+  "name": "Awakened Shrub",
+  "ability": { "str": 3, "dex": 8, "con": 11, "int": 10, "wis": 10, "cha": 6 },
+  "action": [
+    {
+      "name": "Rake",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}1 ({@damage 1d4 - 1}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 10, "formula": "3d6" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the shrub remains motionless, it is indistinguishable from a normal shrub."
+      ]
+    }
+  ],
+  "type": "plant",
+  "cr": 0,
+  "speed": { "walk": 20 }
+}

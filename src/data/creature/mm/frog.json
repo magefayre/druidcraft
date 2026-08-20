@@ -1,0 +1,25 @@
+{
+  "name": "Frog",
+  "ability": { "str": 1, "dex": 13, "con": 8, "int": 1, "wis": 8, "cha": 3 },
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "senses": ["darkvision 30 ft."],
+  "skill": { "perception": "+1", "stealth": "+3" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The frog can breathe air and water."]
+    },
+    {
+      "name": "Standing Leap",
+      "entries": [
+        "The frog's long jump is up to 10 feet and its high jump is up to 5 feet, with or without a running start."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 1,
+  "speed": { "walk": 20, "swim": 20 }
+}

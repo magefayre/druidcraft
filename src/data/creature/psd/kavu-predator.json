@@ -1,0 +1,35 @@
+{
+  "name": "Kavu Predator",
+  "ability": { "str": 18, "dex": 12, "con": 15, "int": 6, "wis": 14, "cha": 8 },
+  "action": [
+    { "name": "Multiattack", "entries": ["The kavu makes two claw attacks."] },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 75, "formula": "10d10 + 20" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+4", "stealth": "+5" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the kavu moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the kavu can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 2,
+  "speed": { "walk": 30, "climb": 30 }
+}

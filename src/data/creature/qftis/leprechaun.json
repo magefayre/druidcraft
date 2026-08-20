@@ -1,0 +1,53 @@
+{
+  "name": "Leprechaun",
+  "ability": {
+    "str": 6,
+    "dex": 17,
+    "con": 16,
+    "int": 12,
+    "wis": 14,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The leprechaun makes two Cobbler's Hammer attacks and can use Spellcasting."
+      ]
+    },
+    {
+      "name": "Cobbler's Hammer",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) bludgeoning damage plus 13 ({@damage 3d8}) force damage. If the target is a creature, its speed is halved until the start of the leprechaun's next turn."
+      ]
+    },
+    {
+      "name": "Gift of Luck (1/Day)",
+      "entries": [
+        "The leprechaun touches a creature and magically gifts the target a measure of luck. The creature gains the leprechaun's Astonishing Luck reaction. The creature can use the reaction three times, after which this gift goes away. The leprechaun can revoke this gift from a creature at any time (no action required). A creature can benefit from only one leprechaun's Gift of Luck at a time."
+      ]
+    }
+  ],
+  "alignment": ["N"],
+  "hp": { "average": 52, "formula": "8d6 + 24" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+4", "sleight of hand": "+7", "stealth": "+5" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Industrious",
+      "entries": [
+        "The leprechaun is proficient with all artisan's tools and adds double its proficiency bonus to ability checks made with them."
+      ]
+    },
+    {
+      "name": "Reluctant Refusal",
+      "entries": [
+        "When a creature offers the leprechaun the chance to partake in merriment or revelry such as a song, a dance, or a good meal, the leprechaun must succeed on a {@dc 15} Wisdom saving throw or have the {@condition charmed} condition for 24 hours. While {@condition charmed} in this way, the leprechaun partakes of the offering, treats the creature as a trusted friend, and seeks to defend it from harm. The {@condition charmed} condition ends if the creature or any of its allies damage the leprechaun, force the leprechaun to make a saving throw, or steal from the leprechaun."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 4,
+  "speed": { "walk": 30 }
+}

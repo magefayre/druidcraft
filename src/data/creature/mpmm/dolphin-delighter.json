@@ -1,0 +1,37 @@
+{
+  "name": "Dolphin Delighter",
+  "ability": {
+    "str": 14,
+    "dex": 13,
+    "con": 13,
+    "int": 11,
+    "wis": 12,
+    "cha": 16
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The dolphin makes two Dazzling Slam attacks."]
+    },
+    {
+      "name": "Dazzling Slam",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage plus 7 ({@damage 2d6}) psychic damage, and the target is {@condition blinded} until the start of the dolphin's next turn."
+      ]
+    }
+  ],
+  "alignment": ["C", "G"],
+  "hp": { "average": 27, "formula": "5d8 + 5" },
+  "senses": ["blindsight 60 ft."],
+  "skill": { "perception": "+3", "performance": "+5" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The dolphin can hold its breath for 20 minutes."]
+    }
+  ],
+  "type": "fey",
+  "cr": 3,
+  "speed": { "walk": 0, "swim": 60 }
+}

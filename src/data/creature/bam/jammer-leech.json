@@ -1,0 +1,31 @@
+{
+  "name": "Jammer Leech",
+  "ability": { "str": 11, "dex": 1, "con": 16, "int": 1, "wis": 10, "cha": 1 },
+  "action": [
+    {
+      "name": "Spiked Tentacle",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d4}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 27, "formula": "5d4 + 15" },
+  "senses": ["darkvision 30 ft."],
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Spelljammer Overload",
+      "entries": [
+        "If the leech is reduced to 0 hit points while attached to a ship that has a spelljamming helm, the creature attuned to that helm must make a {@dc 13} Constitution saving throw. On a failed save, the creature takes 10 ({@damage 4d4}) psychic damage and is {@condition incapacitated} for 1 minute. On a successful save, the creature takes half as much damage and is {@condition incapacitated} until the end of its next turn."
+      ]
+    },
+    {
+      "name": "Unusual Nature",
+      "entries": ["The leech doesn't require air or sleep."]
+    }
+  ],
+  "type": "plant",
+  "cr": 1,
+  "speed": { "walk": 10 }
+}

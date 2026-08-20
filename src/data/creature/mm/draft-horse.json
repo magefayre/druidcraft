@@ -1,0 +1,19 @@
+{
+  "name": "Draft Horse",
+  "ability": { "str": 18, "dex": 10, "con": 12, "int": 2, "wis": 11, "cha": 7 },
+  "action": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d4 + 4}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "size": ["L"],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 2,
+  "speed": { "walk": 40 }
+}

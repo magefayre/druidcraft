@@ -1,0 +1,38 @@
+{
+  "name": "Velociraptor",
+  "ability": { "str": 6, "dex": 14, "con": 13, "int": 4, "wis": 12, "cha": 6 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The velociraptor makes one Bite attack and one Claw attack."]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 10, "formula": "3d4 + 3" },
+  "skill": { "perception": "+3" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The velociraptor has advantage on an attack roll against a creature if at least one of the velociraptor's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 4,
+  "speed": { "walk": 30 }
+}

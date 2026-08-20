@@ -1,0 +1,34 @@
+{
+  "name": "Dohwar",
+  "ability": {
+    "str": 5,
+    "dex": 12,
+    "con": 11,
+    "int": 11,
+    "wis": 14,
+    "cha": 13
+  },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["A"],
+  "hp": { "average": 10, "formula": "3d6" },
+  "skill": { "deception": "+3", "insight": "+4", "persuasion": "+3" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Merging",
+      "entries": [
+        "Two dohwars can have a telepathic conversation with each other and a third willing creature of their choice, provided all three are within 30 feet of one another."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 0,
+  "speed": { "walk": 20, "swim": 20 }
+}

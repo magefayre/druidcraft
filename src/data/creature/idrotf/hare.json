@@ -1,0 +1,19 @@
+{
+  "name": "Hare",
+  "ability": { "str": 1, "dex": 17, "con": 9, "int": 2, "wis": 11, "cha": 4 },
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "skill": { "perception": "+2", "stealth": "+5" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Escape",
+      "entries": [
+        "The hare can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action on each of its turns."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "speed": { "walk": 20, "burrow": 5 }
+}

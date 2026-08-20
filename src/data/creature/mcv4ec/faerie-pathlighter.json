@@ -1,0 +1,40 @@
+{
+  "name": "Faerie Pathlighter",
+  "ability": {
+    "str": 10,
+    "dex": 14,
+    "con": 12,
+    "int": 13,
+    "wis": 17,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The faerie makes two Shining Strike attacks."]
+    },
+    {
+      "name": "Shining Strike",
+      "entries": [
+        "{@atk ms,rs} {@hit 6} to hit, reach 5 ft. or range 30 ft., one target. {@h}7 ({@damage 2d6}) radiant damage, and if the target is a creature, it must succeed on a {@dc 14} Dexterity saving throw or be wreathed in light until the end of the faerie's next turn. While a creature is wreathed in light, attack rolls against the creature have advantage, and the creature can't benefit from the {@condition invisible} condition."
+      ]
+    }
+  ],
+  "alignment": ["C", "G"],
+  "hp": { "average": 38, "formula": "7d8 + 7" },
+  "skill": { "insight": "+5", "perception": "+5", "survival": "+5" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Faerie Illumination",
+      "entries": ["The faerie sheds dim light in a 15-foot radius."]
+    }
+  ],
+  "type": "fey",
+  "cr": 2,
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Knucklehead Trout",
+  "ability": { "str": 14, "dex": 14, "con": 11, "int": 1, "wis": 6, "cha": 1 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 7, "formula": "2d6" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Water Breathing",
+      "entries": ["The trout can breathe only underwater."]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "speed": { "walk": 0, "swim": 30 }
+}

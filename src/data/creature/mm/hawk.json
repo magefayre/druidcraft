@@ -1,0 +1,28 @@
+{
+  "name": "Hawk",
+  "ability": { "str": 5, "dex": 16, "con": 8, "int": 2, "wis": 14, "cha": 6 },
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}1 slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "skill": { "perception": "+4" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The hawk has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 1,
+  "speed": { "walk": 10, "fly": 60 }
+}

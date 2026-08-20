@@ -1,0 +1,40 @@
+{
+  "name": "Cave Badger",
+  "ability": { "str": 13, "dex": 10, "con": 15, "int": 2, "wis": 12, "cha": 5 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The badger makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 13, "formula": "2d8 + 4" },
+  "senses": ["darkvision 30 ft.", "tremorsense 60 ft."],
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The badger has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 3,
+  "speed": { "walk": 30, "burrow": 15 }
+}

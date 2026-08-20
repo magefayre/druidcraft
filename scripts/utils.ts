@@ -78,12 +78,15 @@ export const fetchToken = async ({ source, name }: Partial<Creature>) => {
   )
 
   validateResponse(res)
+  ensureDir(filename)
 
+  Readable.fromWeb(res.body).pipe(createWriteStream(filename))
+}
+
+export const ensureDir = (filename: string) => {
   const dir = dirname(filename)
 
   if (!existsSync(dir)) {
     mkdirSync(dir, { recursive: true })
   }
-
-  Readable.fromWeb(res.body).pipe(createWriteStream(filename))
 }

@@ -1,0 +1,28 @@
+{
+  "name": "Cat",
+  "ability": { "str": 3, "dex": 15, "con": 10, "int": 3, "wis": 12, "cha": 7 },
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 2, "formula": "1d4" },
+  "skill": { "perception": "+3", "stealth": "+4" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The cat has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 3,
+  "speed": { "walk": 40, "climb": 30 }
+}

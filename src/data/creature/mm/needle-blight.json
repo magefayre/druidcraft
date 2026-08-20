@@ -1,0 +1,25 @@
+{
+  "name": "Needle Blight",
+  "ability": { "str": 12, "dex": 12, "con": 13, "int": 4, "wis": 8, "cha": 3 },
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) piercing damage."
+      ]
+    },
+    {
+      "name": "Needles",
+      "entries": [
+        "{@atk rw} {@hit 3} to hit, range 30/60 ft., one target. {@h}8 ({@damage 2d6 + 1}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "size": ["M"],
+  "type": "plant",
+  "cr": 0.25,
+  "speed": { "walk": 30 }
+}

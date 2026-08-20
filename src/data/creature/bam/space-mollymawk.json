@@ -1,0 +1,31 @@
+{
+  "name": "Space Mollymawk",
+  "ability": { "str": 6, "dex": 14, "con": 11, "int": 3, "wis": 12, "cha": 3 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 3, "formula": "1d6" },
+  "skill": { "perception": "+5" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The mollymawk doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": ["The mollymawk can hold its breath for 15 minutes."]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "speed": { "walk": 10, "fly": 50 }
+}
