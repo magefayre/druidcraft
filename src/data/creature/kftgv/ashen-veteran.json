@@ -1,4 +1,12 @@
 {
+  "name": "Ashen Veteran",
+  "source": "KftGV",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["L", "E"],
+  "ac": [{ "ac": 17, "from": ["{@item splint armor|phb}"] }],
+  "hp": { "average": 58, "formula": "9d8 + 18" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 16,
     "dex": 13,
@@ -7,7 +15,10 @@
     "wis": 11,
     "cha": 10
   },
-  "ac": [{ "ac": 17, "from": ["{@item splint armor|phb}"] }],
+  "skill": { "athletics": 5, "perception": 2 },
+  "immune": ["fire"],
+  "languages": ["any one language (usually Common)"],
+  "cr": 3,
   "action": [
     {
       "name": "Multiattack",
@@ -33,15 +44,5 @@
         "{@atk rw} {@hit 3} to hit, range 100/400 ft., one target. {@h}6 ({@damage 1d10 + 1}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["L", "E"],
-  "cr": 3,
-  "hp": { "average": 58, "formula": "9d8 + 18" },
-  "languages": ["any one language (usually Common)"],
-  "size": "M",
-  "skill": { "athletics": 5, "perception": 2 },
-  "name": "Ashen Veteran",
-  "source": "KftGV",
-  "speed": { "walk": 30 },
-  "type": "elemental"
+  ]
 }

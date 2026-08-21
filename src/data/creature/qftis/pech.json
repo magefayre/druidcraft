@@ -1,4 +1,12 @@
 {
+  "name": "Pech",
+  "source": "QftIS",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N", "G"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 82, "formula": "11d6 + 44" },
+  "speed": { "walk": 30, "burrow": 20 },
   "ability": {
     "str": 19,
     "dex": 11,
@@ -7,7 +15,26 @@
     "wis": 14,
     "cha": 10
   },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "save": { "con": 6, "wis": 4 },
+  "skill": { "athletics": 6, "perception": 4, "survival": 4 },
+  "condition": ["petrified"],
+  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "languages": ["Common", "Terran"],
+  "cr": 4,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The pech has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Sunlight Sensitivity",
+      "entries": [
+        "While in sunlight, the pech has disadvantage on attack rolls."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -27,30 +54,5 @@
         "The pech casts {@spell Stone Shape}, requiring no spell components and using Wisdom as the spellcasting ability."
       ]
     }
-  ],
-  "alignment": ["N", "G"],
-  "cr": 4,
-  "hp": { "average": 82, "formula": "11d6 + 44" },
-  "languages": ["Common", "Terran"],
-  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
-  "size": "S",
-  "skill": { "athletics": 6, "perception": 4, "survival": 4 },
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The pech has advantage on saving throws against spells and other magical effects."
-      ]
-    },
-    {
-      "name": "Sunlight Sensitivity",
-      "entries": [
-        "While in sunlight, the pech has disadvantage on attack rolls."
-      ]
-    }
-  ],
-  "name": "Pech",
-  "source": "QftIS",
-  "speed": { "walk": 30, "burrow": 20 },
-  "type": "elemental"
+  ]
 }

@@ -1,19 +1,14 @@
 {
-  "ability": { "str": 14, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
-  "ac": [10],
-  "action": [
-    {
-      "name": "Hooves",
-      "entries": [
-        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "name": "Mule",
+  "source": "MM",
   "size": "M",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [10],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 14, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "cr": 0.125,
   "trait": [
     {
       "name": "Beast of Burden",
@@ -28,8 +23,12 @@
       ]
     }
   ],
-  "name": "Mule",
-  "source": "MM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage."
+      ]
+    }
+  ]
 }

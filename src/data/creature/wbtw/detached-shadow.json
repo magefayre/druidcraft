@@ -1,20 +1,39 @@
 {
-  "ability": { "str": 6, "dex": 14, "con": 13, "int": 6, "wis": 10, "cha": 8 },
+  "name": "Detached Shadow",
+  "source": "WBtW",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "E"],
   "ac": [12],
-  "action": [
+  "hp": { "average": 16, "formula": "3d8 + 3" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 6, "dex": 14, "con": 13, "int": 6, "wis": 10, "cha": 8 },
+  "skill": { "stealth": 4 },
+  "resist": [
+    "acid",
+    "cold",
+    "fire",
+    "lightning",
+    "thunder",
     {
-      "name": "Strength Drain",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}9 ({@damage 2d6 + 2}) necrotic damage, and the target's Strength score is reduced by {@dice 1d4}. The target falls {@condition unconscious} if this reduces its Strength to 0. The creature regains consciousness and the reduction to its Strength score disappears after it finishes a short or long rest."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["C", "E"],
-  "cr": 0.5,
-  "hp": { "average": 16, "formula": "3d8 + 3" },
+  "immune": ["necrotic", "poison"],
+  "condition": [
+    "exhaustion",
+    "frightened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "stealth": 4 },
+  "cr": 0.5,
   "trait": [
     {
       "name": "Amorphous",
@@ -35,8 +54,12 @@
       ]
     }
   ],
-  "name": "Detached Shadow",
-  "source": "WBtW",
-  "speed": { "walk": 40 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Strength Drain",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}9 ({@damage 2d6 + 2}) necrotic damage, and the target's Strength score is reduced by {@dice 1d4}. The target falls {@condition unconscious} if this reduces its Strength to 0. The creature regains consciousness and the reduction to its Strength score disappears after it finishes a short or long rest."
+      ]
+    }
+  ]
 }

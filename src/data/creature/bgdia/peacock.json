@@ -1,19 +1,15 @@
 {
-  "ability": { "str": 7, "dex": 10, "con": 13, "int": 2, "wis": 12, "cha": 4 },
-  "ac": [10],
-  "action": [
-    {
-      "name": "Beak",
-      "entries": [
-        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d4}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 5, "formula": "1d8 + 1" },
+  "name": "Peacock",
+  "source": "BGDIA",
   "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [10],
+  "hp": { "average": 5, "formula": "1d8 + 1" },
+  "speed": { "walk": 10, "fly": 50 },
+  "ability": { "str": 7, "dex": 10, "con": 13, "int": 2, "wis": 12, "cha": 4 },
   "skill": { "perception": 3 },
+  "cr": 0,
   "trait": [
     {
       "name": "Keen Sight and Smell",
@@ -28,8 +24,12 @@
       ]
     }
   ],
-  "name": "Peacock",
-  "source": "BGDIA",
-  "speed": { "walk": 10, "fly": 50 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Beak",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d4}) piercing damage."
+      ]
+    }
+  ]
 }

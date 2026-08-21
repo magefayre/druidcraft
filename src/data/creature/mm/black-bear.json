@@ -1,6 +1,23 @@
 {
-  "ability": { "str": 15, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 7 },
+  "name": "Black Bear",
+  "source": "MM",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 11, "from": ["natural armor"] }],
+  "hp": { "average": 19, "formula": "3d8 + 6" },
+  "speed": { "walk": 40, "climb": 30 },
+  "ability": { "str": 15, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 7 },
+  "skill": { "perception": 3 },
+  "cr": 0.5,
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,22 +37,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.5,
-  "hp": { "average": 19, "formula": "3d8 + 6" },
-  "size": "M",
-  "skill": { "perception": 3 },
-  "trait": [
-    {
-      "name": "Keen Smell",
-      "entries": [
-        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
-      ]
-    }
-  ],
-  "name": "Black Bear",
-  "source": "MM",
-  "speed": { "walk": 40, "climb": 30 },
-  "type": "beast"
+  ]
 }

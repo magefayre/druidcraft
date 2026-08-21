@@ -12,33 +12,33 @@
     "spell": "Summon Elemental"
   },
   {
-    "cr": 0,
     "name": "Chwinga",
     "source": "ToA",
+    "cr": 0,
     "speed": { "walk": 20, "climb": 20, "swim": 20 }
   },
   {
-    "cr": 0,
     "name": "Chwinga Astronaut",
     "source": "BAM",
+    "cr": 0,
     "speed": { "walk": 20, "climb": 20, "swim": 20 }
   },
   {
-    "cr": 0.125,
     "name": "Khargra",
     "source": "MFF",
+    "cr": 0.125,
     "speed": { "walk": 5, "fly": 30 }
   },
   {
-    "cr": 0.25,
     "name": "Art Elemental Mascot",
     "source": "SCC",
+    "cr": 0.25,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 0.25,
     "name": "Ashen Flying Sword",
     "source": "KftGV",
+    "cr": 0.25,
     "speed": {
       "walk": 0,
       "fly": { "number": 50, "condition": "(hover)" },
@@ -46,195 +46,195 @@
     }
   },
   {
-    "cr": 0.25,
     "name": "Fume Drake",
     "source": "DoSI",
+    "cr": 0.25,
     "speed": { "walk": 30, "fly": 30 }
   },
-  { "cr": 0.25, "name": "Geonid", "source": "TTP", "speed": { "walk": 30 } },
+  { "name": "Geonid", "source": "TTP", "cr": 0.25, "speed": { "walk": 30 } },
   {
-    "cr": 0.25,
     "name": "Mud Mephit",
     "source": "MM",
+    "cr": 0.25,
     "speed": { "walk": 20, "fly": 20, "swim": 20 }
   },
   {
-    "cr": 0.25,
     "name": "Smoke Mephit",
     "source": "MM",
+    "cr": 0.25,
     "speed": { "walk": 30, "fly": 30 }
   },
   {
-    "cr": 0.25,
     "name": "Steam Mephit",
     "source": "MM",
+    "cr": 0.25,
     "speed": { "walk": 30, "fly": 30 }
   },
   {
-    "cr": 0.5,
     "name": "Ashen Warhorse",
-    "rating": 3,
     "source": "KftGV",
+    "cr": 0.5,
+    "rating": 3,
     "speed": { "walk": 60 }
   },
   {
-    "cr": 0.5,
     "name": "Dust Mephit",
     "source": "MM",
+    "cr": 0.5,
     "speed": { "walk": 30, "fly": 30 }
   },
   {
-    "cr": 0.5,
     "name": "Firenewt Warrior",
     "source": "MPMM",
+    "cr": 0.5,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 0.5,
     "name": "Ice Mephit",
     "source": "MM",
+    "cr": 0.5,
     "speed": { "walk": 30, "fly": 30 }
   },
   {
-    "cr": 0.5,
     "name": "Magma Mephit",
     "source": "MM",
+    "cr": 0.5,
     "speed": { "walk": 30, "fly": 30 }
   },
-  { "cr": 0.5, "name": "Magmin", "source": "MM", "speed": { "walk": 30 } },
+  { "name": "Magmin", "source": "MM", "cr": 0.5, "speed": { "walk": 30 } },
   {
-    "cr": 1,
     "name": "Animated Drow Statue",
     "source": "OotA",
+    "cr": 1,
     "speed": { "walk": 25 }
   },
   {
-    "cr": 1,
     "name": "Ashen Animated Armor",
     "source": "KftGV",
+    "cr": 1,
     "speed": { "walk": 25 }
   },
-  { "cr": 1, "name": "Fire Snake", "source": "MM", "speed": { "walk": 30 } },
+  { "name": "Fire Snake", "source": "MM", "cr": 1, "speed": { "walk": 30 } },
   {
-    "cr": 1,
     "name": "Firenewt Warlock of Imix",
     "source": "MPMM",
+    "cr": 1,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 1,
     "name": "Galvanice Weird",
     "source": "GGR",
+    "cr": 1,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 1,
     "name": "Giant Strider",
     "source": "MPMM",
+    "cr": 1,
     "speed": { "walk": 50 }
   },
-  { "cr": 2, "name": "Azer", "source": "MM", "speed": { "walk": 30 } },
+  { "name": "Azer", "source": "MM", "cr": 2, "speed": { "walk": 30 } },
   {
-    "cr": 2,
     "name": "Four-Armed Gargoyle",
     "source": "TftYP",
+    "cr": 2,
     "speed": { "walk": 30, "fly": 60 }
   },
   {
-    "cr": 2,
     "name": "Gargoyle",
     "source": "MM",
+    "cr": 2,
     "speed": { "walk": 30, "fly": 60 }
   },
   {
-    "cr": 3,
     "name": "Ashen Knight",
     "source": "KftGV",
+    "cr": 3,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 3,
     "name": "Ashen Veteran",
     "source": "KftGV",
+    "cr": 3,
     "speed": { "walk": 30 }
   },
-  { "cr": 3, "name": "Flail Snail", "source": "MPMM", "speed": { "walk": 10 } },
-  { "cr": 3, "name": "Mud Hulk", "source": "BGG", "speed": { "walk": 40 } },
+  { "name": "Flail Snail", "source": "MPMM", "cr": 3, "speed": { "walk": 10 } },
+  { "name": "Mud Hulk", "source": "BGG", "cr": 3, "speed": { "walk": 40 } },
   {
-    "cr": 3,
     "name": "Water Weird",
     "source": "MM",
+    "cr": 3,
     "speed": { "walk": 0, "swim": 60 }
   },
   {
-    "cr": 3,
     "name": "Wine Weird",
     "source": "ToA",
+    "cr": 3,
     "speed": { "walk": 0, "swim": 60 }
   },
   {
-    "cr": 4,
     "name": "Blistercoil Weird",
     "source": "GGR",
+    "cr": 4,
     "speed": { "walk": 40, "swim": 60 }
   },
   {
-    "cr": 4,
     "name": "Pech",
     "source": "DitLCoT",
+    "cr": 4,
     "speed": { "walk": 30, "burrow": 20 }
   },
   {
-    "cr": 4,
     "name": "Pech",
     "source": "QftIS",
+    "cr": 4,
     "speed": { "walk": 30, "burrow": 20 }
   },
   {
-    "cr": 4,
     "name": "Poison Weird",
     "source": "WDMM",
+    "cr": 4,
     "speed": { "walk": 0, "swim": 60 }
   },
   {
-    "cr": 5,
     "name": "Acidic Mist Apparition",
     "source": "GotSF",
+    "cr": 5,
     "speed": {
       "fly": { "number": 90, "condition": "(hover)" },
       "canHover": true
     }
   },
   {
+    "name": "Air Elemental",
+    "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "name": "Air Elemental",
     "rating": 3,
-    "source": "MM",
     "speed": {
       "fly": { "number": 90, "condition": "(hover)" },
       "canHover": true
     }
   },
   {
-    "cr": 5,
     "name": "Air Totem Elemental",
     "source": "PSX",
+    "cr": 5,
     "speed": {
       "fly": { "number": 90, "condition": "(hover)" },
       "canHover": true
     }
   },
   {
-    "cr": 5,
     "name": "Ashen Shambling Mound",
     "source": "KftGV",
+    "cr": 5,
     "speed": { "walk": 20, "swim": 20 }
   },
   {
-    "cr": 5,
     "name": "Blaze",
     "source": "MCV3MC",
+    "cr": 5,
     "speed": {
       "walk": 20,
       "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
@@ -242,9 +242,9 @@
     }
   },
   {
-    "cr": 5,
     "name": "Dust Hulk",
     "source": "BGG",
+    "cr": 5,
     "speed": {
       "walk": 0,
       "fly": { "number": 30, "condition": "(hover)" },
@@ -252,65 +252,65 @@
     }
   },
   {
+    "name": "Earth Elemental",
+    "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "name": "Earth Elemental",
     "rating": 2,
-    "source": "MM",
     "speed": { "walk": 30, "burrow": 30 }
   },
   {
-    "cr": 5,
     "name": "Earth Totem Elemental",
     "source": "PSX",
+    "cr": 5,
     "speed": { "walk": 30, "burrow": 30 }
   },
   {
+    "name": "Fire Elemental",
+    "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "name": "Fire Elemental",
     "rating": 4,
-    "source": "MM",
     "speed": { "walk": 50 }
   },
   {
-    "cr": 5,
     "name": "Fire Guardian",
     "source": "PSX",
+    "cr": 5,
     "speed": { "walk": 50 }
   },
   {
-    "cr": 5,
     "name": "Murder Comet",
     "source": "BAM",
+    "cr": 5,
     "speed": { "walk": 0, "fly": 120 }
   },
-  { "cr": 5, "name": "Rime Hulk", "source": "BGG", "speed": { "walk": 30 } },
-  { "cr": 5, "name": "Salamander", "source": "MM", "speed": { "walk": 30 } },
+  { "name": "Rime Hulk", "source": "BGG", "cr": 5, "speed": { "walk": 30 } },
+  { "name": "Salamander", "source": "MM", "cr": 5, "speed": { "walk": 30 } },
   {
+    "name": "Water Elemental",
+    "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "name": "Water Elemental",
     "rating": 4,
-    "source": "MM",
     "speed": { "walk": 30, "swim": 90 }
   },
   {
-    "cr": 5,
     "name": "Water Totem Elemental",
     "source": "PSX",
+    "cr": 5,
     "speed": { "walk": 30, "swim": 90 }
   },
   {
-    "cr": 5,
     "name": "Xorn",
     "source": "MM",
+    "cr": 5,
     "speed": { "walk": 20, "burrow": 20 }
   },
   {
-    "cr": 6,
     "name": "Animated Breath",
     "source": "FTD",
+    "cr": 6,
     "speed": {
       "walk": 30,
       "fly": { "number": 30, "condition": "(hover)" },
@@ -318,9 +318,9 @@
     }
   },
   {
-    "cr": 6,
     "name": "Galeb Duhr",
     "source": "MM",
+    "cr": 6,
     "speed": {
       "walk": {
         "number": 15,
@@ -329,9 +329,9 @@
     }
   },
   {
-    "cr": 6,
     "name": "Invisible Stalker",
     "source": "MM",
+    "cr": 6,
     "speed": {
       "walk": 50,
       "fly": { "number": 50, "condition": "(hover)" },
@@ -339,9 +339,9 @@
     }
   },
   {
-    "cr": 6,
     "name": "Mist Hulk",
     "source": "BGG",
+    "cr": 6,
     "speed": {
       "walk": 0,
       "fly": { "number": 40, "condition": "(hover)" },
@@ -349,56 +349,56 @@
     }
   },
   {
-    "cr": 7,
     "name": "Air Elemental Myrmidon",
     "source": "MPMM",
+    "cr": 7,
     "speed": {
       "walk": 30,
       "fly": { "number": 30, "condition": "(hover)" },
       "canHover": true
     }
   },
-  { "cr": 7, "name": "Cinder Hulk", "source": "BGG", "speed": { "walk": 40 } },
+  { "name": "Cinder Hulk", "source": "BGG", "cr": 7, "speed": { "walk": 40 } },
   {
-    "cr": 7,
     "name": "Earth Elemental Myrmidon",
     "source": "MPMM",
+    "cr": 7,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 7,
     "name": "Fire Elemental Myrmidon",
     "source": "MPMM",
+    "cr": 7,
     "speed": { "walk": 40 }
   },
   {
-    "cr": 7,
     "name": "Fluxcharger",
     "source": "GGR",
+    "cr": 7,
     "speed": { "walk": 0, "fly": 60 }
   },
   {
-    "cr": 7,
     "name": "Water Elemental Myrmidon",
     "source": "MPMM",
+    "cr": 7,
     "speed": { "walk": 40, "swim": 40 }
   },
   {
-    "cr": 8,
     "name": "Big Xorn",
     "source": "WDMM",
+    "cr": 8,
     "speed": { "walk": 20, "burrow": 20 }
   },
   {
-    "cr": 9,
     "name": "Frost Salamander",
     "source": "MPMM",
+    "cr": 9,
     "speed": { "walk": 60, "burrow": 40, "climb": 40 }
   },
   {
-    "cr": 9,
     "name": "Lightning Hulk",
     "source": "BGG",
+    "cr": 9,
     "speed": {
       "walk": 0,
       "fly": { "number": 90, "condition": "(hover)" },

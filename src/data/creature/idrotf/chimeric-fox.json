@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 2, "dex": 16, "con": 11, "int": 3, "wis": 12, "cha": 6 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 2, "formula": "1d4" },
-  "senses": ["darkvision 60 ft."],
+  "name": "Chimeric Fox",
+  "source": "IDRotF",
   "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 2, "formula": "1d4" },
+  "speed": { "walk": 30, "burrow": 5 },
+  "ability": { "str": 2, "dex": 16, "con": 11, "int": 3, "wis": 12, "cha": 6 },
   "skill": { "perception": 3, "stealth": 5 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Keen Hearing",
@@ -23,8 +19,12 @@
       ]
     }
   ],
-  "name": "Chimeric Fox",
-  "source": "IDRotF",
-  "speed": { "walk": 30, "burrow": 5 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
+      ]
+    }
+  ]
 }

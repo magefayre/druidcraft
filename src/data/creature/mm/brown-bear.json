@@ -1,6 +1,23 @@
 {
-  "ability": { "str": 19, "dex": 10, "con": 16, "int": 2, "wis": 13, "cha": 7 },
+  "name": "Brown Bear",
+  "source": "MM",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 11, "from": ["natural armor"] }],
+  "hp": { "average": 34, "formula": "4d10 + 12" },
+  "speed": { "walk": 40, "climb": 30 },
+  "ability": { "str": 19, "dex": 10, "con": 16, "int": 2, "wis": 13, "cha": 7 },
+  "skill": { "perception": 3 },
+  "cr": 1,
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,22 +37,5 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 34, "formula": "4d10 + 12" },
-  "size": "L",
-  "skill": { "perception": 3 },
-  "trait": [
-    {
-      "name": "Keen Smell",
-      "entries": [
-        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
-      ]
-    }
-  ],
-  "name": "Brown Bear",
-  "source": "MM",
-  "speed": { "walk": 40, "climb": 30 },
-  "type": "beast"
+  ]
 }

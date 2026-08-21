@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 12, "dex": 16, "con": 13, "int": 3, "wis": 12, "cha": 4 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one creature. {@h}4 ({@damage 1d6 + 1}) piercing damage, and the target must make a {@dc 11} Constitution saving throw, taking 7 ({@damage 2d6}) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
-  "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "name": "Giant Wolf Spider",
+  "source": "MM",
   "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 40, "climb": 40 },
+  "ability": { "str": 12, "dex": 16, "con": 13, "int": 3, "wis": 12, "cha": 4 },
   "skill": { "perception": 3, "stealth": 7 },
+  "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "cr": 0.25,
   "trait": [
     {
       "name": "Spider Climb",
@@ -33,8 +29,12 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "name": "Giant Wolf Spider",
-  "source": "MM",
-  "speed": { "walk": 40, "climb": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one creature. {@h}4 ({@damage 1d6 + 1}) piercing damage, and the target must make a {@dc 11} Constitution saving throw, taking 7 ({@damage 2d6}) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but {@condition poisoned} for 1 hour, even after regaining hit points, and is {@condition paralyzed} while {@condition poisoned} in this way."
+      ]
+    }
+  ]
 }

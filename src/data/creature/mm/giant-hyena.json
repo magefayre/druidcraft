@@ -1,19 +1,15 @@
 {
-  "ability": { "str": 16, "dex": 14, "con": 14, "int": 2, "wis": 12, "cha": 7 },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 45, "formula": "6d10 + 12" },
+  "name": "Giant Hyena",
+  "source": "MM",
   "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 45, "formula": "6d10 + 12" },
+  "speed": { "walk": 50 },
+  "ability": { "str": 16, "dex": 14, "con": 14, "int": 2, "wis": 12, "cha": 7 },
   "skill": { "perception": 3 },
+  "cr": 1,
   "trait": [
     {
       "name": "Rampage",
@@ -22,8 +18,12 @@
       ]
     }
   ],
-  "name": "Giant Hyena",
-  "source": "MM",
-  "speed": { "walk": 50 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) piercing damage."
+      ]
+    }
+  ]
 }

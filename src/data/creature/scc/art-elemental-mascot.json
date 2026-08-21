@@ -1,6 +1,27 @@
 {
-  "ability": { "str": 6, "dex": 13, "con": 12, "int": 8, "wis": 11, "cha": 15 },
+  "name": "Art Elemental Mascot",
+  "source": "SCC",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N"],
   "ac": [11],
+  "hp": { "average": 18, "formula": "4d6 + 4" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 6, "dex": 13, "con": 12, "int": 8, "wis": 11, "cha": 15 },
+  "skill": { "performance": 4 },
+  "resist": ["cold", "fire"],
+  "immune": ["poison"],
+  "condition": ["poisoned"],
+  "languages": ["understands the languages of its creator but can't speak"],
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the elemental dies, it explodes in a burst of colored light. Each creature within 5 feet of the elemental must succeed on a {@dc 11} Constitution saving throw or be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Joyful Flare",
@@ -20,23 +41,5 @@
         "The elemental targets one creature it can see within 30 feet of itself. The target must succeed on a {@dc 12} Charisma saving throw or be {@condition charmed} for 1 minute. The {@condition charmed} target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 0.25,
-  "hp": { "average": 18, "formula": "4d6 + 4" },
-  "languages": ["understands the languages of its creator but can't speak"],
-  "size": "S",
-  "skill": { "performance": 4 },
-  "trait": [
-    {
-      "name": "Death Burst",
-      "entries": [
-        "When the elemental dies, it explodes in a burst of colored light. Each creature within 5 feet of the elemental must succeed on a {@dc 11} Constitution saving throw or be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the save at the end of each of its turns, ending the effect on itself on a success."
-      ]
-    }
-  ],
-  "name": "Art Elemental Mascot",
-  "source": "SCC",
-  "speed": { "walk": 30 },
-  "type": "elemental"
+  ]
 }

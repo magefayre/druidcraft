@@ -1,6 +1,16 @@
 {
-  "ability": { "str": 19, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "name": "Giant White Moray Eel",
+  "source": "GoS",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [12],
+  "hp": { "average": 60, "formula": "8d12 + 8" },
+  "speed": { "walk": 0, "swim": 40 },
+  "ability": { "str": 19, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "skill": { "perception": 2, "stealth": 4 },
+  "senses": ["blindsight 10 ft."],
+  "cr": 2,
   "action": [
     {
       "name": "Bite",
@@ -14,15 +24,5 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one creature. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 16}). Until this grapple ends, the creature is {@condition restrained}, and the snake can't constrict another target."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 2,
-  "hp": { "average": 60, "formula": "8d12 + 8" },
-  "senses": ["blindsight 10 ft."],
-  "size": "H",
-  "skill": { "perception": 2, "stealth": 4 },
-  "name": "Giant White Moray Eel",
-  "source": "GoS",
-  "speed": { "walk": 0, "swim": 40 },
-  "type": "beast"
+  ]
 }

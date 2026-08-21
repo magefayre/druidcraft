@@ -1,6 +1,22 @@
 {
-  "ability": { "str": 24, "dex": 9, "con": 21, "int": 3, "wis": 11, "cha": 6 },
+  "name": "Terastodon",
+  "source": "PSZ",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 126, "formula": "11d12 + 55" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 24, "dex": 9, "con": 21, "int": 3, "wis": 11, "cha": 6 },
+  "cr": 6,
+  "trait": [
+    {
+      "name": "Trampling Charge",
+      "entries": [
+        "If the mammoth moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a {@dc 18} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the mammoth can make one stomp attack against it as a bonus action."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Gore",
@@ -14,22 +30,5 @@
         "{@atk mw} {@hit 10} to hit, reach 5 ft., one {@condition prone} creature. {@h}29 ({@damage 4d10 + 7}) bludgeoning damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 6,
-  "hp": { "average": 126, "formula": "11d12 + 55" },
-  "size": "H",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Trampling Charge",
-      "entries": [
-        "If the mammoth moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a {@dc 18} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the mammoth can make one stomp attack against it as a bonus action."
-      ]
-    }
-  ],
-  "name": "Terastodon",
-  "source": "PSZ",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

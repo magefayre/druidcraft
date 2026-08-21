@@ -1,4 +1,12 @@
 {
+  "name": "Conclave Dryad",
+  "source": "GGR",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["L", "G"],
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "hp": { "average": 143, "formula": "22d8 + 44" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 12,
     "dex": 19,
@@ -7,7 +15,26 @@
     "wis": 20,
     "cha": 21
   },
-  "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "save": { "int": 8, "wis": 9, "cha": 9 },
+  "skill": { "arcana": 8, "nature": 8, "perception": 9 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Elvish", "Sylvan"],
+  "cr": 9,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The dryad has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "type": "entries",
+      "name": "Speak with Beasts and Plants",
+      "entries": [
+        "The dryad can communicate with beasts and plants as if they and the dryad shared a language."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -39,31 +66,5 @@
         "The dryad targets one magic item it can see within 120 feet of it. If the magic item isn't an artifact, its magical properties are suppressed for 10 minutes, until the dryad is {@condition incapacitated} or dies, or until the dryad uses a bonus action to end the effect."
       ]
     }
-  ],
-  "alignment": ["L", "G"],
-  "cr": 9,
-  "hp": { "average": 143, "formula": "22d8 + 44" },
-  "languages": ["Common", "Elvish", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "arcana": 8, "nature": 8, "perception": 9 },
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The dryad has advantage on saving throws against spells and other magical effects."
-      ]
-    },
-    {
-      "type": "entries",
-      "name": "Speak with Beasts and Plants",
-      "entries": [
-        "The dryad can communicate with beasts and plants as if they and the dryad shared a language."
-      ]
-    }
-  ],
-  "name": "Conclave Dryad",
-  "source": "GGR",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

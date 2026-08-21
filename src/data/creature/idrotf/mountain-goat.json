@@ -1,19 +1,14 @@
 {
-  "ability": { "str": 14, "dex": 12, "con": 14, "int": 2, "wis": 10, "cha": 5 },
-  "ac": [11],
-  "action": [
-    {
-      "name": "Ram",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 13, "formula": "2d8 + 4" },
+  "name": "Mountain Goat",
+  "source": "IDRotF",
   "size": "M",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [11],
+  "hp": { "average": 13, "formula": "2d8 + 4" },
+  "speed": { "walk": 40, "climb": 30 },
+  "ability": { "str": 14, "dex": 12, "con": 14, "int": 2, "wis": 10, "cha": 5 },
+  "cr": 0.125,
   "trait": [
     {
       "name": "Charge",
@@ -28,8 +23,12 @@
       ]
     }
   ],
-  "name": "Mountain Goat",
-  "source": "IDRotF",
-  "speed": { "walk": 40, "climb": 30 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Ram",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
+      ]
+    }
+  ]
 }

@@ -1,4 +1,12 @@
 {
+  "name": "Killmoulis",
+  "source": "MFF",
+  "size": "T",
+  "type": "fey",
+  "alignment": ["N"],
+  "ac": [14],
+  "hp": { "average": 7, "formula": "2d4 + 2" },
+  "speed": { "walk": 30, "climb": 30 },
   "ability": {
     "str": 4,
     "dex": 19,
@@ -7,7 +15,10 @@
     "wis": 14,
     "cha": 13
   },
-  "ac": [14],
+  "skill": { "history": 3, "perception": 4, "stealth": 8 },
+  "senses": ["darkvision 30 ft."],
+  "languages": ["Common", "Sylvan", "telepathy 60 ft."],
+  "cr": 0,
   "action": [
     {
       "name": "Slam",
@@ -27,16 +38,5 @@
         "The killmoulis targets up to eight creatures within 100 feet of it that it can see. The next time a target completes a long rest, it does not regain spent Hit Dice."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 0,
-  "hp": { "average": 7, "formula": "2d4 + 2" },
-  "languages": ["Common", "Sylvan", "telepathy 60 ft."],
-  "senses": ["darkvision 30 ft."],
-  "size": "T",
-  "skill": { "history": 3, "perception": 4, "stealth": 8 },
-  "name": "Killmoulis",
-  "source": "MFF",
-  "speed": { "walk": 30, "climb": 30 },
-  "type": "fey"
+  ]
 }

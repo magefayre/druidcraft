@@ -1,4 +1,16 @@
 {
+  "name": "Mist Hulk",
+  "source": "BGG",
+  "size": "L",
+  "type": "elemental",
+  "alignment": ["C", "N"],
+  "ac": [15],
+  "hp": { "average": 94, "formula": "9d10 + 45" },
+  "speed": {
+    "walk": 0,
+    "fly": { "number": 40, "condition": "(hover)" },
+    "canHover": true
+  },
   "ability": {
     "str": 18,
     "dex": 21,
@@ -7,7 +19,27 @@
     "wis": 13,
     "cha": 16
   },
-  "ac": [15],
+  "save": { "con": 8, "wis": 4, "cha": 6 },
+  "skill": { "perception": 4, "stealth": 8 },
+  "resist": ["thunder"],
+  "immune": ["poison"],
+  "condition": ["exhaustion", "paralyzed", "poisoned", "restrained"],
+  "languages": ["Auran", "Giant"],
+  "cr": 6,
+  "trait": [
+    {
+      "name": "Air Form",
+      "entries": [
+        "The mist hulk can enter another creature's space and stop there. It can move through a space as narrow as 1 inch without squeezing."
+      ]
+    },
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mist hulk dies, it bursts in a wave of water. Each creature within 10 feet of it must make a {@dc 16} Dexterity saving throw. On a failed save, a creature takes 11 ({@damage 2d10}) bludgeoning damage and has the {@condition prone} condition. On a successful save, a creature takes half as much damage only."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -25,33 +57,5 @@
         "The mist hulk releases a wail infused with magical anguish. Each creature within 30 feet of it must make a {@dc 14} Wisdom saving throw. A creature in the mist hulk's space has disadvantage on the saving throw. On a failed save, a creature takes 14 ({@damage 4d6}) psychic damage and has the {@condition incapacitated} condition for 1 minute. The affected creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
       ]
     }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 6,
-  "hp": { "average": 94, "formula": "9d10 + 45" },
-  "languages": ["Auran", "Giant"],
-  "size": "L",
-  "skill": { "perception": 4, "stealth": 8 },
-  "trait": [
-    {
-      "name": "Air Form",
-      "entries": [
-        "The mist hulk can enter another creature's space and stop there. It can move through a space as narrow as 1 inch without squeezing."
-      ]
-    },
-    {
-      "name": "Death Burst",
-      "entries": [
-        "When the mist hulk dies, it bursts in a wave of water. Each creature within 10 feet of it must make a {@dc 16} Dexterity saving throw. On a failed save, a creature takes 11 ({@damage 2d10}) bludgeoning damage and has the {@condition prone} condition. On a successful save, a creature takes half as much damage only."
-      ]
-    }
-  ],
-  "name": "Mist Hulk",
-  "source": "BGG",
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 40, "condition": "(hover)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  ]
 }

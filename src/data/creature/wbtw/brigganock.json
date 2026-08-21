@@ -1,4 +1,12 @@
 {
+  "name": "Brigganock",
+  "source": "WBtW",
+  "size": "T",
+  "type": "fey",
+  "alignment": ["N", "G"],
+  "ac": [12],
+  "hp": { "average": 9, "formula": "2d4 + 4" },
+  "speed": { "walk": 15 },
   "ability": {
     "str": 4,
     "dex": 15,
@@ -7,35 +15,10 @@
     "wis": 11,
     "cha": 13
   },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Pickaxe",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
-      ]
-    },
-    {
-      "name": "Time Lapse (Recharges after a Short or Long Rest)",
-      "entries": [
-        "The brigganock accelerates the passage of time around itself, enabling it to accomplish up to 1 hour of work in a matter of seconds. This work can't affect any creature other than the brigganock, or any object being worn or carried by another creature, and the activity must take place within a 10-foot cube. For example, the brigganock could use this action to rapidly carve a pumpkin, cook and eat dinner, move a pile of stones, or tie a dozen knots in a length of rope."
-      ]
-    }
-  ],
-  "alignment": ["N", "G"],
-  "bonus": [
-    {
-      "name": "Move Soul Light",
-      "entries": [
-        "The brigganock moves its soul light up to 30 feet in any direction to an unoccupied space it can see. At the end of the current turn, the light returns to the brigganock."
-      ]
-    }
-  ],
-  "cr": 0.125,
-  "hp": { "average": 9, "formula": "2d4 + 4" },
+  "save": { "dex": 4, "con": 4 },
+  "condition": ["exhaustion"],
   "languages": ["Common", "Sylvan"],
-  "size": "T",
-  "skill": {},
+  "cr": 0.125,
   "trait": [
     {
       "name": "Fey Ancestry",
@@ -56,8 +39,26 @@
       ]
     }
   ],
-  "name": "Brigganock",
-  "source": "WBtW",
-  "speed": { "walk": 15 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Pickaxe",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Time Lapse (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The brigganock accelerates the passage of time around itself, enabling it to accomplish up to 1 hour of work in a matter of seconds. This work can't affect any creature other than the brigganock, or any object being worn or carried by another creature, and the activity must take place within a 10-foot cube. For example, the brigganock could use this action to rapidly carve a pumpkin, cook and eat dinner, move a pile of stones, or tie a dozen knots in a length of rope."
+      ]
+    }
+  ],
+  "bonus": [
+    {
+      "name": "Move Soul Light",
+      "entries": [
+        "The brigganock moves its soul light up to 30 feet in any direction to an unoccupied space it can see. At the end of the current turn, the light returns to the brigganock."
+      ]
+    }
+  ]
 }

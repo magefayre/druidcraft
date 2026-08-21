@@ -1,4 +1,12 @@
 {
+  "name": "Clawfoot",
+  "source": "ERLW",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 19, "formula": "3d8 + 6" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 12,
     "dex": 16,
@@ -7,7 +15,22 @@
     "wis": 12,
     "cha": 10
   },
-  "ac": [13],
+  "skill": { "perception": 3, "stealth": 5 },
+  "cr": 1,
+  "trait": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The clawfoot has advantage on an attack roll against a creature if at least one of the clawfoot's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    },
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the clawfoot moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the clawfoot can make one bite attack against it as a bonus action."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -27,28 +50,5 @@
         "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 19, "formula": "3d8 + 6" },
-  "size": "M",
-  "skill": { "perception": 3, "stealth": 5 },
-  "trait": [
-    {
-      "name": "Pack Tactics",
-      "entries": [
-        "The clawfoot has advantage on an attack roll against a creature if at least one of the clawfoot's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
-      ]
-    },
-    {
-      "name": "Pounce",
-      "entries": [
-        "If the clawfoot moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the clawfoot can make one bite attack against it as a bonus action."
-      ]
-    }
-  ],
-  "name": "Clawfoot",
-  "source": "ERLW",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

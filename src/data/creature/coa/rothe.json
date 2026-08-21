@@ -1,6 +1,15 @@
 {
-  "ability": { "str": 18, "dex": 10, "con": 14, "int": 2, "wis": 10, "cha": 4 },
+  "name": "Rothé",
+  "source": "CoA",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [10],
+  "hp": { "average": 15, "formula": "2d10 + 4" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 18, "dex": 10, "con": 14, "int": 2, "wis": 10, "cha": 4 },
+  "senses": ["darkvision 30 ft."],
+  "cr": 0.25,
   "action": [
     {
       "name": "Gore",
@@ -8,15 +17,5 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage. If the rothé moved at least 20 feet straight towards this target immediately before the hit, the target takes an extra 7 ({@damage 2d6}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 15, "formula": "2d10 + 4" },
-  "senses": ["darkvision 30 ft."],
-  "size": "L",
-  "skill": {},
-  "name": "Rothé",
-  "source": "CoA",
-  "speed": { "walk": 30 },
-  "type": "beast"
+  ]
 }

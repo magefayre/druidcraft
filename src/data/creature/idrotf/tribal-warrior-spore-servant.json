@@ -1,6 +1,18 @@
 {
-  "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 6, "cha": 1 },
+  "name": "Tribal Warrior Spore Servant",
+  "source": "IDRotF",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["U"],
   "ac": [{ "ac": 12, "from": ["{@item hide armor|phb}"] }],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 20 },
+  "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 6, "cha": 1 },
+  "condition": ["blinded", "charmed", "frightened", "paralyzed"],
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "languages": null,
+  "cr": 0.125,
+  "trait": null,
   "action": [
     {
       "name": "Spear",
@@ -8,17 +20,5 @@
         "{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage, or 5 ({@damage 1d8 + 1}) piercing damage if used with two hands to make a melee attack."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
-  "languages": null,
-  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
-  "size": "M",
-  "skill": {},
-  "trait": null,
-  "name": "Tribal Warrior Spore Servant",
-  "source": "IDRotF",
-  "speed": { "walk": 20 },
-  "type": "plant"
+  ]
 }

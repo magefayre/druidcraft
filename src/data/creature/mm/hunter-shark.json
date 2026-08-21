@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 18, "dex": 13, "con": 15, "int": 1, "wis": 10, "cha": 4 },
-  "ac": [{ "ac": 12, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 2,
-  "hp": { "average": 45, "formula": "6d10 + 12" },
-  "senses": ["blindsight 30 ft."],
+  "name": "Hunter Shark",
+  "source": "MM",
   "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 45, "formula": "6d10 + 12" },
+  "speed": { "swim": 40 },
+  "ability": { "str": 18, "dex": 13, "con": 15, "int": 1, "wis": 10, "cha": 4 },
   "skill": { "perception": 2 },
+  "senses": ["blindsight 30 ft."],
+  "cr": 2,
   "trait": [
     {
       "name": "Blood Frenzy",
@@ -27,8 +23,12 @@
       "entries": ["The shark can breathe only underwater."]
     }
   ],
-  "name": "Hunter Shark",
-  "source": "MM",
-  "speed": { "swim": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) piercing damage."
+      ]
+    }
+  ]
 }

@@ -7,16 +7,16 @@ import yargs from 'yargs'
 import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
 import type {
+  Ability,
   Creature,
   CreatureDetails,
   Features,
   Monster,
   MonsterRatings,
   Monsters,
-  MonsterSkills,
   MonsterType,
   Size,
-  Skills
+  Skill
 } from '~types'
 import {
   getCircleFormsCR,
@@ -62,11 +62,16 @@ const parseRating = (
 
 const parseSize = (sizes: Size[]) => sizes.at(0)
 
-const parseSkill = (skills: MonsterSkills = {}) =>
-  Object.entries(skills).reduce<Skills>(
-    (skills, [skill, modifier]) => ({ ...skills, [skill]: parseInt(modifier) }),
+const parseModifiers = <T extends string>(
+  skills: Partial<Record<T, string>>
+) => {
+  if (!skills) return undefined
+
+  return Object.keys(skills).reduce(
+    (parsed, key) => ({ ...parsed, [key]: parseInt(skills[key]) }),
     {}
   )
+}
 
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
@@ -129,11 +134,14 @@ const filterMonsters = (
       bonus,
       cha,
       con,
+      conditionImmune: condition,
       dex,
       hp,
+      immune,
       int,
       languages,
       name,
+      resist,
       senses,
       str,
       trait,
@@ -144,32 +152,35 @@ const filterMonsters = (
       ? parseRating(base?.name ?? name, features, ratings)
       : undefined
     const summary: Creature = {
+      name,
+      source,
       cr,
       features,
-      name,
       rating,
-      source,
       speed,
       spell
     }
     const details: CreatureDetails = {
-      // TODO: immunities + resistances
-      ability: { str, dex, con, int, wis, cha },
-      ac,
-      action,
-      alignment,
-      bonus,
-      cr,
-      hp,
-      languages,
-      senses,
-      size: parseSize(monster.size),
-      skill: parseSkill(monster.skill),
-      trait,
       name,
       source,
+      size: parseSize(monster.size),
+      type,
+      alignment,
+      ac,
+      hp,
       speed,
-      type
+      ability: { str, dex, con, int, wis, cha },
+      save: parseModifiers<Ability>(monster.save),
+      skill: parseModifiers<Skill>(monster.skill),
+      resist,
+      immune,
+      condition,
+      senses,
+      languages,
+      cr,
+      trait,
+      action,
+      bonus
     }
 
     return [...creatures, { summary, details }]

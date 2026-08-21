@@ -1,4 +1,12 @@
 {
+  "name": "Awakened White Moose",
+  "source": "IDRotF",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["N", "E"],
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
+  "hp": { "average": 68, "formula": "8d10 + 24" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 19,
     "dex": 11,
@@ -7,7 +15,22 @@
     "wis": 12,
     "cha": 6
   },
-  "ac": [{ "ac": 11, "from": ["natural armor"] }],
+  "languages": ["Druidic"],
+  "cr": 3,
+  "trait": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the moose moves at least 20 feet straight toward a target and then hits it with an antlers attack on the same turn, the target takes an extra 9 ({@damage 2d8}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Sure-Footed",
+      "entries": [
+        "The moose has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -27,29 +50,5 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d4 + 4}) bludgeoning damage."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 3,
-  "hp": { "average": 68, "formula": "8d10 + 24" },
-  "languages": ["Druidic"],
-  "size": "L",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Charge",
-      "entries": [
-        "If the moose moves at least 20 feet straight toward a target and then hits it with an antlers attack on the same turn, the target takes an extra 9 ({@damage 2d8}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
-      ]
-    },
-    {
-      "name": "Sure-Footed",
-      "entries": [
-        "The moose has advantage on Strength and Dexterity saving throws made against effects that would knock it {@condition prone}."
-      ]
-    }
-  ],
-  "name": "Awakened White Moose",
-  "source": "IDRotF",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

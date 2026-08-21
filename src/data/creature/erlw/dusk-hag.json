@@ -1,4 +1,12 @@
 {
+  "name": "Dusk Hag",
+  "source": "ERLW",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["N", "E"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 82, "formula": "15d8 + 15" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 11,
     "dex": 14,
@@ -7,7 +15,20 @@
     "wis": 16,
     "cha": 18
   },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "save": { "int": 6, "wis": 6 },
+  "skill": { "deception": 7, "insight": 6, "perception": 6 },
+  "condition": ["blinded", "charmed", "frightened"],
+  "senses": ["blindsight 60 ft."],
+  "languages": ["Common", "Giant", "Infernal"],
+  "cr": 6,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hag has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -25,24 +46,5 @@
         "{@atk ms} {@hit 7} to hit, reach 5 ft., one creature. {@h}18 ({@damage 4d6 + 4}) psychic damage. If the target is {@condition unconscious}, it takes an extra 10 ({@damage 3d6}) psychic damage and is cursed until the hag dies or the curse is removed. The cursed creature's hit point maximum decreases by 5 ({@dice 1d10}) whenever it finishes a long rest."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 6,
-  "hp": { "average": 82, "formula": "15d8 + 15" },
-  "languages": ["Common", "Giant", "Infernal"],
-  "senses": ["blindsight 60 ft."],
-  "size": "M",
-  "skill": { "deception": 7, "insight": 6, "perception": 6 },
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The hag has advantage on saving throws against spells and other magical effects."
-      ]
-    }
-  ],
-  "name": "Dusk Hag",
-  "source": "ERLW",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

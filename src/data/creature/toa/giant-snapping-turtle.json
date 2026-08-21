@@ -1,23 +1,18 @@
 {
-  "ability": { "str": 19, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 5 },
+  "name": "Giant Snapping Turtle",
+  "source": "ToA",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [
     { "ac": 17, "from": ["natural armor"] },
     { "ac": 12, "condition": "while prone" }
   ],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}18 ({@damage 4d6 + 4}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 3,
   "hp": { "average": 75, "formula": "10d10 + 20" },
+  "speed": { "walk": 30, "swim": 40 },
+  "ability": { "str": 19, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 5 },
   "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": {},
+  "cr": 3,
   "trait": [
     {
       "name": "Amphibious",
@@ -30,8 +25,12 @@
       ]
     }
   ],
-  "name": "Giant Snapping Turtle",
-  "source": "ToA",
-  "speed": { "walk": 30, "swim": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}18 ({@damage 4d6 + 4}) slashing damage."
+      ]
+    }
+  ]
 }

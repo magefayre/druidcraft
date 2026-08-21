@@ -1,6 +1,16 @@
 {
-  "ability": { "str": 10, "dex": 18, "con": 13, "int": 2, "wis": 10, "cha": 3 },
+  "name": "Giant Poisonous Snake",
+  "source": "MM",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [14],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 30, "swim": 30 },
+  "ability": { "str": 10, "dex": 18, "con": 13, "int": 2, "wis": 10, "cha": 3 },
+  "skill": { "perception": 2 },
+  "senses": ["blindsight 10 ft."],
+  "cr": 0.25,
   "action": [
     {
       "name": "Bite",
@@ -8,15 +18,5 @@
         "{@atk mw} {@hit 6} to hit, reach 10 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage, and the target must make a {@dc 11} Constitution saving throw, taking 10 ({@damage 3d6}) poison damage on a failed save, or half as much damage on a successful one."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
-  "senses": ["blindsight 10 ft."],
-  "size": "M",
-  "skill": { "perception": 2 },
-  "name": "Giant Poisonous Snake",
-  "source": "MM",
-  "speed": { "walk": 30, "swim": 30 },
-  "type": "beast"
+  ]
 }

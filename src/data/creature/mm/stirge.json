@@ -1,6 +1,15 @@
 {
-  "ability": { "str": 4, "dex": 16, "con": 11, "int": 2, "wis": 8, "cha": 6 },
+  "name": "Stirge",
+  "source": "MM",
+  "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 2, "formula": "1d4" },
+  "speed": { "walk": 10, "fly": 40 },
+  "ability": { "str": 4, "dex": 16, "con": 11, "int": 2, "wis": 8, "cha": 6 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 0.125,
   "action": [
     {
       "name": "Blood Drain",
@@ -9,15 +18,5 @@
         "The stirge can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the stirge."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 2, "formula": "1d4" },
-  "senses": ["darkvision 60 ft."],
-  "size": "T",
-  "skill": {},
-  "name": "Stirge",
-  "source": "MM",
-  "speed": { "walk": 10, "fly": 40 },
-  "type": "beast"
+  ]
 }

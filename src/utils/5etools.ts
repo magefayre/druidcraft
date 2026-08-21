@@ -28,8 +28,9 @@ import type {
   Spell
 } from '~types'
 
-export const formatAC = (ac: ArmorClass[]) => JSON.stringify(ac)
+export const formatAC = (acs: ArmorClass[]) => JSON.stringify(acs)
 
+// TODO: aligment can have `alignmentPrefix`
 export const formatAligment = (alignment: Aligmnent[]) =>
   alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? ALIGNMENTS.U
 

@@ -1,4 +1,12 @@
 {
+  "name": "Xorn",
+  "source": "MM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [{ "ac": 19, "from": ["natural armor"] }],
+  "hp": { "average": 73, "formula": "7d8 + 42" },
+  "speed": { "walk": 20, "burrow": 20 },
   "ability": {
     "str": 17,
     "dex": 10,
@@ -7,32 +15,17 @@
     "wis": 10,
     "cha": 11
   },
-  "ac": [{ "ac": 19, "from": ["natural armor"] }],
-  "action": [
+  "skill": { "perception": 6, "stealth": 3 },
+  "resist": [
     {
-      "name": "Multiattack",
-      "entries": ["The xorn makes three claw attacks and one bite attack."]
-    },
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 3d6 + 3}) piercing damage."
-      ]
-    },
-    {
-      "name": "Claw",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage."
-      ]
+      "resist": ["piercing", "slashing"],
+      "note": "from nonmagical attacks that aren't adamantine",
+      "cond": true
     }
   ],
-  "alignment": ["N"],
-  "cr": 5,
-  "hp": { "average": 73, "formula": "7d8 + 42" },
-  "languages": ["Terran"],
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
-  "size": "M",
-  "skill": { "perception": 6, "stealth": 3 },
+  "languages": ["Terran"],
+  "cr": 5,
   "trait": [
     {
       "name": "Earth Glide",
@@ -53,8 +46,22 @@
       ]
     }
   ],
-  "name": "Xorn",
-  "source": "MM",
-  "speed": { "walk": 20, "burrow": 20 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The xorn makes three claw attacks and one bite attack."]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 3d6 + 3}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage."
+      ]
+    }
+  ]
 }

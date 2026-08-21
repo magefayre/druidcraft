@@ -1,4 +1,12 @@
 {
+  "name": "Grinning Cat",
+  "source": "BGG",
+  "size": "L",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [12],
+  "hp": { "average": 45, "formula": "7d10 + 7" },
+  "speed": { "walk": 40, "climb": 40 },
   "ability": {
     "str": 14,
     "dex": 15,
@@ -7,7 +15,18 @@
     "wis": 14,
     "cha": 16
   },
-  "ac": [12],
+  "skill": { "perception": 4, "stealth": 6 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Sylvan"],
+  "cr": 1,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The grinning cat has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Bite",
@@ -28,7 +47,6 @@
       ]
     }
   ],
-  "alignment": ["C", "N"],
   "bonus": [
     {
       "name": "Fade Back",
@@ -42,23 +60,5 @@
         "The grinning cat teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
       ]
     }
-  ],
-  "cr": 1,
-  "hp": { "average": 45, "formula": "7d10 + 7" },
-  "languages": ["Common", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": { "perception": 4, "stealth": 6 },
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The grinning cat has advantage on saving throws against spells and other magical effects."
-      ]
-    }
-  ],
-  "name": "Grinning Cat",
-  "source": "BGG",
-  "speed": { "walk": 40, "climb": 40 },
-  "type": "fey"
+  ]
 }

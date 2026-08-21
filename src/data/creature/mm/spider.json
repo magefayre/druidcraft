@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 2, "dex": 14, "con": 8, "int": 1, "wis": 10, "cha": 2 },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}1 piercing damage, and the target must succeed on a {@dc 9} Constitution saving throw or take 2 ({@damage 1d4}) poison damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
-  "senses": ["darkvision 30 ft."],
+  "name": "Spider",
+  "source": "MM",
   "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 20, "climb": 20 },
+  "ability": { "str": 2, "dex": 14, "con": 8, "int": 1, "wis": 10, "cha": 2 },
   "skill": { "stealth": 4 },
+  "senses": ["darkvision 30 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Spider Climb",
@@ -33,8 +29,12 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "name": "Spider",
-  "source": "MM",
-  "speed": { "walk": 20, "climb": 20 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}1 piercing damage, and the target must succeed on a {@dc 9} Constitution saving throw or take 2 ({@damage 1d4}) poison damage."
+      ]
+    }
+  ]
 }

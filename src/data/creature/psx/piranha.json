@@ -1,20 +1,15 @@
 {
-  "ability": { "str": 2, "dex": 16, "con": 9, "int": 1, "wis": 7, "cha": 2 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}1 piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
-  "senses": ["darkvision 60 ft."],
+  "name": "Piranha",
+  "source": "PSX",
   "size": "T",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "swim": 40 },
+  "ability": { "str": 2, "dex": 16, "con": 9, "int": 1, "wis": 7, "cha": 2 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Blood Frenzy",
@@ -27,8 +22,12 @@
       "entries": ["The quipper can breathe only underwater."]
     }
   ],
-  "name": "Piranha",
-  "source": "PSX",
-  "speed": { "swim": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}1 piercing damage."
+      ]
+    }
+  ]
 }

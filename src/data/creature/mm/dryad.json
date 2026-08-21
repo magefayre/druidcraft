@@ -1,4 +1,15 @@
 {
+  "name": "Dryad",
+  "source": "MM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["N"],
+  "ac": [
+    11,
+    { "ac": 16, "condition": "with {@spell barkskin}", "braces": true }
+  ],
+  "hp": { "average": 22, "formula": "5d8" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 10,
     "dex": 12,
@@ -7,33 +18,10 @@
     "wis": 15,
     "cha": 18
   },
-  "ac": [
-    11,
-    { "ac": 16, "condition": "with {@spell barkskin}", "braces": true }
-  ],
-  "action": [
-    {
-      "name": "Club",
-      "entries": [
-        "{@atk mw} {@hit 2} to hit ({@hit 6} to hit with shillelagh), reach 5 ft., one target. {@h}2 ({@damage 1d4}) bludgeoning damage, or 8 ({@damage 1d8 + 4}) bludgeoning damage with shillelagh."
-      ]
-    },
-    {
-      "name": "Fey Charm",
-      "entries": [
-        "The dryad targets one humanoid or beast that she can see within 30 feet of her. If the target can see the dryad, it must succeed on a {@dc 14} Wisdom saving throw or be magically {@condition charmed}. The {@condition charmed} creature regards the dryad as a trusted friend to be heeded and protected. Although the target isn't under the dryad's control, it takes the dryad's requests or actions in the most favorable way it can.",
-        "Each time the dryad or its allies do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the dryad dies, is on a different plane of existence from the target, or ends the effect as a bonus action. If a target's saving throw is successful, the target is immune to the dryad's Fey Charm for the next 24 hours.",
-        "The dryad can have no more than one humanoid and up to three beasts {@condition charmed} at a time."
-      ]
-    }
-  ],
-  "alignment": ["N"],
-  "cr": 1,
-  "hp": { "average": 22, "formula": "5d8" },
-  "languages": ["Elvish", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
   "skill": { "perception": 4, "stealth": 5 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Elvish", "Sylvan"],
+  "cr": 1,
   "trait": [
     {
       "name": "Magic Resistance",
@@ -54,8 +42,20 @@
       ]
     }
   ],
-  "name": "Dryad",
-  "source": "MM",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Club",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit ({@hit 6} to hit with shillelagh), reach 5 ft., one target. {@h}2 ({@damage 1d4}) bludgeoning damage, or 8 ({@damage 1d8 + 4}) bludgeoning damage with shillelagh."
+      ]
+    },
+    {
+      "name": "Fey Charm",
+      "entries": [
+        "The dryad targets one humanoid or beast that she can see within 30 feet of her. If the target can see the dryad, it must succeed on a {@dc 14} Wisdom saving throw or be magically {@condition charmed}. The {@condition charmed} creature regards the dryad as a trusted friend to be heeded and protected. Although the target isn't under the dryad's control, it takes the dryad's requests or actions in the most favorable way it can.",
+        "Each time the dryad or its allies do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the dryad dies, is on a different plane of existence from the target, or ends the effect as a bonus action. If a target's saving throw is successful, the target is immune to the dryad's Fey Charm for the next 24 hours.",
+        "The dryad can have no more than one humanoid and up to three beasts {@condition charmed} at a time."
+      ]
+    }
+  ]
 }

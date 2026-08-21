@@ -1,4 +1,12 @@
 {
+  "name": "Fire Elemental Myrmidon",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
+  "hp": { "average": 123, "formula": "19d8 + 38" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 13,
     "dex": 18,
@@ -7,7 +15,32 @@
     "wis": 10,
     "cha": 10
   },
-  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
+  "resist": [
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
+    }
+  ],
+  "immune": ["fire", "poison"],
+  "condition": ["paralyzed", "petrified", "poisoned", "prone"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Ignan", "one language of its creator's choice"],
+  "cr": 7,
+  "trait": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "The myrmidon sheds bright light in a 20-foot radius and dim light in a 40-foot radius."
+      ]
+    },
+    {
+      "name": "Water Susceptibility",
+      "entries": [
+        "For every 5 feet the myrmidon moves in 1 foot or more of water, it takes 2 ({@damage 1d4}) cold damage."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -25,30 +58,5 @@
         "The myrmidon uses Multiattack. Each attack that hits deals an extra 7 ({@damage 2d6}) fire damage."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 7,
-  "hp": { "average": 123, "formula": "19d8 + 38" },
-  "languages": ["Ignan", "one language of its creator's choice"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Illumination",
-      "entries": [
-        "The myrmidon sheds bright light in a 20-foot radius and dim light in a 40-foot radius."
-      ]
-    },
-    {
-      "name": "Water Susceptibility",
-      "entries": [
-        "For every 5 feet the myrmidon moves in 1 foot or more of water, it takes 2 ({@damage 1d4}) cold damage."
-      ]
-    }
-  ],
-  "name": "Fire Elemental Myrmidon",
-  "source": "MPMM",
-  "speed": { "walk": 40 },
-  "type": "elemental"
+  ]
 }

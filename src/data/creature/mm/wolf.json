@@ -1,19 +1,15 @@
 {
-  "ability": { "str": 12, "dex": 15, "con": 12, "int": 3, "wis": 12, "cha": 6 },
-  "ac": [{ "ac": 13, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) piercing damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "name": "Wolf",
+  "source": "MM",
   "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 12, "dex": 15, "con": 12, "int": 3, "wis": 12, "cha": 6 },
   "skill": { "perception": 3, "stealth": 4 },
+  "cr": 0.25,
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -28,8 +24,12 @@
       ]
     }
   ],
-  "name": "Wolf",
-  "source": "MM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) piercing damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ]
 }

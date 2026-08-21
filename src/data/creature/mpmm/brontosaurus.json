@@ -1,6 +1,15 @@
 {
-  "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "name": "Brontosaurus",
+  "source": "MPMM",
+  "size": "G",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 121, "formula": "9d20 + 27" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "save": { "con": 6 },
+  "cr": 5,
   "action": [
     {
       "name": "Stomp",
@@ -14,14 +23,5 @@
         "{@atk mw} {@hit 8} to hit, reach 20 ft., one target. {@h}32 ({@damage 6d8 + 5}) bludgeoning damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 5,
-  "hp": { "average": 121, "formula": "9d20 + 27" },
-  "size": "G",
-  "skill": {},
-  "name": "Brontosaurus",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "beast"
+  ]
 }

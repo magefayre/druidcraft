@@ -1,4 +1,12 @@
 {
+  "name": "Sludge Hag",
+  "source": "MGELFT",
+  "size": "M",
+  "type": "fey",
+  "alignment": [{ "special": "neutral oozy" }],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "formula": "11d8 + 33", "average": 82 },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 18,
     "dex": 12,
@@ -7,7 +15,22 @@
     "wis": 14,
     "cha": 14
   },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "skill": { "arcana": 3, "deception": 4, "perception": 4, "stealth": 3 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Draconic", "Sylvan"],
+  "cr": 3,
+  "trait": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The sludge hag can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Amphibious",
+      "entries": ["The sludge hag can breathe air and water."]
+    }
+  ],
   "action": [
     {
       "name": "False Appearance",
@@ -21,28 +44,5 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}12 ({@damage 1d8 + 8}) bludgeoning damage, plus 4 ({@damage 1d8}) acid damage. Sludge Slap does both bludgeoning and acid damage."
       ]
     }
-  ],
-  "alignment": [{ "special": "neutral oozy" }],
-  "cr": 3,
-  "hp": { "formula": "11d8 + 33", "average": 82 },
-  "languages": ["Common", "Draconic", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "arcana": 3, "deception": 4, "perception": 4, "stealth": 3 },
-  "trait": [
-    {
-      "name": "Amorphous",
-      "entries": [
-        "The sludge hag can move through a space as narrow as 1 inch wide without squeezing."
-      ]
-    },
-    {
-      "name": "Amphibious",
-      "entries": ["The sludge hag can breathe air and water."]
-    }
-  ],
-  "name": "Sludge Hag",
-  "source": "MGELFT",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

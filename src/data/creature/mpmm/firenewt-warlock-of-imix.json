@@ -1,4 +1,12 @@
 {
+  "name": "Firenewt Warlock of Imix",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N", "E"],
+  "ac": [10],
+  "hp": { "average": 33, "formula": "6d8 + 6" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 13,
     "dex": 11,
@@ -7,32 +15,10 @@
     "wis": 11,
     "cha": 14
   },
-  "ac": [10],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The firenewt makes three Morningstar or Fire Ray attacks."]
-    },
-    {
-      "name": "Morningstar",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) piercing damage."
-      ]
-    },
-    {
-      "name": "Fire Ray",
-      "entries": [
-        "{@atk rs} {@hit 4} to hit, range 120 ft., one target. {@h}5 ({@damage 1d6 + 2}) fire damage."
-      ]
-    }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 1,
-  "hp": { "average": 33, "formula": "6d8 + 6" },
-  "languages": ["Draconic", "Ignan"],
+  "immune": ["fire"],
   "senses": ["darkvision 120 ft."],
-  "size": "M",
-  "skill": {},
+  "languages": ["Draconic", "Ignan"],
+  "cr": 1,
   "trait": [
     {
       "name": "Amphibious",
@@ -51,8 +37,22 @@
       ]
     }
   ],
-  "name": "Firenewt Warlock of Imix",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The firenewt makes three Morningstar or Fire Ray attacks."]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) piercing damage."
+      ]
+    },
+    {
+      "name": "Fire Ray",
+      "entries": [
+        "{@atk rs} {@hit 4} to hit, range 120 ft., one target. {@h}5 ({@damage 1d6 + 2}) fire damage."
+      ]
+    }
+  ]
 }

@@ -1,4 +1,12 @@
 {
+  "name": "Dankwood Hag",
+  "source": "AWM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["N", "E"],
+  "ac": [17],
+  "hp": { "special": "82" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 18,
     "dex": 12,
@@ -7,7 +15,16 @@
     "wis": 14,
     "cha": 14
   },
-  "ac": [17],
+  "cr": 3,
+  "trait": [
+    { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
+    {
+      "name": "Mimicry (Green Hag)",
+      "entries": [
+        "The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom ({@skill Insight}) check."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Illusory Appearance",
@@ -27,23 +44,5 @@
         "{@atk mw} {@hit 6} to hit, one target. {@h}17 ({@damage 2d8 + 4}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 3,
-  "hp": { "special": "82" },
-  "size": "M",
-  "skill": {},
-  "trait": [
-    { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
-    {
-      "name": "Mimicry (Green Hag)",
-      "entries": [
-        "The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom ({@skill Insight}) check."
-      ]
-    }
-  ],
-  "name": "Dankwood Hag",
-  "source": "AWM",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

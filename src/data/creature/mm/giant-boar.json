@@ -1,19 +1,14 @@
 {
-  "ability": { "str": 17, "dex": 10, "con": 16, "int": 2, "wis": 7, "cha": 5 },
-  "ac": [{ "ac": 12, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Tusk",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 2,
-  "hp": { "average": 42, "formula": "5d10 + 15" },
+  "name": "Giant Boar",
+  "source": "MM",
   "size": "L",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 42, "formula": "5d10 + 15" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 17, "dex": 10, "con": 16, "int": 2, "wis": 7, "cha": 5 },
+  "cr": 2,
   "trait": [
     {
       "name": "Charge",
@@ -28,8 +23,12 @@
       ]
     }
   ],
-  "name": "Giant Boar",
-  "source": "MM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Tusk",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) slashing damage."
+      ]
+    }
+  ]
 }

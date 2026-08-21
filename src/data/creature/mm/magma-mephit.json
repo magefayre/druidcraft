@@ -1,27 +1,19 @@
 {
-  "ability": { "str": 8, "dex": 12, "con": 12, "int": 7, "wis": 10, "cha": 10 },
-  "ac": [11],
-  "action": [
-    {
-      "name": "Claws",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one creature. {@h}3 ({@damage 1d4 + 1}) slashing damage plus 2 ({@damage 1d4}) fire damage."
-      ]
-    },
-    {
-      "name": "Fire Breath {@recharge}",
-      "entries": [
-        "The mephit exhales a 15-foot cone of fire. Each creature in that area must make a {@dc 11} Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one."
-      ]
-    }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 0.5,
-  "hp": { "average": 22, "formula": "5d6 + 5" },
-  "languages": ["Ignan", "Terran"],
-  "senses": ["darkvision 60 ft."],
+  "name": "Magma Mephit",
+  "source": "MM",
   "size": "S",
+  "type": "elemental",
+  "alignment": ["N", "E"],
+  "ac": [11],
+  "hp": { "average": 22, "formula": "5d6 + 5" },
+  "speed": { "walk": 30, "fly": 30 },
+  "ability": { "str": 8, "dex": 12, "con": 12, "int": 7, "wis": 10, "cha": 10 },
   "skill": { "stealth": 3 },
+  "immune": ["fire", "poison"],
+  "condition": ["poisoned"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Ignan", "Terran"],
+  "cr": 0.5,
   "trait": [
     {
       "name": "Death Burst",
@@ -36,8 +28,18 @@
       ]
     }
   ],
-  "name": "Magma Mephit",
-  "source": "MM",
-  "speed": { "walk": 30, "fly": 30 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one creature. {@h}3 ({@damage 1d4 + 1}) slashing damage plus 2 ({@damage 1d4}) fire damage."
+      ]
+    },
+    {
+      "name": "Fire Breath {@recharge}",
+      "entries": [
+        "The mephit exhales a 15-foot cone of fire. Each creature in that area must make a {@dc 11} Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ]
 }

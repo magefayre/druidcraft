@@ -1,6 +1,14 @@
 {
-  "ability": { "str": 20, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "name": "Stegosaurus",
+  "source": "MPMM",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 76, "formula": "8d12 + 24" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 20, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "cr": 4,
   "action": [
     {
       "name": "Tail",
@@ -8,14 +16,5 @@
         "{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}26 ({@damage 6d6 + 5}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 4,
-  "hp": { "average": 76, "formula": "8d12 + 24" },
-  "size": "H",
-  "skill": {},
-  "name": "Stegosaurus",
-  "source": "MPMM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

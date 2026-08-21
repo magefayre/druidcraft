@@ -1,6 +1,15 @@
 {
-  "ability": { "str": 15, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "name": "Constrictor Snake",
+  "source": "MM",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [12],
+  "hp": { "average": 13, "formula": "2d10 + 2" },
+  "speed": { "walk": 30, "swim": 30 },
+  "ability": { "str": 15, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "senses": ["blindsight 10 ft."],
+  "cr": 0.25,
   "action": [
     {
       "name": "Bite",
@@ -14,15 +23,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}6 ({@damage 1d8 + 2}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 14}). Until this grapple ends, the creature is {@condition restrained}, and the snake can't constrict another target."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 13, "formula": "2d10 + 2" },
-  "senses": ["blindsight 10 ft."],
-  "size": "L",
-  "skill": {},
-  "name": "Constrictor Snake",
-  "source": "MM",
-  "speed": { "walk": 30, "swim": 30 },
-  "type": "beast"
+  ]
 }

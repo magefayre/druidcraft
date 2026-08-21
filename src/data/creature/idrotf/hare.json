@@ -1,11 +1,15 @@
 {
-  "ability": { "str": 1, "dex": 17, "con": 9, "int": 2, "wis": 11, "cha": 4 },
-  "ac": [13],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "name": "Hare",
+  "source": "IDRotF",
   "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 20, "burrow": 5 },
+  "ability": { "str": 1, "dex": 17, "con": 9, "int": 2, "wis": 11, "cha": 4 },
   "skill": { "perception": 2, "stealth": 5 },
+  "cr": 0,
   "trait": [
     {
       "name": "Escape",
@@ -13,9 +17,5 @@
         "The hare can take the {@action Dash}, {@action Disengage}, or {@action Hide} action as a bonus action on each of its turns."
       ]
     }
-  ],
-  "name": "Hare",
-  "source": "IDRotF",
-  "speed": { "walk": 20, "burrow": 5 },
-  "type": "beast"
+  ]
 }

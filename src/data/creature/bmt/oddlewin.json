@@ -1,4 +1,12 @@
 {
+  "name": "Oddlewin",
+  "source": "BMT",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 13, "from": ["{@item leather armor|PHB}"] }],
+  "hp": { "average": 21, "formula": "6d6" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 8,
     "dex": 14,
@@ -7,36 +15,11 @@
     "wis": 16,
     "cha": 15
   },
-  "ac": [{ "ac": 13, "from": ["{@item leather armor|PHB}"] }],
-  "action": [
-    {
-      "name": "Fool's Scepter",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
-      ]
-    },
-    {
-      "name": "Cloud of Cards",
-      "entries": [
-        "Oddlewin conjures magical cards that slash at the air in a 5-foot cube within 60 feet of Oddlewin until the start of Oddlewin's next turn. A creature that starts its turn in the cube or that enters that area for the first time on a turn takes 10 ({@damage 4d4}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["C", "N"],
-  "bonus": [
-    {
-      "name": "Nimble Escape",
-      "entries": [
-        "Oddlewin takes the {@action Disengage} or {@action Hide} action."
-      ]
-    }
-  ],
-  "cr": 2,
-  "hp": { "average": 21, "formula": "6d6" },
-  "languages": ["Common", "Goblin", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "S",
   "skill": { "performance": 4, "stealth": 6 },
+  "condition": ["charmed"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Goblin", "Sylvan"],
+  "cr": 2,
   "trait": [
     {
       "name": "Fortune Teller",
@@ -52,8 +35,26 @@
       ]
     }
   ],
-  "name": "Oddlewin",
-  "source": "BMT",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Fool's Scepter",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Cloud of Cards",
+      "entries": [
+        "Oddlewin conjures magical cards that slash at the air in a 5-foot cube within 60 feet of Oddlewin until the start of Oddlewin's next turn. A creature that starts its turn in the cube or that enters that area for the first time on a turn takes 10 ({@damage 4d4}) slashing damage."
+      ]
+    }
+  ],
+  "bonus": [
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "Oddlewin takes the {@action Disengage} or {@action Hide} action."
+      ]
+    }
+  ]
 }

@@ -1,6 +1,22 @@
 {
-  "ability": { "str": 11, "dex": 17, "con": 16, "int": 2, "wis": 12, "cha": 3 },
+  "name": "Giant Lightning Eel",
+  "source": "TftYP",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [13],
+  "hp": { "average": 42, "formula": "5d10 + 15" },
+  "speed": { "walk": 5, "swim": 30 },
+  "ability": { "str": 11, "dex": 17, "con": 16, "int": 2, "wis": 12, "cha": 3 },
+  "resist": ["lightning"],
+  "senses": ["blindsight 60 ft."],
+  "cr": 3,
+  "trait": [
+    {
+      "name": "Water Breathing",
+      "entries": ["The eel can breathe only underwater."]
+    }
+  ],
   "action": [
     { "name": "Multiattack", "entries": ["The eel makes two bite attacks."] },
     {
@@ -15,21 +31,5 @@
         "One creature the eel touches within 5 feet of it outside water, or each creature within 15 feet of it in a body of water, must make a {@dc 12} Constitution saving throw. On failed save, a target takes 13 ({@damage 3d8}) lightning damage. If the target takes any of this damage, the target is {@condition stunned} until the end of the eel's next turn. On a successful save, a target takes half as much damage and isn't {@condition stunned}."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 3,
-  "hp": { "average": 42, "formula": "5d10 + 15" },
-  "senses": ["blindsight 60 ft."],
-  "size": "L",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Water Breathing",
-      "entries": ["The eel can breathe only underwater."]
-    }
-  ],
-  "name": "Giant Lightning Eel",
-  "source": "TftYP",
-  "speed": { "walk": 5, "swim": 30 },
-  "type": "beast"
+  ]
 }

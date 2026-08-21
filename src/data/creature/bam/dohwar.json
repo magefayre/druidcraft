@@ -1,4 +1,12 @@
 {
+  "name": "Dohwar",
+  "source": "BAM",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["A"],
+  "ac": [11],
+  "hp": { "average": 10, "formula": "3d6" },
+  "speed": { "walk": 20, "swim": 20 },
   "ability": {
     "str": 5,
     "dex": 12,
@@ -7,25 +15,14 @@
     "wis": 14,
     "cha": 13
   },
-  "ac": [11],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["A"],
-  "cr": 0,
-  "hp": { "average": 10, "formula": "3d6" },
+  "save": { "dex": 3, "wis": 4 },
+  "skill": { "deception": 3, "insight": 4, "persuasion": 3 },
   "languages": [
     "Common",
     "Dohwar",
     "telepathy 30 ft. (see also Merging below)"
   ],
-  "size": "S",
-  "skill": { "deception": 3, "insight": 4, "persuasion": 3 },
+  "cr": 0,
   "trait": [
     {
       "name": "Merging",
@@ -34,8 +31,12 @@
       ]
     }
   ],
-  "name": "Dohwar",
-  "source": "BAM",
-  "speed": { "walk": 20, "swim": 20 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage."
+      ]
+    }
+  ]
 }

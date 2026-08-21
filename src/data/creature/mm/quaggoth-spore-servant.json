@@ -1,6 +1,17 @@
 {
-  "ability": { "str": 17, "dex": 12, "con": 16, "int": 2, "wis": 6, "cha": 1 },
+  "name": "Quaggoth Spore Servant",
+  "source": "MM",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["U"],
   "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 45, "formula": "6d8 + 18" },
+  "speed": { "walk": 20, "climb": 20 },
+  "ability": { "str": 17, "dex": 12, "con": 16, "int": 2, "wis": 6, "cha": 1 },
+  "immune": ["poison"],
+  "condition": ["blinded", "charmed", "frightened", "paralyzed", "poisoned"],
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "cr": 1,
   "action": [
     {
       "name": "Multiattack",
@@ -12,15 +23,5 @@
         "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 45, "formula": "6d8 + 18" },
-  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
-  "size": "M",
-  "skill": {},
-  "name": "Quaggoth Spore Servant",
-  "source": "MM",
-  "speed": { "walk": 20, "climb": 20 },
-  "type": "plant"
+  ]
 }

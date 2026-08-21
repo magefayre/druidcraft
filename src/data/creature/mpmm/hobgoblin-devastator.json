@@ -1,4 +1,14 @@
 {
+  "name": "Hobgoblin Devastator",
+  "source": "MPMM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["L", "N"],
+  "ac": [
+    { "ac": 13, "from": ["{@item studded leather armor|PHB|studded leather}"] }
+  ],
+  "hp": { "average": 45, "formula": "7d8 + 14" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 13,
     "dex": 12,
@@ -7,8 +17,17 @@
     "wis": 13,
     "cha": 11
   },
-  "ac": [
-    { "ac": 13, "from": ["{@item studded leather armor|PHB|studded leather}"] }
+  "skill": { "arcana": 5 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Goblin"],
+  "cr": 4,
+  "trait": [
+    {
+      "name": "Army Arcana",
+      "entries": [
+        "When the hobgoblin casts a spell that causes damage or that forces other creatures to make a saving throw, it can choose itself and any number of allies to be immune to the damage caused by the spell and to succeed on the required saving throw."
+      ]
+    }
   ],
   "action": [
     {
@@ -29,24 +48,5 @@
         "{@atk rs} {@hit 5} to hit, range 60 ft., one target. {@h}21 ({@damage 4d8 + 3}) force damage, and the target is knocked {@condition prone}."
       ]
     }
-  ],
-  "alignment": ["L", "N"],
-  "cr": 4,
-  "hp": { "average": 45, "formula": "7d8 + 14" },
-  "languages": ["Common", "Goblin"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "arcana": 5 },
-  "trait": [
-    {
-      "name": "Army Arcana",
-      "entries": [
-        "When the hobgoblin casts a spell that causes damage or that forces other creatures to make a saving throw, it can choose itself and any number of allies to be immune to the damage caused by the spell and to succeed on the required saving throw."
-      ]
-    }
-  ],
-  "name": "Hobgoblin Devastator",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

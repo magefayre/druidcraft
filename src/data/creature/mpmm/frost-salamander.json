@@ -1,6 +1,27 @@
 {
-  "ability": { "str": 20, "dex": 12, "con": 18, "int": 7, "wis": 11, "cha": 7 },
+  "name": "Frost Salamander",
+  "source": "MPMM",
+  "size": "H",
+  "type": "elemental",
+  "alignment": ["U"],
   "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 168, "formula": "16d12 + 64" },
+  "speed": { "walk": 60, "burrow": 40, "climb": 40 },
+  "ability": { "str": 20, "dex": 12, "con": 18, "int": 7, "wis": 11, "cha": 7 },
+  "save": { "con": 8, "wis": 4 },
+  "skill": { "perception": 4 },
+  "immune": ["cold"],
+  "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
+  "languages": ["Primordial"],
+  "cr": 9,
+  "trait": [
+    {
+      "name": "Burning Fury",
+      "entries": [
+        "When the salamander takes fire damage, its Freezing Breath automatically recharges."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -24,24 +45,5 @@
         "The salamander exhales chill wind in a 60-foot cone. Each creature in that area must make a {@dc 17} Constitution saving throw, taking 44 ({@damage 8d10}) cold damage on a failed save, or half as much damage on a successful one."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 9,
-  "hp": { "average": 168, "formula": "16d12 + 64" },
-  "languages": ["Primordial"],
-  "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
-  "size": "H",
-  "skill": { "perception": 4 },
-  "trait": [
-    {
-      "name": "Burning Fury",
-      "entries": [
-        "When the salamander takes fire damage, its Freezing Breath automatically recharges."
-      ]
-    }
-  ],
-  "name": "Frost Salamander",
-  "source": "MPMM",
-  "speed": { "walk": 60, "burrow": 40, "climb": 40 },
-  "type": "elemental"
+  ]
 }

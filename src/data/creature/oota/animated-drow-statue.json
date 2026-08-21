@@ -1,24 +1,26 @@
 {
-  "ability": { "str": 14, "dex": 11, "con": 13, "int": 1, "wis": 3, "cha": 1 },
-  "ac": [{ "ac": 18, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The armor makes two melee attacks."]
-    },
-    {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 33, "formula": "6d8 + 6" },
-  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "name": "Animated Drow Statue",
+  "source": "OotA",
   "size": "M",
-  "skill": {},
+  "type": "elemental",
+  "alignment": ["U"],
+  "ac": [{ "ac": 18, "from": ["natural armor"] }],
+  "hp": { "average": 33, "formula": "6d8 + 6" },
+  "speed": { "walk": 25 },
+  "ability": { "str": 14, "dex": 11, "con": 13, "int": 1, "wis": 3, "cha": 1 },
+  "immune": ["poison", "psychic"],
+  "condition": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "exhaustion",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "cr": 1,
   "trait": [
     {
       "name": "Antimagic Susceptibility",
@@ -33,8 +35,16 @@
       ]
     }
   ],
-  "name": "Animated Drow Statue",
-  "source": "OotA",
-  "speed": { "walk": 25 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The armor makes two melee attacks."]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
+      ]
+    }
+  ]
 }

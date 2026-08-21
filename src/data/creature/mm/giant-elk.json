@@ -1,4 +1,12 @@
 {
+  "name": "Giant Elk",
+  "source": "MM",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 42, "formula": "5d12 + 10" },
+  "speed": { "walk": 60 },
   "ability": {
     "str": 19,
     "dex": 16,
@@ -7,7 +15,20 @@
     "wis": 14,
     "cha": 10
   },
-  "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "skill": { "perception": 4 },
+  "languages": [
+    "Giant Elk",
+    "understands Common, Elvish, Sylvan but can't speak them"
+  ],
+  "cr": 2,
+  "trait": [
+    {
+      "name": "Charge",
+      "entries": [
+        "If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 ({@damage 2d6}) damage. If the target is a creature, it must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Ram",
@@ -21,26 +42,5 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one {@condition prone} creature. {@h}22 ({@damage 4d8 + 4}) bludgeoning damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 2,
-  "hp": { "average": 42, "formula": "5d12 + 10" },
-  "languages": [
-    "Giant Elk",
-    "understands Common, Elvish, Sylvan but can't speak them"
-  ],
-  "size": "H",
-  "skill": { "perception": 4 },
-  "trait": [
-    {
-      "name": "Charge",
-      "entries": [
-        "If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 ({@damage 2d6}) damage. If the target is a creature, it must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
-      ]
-    }
-  ],
-  "name": "Giant Elk",
-  "source": "MM",
-  "speed": { "walk": 60 },
-  "type": "beast"
+  ]
 }

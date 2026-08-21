@@ -1,20 +1,30 @@
 {
-  "ability": { "str": 12, "dex": 15, "con": 11, "int": 1, "wis": 5, "cha": 1 },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Longsword",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["L", "E"],
-  "cr": 0.25,
-  "hp": { "average": 17, "formula": "5d6" },
-  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "name": "Ashen Flying Sword",
+  "source": "KftGV",
   "size": "S",
-  "skill": {},
+  "type": "elemental",
+  "alignment": ["L", "E"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 17, "formula": "5d6" },
+  "speed": {
+    "walk": 0,
+    "fly": { "number": 50, "condition": "(hover)" },
+    "canHover": true
+  },
+  "ability": { "str": 12, "dex": 15, "con": 11, "int": 1, "wis": 5, "cha": 1 },
+  "save": { "dex": 4 },
+  "immune": ["fire", "poison", "psychic"],
+  "condition": [
+    "blinded",
+    "charmed",
+    "deafened",
+    "frightened",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "cr": 0.25,
   "trait": [
     {
       "name": "Antimagic Susceptibility",
@@ -29,12 +39,12 @@
       ]
     }
   ],
-  "name": "Ashen Flying Sword",
-  "source": "KftGV",
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 50, "condition": "(hover)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Longsword",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) slashing damage."
+      ]
+    }
+  ]
 }

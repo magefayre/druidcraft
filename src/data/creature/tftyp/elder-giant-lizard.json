@@ -1,6 +1,22 @@
 {
-  "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "name": "Elder Giant Lizard",
+  "source": "TftYP",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 85, "formula": "9d12 + 27" },
+  "speed": { "walk": 30, "climb": 30 },
+  "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "skill": { "stealth": 5 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 5,
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The crocodile can hold its breath for 30 minutes."]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,21 +36,5 @@
         "{@atk mw} {@hit 8} to hit, reach 10 ft., one target not {@condition grappled} by the crocodile. {@h}14 ({@damage 2d8 + 5}) bludgeoning damage. If the target is a creature, it must succeed on a {@dc 16} Strength saving throw or be knocked {@condition prone}."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 5,
-  "hp": { "average": 85, "formula": "9d12 + 27" },
-  "senses": ["darkvision 60 ft."],
-  "size": "H",
-  "skill": { "stealth": 5 },
-  "trait": [
-    {
-      "name": "Hold Breath",
-      "entries": ["The crocodile can hold its breath for 30 minutes."]
-    }
-  ],
-  "name": "Elder Giant Lizard",
-  "source": "TftYP",
-  "speed": { "walk": 30, "climb": 30 },
-  "type": "beast"
+  ]
 }

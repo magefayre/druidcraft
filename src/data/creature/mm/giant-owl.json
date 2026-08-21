@@ -1,4 +1,12 @@
 {
+  "name": "Giant Owl",
+  "source": "MM",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["N"],
+  "ac": [12],
+  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "speed": { "walk": 5, "fly": 60 },
   "ability": {
     "str": 13,
     "dex": 15,
@@ -7,25 +15,13 @@
     "wis": 13,
     "cha": 10
   },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Talons",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}8 ({@damage 2d6 + 1}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["N"],
-  "cr": 0.25,
-  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "skill": { "perception": 5, "stealth": 4 },
+  "senses": ["darkvision 120 ft."],
   "languages": [
     "Giant Owl",
     "understands Common, Elvish, and Sylvan but can't speak them"
   ],
-  "senses": ["darkvision 120 ft."],
-  "size": "L",
-  "skill": { "perception": 5, "stealth": 4 },
+  "cr": 0.25,
   "trait": [
     {
       "name": "Flyby",
@@ -40,8 +36,12 @@
       ]
     }
   ],
-  "name": "Giant Owl",
-  "source": "MM",
-  "speed": { "walk": 5, "fly": 60 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}8 ({@damage 2d6 + 1}) slashing damage."
+      ]
+    }
+  ]
 }

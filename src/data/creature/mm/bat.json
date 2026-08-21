@@ -1,20 +1,15 @@
 {
-  "ability": { "str": 2, "dex": 15, "con": 8, "int": 2, "wis": 12, "cha": 4 },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 0} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
-  "senses": ["blindsight 60 ft."],
+  "name": "Bat",
+  "source": "MM",
   "size": "T",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 5, "fly": 30 },
+  "ability": { "str": 2, "dex": 15, "con": 8, "int": 2, "wis": 12, "cha": 4 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Echolocation",
@@ -29,8 +24,12 @@
       ]
     }
   ],
-  "name": "Bat",
-  "source": "MM",
-  "speed": { "walk": 5, "fly": 30 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
+      ]
+    }
+  ]
 }

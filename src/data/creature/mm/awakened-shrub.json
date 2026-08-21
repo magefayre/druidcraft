@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 3, "dex": 8, "con": 11, "int": 10, "wis": 10, "cha": 6 },
-  "ac": [9],
-  "action": [
-    {
-      "name": "Rake",
-      "entries": [
-        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}1 ({@damage 1d4 - 1}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 10, "formula": "3d6" },
-  "languages": ["one language known by its creator"],
+  "name": "Awakened Shrub",
+  "source": "MM",
   "size": "S",
-  "skill": {},
+  "type": "plant",
+  "alignment": ["U"],
+  "ac": [9],
+  "hp": { "average": 10, "formula": "3d6" },
+  "speed": { "walk": 20 },
+  "ability": { "str": 3, "dex": 8, "con": 11, "int": 10, "wis": 10, "cha": 6 },
+  "resist": ["piercing"],
+  "languages": ["one language known by its creator"],
+  "cr": 0,
   "trait": [
     {
       "name": "False Appearance",
@@ -23,8 +19,12 @@
       ]
     }
   ],
-  "name": "Awakened Shrub",
-  "source": "MM",
-  "speed": { "walk": 20 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Rake",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}1 ({@damage 1d4 - 1}) slashing damage."
+      ]
+    }
+  ]
 }

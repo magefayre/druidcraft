@@ -1,25 +1,34 @@
 {
-  "ability": { "str": 10, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
+  "name": "Fire Guardian",
+  "source": "PSX",
+  "size": "L",
+  "type": "elemental",
+  "alignment": ["N"],
   "ac": [13],
-  "action": [
+  "hp": { "average": 102, "formula": "12d10 + 36" },
+  "speed": { "walk": 50 },
+  "ability": { "str": 10, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
+  "resist": [
     {
-      "name": "Multiattack",
-      "entries": ["The elemental makes two touch attacks."]
-    },
-    {
-      "name": "Touch",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 ({@damage 1d10}) fire damage at the start of each of its turns."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["N"],
-  "cr": 5,
-  "hp": { "average": 102, "formula": "12d10 + 36" },
-  "languages": ["Ignan"],
+  "immune": ["fire", "poison"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": {},
+  "languages": ["Ignan"],
+  "cr": 5,
   "trait": [
     {
       "name": "Fire Form",
@@ -40,8 +49,16 @@
       ]
     }
   ],
-  "name": "Fire Guardian",
-  "source": "PSX",
-  "speed": { "walk": 50 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The elemental makes two touch attacks."]
+    },
+    {
+      "name": "Touch",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 ({@damage 1d10}) fire damage at the start of each of its turns."
+      ]
+    }
+  ]
 }

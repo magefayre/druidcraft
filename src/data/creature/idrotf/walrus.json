@@ -1,6 +1,20 @@
 {
-  "ability": { "str": 15, "dex": 9, "con": 14, "int": 3, "wis": 11, "cha": 4 },
+  "name": "Walrus",
+  "source": "IDRotF",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [9],
+  "hp": { "average": 22, "formula": "3d10 + 6" },
+  "speed": { "walk": 20, "swim": 40 },
+  "ability": { "str": 15, "dex": 9, "con": 14, "int": 3, "wis": 11, "cha": 4 },
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The walrus can hold its breath for 10 minutes."]
+    }
+  ],
   "action": [
     {
       "name": "Tusks",
@@ -8,20 +22,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 22, "formula": "3d10 + 6" },
-  "size": "L",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Hold Breath",
-      "entries": ["The walrus can hold its breath for 10 minutes."]
-    }
-  ],
-  "name": "Walrus",
-  "source": "IDRotF",
-  "speed": { "walk": 20, "swim": 40 },
-  "type": "beast"
+  ]
 }

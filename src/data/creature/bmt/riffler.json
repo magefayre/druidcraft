@@ -1,4 +1,12 @@
 {
+  "name": "Riffler",
+  "source": "BMT",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 90, "formula": "20d6 + 20" },
+  "speed": { "walk": 30, "burrow": 20 },
   "ability": {
     "str": 8,
     "dex": 16,
@@ -7,7 +15,26 @@
     "wis": 15,
     "cha": 17
   },
-  "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "save": { "dex": 6, "cha": 6 },
+  "skill": { "arcana": 6, "insight": 5, "sleight of hand": 9, "stealth": 6 },
+  "resist": ["necrotic", "radiant"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Sylvan"],
+  "cr": 5,
+  "trait": [
+    {
+      "name": "Card Sense",
+      "entries": [
+        "The riffler can smell the presence of magical cards, including Decks of Many Things and other magical decks, within 1 mile of itself. It knows the direction to any such cards in that range. Effects that protect a target from divination magic block this sense."
+      ]
+    },
+    {
+      "name": "Riffling Step",
+      "entries": [
+        "The riffler can burrow through any nonmagical material that isn't iron, shuffling the substance through which the riffler moves aside like cards to form a tunnel that closes behind the riffler."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -31,30 +58,5 @@
         "The riffler casts the {@spell Plane Shift} spell targeting only itself, requiring no material components and using Charisma as the spellcasting ability."
       ]
     }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 5,
-  "hp": { "average": 90, "formula": "20d6 + 20" },
-  "languages": ["Common", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "S",
-  "skill": { "arcana": 6, "insight": 5, "sleight of hand": 9, "stealth": 6 },
-  "trait": [
-    {
-      "name": "Card Sense",
-      "entries": [
-        "The riffler can smell the presence of magical cards, including Decks of Many Things and other magical decks, within 1 mile of itself. It knows the direction to any such cards in that range. Effects that protect a target from divination magic block this sense."
-      ]
-    },
-    {
-      "name": "Riffling Step",
-      "entries": [
-        "The riffler can burrow through any nonmagical material that isn't iron, shuffling the substance through which the riffler moves aside like cards to form a tunnel that closes behind the riffler."
-      ]
-    }
-  ],
-  "name": "Riffler",
-  "source": "BMT",
-  "speed": { "walk": 30, "burrow": 20 },
-  "type": "fey"
+  ]
 }

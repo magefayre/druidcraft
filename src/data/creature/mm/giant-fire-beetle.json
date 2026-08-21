@@ -1,20 +1,15 @@
 {
-  "ability": { "str": 8, "dex": 10, "con": 12, "int": 1, "wis": 7, "cha": 3 },
-  "ac": [{ "ac": 13, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 4, "formula": "1d6 + 1" },
-  "senses": ["blindsight 30 ft."],
+  "name": "Giant Fire Beetle",
+  "source": "MM",
   "size": "S",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 4, "formula": "1d6 + 1" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 8, "dex": 10, "con": 12, "int": 1, "wis": 7, "cha": 3 },
+  "senses": ["blindsight 30 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Illumination",
@@ -23,8 +18,12 @@
       ]
     }
   ],
-  "name": "Giant Fire Beetle",
-  "source": "MM",
-  "speed": { "walk": 30 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) slashing damage."
+      ]
+    }
+  ]
 }

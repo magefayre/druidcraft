@@ -1,26 +1,16 @@
 {
-  "ability": { "str": 17, "dex": 13, "con": 13, "int": 4, "wis": 10, "cha": 4 },
-  "ac": [11],
-  "action": [
-    {
-      "name": "Tentacles",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 15 ft., one target. {@h}10 ({@damage 2d6 + 3}) bludgeoning damage. If the target is a creature, it is {@condition grappled} (escape {@dc 16}). Until this grapple ends, the target is {@condition restrained}, and the octopus can't use its tentacles on another target."
-      ]
-    },
-    {
-      "name": "Ink Cloud (Recharges after a Short or Long Rest)",
-      "entries": [
-        "A 20-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is {@quickref Vision and Light||2||heavily obscured} for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the {@action Dash} action as a bonus action."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 52, "formula": "8d10 + 8" },
-  "senses": ["darkvision 60 ft."],
+  "name": "Giant Octopus",
+  "source": "MM",
   "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [11],
+  "hp": { "average": 52, "formula": "8d10 + 8" },
+  "speed": { "walk": 10, "swim": 60 },
+  "ability": { "str": 17, "dex": 13, "con": 13, "int": 4, "wis": 10, "cha": 4 },
   "skill": { "perception": 4, "stealth": 5 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 1,
   "trait": [
     {
       "name": "Hold Breath",
@@ -39,8 +29,18 @@
       "entries": ["The octopus can breathe only underwater."]
     }
   ],
-  "name": "Giant Octopus",
-  "source": "MM",
-  "speed": { "walk": 10, "swim": 60 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 15 ft., one target. {@h}10 ({@damage 2d6 + 3}) bludgeoning damage. If the target is a creature, it is {@condition grappled} (escape {@dc 16}). Until this grapple ends, the target is {@condition restrained}, and the octopus can't use its tentacles on another target."
+      ]
+    },
+    {
+      "name": "Ink Cloud (Recharges after a Short or Long Rest)",
+      "entries": [
+        "A 20-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is {@quickref Vision and Light||2||heavily obscured} for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the {@action Dash} action as a bonus action."
+      ]
+    }
+  ]
 }

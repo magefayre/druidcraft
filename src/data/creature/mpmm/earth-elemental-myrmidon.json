@@ -1,4 +1,12 @@
 {
+  "name": "Earth Elemental Myrmidon",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
+  "hp": { "average": 127, "formula": "17d8 + 51" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 18,
     "dex": 10,
@@ -7,7 +15,18 @@
     "wis": 10,
     "cha": 10
   },
-  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
+  "resist": [
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
+    }
+  ],
+  "immune": ["poison"],
+  "condition": ["paralyzed", "petrified", "poisoned", "prone"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Terran", "one language of its creator's choice"],
+  "cr": 7,
   "action": [
     {
       "name": "Multiattack",
@@ -25,16 +44,5 @@
         "The myrmidon makes one Maul attack. On a hit, the target takes an extra 22 ({@damage 4d10}) thunder damage, and the target must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 7,
-  "hp": { "average": 127, "formula": "17d8 + 51" },
-  "languages": ["Terran", "one language of its creator's choice"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "name": "Earth Elemental Myrmidon",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "elemental"
+  ]
 }

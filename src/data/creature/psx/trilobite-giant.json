@@ -1,6 +1,19 @@
 {
-  "ability": { "str": 13, "dex": 15, "con": 11, "int": 1, "wis": 9, "cha": 3 },
+  "name": "Trilobite (Giant)",
+  "source": "PSX",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 13, "formula": "3d8" },
+  "speed": { "walk": 30, "swim": 30 },
+  "ability": { "str": 13, "dex": 15, "con": 11, "int": 1, "wis": 9, "cha": 3 },
+  "skill": { "stealth": 4 },
+  "senses": ["blindsight 30 ft."],
+  "cr": 0.125,
+  "trait": [
+    { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
+  ],
   "action": [
     {
       "name": "Claw",
@@ -8,18 +21,5 @@
         "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 11}). The crab has two claws, each of which can grapple only one target."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 13, "formula": "3d8" },
-  "senses": ["blindsight 30 ft."],
-  "size": "M",
-  "skill": { "stealth": 4 },
-  "trait": [
-    { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
-  ],
-  "name": "Trilobite (Giant)",
-  "source": "PSX",
-  "speed": { "walk": 30, "swim": 30 },
-  "type": "beast"
+  ]
 }

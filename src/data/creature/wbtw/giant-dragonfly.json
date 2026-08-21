@@ -1,19 +1,14 @@
 {
-  "ability": { "str": 15, "dex": 18, "con": 11, "int": 3, "wis": 10, "cha": 3 },
-  "ac": [{ "ac": 16, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.5,
-  "hp": { "average": 22, "formula": "4d10" },
+  "name": "Giant Dragonfly",
+  "source": "WBtW",
   "size": "L",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "hp": { "average": 22, "formula": "4d10" },
+  "speed": { "walk": 10, "fly": 60 },
+  "ability": { "str": 15, "dex": 18, "con": 11, "int": 3, "wis": 10, "cha": 3 },
+  "cr": 0.5,
   "trait": [
     {
       "name": "Drone",
@@ -22,8 +17,12 @@
       ]
     }
   ],
-  "name": "Giant Dragonfly",
-  "source": "WBtW",
-  "speed": { "walk": 10, "fly": 60 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage."
+      ]
+    }
+  ]
 }

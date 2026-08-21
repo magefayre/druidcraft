@@ -1,4 +1,12 @@
 {
+  "name": "Pech",
+  "source": "DitLCoT",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N", "G"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 82, "formula": "11d6 + 44" },
+  "speed": { "walk": 30, "burrow": 20 },
   "ability": {
     "str": 19,
     "dex": 11,
@@ -7,28 +15,12 @@
     "wis": 14,
     "cha": 10
   },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": [
-        "The pech makes two Fortified Pickaxe attacks. If it hits a Large or smaller creature with both attacks, the target must succeed on a {@dc 14} Strength saving throw or have the {@condition prone} condition."
-      ]
-    },
-    {
-      "name": "Fortified Pickaxe",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) force damage. If the target is a Construct or an object, the attack is automatically a critical hit."
-      ]
-    }
-  ],
-  "alignment": ["N", "G"],
-  "cr": 4,
-  "hp": { "average": 82, "formula": "11d6 + 44" },
-  "languages": ["Common", "Terran"],
-  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
-  "size": "S",
+  "save": { "con": 6, "wis": 4 },
   "skill": { "athletics": 6, "perception": 4, "survival": 4 },
+  "condition": ["petrified"],
+  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "languages": ["Common", "Terran"],
+  "cr": 4,
   "trait": [
     {
       "name": "Magic Resistance",
@@ -43,8 +35,18 @@
       ]
     }
   ],
-  "name": "Pech",
-  "source": "DitLCoT",
-  "speed": { "walk": 30, "burrow": 20 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The pech makes two Fortified Pickaxe attacks. If it hits a Large or smaller creature with both attacks, the target must succeed on a {@dc 14} Strength saving throw or have the {@condition prone} condition."
+      ]
+    },
+    {
+      "name": "Fortified Pickaxe",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) force damage. If the target is a Construct or an object, the attack is automatically a critical hit."
+      ]
+    }
+  ]
 }

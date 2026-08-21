@@ -1,19 +1,14 @@
 {
-  "ability": { "str": 25, "dex": 10, "con": 19, "int": 2, "wis": 12, "cha": 6 },
-  "ac": [{ "ac": 16, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Stomp",
-      "entries": [
-        "{@atk mw} {@hit 10} to hit, reach 10 ft., one target. {@h}20 ({@damage 3d8 + 7}) bludgeoning damage. If the titanothere moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 13 ({@damage 3d8}) bludgeoning damage, and the target must succeed on a {@dc 18} Strength saving throw or have the {@condition prone} condition if it is a creature."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 5,
-  "hp": { "average": 136, "formula": "13d12 + 52" },
+  "name": "Titanothere",
+  "source": "BGG",
   "size": "H",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "hp": { "average": 136, "formula": "13d12 + 52" },
+  "speed": { "walk": 50 },
+  "ability": { "str": 25, "dex": 10, "con": 19, "int": 2, "wis": 12, "cha": 6 },
+  "cr": 5,
   "trait": [
     {
       "name": "Beast of Burden",
@@ -22,8 +17,12 @@
       ]
     }
   ],
-  "name": "Titanothere",
-  "source": "BGG",
-  "speed": { "walk": 50 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Stomp",
+      "entries": [
+        "{@atk mw} {@hit 10} to hit, reach 10 ft., one target. {@h}20 ({@damage 3d8 + 7}) bludgeoning damage. If the titanothere moved at least 20 feet straight toward the target immediately before the hit, the target takes an extra 13 ({@damage 3d8}) bludgeoning damage, and the target must succeed on a {@dc 18} Strength saving throw or have the {@condition prone} condition if it is a creature."
+      ]
+    }
+  ]
 }

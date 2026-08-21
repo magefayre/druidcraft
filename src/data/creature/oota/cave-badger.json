@@ -1,6 +1,23 @@
 {
-  "ability": { "str": 13, "dex": 10, "con": 15, "int": 2, "wis": 12, "cha": 5 },
+  "name": "Cave Badger",
+  "source": "OotA",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 13, "formula": "2d8 + 4" },
+  "speed": { "walk": 30, "burrow": 15 },
+  "ability": { "str": 13, "dex": 10, "con": 15, "int": 2, "wis": 12, "cha": 5 },
+  "senses": ["darkvision 30 ft.", "tremorsense 60 ft."],
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The badger has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,23 +37,5 @@
         "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 13, "formula": "2d8 + 4" },
-  "senses": ["darkvision 30 ft.", "tremorsense 60 ft."],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Keen Smell",
-      "entries": [
-        "The badger has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
-      ]
-    }
-  ],
-  "name": "Cave Badger",
-  "source": "OotA",
-  "speed": { "walk": 30, "burrow": 15 },
-  "type": "beast"
+  ]
 }

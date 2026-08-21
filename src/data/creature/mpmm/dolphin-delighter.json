@@ -1,4 +1,12 @@
 {
+  "name": "Dolphin Delighter",
+  "source": "MPMM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "G"],
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 27, "formula": "5d8 + 5" },
+  "speed": { "walk": 0, "swim": 60 },
   "ability": {
     "str": 14,
     "dex": 13,
@@ -7,7 +15,17 @@
     "wis": 12,
     "cha": 16
   },
-  "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "save": { "wis": 3, "cha": 5 },
+  "skill": { "perception": 3, "performance": 5 },
+  "senses": ["blindsight 60 ft."],
+  "languages": ["Aquan", "telepathy 120 ft."],
+  "cr": 3,
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The dolphin can hold its breath for 20 minutes."]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,7 +38,6 @@
       ]
     }
   ],
-  "alignment": ["C", "G"],
   "bonus": [
     {
       "name": "Delightful Light {@recharge 5}",
@@ -34,21 +51,5 @@
         "The dolphin teleports up to 30 feet to an unoccupied space it can see. Immediately before teleporting, the dolphin can choose one creature within 5 feet of it. That creature can teleport with the dolphin, appearing in an unoccupied space within 5 feet of the dolphin's destination space."
       ]
     }
-  ],
-  "cr": 3,
-  "hp": { "average": 27, "formula": "5d8 + 5" },
-  "languages": ["Aquan", "telepathy 120 ft."],
-  "senses": ["blindsight 60 ft."],
-  "size": "M",
-  "skill": { "perception": 3, "performance": 5 },
-  "trait": [
-    {
-      "name": "Hold Breath",
-      "entries": ["The dolphin can hold its breath for 20 minutes."]
-    }
-  ],
-  "name": "Dolphin Delighter",
-  "source": "MPMM",
-  "speed": { "walk": 0, "swim": 60 },
-  "type": "fey"
+  ]
 }

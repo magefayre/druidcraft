@@ -1,30 +1,22 @@
 {
-  "ability": { "str": 4, "dex": 23, "con": 13, "int": 10, "wis": 12, "cha": 7 },
-  "ac": [16],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The quickling makes three Dagger attacks."]
-    },
-    {
-      "name": "Dagger",
-      "entries": [
-        "{@atk mw,rw} {@hit 8} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}8 ({@damage 1d4 + 6}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["C", "E"],
-  "cr": 1,
-  "hp": { "average": 10, "formula": "3d4 + 3" },
-  "languages": ["Common", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
+  "name": "Quickling",
+  "source": "MPMM",
   "size": "T",
+  "type": "fey",
+  "alignment": ["C", "E"],
+  "ac": [16],
+  "hp": { "average": 10, "formula": "3d4 + 3" },
+  "speed": { "walk": 120 },
+  "ability": { "str": 4, "dex": 23, "con": 13, "int": 10, "wis": 12, "cha": 7 },
   "skill": {
     "acrobatics": 8,
     "sleight of hand": 8,
     "stealth": 8,
     "perception": 5
   },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Sylvan"],
+  "cr": 1,
   "trait": [
     {
       "name": "Blurred Movement",
@@ -39,8 +31,16 @@
       ]
     }
   ],
-  "name": "Quickling",
-  "source": "MPMM",
-  "speed": { "walk": 120 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The quickling makes three Dagger attacks."]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "{@atk mw,rw} {@hit 8} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}8 ({@damage 1d4 + 6}) piercing damage."
+      ]
+    }
+  ]
 }

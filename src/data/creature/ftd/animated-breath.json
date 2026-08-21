@@ -1,36 +1,36 @@
 {
-  "ability": { "str": 19, "dex": 11, "con": 18, "int": 6, "wis": 10, "cha": 5 },
+  "name": "Animated Breath",
+  "source": "FTD",
+  "size": "L",
+  "type": "elemental",
+  "alignment": ["N", "E"],
   "ac": [
     { "ac": 15, "from": ["natural armor"] },
     { "ac": 17, "condition": "cold form only", "braces": true }
   ],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The animated breath makes two Slam attacks."]
-    },
-    {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage plus 11 ({@damage 2d10}) damage of a type determined by the animated breath's form: acid, cold, fire, lightning, or poison."
-      ]
-    }
-  ],
-  "alignment": ["N", "E"],
-  "bonus": [
-    {
-      "name": "Lightning Burst (Lightning Form Only)",
-      "entries": [
-        "The animated breath magically teleports to an unoccupied space it can see within 30 feet of it. Each creature within 5 feet of the animated breath after it teleports takes 3 ({@damage 1d6}) lightning damage."
-      ]
-    }
-  ],
-  "cr": 6,
   "hp": { "average": 95, "formula": "10d10 + 40" },
-  "languages": ["understands Draconic but can't speak"],
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  },
+  "ability": { "str": 19, "dex": 11, "con": 18, "int": 6, "wis": 10, "cha": 5 },
+  "resist": [
+    {
+      "special": "damage of the type matching the animated breath's form (acid, cold, fire, lightning, or poison)"
+    }
+  ],
+  "condition": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "restrained",
+    "unconscious"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": {},
+  "languages": ["understands Draconic but can't speak"],
+  "cr": 6,
   "trait": [
     {
       "name": "Chromatic Form",
@@ -51,12 +51,24 @@
       ]
     }
   ],
-  "name": "Animated Breath",
-  "source": "FTD",
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The animated breath makes two Slam attacks."]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) bludgeoning damage plus 11 ({@damage 2d10}) damage of a type determined by the animated breath's form: acid, cold, fire, lightning, or poison."
+      ]
+    }
+  ],
+  "bonus": [
+    {
+      "name": "Lightning Burst (Lightning Form Only)",
+      "entries": [
+        "The animated breath magically teleports to an unoccupied space it can see within 30 feet of it. Each creature within 5 feet of the animated breath after it teleports takes 3 ({@damage 1d6}) lightning damage."
+      ]
+    }
+  ]
 }

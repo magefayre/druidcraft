@@ -1,4 +1,12 @@
 {
+  "name": "Big Xorn",
+  "source": "WDMM",
+  "size": "L",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [{ "ac": 19, "from": ["natural armor"] }],
+  "hp": { "formula": "9d10 + 54", "average": 103 },
+  "speed": { "walk": 20, "burrow": 20 },
   "ability": {
     "str": 20,
     "dex": 10,
@@ -7,32 +15,17 @@
     "wis": 10,
     "cha": 11
   },
-  "ac": [{ "ac": 19, "from": ["natural armor"] }],
-  "action": [
+  "skill": { "perception": 6, "stealth": 3 },
+  "resist": [
     {
-      "name": "Multiattack",
-      "entries": ["The xorn makes three claw attacks and one bite attack."]
-    },
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}22 ({@damage 5d6 + 5}) piercing damage."
-      ]
-    },
-    {
-      "name": "Claw",
-      "entries": [
-        "{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}9 ({@damage 1d8 + 5}) slashing damage."
-      ]
+      "resist": ["piercing", "slashing"],
+      "note": "from nonmagical attacks that aren't adamantine",
+      "cond": true
     }
   ],
-  "alignment": ["N"],
-  "cr": 8,
-  "hp": { "formula": "9d10 + 54", "average": 103 },
-  "languages": ["Terran"],
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
-  "size": "L",
-  "skill": { "perception": 6, "stealth": 3 },
+  "languages": ["Terran"],
+  "cr": 8,
   "trait": [
     {
       "name": "Earth Glide",
@@ -53,8 +46,22 @@
       ]
     }
   ],
-  "name": "Big Xorn",
-  "source": "WDMM",
-  "speed": { "walk": 20, "burrow": 20 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The xorn makes three claw attacks and one bite attack."]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}22 ({@damage 5d6 + 5}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}9 ({@damage 1d8 + 5}) slashing damage."
+      ]
+    }
+  ]
 }

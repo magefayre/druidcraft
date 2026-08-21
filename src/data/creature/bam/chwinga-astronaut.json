@@ -1,4 +1,12 @@
 {
+  "name": "Chwinga Astronaut",
+  "source": "BAM",
+  "size": "T",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [15],
+  "hp": { "average": 7, "formula": "3d4" },
+  "speed": { "walk": 20, "climb": 20, "swim": 20 },
   "ability": {
     "str": 1,
     "dex": 20,
@@ -7,27 +15,9 @@
     "wis": 16,
     "cha": 16
   },
-  "ac": [15],
-  "action": [
-    {
-      "name": "Magical Gift (1/Day)",
-      "entries": [
-        "The chwinga targets a Humanoid it can see within 5 feet of itself. The target gains a {@filter supernatural charm|rewards|type=charm} of the DM's choice. See {@book chapter 7|DMG|7|Other Rewards} for more information on supernatural charms."
-      ]
-    },
-    {
-      "name": "Natural Shelter",
-      "entries": [
-        "The chwinga takes shelter inside a rock, a bush, a tree, or a natural source of fresh water in its space. The chwinga can't be targeted by any attack, spell, or other effect while it is magically protected in this way, and the shelter doesn't impair the chwinga's blindsight. The chwinga can use its action to emerge from a shelter. If its shelter is destroyed, the chwinga is forced out and appears in the shelter's space, but is otherwise unharmed."
-      ]
-    }
-  ],
-  "alignment": ["N"],
-  "cr": 0,
-  "hp": { "average": 7, "formula": "3d4" },
-  "senses": ["blindsight 60 ft."],
-  "size": "T",
   "skill": { "acrobatics": 7, "perception": 7, "stealth": 7 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Evasion",
@@ -42,8 +32,18 @@
       ]
     }
   ],
-  "name": "Chwinga Astronaut",
-  "source": "BAM",
-  "speed": { "walk": 20, "climb": 20, "swim": 20 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Magical Gift (1/Day)",
+      "entries": [
+        "The chwinga targets a Humanoid it can see within 5 feet of itself. The target gains a {@filter supernatural charm|rewards|type=charm} of the DM's choice. See {@book chapter 7|DMG|7|Other Rewards} for more information on supernatural charms."
+      ]
+    },
+    {
+      "name": "Natural Shelter",
+      "entries": [
+        "The chwinga takes shelter inside a rock, a bush, a tree, or a natural source of fresh water in its space. The chwinga can't be targeted by any attack, spell, or other effect while it is magically protected in this way, and the shelter doesn't impair the chwinga's blindsight. The chwinga can use its action to emerge from a shelter. If its shelter is destroyed, the chwinga is forced out and appears in the shelter's space, but is otherwise unharmed."
+      ]
+    }
+  ]
 }

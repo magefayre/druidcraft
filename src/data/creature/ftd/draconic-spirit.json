@@ -1,4 +1,14 @@
 {
+  "name": "Draconic Spirit",
+  "source": "FTD",
+  "size": "L",
+  "type": "dragon",
+  "alignment": [{ "alignment": ["N"] }],
+  "ac": [{ "special": "14 + the level of the spell (natural armor)" }],
+  "hp": {
+    "special": "50 + 10 for each spell level above 5th (the dragon has a number of Hit Dice [d10s] equal to the level of the spell)"
+  },
+  "speed": { "walk": 30, "fly": 60, "swim": 30 },
   "ability": {
     "str": 19,
     "dex": 14,
@@ -7,7 +17,29 @@
     "wis": 14,
     "cha": 14
   },
-  "ac": [{ "special": "14 + the level of the spell (natural armor)" }],
+  "resist": [
+    {
+      "resist": ["acid", "cold", "fire", "lightning", "poison"],
+      "cond": true,
+      "note": "(Chromatic and Metallic Only)"
+    },
+    {
+      "resist": ["force", "necrotic", "psychic", "radiant", "thunder"],
+      "cond": true,
+      "note": "(Gem Only)"
+    }
+  ],
+  "condition": ["charmed", "frightened", "poisoned"],
+  "senses": ["blindsight 30 ft.", "darkvision 60 ft."],
+  "languages": ["Draconic", "understands the languages you speak"],
+  "trait": [
+    {
+      "name": "Shared Resistances",
+      "entries": [
+        "When you summon the dragon, choose one of its damage resistances. You have resistance to the chosen damage type until the spell ends."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -27,25 +59,5 @@
         "The dragon exhales destructive energy in a 30-foot cone. Each creature in that area must make a Dexterity saving throw against your spell save DC. A creature takes {@damage 2d6} damage of a type this dragon has resistance to (your choice) on a failed save, or half as much damage on a successful one."
       ]
     }
-  ],
-  "alignment": [{ "alignment": ["N"] }],
-  "hp": {
-    "special": "50 + 10 for each spell level above 5th (the dragon has a number of Hit Dice [d10s] equal to the level of the spell)"
-  },
-  "languages": ["Draconic", "understands the languages you speak"],
-  "senses": ["blindsight 30 ft.", "darkvision 60 ft."],
-  "size": "L",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Shared Resistances",
-      "entries": [
-        "When you summon the dragon, choose one of its damage resistances. You have resistance to the chosen damage type until the spell ends."
-      ]
-    }
-  ],
-  "name": "Draconic Spirit",
-  "source": "FTD",
-  "speed": { "walk": 30, "fly": 60, "swim": 30 },
-  "type": "dragon"
+  ]
 }

@@ -1,6 +1,22 @@
 {
-  "ability": { "str": 14, "dex": 13, "con": 13, "int": 6, "wis": 12, "cha": 7 },
+  "name": "Dolphin",
+  "source": "MPMM",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 0, "swim": 60 },
+  "ability": { "str": 14, "dex": 13, "con": 13, "int": 6, "wis": 12, "cha": 7 },
+  "skill": { "perception": 3 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 0.125,
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The dolphin can hold its breath for 20 minutes."]
+    }
+  ],
   "action": [
     {
       "name": "Slam",
@@ -8,21 +24,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage. If the dolphin moved at least 30 feet straight toward the target immediately before the hit, the target takes an extra 3 ({@damage 1d6}) bludgeoning damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
-  "senses": ["blindsight 60 ft."],
-  "size": "M",
-  "skill": { "perception": 3 },
-  "trait": [
-    {
-      "name": "Hold Breath",
-      "entries": ["The dolphin can hold its breath for 20 minutes."]
-    }
-  ],
-  "name": "Dolphin",
-  "source": "MPMM",
-  "speed": { "walk": 0, "swim": 60 },
-  "type": "beast"
+  ]
 }

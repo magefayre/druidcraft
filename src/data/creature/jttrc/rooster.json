@@ -1,19 +1,15 @@
 {
-  "ability": { "str": 5, "dex": 16, "con": 8, "int": 2, "wis": 14, "cha": 6 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Talons",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}1 slashing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "name": "Rooster",
+  "source": "JttRC",
   "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 10 },
+  "ability": { "str": 5, "dex": 16, "con": 8, "int": 2, "wis": 14, "cha": 6 },
   "skill": { "perception": 4 },
+  "cr": 0,
   "trait": [
     {
       "name": "Keen Sight",
@@ -22,8 +18,12 @@
       ]
     }
   ],
-  "name": "Rooster",
-  "source": "JttRC",
-  "speed": { "walk": 10 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}1 slashing damage."
+      ]
+    }
+  ]
 }

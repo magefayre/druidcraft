@@ -1,6 +1,16 @@
 {
-  "ability": { "str": 10, "dex": 14, "con": 10, "int": 2, "wis": 6, "cha": 1 },
+  "name": "Drow Spore Servant",
+  "source": "OotA",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["U"],
   "ac": [{ "ac": 15, "from": ["{@item chain shirt|phb}"] }],
+  "hp": { "average": 13, "formula": "3d8" },
+  "speed": { "walk": 20 },
+  "ability": { "str": 10, "dex": 14, "con": 10, "int": 2, "wis": 6, "cha": 1 },
+  "condition": ["blinded", "charmed", "frightened", "paralyzed"],
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "cr": 0.125,
   "action": [
     {
       "name": "Shortsword",
@@ -8,15 +18,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 13, "formula": "3d8" },
-  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
-  "size": "M",
-  "skill": {},
-  "name": "Drow Spore Servant",
-  "source": "OotA",
-  "speed": { "walk": 20 },
-  "type": "plant"
+  ]
 }

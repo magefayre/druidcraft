@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 2, "dex": 20, "con": 8, "int": 10, "wis": 14, "cha": 15 },
-  "ac": [15],
-  "action": [
-    {
-      "name": "Superior Invisibility",
-      "entries": [
-        "The pixie magically turns {@condition invisible} until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment the pixie wears or carries is {@condition invisible} with it."
-      ]
-    }
-  ],
-  "alignment": ["N", "G"],
-  "cr": 0.25,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
-  "languages": ["Sylvan"],
+  "name": "Pixie",
+  "source": "MM",
   "size": "T",
+  "type": "fey",
+  "alignment": ["N", "G"],
+  "ac": [15],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 10, "fly": 30 },
+  "ability": { "str": 2, "dex": 20, "con": 8, "int": 10, "wis": 14, "cha": 15 },
   "skill": { "perception": 4, "stealth": 7 },
+  "languages": ["Sylvan"],
+  "cr": 0.25,
   "trait": [
     {
       "name": "Magic Resistance",
@@ -23,8 +19,12 @@
       ]
     }
   ],
-  "name": "Pixie",
-  "source": "MM",
-  "speed": { "walk": 10, "fly": 30 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Superior Invisibility",
+      "entries": [
+        "The pixie magically turns {@condition invisible} until its {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment the pixie wears or carries is {@condition invisible} with it."
+      ]
+    }
+  ]
 }

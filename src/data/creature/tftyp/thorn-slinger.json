@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 13, "dex": 12, "con": 12, "int": 1, "wis": 10, "cha": 1 },
-  "ac": [11],
-  "action": [
-    {
-      "name": "Thorns",
-      "entries": [
-        "{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 30 ft., one target. {@h}8 ({@damage 2d6 + 1}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.5,
-  "hp": { "average": 32, "formula": "5d10 + 5" },
-  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "name": "Thorn Slinger",
+  "source": "TftYP",
   "size": "L",
-  "skill": {},
+  "type": "plant",
+  "alignment": ["U"],
+  "ac": [11],
+  "hp": { "average": 32, "formula": "5d10 + 5" },
+  "speed": { "walk": 10 },
+  "ability": { "str": 13, "dex": 12, "con": 12, "int": 1, "wis": 10, "cha": 1 },
+  "condition": ["blinded", "deafened", "frightened"],
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "cr": 0.5,
   "trait": [
     {
       "name": "Adhesive Blossoms",
@@ -30,8 +26,12 @@
       ]
     }
   ],
-  "name": "Thorn Slinger",
-  "source": "TftYP",
-  "speed": { "walk": 10 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Thorns",
+      "entries": [
+        "{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 30 ft., one target. {@h}8 ({@damage 2d6 + 1}) piercing damage."
+      ]
+    }
+  ]
 }

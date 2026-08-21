@@ -1,4 +1,12 @@
 {
+  "name": "Satyr Reveler",
+  "source": "MOT",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [13],
+  "hp": { "average": 33, "formula": "6d8 + 6" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 12,
     "dex": 16,
@@ -7,31 +15,9 @@
     "wis": 10,
     "cha": 16
   },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The satyr makes two ram attacks or two shortbow attacks."]
-    },
-    {
-      "name": "Ram",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) bludgeoning damage."
-      ]
-    },
-    {
-      "name": "Shortbow",
-      "entries": [
-        "{@atk rw} {@hit 5} to hit, range 80/320 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 1,
-  "hp": { "average": 33, "formula": "6d8 + 6" },
-  "languages": ["Common", "Sylvan"],
-  "size": "M",
   "skill": { "acrobatics": 5, "performance": 7, "stealth": 5 },
+  "languages": ["Common", "Sylvan"],
+  "cr": 1,
   "trait": [
     {
       "name": "Enthralling Performance",
@@ -50,8 +36,22 @@
       "entries": ["Magic can't put the satyr to sleep."]
     }
   ],
-  "name": "Satyr Reveler",
-  "source": "MOT",
-  "speed": { "walk": 40 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The satyr makes two ram attacks or two shortbow attacks."]
+    },
+    {
+      "name": "Ram",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 2d4 + 1}) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "entries": [
+        "{@atk rw} {@hit 5} to hit, range 80/320 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
+      ]
+    }
+  ]
 }

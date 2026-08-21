@@ -1,15 +1,14 @@
 {
-  "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 9, "cha": 5 },
-  "ac": [{ "ac": 11, "from": ["natural armor"] }],
-  "action": null,
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 5, "formula": "1d8 + 1" },
-  "size": "M",
-  "skill": {},
-  "trait": null,
   "name": "Pig",
   "source": "SKT",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
+  "hp": { "average": 5, "formula": "1d8 + 1" },
   "speed": { "walk": 30 },
-  "type": "beast"
+  "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 9, "cha": 5 },
+  "cr": 0,
+  "trait": null,
+  "action": null
 }

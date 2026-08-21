@@ -1,4 +1,12 @@
 {
+  "name": "Fate Hag",
+  "source": "BMT",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["N"],
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 71, "formula": "13d8 + 13" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 12,
     "dex": 14,
@@ -7,28 +15,12 @@
     "wis": 18,
     "cha": 15
   },
-  "ac": [{ "ac": 14, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": [
-        "The hag makes two Shears attacks. It can replace one attack with a use of Spellcasting."
-      ]
-    },
-    {
-      "name": "Shears",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) force damage. If the target is a creature, it has disadvantage on attack rolls until the end of the hag's next turn."
-      ]
-    }
-  ],
-  "alignment": ["N"],
-  "cr": 4,
-  "hp": { "average": 71, "formula": "13d8 + 13" },
-  "languages": ["all"],
-  "senses": ["truesight 60 ft."],
-  "size": "M",
+  "save": { "con": 3, "wis": 6 },
   "skill": { "arcana": 5, "deception": 6, "history": 5, "perception": 6 },
+  "condition": ["charmed"],
+  "senses": ["truesight 60 ft."],
+  "languages": ["all"],
+  "cr": 4,
   "trait": [
     {
       "name": "Legendary Resistance (2/Day)",
@@ -43,8 +35,18 @@
       ]
     }
   ],
-  "name": "Fate Hag",
-  "source": "BMT",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hag makes two Shears attacks. It can replace one attack with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Shears",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) force damage. If the target is a creature, it has disadvantage on attack rolls until the end of the hag's next turn."
+      ]
+    }
+  ]
 }

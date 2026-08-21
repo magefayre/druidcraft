@@ -1,4 +1,16 @@
 {
+  "name": "Air Elemental Myrmidon",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
+  "hp": { "average": 117, "formula": "18d8 + 36" },
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  },
   "ability": {
     "str": 18,
     "dex": 14,
@@ -7,7 +19,20 @@
     "wis": 10,
     "cha": 10
   },
-  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
+  "resist": [
+    "lightning",
+    "thunder",
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
+    }
+  ],
+  "immune": ["poison"],
+  "condition": ["paralyzed", "petrified", "poisoned", "prone"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Auran", "one language of its creator's choice"],
+  "cr": 7,
   "action": [
     {
       "name": "Multiattack",
@@ -25,20 +50,5 @@
         "The myrmidon makes one Flail attack. On a hit, the target takes an extra 18 ({@damage 4d8}) lightning damage, and the target must succeed on a {@dc 13} Constitution saving throw or be {@condition stunned} until the end of the myrmidon's next turn."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 7,
-  "hp": { "average": 117, "formula": "18d8 + 36" },
-  "languages": ["Auran", "one language of its creator's choice"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "name": "Air Elemental Myrmidon",
-  "source": "MPMM",
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  ]
 }

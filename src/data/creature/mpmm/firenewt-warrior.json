@@ -1,6 +1,22 @@
 {
-  "ability": { "str": 10, "dex": 13, "con": 12, "int": 7, "wis": 11, "cha": 8 },
+  "name": "Firenewt Warrior",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N"],
   "ac": [{ "ac": 13, "from": ["{@item shield|PHB}"] }],
+  "hp": { "average": 27, "formula": "5d8 + 5" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 10, "dex": 13, "con": 12, "int": 7, "wis": 11, "cha": 8 },
+  "immune": ["fire"],
+  "languages": ["Draconic", "Ignan"],
+  "cr": 0.5,
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The firenewt can breathe air and water."]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -18,21 +34,5 @@
         "The firenewt spits fire at a creature within 10 feet of it. The creature must make a {@dc 11} Dexterity saving throw, taking 9 ({@damage 2d8}) fire damage on a failed save, or half as much damage on a successful one."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 0.5,
-  "hp": { "average": 27, "formula": "5d8 + 5" },
-  "languages": ["Draconic", "Ignan"],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Amphibious",
-      "entries": ["The firenewt can breathe air and water."]
-    }
-  ],
-  "name": "Firenewt Warrior",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "elemental"
+  ]
 }

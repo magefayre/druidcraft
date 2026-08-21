@@ -1,6 +1,26 @@
 {
-  "ability": { "str": 15, "dex": 8, "con": 14, "int": 5, "wis": 10, "cha": 3 },
+  "name": "Vine Blight",
+  "source": "MM",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["N", "E"],
   "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 26, "formula": "4d8 + 4" },
+  "speed": { "walk": 10 },
+  "ability": { "str": 15, "dex": 8, "con": 14, "int": 5, "wis": 10, "cha": 3 },
+  "skill": { "stealth": 1 },
+  "condition": ["blinded", "deafened"],
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "languages": ["Common"],
+  "cr": 0.5,
+  "trait": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the blight remains motionless, it is indistinguishable from a tangle of vines."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Constrict",
@@ -14,24 +34,5 @@
         "Grasping roots and vines sprout in a 15-foot radius centered on the blight, withering away after 1 minute. For the duration, that area is {@quickref difficult terrain||3} for nonplant creatures. In addition, each creature of the blight's choice in that area when the plants appear must succeed on a {@dc 12} Strength saving throw or become {@condition restrained}. A creature can use its action to make a {@dc 12} Strength check, freeing itself or another entangled creature within reach on a success."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 0.5,
-  "hp": { "average": 26, "formula": "4d8 + 4" },
-  "languages": ["Common"],
-  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
-  "size": "M",
-  "skill": { "stealth": 1 },
-  "trait": [
-    {
-      "name": "False Appearance",
-      "entries": [
-        "While the blight remains motionless, it is indistinguishable from a tangle of vines."
-      ]
-    }
-  ],
-  "name": "Vine Blight",
-  "source": "MM",
-  "speed": { "walk": 10 },
-  "type": "plant"
+  ]
 }

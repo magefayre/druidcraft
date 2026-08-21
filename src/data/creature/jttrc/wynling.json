@@ -1,4 +1,12 @@
 {
+  "name": "Wynling",
+  "source": "JttRC",
+  "size": "T",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [15],
+  "hp": { "average": 21, "formula": "6d4 + 6" },
+  "speed": { "walk": 30, "fly": 40 },
   "ability": {
     "str": 3,
     "dex": 20,
@@ -7,7 +15,10 @@
     "wis": 14,
     "cha": 16
   },
-  "ac": [15],
+  "skill": { "sleight of hand": 7, "stealth": 7 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Sylvan"],
+  "cr": 0.5,
   "action": [
     {
       "name": "Slam",
@@ -21,16 +32,5 @@
         "The wynling magically turns {@condition invisible}, along with any equipment it is wearing or carrying, for 1 minute or until it makes an attack roll."
       ]
     }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 0.5,
-  "hp": { "average": 21, "formula": "6d4 + 6" },
-  "languages": ["Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "T",
-  "skill": { "sleight of hand": 7, "stealth": 7 },
-  "name": "Wynling",
-  "source": "JttRC",
-  "speed": { "walk": 30, "fly": 40 },
-  "type": "fey"
+  ]
 }

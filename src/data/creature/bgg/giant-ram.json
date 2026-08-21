@@ -1,4 +1,12 @@
 {
+  "name": "Giant Ram",
+  "source": "BGG",
+  "size": "L",
+  "type": "fey",
+  "alignment": ["U"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 28, "formula": "3d10 + 12" },
+  "speed": { "walk": 50 },
   "ability": {
     "str": 19,
     "dex": 12,
@@ -7,7 +15,16 @@
     "wis": 14,
     "cha": 10
   },
-  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "resist": ["cold", "fire", "lightning"],
+  "cr": 1,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The ram has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Ram",
@@ -21,22 +38,5 @@
         "{@atk rs} {@hit 4} to hit, range 30 ft., one target. {@h}7 ({@damage 2d6}) force damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 28, "formula": "3d10 + 12" },
-  "size": "L",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The ram has advantage on saving throws against spells and other magical effects."
-      ]
-    }
-  ],
-  "name": "Giant Ram",
-  "source": "BGG",
-  "speed": { "walk": 50 },
-  "type": "fey"
+  ]
 }

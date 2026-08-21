@@ -1,20 +1,15 @@
 {
-  "ability": { "str": 2, "dex": 11, "con": 9, "int": 2, "wis": 10, "cha": 4 },
-  "ac": [10],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
-  "senses": ["darkvision 30 ft."],
+  "name": "Chimeric Rat",
+  "source": "IDRotF",
   "size": "T",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [10],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 20 },
+  "ability": { "str": 2, "dex": 11, "con": 9, "int": 2, "wis": 10, "cha": 4 },
+  "senses": ["darkvision 30 ft."],
+  "cr": 0,
   "trait": [
     {
       "name": "Keen Smell",
@@ -23,8 +18,12 @@
       ]
     }
   ],
-  "name": "Chimeric Rat",
-  "source": "IDRotF",
-  "speed": { "walk": 20 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 piercing damage."
+      ]
+    }
+  ]
 }

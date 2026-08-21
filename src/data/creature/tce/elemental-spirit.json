@@ -1,4 +1,18 @@
 {
+  "name": "Elemental Spirit",
+  "source": "TCE",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["U"],
+  "ac": [{ "special": "11 + the level of the spell (natural armor)" }],
+  "hp": { "special": "50 + 10 for each spell level above 4th" },
+  "speed": {
+    "walk": 40,
+    "fly": { "number": 40, "condition": "(air only; hover)" },
+    "burrow": { "number": 40, "condition": "(earth only)" },
+    "swim": { "number": 40, "condition": "(water only)" },
+    "canHover": true
+  },
   "ability": {
     "str": 18,
     "dex": 15,
@@ -7,7 +21,36 @@
     "wis": 10,
     "cha": 16
   },
-  "ac": [{ "special": "11 + the level of the spell (natural armor)" }],
+  "resist": [
+    { "resist": ["lightning", "thunder"], "cond": true, "note": "(Air only)" },
+    {
+      "resist": ["piercing", "slashing"],
+      "cond": true,
+      "note": "(Earth only)"
+    },
+    { "resist": ["acid"], "cond": true, "note": "(Water only)" }
+  ],
+  "immune": [
+    "poison",
+    { "immune": ["fire"], "cond": true, "note": "(Fire only)" }
+  ],
+  "condition": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Primordial", "understands the languages you speak"],
+  "trait": [
+    {
+      "name": "Amorphous Form (Air, Fire, and Water Only)",
+      "entries": [
+        "The elemental can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -21,29 +64,5 @@
         "{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target. {@h}{@damage 1d10 + 4 + summonSpellLevel} bludgeoning damage (Air, Earth, and Water only) or fire damage (Fire only)."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "hp": { "special": "50 + 10 for each spell level above 4th" },
-  "languages": ["Primordial", "understands the languages you speak"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Amorphous Form (Air, Fire, and Water Only)",
-      "entries": [
-        "The elemental can move through a space as narrow as 1 inch wide without squeezing."
-      ]
-    }
-  ],
-  "name": "Elemental Spirit",
-  "source": "TCE",
-  "speed": {
-    "walk": 40,
-    "fly": { "number": 40, "condition": "(air only; hover)" },
-    "burrow": { "number": 40, "condition": "(earth only)" },
-    "swim": { "number": 40, "condition": "(water only)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  ]
 }

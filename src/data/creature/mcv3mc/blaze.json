@@ -1,24 +1,36 @@
 {
-  "ability": { "str": 16, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
+  "name": "Blaze",
+  "source": "MCV3MC",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N", "E"],
   "ac": [13],
-  "action": [
+  "hp": { "average": 75, "formula": "10d8 + 30" },
+  "speed": {
+    "walk": 20,
+    "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
+    "canHover": true
+  },
+  "ability": { "str": 16, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
+  "resist": [
     {
-      "name": "Multiattack",
-      "entries": ["The blaze makes three Fiery Doom attacks."]
-    },
-    {
-      "name": "Fiery Doom",
-      "entries": [
-        "{@atk ms,rs} {@hit 6} to hit; reach 5 ft. or ranged 60 ft., one target. {@h}8 ({@damage 1d10 + 3}) fire damage, and the target catches fire if it's a creature or a flammable object. Until a creature takes an action to extinguish the fire, the burning target takes 3 ({@damage 1d6}) fire damage at the end of each of its turns."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["N", "E"],
-  "cr": 5,
-  "hp": { "average": 75, "formula": "10d8 + 30" },
+  "immune": ["fire"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
+  "cr": 5,
   "trait": [
     {
       "name": "Blaze Rod",
@@ -45,12 +57,16 @@
       ]
     }
   ],
-  "name": "Blaze",
-  "source": "MCV3MC",
-  "speed": {
-    "walk": 20,
-    "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The blaze makes three Fiery Doom attacks."]
+    },
+    {
+      "name": "Fiery Doom",
+      "entries": [
+        "{@atk ms,rs} {@hit 6} to hit; reach 5 ft. or ranged 60 ft., one target. {@h}8 ({@damage 1d10 + 3}) fire damage, and the target catches fire if it's a creature or a flammable object. Until a creature takes an action to extinguish the fire, the burning target takes 3 ({@damage 1d6}) fire damage at the end of each of its turns."
+      ]
+    }
+  ]
 }

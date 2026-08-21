@@ -1,21 +1,17 @@
 {
-  "ability": { "str": 19, "dex": 6, "con": 15, "int": 10, "wis": 10, "cha": 7 },
-  "ac": [{ "ac": 13, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 10 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 2,
-  "hp": { "average": 59, "formula": "7d12 + 14" },
-  "languages": ["one language known by its creator"],
-  "senses": ["darkvision 120 ft."],
+  "name": "Awakened Zurkhwood",
+  "source": "OotA",
   "size": "H",
-  "skill": {},
+  "type": "plant",
+  "alignment": ["U"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 59, "formula": "7d12 + 14" },
+  "speed": { "walk": 20 },
+  "ability": { "str": 19, "dex": 6, "con": 15, "int": 10, "wis": 10, "cha": 7 },
+  "resist": ["bludgeoning", "piercing"],
+  "senses": ["darkvision 120 ft."],
+  "languages": ["one language known by its creator"],
+  "cr": 2,
   "trait": [
     {
       "name": "False Appearance",
@@ -30,8 +26,12 @@
       ]
     }
   ],
-  "name": "Awakened Zurkhwood",
-  "source": "OotA",
-  "speed": { "walk": 20 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 10 ft., one target. {@h}14 ({@damage 3d6 + 4}) bludgeoning damage."
+      ]
+    }
+  ]
 }

@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 19, "dex": 10, "con": 13, "int": 3, "wis": 12, "cha": 7 },
-  "ac": [{ "ac": 12, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}21 ({@damage 5d6 + 4}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 3,
-  "hp": { "average": 90, "formula": "12d12 + 12" },
-  "senses": ["blindsight 120 ft."],
+  "name": "Killer Whale",
+  "source": "MM",
   "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 90, "formula": "12d12 + 12" },
+  "speed": { "swim": 60 },
+  "ability": { "str": 19, "dex": 10, "con": 13, "int": 3, "wis": 12, "cha": 7 },
   "skill": { "perception": 3 },
+  "senses": ["blindsight 120 ft."],
+  "cr": 3,
   "trait": [
     {
       "name": "Echolocation",
@@ -33,8 +29,12 @@
       ]
     }
   ],
-  "name": "Killer Whale",
-  "source": "MM",
-  "speed": { "swim": 60 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}21 ({@damage 5d6 + 4}) piercing damage."
+      ]
+    }
+  ]
 }

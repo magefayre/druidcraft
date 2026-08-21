@@ -1,6 +1,25 @@
 {
-  "ability": { "str": 13, "dex": 10, "con": 14, "int": 5, "wis": 11, "cha": 6 },
+  "name": "Khargra",
+  "source": "MFF",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N"],
   "ac": [{ "ac": 20, "from": ["natural armor"] }],
+  "hp": { "average": 11, "formula": "2d6 + 4" },
+  "speed": { "walk": 5, "fly": 30 },
+  "ability": { "str": 13, "dex": 10, "con": 14, "int": 5, "wis": 11, "cha": 6 },
+  "skill": { "perception": 2, "stealth": 2 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Terran"],
+  "cr": 0.125,
+  "trait": [
+    {
+      "name": "Iron Scent",
+      "entries": [
+        "The khargra can scent the location of ferrous metal within 30 feet of it."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Bite",
@@ -15,24 +34,5 @@
         "Until the end of its next turn, the khargra can fly through nonmagical earth and stone. While doing so, it doesn't disturb the material it moves through. It can end its movement within earth or stone, but if it remains within earth or stone when this ability ends, it takes 14 ({@damage 4d6}) force damage and immediately moves to the nearest unoccupied space."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 0.125,
-  "hp": { "average": 11, "formula": "2d6 + 4" },
-  "languages": ["Terran"],
-  "senses": ["darkvision 60 ft."],
-  "size": "S",
-  "skill": { "perception": 2, "stealth": 2 },
-  "trait": [
-    {
-      "name": "Iron Scent",
-      "entries": [
-        "The khargra can scent the location of ferrous metal within 30 feet of it."
-      ]
-    }
-  ],
-  "name": "Khargra",
-  "source": "MFF",
-  "speed": { "walk": 5, "fly": 30 },
-  "type": "elemental"
+  ]
 }

@@ -1,4 +1,12 @@
 {
+  "name": "Smoke Mephit",
+  "source": "MM",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N", "E"],
+  "ac": [12],
+  "hp": { "average": 22, "formula": "5d6 + 5" },
+  "speed": { "walk": 30, "fly": 30 },
   "ability": {
     "str": 6,
     "dex": 14,
@@ -7,7 +15,20 @@
     "wis": 10,
     "cha": 11
   },
-  "ac": [12],
+  "skill": { "perception": 2, "stealth": 4 },
+  "immune": ["fire", "poison"],
+  "condition": ["poisoned"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Auran", "Ignan"],
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it leaves behind a cloud of smoke that fills a 5-foot-radius sphere centered on its space. The sphere is {@quickref Vision and Light||2||heavily obscured}. Wind disperses the cloud, which otherwise lasts for 1 minute."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Claws",
@@ -21,24 +42,5 @@
         "The mephit exhales a 15-foot cone of smoldering ash. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw or be {@condition blinded} until the end of the mephit's next turn."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 0.25,
-  "hp": { "average": 22, "formula": "5d6 + 5" },
-  "languages": ["Auran", "Ignan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "S",
-  "skill": { "perception": 2, "stealth": 4 },
-  "trait": [
-    {
-      "name": "Death Burst",
-      "entries": [
-        "When the mephit dies, it leaves behind a cloud of smoke that fills a 5-foot-radius sphere centered on its space. The sphere is {@quickref Vision and Light||2||heavily obscured}. Wind disperses the cloud, which otherwise lasts for 1 minute."
-      ]
-    }
-  ],
-  "name": "Smoke Mephit",
-  "source": "MM",
-  "speed": { "walk": 30, "fly": 30 },
-  "type": "elemental"
+  ]
 }

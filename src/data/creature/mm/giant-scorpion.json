@@ -1,6 +1,15 @@
 {
-  "ability": { "str": 15, "dex": 13, "con": 15, "int": 1, "wis": 9, "cha": 3 },
+  "name": "Giant Scorpion",
+  "source": "MM",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 52, "formula": "7d10 + 14" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 15, "dex": 13, "con": 15, "int": 1, "wis": 9, "cha": 3 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 3,
   "action": [
     {
       "name": "Multiattack",
@@ -20,15 +29,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}7 ({@damage 1d10 + 2}) piercing damage, and the target must make a {@dc 12} Constitution saving throw, taking 22 ({@damage 4d10}) poison damage on a failed save, or half as much damage on a successful one."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 3,
-  "hp": { "average": 52, "formula": "7d10 + 14" },
-  "senses": ["blindsight 60 ft."],
-  "size": "L",
-  "skill": {},
-  "name": "Giant Scorpion",
-  "source": "MM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

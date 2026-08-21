@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 10, "dex": 16, "con": 14, "int": 3, "wis": 12, "cha": 4 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage. Target is {@condition grappled} (escape {@dc 11}). Until this grapple ends, the target is {@condition restrained}, and spiderfrog can't bite another target."
-      ]
-    }
-  ],
-  "alignment": [{ "special": "chaotic sticky" }],
-  "cr": 0.25,
-  "hp": { "formula": "2d8 + 4", "average": 13 },
-  "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "name": "Spiderfrog",
+  "source": "MGELFT",
   "size": "S",
+  "type": "beast",
+  "alignment": [{ "special": "chaotic sticky" }],
+  "ac": [13],
+  "hp": { "formula": "2d8 + 4", "average": 13 },
+  "speed": { "walk": 30, "climb": 30 },
+  "ability": { "str": 10, "dex": 16, "con": 14, "int": 3, "wis": 12, "cha": 4 },
   "skill": { "perception": 3, "stealth": 7 },
+  "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "cr": 0.25,
   "trait": [
     {
       "name": "Amphibious",
@@ -33,8 +29,12 @@
       ]
     }
   ],
-  "name": "Spiderfrog",
-  "source": "MGELFT",
-  "speed": { "walk": 30, "climb": 30 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage. Target is {@condition grappled} (escape {@dc 11}). Until this grapple ends, the target is {@condition restrained}, and spiderfrog can't bite another target."
+      ]
+    }
+  ]
 }

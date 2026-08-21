@@ -1,21 +1,36 @@
 {
-  "ability": { "str": 16, "dex": 16, "con": 15, "int": 5, "wis": 10, "cha": 7 },
+  "name": "Blistercoil Weird",
+  "source": "GGR",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["C", "N"],
   "ac": [13],
-  "action": [
+  "hp": { "average": 45, "formula": "7d8 + 14" },
+  "speed": { "walk": 40, "swim": 60 },
+  "ability": { "str": 16, "dex": 16, "con": 15, "int": 5, "wis": 10, "cha": 7 },
+  "resist": [
+    "cold",
+    "fire",
     {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) bludgeoning damage plus 7 ({@damage 2d6}) fire damage, or 11 ({@damage 2d8 + 3}) bludgeoning damage plus 14 ({@damage 4d6}) fire damage if the weird is Large or bigger."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["C", "N"],
-  "cr": 4,
-  "hp": { "average": 45, "formula": "7d8 + 14" },
-  "languages": ["Draconic"],
+  "immune": ["poison"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
+  "languages": ["Draconic"],
+  "cr": 4,
   "trait": [
     {
       "name": "Feed on Fire",
@@ -42,8 +57,12 @@
       ]
     }
   ],
-  "name": "Blistercoil Weird",
-  "source": "GGR",
-  "speed": { "walk": 40, "swim": 60 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) bludgeoning damage plus 7 ({@damage 2d6}) fire damage, or 11 ({@damage 2d8 + 3}) bludgeoning damage plus 14 ({@damage 4d6}) fire damage if the weird is Large or bigger."
+      ]
+    }
+  ]
 }

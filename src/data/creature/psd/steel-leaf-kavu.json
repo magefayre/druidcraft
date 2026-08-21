@@ -1,6 +1,25 @@
 {
-  "ability": { "str": 20, "dex": 12, "con": 18, "int": 6, "wis": 14, "cha": 8 },
+  "name": "Steel Leaf Kavu",
+  "source": "PSD",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "hp": { "average": 142, "formula": "15d10 + 60" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 20, "dex": 12, "con": 18, "int": 6, "wis": 14, "cha": 8 },
+  "skill": { "perception": 4 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["understands Elvish"],
+  "cr": 4,
+  "trait": [
+    {
+      "name": "Raking Charge",
+      "entries": [
+        "If the kavu moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the kavu can make one rend attack against it as a bonus action."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Bite",
@@ -14,24 +33,5 @@
         "{@atk mw} {@hit 7} to hit, reach 5 ft., one {@condition prone} creature. {@h}23 ({@damage 4d8 + 5}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 4,
-  "hp": { "average": 142, "formula": "15d10 + 60" },
-  "languages": ["understands Elvish"],
-  "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": { "perception": 4 },
-  "trait": [
-    {
-      "name": "Raking Charge",
-      "entries": [
-        "If the kavu moves at least 20 feet straight toward a creature and then hits it with a bite attack on the same turn, that target must succeed on a {@dc 15} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the kavu can make one rend attack against it as a bonus action."
-      ]
-    }
-  ],
-  "name": "Steel Leaf Kavu",
-  "source": "PSD",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

@@ -1,6 +1,22 @@
 {
-  "ability": { "str": 22, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "name": "Triceratops",
+  "source": "MM",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 95, "formula": "10d12 + 30" },
+  "speed": { "walk": 50 },
+  "ability": { "str": 22, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "cr": 5,
+  "trait": [
+    {
+      "name": "Trampling Charge",
+      "entries": [
+        "If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the triceratops can make one stomp attack against it as a bonus action."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Gore",
@@ -14,22 +30,5 @@
         "{@atk mw} {@hit 9} to hit, reach 5 ft., one {@condition prone} creature. {@h}22 ({@damage 3d10 + 6}) bludgeoning damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 5,
-  "hp": { "average": 95, "formula": "10d12 + 30" },
-  "size": "H",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Trampling Charge",
-      "entries": [
-        "If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a {@dc 13} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the triceratops can make one stomp attack against it as a bonus action."
-      ]
-    }
-  ],
-  "name": "Triceratops",
-  "source": "MM",
-  "speed": { "walk": 50 },
-  "type": "beast"
+  ]
 }

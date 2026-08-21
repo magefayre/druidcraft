@@ -1,20 +1,35 @@
 {
-  "ability": { "str": 14, "dex": 10, "con": 17, "int": 3, "wis": 10, "cha": 5 },
+  "name": "Galvanice Weird",
+  "source": "GGR",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["C", "N"],
   "ac": [{ "ac": 12, "from": ["natural armor"] }],
-  "action": [
+  "hp": { "average": 22, "formula": "3d8 + 9" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 14, "dex": 10, "con": 17, "int": 3, "wis": 10, "cha": 5 },
+  "resist": [
+    "cold",
+    "lightning",
     {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage plus 5 ({@damage 2d4}) lightning damage. If the target is a creature, it must succeed on a {@dc 13} Constitution saving throw or lose the ability to use reactions until the start of the weird's next turn."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["C", "N"],
-  "cr": 1,
-  "hp": { "average": 22, "formula": "3d8 + 9" },
+  "immune": ["poison"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
+  "cr": 1,
   "trait": [
     {
       "name": "Death Burst",
@@ -23,8 +38,12 @@
       ]
     }
   ],
-  "name": "Galvanice Weird",
-  "source": "GGR",
-  "speed": { "walk": 30 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage plus 5 ({@damage 2d4}) lightning damage. If the target is a creature, it must succeed on a {@dc 13} Constitution saving throw or lose the ability to use reactions until the start of the weird's next turn."
+      ]
+    }
+  ]
 }

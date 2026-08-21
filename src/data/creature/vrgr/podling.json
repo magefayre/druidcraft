@@ -1,4 +1,11 @@
 {
+  "name": "Podling",
+  "source": "VRGR",
+  "size": "M",
+  "type": "plant",
+  "ac": [10],
+  "hp": { "average": 26, "formula": "4d8 + 8" },
+  "speed": { "walk": 20 },
   "ability": {
     "str": 15,
     "dex": 11,
@@ -7,21 +14,10 @@
     "wis": 10,
     "cha": 10
   },
-  "ac": [10],
-  "action": [
-    {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
-      ]
-    }
-  ],
-  "cr": 0.5,
-  "hp": { "average": 26, "formula": "4d8 + 8" },
-  "languages": ["Deep Speech", "the languages the creature knew in life"],
+  "condition": ["charmed", "frightened"],
   "senses": ["blindsight 30 ft."],
-  "size": "M",
-  "skill": {},
+  "languages": ["Deep Speech", "the languages the creature knew in life"],
+  "cr": 0.5,
   "trait": [
     {
       "name": "Semblance of Life",
@@ -34,8 +30,12 @@
       "entries": ["The podling doesn't require sleep."]
     }
   ],
-  "name": "Podling",
-  "source": "VRGR",
-  "speed": { "walk": 20 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) bludgeoning damage."
+      ]
+    }
+  ]
 }

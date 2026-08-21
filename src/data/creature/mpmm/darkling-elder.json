@@ -1,4 +1,12 @@
 {
+  "name": "Darkling Elder",
+  "source": "MPMM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 15, "from": ["{@item studded leather armor|PHB}"] }],
+  "hp": { "average": 27, "formula": "5d8 + 5" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 13,
     "dex": 17,
@@ -7,7 +15,18 @@
     "wis": 14,
     "cha": 13
   },
-  "ac": [{ "ac": 15, "from": ["{@item studded leather armor|PHB}"] }],
+  "skill": { "acrobatics": 5, "deception": 3, "perception": 6, "stealth": 7 },
+  "senses": ["blindsight 30 ft.", "darkvision 120 ft."],
+  "languages": ["Elvish", "Sylvan"],
+  "cr": 2,
+  "trait": [
+    {
+      "name": "Death Burn",
+      "entries": [
+        "When the darkling elder dies, magical light flashes out from it in a 10-foot radius as its body and possessions, other than metal or magic objects, burn to ash. Any creature in that area must make a {@dc 11} Constitution saving throw. On a failed save, the creature takes 7 ({@damage 2d6}) radiant damage and is {@condition blinded} until the end of its next turn. On a successful save, the creature takes half as much damage and isn't {@condition blinded}."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -19,24 +38,5 @@
         "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage plus 7 ({@damage 2d6}) necrotic damage."
       ]
     }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 2,
-  "hp": { "average": 27, "formula": "5d8 + 5" },
-  "languages": ["Elvish", "Sylvan"],
-  "senses": ["blindsight 30 ft.", "darkvision 120 ft."],
-  "size": "M",
-  "skill": { "acrobatics": 5, "deception": 3, "perception": 6, "stealth": 7 },
-  "trait": [
-    {
-      "name": "Death Burn",
-      "entries": [
-        "When the darkling elder dies, magical light flashes out from it in a 10-foot radius as its body and possessions, other than metal or magic objects, burn to ash. Any creature in that area must make a {@dc 11} Constitution saving throw. On a failed save, the creature takes 7 ({@damage 2d6}) radiant damage and is {@condition blinded} until the end of its next turn. On a successful save, the creature takes half as much damage and isn't {@condition blinded}."
-      ]
-    }
-  ],
-  "name": "Darkling Elder",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

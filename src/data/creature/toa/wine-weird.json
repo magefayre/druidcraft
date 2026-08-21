@@ -1,4 +1,12 @@
 {
+  "name": "Wine Weird",
+  "source": "ToA",
+  "size": "L",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [13],
+  "hp": { "average": 58, "formula": "9d10 + 9" },
+  "speed": { "walk": 0, "swim": 60 },
   "ability": {
     "str": 17,
     "dex": 16,
@@ -7,22 +15,27 @@
     "wis": 10,
     "cha": 10
   },
-  "ac": [13],
-  "action": [
+  "resist": [
+    "fire",
     {
-      "name": "Constrict",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 10 ft., one creature. {@h}13 ({@damage 3d6 + 3}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape {@dc 13}) and pulled 5 feet toward the water weird. Until this grapple ends, the target is {@condition restrained}, the water weird tries to drown it, and the water weird can't constrict another target."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["N"],
-  "cr": 3,
-  "hp": { "average": 58, "formula": "9d10 + 9" },
-  "languages": ["understands Aquan but doesn't speak"],
+  "immune": ["poison"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "poisoned",
+    "restrained",
+    "prone",
+    "unconscious"
+  ],
   "senses": ["blindsight 30 ft."],
-  "size": "L",
-  "skill": {},
+  "languages": ["understands Aquan but doesn't speak"],
+  "cr": 3,
   "trait": [
     {
       "name": "Invisible in Water",
@@ -37,8 +50,12 @@
       ]
     }
   ],
-  "name": "Wine Weird",
-  "source": "ToA",
-  "speed": { "walk": 0, "swim": 60 },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Constrict",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 10 ft., one creature. {@h}13 ({@damage 3d6 + 3}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape {@dc 13}) and pulled 5 feet toward the water weird. Until this grapple ends, the target is {@condition restrained}, the water weird tries to drown it, and the water weird can't constrict another target."
+      ]
+    }
+  ]
 }

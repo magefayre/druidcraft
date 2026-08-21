@@ -1,4 +1,12 @@
 {
+  "name": "Bridesmaid of Zuggtmoy",
+  "source": "OotA",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["C", "E"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 22, "formula": "5d8" },
+  "speed": { "walk": 20 },
   "ability": {
     "str": 14,
     "dex": 11,
@@ -7,7 +15,17 @@
     "wis": 8,
     "cha": 18
   },
-  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["understands Abyssal but can't speak"],
+  "cr": 0.125,
+  "trait": [
+    {
+      "name": "Fungus Stride",
+      "entries": [
+        "Once on its turn, the bridesmaid can use 10 feet of its movement to step magically into one living mushroom or fungus patch within 5 feet and emerge from another within 60 feet of the first one, appearing in an unoccupied space within 5 feet of the second mushroom or fungus patch. The mushrooms and patches must be large or bigger."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Hallucination Spores",
@@ -21,24 +39,5 @@
         "The bridesmaid releases spores that burst out in a cloud that fills a 10-foot-radius sphere centered on it, and the cloud lingers for 1 minute. Any flesh-and-blood creature in the cloud when it appears, or that enters it later, must make a {@dc 10} Constitution saving throw. On a successful save, the creature can't be infected by these spores for 24 hours. On a failed save, the creature is infected with a disease called the spores of Zuggtmoy and also gains a random form of indefinite madness (determined by rolling on the Madness of Zuggtmoy table in appendix D) that lasts until the creature is cured of the disease or dies. While infected in this way, the creature can't be reinfected, and it must be repeat the saving throw at the end of every 24 hours, ending the infection on a success. On a failure, the infected creature's body is slowly taken over by fungal growth, and after three such failed saves, the creature dies and is reanimated as a spore servant if it's a type of creature that can be (see the \"Myconids\" entry in the Monster Manual)."
       ]
     }
-  ],
-  "alignment": ["C", "E"],
-  "cr": 0.125,
-  "hp": { "average": 22, "formula": "5d8" },
-  "languages": ["understands Abyssal but can't speak"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Fungus Stride",
-      "entries": [
-        "Once on its turn, the bridesmaid can use 10 feet of its movement to step magically into one living mushroom or fungus patch within 5 feet and emerge from another within 60 feet of the first one, appearing in an unoccupied space within 5 feet of the second mushroom or fungus patch. The mushrooms and patches must be large or bigger."
-      ]
-    }
-  ],
-  "name": "Bridesmaid of Zuggtmoy",
-  "source": "OotA",
-  "speed": { "walk": 20 },
-  "type": "plant"
+  ]
 }

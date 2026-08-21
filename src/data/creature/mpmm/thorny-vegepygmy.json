@@ -1,20 +1,17 @@
 {
-  "ability": { "str": 13, "dex": 12, "con": 13, "int": 2, "wis": 10, "cha": 6 },
-  "ac": [{ "ac": 14, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d8 + 1}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["N"],
-  "cr": 1,
-  "hp": { "average": 27, "formula": "5d8 + 5" },
-  "senses": ["darkvision 60 ft."],
+  "name": "Thorny Vegepygmy",
+  "source": "MPMM",
   "size": "M",
+  "type": "plant",
+  "alignment": ["N"],
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 27, "formula": "5d8 + 5" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 13, "dex": 12, "con": 13, "int": 2, "wis": 10, "cha": 6 },
   "skill": { "perception": 4, "stealth": 3 },
+  "resist": ["lightning", "piercing"],
+  "senses": ["darkvision 60 ft."],
+  "cr": 1,
   "trait": [
     {
       "name": "Plant Camouflage",
@@ -35,8 +32,12 @@
       ]
     }
   ],
-  "name": "Thorny Vegepygmy",
-  "source": "MPMM",
-  "speed": { "walk": 30 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d8 + 1}) piercing damage."
+      ]
+    }
+  ]
 }

@@ -1,4 +1,12 @@
 {
+  "name": "Naiad",
+  "source": "MOT",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 31, "formula": "7d8" },
+  "speed": { "walk": 30, "swim": 30 },
   "ability": {
     "str": 10,
     "dex": 16,
@@ -7,25 +15,12 @@
     "wis": 10,
     "cha": 18
   },
-  "ac": [{ "ac": 15, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The naiad makes two psychic touch attacks."]
-    },
-    {
-      "name": "Psychic Touch",
-      "entries": [
-        "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) psychic damage."
-      ]
-    }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 2,
-  "hp": { "average": 31, "formula": "7d8" },
-  "languages": ["Common", "Sylvan"],
-  "size": "M",
   "skill": { "persuasion": 6, "sleight of hand": 5 },
+  "resist": ["psychic"],
+  "immune": ["poison"],
+  "condition": ["charmed", "frightened", "poisoned"],
+  "languages": ["Common", "Sylvan"],
+  "cr": 2,
   "trait": [
     {
       "name": "Amphibious",
@@ -44,8 +39,16 @@
       ]
     }
   ],
-  "name": "Naiad",
-  "source": "MOT",
-  "speed": { "walk": 30, "swim": 30 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The naiad makes two psychic touch attacks."]
+    },
+    {
+      "name": "Psychic Touch",
+      "entries": [
+        "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) psychic damage."
+      ]
+    }
+  ]
 }

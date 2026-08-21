@@ -1,20 +1,16 @@
 {
-  "ability": { "str": 17, "dex": 13, "con": 13, "int": 2, "wis": 6, "cha": 1 },
-  "ac": [11],
-  "action": [
-    {
-      "name": "Tentacles",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 15 ft., one target {@h}7 ({@damage 1d8 + 3}) bludgeoning damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 52, "formula": "8d10 + 8" },
-  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "name": "Spore Servant Octopus",
+  "source": "DoSI",
   "size": "L",
-  "skill": {},
+  "type": "plant",
+  "alignment": ["U"],
+  "ac": [11],
+  "hp": { "average": 52, "formula": "8d10 + 8" },
+  "speed": { "walk": 5, "swim": 50 },
+  "ability": { "str": 17, "dex": 13, "con": 13, "int": 2, "wis": 6, "cha": 1 },
+  "condition": ["blinded", "charmed", "frightened", "paralyzed"],
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "cr": 1,
   "trait": [
     {
       "name": "Hold Breath",
@@ -27,8 +23,12 @@
       "entries": ["The octopus can breathe only underwater."]
     }
   ],
-  "name": "Spore Servant Octopus",
-  "source": "DoSI",
-  "speed": { "walk": 5, "swim": 50 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Tentacles",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 15 ft., one target {@h}7 ({@damage 1d8 + 3}) bludgeoning damage."
+      ]
+    }
+  ]
 }

@@ -1,24 +1,16 @@
 {
-  "ability": { "str": 16, "dex": 8, "con": 14, "int": 6, "wis": 10, "cha": 3 },
-  "ac": [{ "ac": 12, "from": ["natural armor"] }],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The blight makes two Heat-Draining Vine attacks."]
-    },
-    {
-      "name": "Heat-Draining Vine",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 10 ft., one target. {@h}6 ({@damage 1d6 + 3}) radiant damage, and if the target is a Large or smaller creature, it is {@condition grappled} (escape {@dc 13}). Until this grapple ends, the target takes 3 ({@damage 1d6}) cold damage at the start of each of its turns. The blight has two vines, each of which can grapple one creature."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 26, "formula": "4d8 + 8" },
-  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "name": "Astral Blight",
+  "source": "LoX",
   "size": "M",
-  "skill": {},
+  "type": "plant",
+  "alignment": ["U"],
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 26, "formula": "4d8 + 8" },
+  "speed": { "walk": 10 },
+  "ability": { "str": 16, "dex": 8, "con": 14, "int": 6, "wis": 10, "cha": 3 },
+  "resist": ["cold", "radiant"],
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "cr": 1,
   "trait": [
     {
       "name": "Illumination",
@@ -31,8 +23,16 @@
       "entries": ["The blight doesn't require air or sleep."]
     }
   ],
-  "name": "Astral Blight",
-  "source": "LoX",
-  "speed": { "walk": 10 },
-  "type": "plant"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The blight makes two Heat-Draining Vine attacks."]
+    },
+    {
+      "name": "Heat-Draining Vine",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 10 ft., one target. {@h}6 ({@damage 1d6 + 3}) radiant damage, and if the target is a Large or smaller creature, it is {@condition grappled} (escape {@dc 13}). Until this grapple ends, the target takes 3 ({@damage 1d6}) cold damage at the start of each of its turns. The blight has two vines, each of which can grapple one creature."
+      ]
+    }
+  ]
 }

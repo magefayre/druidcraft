@@ -1,4 +1,12 @@
 {
+  "name": "Hobgoblin Iron Shadow",
+  "source": "MPMM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["L", "N"],
+  "ac": [{ "ac": 15, "from": ["Unarmored Defense"] }],
+  "hp": { "average": 32, "formula": "5d8 + 10" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 14,
     "dex": 16,
@@ -7,7 +15,18 @@
     "wis": 15,
     "cha": 11
   },
-  "ac": [{ "ac": 15, "from": ["Unarmored Defense"] }],
+  "skill": { "acrobatics": 5, "athletics": 4, "stealth": 5 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Goblin"],
+  "cr": 2,
+  "trait": [
+    {
+      "name": "Unarmored Defense",
+      "entries": [
+        "While the hobgoblin is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -34,24 +53,5 @@
         "The hobgoblin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. Both the space it leaves and its destination must be in dim light or darkness."
       ]
     }
-  ],
-  "alignment": ["L", "N"],
-  "cr": 2,
-  "hp": { "average": 32, "formula": "5d8 + 10" },
-  "languages": ["Common", "Goblin"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "acrobatics": 5, "athletics": 4, "stealth": 5 },
-  "trait": [
-    {
-      "name": "Unarmored Defense",
-      "entries": [
-        "While the hobgoblin is wearing no armor and wielding no shield, its AC includes its Wisdom modifier."
-      ]
-    }
-  ],
-  "name": "Hobgoblin Iron Shadow",
-  "source": "MPMM",
-  "speed": { "walk": 40 },
-  "type": "fey"
+  ]
 }

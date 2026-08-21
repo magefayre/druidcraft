@@ -1,8 +1,19 @@
 {
-  "ability": { "str": 14, "dex": 11, "con": 14, "int": 2, "wis": 6, "cha": 1 },
+  "name": "Duergar Spore Servant",
+  "source": "OotA",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["U"],
   "ac": [
     { "ac": 16, "from": ["{@item scale mail|phb}", "{@item shield|phb}"] }
   ],
+  "hp": { "average": 26, "formula": "4d8 + 8" },
+  "speed": { "walk": 15 },
+  "ability": { "str": 14, "dex": 11, "con": 14, "int": 2, "wis": 6, "cha": 1 },
+  "resist": ["poison"],
+  "condition": ["blinded", "charmed", "frightened", "paralyzed"],
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "cr": 0.5,
   "action": [
     {
       "name": "War Pick",
@@ -10,15 +21,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d8 + 2}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.5,
-  "hp": { "average": 26, "formula": "4d8 + 8" },
-  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
-  "size": "M",
-  "skill": {},
-  "name": "Duergar Spore Servant",
-  "source": "OotA",
-  "speed": { "walk": 15 },
-  "type": "plant"
+  ]
 }

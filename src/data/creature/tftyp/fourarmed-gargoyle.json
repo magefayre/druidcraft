@@ -1,6 +1,33 @@
 {
-  "ability": { "str": 15, "dex": 11, "con": 16, "int": 6, "wis": 11, "cha": 7 },
+  "name": "Four-Armed Gargoyle",
+  "source": "TftYP",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["C", "E"],
   "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 63, "formula": "7d8 + 21" },
+  "speed": { "walk": 30, "fly": 60 },
+  "ability": { "str": 15, "dex": 11, "con": 16, "int": 6, "wis": 11, "cha": 7 },
+  "resist": [
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks that aren't adamantine",
+      "cond": true
+    }
+  ],
+  "immune": ["poison"],
+  "condition": ["exhaustion", "petrified", "poisoned"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Terran"],
+  "cr": 2,
+  "trait": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the gargoyle remains motionless, it is indistinguishable from an inanimate statue."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,24 +47,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["C", "E"],
-  "cr": 2,
-  "hp": { "average": 63, "formula": "7d8 + 21" },
-  "languages": ["Terran"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "False Appearance",
-      "entries": [
-        "While the gargoyle remains motionless, it is indistinguishable from an inanimate statue."
-      ]
-    }
-  ],
-  "name": "Four-Armed Gargoyle",
-  "source": "TftYP",
-  "speed": { "walk": 30, "fly": 60 },
-  "type": "elemental"
+  ]
 }

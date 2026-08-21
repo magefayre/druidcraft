@@ -1,20 +1,15 @@
 {
-  "ability": { "str": 15, "dex": 16, "con": 11, "int": 2, "wis": 12, "cha": 6 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}5 ({@damage 1d6 + 2}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 22, "formula": "4d10" },
-  "senses": ["blindsight 60 ft."],
+  "name": "Giant Bat",
+  "source": "MM",
   "size": "L",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 22, "formula": "4d10" },
+  "speed": { "walk": 10, "fly": 60 },
+  "ability": { "str": 15, "dex": 16, "con": 11, "int": 2, "wis": 12, "cha": 6 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 0.25,
   "trait": [
     {
       "name": "Echolocation",
@@ -29,8 +24,12 @@
       ]
     }
   ],
-  "name": "Giant Bat",
-  "source": "MM",
-  "speed": { "walk": 10, "fly": 60 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    }
+  ]
 }

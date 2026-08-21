@@ -1,19 +1,15 @@
 {
-  "ability": { "str": 3, "dex": 16, "con": 8, "int": 2, "wis": 12, "cha": 3 },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0,
-  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "name": "Weasel",
+  "source": "MM",
   "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [13],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 3, "dex": 16, "con": 8, "int": 2, "wis": 12, "cha": 3 },
   "skill": { "perception": 3, "stealth": 5 },
+  "cr": 0,
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -22,8 +18,12 @@
       ]
     }
   ],
-  "name": "Weasel",
-  "source": "MM",
-  "speed": { "walk": 30 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
+      ]
+    }
+  ]
 }

@@ -1,4 +1,12 @@
 {
+  "name": "Green Hag",
+  "source": "MM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["N", "E"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 82, "formula": "11d8 + 33" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 18,
     "dex": 12,
@@ -7,7 +15,19 @@
     "wis": 14,
     "cha": 14
   },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "skill": { "arcana": 3, "deception": 4, "perception": 4, "stealth": 3 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Draconic", "Sylvan"],
+  "cr": 3,
+  "trait": [
+    { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
+    {
+      "name": "Mimicry",
+      "entries": [
+        "The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom ({@skill Insight}) check."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Claws",
@@ -28,25 +48,5 @@
         "The hag magically turns {@condition invisible} until she attacks or casts a spell, or until her {@status concentration} ends (as if {@status concentration||concentrating} on a spell). While {@condition invisible}, she leaves no physical evidence of her passage, so she can be tracked only by magic. Any equipment she wears or carries is {@condition invisible} with her."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 3,
-  "hp": { "average": 82, "formula": "11d8 + 33" },
-  "languages": ["Common", "Draconic", "Sylvan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "arcana": 3, "deception": 4, "perception": 4, "stealth": 3 },
-  "trait": [
-    { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
-    {
-      "name": "Mimicry",
-      "entries": [
-        "The hag can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful {@dc 14} Wisdom ({@skill Insight}) check."
-      ]
-    }
-  ],
-  "name": "Green Hag",
-  "source": "MM",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  ]
 }

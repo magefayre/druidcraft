@@ -1,6 +1,23 @@
 {
-  "ability": { "str": 15, "dex": 15, "con": 14, "int": 4, "wis": 12, "cha": 6 },
+  "name": "Deinonychus",
+  "source": "MPMM",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 26, "formula": "4d8 + 8" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 15, "dex": 15, "con": 14, "int": 4, "wis": 12, "cha": 6 },
+  "skill": { "perception": 3 },
+  "cr": 1,
+  "trait": [
+    {
+      "name": "Pounce",
+      "entries": [
+        "If the deinonychus moves at least 20 feet straight toward a creature and then hits it with a Claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the deinonychus can make one Bite attack against it as a bonus action."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -18,22 +35,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d8 + 2}) slashing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 1,
-  "hp": { "average": 26, "formula": "4d8 + 8" },
-  "size": "M",
-  "skill": { "perception": 3 },
-  "trait": [
-    {
-      "name": "Pounce",
-      "entries": [
-        "If the deinonychus moves at least 20 feet straight toward a creature and then hits it with a Claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the deinonychus can make one Bite attack against it as a bonus action."
-      ]
-    }
-  ],
-  "name": "Deinonychus",
-  "source": "MPMM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  ]
 }

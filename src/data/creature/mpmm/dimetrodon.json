@@ -1,6 +1,15 @@
 {
-  "ability": { "str": 14, "dex": 10, "con": 15, "int": 2, "wis": 10, "cha": 5 },
+  "name": "Dimetrodon",
+  "source": "MPMM",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 19, "formula": "3d8 + 6" },
+  "speed": { "walk": 30, "swim": 20 },
+  "ability": { "str": 14, "dex": 10, "con": 15, "int": 2, "wis": 10, "cha": 5 },
+  "skill": { "perception": 2 },
+  "cr": 0.25,
   "action": [
     {
       "name": "Bite",
@@ -8,14 +17,5 @@
         "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}9 ({@damage 2d6 + 2}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.25,
-  "hp": { "average": 19, "formula": "3d8 + 6" },
-  "size": "M",
-  "skill": { "perception": 2 },
-  "name": "Dimetrodon",
-  "source": "MPMM",
-  "speed": { "walk": 30, "swim": 20 },
-  "type": "beast"
+  ]
 }

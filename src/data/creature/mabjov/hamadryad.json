@@ -1,4 +1,15 @@
 {
+  "name": "Hamadryad",
+  "source": "MaBJoV",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [
+    13,
+    { "ac": 16, "condition": "with {@spell barkskin}", "braces": true }
+  ],
+  "hp": { "average": 32, "formula": "5d8 + 10" },
+  "speed": { "walk": 30 },
   "ability": {
     "str": 10,
     "dex": 16,
@@ -7,29 +18,10 @@
     "wis": 10,
     "cha": 15
   },
-  "ac": [
-    13,
-    { "ac": 16, "condition": "with {@spell barkskin}", "braces": true }
-  ],
-  "action": [
-    {
-      "name": "Multiattack",
-      "entries": ["The hamadryad makes two Claw attacks."]
-    },
-    {
-      "name": "Claw",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, range 5 ft., one target. {@h}5 ({@damage 1d4 + 3}) plus 10 ({@damage 3d6}) poison damage."
-      ]
-    }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 2,
-  "hp": { "average": 32, "formula": "5d8 + 10" },
-  "languages": ["Sylvan"],
-  "senses": ["darkvision 60ft."],
-  "size": "M",
   "skill": { "perception": 2, "stealth": 6 },
+  "senses": ["darkvision 60ft."],
+  "languages": ["Sylvan"],
+  "cr": 2,
   "trait": [
     {
       "name": "Magic Resistance",
@@ -50,8 +42,16 @@
       ]
     }
   ],
-  "name": "Hamadryad",
-  "source": "MaBJoV",
-  "speed": { "walk": 30 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The hamadryad makes two Claw attacks."]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, range 5 ft., one target. {@h}5 ({@damage 1d4 + 3}) plus 10 ({@damage 3d6}) poison damage."
+      ]
+    }
+  ]
 }

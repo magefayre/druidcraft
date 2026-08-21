@@ -1,4 +1,12 @@
 {
+  "name": "Steam Mephit",
+  "source": "MM",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N", "E"],
+  "ac": [10],
+  "hp": { "average": 21, "formula": "6d6" },
+  "speed": { "walk": 30, "fly": 30 },
   "ability": {
     "str": 5,
     "dex": 11,
@@ -7,7 +15,19 @@
     "wis": 10,
     "cha": 12
   },
-  "ac": [10],
+  "immune": ["fire", "poison"],
+  "condition": ["poisoned"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Aquan", "Ignan"],
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it explodes in a cloud of steam. Each creature within 5 feet of the mephit must succeed on a {@dc 10} Dexterity saving throw or take 4 ({@damage 1d8}) fire damage."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Claws",
@@ -21,24 +41,5 @@
         "The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw, taking 4 ({@damage 1d8}) fire damage on a failed save, or half as much damage on a successful one."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 0.25,
-  "hp": { "average": 21, "formula": "6d6" },
-  "languages": ["Aquan", "Ignan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "S",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Death Burst",
-      "entries": [
-        "When the mephit dies, it explodes in a cloud of steam. Each creature within 5 feet of the mephit must succeed on a {@dc 10} Dexterity saving throw or take 4 ({@damage 1d8}) fire damage."
-      ]
-    }
-  ],
-  "name": "Steam Mephit",
-  "source": "MM",
-  "speed": { "walk": 30, "fly": 30 },
-  "type": "elemental"
+  ]
 }

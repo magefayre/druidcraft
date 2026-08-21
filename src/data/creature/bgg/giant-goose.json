@@ -1,4 +1,12 @@
 {
+  "name": "Giant Goose",
+  "source": "BGG",
+  "size": "L",
+  "type": "fey",
+  "alignment": ["N"],
+  "ac": [13],
+  "hp": { "average": 60, "formula": "8d10 + 16" },
+  "speed": { "walk": 30, "fly": 30 },
   "ability": {
     "str": 14,
     "dex": 16,
@@ -7,7 +15,10 @@
     "wis": 14,
     "cha": 11
   },
-  "ac": [13],
+  "skill": { "perception": 6 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["understands Giant and Sylvan but can't speak"],
+  "cr": 3,
   "action": [
     {
       "name": "Multiattack",
@@ -31,16 +42,5 @@
         "The goose honks with ear-splitting volume. Each other creature within 30 feet of the goose must make a {@dc 12} Constitution saving throw. On a failed save, a creature takes 16 ({@damage 3d10}) thunder damage and has the {@condition deafened} condition until the start of the goose's next turn. On a successful save, a creature takes half as much damage only. The honk can be heard within 300 feet."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 3,
-  "hp": { "average": 60, "formula": "8d10 + 16" },
-  "languages": ["understands Giant and Sylvan but can't speak"],
-  "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": { "perception": 6 },
-  "name": "Giant Goose",
-  "source": "BGG",
-  "speed": { "walk": 30, "fly": 30 },
-  "type": "fey"
+  ]
 }

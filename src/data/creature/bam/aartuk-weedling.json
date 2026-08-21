@@ -1,4 +1,12 @@
 {
+  "name": "Aartuk Weedling",
+  "source": "BAM",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["L", "E"],
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "hp": { "average": 38, "formula": "7d8 + 7" },
+  "speed": { "walk": 20, "climb": 20 },
   "ability": {
     "str": 14,
     "dex": 12,
@@ -7,7 +15,17 @@
     "wis": 13,
     "cha": 10
   },
-  "ac": [{ "ac": 15, "from": ["natural armor"] }],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Aartuk"],
+  "cr": 2,
+  "trait": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The aartuk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -28,7 +46,6 @@
       ]
     }
   ],
-  "alignment": ["L", "E"],
   "bonus": [
     {
       "name": "Tongue {@recharge}",
@@ -36,23 +53,5 @@
         "The aartuk tries to use its gooey tongue to snare one Medium or smaller creature it can see within 30 feet of itself. The target must make a {@dc 11} Dexterity saving throw. On a failed save, the target is {@condition grappled} by the tongue (escape {@dc 12}) and pulled up to 25 feet toward the aartuk. The tongue can grapple one creature at a time."
       ]
     }
-  ],
-  "cr": 2,
-  "hp": { "average": 38, "formula": "7d8 + 7" },
-  "languages": ["Aartuk"],
-  "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Spider Climb",
-      "entries": [
-        "The aartuk can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
-      ]
-    }
-  ],
-  "name": "Aartuk Weedling",
-  "source": "BAM",
-  "speed": { "walk": 20, "climb": 20 },
-  "type": "plant"
+  ]
 }

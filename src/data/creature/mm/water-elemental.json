@@ -1,6 +1,49 @@
 {
-  "ability": { "str": 18, "dex": 14, "con": 18, "int": 5, "wis": 10, "cha": 8 },
+  "name": "Water Elemental",
+  "source": "MM",
+  "size": "L",
+  "type": "elemental",
+  "alignment": ["N"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
+  "hp": { "average": 114, "formula": "12d10 + 48" },
+  "speed": { "walk": 30, "swim": 90 },
+  "ability": { "str": 18, "dex": 14, "con": 18, "int": 5, "wis": 10, "cha": 8 },
+  "resist": [
+    "acid",
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
+    }
+  ],
+  "immune": ["poison"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Aquan"],
+  "cr": 5,
+  "trait": [
+    {
+      "name": "Water Form",
+      "entries": [
+        "The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Freeze",
+      "entries": [
+        "If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 feet until the end of its next turn."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -19,30 +62,5 @@
         "The elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental's turns, each target {@condition grappled} by it takes 13 ({@damage 2d8 + 4}) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a {@dc 14} Strength check and succeeding."
       ]
     }
-  ],
-  "alignment": ["N"],
-  "cr": 5,
-  "hp": { "average": 114, "formula": "12d10 + 48" },
-  "languages": ["Aquan"],
-  "senses": ["darkvision 60 ft."],
-  "size": "L",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Water Form",
-      "entries": [
-        "The elemental can enter a hostile creature's space and stop there. It can move through a space as narrow as 1 inch wide without squeezing."
-      ]
-    },
-    {
-      "name": "Freeze",
-      "entries": [
-        "If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 feet until the end of its next turn."
-      ]
-    }
-  ],
-  "name": "Water Elemental",
-  "source": "MM",
-  "speed": { "walk": 30, "swim": 90 },
-  "type": "elemental"
+  ]
 }

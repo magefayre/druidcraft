@@ -1,6 +1,17 @@
 {
-  "ability": { "str": 12, "dex": 12, "con": 13, "int": 4, "wis": 8, "cha": 3 },
+  "name": "Needle Blight",
+  "source": "MM",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["N", "E"],
   "ac": [{ "ac": 12, "from": ["natural armor"] }],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 12, "dex": 12, "con": 13, "int": 4, "wis": 8, "cha": 3 },
+  "condition": ["blinded", "deafened"],
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "languages": ["understands Common but can't speak"],
+  "cr": 0.25,
   "action": [
     {
       "name": "Claws",
@@ -14,16 +25,5 @@
         "{@atk rw} {@hit 3} to hit, range 30/60 ft., one target. {@h}8 ({@damage 2d6 + 1}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["N", "E"],
-  "cr": 0.25,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
-  "languages": ["understands Common but can't speak"],
-  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
-  "size": "M",
-  "skill": {},
-  "name": "Needle Blight",
-  "source": "MM",
-  "speed": { "walk": 30 },
-  "type": "plant"
+  ]
 }

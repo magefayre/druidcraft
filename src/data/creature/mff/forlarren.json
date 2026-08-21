@@ -1,4 +1,12 @@
 {
+  "name": "Forlarren",
+  "source": "MFF",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "hp": { "average": 45, "formula": "6d8 + 18" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 14,
     "dex": 16,
@@ -7,7 +15,18 @@
     "wis": 11,
     "cha": 18
   },
-  "ac": [{ "ac": 16, "from": ["natural armor"] }],
+  "skill": { "acrobatics": 5, "deception": 8, "stealth": 5 },
+  "senses": ["darkvision 30 ft."],
+  "languages": ["Common", "Sylvan"],
+  "cr": 3,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The forlarren has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -33,24 +52,5 @@
         "{@atk rs} {@hit 6} to hit, range 60 ft., one target. {@h}3 ({@damage 1d6}) lightning damage plus 3 ({@damage 1d6}) fire damage plus 3 ({@damage 1d6}) cold damage."
       ]
     }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 3,
-  "hp": { "average": 45, "formula": "6d8 + 18" },
-  "languages": ["Common", "Sylvan"],
-  "senses": ["darkvision 30 ft."],
-  "size": "M",
-  "skill": { "acrobatics": 5, "deception": 8, "stealth": 5 },
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The forlarren has advantage on saving throws against spells and other magical effects."
-      ]
-    }
-  ],
-  "name": "Forlarren",
-  "source": "MFF",
-  "speed": { "walk": 40 },
-  "type": "fey"
+  ]
 }

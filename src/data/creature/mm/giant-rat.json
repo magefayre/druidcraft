@@ -1,20 +1,15 @@
 {
-  "ability": { "str": 7, "dex": 15, "con": 11, "int": 2, "wis": 10, "cha": 4 },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 7, "formula": "2d6" },
-  "senses": ["darkvision 60 ft."],
+  "name": "Giant Rat",
+  "source": "MM",
   "size": "S",
-  "skill": {},
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 7, "formula": "2d6" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 7, "dex": 15, "con": 11, "int": 2, "wis": 10, "cha": 4 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 0.125,
   "trait": [
     {
       "name": "Keen Smell",
@@ -29,8 +24,12 @@
       ]
     }
   ],
-  "name": "Giant Rat",
-  "source": "MM",
-  "speed": { "walk": 30 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    }
+  ]
 }

@@ -1,4 +1,12 @@
 {
+  "name": "Satyr",
+  "source": "MM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 14, "from": ["{@item leather armor|phb}"] }],
+  "hp": { "average": 31, "formula": "7d8" },
+  "speed": { "walk": 40 },
   "ability": {
     "str": 12,
     "dex": 16,
@@ -7,7 +15,17 @@
     "wis": 10,
     "cha": 14
   },
-  "ac": [{ "ac": 14, "from": ["{@item leather armor|phb}"] }],
+  "skill": { "perception": 2, "performance": 6, "stealth": 5 },
+  "languages": ["Common", "Elvish", "Sylvan"],
+  "cr": 0.5,
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The satyr has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Ram",
@@ -27,23 +45,5 @@
         "{@atk rw} {@hit 5} to hit, range 80/320 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["C", "N"],
-  "cr": 0.5,
-  "hp": { "average": 31, "formula": "7d8" },
-  "languages": ["Common", "Elvish", "Sylvan"],
-  "size": "M",
-  "skill": { "perception": 2, "performance": 6, "stealth": 5 },
-  "trait": [
-    {
-      "name": "Magic Resistance",
-      "entries": [
-        "The satyr has advantage on saving throws against spells and other magical effects."
-      ]
-    }
-  ],
-  "name": "Satyr",
-  "source": "MM",
-  "speed": { "walk": 40 },
-  "type": "fey"
+  ]
 }

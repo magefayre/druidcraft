@@ -1,4 +1,12 @@
 {
+  "name": "Korred",
+  "source": "MPMM",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["C", "N"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 93, "formula": "11d6 + 55" },
+  "speed": { "walk": 30, "burrow": 30 },
   "ability": {
     "str": 23,
     "dex": 14,
@@ -7,7 +15,25 @@
     "wis": 15,
     "cha": 9
   },
-  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "skill": { "athletics": 9, "perception": 5, "stealth": 5 },
+  "resist": [
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
+    }
+  ],
+  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "languages": ["Dwarvish", "Gnomish", "Sylvan", "Terran", "Undercommon"],
+  "cr": 7,
+  "trait": [
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The korred has advantage on Dexterity ({@skill Stealth}) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -26,7 +52,6 @@
       ]
     }
   ],
-  "alignment": ["C", "N"],
   "bonus": [
     {
       "name": "Command Hair",
@@ -35,23 +60,5 @@
         "A rope of korred hair has AC 20 and 20 hit points. It regains 1 hit point at the start of each of the korred's turns while the rope has at least 1 hit point and the korred is alive. If the rope drops to 0 hit points, it is destroyed."
       ]
     }
-  ],
-  "cr": 7,
-  "hp": { "average": 93, "formula": "11d6 + 55" },
-  "languages": ["Dwarvish", "Gnomish", "Sylvan", "Terran", "Undercommon"],
-  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
-  "size": "S",
-  "skill": { "athletics": 9, "perception": 5, "stealth": 5 },
-  "trait": [
-    {
-      "name": "Stone Camouflage",
-      "entries": [
-        "The korred has advantage on Dexterity ({@skill Stealth}) checks made to hide in rocky terrain."
-      ]
-    }
-  ],
-  "name": "Korred",
-  "source": "MPMM",
-  "speed": { "walk": 30, "burrow": 30 },
-  "type": "fey"
+  ]
 }

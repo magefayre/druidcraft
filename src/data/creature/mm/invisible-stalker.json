@@ -1,4 +1,16 @@
 {
+  "name": "Invisible Stalker",
+  "source": "MM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["N"],
+  "ac": [14],
+  "hp": { "average": 104, "formula": "16d8 + 32" },
+  "speed": {
+    "walk": 50,
+    "fly": { "number": 50, "condition": "(hover)" },
+    "canHover": true
+  },
   "ability": {
     "str": 16,
     "dex": 19,
@@ -7,26 +19,28 @@
     "wis": 15,
     "cha": 11
   },
-  "ac": [14],
-  "action": [
+  "skill": { "perception": 8, "stealth": 10 },
+  "resist": [
     {
-      "name": "Multiattack",
-      "entries": ["The stalker makes two slam attacks."]
-    },
-    {
-      "name": "Slam",
-      "entries": [
-        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) bludgeoning damage."
-      ]
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks",
+      "cond": true
     }
   ],
-  "alignment": ["N"],
-  "cr": 6,
-  "hp": { "average": 104, "formula": "16d8 + 32" },
-  "languages": ["Auran", "understands Common but doesn't speak it"],
+  "immune": ["poison"],
+  "condition": [
+    "exhaustion",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "prone",
+    "restrained",
+    "unconscious"
+  ],
   "senses": ["darkvision 60 ft."],
-  "size": "M",
-  "skill": { "perception": 8, "stealth": 10 },
+  "languages": ["Auran", "understands Common but doesn't speak it"],
+  "cr": 6,
   "trait": [
     {
       "name": "Invisibility",
@@ -39,12 +53,16 @@
       ]
     }
   ],
-  "name": "Invisible Stalker",
-  "source": "MM",
-  "speed": {
-    "walk": 50,
-    "fly": { "number": 50, "condition": "(hover)" },
-    "canHover": true
-  },
-  "type": "elemental"
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The stalker makes two slam attacks."]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) bludgeoning damage."
+      ]
+    }
+  ]
 }

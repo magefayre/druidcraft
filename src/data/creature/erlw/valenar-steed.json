@@ -1,4 +1,12 @@
 {
+  "name": "Valenar Steed",
+  "source": "ERLW",
+  "size": "L",
+  "type": "fey",
+  "alignment": ["N"],
+  "ac": [13],
+  "hp": { "average": 22, "formula": "3d10 + 6" },
+  "speed": { "walk": 60 },
   "ability": {
     "str": 14,
     "dex": 16,
@@ -7,21 +15,9 @@
     "wis": 15,
     "cha": 11
   },
-  "ac": [13],
-  "action": [
-    {
-      "name": "Hooves",
-      "entries": [
-        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) bludgeoning damage."
-      ]
-    }
-  ],
-  "alignment": ["N"],
-  "cr": 0.5,
-  "hp": { "average": 22, "formula": "3d10 + 6" },
-  "languages": ["understands Common", "Elvish", "and Sylvan but can't speak"],
-  "size": "L",
   "skill": { "perception": 4 },
+  "languages": ["understands Common", "Elvish", "and Sylvan but can't speak"],
+  "cr": 0.5,
   "trait": [
     {
       "name": "Bonding",
@@ -30,8 +26,12 @@
       ]
     }
   ],
-  "name": "Valenar Steed",
-  "source": "ERLW",
-  "speed": { "walk": 60 },
-  "type": "fey"
+  "action": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}10 ({@damage 2d6 + 3}) bludgeoning damage."
+      ]
+    }
+  ]
 }

@@ -1,6 +1,21 @@
 {
-  "ability": { "str": 22, "dex": 9, "con": 16, "int": 3, "wis": 11, "cha": 4 },
+  "name": "Giant Walrus",
+  "source": "IDRotF",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
   "ac": [9],
+  "hp": { "average": 85, "formula": "9d12 + 27" },
+  "speed": { "walk": 20, "swim": 40 },
+  "ability": { "str": 22, "dex": 9, "con": 16, "int": 3, "wis": 11, "cha": 4 },
+  "senses": ["darkvision 60 ft."],
+  "cr": 4,
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The walrus can hold its breath for 30 minutes."]
+    }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -20,21 +35,5 @@
         "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}16 ({@damage 3d6 + 6}) piercing damage."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 4,
-  "hp": { "average": 85, "formula": "9d12 + 27" },
-  "senses": ["darkvision 60 ft."],
-  "size": "H",
-  "skill": {},
-  "trait": [
-    {
-      "name": "Hold Breath",
-      "entries": ["The walrus can hold its breath for 30 minutes."]
-    }
-  ],
-  "name": "Giant Walrus",
-  "source": "IDRotF",
-  "speed": { "walk": 20, "swim": 40 },
-  "type": "beast"
+  ]
 }

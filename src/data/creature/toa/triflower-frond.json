@@ -1,6 +1,16 @@
 {
-  "ability": { "str": 14, "dex": 15, "con": 12, "int": 9, "wis": 13, "cha": 9 },
+  "name": "Tri-flower Frond",
+  "source": "ToA",
+  "size": "M",
+  "type": "plant",
+  "alignment": ["U"],
   "ac": [10],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 5 },
+  "ability": { "str": 14, "dex": 15, "con": 12, "int": 9, "wis": 13, "cha": 9 },
+  "condition": ["blinded", "deafened", "exhaustion", "prone"],
+  "senses": ["blindsight 30 ft."],
+  "cr": 0.5,
   "action": [
     {
       "name": "Multiattack",
@@ -26,15 +36,5 @@
         "{@atk mw} {@hit 2} to hit, reach 5 ft., one creature. {@h}2 ({@damage 1d4}) piercing damage, and the target is {@condition grappled} (escape {@dc 11}). Until this grapple ends, the target takes 5 ({@damage 2d4}) poison damage at the start of each of its turns. The red blossom can grapple only one target at a time. Another creature within reach of the tri-flower frond can use its action to end the grapple on the target."
       ]
     }
-  ],
-  "alignment": ["U"],
-  "cr": 0.5,
-  "hp": { "average": 11, "formula": "2d8 + 2" },
-  "senses": ["blindsight 30 ft."],
-  "size": "M",
-  "skill": {},
-  "name": "Tri-flower Frond",
-  "source": "ToA",
-  "speed": { "walk": 5 },
-  "type": "plant"
+  ]
 }

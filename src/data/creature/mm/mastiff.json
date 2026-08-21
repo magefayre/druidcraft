@@ -1,19 +1,15 @@
 {
-  "ability": { "str": 13, "dex": 14, "con": 12, "int": 3, "wis": 12, "cha": 7 },
-  "ac": [12],
-  "action": [
-    {
-      "name": "Bite",
-      "entries": [
-        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}."
-      ]
-    }
-  ],
-  "alignment": ["U"],
-  "cr": 0.125,
-  "hp": { "average": 5, "formula": "1d8 + 1" },
+  "name": "Mastiff",
+  "source": "MM",
   "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 5, "formula": "1d8 + 1" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 13, "dex": 14, "con": 12, "int": 3, "wis": 12, "cha": 7 },
   "skill": { "perception": 3 },
+  "cr": 0.125,
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -22,8 +18,12 @@
       ]
     }
   ],
-  "name": "Mastiff",
-  "source": "MM",
-  "speed": { "walk": 40 },
-  "type": "beast"
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage. If the target is a creature, it must succeed on a {@dc 11} Strength saving throw or be knocked {@condition prone}."
+      ]
+    }
+  ]
 }
