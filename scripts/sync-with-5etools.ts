@@ -117,7 +117,7 @@ const filterMonsters = (
         wis: monster.wis,
         cha: monster.cha
       },
-      ac: monsters.ac,
+      ac: monster.ac,
       action: monster.action,
       alignment: monster.alignment,
       hp: monster.hp,
