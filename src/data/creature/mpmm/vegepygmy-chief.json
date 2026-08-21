@@ -1,6 +1,6 @@
 {
-  "name": "Vegepygmy Chief",
   "ability": { "str": 14, "dex": 14, "con": 14, "int": 7, "wis": 12, "cha": 9 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -30,8 +30,8 @@
   "alignment": ["N"],
   "hp": { "average": 33, "formula": "6d6 + 12" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+3", "stealth": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Plant Camouflage",
@@ -46,7 +46,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Vegepygmy Chief",
+  "source": "MPMM",
+  "type": "plant"
 }

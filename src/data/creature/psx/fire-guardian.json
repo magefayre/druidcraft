@@ -1,6 +1,6 @@
 {
-  "name": "Fire Guardian",
   "ability": { "str": 10, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
+  "ac": [13],
   "action": [
     {
       "name": "Multiattack",
@@ -16,7 +16,7 @@
   "alignment": ["N"],
   "hp": { "average": 102, "formula": "12d10 + 36" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Fire Form",
@@ -37,7 +37,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "speed": { "walk": 50 }
+  "name": "Fire Guardian",
+  "source": "PSX",
+  "type": "elemental"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Axe Beak",
   "ability": { "str": 14, "dex": 12, "con": 12, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [11],
   "action": [
     {
       "name": "Beak",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 0.25,
-  "rating": 2,
-  "speed": { "walk": 50 }
+  "name": "Axe Beak",
+  "source": "MM",
+  "type": "beast"
 }

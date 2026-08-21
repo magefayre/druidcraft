@@ -1,6 +1,6 @@
 {
-  "name": "Blistercoil Weird",
   "ability": { "str": 16, "dex": 16, "con": 15, "int": 5, "wis": 10, "cha": 7 },
+  "ac": [13],
   "action": [
     {
       "name": "Slam",
@@ -12,7 +12,7 @@
   "alignment": ["C", "N"],
   "hp": { "average": 45, "formula": "7d8 + 14" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Feed on Fire",
@@ -39,7 +39,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 4,
-  "speed": { "walk": 40, "swim": 60 }
+  "name": "Blistercoil Weird",
+  "source": "GGR",
+  "type": "elemental"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Falcon",
   "ability": { "str": 5, "dex": 16, "con": 8, "int": 2, "wis": 14, "cha": 6 },
+  "ac": [13],
   "action": [
     {
       "name": "Talons",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
+  "size": "T",
   "skill": { "perception": "+4" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Keen Sight",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 10, "fly": 60 }
+  "name": "Falcon",
+  "source": "WDH",
+  "type": "beast"
 }

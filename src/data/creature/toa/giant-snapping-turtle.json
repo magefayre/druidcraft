@@ -1,6 +1,9 @@
 {
-  "name": "Giant Snapping Turtle",
   "ability": { "str": 19, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [
+    { "ac": 17, "from": ["natural armor"] },
+    { "ac": 12, "condition": "while prone" }
+  ],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +15,7 @@
   "alignment": ["U"],
   "hp": { "average": 75, "formula": "10d10 + 20" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Amphibious",
@@ -25,7 +28,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 30, "swim": 40 }
+  "name": "Giant Snapping Turtle",
+  "source": "ToA",
+  "type": "beast"
 }

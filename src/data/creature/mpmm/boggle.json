@@ -1,6 +1,6 @@
 {
-  "name": "Boggle",
   "ability": { "str": 8, "dex": 18, "con": 13, "int": 6, "wis": 12, "cha": 7 },
+  "ac": [14],
   "action": [
     {
       "name": "Pummel",
@@ -38,9 +38,10 @@
   "alignment": ["C", "N"],
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+5", "sleight of hand": "+6", "stealth": "+6" },
-  "size": ["S"],
-  "type": "fey",
   "cr": 0.125,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Boggle",
+  "source": "MPMM",
+  "type": "fey"
 }

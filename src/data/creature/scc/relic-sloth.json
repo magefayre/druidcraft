@@ -1,6 +1,6 @@
 {
-  "name": "Relic Sloth",
   "ability": { "str": 20, "dex": 9, "con": 17, "int": 2, "wis": 12, "cha": 8 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claws",
@@ -11,9 +11,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 76, "formula": "8d12 + 24" },
+  "size": "H",
   "skill": { "perception": "+3" },
-  "size": ["H"],
-  "type": "beast",
   "cr": 2,
-  "speed": { "walk": 20, "climb": 20 }
+  "name": "Relic Sloth",
+  "source": "SCC",
+  "type": "beast"
 }

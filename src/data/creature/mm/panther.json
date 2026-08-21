@@ -1,6 +1,6 @@
 {
-  "name": "Panther",
   "ability": { "str": 14, "dex": 15, "con": 10, "int": 3, "wis": 14, "cha": 7 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -17,8 +17,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 13, "formula": "3d8" },
+  "size": "M",
   "skill": { "perception": "+4", "stealth": "+6" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Keen Smell",
@@ -33,8 +33,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 2,
-  "speed": { "walk": 50, "climb": 40 }
+  "name": "Panther",
+  "source": "MM",
+  "type": "beast"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Bheur Hag",
   "ability": {
     "str": 13,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 16
   },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -35,13 +35,13 @@
   "alignment": ["C", "E"],
   "hp": { "average": 91, "formula": "14d8 + 28" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": {
     "nature": "+4",
     "perception": "+4",
     "stealth": "+6",
     "survival": "+4"
   },
-  "size": ["M"],
   "trait": [
     {
       "name": "Control Weather (1/Day)",
@@ -62,11 +62,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 7,
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 50, "condition": "(hover, Graystaff magic)" },
-    "canHover": true
-  }
+  "name": "Bheur Hag",
+  "source": "MPMM",
+  "type": "fey"
 }

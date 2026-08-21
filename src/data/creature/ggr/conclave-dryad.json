@@ -1,5 +1,4 @@
 {
-  "name": "Conclave Dryad",
   "ability": {
     "str": 12,
     "dex": 19,
@@ -8,6 +7,7 @@
     "wis": 20,
     "cha": 21
   },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -43,8 +43,8 @@
   "alignment": ["L", "G"],
   "hp": { "average": 143, "formula": "22d8 + 44" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": { "arcana": "+8", "nature": "+8", "perception": "+9" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -60,7 +60,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 9,
-  "speed": { "walk": 30 }
+  "name": "Conclave Dryad",
+  "source": "GGR",
+  "type": "fey"
 }

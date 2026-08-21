@@ -1,6 +1,6 @@
 {
-  "name": "Hadrosaurus",
   "ability": { "str": 15, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Tail",
@@ -11,10 +11,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
+  "size": "L",
   "skill": { "perception": "+2" },
-  "size": ["L"],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Hadrosaurus",
+  "source": "MPMM",
+  "type": "beast"
 }

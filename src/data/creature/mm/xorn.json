@@ -1,5 +1,4 @@
 {
-  "name": "Xorn",
   "ability": {
     "str": 17,
     "dex": 10,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 11
   },
+  "ac": [{ "ac": 19, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,8 +29,8 @@
   "alignment": ["N"],
   "hp": { "average": 73, "formula": "7d8 + 42" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
+  "size": "M",
   "skill": { "perception": "+6", "stealth": "+3" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Earth Glide",
@@ -51,7 +51,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "speed": { "walk": 20, "burrow": 20 }
+  "name": "Xorn",
+  "source": "MM",
+  "type": "elemental"
 }

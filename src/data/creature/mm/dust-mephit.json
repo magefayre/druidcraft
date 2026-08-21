@@ -1,6 +1,6 @@
 {
-  "name": "Dust Mephit",
   "ability": { "str": 5, "dex": 14, "con": 10, "int": 9, "wis": 11, "cha": 10 },
+  "ac": [12],
   "action": [
     {
       "name": "Claws",
@@ -18,8 +18,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 17, "formula": "5d6" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+2", "stealth": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Death Burst",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.5,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Dust Mephit",
+  "source": "MM",
+  "type": "elemental"
 }

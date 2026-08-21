@@ -1,6 +1,6 @@
 {
-  "name": "Spider",
   "ability": { "str": 2, "dex": 14, "con": 8, "int": 1, "wis": 10, "cha": 2 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
+  "size": "T",
   "skill": { "stealth": "+4" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Spider Climb",
@@ -32,8 +32,8 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 3,
-  "speed": { "walk": 20, "climb": 20 }
+  "name": "Spider",
+  "source": "MM",
+  "type": "beast"
 }

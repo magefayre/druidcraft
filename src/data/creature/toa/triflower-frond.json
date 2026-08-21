@@ -1,6 +1,6 @@
 {
-  "name": "Tri-flower Frond",
   "ability": { "str": 14, "dex": 15, "con": 12, "int": 9, "wis": 13, "cha": 9 },
+  "ac": [10],
   "action": [
     {
       "name": "Multiattack",
@@ -30,8 +30,9 @@
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 30 ft."],
-  "size": ["M"],
-  "type": "plant",
+  "size": "M",
   "cr": 0.5,
-  "speed": { "walk": 5 }
+  "name": "Tri-flower Frond",
+  "source": "ToA",
+  "type": "plant"
 }

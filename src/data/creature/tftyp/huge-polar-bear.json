@@ -1,6 +1,6 @@
 {
-  "name": "Huge Polar Bear",
   "ability": { "str": 20, "dex": 10, "con": 16, "int": 2, "wis": 13, "cha": 7 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -23,8 +23,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 65, "formula": "5d12 + 15" },
+  "size": "H",
   "skill": { "perception": "+3" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Keen Smell",
@@ -33,8 +33,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 2,
-  "speed": { "walk": 40, "swim": 30 }
+  "name": "Huge Polar Bear",
+  "source": "TftYP",
+  "type": "beast"
 }

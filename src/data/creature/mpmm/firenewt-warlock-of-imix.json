@@ -1,5 +1,4 @@
 {
-  "name": "Firenewt Warlock of Imix",
   "ability": {
     "str": 13,
     "dex": 11,
@@ -8,6 +7,7 @@
     "wis": 11,
     "cha": 14
   },
+  "ac": [10],
   "action": [
     {
       "name": "Multiattack",
@@ -29,7 +29,7 @@
   "alignment": ["N", "E"],
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "senses": ["darkvision 120 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Amphibious",
@@ -48,7 +48,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 1,
-  "speed": { "walk": 30 }
+  "name": "Firenewt Warlock of Imix",
+  "source": "MPMM",
+  "type": "elemental"
 }

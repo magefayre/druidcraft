@@ -1,6 +1,6 @@
 {
-  "name": "Jackal",
   "ability": { "str": 8, "dex": 15, "con": 11, "int": 3, "wis": 12, "cha": 6 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 3, "formula": "1d6" },
+  "size": "S",
   "skill": { "perception": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -27,8 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Jackal",
+  "source": "MM",
+  "type": "beast"
 }

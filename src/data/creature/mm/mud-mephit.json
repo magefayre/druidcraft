@@ -1,6 +1,6 @@
 {
-  "name": "Mud Mephit",
   "ability": { "str": 8, "dex": 12, "con": 12, "int": 9, "wis": 11, "cha": 7 },
+  "ac": [11],
   "action": [
     {
       "name": "Fists",
@@ -18,8 +18,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 27, "formula": "6d6 + 6" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "stealth": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Death Burst",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.25,
-  "speed": { "walk": 20, "fly": 20, "swim": 20 }
+  "name": "Mud Mephit",
+  "source": "MM",
+  "type": "elemental"
 }

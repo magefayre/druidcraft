@@ -1,6 +1,6 @@
 {
-  "name": "Meenlock",
   "ability": { "str": 7, "dex": 15, "con": 12, "int": 11, "wis": 10, "cha": 8 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claw",
@@ -12,8 +12,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 31, "formula": "7d6 + 7" },
   "senses": ["darkvision 120 ft."],
+  "size": "S",
   "skill": { "perception": "+4", "stealth": "+6", "survival": "+2" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Fear Aura",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Meenlock",
+  "source": "MPMM",
+  "type": "fey"
 }

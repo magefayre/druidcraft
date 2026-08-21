@@ -1,5 +1,4 @@
 {
-  "name": "Mist Hulk",
   "ability": {
     "str": 18,
     "dex": 21,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 16
   },
+  "ac": [15],
   "action": [
     {
       "name": "Multiattack",
@@ -28,8 +28,8 @@
   ],
   "alignment": ["C", "N"],
   "hp": { "average": 94, "formula": "9d10 + 45" },
+  "size": "L",
   "skill": { "perception": "+4", "stealth": "+8" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Air Form",
@@ -44,11 +44,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 6,
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 40, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Mist Hulk",
+  "source": "BGG",
+  "type": "elemental"
 }

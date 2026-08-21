@@ -1,5 +1,4 @@
 {
-  "name": "Pech",
   "ability": {
     "str": 19,
     "dex": 11,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 10
   },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -31,8 +31,8 @@
   "alignment": ["N", "G"],
   "hp": { "average": 82, "formula": "11d6 + 44" },
   "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "size": "S",
   "skill": { "athletics": "+6", "perception": "+4", "survival": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -47,7 +47,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 4,
-  "speed": { "walk": 30, "burrow": 20 }
+  "name": "Pech",
+  "source": "QftIS",
+  "type": "elemental"
 }

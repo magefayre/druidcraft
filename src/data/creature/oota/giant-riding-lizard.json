@@ -1,6 +1,6 @@
 {
-  "name": "Giant Riding Lizard",
   "ability": { "str": 15, "dex": 12, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "senses": ["darkvision 30 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Spider Climb",
@@ -21,7 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Giant Riding Lizard",
+  "source": "OotA",
+  "type": "beast"
 }

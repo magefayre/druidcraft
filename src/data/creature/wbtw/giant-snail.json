@@ -1,6 +1,6 @@
 {
-  "name": "Giant Snail",
   "ability": { "str": 15, "dex": 3, "con": 11, "int": 3, "wis": 10, "cha": 3 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Slam",
@@ -18,7 +18,7 @@
   "alignment": ["U"],
   "hp": { "average": 22, "formula": "4d10" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Salt Osmosis",
@@ -27,7 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 10, "climb": 10 }
+  "name": "Giant Snail",
+  "source": "WBtW",
+  "type": "beast"
 }

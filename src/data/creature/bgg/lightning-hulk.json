@@ -1,5 +1,4 @@
 {
-  "name": "Lightning Hulk",
   "ability": {
     "str": 18,
     "dex": 21,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 15
   },
+  "ac": [15],
   "action": [
     {
       "name": "Arc Lightning",
@@ -18,8 +18,8 @@
   ],
   "alignment": ["C", "N"],
   "hp": { "average": 102, "formula": "12d10 + 36" },
+  "size": "L",
   "skill": { "perception": "+6" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Illumination",
@@ -34,11 +34,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 9,
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 90, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Lightning Hulk",
+  "source": "BGG",
+  "type": "elemental"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Water Elemental Myrmidon",
   "ability": {
     "str": 18,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 10
   },
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,8 +29,9 @@
   "alignment": ["N"],
   "hp": { "average": 127, "formula": "17d8 + 51" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
-  "type": "elemental",
+  "size": "M",
   "cr": 7,
-  "speed": { "walk": 40, "swim": 40 }
+  "name": "Water Elemental Myrmidon",
+  "source": "MPMM",
+  "type": "elemental"
 }

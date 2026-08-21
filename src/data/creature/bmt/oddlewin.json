@@ -1,5 +1,4 @@
 {
-  "name": "Oddlewin",
   "ability": {
     "str": 8,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 16,
     "cha": 15
   },
+  "ac": [{ "ac": 13, "from": ["{@item leather armor|PHB}"] }],
   "action": [
     {
       "name": "Fool's Scepter",
@@ -25,8 +25,8 @@
   "alignment": ["C", "N"],
   "hp": { "average": 21, "formula": "6d6" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "performance": "+4", "stealth": "+6" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Fortune Teller",
@@ -42,7 +42,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Oddlewin",
+  "source": "BMT",
+  "type": "fey"
 }

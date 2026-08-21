@@ -1,6 +1,6 @@
 {
-  "name": "Mud Hulk",
   "ability": { "str": 16, "dex": 8, "con": 16, "int": 5, "wis": 9, "cha": 6 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Enveloping Slam",
@@ -18,7 +18,7 @@
   ],
   "alignment": ["C", "E"],
   "hp": { "average": 68, "formula": "8d10 + 24" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Amorphous",
@@ -33,7 +33,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 3,
-  "speed": { "walk": 40 }
+  "name": "Mud Hulk",
+  "source": "BGG",
+  "type": "elemental"
 }

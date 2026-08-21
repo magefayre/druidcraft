@@ -1,6 +1,6 @@
 {
-  "name": "Almiraj",
   "ability": { "str": 2, "dex": 16, "con": 10, "int": 2, "wis": 14, "cha": 10 },
+  "ac": [13],
   "action": [
     {
       "name": "Horn",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 3, "formula": "1d6" },
   "senses": ["darkvision 30 ft."],
+  "size": "S",
   "skill": { "perception": "+4", "stealth": "+5" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Keen Senses",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 50 }
+  "name": "Almiraj",
+  "source": "ToA",
+  "type": "beast"
 }

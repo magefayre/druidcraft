@@ -1,6 +1,6 @@
 {
-  "name": "Giant Flying Spider",
   "ability": { "str": 14, "dex": 16, "con": 12, "int": 2, "wis": 11, "cha": 4 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   "alignment": ["U"],
   "hp": { "average": 26, "formula": "4d10 + 4" },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "size": "L",
   "skill": { "stealth": "+7" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Spider Climb",
@@ -38,8 +38,8 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 3,
-  "speed": { "walk": 30, "climb": 30, "fly": 40 }
+  "name": "Giant Flying Spider",
+  "source": "WDMM",
+  "type": "beast"
 }

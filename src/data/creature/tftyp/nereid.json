@@ -1,5 +1,4 @@
 {
-  "name": "Nereid",
   "ability": {
     "str": 10,
     "dex": 17,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 16
   },
+  "ac": [13],
   "action": [
     {
       "name": "Blinding Acid",
@@ -31,13 +31,13 @@
   "alignment": ["C", "G", "NY", "E"],
   "hp": { "average": 44, "formula": "8d8 + 8" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": {
     "acrobatics": "+5",
     "nature": "+3",
     "stealth": "+5",
     "survival": "+4"
   },
-  "size": ["M"],
   "trait": [
     {
       "name": "Amphibious",
@@ -68,7 +68,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 30, "swim": 60 }
+  "name": "Nereid",
+  "source": "TftYP",
+  "type": "fey"
 }

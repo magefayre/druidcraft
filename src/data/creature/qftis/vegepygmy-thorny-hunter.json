@@ -1,6 +1,6 @@
 {
-  "name": "Vegepygmy Thorny Hunter",
   "ability": { "str": 15, "dex": 14, "con": 13, "int": 2, "wis": 10, "cha": 6 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": { "perception": "+4", "stealth": "+4", "survival": "+4" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Pack Tactics",
@@ -40,7 +40,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 40 }
+  "name": "Vegepygmy Thorny Hunter",
+  "source": "QftIS",
+  "type": "plant"
 }

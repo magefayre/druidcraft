@@ -1,6 +1,6 @@
 {
-  "name": "Myconid Sprout",
   "ability": { "str": 8, "dex": 10, "con": 10, "int": 8, "wis": 11, "cha": 5 },
+  "ac": [10],
   "action": [
     {
       "name": "Fist",
@@ -18,7 +18,7 @@
   "alignment": ["L", "N"],
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 120 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Distress Spores",
@@ -33,7 +33,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 0,
-  "speed": { "walk": 10 }
+  "name": "Myconid Sprout",
+  "source": "MM",
+  "type": "plant"
 }

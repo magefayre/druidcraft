@@ -1,5 +1,4 @@
 {
-  "name": "Grinning Cat",
   "ability": {
     "str": 14,
     "dex": 15,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 16
   },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -31,8 +31,8 @@
   "alignment": ["C", "N"],
   "hp": { "average": 45, "formula": "7d10 + 7" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+4", "stealth": "+6" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -41,7 +41,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 40, "climb": 40 }
+  "name": "Grinning Cat",
+  "source": "BGG",
+  "type": "fey"
 }

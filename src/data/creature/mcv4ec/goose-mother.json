@@ -1,5 +1,4 @@
 {
-  "name": "Goose Mother",
   "ability": {
     "str": 17,
     "dex": 15,
@@ -8,6 +7,7 @@
     "wis": 18,
     "cha": 15
   },
+  "ac": [12],
   "action": [
     {
       "name": "Multiattack",
@@ -38,8 +38,8 @@
   "alignment": ["U"],
   "hp": { "average": 114, "formula": "12d12 + 36" },
   "senses": ["darkvision 60 ft."],
+  "size": "H",
   "skill": { "insight": "+7", "investigation": "+4", "perception": "+10" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Legendary Resistance (3/Day)",
@@ -67,7 +67,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 7,
-  "speed": { "walk": 40, "fly": 40 }
+  "name": "Goose Mother",
+  "source": "MCV4EC",
+  "type": "fey"
 }

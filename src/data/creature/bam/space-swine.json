@@ -1,6 +1,6 @@
 {
-  "name": "Space Swine",
   "ability": { "str": 12, "dex": 12, "con": 12, "int": 4, "wis": 10, "cha": 3 },
+  "ac": [11],
   "action": [
     {
       "name": "Bite",
@@ -11,9 +11,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 22, "formula": "4d8 + 4" },
+  "size": "M",
   "skill": { "perception": "+4", "survival": "+4" },
-  "size": ["M"],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 40, "fly": 40 }
+  "name": "Space Swine",
+  "source": "BAM",
+  "type": "beast"
 }

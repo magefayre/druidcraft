@@ -1,6 +1,6 @@
 {
-  "name": "Mountain Goat",
   "ability": { "str": 14, "dex": 12, "con": 14, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [11],
   "action": [
     {
       "name": "Ram",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 13, "formula": "2d8 + 4" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Charge",
@@ -26,7 +26,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.125,
-  "speed": { "walk": 40, "climb": 30 }
+  "name": "Mountain Goat",
+  "source": "IDRotF",
+  "type": "beast"
 }

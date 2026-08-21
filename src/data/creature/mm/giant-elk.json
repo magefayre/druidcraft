@@ -1,5 +1,4 @@
 {
-  "name": "Giant Elk",
   "ability": {
     "str": 19,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 10
   },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Ram",
@@ -24,8 +24,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 42, "formula": "5d12 + 10" },
+  "size": "H",
   "skill": { "perception": "+4" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Charge",
@@ -34,8 +34,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 3,
-  "speed": { "walk": 60 }
+  "name": "Giant Elk",
+  "source": "MM",
+  "type": "beast"
 }

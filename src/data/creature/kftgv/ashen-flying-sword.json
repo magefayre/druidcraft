@@ -1,6 +1,6 @@
 {
-  "name": "Ashen Flying Sword",
   "ability": { "str": 12, "dex": 15, "con": 11, "int": 1, "wis": 5, "cha": 1 },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Longsword",
@@ -12,7 +12,7 @@
   "alignment": ["L", "E"],
   "hp": { "average": 17, "formula": "5d6" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Antimagic Susceptibility",
@@ -27,11 +27,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.25,
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 50, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Ashen Flying Sword",
+  "source": "KftGV",
+  "type": "elemental"
 }

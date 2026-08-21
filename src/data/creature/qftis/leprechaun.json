@@ -1,5 +1,4 @@
 {
-  "name": "Leprechaun",
   "ability": {
     "str": 6,
     "dex": 17,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 18
   },
+  "ac": [13],
   "action": [
     {
       "name": "Multiattack",
@@ -31,8 +31,8 @@
   "alignment": ["N"],
   "hp": { "average": 52, "formula": "8d6 + 24" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+4", "sleight of hand": "+7", "stealth": "+5" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Industrious",
@@ -47,7 +47,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 4,
-  "speed": { "walk": 30 }
+  "name": "Leprechaun",
+  "source": "QftIS",
+  "type": "fey"
 }

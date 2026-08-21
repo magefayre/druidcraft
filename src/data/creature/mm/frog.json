@@ -1,11 +1,11 @@
 {
-  "name": "Frog",
   "ability": { "str": 1, "dex": 13, "con": 8, "int": 1, "wis": 8, "cha": 3 },
+  "ac": [11],
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
+  "size": "T",
   "skill": { "perception": "+1", "stealth": "+3" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Amphibious",
@@ -18,8 +18,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 20, "swim": 20 }
+  "name": "Frog",
+  "source": "MM",
+  "type": "beast"
 }

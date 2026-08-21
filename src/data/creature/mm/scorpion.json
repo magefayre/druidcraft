@@ -1,6 +1,6 @@
 {
-  "name": "Scorpion",
   "ability": { "str": 2, "dex": 11, "con": 8, "int": 1, "wis": 8, "cha": 2 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Sting",
@@ -12,9 +12,9 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["blindsight 10 ft."],
-  "size": ["T"],
-  "type": "beast",
+  "size": "T",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 10 }
+  "name": "Scorpion",
+  "source": "MM",
+  "type": "beast"
 }

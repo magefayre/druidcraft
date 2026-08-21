@@ -1,6 +1,6 @@
 {
-  "name": "Mantrap",
   "ability": { "str": 15, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 2 },
+  "ac": [12],
   "action": [
     {
       "name": "Engulf",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 45, "formula": "7d10 + 7" },
   "senses": ["tremorsense 30 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Attractive Pollen (1/Day)",
@@ -27,7 +27,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 1,
-  "speed": { "walk": 5 }
+  "name": "Mantrap",
+  "source": "ToA",
+  "type": "plant"
 }

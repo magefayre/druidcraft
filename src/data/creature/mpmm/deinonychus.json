@@ -1,6 +1,6 @@
 {
-  "name": "Deinonychus",
   "ability": { "str": 15, "dex": 15, "con": 14, "int": 4, "wis": 12, "cha": 6 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -21,8 +21,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 26, "formula": "4d8 + 8" },
+  "size": "M",
   "skill": { "perception": "+3" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Pounce",
@@ -31,8 +31,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 3,
-  "speed": { "walk": 40 }
+  "name": "Deinonychus",
+  "source": "MPMM",
+  "type": "beast"
 }

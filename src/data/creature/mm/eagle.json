@@ -1,6 +1,6 @@
 {
-  "name": "Eagle",
   "ability": { "str": 6, "dex": 15, "con": 10, "int": 2, "wis": 14, "cha": 7 },
+  "ac": [12],
   "action": [
     {
       "name": "Talons",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 3, "formula": "1d6" },
+  "size": "S",
   "skill": { "perception": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Keen Sight",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 10, "fly": 60 }
+  "name": "Eagle",
+  "source": "MM",
+  "type": "beast"
 }

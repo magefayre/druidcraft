@@ -1,6 +1,6 @@
 {
-  "name": "Trilobite",
   "ability": { "str": 2, "dex": 11, "con": 10, "int": 1, "wis": 8, "cha": 2 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claw",
@@ -12,13 +12,13 @@
   "alignment": ["U"],
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["blindsight 30 ft."],
+  "size": "T",
   "skill": { "stealth": "+2" },
-  "size": ["T"],
   "trait": [
     { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 2,
-  "speed": { "walk": 20, "swim": 20 }
+  "name": "Trilobite",
+  "source": "PSX",
+  "type": "beast"
 }

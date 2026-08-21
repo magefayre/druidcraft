@@ -1,6 +1,6 @@
 {
-  "name": "Rhinoceros",
   "ability": { "str": 21, "dex": 8, "con": 15, "int": 2, "wis": 12, "cha": 6 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Gore",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 45, "formula": "6d10 + 12" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Charge",
@@ -20,8 +20,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Rhinoceros",
+  "source": "MM",
+  "type": "beast"
 }

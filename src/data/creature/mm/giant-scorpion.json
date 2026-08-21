@@ -1,6 +1,6 @@
 {
-  "name": "Giant Scorpion",
   "ability": { "str": 15, "dex": 13, "con": 15, "int": 1, "wis": 9, "cha": 3 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -24,9 +24,9 @@
   "alignment": ["U"],
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "senses": ["blindsight 60 ft."],
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 3,
-  "rating": 3,
-  "speed": { "walk": 40 }
+  "name": "Giant Scorpion",
+  "source": "MM",
+  "type": "beast"
 }

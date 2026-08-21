@@ -1,6 +1,6 @@
 {
-  "name": "Enormous Tentacle",
   "ability": { "str": 19, "dex": 14, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "ac": [12],
   "action": [
     {
       "name": "Constrict",
@@ -12,16 +12,16 @@
   "alignment": ["U"],
   "hp": { "average": 60, "formula": "8d12 + 8" },
   "senses": ["blindsight 10 ft."],
+  "size": "H",
   "skill": { "perception": "+2" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Reach",
       "entries": ["The tentacle can reach anywhere in the room."]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 4,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Enormous Tentacle",
+  "source": "OoW",
+  "type": "beast"
 }

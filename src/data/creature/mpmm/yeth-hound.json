@@ -1,6 +1,6 @@
 {
-  "name": "Yeth Hound",
   "ability": { "str": 18, "dex": 17, "con": 16, "int": 5, "wis": 12, "cha": 7 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 51, "formula": "6d10 + 18" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+5" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Sunlight Banishment",
@@ -34,11 +34,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 4,
-  "speed": {
-    "walk": 40,
-    "fly": { "number": 40, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Yeth Hound",
+  "source": "MPMM",
+  "type": "fey"
 }

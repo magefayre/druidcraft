@@ -1,6 +1,6 @@
 {
-  "name": "Titanothere",
   "ability": { "str": 25, "dex": 10, "con": 19, "int": 2, "wis": 12, "cha": 6 },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Stomp",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 136, "formula": "13d12 + 52" },
-  "size": ["H"],
+  "size": "H",
   "trait": [
     {
       "name": "Beast of Burden",
@@ -20,8 +20,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 5,
-  "rating": 3,
-  "speed": { "walk": 50 }
+  "name": "Titanothere",
+  "source": "BGG",
+  "type": "beast"
 }

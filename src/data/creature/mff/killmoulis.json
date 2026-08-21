@@ -1,5 +1,4 @@
 {
-  "name": "Killmoulis",
   "ability": {
     "str": 4,
     "dex": 19,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 13
   },
+  "ac": [14],
   "action": [
     {
       "name": "Slam",
@@ -31,9 +31,10 @@
   "alignment": ["N"],
   "hp": { "average": 7, "formula": "2d4 + 2" },
   "senses": ["darkvision 30 ft."],
+  "size": "T",
   "skill": { "history": "+3", "perception": "+4", "stealth": "+8" },
-  "size": ["T"],
-  "type": "fey",
   "cr": 0,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Killmoulis",
+  "source": "MFF",
+  "type": "fey"
 }

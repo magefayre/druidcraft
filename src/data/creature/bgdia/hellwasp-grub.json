@@ -1,6 +1,6 @@
 {
-  "name": "Hellwasp Grub",
   "ability": { "str": 5, "dex": 14, "con": 12, "int": 1, "wis": 7, "cha": 3 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,9 @@
   "alignment": ["U"],
   "hp": { "average": 4, "formula": "1d6 + 1" },
   "senses": ["blindsight 30 ft."],
-  "size": ["S"],
-  "type": "beast",
+  "size": "S",
   "cr": 0.25,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Hellwasp Grub",
+  "source": "BGDIA",
+  "type": "beast"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Lion",
   "ability": { "str": 17, "dex": 15, "con": 13, "int": 3, "wis": 12, "cha": 8 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -17,8 +17,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 26, "formula": "4d10 + 4" },
+  "size": "L",
   "skill": { "perception": "+3", "stealth": "+6" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Keen Smell",
@@ -45,8 +45,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 1,
-  "speed": { "walk": 50 }
+  "name": "Lion",
+  "source": "MM",
+  "type": "beast"
 }

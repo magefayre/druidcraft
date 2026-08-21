@@ -1,6 +1,6 @@
 {
-  "name": "Ceratops",
   "ability": { "str": 22, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Gore",
@@ -17,7 +17,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 95, "formula": "10d12 + 30" },
-  "size": ["H"],
+  "size": "H",
   "trait": [
     {
       "name": "Trampling Charge",
@@ -26,8 +26,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 5,
-  "rating": 2,
-  "speed": { "walk": 50 }
+  "name": "Ceratops",
+  "source": "PSX",
+  "type": "beast"
 }

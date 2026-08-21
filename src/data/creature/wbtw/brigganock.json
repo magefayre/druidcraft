@@ -1,5 +1,4 @@
 {
-  "name": "Brigganock",
   "ability": {
     "str": 4,
     "dex": 15,
@@ -8,6 +7,7 @@
     "wis": 11,
     "cha": 13
   },
+  "ac": [12],
   "action": [
     {
       "name": "Pickaxe",
@@ -24,7 +24,7 @@
   ],
   "alignment": ["N", "G"],
   "hp": { "average": 9, "formula": "2d4 + 4" },
-  "size": ["T"],
+  "size": "T",
   "trait": [
     {
       "name": "Fey Ancestry",
@@ -45,7 +45,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.125,
-  "speed": { "walk": 15 }
+  "name": "Brigganock",
+  "source": "WBtW",
+  "type": "fey"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Redcap",
   "ability": {
     "str": 18,
     "dex": 13,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 9
   },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,8 +29,8 @@
   "alignment": ["C", "E"],
   "hp": { "average": 45, "formula": "6d6 + 24" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "athletics": "+6", "perception": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Iron Boots",
@@ -45,7 +45,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 25 }
+  "name": "Redcap",
+  "source": "MPMM",
+  "type": "fey"
 }

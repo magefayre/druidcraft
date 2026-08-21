@@ -12,7 +12,7 @@ import { Readable } from 'stream'
 import { tokenURL } from '~components/Creature/utils'
 import { RATINGS } from '~constants'
 import { loadData } from '~data/utils'
-import type { Creature, MonsterRating, MonsterRatings } from '~types'
+import type { CreatureURL, MonsterRating, MonsterRatings } from '~types'
 
 import { BASE } from './constants'
 
@@ -68,7 +68,7 @@ export const fetchScript = async (url: string) => {
   return eval(await res.text())
 }
 
-export const fetchToken = async ({ source, name }: Partial<Creature>) => {
+export const fetchToken = async ({ source, name }: CreatureURL) => {
   const filename = join('public', tokenURL({ source, name }))
 
   if (existsSync(filename)) return

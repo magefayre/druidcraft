@@ -1,5 +1,4 @@
 {
-  "name": "Oread",
   "ability": {
     "str": 14,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 18
   },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -28,8 +28,8 @@
   ],
   "alignment": ["C", "E"],
   "hp": { "average": 49, "formula": "9d8 + 9" },
+  "size": "M",
   "skill": { "acrobatics": "+4", "athletics": "+4", "performance": "+6" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Invisible in Fire",
@@ -44,7 +44,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 4,
-  "speed": { "walk": 30 }
+  "name": "Oread",
+  "source": "MOT",
+  "type": "fey"
 }

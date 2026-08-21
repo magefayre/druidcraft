@@ -1,6 +1,6 @@
 {
-  "name": "Gargoyle",
   "ability": { "str": 15, "dex": 11, "con": 16, "int": 6, "wis": 11, "cha": 7 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -24,7 +24,7 @@
   "alignment": ["C", "E"],
   "hp": { "average": 52, "formula": "7d8 + 21" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "False Appearance",
@@ -33,7 +33,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 2,
-  "speed": { "walk": 30, "fly": 60 }
+  "name": "Gargoyle",
+  "source": "MM",
+  "type": "elemental"
 }

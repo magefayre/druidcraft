@@ -1,5 +1,4 @@
 {
-  "name": "Giant Goose",
   "ability": {
     "str": 14,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 11
   },
+  "ac": [13],
   "action": [
     {
       "name": "Multiattack",
@@ -35,9 +35,10 @@
   "alignment": ["N"],
   "hp": { "average": 60, "formula": "8d10 + 16" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+6" },
-  "size": ["L"],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Giant Goose",
+  "source": "BGG",
+  "type": "fey"
 }

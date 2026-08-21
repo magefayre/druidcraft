@@ -1,6 +1,6 @@
 {
-  "name": "Blood Hawk",
   "ability": { "str": 6, "dex": 14, "con": 10, "int": 3, "wis": 14, "cha": 5 },
+  "ac": [12],
   "action": [
     {
       "name": "Beak",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 7, "formula": "2d6" },
+  "size": "S",
   "skill": { "perception": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Keen Sight",
@@ -27,8 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.125,
-  "rating": 1,
-  "speed": { "walk": 10, "fly": 60 }
+  "name": "Blood Hawk",
+  "source": "MM",
+  "type": "beast"
 }

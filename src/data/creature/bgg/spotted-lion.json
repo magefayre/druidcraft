@@ -1,5 +1,4 @@
 {
-  "name": "Spotted Lion",
   "ability": {
     "str": 23,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 10
   },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Rend",
@@ -19,8 +19,8 @@
   "alignment": ["U"],
   "hp": { "average": 66, "formula": "7d12 + 21" },
   "senses": ["darkvision 60 ft."],
+  "size": "H",
   "skill": { "perception": "+5", "stealth": "+6" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Pack Tactics",
@@ -29,8 +29,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "rating": 4,
-  "speed": { "walk": 60 }
+  "name": "Spotted Lion",
+  "source": "BGG",
+  "type": "beast"
 }

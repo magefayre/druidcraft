@@ -1,6 +1,6 @@
 {
-  "name": "Chamberlain of Zuggtmoy",
   "ability": { "str": 17, "dex": 7, "con": 14, "int": 11, "wis": 8, "cha": 12 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -22,7 +22,7 @@
   "alignment": ["C", "E"],
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Mushroom Portal",
@@ -37,7 +37,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 20 }
+  "name": "Chamberlain of Zuggtmoy",
+  "source": "OotA",
+  "type": "plant"
 }

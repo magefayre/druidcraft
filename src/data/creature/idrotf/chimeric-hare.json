@@ -1,10 +1,10 @@
 {
-  "name": "Chimeric Hare",
   "ability": { "str": 1, "dex": 17, "con": 9, "int": 2, "wis": 11, "cha": 4 },
+  "ac": [13],
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
+  "size": "T",
   "skill": { "perception": "+2", "stealth": "+5" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Escape",
@@ -13,7 +13,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 20, "burrow": 5, "fly": 30 }
+  "name": "Chimeric Hare",
+  "source": "IDRotF",
+  "type": "beast"
 }

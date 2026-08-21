@@ -1,6 +1,6 @@
 {
-  "name": "Tribal Warrior Spore Servant",
   "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 6, "cha": 1 },
+  "ac": [{ "ac": 12, "from": ["{@item hide armor|phb}"] }],
   "action": [
     {
       "name": "Spear",
@@ -12,9 +12,10 @@
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
-  "size": ["M"],
+  "size": "M",
   "trait": null,
-  "type": "plant",
   "cr": 0.125,
-  "speed": { "walk": 20 }
+  "name": "Tribal Warrior Spore Servant",
+  "source": "IDRotF",
+  "type": "plant"
 }

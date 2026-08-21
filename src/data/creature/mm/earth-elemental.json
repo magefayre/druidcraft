@@ -1,6 +1,6 @@
 {
-  "name": "Earth Elemental",
   "ability": { "str": 20, "dex": 8, "con": 20, "int": 5, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -16,7 +16,7 @@
   "alignment": ["N"],
   "hp": { "average": 126, "formula": "12d10 + 60" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Earth Glide",
@@ -31,9 +31,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "features": { "elementalForms": true },
-  "rating": 2,
-  "speed": { "walk": 30, "burrow": 30 }
+  "name": "Earth Elemental",
+  "source": "MM",
+  "type": "elemental"
 }

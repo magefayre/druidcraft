@@ -1,5 +1,4 @@
 {
-  "name": "Faerie Pest",
   "ability": {
     "str": 8,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 14
   },
+  "ac": [{ "ac": 14, "from": ["{@item leather armor|PHB}"] }],
   "action": [
     {
       "name": "Stingblade",
@@ -25,9 +25,10 @@
   "alignment": ["C", "E"],
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+3", "stealth": "+7" },
-  "size": ["S"],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Faerie Pest",
+  "source": "MCV4EC",
+  "type": "fey"
 }

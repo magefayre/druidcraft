@@ -1,5 +1,4 @@
 {
-  "name": "Dandylion",
   "ability": {
     "str": 22,
     "dex": 19,
@@ -8,6 +7,7 @@
     "wis": 17,
     "cha": 18
   },
+  "ac": [14],
   "action": [
     {
       "name": "Multiattack",
@@ -35,8 +35,8 @@
   "alignment": ["C", "N"],
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "nature": "+9", "perception": "+6", "survival": "+6" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -51,7 +51,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 6,
-  "speed": { "walk": 50 }
+  "name": "Dandylion",
+  "source": "MisMV1",
+  "type": "fey"
 }

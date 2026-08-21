@@ -1,6 +1,6 @@
 {
-  "name": "Khargra",
   "ability": { "str": 13, "dex": 10, "con": 14, "int": 5, "wis": 11, "cha": 6 },
+  "ac": [{ "ac": 20, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -19,8 +19,8 @@
   "alignment": ["N"],
   "hp": { "average": 11, "formula": "2d6 + 4" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+2", "stealth": "+2" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Iron Scent",
@@ -29,7 +29,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.125,
-  "speed": { "walk": 5, "fly": 30 }
+  "name": "Khargra",
+  "source": "MFF",
+  "type": "elemental"
 }

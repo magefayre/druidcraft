@@ -1,4 +1,7 @@
+import titleize from 'titleize'
+
 import {
+  ALIGNMENTS,
   CR,
   CR_LABELS,
   CR_LIMITS,
@@ -6,20 +9,30 @@ import {
   LEVEL_SUFFIXES,
   LEVELS,
   PLURALS,
+  SIZES,
   SPEEDS,
   SPELL_LEVELS,
   SPELLS
 } from '~constants'
+import SOURCES from '~data/sources.json' with { type: 'json' }
 import type {
+  Aligmnent,
   Creature,
   MonsterType,
-  Source,
+  Size,
   Speed,
   Speeds,
   Spell
 } from '~types'
 
+export const formatAligment = (alignment: Aligmnent[]) =>
+  alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? EMPTY
+
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
+
+export const formatSize = (size: Size) => SIZES[size]
+
+export const formatSource = (source: string) => SOURCES[source]
 
 export const formatSpeedLimits = (level: number, locale?: string) => {
   if (level < LEVELS.walk) return EMPTY
@@ -42,6 +55,8 @@ export const formatSpeedLimits = (level: number, locale?: string) => {
 
 export const formatSpellLevel = (level: number) =>
   level === 0 ? 'Cantrip' : `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
+
+export const formatType = (type: MonsterType) => titleize(type)
 
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
@@ -83,7 +98,7 @@ export const getSummonLimit = (cr: number) => {
   return CR_LIMITS[cr]
 }
 
-export const isCoreSource = (source: Source) =>
+export const isCoreSource = (source: string) =>
   Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
   !source.startsWith(Parser.SRC_MCVX_PREFIX) &&
   !source.startsWith(Parser.SRC_PS_PREFIX) &&

@@ -1,5 +1,4 @@
 {
-  "name": "Giant Ram",
   "ability": {
     "str": 19,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 10
   },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Ram",
@@ -24,7 +24,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 28, "formula": "3d10 + 12" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Magic Resistance",
@@ -33,7 +33,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 50 }
+  "name": "Giant Ram",
+  "source": "BGG",
+  "type": "fey"
 }

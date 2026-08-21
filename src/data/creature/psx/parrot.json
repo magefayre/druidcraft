@@ -1,6 +1,6 @@
 {
-  "name": "Parrot",
   "ability": { "str": 2, "dex": 14, "con": 8, "int": 2, "wis": 12, "cha": 6 },
+  "ac": [12],
   "action": [
     {
       "name": "Beak",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
+  "size": "T",
   "skill": { "perception": "+3" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Mimicry",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 2,
-  "speed": { "walk": 10, "fly": 50 }
+  "name": "Parrot",
+  "source": "PSX",
+  "type": "beast"
 }

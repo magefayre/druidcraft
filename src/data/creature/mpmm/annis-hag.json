@@ -1,5 +1,4 @@
 {
-  "name": "Annis Hag",
   "ability": {
     "str": 21,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 15
   },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -35,9 +35,10 @@
   "alignment": ["C", "E"],
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "deception": "+5", "perception": "+5" },
-  "size": ["L"],
-  "type": "fey",
   "cr": 6,
-  "speed": { "walk": 40 }
+  "name": "Annis Hag",
+  "source": "MPMM",
+  "type": "fey"
 }

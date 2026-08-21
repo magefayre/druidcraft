@@ -1,6 +1,6 @@
 {
-  "name": "Sword Spider",
   "ability": { "str": 16, "dex": 16, "con": 14, "int": 6, "wis": 12, "cha": 4 },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -24,8 +24,8 @@
   "alignment": ["U"],
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["tremorsense 60 ft."],
+  "size": "L",
   "skill": { "stealth": "+7" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Spider Climb",
@@ -46,7 +46,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Sword Spider",
+  "source": "MaBJoV",
+  "type": "beast"
 }

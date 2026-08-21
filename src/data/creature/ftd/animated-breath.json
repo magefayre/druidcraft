@@ -1,6 +1,9 @@
 {
-  "name": "Animated Breath",
   "ability": { "str": 19, "dex": 11, "con": 18, "int": 6, "wis": 10, "cha": 5 },
+  "ac": [
+    { "ac": 15, "from": ["natural armor"] },
+    { "ac": 17, "condition": "cold form only", "braces": true }
+  ],
   "action": [
     {
       "name": "Multiattack",
@@ -16,7 +19,7 @@
   "alignment": ["N", "E"],
   "hp": { "average": 95, "formula": "10d10 + 40" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Chromatic Form",
@@ -37,11 +40,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 6,
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Animated Breath",
+  "source": "FTD",
+  "type": "elemental"
 }

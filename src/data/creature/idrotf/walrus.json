@@ -1,6 +1,6 @@
 {
-  "name": "Walrus",
   "ability": { "str": 15, "dex": 9, "con": 14, "int": 3, "wis": 11, "cha": 4 },
+  "ac": [9],
   "action": [
     {
       "name": "Tusks",
@@ -11,14 +11,15 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 22, "formula": "3d10 + 6" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Hold Breath",
       "entries": ["The walrus can hold its breath for 10 minutes."]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 20, "swim": 40 }
+  "name": "Walrus",
+  "source": "IDRotF",
+  "type": "beast"
 }

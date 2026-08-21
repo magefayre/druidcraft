@@ -1,6 +1,6 @@
 {
-  "name": "Needle Blight",
   "ability": { "str": 12, "dex": 12, "con": 13, "int": 4, "wis": 8, "cha": 3 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claws",
@@ -18,8 +18,9 @@
   "alignment": ["N", "E"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
-  "size": ["M"],
-  "type": "plant",
+  "size": "M",
   "cr": 0.25,
-  "speed": { "walk": 30 }
+  "name": "Needle Blight",
+  "source": "MM",
+  "type": "plant"
 }

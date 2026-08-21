@@ -1,6 +1,6 @@
 {
-  "name": "Space Mollymawk",
   "ability": { "str": 6, "dex": 14, "con": 11, "int": 3, "wis": 12, "cha": 3 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 3, "formula": "1d6" },
+  "size": "S",
   "skill": { "perception": "+5" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Flyby",
@@ -25,7 +25,8 @@
       "entries": ["The mollymawk can hold its breath for 15 minutes."]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 10, "fly": 50 }
+  "name": "Space Mollymawk",
+  "source": "BAM",
+  "type": "beast"
 }

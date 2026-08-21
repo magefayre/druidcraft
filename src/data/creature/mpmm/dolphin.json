@@ -1,6 +1,6 @@
 {
-  "name": "Dolphin",
   "ability": { "str": 14, "dex": 13, "con": 13, "int": 6, "wis": 12, "cha": 7 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Slam",
@@ -12,15 +12,16 @@
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 60 ft."],
+  "size": "M",
   "skill": { "perception": "+3" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Hold Breath",
       "entries": ["The dolphin can hold its breath for 20 minutes."]
     }
   ],
-  "type": "beast",
   "cr": 0.125,
-  "speed": { "walk": 0, "swim": 60 }
+  "name": "Dolphin",
+  "source": "MPMM",
+  "type": "beast"
 }

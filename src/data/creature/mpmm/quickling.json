@@ -1,6 +1,6 @@
 {
-  "name": "Quickling",
   "ability": { "str": 4, "dex": 23, "con": 13, "int": 10, "wis": 12, "cha": 7 },
+  "ac": [16],
   "action": [
     {
       "name": "Multiattack",
@@ -16,13 +16,13 @@
   "alignment": ["C", "E"],
   "hp": { "average": 10, "formula": "3d4 + 3" },
   "senses": ["darkvision 60 ft."],
+  "size": "T",
   "skill": {
     "acrobatics": "+8",
     "sleight of hand": "+8",
     "stealth": "+8",
     "perception": "+5"
   },
-  "size": ["T"],
   "trait": [
     {
       "name": "Blurred Movement",
@@ -37,7 +37,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 120 }
+  "name": "Quickling",
+  "source": "MPMM",
+  "type": "fey"
 }

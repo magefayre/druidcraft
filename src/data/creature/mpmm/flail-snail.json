@@ -1,6 +1,6 @@
 {
-  "name": "Flail Snail",
   "ability": { "str": 17, "dex": 5, "con": 20, "int": 3, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -28,7 +28,7 @@
   "alignment": ["U"],
   "hp": { "average": 52, "formula": "5d10 + 25" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Antimagic Shell",
@@ -38,7 +38,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 3,
-  "speed": { "walk": 10 }
+  "name": "Flail Snail",
+  "source": "MPMM",
+  "type": "elemental"
 }

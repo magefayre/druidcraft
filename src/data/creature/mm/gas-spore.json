@@ -1,6 +1,6 @@
 {
-  "name": "Gas Spore",
   "ability": { "str": 5, "dex": 1, "con": 3, "int": 1, "wis": 1, "cha": 1 },
+  "ac": [5],
   "action": [
     {
       "name": "Touch",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d10 - 4" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Death Burst",
@@ -28,11 +28,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 0.5,
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 10, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Gas Spore",
+  "source": "MM",
+  "type": "plant"
 }

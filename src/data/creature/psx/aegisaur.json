@@ -1,6 +1,6 @@
 {
-  "name": "Aegisaur",
   "ability": { "str": 19, "dex": 11, "con": 15, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Tail",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 68, "formula": "8d12 + 16" },
-  "size": ["H"],
-  "type": "beast",
+  "size": "H",
   "cr": 3,
-  "rating": 4,
-  "speed": { "walk": 30 }
+  "name": "Aegisaur",
+  "source": "PSX",
+  "type": "beast"
 }

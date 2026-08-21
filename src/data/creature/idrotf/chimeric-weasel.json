@@ -1,6 +1,6 @@
 {
-  "name": "Chimeric Weasel",
   "ability": { "str": 3, "dex": 16, "con": 8, "int": 2, "wis": 12, "cha": 3 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
+  "size": "T",
   "skill": { "perception": "+3", "stealth": "+5" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 2,
-  "speed": { "walk": 30 }
+  "name": "Chimeric Weasel",
+  "source": "IDRotF",
+  "type": "beast"
 }

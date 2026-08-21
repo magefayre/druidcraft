@@ -1,5 +1,4 @@
 {
-  "name": "Awakened White Moose",
   "ability": {
     "str": 19,
     "dex": 11,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 6
   },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -30,7 +30,7 @@
   ],
   "alignment": ["N", "E"],
   "hp": { "average": 68, "formula": "8d10 + 24" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Charge",
@@ -45,7 +45,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 40 }
+  "name": "Awakened White Moose",
+  "source": "IDRotF",
+  "type": "beast"
 }

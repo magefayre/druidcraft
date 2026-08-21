@@ -1,6 +1,6 @@
 {
-  "name": "Giant Sea Eel",
   "ability": { "str": 11, "dex": 14, "con": 12, "int": 7, "wis": 10, "cha": 7 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -12,15 +12,16 @@
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+2", "stealth": "+4" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Water Breathing",
       "entries": ["The eel can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 0.5,
-  "speed": { "walk": 0, "swim": 40 }
+  "name": "Giant Sea Eel",
+  "source": "GoS",
+  "type": "beast"
 }

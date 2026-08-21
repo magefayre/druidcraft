@@ -1,6 +1,6 @@
 {
-  "name": "Giant Wasp",
   "ability": { "str": 10, "dex": 14, "con": 10, "int": 1, "wis": 10, "cha": 3 },
+  "ac": [12],
   "action": [
     {
       "name": "Sting",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 13, "formula": "3d8" },
-  "size": ["M"],
-  "type": "beast",
+  "size": "M",
   "cr": 0.5,
-  "rating": 1,
-  "speed": { "walk": 10, "fly": 50 }
+  "name": "Giant Wasp",
+  "source": "MM",
+  "type": "beast"
 }

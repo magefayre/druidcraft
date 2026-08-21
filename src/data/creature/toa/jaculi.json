@@ -1,6 +1,6 @@
 {
-  "name": "Jaculi",
   "ability": { "str": 15, "dex": 14, "con": 11, "int": 2, "wis": 8, "cha": 3 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   "alignment": ["U"],
   "hp": { "average": 16, "formula": "3d10" },
   "senses": ["blindsight 30 ft."],
+  "size": "L",
   "skill": { "athletics": "+4", "perception": "+1", "stealth": "+4" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Camouflage",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.5,
-  "speed": { "walk": 30, "climb": 20 }
+  "name": "Jaculi",
+  "source": "ToA",
+  "type": "beast"
 }

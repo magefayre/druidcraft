@@ -1,6 +1,6 @@
 {
-  "name": "Quipper",
   "ability": { "str": 2, "dex": 16, "con": 9, "int": 1, "wis": 7, "cha": 2 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 60 ft."],
-  "size": ["T"],
+  "size": "T",
   "trait": [
     {
       "name": "Blood Frenzy",
@@ -25,8 +25,8 @@
       "entries": ["The quipper can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 1,
-  "speed": { "swim": 40 }
+  "name": "Quipper",
+  "source": "MM",
+  "type": "beast"
 }

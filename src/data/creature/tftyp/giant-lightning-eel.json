@@ -1,6 +1,6 @@
 {
-  "name": "Giant Lightning Eel",
   "ability": { "str": 11, "dex": 17, "con": 16, "int": 2, "wis": 12, "cha": 3 },
+  "ac": [13],
   "action": [
     { "name": "Multiattack", "entries": ["The eel makes two bite attacks."] },
     {
@@ -19,14 +19,15 @@
   "alignment": ["U"],
   "hp": { "average": 42, "formula": "5d10 + 15" },
   "senses": ["blindsight 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Water Breathing",
       "entries": ["The eel can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 5, "swim": 30 }
+  "name": "Giant Lightning Eel",
+  "source": "TftYP",
+  "type": "beast"
 }

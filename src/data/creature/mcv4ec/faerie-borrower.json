@@ -1,5 +1,4 @@
 {
-  "name": "Faerie Borrower",
   "ability": {
     "str": 2,
     "dex": 20,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 16
   },
+  "ac": [15],
   "action": [
     {
       "name": "Needle Blade",
@@ -24,8 +24,8 @@
   ],
   "alignment": ["C", "N"],
   "hp": { "average": 12, "formula": "5d4" },
+  "size": "T",
   "skill": { "sleight of hand": "+7", "stealth": "+7" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Flyby",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.5,
-  "speed": { "walk": 10, "fly": 30 }
+  "name": "Faerie Borrower",
+  "source": "MCV4EC",
+  "type": "fey"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Quetzalcoatlus",
   "ability": { "str": 15, "dex": 13, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 30, "formula": "4d12 + 4" },
+  "size": "H",
   "skill": { "perception": "+2" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Flyby",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 4,
-  "speed": { "walk": 10, "fly": 80 }
+  "name": "Quetzalcoatlus",
+  "source": "MPMM",
+  "type": "beast"
 }

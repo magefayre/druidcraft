@@ -1,5 +1,4 @@
 {
-  "name": "Ashen Knight",
   "ability": {
     "str": 16,
     "dex": 11,
@@ -8,6 +7,7 @@
     "wis": 11,
     "cha": 15
   },
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|phb}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -34,7 +34,7 @@
   ],
   "alignment": ["L", "E"],
   "hp": { "average": 52, "formula": "8d8 + 16" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Brave",
@@ -43,7 +43,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 3,
-  "speed": { "walk": 30 }
+  "name": "Ashen Knight",
+  "source": "KftGV",
+  "type": "elemental"
 }

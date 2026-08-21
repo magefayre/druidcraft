@@ -1,6 +1,6 @@
 {
-  "name": "Lycanthropickle",
   "ability": { "str": 6, "dex": 13, "con": 12, "int": 4, "wis": 8, "cha": 3 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claws",
@@ -12,8 +12,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 4, "formula": "1d6 + 1" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "size": "S",
   "skill": { "stealth": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "False Appearance",
@@ -22,7 +22,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 0.125,
-  "speed": { "walk": 20 }
+  "name": "Lycanthropickle",
+  "source": "RMBRE",
+  "type": "plant"
 }

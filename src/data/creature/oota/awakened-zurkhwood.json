@@ -1,6 +1,6 @@
 {
-  "name": "Awakened Zurkhwood",
   "ability": { "str": 19, "dex": 6, "con": 15, "int": 10, "wis": 10, "cha": 7 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Slam",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 59, "formula": "7d12 + 14" },
   "senses": ["darkvision 120 ft."],
-  "size": ["H"],
+  "size": "H",
   "trait": [
     {
       "name": "False Appearance",
@@ -27,7 +27,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 20 }
+  "name": "Awakened Zurkhwood",
+  "source": "OotA",
+  "type": "plant"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Animated Drow Statue",
   "ability": { "str": 14, "dex": 11, "con": 13, "int": 1, "wis": 3, "cha": 1 },
+  "ac": [{ "ac": 18, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -16,7 +16,7 @@
   "alignment": ["U"],
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Antimagic Susceptibility",
@@ -31,7 +31,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 1,
-  "speed": { "walk": 25 }
+  "name": "Animated Drow Statue",
+  "source": "OotA",
+  "type": "elemental"
 }

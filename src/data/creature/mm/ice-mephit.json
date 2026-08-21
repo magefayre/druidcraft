@@ -1,6 +1,6 @@
 {
-  "name": "Ice Mephit",
   "ability": { "str": 7, "dex": 13, "con": 10, "int": 9, "wis": 11, "cha": 12 },
+  "ac": [11],
   "action": [
     {
       "name": "Claws",
@@ -18,8 +18,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 21, "formula": "6d6" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+2", "stealth": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Death Burst",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.5,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Ice Mephit",
+  "source": "MM",
+  "type": "elemental"
 }

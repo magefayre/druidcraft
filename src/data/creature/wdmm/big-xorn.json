@@ -1,5 +1,4 @@
 {
-  "name": "Big Xorn",
   "ability": {
     "str": 20,
     "dex": 10,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 11
   },
+  "ac": [{ "ac": 19, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,8 +29,8 @@
   "alignment": ["N"],
   "hp": { "formula": "9d10 + 54", "average": 103 },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
+  "size": "L",
   "skill": { "perception": "+6", "stealth": "+3" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Earth Glide",
@@ -51,7 +51,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 8,
-  "speed": { "walk": 20, "burrow": 20 }
+  "name": "Big Xorn",
+  "source": "WDMM",
+  "type": "elemental"
 }

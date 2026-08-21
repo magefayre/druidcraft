@@ -1,5 +1,4 @@
 {
-  "name": "Riffler",
   "ability": {
     "str": 8,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 15,
     "cha": 17
   },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -35,13 +35,13 @@
   "alignment": ["C", "N"],
   "hp": { "average": 90, "formula": "20d6 + 20" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": {
     "arcana": "+6",
     "insight": "+5",
     "sleight of hand": "+9",
     "stealth": "+6"
   },
-  "size": ["S"],
   "trait": [
     {
       "name": "Card Sense",
@@ -56,7 +56,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 5,
-  "speed": { "walk": 30, "burrow": 20 }
+  "name": "Riffler",
+  "source": "BMT",
+  "type": "fey"
 }

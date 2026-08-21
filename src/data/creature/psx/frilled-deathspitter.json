@@ -1,6 +1,6 @@
 {
-  "name": "Frilled Deathspitter",
   "ability": { "str": 12, "dex": 16, "con": 13, "int": 4, "wis": 12, "cha": 6 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,9 +29,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 18, "formula": "4d6 + 4" },
+  "size": "S",
   "skill": { "perception": "+3" },
-  "size": ["S"],
-  "type": "beast",
   "cr": 0.5,
-  "speed": { "walk": 40 }
+  "name": "Frilled Deathspitter",
+  "source": "PSX",
+  "type": "beast"
 }

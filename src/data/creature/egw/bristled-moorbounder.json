@@ -1,6 +1,6 @@
 {
-  "name": "Bristled Moorbounder",
   "ability": { "str": 18, "dex": 14, "con": 14, "int": 2, "wis": 13, "cha": 5 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -24,7 +24,7 @@
   "alignment": ["U"],
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Bladed Hide",
@@ -39,7 +39,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 70 }
+  "name": "Bristled Moorbounder",
+  "source": "EGW",
+  "type": "beast"
 }

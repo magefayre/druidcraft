@@ -1,6 +1,6 @@
 {
-  "name": "Moonshark",
   "ability": { "str": 23, "dex": 11, "con": 21, "int": 1, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 126, "formula": "11d12 + 55" },
   "senses": ["blindsight 60 ft."],
+  "size": "H",
   "skill": { "perception": "+3" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Blood Frenzy",
@@ -26,8 +26,8 @@
       "entries": ["The shark can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 5,
-  "rating": 4,
-  "speed": { "swim": 50 }
+  "name": "Moonshark",
+  "source": "CRCotN",
+  "type": "beast"
 }

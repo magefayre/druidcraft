@@ -1,6 +1,6 @@
 {
-  "name": "Screaming Devilkin",
   "ability": { "str": 4, "dex": 16, "con": 13, "int": 5, "wis": 8, "cha": 11 },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Barbed Tail",
@@ -12,7 +12,7 @@
   "alignment": ["L", "E"],
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "senses": ["darkvision 30 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Agile Flier",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 0, "fly": 40 }
+  "name": "Screaming Devilkin",
+  "source": "MFF",
+  "type": "fey"
 }

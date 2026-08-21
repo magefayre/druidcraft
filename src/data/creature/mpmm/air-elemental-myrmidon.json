@@ -1,5 +1,4 @@
 {
-  "name": "Air Elemental Myrmidon",
   "ability": {
     "str": 18,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 10
   },
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,12 +29,9 @@
   "alignment": ["N"],
   "hp": { "average": 117, "formula": "18d8 + 36" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
-  "type": "elemental",
+  "size": "M",
   "cr": 7,
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Air Elemental Myrmidon",
+  "source": "MPMM",
+  "type": "elemental"
 }

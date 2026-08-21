@@ -1,6 +1,6 @@
 {
-  "name": "Bat",
   "ability": { "str": 2, "dex": 15, "con": 8, "int": 2, "wis": 12, "cha": 4 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["blindsight 60 ft."],
-  "size": ["T"],
+  "size": "T",
   "trait": [
     {
       "name": "Echolocation",
@@ -27,8 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 3,
-  "speed": { "walk": 5, "fly": 30 }
+  "name": "Bat",
+  "source": "MM",
+  "type": "beast"
 }

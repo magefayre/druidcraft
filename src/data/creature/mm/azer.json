@@ -1,5 +1,4 @@
 {
-  "name": "Azer",
   "ability": {
     "str": 17,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 10
   },
+  "ac": [{ "ac": 17, "from": ["natural armor", "{@item shield|phb}"] }],
   "action": [
     {
       "name": "Warhammer",
@@ -18,7 +18,7 @@
   ],
   "alignment": ["L", "N"],
   "hp": { "average": 39, "formula": "6d8 + 12" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Heated Body",
@@ -39,7 +39,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Azer",
+  "source": "MM",
+  "type": "elemental"
 }

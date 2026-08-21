@@ -1,6 +1,6 @@
 {
-  "name": "Firenewt Warrior",
   "ability": { "str": 10, "dex": 13, "con": 12, "int": 7, "wis": 11, "cha": 8 },
+  "ac": [{ "ac": 13, "from": ["{@item shield|PHB}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -21,14 +21,15 @@
   ],
   "alignment": ["N"],
   "hp": { "average": 27, "formula": "5d8 + 5" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Amphibious",
       "entries": ["The firenewt can breathe air and water."]
     }
   ],
-  "type": "elemental",
   "cr": 0.5,
-  "speed": { "walk": 30 }
+  "name": "Firenewt Warrior",
+  "source": "MPMM",
+  "type": "elemental"
 }

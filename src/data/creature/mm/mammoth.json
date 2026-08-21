@@ -1,6 +1,6 @@
 {
-  "name": "Mammoth",
   "ability": { "str": 24, "dex": 9, "con": 21, "int": 3, "wis": 11, "cha": 6 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Gore",
@@ -17,7 +17,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 126, "formula": "11d12 + 55" },
-  "size": ["H"],
+  "size": "H",
   "trait": [
     {
       "name": "Trampling Charge",
@@ -26,8 +26,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 6,
-  "rating": 4,
-  "speed": { "walk": 40 }
+  "name": "Mammoth",
+  "source": "MM",
+  "type": "beast"
 }

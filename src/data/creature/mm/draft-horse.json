@@ -1,6 +1,6 @@
 {
-  "name": "Draft Horse",
   "ability": { "str": 18, "dex": 10, "con": 12, "int": 2, "wis": 11, "cha": 7 },
+  "ac": [10],
   "action": [
     {
       "name": "Hooves",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 0.25,
-  "rating": 2,
-  "speed": { "walk": 40 }
+  "name": "Draft Horse",
+  "source": "MM",
+  "type": "beast"
 }

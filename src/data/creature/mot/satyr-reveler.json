@@ -1,5 +1,4 @@
 {
-  "name": "Satyr Reveler",
   "ability": {
     "str": 12,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 16
   },
+  "ac": [13],
   "action": [
     {
       "name": "Multiattack",
@@ -28,8 +28,8 @@
   ],
   "alignment": ["C", "N"],
   "hp": { "average": 33, "formula": "6d8 + 6" },
+  "size": "M",
   "skill": { "acrobatics": "+5", "performance": "+7", "stealth": "+5" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Enthralling Performance",
@@ -48,7 +48,8 @@
       "entries": ["Magic can't put the satyr to sleep."]
     }
   ],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 40 }
+  "name": "Satyr Reveler",
+  "source": "MOT",
+  "type": "fey"
 }

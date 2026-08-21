@@ -1,6 +1,6 @@
 {
-  "name": "Brontosaurus",
   "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Stomp",
@@ -17,9 +17,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 121, "formula": "9d20 + 27" },
-  "size": ["G"],
-  "type": "beast",
+  "size": "G",
   "cr": 5,
-  "rating": 3,
-  "speed": { "walk": 30 }
+  "name": "Brontosaurus",
+  "source": "MPMM",
+  "type": "beast"
 }

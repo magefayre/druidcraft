@@ -1,5 +1,4 @@
 {
-  "name": "Darkling Elder",
   "ability": {
     "str": 13,
     "dex": 17,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 13
   },
+  "ac": [{ "ac": 15, "from": ["{@item studded leather armor|PHB}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -23,13 +23,13 @@
   "alignment": ["C", "N"],
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["blindsight 30 ft.", "darkvision 120 ft."],
+  "size": "M",
   "skill": {
     "acrobatics": "+5",
     "deception": "+3",
     "perception": "+6",
     "stealth": "+7"
   },
-  "size": ["M"],
   "trait": [
     {
       "name": "Death Burn",
@@ -38,7 +38,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Darkling Elder",
+  "source": "MPMM",
+  "type": "fey"
 }

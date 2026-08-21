@@ -1,6 +1,6 @@
 {
-  "name": "Giant Badger",
   "ability": { "str": 13, "dex": 10, "con": 15, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [10],
   "action": [
     {
       "name": "Multiattack",
@@ -24,7 +24,7 @@
   "alignment": ["U"],
   "hp": { "average": 13, "formula": "2d8 + 4" },
   "senses": ["darkvision 30 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Keen Smell",
@@ -33,8 +33,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 3,
-  "speed": { "walk": 30, "burrow": 10 }
+  "name": "Giant Badger",
+  "source": "MM",
+  "type": "beast"
 }

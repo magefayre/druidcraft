@@ -4,8 +4,6 @@ import withPlugins from 'next-compose-plugins'
 
 import { url } from '~components/Creature/utils'
 
-const preserveCharacters = [':', '*']
-
 const nextConfig: NextConfig = {
   images: { formats: ['image/avif', 'image/webp'] },
   i18n: { locales: ['en'], defaultLocale: 'en' },
@@ -13,7 +11,7 @@ const nextConfig: NextConfig = {
   redirects: () => [
     {
       source: '/beast/:slug*',
-      destination: url({ source: ':slug*', name: '' }, { preserveCharacters }),
+      destination: url({ source: ':slug*', name: '' }, false),
       permanent: true
     }
   ],

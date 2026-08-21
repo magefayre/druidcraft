@@ -1,6 +1,6 @@
 {
-  "name": "Two-Headed Crocodile",
   "ability": { "str": 15, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -15,8 +15,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
+  "size": "L",
   "skill": { "perception": "+2", "stealth": "+2" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Hold Breath",
@@ -37,7 +37,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "speed": { "walk": 20, "swim": 30 }
+  "name": "Two-Headed Crocodile",
+  "source": "IMR",
+  "type": "beast"
 }

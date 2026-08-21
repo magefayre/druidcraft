@@ -1,6 +1,6 @@
 {
-  "name": "Giant Strider",
   "ability": { "str": 18, "dex": 13, "con": 14, "int": 4, "wis": 12, "cha": 6 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -17,7 +17,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 22, "formula": "3d10 + 6" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Fire Absorption",
@@ -26,7 +26,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 1,
-  "speed": { "walk": 50 }
+  "name": "Giant Strider",
+  "source": "MPMM",
+  "type": "elemental"
 }

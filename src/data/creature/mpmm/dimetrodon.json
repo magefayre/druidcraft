@@ -1,6 +1,6 @@
 {
-  "name": "Dimetrodon",
   "ability": { "str": 14, "dex": 10, "con": 15, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -11,10 +11,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d8 + 6" },
+  "size": "M",
   "skill": { "perception": "+2" },
-  "size": ["M"],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 1,
-  "speed": { "walk": 30, "swim": 20 }
+  "name": "Dimetrodon",
+  "source": "MPMM",
+  "type": "beast"
 }

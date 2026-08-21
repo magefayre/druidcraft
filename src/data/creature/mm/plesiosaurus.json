@@ -1,6 +1,6 @@
 {
-  "name": "Plesiosaurus",
   "ability": { "str": 18, "dex": 15, "con": 16, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -11,16 +11,16 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 68, "formula": "8d10 + 24" },
+  "size": "L",
   "skill": { "perception": "+3", "stealth": "+4" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Hold Breath",
       "entries": ["The plesiosaurus can hold its breath for 1 hour."]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 1,
-  "speed": { "walk": 20, "swim": 40 }
+  "name": "Plesiosaurus",
+  "source": "MM",
+  "type": "beast"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Coral",
   "ability": {
     "str": 20,
     "dex": 13,
@@ -8,6 +7,7 @@
     "wis": 18,
     "cha": 19
   },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,8 +29,8 @@
   "alignment": ["C", "G"],
   "hp": { "average": 135, "formula": "18d10 + 36" },
   "senses": ["blindsight 60 ft."],
+  "size": "L",
   "skill": { "arcana": "+6", "insight": "+8", "perception": "+8" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -39,7 +39,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 9,
-  "speed": { "walk": 10, "fly": 60, "swim": 60 }
+  "name": "Coral",
+  "source": "MisMV1",
+  "type": "fey"
 }

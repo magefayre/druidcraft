@@ -1,5 +1,4 @@
 {
-  "name": "Smoke Mephit",
   "ability": {
     "str": 6,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 11
   },
+  "ac": [12],
   "action": [
     {
       "name": "Claws",
@@ -25,8 +25,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+2", "stealth": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Death Burst",
@@ -35,7 +35,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.25,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Smoke Mephit",
+  "source": "MM",
+  "type": "elemental"
 }

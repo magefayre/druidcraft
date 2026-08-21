@@ -1,6 +1,6 @@
 {
-  "name": "Kavu Predator",
   "ability": { "str": 18, "dex": 12, "con": 15, "int": 6, "wis": 14, "cha": 8 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     { "name": "Multiattack", "entries": ["The kavu makes two claw attacks."] },
     {
@@ -19,8 +19,8 @@
   "alignment": ["U"],
   "hp": { "average": 75, "formula": "10d10 + 20" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+4", "stealth": "+5" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Pounce",
@@ -29,7 +29,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Kavu Predator",
+  "source": "PSD",
+  "type": "beast"
 }

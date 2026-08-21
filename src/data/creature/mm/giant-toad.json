@@ -1,6 +1,6 @@
 {
-  "name": "Giant Toad",
   "ability": { "str": 15, "dex": 13, "con": 13, "int": 2, "wis": 10, "cha": 3 },
+  "ac": [11],
   "action": [
     {
       "name": "Bite",
@@ -19,7 +19,7 @@
   "alignment": ["U"],
   "hp": { "average": 39, "formula": "6d10 + 6" },
   "senses": ["darkvision 30 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Amphibious",
@@ -32,8 +32,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 3,
-  "speed": { "walk": 20, "swim": 40 }
+  "name": "Giant Toad",
+  "source": "MM",
+  "type": "beast"
 }

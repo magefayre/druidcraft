@@ -1,6 +1,6 @@
 {
-  "name": "Awakened Shrub",
   "ability": { "str": 3, "dex": 8, "con": 11, "int": 10, "wis": 10, "cha": 6 },
+  "ac": [9],
   "action": [
     {
       "name": "Rake",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 10, "formula": "3d6" },
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "False Appearance",
@@ -20,7 +20,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 0,
-  "speed": { "walk": 20 }
+  "name": "Awakened Shrub",
+  "source": "MM",
+  "type": "plant"
 }

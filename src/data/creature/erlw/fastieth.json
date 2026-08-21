@@ -1,6 +1,6 @@
 {
-  "name": "Fastieth",
   "ability": { "str": 12, "dex": 18, "con": 10, "int": 4, "wis": 11, "cha": 4 },
+  "ac": [14],
   "action": [
     {
       "name": "Bite",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 9, "formula": "2d8" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Quickness {@recharge 5}",
@@ -20,7 +20,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 50 }
+  "name": "Fastieth",
+  "source": "ERLW",
+  "type": "beast"
 }

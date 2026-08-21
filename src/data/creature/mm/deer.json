@@ -1,6 +1,6 @@
 {
-  "name": "Deer",
   "ability": { "str": 11, "dex": 16, "con": 11, "int": 2, "wis": 14, "cha": 5 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 4, "formula": "1d8" },
-  "size": ["M"],
-  "type": "beast",
+  "size": "M",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 50 }
+  "name": "Deer",
+  "source": "MM",
+  "type": "beast"
 }

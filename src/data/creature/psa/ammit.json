@@ -1,6 +1,6 @@
 {
-  "name": "Ammit",
   "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -23,16 +23,16 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 85, "formula": "9d12 + 27" },
+  "size": "H",
   "skill": { "stealth": "+5" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Hold Breath",
       "entries": ["The crocodile can hold its breath for 30 minutes."]
     }
   ],
-  "type": "beast",
   "cr": 5,
-  "rating": 4,
-  "speed": { "walk": 30, "swim": 50 }
+  "name": "Ammit",
+  "source": "PSA",
+  "type": "beast"
 }

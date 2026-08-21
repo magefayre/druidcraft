@@ -1,6 +1,6 @@
 {
-  "name": "Boontu Monkey",
   "ability": { "str": 8, "dex": 14, "con": 11, "int": 5, "wis": 12, "cha": 6 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "special": "3" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Pack Tactics",
@@ -20,7 +20,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 20, "climb": 20 }
+  "name": "Boontu Monkey",
+  "source": "AWM",
+  "type": "beast"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Valenar Hawk",
   "ability": { "str": 8, "dex": 18, "con": 10, "int": 9, "wis": 16, "cha": 11 },
+  "ac": [14],
   "action": [
     {
       "name": "Talons",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["N"],
   "hp": { "average": 10, "formula": "4d4" },
+  "size": "T",
   "skill": { "perception": "+5" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Bonding",
@@ -27,7 +27,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.125,
-  "speed": { "walk": 10, "fly": 60 }
+  "name": "Valenar Hawk",
+  "source": "ERLW",
+  "type": "fey"
 }

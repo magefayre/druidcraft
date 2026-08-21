@@ -1,6 +1,6 @@
 {
-  "name": "Giant Crayfish",
   "ability": { "str": 15, "dex": 13, "con": 13, "int": 1, "wis": 9, "cha": 3 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -16,15 +16,16 @@
   "alignment": ["U"],
   "hp": { "average": 45, "formula": "7d10 + 7" },
   "senses": ["blindsight 30 ft."],
+  "size": "L",
   "skill": { "stealth": "+3" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Amphibious",
       "entries": ["The giant crayfish can breathe air and water."]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Giant Crayfish",
+  "source": "TftYP",
+  "type": "beast"
 }

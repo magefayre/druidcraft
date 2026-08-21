@@ -1,5 +1,4 @@
 {
-  "name": "Invisible Stalker",
   "ability": {
     "str": 16,
     "dex": 19,
@@ -8,6 +7,7 @@
     "wis": 15,
     "cha": 11
   },
+  "ac": [14],
   "action": [
     {
       "name": "Multiattack",
@@ -23,8 +23,8 @@
   "alignment": ["N"],
   "hp": { "average": 104, "formula": "16d8 + 32" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": { "perception": "+8", "stealth": "+10" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Invisibility",
@@ -37,11 +37,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 6,
-  "speed": {
-    "walk": 50,
-    "fly": { "number": 50, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Invisible Stalker",
+  "source": "MM",
+  "type": "elemental"
 }

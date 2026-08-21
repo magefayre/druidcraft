@@ -1,5 +1,4 @@
 {
-  "name": "Lampad",
   "ability": {
     "str": 12,
     "dex": 13,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 18
   },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -30,8 +30,8 @@
   ],
   "alignment": ["N", "E"],
   "hp": { "average": 52, "formula": "8d8 + 16" },
+  "size": "M",
   "skill": { "deception": "+6", "intimidation": "+6" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Corpse Stride",
@@ -46,7 +46,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 30 }
+  "name": "Lampad",
+  "source": "MOT",
+  "type": "fey"
 }

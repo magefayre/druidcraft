@@ -1,5 +1,4 @@
 {
-  "name": "Dryad",
   "ability": {
     "str": 10,
     "dex": 12,
@@ -8,6 +7,10 @@
     "wis": 15,
     "cha": 18
   },
+  "ac": [
+    11,
+    { "ac": 16, "condition": "with {@spell barkskin}", "braces": true }
+  ],
   "action": [
     {
       "name": "Club",
@@ -27,8 +30,8 @@
   "alignment": ["N"],
   "hp": { "average": 22, "formula": "5d8" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": { "perception": "+4", "stealth": "+5" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -49,7 +52,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 1,
-  "speed": { "walk": 30 }
+  "name": "Dryad",
+  "source": "MM",
+  "type": "fey"
 }

@@ -1,33 +1,19 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import { useRouter } from 'next/router'
 
 import { url } from '~components/Creature/utils'
-import PageContainer from '~components/PageContainer'
 import { loadData } from '~data/utils'
-import type { Creature } from '~types'
+import type { CreatureLayoutProps } from '~layouts/creature'
+import CreatureLayout from '~layouts/creature'
+import type { CreatureDetails } from '~types'
 
-type Props = Creature
-const CreaturePage: NextPage<Props> = ({ name, ...rest }) => {
-  const { isFallback } = useRouter()
-
-  // TODO: Loading indicator
-  if (isFallback) return <span>Loading...</span>
-
-  // TODO: Meta
-  const meta = { title: [name, 'Creatures'].join(' | ') }
-
-  return (
-    <PageContainer meta={meta}>
-      <h1>{name}</h1>
-      <pre>{JSON.stringify(rest, null, 2)}</pre>
-    </PageContainer>
-  )
-}
+const CreaturePage: NextPage<CreatureLayoutProps> = props => (
+  <CreatureLayout {...props} />
+)
 
 export const getStaticProps = (async ({ params }) => {
   const source = params?.source as string
   const name = params?.slug as string
-  const creature = await loadData<Creature>(url({ source, name }))
+  const creature = await loadData<CreatureDetails>(url({ source, name }, false))
 
   if (!creature) {
     return { notFound: true }
@@ -37,7 +23,6 @@ export const getStaticProps = (async ({ params }) => {
 }) satisfies GetStaticProps
 
 export const getStaticPaths = (async () => {
-  // TODO: Determine top creatures
   const creatures = []
   const paths = creatures.map(({ slug, source }) => ({
     params: { source, slug }

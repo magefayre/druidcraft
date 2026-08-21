@@ -1,5 +1,4 @@
 {
-  "name": "Dust Hulk",
   "ability": {
     "str": 15,
     "dex": 19,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 8
   },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -31,7 +31,7 @@
   "alignment": ["C", "N"],
   "hp": { "average": 68, "formula": "8d10 + 24" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Air Form",
@@ -46,11 +46,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Dust Hulk",
+  "source": "BGG",
+  "type": "elemental"
 }

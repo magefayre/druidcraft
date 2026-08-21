@@ -1,5 +1,4 @@
 {
-  "name": "Blink Dog",
   "ability": {
     "str": 12,
     "dex": 17,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 11
   },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -24,8 +24,8 @@
   ],
   "alignment": ["L", "G"],
   "hp": { "average": 22, "formula": "4d8 + 4" },
+  "size": "M",
   "skill": { "perception": "+3", "stealth": "+5" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.25,
-  "speed": { "walk": 40 }
+  "name": "Blink Dog",
+  "source": "MM",
+  "type": "fey"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Treant Sapling",
   "ability": {
     "str": 17,
     "dex": 8,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 10
   },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -34,7 +34,7 @@
   ],
   "alignment": ["C", "G"],
   "hp": { "average": 45, "formula": "6d10 + 12" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "False Appearance",
@@ -43,7 +43,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Treant Sapling",
+  "source": "WBtW",
+  "type": "plant"
 }

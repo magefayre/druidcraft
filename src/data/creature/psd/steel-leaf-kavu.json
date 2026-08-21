@@ -1,6 +1,6 @@
 {
-  "name": "Steel Leaf Kavu",
   "ability": { "str": 20, "dex": 12, "con": 18, "int": 6, "wis": 14, "cha": 8 },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   "alignment": ["U"],
   "hp": { "average": 142, "formula": "15d10 + 60" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+4" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Raking Charge",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 4,
-  "speed": { "walk": 40 }
+  "name": "Steel Leaf Kavu",
+  "source": "PSD",
+  "type": "beast"
 }

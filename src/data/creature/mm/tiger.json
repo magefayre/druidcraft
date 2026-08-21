@@ -1,6 +1,6 @@
 {
-  "name": "Tiger",
   "ability": { "str": 17, "dex": 15, "con": 14, "int": 3, "wis": 12, "cha": 8 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   "alignment": ["U"],
   "hp": { "average": 37, "formula": "5d10 + 10" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+3", "stealth": "+6" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Keen Smell",
@@ -34,8 +34,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Tiger",
+  "source": "MM",
+  "type": "beast"
 }

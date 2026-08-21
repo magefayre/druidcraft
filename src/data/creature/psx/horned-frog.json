@@ -1,6 +1,6 @@
 {
-  "name": "Horned Frog",
   "ability": { "str": 12, "dex": 13, "con": 11, "int": 2, "wis": 10, "cha": 3 },
+  "ac": [11],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   "alignment": ["U"],
   "hp": { "average": 18, "formula": "4d8" },
   "senses": ["darkvision 30 ft."],
+  "size": "M",
   "skill": { "perception": "+2", "stealth": "+3" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Amphibious",
@@ -32,8 +32,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 1,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Horned Frog",
+  "source": "PSX",
+  "type": "beast"
 }

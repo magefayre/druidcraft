@@ -1,62 +1,85 @@
 declare global {
   var Parser: {
-    SOURCE_JSON_TO_FULL: Record<Source, string>
-    SOURCES_CORE_SUPPLEMENTS: Set<Source>
-    SOURCES_NON_STANDARD_WOTC: Set<Source>
-    SOURCES_VANILLA: Set<Source>
+    SOURCE_JSON_TO_FULL: Record<string, string>
+    SOURCES_CORE_SUPPLEMENTS: Set<string>
+    SOURCES_NON_STANDARD_WOTC: Set<string>
+    SOURCES_VANILLA: Set<string>
     SRC_MCVX_PREFIX: string
     SRC_PS_PREFIX: string
   }
 }
 
+export type Ability = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
+export type Abilities = Partial<Record<Ability, number>>
 export type Action = { name: string; entries: string[] }
 export type Aligmnent = 'U' | 'N' | 'L' | 'C' | 'G' | 'E'
 export type Feature = 'elementalForms'
 export type Features = Partial<Record<Feature, boolean>>
+export type Health = { average: number; formula: string }
 export type Modifier = `+${number}`
-export type Size = 'T' | 'S' | 'M' | 'H' | 'G'
-export type Skill = 'perception' | 'stealth'
+export type Size = 'T' | 'S' | 'M' | 'L' | 'H' | 'G'
+export type Skill =
+  | 'acrobatics'
+  | 'animal handling'
+  | 'arcana'
+  | 'athletics'
+  | 'deception'
+  | 'history'
+  | 'insight'
+  | 'intimidation'
+  | 'medicine'
+  | 'nature'
+  | 'perception'
+  | 'performance'
+  | 'persuasion'
+  | 'religion'
+  | 'sleight of hand'
+  | 'stealth'
+  | 'survival'
 export type Skills = Partial<Record<Skill, Modifier>>
-export type Source = string
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 export type Speeds = Partial<Record<Speed, number>>
 
-export type Creature = {
+type CreatureBase = {
   cr?: number
-  details?: Partial<Monster>
-  features?: Features
   name: string
-  rating?: number
-  source: Source
+  source: string
   speed?: Speeds
+}
+
+export type Creature = CreatureBase & {
+  features?: Features
+  rating?: number
   spell?: string
 }
+
+export type CreatureDetails = CreatureBase &
+  Pick<
+    Monster,
+    'ac' | 'action' | 'alignment' | 'hp' | 'senses' | 'skill' | 'trait' | 'type'
+  > & { ability: Abilities; size: Size }
+
+export type CreatureURL = Pick<Creature, 'source' | 'name'>
 
 export type Monster = {
   _copy: Partial<Creature>
   ac: number[]
   action: Action[]
   alignment: Aligmnent[]
-  cha: number
-  con: number
   cr: string
-  dex: number
-  hp: { average: number; formula: string }
-  int: number
+  hp: Health
   isNpc?: boolean
   name: string
   reprintedAs?: string[]
   senses: string[]
   size: Size[]
   skill: Skills
-  source: Source
+  source: string
   speed?: Speeds
-  str: number
   summonedBySpell?: string
   trait: Action[]
   type: MonsterType
-  wis: number
-}
+} & { [key in Ability]: number }
 
 export type Monsters = { monster: Monster[] }
 export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'

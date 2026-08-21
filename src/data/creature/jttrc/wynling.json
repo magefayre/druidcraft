@@ -1,5 +1,4 @@
 {
-  "name": "Wynling",
   "ability": {
     "str": 3,
     "dex": 20,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 16
   },
+  "ac": [15],
   "action": [
     {
       "name": "Slam",
@@ -25,9 +25,10 @@
   "alignment": ["C", "N"],
   "hp": { "average": 21, "formula": "6d4 + 6" },
   "senses": ["darkvision 60 ft."],
+  "size": "T",
   "skill": { "sleight of hand": "+7", "stealth": "+7" },
-  "size": ["T"],
-  "type": "fey",
   "cr": 0.5,
-  "speed": { "walk": 30, "fly": 40 }
+  "name": "Wynling",
+  "source": "JttRC",
+  "type": "fey"
 }

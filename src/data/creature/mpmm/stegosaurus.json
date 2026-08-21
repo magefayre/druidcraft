@@ -1,6 +1,6 @@
 {
-  "name": "Stegosaurus",
   "ability": { "str": 20, "dex": 9, "con": 17, "int": 2, "wis": 11, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Tail",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 76, "formula": "8d12 + 24" },
-  "size": ["H"],
-  "type": "beast",
+  "size": "H",
   "cr": 4,
-  "rating": 2,
-  "speed": { "walk": 40 }
+  "name": "Stegosaurus",
+  "source": "MPMM",
+  "type": "beast"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Pixie",
   "ability": { "str": 2, "dex": 20, "con": 8, "int": 10, "wis": 14, "cha": 15 },
+  "ac": [15],
   "action": [
     {
       "name": "Superior Invisibility",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["N", "G"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
+  "size": "T",
   "skill": { "perception": "+4", "stealth": "+7" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -21,7 +21,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.25,
-  "speed": { "walk": 10, "fly": 30 }
+  "name": "Pixie",
+  "source": "MM",
+  "type": "fey"
 }

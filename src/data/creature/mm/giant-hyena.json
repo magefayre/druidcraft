@@ -1,6 +1,6 @@
 {
-  "name": "Giant Hyena",
   "ability": { "str": 16, "dex": 14, "con": 14, "int": 2, "wis": 12, "cha": 7 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 45, "formula": "6d10 + 12" },
+  "size": "L",
   "skill": { "perception": "+3" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Rampage",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 3,
-  "speed": { "walk": 50 }
+  "name": "Giant Hyena",
+  "source": "MM",
+  "type": "beast"
 }

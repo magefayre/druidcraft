@@ -1,6 +1,6 @@
 {
-  "name": "Aurochs",
   "ability": { "str": 20, "dex": 10, "con": 19, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Gore",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 38, "formula": "4d10 + 16" },
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 2,
-  "rating": 3,
-  "speed": { "walk": 50 }
+  "name": "Aurochs",
+  "source": "MPMM",
+  "type": "beast"
 }

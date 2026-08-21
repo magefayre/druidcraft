@@ -1,6 +1,6 @@
 {
-  "name": "Giant Poisonous Snake",
   "ability": { "str": 10, "dex": 18, "con": 13, "int": 2, "wis": 10, "cha": 3 },
+  "ac": [14],
   "action": [
     {
       "name": "Bite",
@@ -12,10 +12,10 @@
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 10 ft."],
+  "size": "M",
   "skill": { "perception": "+2" },
-  "size": ["M"],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 1,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Giant Poisonous Snake",
+  "source": "MM",
+  "type": "beast"
 }

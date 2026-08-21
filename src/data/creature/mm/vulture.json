@@ -1,6 +1,6 @@
 {
-  "name": "Vulture",
   "ability": { "str": 7, "dex": 10, "con": 13, "int": 2, "wis": 12, "cha": 4 },
+  "ac": [10],
   "action": [
     {
       "name": "Beak",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 5, "formula": "1d8 + 1" },
+  "size": "M",
   "skill": { "perception": "+3" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Keen Sight and Smell",
@@ -27,8 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 2,
-  "speed": { "walk": 10, "fly": 50 }
+  "name": "Vulture",
+  "source": "MM",
+  "type": "beast"
 }

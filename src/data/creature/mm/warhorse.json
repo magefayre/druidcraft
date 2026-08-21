@@ -1,6 +1,6 @@
 {
-  "name": "Warhorse",
   "ability": { "str": 18, "dex": 12, "con": 13, "int": 2, "wis": 12, "cha": 7 },
+  "ac": [11],
   "action": [
     {
       "name": "Hooves",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Trampling Charge",
@@ -20,8 +20,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.5,
-  "rating": 3,
-  "speed": { "walk": 60 }
+  "name": "Warhorse",
+  "source": "MM",
+  "type": "beast"
 }

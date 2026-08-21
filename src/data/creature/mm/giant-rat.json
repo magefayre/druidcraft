@@ -1,6 +1,6 @@
 {
-  "name": "Giant Rat",
   "ability": { "str": 7, "dex": 15, "con": 11, "int": 2, "wis": 10, "cha": 4 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Keen Smell",
@@ -27,8 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.125,
-  "rating": 1,
-  "speed": { "walk": 30 }
+  "name": "Giant Rat",
+  "source": "MM",
+  "type": "beast"
 }

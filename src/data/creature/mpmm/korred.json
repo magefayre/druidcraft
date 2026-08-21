@@ -1,5 +1,4 @@
 {
-  "name": "Korred",
   "ability": {
     "str": 23,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 15,
     "cha": 9
   },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,8 +29,8 @@
   "alignment": ["C", "N"],
   "hp": { "average": 93, "formula": "11d6 + 55" },
   "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "size": "S",
   "skill": { "athletics": "+9", "perception": "+5", "stealth": "+5" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Stone Camouflage",
@@ -39,7 +39,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 7,
-  "speed": { "walk": 30, "burrow": 30 }
+  "name": "Korred",
+  "source": "MPMM",
+  "type": "fey"
 }

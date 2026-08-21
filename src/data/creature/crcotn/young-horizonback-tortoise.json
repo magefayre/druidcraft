@@ -1,6 +1,6 @@
 {
-  "name": "Young Horizonback Tortoise",
   "ability": { "str": 19, "dex": 11, "con": 15, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -11,14 +11,15 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 68, "formula": "8d12 + 16" },
-  "size": ["H"],
+  "size": "H",
   "trait": [
     {
       "name": "Amphibious",
       "entries": ["The young horizonback tortoise can breathe air and water."]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 30 }
+  "name": "Young Horizonback Tortoise",
+  "source": "CRCotN",
+  "type": "beast"
 }

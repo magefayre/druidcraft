@@ -1,5 +1,4 @@
 {
-  "name": "Valenar Steed",
   "ability": {
     "str": 14,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 15,
     "cha": 11
   },
+  "ac": [13],
   "action": [
     {
       "name": "Hooves",
@@ -18,8 +18,8 @@
   ],
   "alignment": ["N"],
   "hp": { "average": 22, "formula": "3d10 + 6" },
+  "size": "L",
   "skill": { "perception": "+4" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Bonding",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.5,
-  "speed": { "walk": 60 }
+  "name": "Valenar Steed",
+  "source": "ERLW",
+  "type": "fey"
 }

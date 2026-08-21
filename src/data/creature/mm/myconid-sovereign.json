@@ -1,5 +1,4 @@
 {
-  "name": "Myconid Sovereign",
   "ability": {
     "str": 12,
     "dex": 10,
@@ -8,6 +7,7 @@
     "wis": 15,
     "cha": 10
   },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -49,7 +49,7 @@
   "alignment": ["L", "N"],
   "hp": { "average": 60, "formula": "8d10 + 16" },
   "senses": ["darkvision 120 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Distress Spores",
@@ -64,7 +64,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 30 }
+  "name": "Myconid Sovereign",
+  "source": "MM",
+  "type": "plant"
 }

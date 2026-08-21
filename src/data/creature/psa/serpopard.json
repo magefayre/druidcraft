@@ -1,6 +1,6 @@
 {
-  "name": "Serpopard",
   "ability": { "str": 18, "dex": 14, "con": 15, "int": 3, "wis": 12, "cha": 8 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 52, "formula": "7d10 + 14" },
+  "size": "L",
   "skill": { "perception": "+3", "stealth": "+6" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Keen Smell",
@@ -27,7 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 3,
-  "speed": { "walk": 40 }
+  "name": "Serpopard",
+  "source": "PSA",
+  "type": "beast"
 }

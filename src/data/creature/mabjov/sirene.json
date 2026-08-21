@@ -1,5 +1,4 @@
 {
-  "name": "Sirene",
   "ability": {
     "str": 12,
     "dex": 18,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 16
   },
+  "ac": [14],
   "action": [
     {
       "name": "Multiattack",
@@ -37,8 +37,8 @@
   "alignment": ["C", "N"],
   "hp": { "average": 63, "formula": "14d8" },
   "senses": ["darkvision 60ft."],
+  "size": "M",
   "skill": { "performance": "+5", "persuasion": "+5", "stealth": "+6" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Amphibious",
@@ -51,7 +51,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Sirene",
+  "source": "MaBJoV",
+  "type": "fey"
 }

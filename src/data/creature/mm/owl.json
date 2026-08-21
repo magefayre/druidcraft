@@ -1,6 +1,6 @@
 {
-  "name": "Owl",
   "ability": { "str": 3, "dex": 13, "con": 8, "int": 2, "wis": 12, "cha": 7 },
+  "ac": [11],
   "action": [
     {
       "name": "Talons",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 120 ft."],
+  "size": "T",
   "skill": { "perception": "+3", "stealth": "+3" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Flyby",
@@ -28,8 +28,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 4,
-  "speed": { "walk": 5, "fly": 60 }
+  "name": "Owl",
+  "source": "MM",
+  "type": "beast"
 }

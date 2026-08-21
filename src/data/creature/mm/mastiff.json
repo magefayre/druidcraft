@@ -1,6 +1,6 @@
 {
-  "name": "Mastiff",
   "ability": { "str": 13, "dex": 14, "con": 12, "int": 3, "wis": 12, "cha": 7 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -11,8 +11,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 5, "formula": "1d8 + 1" },
+  "size": "M",
   "skill": { "perception": "+3" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Keen Hearing and Smell",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.125,
-  "rating": 3,
-  "speed": { "walk": 40 }
+  "name": "Mastiff",
+  "source": "MM",
+  "type": "beast"
 }

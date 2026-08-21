@@ -1,6 +1,6 @@
 {
-  "name": "Hunter Shark",
   "ability": { "str": 18, "dex": 13, "con": 15, "int": 1, "wis": 10, "cha": 4 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["blindsight 30 ft."],
+  "size": "L",
   "skill": { "perception": "+2" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Blood Frenzy",
@@ -26,8 +26,8 @@
       "entries": ["The shark can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 3,
-  "speed": { "swim": 40 }
+  "name": "Hunter Shark",
+  "source": "MM",
+  "type": "beast"
 }

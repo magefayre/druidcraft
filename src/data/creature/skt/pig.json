@@ -1,13 +1,13 @@
 {
-  "name": "Pig",
   "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 9, "cha": 5 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": null,
   "alignment": ["U"],
   "hp": { "average": 5, "formula": "1d8 + 1" },
-  "size": ["M"],
+  "size": "M",
   "trait": null,
-  "type": "beast",
   "cr": 0,
-  "rating": 1,
-  "speed": { "walk": 30 }
+  "name": "Pig",
+  "source": "SKT",
+  "type": "beast"
 }

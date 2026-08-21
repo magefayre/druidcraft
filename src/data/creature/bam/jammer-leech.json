@@ -1,6 +1,6 @@
 {
-  "name": "Jammer Leech",
   "ability": { "str": 11, "dex": 1, "con": 16, "int": 1, "wis": 10, "cha": 1 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Spiked Tentacle",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 27, "formula": "5d4 + 15" },
   "senses": ["darkvision 30 ft."],
-  "size": ["T"],
+  "size": "T",
   "trait": [
     {
       "name": "Spelljammer Overload",
@@ -25,7 +25,8 @@
       "entries": ["The leech doesn't require air or sleep."]
     }
   ],
-  "type": "plant",
   "cr": 1,
-  "speed": { "walk": 10 }
+  "name": "Jammer Leech",
+  "source": "BAM",
+  "type": "plant"
 }

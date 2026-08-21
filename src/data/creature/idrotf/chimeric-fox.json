@@ -1,6 +1,6 @@
 {
-  "name": "Chimeric Fox",
   "ability": { "str": 2, "dex": 16, "con": 11, "int": 3, "wis": 12, "cha": 6 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["darkvision 60 ft."],
+  "size": "T",
   "skill": { "perception": "+3", "stealth": "+5" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Keen Hearing",
@@ -22,7 +22,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 30, "burrow": 5 }
+  "name": "Chimeric Fox",
+  "source": "IDRotF",
+  "type": "beast"
 }

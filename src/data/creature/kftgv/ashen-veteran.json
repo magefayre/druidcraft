@@ -1,5 +1,4 @@
 {
-  "name": "Ashen Veteran",
   "ability": {
     "str": 16,
     "dex": 13,
@@ -8,6 +7,7 @@
     "wis": 11,
     "cha": 10
   },
+  "ac": [{ "ac": 17, "from": ["{@item splint armor|phb}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -36,9 +36,10 @@
   ],
   "alignment": ["L", "E"],
   "hp": { "average": 58, "formula": "9d8 + 18" },
+  "size": "M",
   "skill": { "athletics": "+5", "perception": "+2" },
-  "size": ["M"],
-  "type": "elemental",
   "cr": 3,
-  "speed": { "walk": 30 }
+  "name": "Ashen Veteran",
+  "source": "KftGV",
+  "type": "elemental"
 }

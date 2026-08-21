@@ -1,6 +1,6 @@
 {
-  "name": "Hulking Crab",
   "ability": { "str": 19, "dex": 8, "con": 16, "int": 3, "wis": 11, "cha": 3 },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -16,8 +16,8 @@
   "alignment": ["U"],
   "hp": { "average": 76, "formula": "8d12 + 24" },
   "senses": ["blindsight 30 ft."],
+  "size": "H",
   "skill": { "stealth": "+2" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Amphibious",
@@ -30,7 +30,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 5,
-  "speed": { "walk": 20, "swim": 30 }
+  "name": "Hulking Crab",
+  "source": "SKT",
+  "type": "beast"
 }

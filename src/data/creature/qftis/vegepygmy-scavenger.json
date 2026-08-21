@@ -1,6 +1,6 @@
 {
-  "name": "Vegepygmy Scavenger",
   "ability": { "str": 7, "dex": 14, "con": 13, "int": 6, "wis": 11, "cha": 7 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claw",
@@ -18,8 +18,8 @@
   "alignment": ["N"],
   "hp": { "average": 13, "formula": "3d6 + 3" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+2", "sleight of hand": "+4", "stealth": "+4" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Plant Camouflage",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 0.25,
-  "speed": { "walk": 30 }
+  "name": "Vegepygmy Scavenger",
+  "source": "QftIS",
+  "type": "plant"
 }

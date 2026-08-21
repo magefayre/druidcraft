@@ -1,6 +1,6 @@
 {
-  "name": "Giant Raven",
   "ability": { "str": 15, "dex": 10, "con": 15, "int": 6, "wis": 12, "cha": 7 },
+  "ac": [10],
   "action": [
     {
       "name": "Multiattack",
@@ -23,8 +23,8 @@
   ],
   "alignment": ["N", "E"],
   "hp": { "average": 22, "formula": "3d10 + 6" },
+  "size": "L",
   "skill": { "perception": "+3" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Keen Sight and Smell",
@@ -39,8 +39,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "rating": 4,
-  "speed": { "walk": 10, "fly": 60 }
+  "name": "Giant Raven",
+  "source": "SKT",
+  "type": "beast"
 }

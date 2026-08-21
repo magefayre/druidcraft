@@ -1,6 +1,6 @@
 {
-  "name": "Giant Subterranean Lizard",
   "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -30,9 +30,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 66, "formula": "7d12 + 21" },
+  "size": "H",
   "skill": { "stealth": "+3" },
-  "size": ["H"],
-  "type": "beast",
   "cr": 4,
-  "speed": { "walk": 30, "swim": 50 }
+  "name": "Giant Subterranean Lizard",
+  "source": "TftYP",
+  "type": "beast"
 }

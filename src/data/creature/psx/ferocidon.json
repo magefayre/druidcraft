@@ -1,6 +1,6 @@
 {
-  "name": "Ferocidon",
   "ability": { "str": 19, "dex": 13, "con": 17, "int": 2, "wis": 12, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -17,8 +17,8 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 51, "formula": "6d10 + 18" },
+  "size": "L",
   "skill": { "perception": "+5" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Pounce",
@@ -27,8 +27,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 2,
-  "rating": 1,
-  "speed": { "walk": 60 }
+  "name": "Ferocidon",
+  "source": "PSX",
+  "type": "beast"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Satyr Thornbearer",
   "ability": {
     "str": 12,
     "dex": 18,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 14
   },
+  "ac": [{ "ac": 15, "from": ["{@item leather armor|PHB}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -36,8 +36,8 @@
   ],
   "alignment": ["C", "N"],
   "hp": { "average": 38, "formula": "7d8 + 7" },
+  "size": "M",
   "skill": { "perception": "+5", "performance": "+6", "stealth": "+6" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Magic Resistance",
@@ -50,7 +50,8 @@
       "entries": ["Magic can't put the satyr to sleep."]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 40 }
+  "name": "Satyr Thornbearer",
+  "source": "MOT",
+  "type": "fey"
 }

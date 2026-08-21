@@ -1,5 +1,4 @@
 {
-  "name": "Fate Hag",
   "ability": {
     "str": 12,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 18,
     "cha": 15
   },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -25,13 +25,13 @@
   "alignment": ["N"],
   "hp": { "average": 71, "formula": "13d8 + 13" },
   "senses": ["truesight 60 ft."],
+  "size": "M",
   "skill": {
     "arcana": "+5",
     "deception": "+6",
     "history": "+5",
     "perception": "+6"
   },
-  "size": ["M"],
   "trait": [
     {
       "name": "Legendary Resistance (2/Day)",
@@ -46,7 +46,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 4,
-  "speed": { "walk": 30 }
+  "name": "Fate Hag",
+  "source": "BMT",
+  "type": "fey"
 }

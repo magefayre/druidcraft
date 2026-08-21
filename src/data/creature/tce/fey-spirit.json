@@ -1,5 +1,4 @@
 {
-  "name": "Fey Spirit",
   "ability": {
     "str": 13,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 11,
     "cha": 16
   },
+  "ac": [{ "special": "12 + the level of the spell (natural armor)" }],
   "action": [
     {
       "name": "Multiattack",
@@ -25,8 +25,8 @@
   "alignment": ["U"],
   "hp": { "special": "30 + 10 for each spell level above 3rd" },
   "senses": ["darkvision 60 ft."],
-  "size": ["S"],
-  "type": "fey",
-  "speed": { "walk": 40 },
-  "spell": "Summon Fey"
+  "size": "S",
+  "name": "Fey Spirit",
+  "source": "TCE",
+  "type": "fey"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Fume Drake",
   "ability": { "str": 6, "dex": 14, "con": 12, "int": 6, "wis": 10, "cha": 11 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -18,7 +18,7 @@
   "alignment": ["N"],
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Death Burst",
@@ -31,7 +31,8 @@
       "entries": ["The fume drake doesn't require food, drink, or sleep."]
     }
   ],
-  "type": "elemental",
   "cr": 0.25,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Fume Drake",
+  "source": "DoSI",
+  "type": "elemental"
 }

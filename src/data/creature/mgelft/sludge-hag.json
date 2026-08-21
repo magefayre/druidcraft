@@ -1,5 +1,4 @@
 {
-  "name": "Sludge Hag",
   "ability": {
     "str": 18,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 14
   },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "False Appearance",
@@ -25,13 +25,13 @@
   "alignment": [{ "special": "neutral oozy" }],
   "hp": { "formula": "11d8 + 33", "average": 82 },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": {
     "arcana": "+3",
     "deception": "+4",
     "perception": "+4",
     "stealth": "+3"
   },
-  "size": ["M"],
   "trait": [
     {
       "name": "Amorphous",
@@ -44,7 +44,8 @@
       "entries": ["The sludge hag can breathe air and water."]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 30 }
+  "name": "Sludge Hag",
+  "source": "MGELFT",
+  "type": "fey"
 }

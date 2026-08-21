@@ -1,6 +1,6 @@
 {
-  "name": "Gadabout",
   "ability": { "str": 12, "dex": 10, "con": 14, "int": 1, "wis": 6, "cha": 1 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -22,7 +22,7 @@
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 10 ft. (blind beyond this radius)"],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Air Envelope",
@@ -35,11 +35,8 @@
       "entries": ["The gadabout doesn't require food or sleep."]
     }
   ],
-  "type": "plant",
   "cr": 0.125,
-  "speed": {
-    "walk": 10,
-    "fly": { "number": 60, "condition": "(hover)" },
-    "canHover": true
-  }
+  "name": "Gadabout",
+  "source": "MCV1SC",
+  "type": "plant"
 }

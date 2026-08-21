@@ -1,6 +1,6 @@
 {
-  "name": "Riding Horse",
   "ability": { "str": 16, "dex": 10, "con": 12, "int": 2, "wis": 11, "cha": 7 },
+  "ac": [10],
   "action": [
     {
       "name": "Hooves",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 13, "formula": "2d10 + 2" },
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 0.25,
-  "rating": 1,
-  "speed": { "walk": 60 }
+  "name": "Riding Horse",
+  "source": "MM",
+  "type": "beast"
 }

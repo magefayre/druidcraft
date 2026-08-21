@@ -1,5 +1,4 @@
 {
-  "name": "Fire Elemental Myrmidon",
   "ability": {
     "str": 13,
     "dex": 18,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 10
   },
+  "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -29,7 +29,7 @@
   "alignment": ["N"],
   "hp": { "average": 123, "formula": "19d8 + 38" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Illumination",
@@ -44,7 +44,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 7,
-  "speed": { "walk": 40 }
+  "name": "Fire Elemental Myrmidon",
+  "source": "MPMM",
+  "type": "elemental"
 }

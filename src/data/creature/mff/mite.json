@@ -1,6 +1,6 @@
 {
-  "name": "Mite",
   "ability": { "str": 7, "dex": 14, "con": 11, "int": 10, "wis": 8, "cha": 13 },
+  "ac": [12],
   "action": [
     {
       "name": "Dagger",
@@ -18,8 +18,8 @@
   "alignment": ["L", "E"],
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "deception": "+3", "stealth": "+6" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Vexing Presence",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0.25,
-  "speed": { "walk": 30, "burrow": 10, "climb": 30 }
+  "name": "Mite",
+  "source": "MFF",
+  "type": "fey"
 }

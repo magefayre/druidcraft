@@ -1,5 +1,4 @@
 {
-  "name": "Wine Weird",
   "ability": {
     "str": 17,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 10
   },
+  "ac": [13],
   "action": [
     {
       "name": "Constrict",
@@ -19,7 +19,7 @@
   "alignment": ["N"],
   "hp": { "average": 58, "formula": "9d10 + 9" },
   "senses": ["blindsight 30 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Invisible in Water",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 3,
-  "speed": { "walk": 0, "swim": 60 }
+  "name": "Wine Weird",
+  "source": "ToA",
+  "type": "elemental"
 }

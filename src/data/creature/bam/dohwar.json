@@ -1,5 +1,4 @@
 {
-  "name": "Dohwar",
   "ability": {
     "str": 5,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 13
   },
+  "ac": [11],
   "action": [
     {
       "name": "Bite",
@@ -18,8 +18,8 @@
   ],
   "alignment": ["A"],
   "hp": { "average": 10, "formula": "3d6" },
+  "size": "S",
   "skill": { "deception": "+3", "insight": "+4", "persuasion": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Merging",
@@ -28,7 +28,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 0,
-  "speed": { "walk": 20, "swim": 20 }
+  "name": "Dohwar",
+  "source": "BAM",
+  "type": "fey"
 }

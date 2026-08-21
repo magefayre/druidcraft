@@ -8,12 +8,13 @@ import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
 import type {
   Creature,
+  CreatureDetails,
   Features,
   Monster,
   MonsterRatings,
   Monsters,
   MonsterType,
-  Source
+  Size
 } from '~types'
 import {
   getCircleFormsCR,
@@ -57,6 +58,8 @@ const parseRating = (
   return ratings[name]
 }
 
+const parseSize = (sizes: Size[]) => sizes.at(0)
+
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
@@ -86,7 +89,9 @@ const filterMonsters = (
   filters: MonsterFilters,
   ratings: MonsterRatings
 ) => {
-  const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
+  const creatures = monsters.reduce<
+    { summary: Creature; details: CreatureDetails }[]
+  >((creatures, monster) => {
     const { _copy } = monster
     const base = monsters.find(
       ({ name, source }) =>
@@ -99,43 +104,62 @@ const filterMonsters = (
       monster = { ...base, ...monster }
     }
 
-    const { name, source, speed } = monster
+    const { source, speed } = monster
     const cr = parseCR(monster.cr)!
     const spell = parseSpell(monster.summonedBySpell)
     const type = parseType(monster.type)
+    const include =
+      type === filters.type &&
+      (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
+
+    if (!include) return creatures
+
+    const {
+      ac,
+      action,
+      alignment,
+      cha,
+      con,
+      dex,
+      hp,
+      int,
+      name,
+      senses,
+      skill,
+      str,
+      trait,
+      wis
+    } = monster
     const features = filters.features?.(name)
     const rating = filters.ratings
       ? parseRating(base?.name ?? name, features, ratings)
       : undefined
-
-    const details = {
-      ability: {
-        str: monster.str,
-        dex: monster.dex,
-        con: monster.con,
-        int: monster.int,
-        wis: monster.wis,
-        cha: monster.cha
-      },
-      ac: monster.ac,
-      action: monster.action,
-      alignment: monster.alignment,
-      hp: monster.hp,
-      // passive: monster.passive,
-      senses: monster.senses,
-      skill: monster.skill,
-      size: monster.size,
-      trait: monster.trait,
+    const summary: Creature = {
+      cr,
+      features,
+      name,
+      rating,
+      source,
+      speed,
+      spell
+    }
+    const details: CreatureDetails = {
+      ability: { str, dex, con, int, wis, cha },
+      ac,
+      action,
+      alignment,
+      hp,
+      senses,
+      size: parseSize(monster.size),
+      skill,
+      trait,
+      cr,
+      name,
+      source,
       type
     }
 
-    return type === filters.type &&
-      (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
-      ? [
-          ...creatures,
-          { cr, details, features, name, rating, source, speed, spell }
-        ]
-      : creatures
+    return [...creatures, { summary, details }]
   }, [])
 
   return creatures
@@ -150,7 +174,7 @@ const filterMonsters = (
 
   ensureDir(outputDir)
 
-  const monsterURLs = await fetchData<Record<Source, string>>(
+  const monsterURLs = await fetchData<Record<string, string>>(
     'bestiary',
     'index.json'
   )
@@ -187,20 +211,19 @@ const filterMonsters = (
 
       await writeFile(
         join(outputDir, `${plur(filters.type)}.json`),
-        JSON.stringify(creatures.sort(sortCreatures()))
+        JSON.stringify(
+          creatures.map(({ summary }) => summary).sort(sortCreatures())
+        )
       )
 
       await Promise.all(
-        creatures.map(async ({ name, source, details, ...rest }) => {
-          const filename = join(outputDir, `${url({ source, name })}.json`)
+        creatures.map(async ({ details }) => {
+          const filename = join(outputDir, `${url(details)}.json`)
 
           ensureDir(filename)
 
-          await writeFile(
-            filename,
-            JSON.stringify({ name, ...details, ...rest })
-          )
-          await fetchToken({ name, source })
+          await writeFile(filename, JSON.stringify(details))
+          await fetchToken(details)
         })
       )
 
@@ -214,7 +237,7 @@ const filterMonsters = (
     .sort(([, a], [, b]) => sortAlphabetically(a, b))
     .reduce(
       (books, [source, name]) =>
-        creatures.flat().some(creature => creature.source === source) &&
+        creatures.flat().some(({ summary }) => summary.source === source) &&
         !books[source]
           ? { ...books, [source]: name }
           : books,

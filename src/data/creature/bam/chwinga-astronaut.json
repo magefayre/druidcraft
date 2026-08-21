@@ -1,5 +1,4 @@
 {
-  "name": "Chwinga Astronaut",
   "ability": {
     "str": 1,
     "dex": 20,
@@ -8,6 +7,7 @@
     "wis": 16,
     "cha": 16
   },
+  "ac": [15],
   "action": [
     {
       "name": "Magical Gift (1/Day)",
@@ -25,8 +25,8 @@
   "alignment": ["N"],
   "hp": { "average": 7, "formula": "3d4" },
   "senses": ["blindsight 60 ft."],
+  "size": "T",
   "skill": { "acrobatics": "+7", "perception": "+7", "stealth": "+7" },
-  "size": ["T"],
   "trait": [
     {
       "name": "Evasion",
@@ -41,7 +41,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0,
-  "speed": { "walk": 20, "climb": 20, "swim": 20 }
+  "name": "Chwinga Astronaut",
+  "source": "BAM",
+  "type": "elemental"
 }

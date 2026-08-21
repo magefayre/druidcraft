@@ -1,5 +1,4 @@
 {
-  "name": "Steam Mephit",
   "ability": {
     "str": 5,
     "dex": 11,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 12
   },
+  "ac": [10],
   "action": [
     {
       "name": "Claws",
@@ -25,7 +25,7 @@
   "alignment": ["N", "E"],
   "hp": { "average": 21, "formula": "6d6" },
   "senses": ["darkvision 60 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Death Burst",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.25,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Steam Mephit",
+  "source": "MM",
+  "type": "elemental"
 }

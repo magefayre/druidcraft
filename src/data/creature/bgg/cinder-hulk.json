@@ -1,5 +1,4 @@
 {
-  "name": "Cinder Hulk",
   "ability": {
     "str": 20,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 10
   },
+  "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -28,8 +28,8 @@
   ],
   "alignment": ["C", "E"],
   "hp": { "average": 84, "formula": "8d10 + 40" },
+  "size": "L",
   "skill": { "perception": "+5" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Death Burst",
@@ -38,7 +38,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 7,
-  "speed": { "walk": 40 }
+  "name": "Cinder Hulk",
+  "source": "BGG",
+  "type": "elemental"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Giant Ox",
   "ability": { "str": 22, "dex": 10, "con": 19, "int": 4, "wis": 11, "cha": 9 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Gore",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 105, "formula": "10d12 + 40" },
-  "size": ["H"],
+  "size": "H",
   "trait": [
     {
       "name": "Beast of Burden",
@@ -20,7 +20,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 40 }
+  "name": "Giant Ox",
+  "source": "BGG",
+  "type": "fey"
 }

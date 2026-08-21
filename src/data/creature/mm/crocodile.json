@@ -1,6 +1,6 @@
 {
-  "name": "Crocodile",
   "ability": { "str": 15, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Bite",
@@ -11,16 +11,16 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d10 + 3" },
+  "size": "L",
   "skill": { "stealth": "+2" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Hold Breath",
       "entries": ["The crocodile can hold its breath for 15 minutes."]
     }
   ],
-  "type": "beast",
   "cr": 0.5,
-  "rating": 3,
-  "speed": { "walk": 20, "swim": 30 }
+  "name": "Crocodile",
+  "source": "MM",
+  "type": "beast"
 }

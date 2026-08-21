@@ -1,6 +1,6 @@
 {
-  "name": "Rothé",
   "ability": { "str": 18, "dex": 10, "con": 14, "int": 2, "wis": 10, "cha": 4 },
+  "ac": [10],
   "action": [
     {
       "name": "Gore",
@@ -12,8 +12,9 @@
   "alignment": ["U"],
   "hp": { "average": 15, "formula": "2d10 + 4" },
   "senses": ["darkvision 30 ft."],
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 0.25,
-  "speed": { "walk": 30 }
+  "name": "Rothé",
+  "source": "CoA",
+  "type": "beast"
 }

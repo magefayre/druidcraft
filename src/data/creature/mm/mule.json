@@ -1,6 +1,6 @@
 {
-  "name": "Mule",
   "ability": { "str": 14, "dex": 10, "con": 13, "int": 2, "wis": 10, "cha": 5 },
+  "ac": [10],
   "action": [
     {
       "name": "Hooves",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Beast of Burden",
@@ -26,8 +26,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.125,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Mule",
+  "source": "MM",
+  "type": "beast"
 }

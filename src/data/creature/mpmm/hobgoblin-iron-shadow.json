@@ -1,5 +1,4 @@
 {
-  "name": "Hobgoblin Iron Shadow",
   "ability": {
     "str": 14,
     "dex": 16,
@@ -8,6 +7,7 @@
     "wis": 15,
     "cha": 11
   },
+  "ac": [{ "ac": 15, "from": ["Unarmored Defense"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -38,8 +38,8 @@
   "alignment": ["L", "N"],
   "hp": { "average": 32, "formula": "5d8 + 10" },
   "senses": ["darkvision 60 ft."],
+  "size": "M",
   "skill": { "acrobatics": "+5", "athletics": "+4", "stealth": "+5" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Unarmored Defense",
@@ -48,7 +48,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 40 }
+  "name": "Hobgoblin Iron Shadow",
+  "source": "MPMM",
+  "type": "fey"
 }

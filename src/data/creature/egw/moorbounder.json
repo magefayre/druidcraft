@@ -1,6 +1,6 @@
 {
-  "name": "Moorbounder",
   "ability": { "str": 18, "dex": 14, "con": 14, "int": 2, "wis": 13, "cha": 5 },
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claws",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 30, "formula": "4d10 + 8" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Standing Leap",
@@ -21,7 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "speed": { "walk": 70 }
+  "name": "Moorbounder",
+  "source": "EGW",
+  "type": "beast"
 }

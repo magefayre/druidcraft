@@ -1,6 +1,6 @@
 {
-  "name": "Ape",
   "ability": { "str": 16, "dex": 14, "con": 14, "int": 6, "wis": 12, "cha": 7 },
+  "ac": [12],
   "action": [
     { "name": "Multiattack", "entries": ["The ape makes two fist attacks."] },
     {
@@ -18,10 +18,10 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 19, "formula": "3d8 + 6" },
+  "size": "M",
   "skill": { "athletics": "+5", "perception": "+3" },
-  "size": ["M"],
-  "type": "beast",
   "cr": 0.5,
-  "rating": 4,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Ape",
+  "source": "MM",
+  "type": "beast"
 }

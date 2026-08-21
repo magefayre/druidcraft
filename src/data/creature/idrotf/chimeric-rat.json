@@ -1,6 +1,6 @@
 {
-  "name": "Chimeric Rat",
   "ability": { "str": 2, "dex": 11, "con": 9, "int": 2, "wis": 10, "cha": 4 },
+  "ac": [10],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
-  "size": ["T"],
+  "size": "T",
   "trait": [
     {
       "name": "Keen Smell",
@@ -21,8 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "rating": 2,
-  "speed": { "walk": 20 }
+  "name": "Chimeric Rat",
+  "source": "IDRotF",
+  "type": "beast"
 }

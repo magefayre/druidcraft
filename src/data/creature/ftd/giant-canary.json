@@ -1,6 +1,6 @@
 {
-  "name": "Giant Canary",
   "ability": { "str": 10, "dex": 14, "con": 12, "int": 2, "wis": 10, "cha": 6 },
+  "ac": [12],
   "action": [
     {
       "name": "Peck",
@@ -11,8 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 26, "formula": "4d10 + 4" },
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 0.5,
-  "speed": { "walk": 30, "fly": 60 }
+  "name": "Giant Canary",
+  "source": "FTD",
+  "type": "beast"
 }

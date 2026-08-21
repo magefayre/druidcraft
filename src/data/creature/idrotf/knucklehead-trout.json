@@ -1,6 +1,6 @@
 {
-  "name": "Knucklehead Trout",
   "ability": { "str": 14, "dex": 14, "con": 11, "int": 1, "wis": 6, "cha": 1 },
+  "ac": [12],
   "action": [
     {
       "name": "Bite",
@@ -18,14 +18,15 @@
   "alignment": ["U"],
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     {
       "name": "Water Breathing",
       "entries": ["The trout can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 0, "swim": 30 }
+  "name": "Knucklehead Trout",
+  "source": "IDRotF",
+  "type": "beast"
 }

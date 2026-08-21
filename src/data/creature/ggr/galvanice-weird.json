@@ -1,6 +1,6 @@
 {
-  "name": "Galvanice Weird",
   "ability": { "str": 14, "dex": 10, "con": 17, "int": 3, "wis": 10, "cha": 5 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Slam",
@@ -12,7 +12,7 @@
   "alignment": ["C", "N"],
   "hp": { "average": 22, "formula": "3d8 + 9" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Death Burst",
@@ -21,7 +21,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 1,
-  "speed": { "walk": 30 }
+  "name": "Galvanice Weird",
+  "source": "GGR",
+  "type": "elemental"
 }

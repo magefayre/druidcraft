@@ -1,6 +1,6 @@
 {
-  "name": "Camel",
   "ability": { "str": 16, "dex": 8, "con": 14, "int": 2, "wis": 8, "cha": 5 },
+  "ac": [9],
   "action": [
     {
       "name": "Bite",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 15, "formula": "2d10 + 4" },
-  "size": ["L"],
-  "type": "beast",
+  "size": "L",
   "cr": 0.125,
-  "rating": 3,
-  "speed": { "walk": 50 }
+  "name": "Camel",
+  "source": "MM",
+  "type": "beast"
 }

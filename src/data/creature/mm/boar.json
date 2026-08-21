@@ -1,6 +1,6 @@
 {
-  "name": "Boar",
   "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 9, "cha": 5 },
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Tusk",
@@ -11,7 +11,7 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Charge",
@@ -26,8 +26,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Boar",
+  "source": "MM",
+  "type": "beast"
 }

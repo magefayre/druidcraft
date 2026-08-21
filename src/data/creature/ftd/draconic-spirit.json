@@ -1,5 +1,4 @@
 {
-  "name": "Draconic Spirit",
   "ability": {
     "str": 19,
     "dex": 14,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 14
   },
+  "ac": [{ "special": "14 + the level of the spell (natural armor)" }],
   "action": [
     {
       "name": "Multiattack",
@@ -33,7 +33,7 @@
     "special": "50 + 10 for each spell level above 5th (the dragon has a number of Hit Dice [d10s] equal to the level of the spell)"
   },
   "senses": ["blindsight 30 ft.", "darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Shared Resistances",
@@ -42,7 +42,7 @@
       ]
     }
   ],
-  "type": "dragon",
-  "speed": { "walk": 30, "fly": 60, "swim": 30 },
-  "spell": "Summon Draconic Spirit"
+  "name": "Draconic Spirit",
+  "source": "FTD",
+  "type": "dragon"
 }

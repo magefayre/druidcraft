@@ -1,6 +1,6 @@
 {
-  "name": "Astral Blight",
   "ability": { "str": 16, "dex": 8, "con": 14, "int": 6, "wis": 10, "cha": 3 },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -16,7 +16,7 @@
   "alignment": ["U"],
   "hp": { "average": 26, "formula": "4d8 + 8" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Illumination",
@@ -29,7 +29,8 @@
       "entries": ["The blight doesn't require air or sleep."]
     }
   ],
-  "type": "plant",
   "cr": 1,
-  "speed": { "walk": 10 }
+  "name": "Astral Blight",
+  "source": "LoX",
+  "type": "plant"
 }

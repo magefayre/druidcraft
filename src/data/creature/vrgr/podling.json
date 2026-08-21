@@ -1,5 +1,4 @@
 {
-  "name": "Podling",
   "ability": {
     "str": 15,
     "dex": 11,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 10
   },
+  "ac": [10],
   "action": [
     {
       "name": "Slam",
@@ -18,7 +18,7 @@
   ],
   "hp": { "average": 26, "formula": "4d8 + 8" },
   "senses": ["blindsight 30 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Semblance of Life",
@@ -31,7 +31,8 @@
       "entries": ["The podling doesn't require sleep."]
     }
   ],
-  "type": "plant",
   "cr": 0.5,
-  "speed": { "walk": 20 }
+  "name": "Podling",
+  "source": "VRGR",
+  "type": "plant"
 }

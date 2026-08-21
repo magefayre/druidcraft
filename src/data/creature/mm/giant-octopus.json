@@ -1,6 +1,6 @@
 {
-  "name": "Giant Octopus",
   "ability": { "str": 17, "dex": 13, "con": 13, "int": 4, "wis": 10, "cha": 4 },
+  "ac": [11],
   "action": [
     {
       "name": "Tentacles",
@@ -18,8 +18,8 @@
   "alignment": ["U"],
   "hp": { "average": 52, "formula": "8d10 + 8" },
   "senses": ["darkvision 60 ft."],
+  "size": "L",
   "skill": { "perception": "+4", "stealth": "+5" },
-  "size": ["L"],
   "trait": [
     {
       "name": "Hold Breath",
@@ -38,7 +38,8 @@
       "entries": ["The octopus can breathe only underwater."]
     }
   ],
-  "type": "beast",
   "cr": 1,
-  "speed": { "walk": 10, "swim": 60 }
+  "name": "Giant Octopus",
+  "source": "MM",
+  "type": "beast"
 }

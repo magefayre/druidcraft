@@ -1,6 +1,6 @@
 {
-  "name": "Magma Mephit",
   "ability": { "str": 8, "dex": 12, "con": 12, "int": 7, "wis": 10, "cha": 10 },
+  "ac": [11],
   "action": [
     {
       "name": "Claws",
@@ -18,8 +18,8 @@
   "alignment": ["N", "E"],
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
+  "size": "S",
   "skill": { "stealth": "+3" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Death Burst",
@@ -34,7 +34,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 0.5,
-  "speed": { "walk": 30, "fly": 30 }
+  "name": "Magma Mephit",
+  "source": "MM",
+  "type": "elemental"
 }

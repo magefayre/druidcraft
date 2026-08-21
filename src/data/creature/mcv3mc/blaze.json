@@ -1,6 +1,6 @@
 {
-  "name": "Blaze",
   "ability": { "str": 16, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
+  "ac": [13],
   "action": [
     {
       "name": "Multiattack",
@@ -16,7 +16,7 @@
   "alignment": ["N", "E"],
   "hp": { "average": 75, "formula": "10d8 + 30" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Blaze Rod",
@@ -43,11 +43,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "speed": {
-    "walk": 20,
-    "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
-    "canHover": true
-  }
+  "name": "Blaze",
+  "source": "MCV3MC",
+  "type": "elemental"
 }

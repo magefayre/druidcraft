@@ -1,5 +1,4 @@
 {
-  "name": "Myconid Adult",
   "ability": {
     "str": 10,
     "dex": 10,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 7
   },
+  "ac": [{ "ac": 12, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Fist",
@@ -31,7 +31,7 @@
   "alignment": ["L", "N"],
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "senses": ["darkvision 120 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Distress Spores",
@@ -46,7 +46,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 0.5,
-  "speed": { "walk": 20 }
+  "name": "Myconid Adult",
+  "source": "MM",
+  "type": "plant"
 }

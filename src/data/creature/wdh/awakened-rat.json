@@ -1,6 +1,6 @@
 {
-  "name": "Awakened Rat",
   "ability": { "str": 2, "dex": 11, "con": 9, "int": 10, "wis": 10, "cha": 4 },
+  "ac": [10],
   "action": [
     {
       "name": "Bite",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
-  "size": ["T"],
+  "size": "T",
   "trait": [
     {
       "name": "Keen Smell",
@@ -21,7 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0,
-  "speed": { "walk": 20 }
+  "name": "Awakened Rat",
+  "source": "WDH",
+  "type": "beast"
 }

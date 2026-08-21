@@ -1,6 +1,6 @@
 {
-  "name": "Fiendish Giant Spider",
   "ability": { "str": 12, "dex": 16, "con": 13, "int": 3, "wis": 12, "cha": 4 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "size": "M",
   "skill": { "perception": "+3", "stealth": "+7" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Spider Climb",
@@ -32,8 +32,8 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "type": "beast",
   "cr": 0.5,
-  "rating": 3,
-  "speed": { "walk": 40, "climb": 40 }
+  "name": "Fiendish Giant Spider",
+  "source": "OotA",
+  "type": "beast"
 }

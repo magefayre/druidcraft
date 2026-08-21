@@ -1,6 +1,6 @@
 {
-  "name": "Frost Salamander",
   "ability": { "str": 20, "dex": 12, "con": 18, "int": 7, "wis": 11, "cha": 7 },
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -28,8 +28,8 @@
   "alignment": ["U"],
   "hp": { "average": 168, "formula": "16d12 + 64" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
+  "size": "H",
   "skill": { "perception": "+4" },
-  "size": ["H"],
   "trait": [
     {
       "name": "Burning Fury",
@@ -38,7 +38,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 9,
-  "speed": { "walk": 60, "burrow": 40, "climb": 40 }
+  "name": "Frost Salamander",
+  "source": "MPMM",
+  "type": "elemental"
 }

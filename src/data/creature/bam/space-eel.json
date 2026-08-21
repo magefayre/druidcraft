@@ -1,6 +1,6 @@
 {
-  "name": "Space Eel",
   "ability": { "str": 12, "dex": 18, "con": 11, "int": 1, "wis": 10, "cha": 1 },
+  "ac": [14],
   "action": [
     {
       "name": "Multiattack",
@@ -24,11 +24,12 @@
   "alignment": ["U"],
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
-  "size": ["S"],
+  "size": "S",
   "trait": [
     { "name": "Unusual Nature", "entries": ["The eel doesn't require air."] }
   ],
-  "type": "beast",
   "cr": 0.5,
-  "speed": { "walk": 10, "fly": 30 }
+  "name": "Space Eel",
+  "source": "BAM",
+  "type": "beast"
 }

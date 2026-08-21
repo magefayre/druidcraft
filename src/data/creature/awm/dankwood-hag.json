@@ -1,5 +1,4 @@
 {
-  "name": "Dankwood Hag",
   "ability": {
     "str": 18,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 14,
     "cha": 14
   },
+  "ac": [17],
   "action": [
     {
       "name": "Illusory Appearance",
@@ -30,7 +30,7 @@
   ],
   "alignment": ["N", "E"],
   "hp": { "special": "82" },
-  "size": ["M"],
+  "size": "M",
   "trait": [
     { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
     {
@@ -40,7 +40,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 30 }
+  "name": "Dankwood Hag",
+  "source": "AWM",
+  "type": "fey"
 }

@@ -1,5 +1,4 @@
 {
-  "name": "Sprite",
   "ability": {
     "str": 3,
     "dex": 18,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 11
   },
+  "ac": [{ "ac": 15, "from": ["{@item leather armor|phb}"] }],
   "action": [
     {
       "name": "Longsword",
@@ -36,9 +36,10 @@
   ],
   "alignment": ["N", "G"],
   "hp": { "average": 2, "formula": "1d4" },
+  "size": "T",
   "skill": { "perception": "+3", "stealth": "+8" },
-  "size": ["T"],
-  "type": "fey",
   "cr": 0.25,
-  "speed": { "walk": 10, "fly": 40 }
+  "name": "Sprite",
+  "source": "MM",
+  "type": "fey"
 }

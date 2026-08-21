@@ -1,6 +1,6 @@
 {
-  "name": "Yellow Musk Creeper",
   "ability": { "str": 12, "dex": 3, "con": 12, "int": 1, "wis": 10, "cha": 3 },
+  "ac": [6],
   "action": [
     {
       "name": "Touch",
@@ -18,7 +18,7 @@
   "alignment": ["U"],
   "hp": { "average": 60, "formula": "11d8 + 11" },
   "senses": ["blindsight 30 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "False Appearance",
@@ -33,7 +33,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 5, "climb": 5 }
+  "name": "Yellow Musk Creeper",
+  "source": "ToA",
+  "type": "plant"
 }

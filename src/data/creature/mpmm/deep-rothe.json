@@ -1,6 +1,6 @@
 {
-  "name": "Deep Rothé",
   "ability": { "str": 18, "dex": 10, "con": 14, "int": 2, "wis": 10, "cha": 4 },
+  "ac": [10],
   "action": [
     {
       "name": "Gore",
@@ -12,7 +12,7 @@
   "alignment": ["U"],
   "hp": { "average": 13, "formula": "2d8 + 4" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Beast of Burden",
@@ -21,7 +21,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 30 }
+  "name": "Deep Rothé",
+  "source": "MPMM",
+  "type": "beast"
 }

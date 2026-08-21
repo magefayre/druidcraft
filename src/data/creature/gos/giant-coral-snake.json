@@ -1,6 +1,6 @@
 {
-  "name": "Giant Coral Snake",
   "ability": { "str": 12, "dex": 16, "con": 14, "int": 2, "wis": 10, "cha": 3 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -12,9 +12,10 @@
   "alignment": ["U"],
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["blindsight 10 ft."],
+  "size": "L",
   "skill": { "perception": "+2" },
-  "size": ["L"],
-  "type": "beast",
   "cr": 4,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Giant Coral Snake",
+  "source": "GoS",
+  "type": "beast"
 }

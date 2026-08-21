@@ -1,5 +1,4 @@
 {
-  "name": "Dolphin Delighter",
   "ability": {
     "str": 14,
     "dex": 13,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 16
   },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -23,15 +23,16 @@
   "alignment": ["C", "G"],
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["blindsight 60 ft."],
+  "size": "M",
   "skill": { "perception": "+3", "performance": "+5" },
-  "size": ["M"],
   "trait": [
     {
       "name": "Hold Breath",
       "entries": ["The dolphin can hold its breath for 20 minutes."]
     }
   ],
-  "type": "fey",
   "cr": 3,
-  "speed": { "walk": 0, "swim": 60 }
+  "name": "Dolphin Delighter",
+  "source": "MPMM",
+  "type": "fey"
 }

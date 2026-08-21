@@ -1,6 +1,6 @@
 {
-  "name": "Spiderfrog",
   "ability": { "str": 10, "dex": 16, "con": 14, "int": 3, "wis": 12, "cha": 4 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -12,8 +12,8 @@
   "alignment": [{ "special": "chaotic sticky" }],
   "hp": { "formula": "2d8 + 4", "average": 13 },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
+  "size": "S",
   "skill": { "perception": "+3", "stealth": "+7" },
-  "size": ["S"],
   "trait": [
     {
       "name": "Amphibious",
@@ -32,7 +32,8 @@
       ]
     }
   ],
-  "type": "beast",
   "cr": 0.25,
-  "speed": { "walk": 30, "climb": 30 }
+  "name": "Spiderfrog",
+  "source": "MGELFT",
+  "type": "beast"
 }

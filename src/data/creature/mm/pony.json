@@ -1,6 +1,6 @@
 {
-  "name": "Pony",
   "ability": { "str": 15, "dex": 10, "con": 13, "int": 2, "wis": 11, "cha": 7 },
+  "ac": [10],
   "action": [
     {
       "name": "Hooves",
@@ -11,9 +11,9 @@
   ],
   "alignment": ["U"],
   "hp": { "average": 11, "formula": "2d8 + 2" },
-  "size": ["M"],
-  "type": "beast",
+  "size": "M",
   "cr": 0.125,
-  "rating": 1,
-  "speed": { "walk": 40 }
+  "name": "Pony",
+  "source": "MM",
+  "type": "beast"
 }

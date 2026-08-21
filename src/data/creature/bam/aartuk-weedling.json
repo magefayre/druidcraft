@@ -1,5 +1,4 @@
 {
-  "name": "Aartuk Weedling",
   "ability": {
     "str": 14,
     "dex": 12,
@@ -8,6 +7,7 @@
     "wis": 13,
     "cha": 10
   },
+  "ac": [{ "ac": 15, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -31,7 +31,7 @@
   "alignment": ["L", "E"],
   "hp": { "average": 38, "formula": "7d8 + 7" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Spider Climb",
@@ -40,7 +40,8 @@
       ]
     }
   ],
-  "type": "plant",
   "cr": 2,
-  "speed": { "walk": 20, "climb": 20 }
+  "name": "Aartuk Weedling",
+  "source": "BAM",
+  "type": "plant"
 }

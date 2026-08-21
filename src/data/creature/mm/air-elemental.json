@@ -1,6 +1,6 @@
 {
-  "name": "Air Elemental",
   "ability": { "str": 14, "dex": 20, "con": 14, "int": 6, "wis": 10, "cha": 6 },
+  "ac": [15],
   "action": [
     {
       "name": "Multiattack",
@@ -23,7 +23,7 @@
   "alignment": ["N"],
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Air Form",
@@ -32,9 +32,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "features": { "elementalForms": true },
-  "rating": 3,
-  "speed": { "fly": { "number": 90, "condition": "(hover)" }, "canHover": true }
+  "name": "Air Elemental",
+  "source": "MM",
+  "type": "elemental"
 }

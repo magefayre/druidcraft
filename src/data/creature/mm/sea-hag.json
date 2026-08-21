@@ -1,5 +1,4 @@
 {
-  "name": "Sea Hag",
   "ability": {
     "str": 16,
     "dex": 13,
@@ -8,6 +7,7 @@
     "wis": 12,
     "cha": 13
   },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Claws",
@@ -32,7 +32,7 @@
   "alignment": ["C", "E"],
   "hp": { "average": 52, "formula": "7d8 + 21" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
     {
@@ -43,7 +43,8 @@
       ]
     }
   ],
-  "type": "fey",
   "cr": 2,
-  "speed": { "walk": 30, "swim": 40 }
+  "name": "Sea Hag",
+  "source": "MM",
+  "type": "fey"
 }

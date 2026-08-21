@@ -1,6 +1,6 @@
 {
-  "name": "Water Totem Elemental",
   "ability": { "str": 18, "dex": 14, "con": 18, "int": 5, "wis": 10, "cha": 8 },
+  "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "action": [
     {
       "name": "Multiattack",
@@ -23,7 +23,7 @@
   "alignment": ["N"],
   "hp": { "average": 114, "formula": "12d10 + 48" },
   "senses": ["darkvision 60 ft."],
-  "size": ["L"],
+  "size": "L",
   "trait": [
     {
       "name": "Water Form",
@@ -38,7 +38,8 @@
       ]
     }
   ],
-  "type": "elemental",
   "cr": 5,
-  "speed": { "walk": 30, "swim": 90 }
+  "name": "Water Totem Elemental",
+  "source": "PSX",
+  "type": "elemental"
 }

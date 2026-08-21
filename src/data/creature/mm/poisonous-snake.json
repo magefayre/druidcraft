@@ -1,6 +1,6 @@
 {
-  "name": "Poisonous Snake",
   "ability": { "str": 2, "dex": 16, "con": 11, "int": 1, "wis": 10, "cha": 3 },
+  "ac": [13],
   "action": [
     {
       "name": "Bite",
@@ -12,9 +12,9 @@
   "alignment": ["U"],
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["blindsight 10 ft."],
-  "size": ["T"],
-  "type": "beast",
+  "size": "T",
   "cr": 0.125,
-  "rating": 1,
-  "speed": { "walk": 30, "swim": 30 }
+  "name": "Poisonous Snake",
+  "source": "MM",
+  "type": "beast"
 }

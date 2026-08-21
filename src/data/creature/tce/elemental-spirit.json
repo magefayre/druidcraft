@@ -1,5 +1,4 @@
 {
-  "name": "Elemental Spirit",
   "ability": {
     "str": 18,
     "dex": 15,
@@ -8,6 +7,7 @@
     "wis": 10,
     "cha": 16
   },
+  "ac": [{ "special": "11 + the level of the spell (natural armor)" }],
   "action": [
     {
       "name": "Multiattack",
@@ -25,7 +25,7 @@
   "alignment": ["U"],
   "hp": { "special": "50 + 10 for each spell level above 4th" },
   "senses": ["darkvision 60 ft."],
-  "size": ["M"],
+  "size": "M",
   "trait": [
     {
       "name": "Amorphous Form (Air, Fire, and Water Only)",
@@ -34,13 +34,7 @@
       ]
     }
   ],
-  "type": "elemental",
-  "speed": {
-    "walk": 40,
-    "fly": { "number": 40, "condition": "(air only; hover)" },
-    "burrow": { "number": 40, "condition": "(earth only)" },
-    "swim": { "number": 40, "condition": "(water only)" },
-    "canHover": true
-  },
-  "spell": "Summon Elemental"
+  "name": "Elemental Spirit",
+  "source": "TCE",
+  "type": "elemental"
 }
