@@ -23,6 +23,7 @@
     }
   ],
   "alignment": [{ "special": "neutral oozy" }],
+  "cr": 3,
   "hp": { "formula": "11d8 + 33", "average": 82 },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -44,8 +45,8 @@
       "entries": ["The sludge hag can breathe air and water."]
     }
   ],
-  "cr": 3,
   "name": "Sludge Hag",
   "source": "MGELFT",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

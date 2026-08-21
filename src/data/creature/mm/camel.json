@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 15, "formula": "2d10 + 4" },
   "size": "L",
-  "cr": 0.125,
   "name": "Camel",
   "source": "MM",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 52, "formula": "8d10 + 8" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "L",
@@ -25,8 +26,8 @@
       "entries": ["The octopus can breathe only underwater."]
     }
   ],
-  "cr": 1,
   "name": "Spore Servant Octopus",
   "source": "DoSI",
+  "speed": { "walk": 5, "swim": 50 },
   "type": "plant"
 }

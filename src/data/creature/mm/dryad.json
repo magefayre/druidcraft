@@ -28,6 +28,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 1,
   "hp": { "average": 22, "formula": "5d8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -52,8 +53,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Dryad",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

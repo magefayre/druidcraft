@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "G"],
+  "cr": 9,
   "hp": { "average": 135, "formula": "18d10 + 36" },
   "senses": ["blindsight 60 ft."],
   "size": "L",
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 9,
   "name": "Coral",
   "source": "MisMV1",
+  "speed": { "walk": 10, "fly": 60, "swim": 60 },
   "type": "fey"
 }

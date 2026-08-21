@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 1,
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "senses": ["darkvision 120 ft."],
   "size": "M",
@@ -48,8 +49,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Firenewt Warlock of Imix",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.25,
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "senses": ["darkvision 120 ft."],
   "size": "L",
@@ -35,8 +36,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Giant Owl",
   "source": "MM",
+  "speed": { "walk": 5, "fly": 60 },
   "type": "beast"
 }

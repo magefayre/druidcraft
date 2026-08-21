@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["C", "G"],
+  "cr": 1,
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "size": "M",
   "skill": { "persuasion": "+6" },
@@ -38,8 +39,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Alseid",
   "source": "MOT",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

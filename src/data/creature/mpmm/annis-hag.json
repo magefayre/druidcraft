@@ -33,12 +33,13 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 6,
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
   "skill": { "deception": "+5", "perception": "+5" },
-  "cr": 6,
   "name": "Annis Hag",
   "source": "MPMM",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

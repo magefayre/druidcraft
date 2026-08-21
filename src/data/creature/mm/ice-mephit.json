@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.5,
   "hp": { "average": 21, "formula": "6d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Ice Mephit",
   "source": "MM",
+  "speed": { "walk": 30, "fly": 30 },
   "type": "elemental"
 }

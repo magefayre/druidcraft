@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.5,
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "senses": ["truesight 60 ft."],
   "size": "M",
@@ -35,8 +36,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Giant Lynx",
   "source": "BGG",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "fey"
 }

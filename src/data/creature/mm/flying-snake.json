@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 5, "formula": "2d4" },
   "senses": ["blindsight 10 ft."],
   "size": "T",
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Flying Snake",
   "source": "MM",
+  "speed": { "walk": 30, "fly": 60, "swim": 30 },
   "type": "beast"
 }

@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 26, "formula": "4d8 + 8" },
   "size": "M",
   "skill": { "perception": "+3" },
@@ -31,8 +32,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Deinonychus",
   "source": "MPMM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

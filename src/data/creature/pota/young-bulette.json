@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "size": "L",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Young Bulette",
   "source": "PotA",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

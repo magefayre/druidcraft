@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 13, "formula": "2d10 + 2" },
   "size": "L",
-  "cr": 0.25,
   "name": "Zebra",
   "source": "ToA",
+  "speed": { "walk": 60 },
   "type": "beast"
 }

@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.5,
   "hp": { "average": 19, "formula": "3d8 + 6" },
   "size": "M",
   "skill": { "perception": "+4" },
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Valenar Hound",
   "source": "ERLW",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

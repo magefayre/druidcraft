@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 4,
   "hp": { "average": 76, "formula": "8d12 + 24" },
   "size": "H",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Elephant",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

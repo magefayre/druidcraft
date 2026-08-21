@@ -16,10 +16,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 121, "formula": "9d20 + 27" },
   "size": "G",
-  "cr": 5,
   "name": "Brontosaurus",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

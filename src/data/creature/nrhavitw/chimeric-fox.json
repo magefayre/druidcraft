@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["darkvision 60 ft."],
   "size": "T",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Chimeric Fox",
   "source": "NRH-AVitW",
+  "speed": { "walk": 30, "burrow": 5 },
   "type": "beast"
 }

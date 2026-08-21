@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 2,
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["blindsight 30 ft.", "darkvision 120 ft."],
   "size": "M",
@@ -38,8 +39,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Darkling Elder",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

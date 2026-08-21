@@ -35,11 +35,12 @@
     }
   ],
   "alignment": ["N", "G"],
+  "cr": 0.25,
   "hp": { "average": 2, "formula": "1d4" },
   "size": "T",
   "skill": { "perception": "+3", "stealth": "+8" },
-  "cr": 0.25,
   "name": "Sprite",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 40 },
   "type": "fey"
 }

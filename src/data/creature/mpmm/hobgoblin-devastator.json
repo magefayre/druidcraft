@@ -31,6 +31,7 @@
     }
   ],
   "alignment": ["L", "N"],
+  "cr": 4,
   "hp": { "average": 45, "formula": "7d8 + 14" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -43,8 +44,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Hobgoblin Devastator",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

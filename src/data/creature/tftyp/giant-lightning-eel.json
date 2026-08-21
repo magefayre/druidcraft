@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 42, "formula": "5d10 + 15" },
   "senses": ["blindsight 60 ft."],
   "size": "L",
@@ -26,8 +27,8 @@
       "entries": ["The eel can breathe only underwater."]
     }
   ],
-  "cr": 3,
   "name": "Giant Lightning Eel",
   "source": "TftYP",
+  "speed": { "walk": 5, "swim": 30 },
   "type": "beast"
 }

@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 75, "formula": "10d10 + 20" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -29,8 +30,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Kavu Predator",
   "source": "PSD",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "beast"
 }

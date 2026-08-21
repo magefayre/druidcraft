@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 85, "formula": "9d12 + 27" },
   "size": "H",
   "skill": { "stealth": "+5" },
@@ -31,8 +32,8 @@
       "entries": ["The crocodile can hold its breath for 30 minutes."]
     }
   ],
-  "cr": 5,
   "name": "Whirlwyrm",
   "source": "ToFW",
+  "speed": { "walk": 30, "swim": 50 },
   "type": "beast"
 }

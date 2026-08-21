@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 60 ft."],
   "size": "T",
@@ -25,8 +26,8 @@
       "entries": ["The quipper can breathe only underwater."]
     }
   ],
-  "cr": 0,
   "name": "Quipper",
   "source": "MM",
+  "speed": { "swim": 40 },
   "type": "beast"
 }

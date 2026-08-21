@@ -10,12 +10,13 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "M",
   "trait": null,
-  "cr": 0.125,
   "name": "Tribal Warrior Spore Servant",
   "source": "IDRotF",
+  "speed": { "walk": 20 },
   "type": "plant"
 }

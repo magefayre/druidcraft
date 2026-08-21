@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.125,
   "hp": { "average": 11, "formula": "2d6 + 4" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -29,8 +30,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Khargra",
   "source": "MFF",
+  "speed": { "walk": 5, "fly": 30 },
   "type": "elemental"
 }

@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Bristled Moorbounder",
   "source": "EGW",
+  "speed": { "walk": 70 },
   "type": "beast"
 }

@@ -33,6 +33,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 7,
   "hp": { "average": 91, "formula": "14d8 + 28" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -62,8 +63,12 @@
       ]
     }
   ],
-  "cr": 7,
   "name": "Bheur Hag",
   "source": "MPMM",
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 50, "condition": "(hover, Graystaff magic)" },
+    "canHover": true
+  },
   "type": "fey"
 }

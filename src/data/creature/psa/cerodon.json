@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 6,
   "hp": { "average": 126, "formula": "11d12 + 55" },
   "size": "H",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Cerodon",
   "source": "PSA",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

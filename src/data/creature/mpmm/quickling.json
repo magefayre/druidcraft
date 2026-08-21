@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 1,
   "hp": { "average": 10, "formula": "3d4 + 3" },
   "senses": ["darkvision 60 ft."],
   "size": "T",
@@ -37,8 +38,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Quickling",
   "source": "MPMM",
+  "speed": { "walk": 120 },
   "type": "fey"
 }

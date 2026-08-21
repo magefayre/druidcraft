@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "senses": ["darkvision 30 ft."],
   "size": "S",
@@ -38,8 +39,8 @@
       "entries": ["The octopus can breathe only underwater."]
     }
   ],
-  "cr": 0,
   "name": "Octopus",
   "source": "MM",
+  "speed": { "walk": 5, "swim": 30 },
   "type": "beast"
 }

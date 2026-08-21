@@ -33,6 +33,7 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 3,
   "hp": { "average": 52, "formula": "8d8 + 16" },
   "size": "M",
   "trait": [
@@ -43,8 +44,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Ashen Knight",
   "source": "KftGV",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

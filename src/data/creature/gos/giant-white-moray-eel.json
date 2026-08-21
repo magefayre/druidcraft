@@ -16,12 +16,13 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 60, "formula": "8d12 + 8" },
   "senses": ["blindsight 10 ft."],
   "size": "H",
   "skill": { "perception": "+2", "stealth": "+4" },
-  "cr": 2,
   "name": "Giant White Moray Eel",
   "source": "GoS",
+  "speed": { "walk": 0, "swim": 40 },
   "type": "beast"
 }

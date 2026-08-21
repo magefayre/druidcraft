@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 60 ft."],
   "size": "M",
@@ -20,8 +21,8 @@
       "entries": ["The dolphin can hold its breath for 20 minutes."]
     }
   ],
-  "cr": 0.125,
   "name": "Dolphin",
   "source": "MPMM",
+  "speed": { "walk": 0, "swim": 60 },
   "type": "beast"
 }

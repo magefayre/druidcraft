@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "special": "3" },
   "size": "M",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Boontu Monkey",
   "source": "AWM",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "beast"
 }

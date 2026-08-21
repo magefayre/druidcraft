@@ -36,12 +36,13 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 0.125,
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
   "skill": { "perception": "+5", "sleight of hand": "+6", "stealth": "+6" },
-  "cr": 0.125,
   "name": "Boggle",
   "source": "MPMM",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "fey"
 }

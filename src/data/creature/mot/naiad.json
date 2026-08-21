@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 2,
   "hp": { "average": 31, "formula": "7d8" },
   "size": "M",
   "skill": { "persuasion": "+6", "sleight of hand": "+5" },
@@ -42,8 +43,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Naiad",
   "source": "MOT",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "fey"
 }

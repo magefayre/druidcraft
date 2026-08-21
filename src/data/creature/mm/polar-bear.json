@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 42, "formula": "5d10 + 15" },
   "size": "L",
   "skill": { "perception": "+3" },
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Polar Bear",
   "source": "MM",
+  "speed": { "walk": 40, "swim": 30 },
   "type": "beast"
 }

@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 2,
   "hp": { "average": 52, "formula": "7d8 + 21" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Gargoyle",
   "source": "MM",
+  "speed": { "walk": 30, "fly": 60 },
   "type": "elemental"
 }

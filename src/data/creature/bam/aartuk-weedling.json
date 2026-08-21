@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 2,
   "hp": { "average": 38, "formula": "7d8 + 7" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -40,8 +41,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Aartuk Weedling",
   "source": "BAM",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "plant"
 }

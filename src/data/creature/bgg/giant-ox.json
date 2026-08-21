@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 105, "formula": "10d12 + 40" },
   "size": "H",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Giant Ox",
   "source": "BGG",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

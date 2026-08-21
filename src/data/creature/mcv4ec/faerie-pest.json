@@ -23,12 +23,13 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 1,
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
   "skill": { "perception": "+3", "stealth": "+7" },
-  "cr": 1,
   "name": "Faerie Pest",
   "source": "MCV4EC",
+  "speed": { "walk": 30, "fly": 30 },
   "type": "fey"
 }

@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 34, "formula": "4d10 + 12" },
   "size": "L",
   "skill": { "perception": "+3" },
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Gnarlid",
   "source": "PSZ",
+  "speed": { "walk": 40, "climb": 30 },
   "type": "beast"
 }

@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 76, "formula": "8d12 + 24" },
   "senses": ["blindsight 30 ft."],
   "size": "H",
@@ -30,8 +31,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Hulking Crab",
   "source": "SKT",
+  "speed": { "walk": 20, "swim": 30 },
   "type": "beast"
 }

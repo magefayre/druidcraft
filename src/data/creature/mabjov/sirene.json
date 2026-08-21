@@ -35,6 +35,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 3,
   "hp": { "average": 63, "formula": "14d8" },
   "senses": ["darkvision 60ft."],
   "size": "M",
@@ -51,8 +52,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Sirene",
   "source": "MaBJoV",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "fey"
 }

@@ -10,11 +10,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 15, "formula": "2d10 + 4" },
   "senses": ["darkvision 30 ft."],
   "size": "L",
-  "cr": 0.25,
   "name": "Rothé",
   "source": "CoA",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

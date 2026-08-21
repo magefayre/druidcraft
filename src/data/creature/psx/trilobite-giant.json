@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 13, "formula": "3d8" },
   "senses": ["blindsight 30 ft."],
   "size": "M",
@@ -17,8 +18,8 @@
   "trait": [
     { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
   ],
-  "cr": 0.125,
   "name": "Trilobite (Giant)",
   "source": "PSX",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "beast"
 }

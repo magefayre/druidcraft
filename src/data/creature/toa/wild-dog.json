@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "size": "S",
   "skill": { "perception": "+3" },
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Wild Dog",
   "source": "ToA",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

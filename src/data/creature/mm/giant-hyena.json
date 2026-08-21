@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "size": "L",
   "skill": { "perception": "+3" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Giant Hyena",
   "source": "MM",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

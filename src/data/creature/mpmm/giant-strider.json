@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 22, "formula": "3d10 + 6" },
   "size": "L",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Giant Strider",
   "source": "MPMM",
+  "speed": { "walk": 50 },
   "type": "elemental"
 }

@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 1,
   "hp": { "average": 45, "formula": "7d10 + 7" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -41,8 +42,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Grinning Cat",
   "source": "BGG",
+  "speed": { "walk": 40, "climb": 40 },
   "type": "fey"
 }

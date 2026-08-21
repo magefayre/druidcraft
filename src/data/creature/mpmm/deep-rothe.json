@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 13, "formula": "2d8 + 4" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Deep Rothé",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

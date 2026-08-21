@@ -26,6 +26,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 9,
   "hp": { "average": 168, "formula": "16d12 + 64" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "H",
@@ -38,8 +39,8 @@
       ]
     }
   ],
-  "cr": 9,
   "name": "Frost Salamander",
   "source": "MPMM",
+  "speed": { "walk": 60, "burrow": 40, "climb": 40 },
   "type": "elemental"
 }

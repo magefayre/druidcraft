@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 9, "formula": "2d8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -22,8 +23,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Giant Weasel",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

@@ -47,6 +47,7 @@
     }
   ],
   "alignment": ["L", "N"],
+  "cr": 2,
   "hp": { "average": 60, "formula": "8d10 + 16" },
   "senses": ["darkvision 120 ft."],
   "size": "L",
@@ -64,8 +65,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Myconid Sovereign",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "plant"
 }

@@ -10,11 +10,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 76, "formula": "8d12 + 24" },
   "size": "H",
   "skill": { "perception": "+3" },
-  "cr": 2,
   "name": "Relic Sloth",
   "source": "SCC",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "beast"
 }

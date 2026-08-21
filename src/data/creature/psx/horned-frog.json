@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 18, "formula": "4d8" },
   "senses": ["darkvision 30 ft."],
   "size": "M",
@@ -32,8 +33,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Horned Frog",
   "source": "PSX",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "beast"
 }

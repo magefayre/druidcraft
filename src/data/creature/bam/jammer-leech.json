@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 27, "formula": "5d4 + 15" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
@@ -25,8 +26,8 @@
       "entries": ["The leech doesn't require air or sleep."]
     }
   ],
-  "cr": 1,
   "name": "Jammer Leech",
   "source": "BAM",
+  "speed": { "walk": 10 },
   "type": "plant"
 }

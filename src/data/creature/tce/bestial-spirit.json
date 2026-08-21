@@ -41,5 +41,11 @@
   ],
   "name": "Bestial Spirit",
   "source": "TCE",
+  "speed": {
+    "walk": 30,
+    "climb": { "number": 30, "condition": "(land only)" },
+    "fly": { "number": 60, "condition": "(air only)" },
+    "swim": { "number": 30, "condition": "(water only)" }
+  },
   "type": "beast"
 }

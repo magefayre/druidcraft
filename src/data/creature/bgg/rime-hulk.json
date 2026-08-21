@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 5,
   "hp": { "average": 85, "formula": "9d10 + 36" },
   "size": "L",
   "trait": [
@@ -30,8 +31,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Rime Hulk",
   "source": "BGG",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

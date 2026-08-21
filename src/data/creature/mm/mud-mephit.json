@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.25,
   "hp": { "average": 27, "formula": "6d6 + 6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Mud Mephit",
   "source": "MM",
+  "speed": { "walk": 20, "fly": 20, "swim": 20 },
   "type": "elemental"
 }

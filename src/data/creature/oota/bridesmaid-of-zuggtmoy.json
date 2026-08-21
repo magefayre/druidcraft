@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 0.125,
   "hp": { "average": 22, "formula": "5d8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Bridesmaid of Zuggtmoy",
   "source": "OotA",
+  "speed": { "walk": 20 },
   "type": "plant"
 }

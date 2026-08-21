@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0,
   "hp": { "average": 7, "formula": "3d4" },
   "senses": ["blindsight 60 ft."],
   "size": "T",
@@ -41,8 +42,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Chwinga Astronaut",
   "source": "BAM",
+  "speed": { "walk": 20, "climb": 20, "swim": 20 },
   "type": "elemental"
 }

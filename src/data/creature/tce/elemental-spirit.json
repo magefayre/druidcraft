@@ -36,5 +36,12 @@
   ],
   "name": "Elemental Spirit",
   "source": "TCE",
+  "speed": {
+    "walk": 40,
+    "fly": { "number": 40, "condition": "(air only; hover)" },
+    "burrow": { "number": 40, "condition": "(earth only)" },
+    "swim": { "number": 40, "condition": "(water only)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

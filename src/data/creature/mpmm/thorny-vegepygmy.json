@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 1,
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Thorny Vegepygmy",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "plant"
 }

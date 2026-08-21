@@ -35,11 +35,12 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 3,
   "hp": { "average": 58, "formula": "9d8 + 18" },
   "size": "M",
   "skill": { "athletics": "+5", "perception": "+2" },
-  "cr": 3,
   "name": "Ashen Veteran",
   "source": "KftGV",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

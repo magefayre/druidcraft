@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 4,
   "hp": { "average": 52, "formula": "8d6 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -47,8 +48,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Leprechaun",
   "source": "QftIS",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 9, "formula": "2d8" },
   "size": "M",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Fastieth",
   "source": "ERLW",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

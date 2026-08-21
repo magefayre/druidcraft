@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.25,
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -35,8 +36,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Smoke Mephit",
   "source": "MM",
+  "speed": { "walk": 30, "fly": 30 },
   "type": "elemental"
 }

@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 3,
   "hp": { "average": 68, "formula": "8d10 + 24" },
   "size": "L",
   "trait": [
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Mud Hulk",
   "source": "BGG",
+  "speed": { "walk": 40 },
   "type": "elemental"
 }

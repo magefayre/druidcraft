@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 3,
   "hp": { "average": 58, "formula": "9d10 + 9" },
   "senses": ["blindsight 30 ft."],
   "size": "L",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Water Weird",
   "source": "MM",
+  "speed": { "walk": 0, "swim": 60 },
   "type": "elemental"
 }

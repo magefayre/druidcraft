@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 0.5,
   "hp": { "average": 9, "formula": "2d6 + 2" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Magmin",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

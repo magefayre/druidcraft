@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 5,
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -32,8 +33,11 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Air Elemental",
   "source": "MM",
+  "speed": {
+    "fly": { "number": 90, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

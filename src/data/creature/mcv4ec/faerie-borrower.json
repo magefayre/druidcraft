@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 0.5,
   "hp": { "average": 12, "formula": "5d4" },
   "size": "T",
   "skill": { "sleight of hand": "+7", "stealth": "+7" },
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Faerie Borrower",
   "source": "MCV4EC",
+  "speed": { "walk": 10, "fly": 30 },
   "type": "fey"
 }

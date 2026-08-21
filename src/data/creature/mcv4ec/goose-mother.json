@@ -36,6 +36,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 7,
   "hp": { "average": 114, "formula": "12d12 + 36" },
   "senses": ["darkvision 60 ft."],
   "size": "H",
@@ -67,8 +68,8 @@
       ]
     }
   ],
-  "cr": 7,
   "name": "Goose Mother",
   "source": "MCV4EC",
+  "speed": { "walk": 40, "fly": 40 },
   "type": "fey"
 }

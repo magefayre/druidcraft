@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "size": "T",
   "skill": { "perception": "+3" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Parrot",
   "source": "PSX",
+  "speed": { "walk": 10, "fly": 50 },
   "type": "beast"
 }

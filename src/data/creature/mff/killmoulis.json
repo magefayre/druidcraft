@@ -29,12 +29,13 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0,
   "hp": { "average": 7, "formula": "2d4 + 2" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
   "skill": { "history": "+3", "perception": "+4", "stealth": "+8" },
-  "cr": 0,
   "name": "Killmoulis",
   "source": "MFF",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "fey"
 }

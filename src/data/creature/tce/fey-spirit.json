@@ -28,5 +28,6 @@
   "size": "S",
   "name": "Fey Spirit",
   "source": "TCE",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

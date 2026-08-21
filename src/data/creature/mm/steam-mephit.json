@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.25,
   "hp": { "average": 21, "formula": "6d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Steam Mephit",
   "source": "MM",
+  "speed": { "walk": 30, "fly": 30 },
   "type": "elemental"
 }

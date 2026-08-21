@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 1,
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -29,8 +30,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Nilbog",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 42, "formula": "5d12 + 10" },
   "size": "H",
   "skill": { "perception": "+4" },
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Giant Elk",
   "source": "MM",
+  "speed": { "walk": 60 },
   "type": "beast"
 }

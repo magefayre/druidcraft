@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 13, "formula": "3d8" },
   "size": "M",
   "skill": { "perception": "+1" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Drake (Small)",
   "source": "PSZ",
+  "speed": { "walk": 10, "fly": 60 },
   "type": "beast"
 }

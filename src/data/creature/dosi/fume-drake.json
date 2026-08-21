@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.25,
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -31,8 +32,8 @@
       "entries": ["The fume drake doesn't require food, drink, or sleep."]
     }
   ],
-  "cr": 0.25,
   "name": "Fume Drake",
   "source": "DoSI",
+  "speed": { "walk": 30, "fly": 30 },
   "type": "elemental"
 }

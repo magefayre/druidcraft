@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 5,
   "hp": { "average": 75, "formula": "10d8 + 30" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -43,8 +44,12 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Blaze",
   "source": "MCV3MC",
+  "speed": {
+    "walk": 20,
+    "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

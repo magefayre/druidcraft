@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d4 + 1" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Badger",
   "source": "MM",
+  "speed": { "walk": 20, "burrow": 5 },
   "type": "beast"
 }

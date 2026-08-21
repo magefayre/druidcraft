@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 1,
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "senses": ["darkvision 30 ft."],
   "size": "S",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Screaming Devilkin",
   "source": "MFF",
+  "speed": { "walk": 0, "fly": 40 },
   "type": "fey"
 }

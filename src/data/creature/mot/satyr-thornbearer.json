@@ -35,6 +35,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 2,
   "hp": { "average": 38, "formula": "7d8 + 7" },
   "size": "M",
   "skill": { "perception": "+5", "performance": "+6", "stealth": "+6" },
@@ -50,8 +51,8 @@
       "entries": ["Magic can't put the satyr to sleep."]
     }
   ],
-  "cr": 2,
   "name": "Satyr Thornbearer",
   "source": "MOT",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

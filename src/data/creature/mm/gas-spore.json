@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 1, "formula": "1d10 - 4" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "L",
@@ -28,8 +29,12 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Gas Spore",
   "source": "MM",
+  "speed": {
+    "walk": 0,
+    "fly": { "number": 10, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "plant"
 }

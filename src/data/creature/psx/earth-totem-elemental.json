@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 5,
   "hp": { "average": 126, "formula": "12d10 + 60" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "L",
@@ -31,8 +32,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Earth Totem Elemental",
   "source": "PSX",
+  "speed": { "walk": 30, "burrow": 30 },
   "type": "elemental"
 }

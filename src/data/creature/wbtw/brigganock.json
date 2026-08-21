@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N", "G"],
+  "cr": 0.125,
   "hp": { "average": 9, "formula": "2d4 + 4" },
   "size": "T",
   "trait": [
@@ -45,8 +46,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Brigganock",
   "source": "WBtW",
+  "speed": { "walk": 15 },
   "type": "fey"
 }

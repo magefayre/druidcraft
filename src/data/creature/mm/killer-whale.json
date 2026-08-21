@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 90, "formula": "12d12 + 12" },
   "senses": ["blindsight 120 ft."],
   "size": "H",
@@ -32,8 +33,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Killer Whale",
   "source": "MM",
+  "speed": { "swim": 60 },
   "type": "beast"
 }

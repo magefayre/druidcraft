@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 4,
   "hp": { "average": 100, "formula": "8d10 + 24" },
   "size": "L",
   "skill": { "perception": "+3", "stealth": "+4" },
@@ -19,8 +20,8 @@
       "entries": ["The plesiosaurus can hold its breath for 1 hour."]
     }
   ],
-  "cr": 4,
   "name": "Two-Headed Plesiosaurus",
   "source": "TTP",
+  "speed": { "walk": 20, "swim": 40 },
   "type": "beast"
 }

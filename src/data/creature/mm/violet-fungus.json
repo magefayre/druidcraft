@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 18, "formula": "4d8" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "M",
@@ -25,8 +26,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Violet Fungus",
   "source": "MM",
+  "speed": { "walk": 5 },
   "type": "plant"
 }

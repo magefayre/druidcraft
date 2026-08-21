@@ -148,14 +148,15 @@ const filterMonsters = (
       ac,
       action,
       alignment,
+      cr,
       hp,
       senses,
       size: parseSize(monster.size),
       skill,
       trait,
-      cr,
       name,
       source,
+      speed,
       type
     }
 

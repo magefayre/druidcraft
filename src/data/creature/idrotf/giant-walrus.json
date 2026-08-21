@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 4,
   "hp": { "average": 85, "formula": "9d12 + 27" },
   "senses": ["darkvision 60 ft."],
   "size": "H",
@@ -31,8 +32,8 @@
       "entries": ["The walrus can hold its breath for 30 minutes."]
     }
   ],
-  "cr": 4,
   "name": "Giant Walrus",
   "source": "IDRotF",
+  "speed": { "walk": 20, "swim": 40 },
   "type": "beast"
 }

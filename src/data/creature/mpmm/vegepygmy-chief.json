@@ -28,6 +28,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 2,
   "hp": { "average": 33, "formula": "6d6 + 12" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -46,8 +47,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Vegepygmy Chief",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "plant"
 }

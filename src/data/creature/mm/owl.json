@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 120 ft."],
   "size": "T",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Owl",
   "source": "MM",
+  "speed": { "walk": 5, "fly": 60 },
   "type": "beast"
 }

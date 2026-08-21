@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 5,
   "hp": { "average": 73, "formula": "7d8 + 42" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "M",
@@ -51,8 +52,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Xorn",
   "source": "MM",
+  "speed": { "walk": 20, "burrow": 20 },
   "type": "elemental"
 }

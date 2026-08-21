@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 28, "formula": "3d10 + 12" },
   "size": "L",
   "trait": [
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Giant Ram",
   "source": "BGG",
+  "speed": { "walk": 50 },
   "type": "fey"
 }

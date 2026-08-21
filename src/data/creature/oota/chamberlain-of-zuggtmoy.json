@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 2,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -37,8 +38,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Chamberlain of Zuggtmoy",
   "source": "OotA",
+  "speed": { "walk": 20 },
   "type": "plant"
 }

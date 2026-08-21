@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["L", "N"],
+  "cr": 2,
   "hp": { "average": 39, "formula": "6d8 + 12" },
   "size": "M",
   "trait": [
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Azer",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

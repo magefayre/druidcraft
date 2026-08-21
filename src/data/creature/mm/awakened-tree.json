@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 59, "formula": "7d12 + 14" },
   "size": "H",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Awakened Tree",
   "source": "MM",
+  "speed": { "walk": 20 },
   "type": "plant"
 }

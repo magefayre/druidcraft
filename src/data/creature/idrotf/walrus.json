@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 22, "formula": "3d10 + 6" },
   "size": "L",
   "trait": [
@@ -18,8 +19,8 @@
       "entries": ["The walrus can hold its breath for 10 minutes."]
     }
   ],
-  "cr": 0.25,
   "name": "Walrus",
   "source": "IDRotF",
+  "speed": { "walk": 20, "swim": 40 },
   "type": "beast"
 }

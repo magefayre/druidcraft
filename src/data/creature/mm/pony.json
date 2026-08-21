@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "size": "M",
-  "cr": 0.125,
   "name": "Pony",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

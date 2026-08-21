@@ -41,6 +41,7 @@
     }
   ],
   "alignment": ["L", "G"],
+  "cr": 9,
   "hp": { "average": 143, "formula": "22d8 + 44" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -60,8 +61,8 @@
       ]
     }
   ],
-  "cr": 9,
   "name": "Conclave Dryad",
   "source": "GGR",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

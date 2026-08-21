@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 2,
   "hp": { "average": 52, "formula": "8d8 + 16" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -41,8 +42,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Aartuk Starhorror",
   "source": "BAM",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "plant"
 }

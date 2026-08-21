@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 30, "formula": "4d12 + 4" },
   "size": "H",
   "skill": { "perception": "+2" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Quetzalcoatlus",
   "source": "MPMM",
+  "speed": { "walk": 10, "fly": 80 },
   "type": "beast"
 }

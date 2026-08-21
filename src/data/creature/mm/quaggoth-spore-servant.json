@@ -14,11 +14,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 45, "formula": "6d8 + 18" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "M",
-  "cr": 1,
   "name": "Quaggoth Spore Servant",
   "source": "MM",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "plant"
 }

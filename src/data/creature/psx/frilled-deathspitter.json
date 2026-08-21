@@ -28,11 +28,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "size": "S",
   "skill": { "perception": "+3" },
-  "cr": 0.5,
   "name": "Frilled Deathspitter",
   "source": "PSX",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

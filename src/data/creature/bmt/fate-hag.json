@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 4,
   "hp": { "average": 71, "formula": "13d8 + 13" },
   "senses": ["truesight 60 ft."],
   "size": "M",
@@ -46,8 +47,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Fate Hag",
   "source": "BMT",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

@@ -27,11 +27,16 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 7,
   "hp": { "average": 117, "formula": "18d8 + 36" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "cr": 7,
   "name": "Air Elemental Myrmidon",
   "source": "MPMM",
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

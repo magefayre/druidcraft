@@ -22,14 +22,15 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
   "trait": [
     { "name": "Unusual Nature", "entries": ["The eel doesn't require air."] }
   ],
-  "cr": 0.5,
   "name": "Space Eel",
   "source": "BAM",
+  "speed": { "walk": 10, "fly": 30 },
   "type": "beast"
 }

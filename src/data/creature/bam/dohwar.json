@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["A"],
+  "cr": 0,
   "hp": { "average": 10, "formula": "3d6" },
   "size": "S",
   "skill": { "deception": "+3", "insight": "+4", "persuasion": "+3" },
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Dohwar",
   "source": "BAM",
+  "speed": { "walk": 20, "swim": 20 },
   "type": "fey"
 }

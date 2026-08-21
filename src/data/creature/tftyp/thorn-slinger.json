@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 32, "formula": "5d10 + 5" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "L",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Thorn Slinger",
   "source": "TftYP",
+  "speed": { "walk": 10 },
   "type": "plant"
 }

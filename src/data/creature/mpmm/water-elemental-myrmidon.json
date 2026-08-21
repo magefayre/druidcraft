@@ -27,11 +27,12 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 7,
   "hp": { "average": 127, "formula": "17d8 + 51" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "cr": 7,
   "name": "Water Elemental Myrmidon",
   "source": "MPMM",
+  "speed": { "walk": 40, "swim": 40 },
   "type": "elemental"
 }

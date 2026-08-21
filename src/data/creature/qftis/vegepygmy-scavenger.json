@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.25,
   "hp": { "average": 13, "formula": "3d6 + 3" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Vegepygmy Scavenger",
   "source": "QftIS",
+  "speed": { "walk": 30 },
   "type": "plant"
 }

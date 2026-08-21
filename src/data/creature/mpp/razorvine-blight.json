@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 1,
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["blindsight 60 ft. (can't see beyond this radius)"],
   "size": "M",
@@ -38,8 +39,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Razorvine Blight",
   "source": "MPP",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "plant"
 }

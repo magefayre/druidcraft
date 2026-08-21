@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["L", "N"],
+  "cr": 0,
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 120 ft."],
   "size": "S",
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Myconid Sprout",
   "source": "MM",
+  "speed": { "walk": 10 },
   "type": "plant"
 }

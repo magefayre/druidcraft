@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["blindsight 30 ft."],
   "size": "L",
@@ -26,8 +27,8 @@
       "entries": ["The shark can breathe only underwater."]
     }
   ],
-  "cr": 2,
   "name": "Hunter Shark",
   "source": "MM",
+  "speed": { "swim": 40 },
   "type": "beast"
 }

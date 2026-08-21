@@ -2,6 +2,7 @@
   "ability": { "str": 1, "dex": 17, "con": 9, "int": 2, "wis": 11, "cha": 4 },
   "ac": [13],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "size": "T",
   "skill": { "perception": "+2", "stealth": "+5" },
@@ -13,8 +14,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Chimeric Hare",
   "source": "IDRotF",
+  "speed": { "walk": 20, "burrow": 5, "fly": 30 },
   "type": "beast"
 }

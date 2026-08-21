@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -25,8 +26,8 @@
       "entries": ["The trout can breathe only underwater."]
     }
   ],
-  "cr": 0,
   "name": "Knucklehead Trout",
   "source": "IDRotF",
+  "speed": { "walk": 0, "swim": 30 },
   "type": "beast"
 }

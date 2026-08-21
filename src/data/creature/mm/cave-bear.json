@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 42, "formula": "5d10 + 15" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Cave Bear",
   "source": "MM",
+  "speed": { "walk": 40, "swim": 30 },
   "type": "beast"
 }

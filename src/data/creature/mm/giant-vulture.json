@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 1,
   "hp": { "average": 22, "formula": "3d10 + 6" },
   "size": "L",
   "skill": { "perception": "+3" },
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Giant Vulture",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 60 },
   "type": "beast"
 }

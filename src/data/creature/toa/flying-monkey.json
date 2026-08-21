@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "size": "S",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Flying Monkey",
   "source": "ToA",
+  "speed": { "walk": 30, "climb": 20, "fly": 30 },
   "type": "beast"
 }

@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 4,
   "hp": { "average": 76, "formula": "8d12 + 24" },
   "size": "H",
-  "cr": 4,
   "name": "Stegosaurus",
   "source": "MPMM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

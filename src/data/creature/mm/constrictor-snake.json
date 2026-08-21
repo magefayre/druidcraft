@@ -16,11 +16,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 13, "formula": "2d10 + 2" },
   "senses": ["blindsight 10 ft."],
   "size": "L",
-  "cr": 0.25,
   "name": "Constrictor Snake",
   "source": "MM",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "beast"
 }

@@ -22,11 +22,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "senses": ["blindsight 60 ft."],
   "size": "L",
-  "cr": 3,
   "name": "Giant Scorpion",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

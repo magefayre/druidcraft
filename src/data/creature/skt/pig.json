@@ -3,11 +3,12 @@
   "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "action": null,
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 5, "formula": "1d8 + 1" },
   "size": "M",
   "trait": null,
-  "cr": 0,
   "name": "Pig",
   "source": "SKT",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

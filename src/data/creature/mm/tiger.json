@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 37, "formula": "5d10 + 10" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Tiger",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.5,
   "hp": { "average": 26, "formula": "4d8 + 4" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Blight Totem Elemental",
   "source": "PSX",
+  "speed": { "walk": 10 },
   "type": "plant"
 }

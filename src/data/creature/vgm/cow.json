@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 15, "formula": "2d10 + 4" },
   "size": "L",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Cow",
   "source": "VGM",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

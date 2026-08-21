@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 6,
   "hp": { "average": 94, "formula": "9d10 + 45" },
   "size": "L",
   "skill": { "perception": "+4", "stealth": "+8" },
@@ -44,8 +45,12 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Mist Hulk",
   "source": "BGG",
+  "speed": {
+    "walk": 0,
+    "fly": { "number": 40, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

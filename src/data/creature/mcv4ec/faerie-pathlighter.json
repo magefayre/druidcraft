@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["C", "G"],
+  "cr": 2,
   "hp": { "average": 38, "formula": "7d8 + 7" },
   "size": "M",
   "skill": { "insight": "+5", "perception": "+5", "survival": "+5" },
@@ -30,8 +31,12 @@
       "entries": ["The faerie sheds dim light in a 15-foot radius."]
     }
   ],
-  "cr": 2,
   "name": "Faerie Pathlighter",
   "source": "MCV4EC",
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "fey"
 }

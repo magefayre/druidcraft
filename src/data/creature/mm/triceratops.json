@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 95, "formula": "10d12 + 30" },
   "size": "H",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Triceratops",
   "source": "MM",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 7,
   "hp": { "average": 60, "formula": "8d10 + 16" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 7,
   "name": "Fluxcharger",
   "source": "GGR",
+  "speed": { "walk": 0, "fly": 60 },
   "type": "elemental"
 }

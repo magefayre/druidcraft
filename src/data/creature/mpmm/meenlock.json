@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 2,
   "hp": { "average": 31, "formula": "7d6 + 7" },
   "senses": ["darkvision 120 ft."],
   "size": "S",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Meenlock",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

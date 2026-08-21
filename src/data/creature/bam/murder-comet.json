@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 5,
   "hp": { "average": 66, "formula": "7d8 + 35" },
   "senses": ["darkvision 240 ft."],
   "size": "M",
@@ -51,8 +52,8 @@
       "entries": ["The comet doesn't require air, food, drink, or sleep."]
     }
   ],
-  "cr": 5,
   "name": "Murder Comet",
   "source": "BAM",
+  "speed": { "walk": 0, "fly": 120 },
   "type": "elemental"
 }

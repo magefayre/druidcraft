@@ -11,11 +11,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["darkvision 60 ft."],
   "size": "T",
-  "cr": 0.125,
   "name": "Stirge",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 40 },
   "type": "beast"
 }

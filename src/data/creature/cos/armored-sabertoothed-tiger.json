@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 84, "formula": "7d10 + 14" },
   "size": "L",
   "skill": { "perception": "+3", "stealth": "+6" },
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Armored Saber-Toothed Tiger",
   "source": "CoS",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

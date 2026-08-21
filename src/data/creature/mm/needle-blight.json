@@ -16,11 +16,12 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.25,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
-  "cr": 0.25,
   "name": "Needle Blight",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "plant"
 }

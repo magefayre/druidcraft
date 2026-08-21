@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["tremorsense 60 ft."],
   "size": "L",
@@ -46,8 +47,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Sword Spider",
   "source": "MaBJoV",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "beast"
 }

@@ -35,6 +35,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 3,
   "hp": { "average": 45, "formula": "6d8 + 18" },
   "senses": ["darkvision 30 ft."],
   "size": "M",
@@ -47,8 +48,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Forlarren",
   "source": "MFF",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

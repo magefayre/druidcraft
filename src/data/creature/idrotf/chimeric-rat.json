@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Chimeric Rat",
   "source": "IDRotF",
+  "speed": { "walk": 20 },
   "type": "beast"
 }

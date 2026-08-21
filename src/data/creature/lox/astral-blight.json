@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 26, "formula": "4d8 + 8" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
@@ -29,8 +30,8 @@
       "entries": ["The blight doesn't require air or sleep."]
     }
   ],
-  "cr": 1,
   "name": "Astral Blight",
   "source": "LoX",
+  "speed": { "walk": 10 },
   "type": "plant"
 }

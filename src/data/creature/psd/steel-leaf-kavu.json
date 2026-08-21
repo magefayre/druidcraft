@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 4,
   "hp": { "average": 142, "formula": "15d10 + 60" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Steel Leaf Kavu",
   "source": "PSD",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

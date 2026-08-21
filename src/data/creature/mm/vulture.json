@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 5, "formula": "1d8 + 1" },
   "size": "M",
   "skill": { "perception": "+3" },
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Vulture",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 50 },
   "type": "beast"
 }

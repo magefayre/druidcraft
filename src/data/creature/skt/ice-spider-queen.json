@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 44, "formula": "4d10 + 4" },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
   "size": "L",
@@ -38,8 +39,8 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "cr": 2,
   "name": "Ice Spider Queen",
   "source": "SKT",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "beast"
 }

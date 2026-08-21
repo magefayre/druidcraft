@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["blindsight 60 ft."],
   "size": "T",
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Bat",
   "source": "MM",
+  "speed": { "walk": 5, "fly": 30 },
   "type": "beast"
 }

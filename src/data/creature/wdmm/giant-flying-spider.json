@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 26, "formula": "4d10 + 4" },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
   "size": "L",
@@ -38,8 +39,8 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "cr": 1,
   "name": "Giant Flying Spider",
   "source": "WDMM",
+  "speed": { "walk": 30, "climb": 30, "fly": 40 },
   "type": "beast"
 }

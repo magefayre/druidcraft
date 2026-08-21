@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 37, "formula": "5d10 + 10" },
   "size": "L",
   "skill": { "perception": "+3", "stealth": "+4" },
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Young Winter Wolf",
   "source": "TftYP",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 3,
   "hp": { "average": 52, "formula": "8d8 + 16" },
   "size": "M",
   "skill": { "deception": "+6", "intimidation": "+6" },
@@ -46,8 +47,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Lampad",
   "source": "MOT",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

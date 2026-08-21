@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 5,
   "hp": { "average": 68, "formula": "8d10 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -46,8 +47,12 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Dust Hulk",
   "source": "BGG",
+  "speed": {
+    "walk": 0,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

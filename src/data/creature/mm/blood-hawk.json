@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 7, "formula": "2d6" },
   "size": "S",
   "skill": { "perception": "+4" },
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Blood Hawk",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 60 },
   "type": "beast"
 }

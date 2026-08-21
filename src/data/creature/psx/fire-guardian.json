@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 5,
   "hp": { "average": 102, "formula": "12d10 + 36" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -37,8 +38,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Fire Guardian",
   "source": "PSX",
+  "speed": { "walk": 50 },
   "type": "elemental"
 }

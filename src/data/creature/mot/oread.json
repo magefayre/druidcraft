@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 4,
   "hp": { "average": 49, "formula": "9d8 + 9" },
   "size": "M",
   "skill": { "acrobatics": "+4", "athletics": "+4", "performance": "+6" },
@@ -44,8 +45,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Oread",
   "source": "MOT",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

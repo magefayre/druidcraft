@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "size": "S",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Chimeric Baboon",
   "source": "IDRotF",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "beast"
 }

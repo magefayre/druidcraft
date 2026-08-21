@@ -2,6 +2,7 @@
   "ability": { "str": 1, "dex": 1, "con": 10, "int": 1, "wis": 3, "cha": 1 },
   "ac": [5],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 13, "formula": "3d8" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "M",
@@ -13,8 +14,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Shrieker",
   "source": "MM",
+  "speed": { "walk": 0 },
   "type": "plant"
 }

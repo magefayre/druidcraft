@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 7,
   "hp": { "average": 123, "formula": "19d8 + 38" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -44,8 +45,8 @@
       ]
     }
   ],
-  "cr": 7,
   "name": "Fire Elemental Myrmidon",
   "source": "MPMM",
+  "speed": { "walk": 40 },
   "type": "elemental"
 }

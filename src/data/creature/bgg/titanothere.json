@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 136, "formula": "13d12 + 52" },
   "size": "H",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Titanothere",
   "source": "BGG",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

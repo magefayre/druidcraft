@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N", "G"],
+  "cr": 4,
   "hp": { "average": 82, "formula": "11d6 + 44" },
   "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
   "size": "S",
@@ -41,8 +42,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Pech",
   "source": "DitLCoT",
+  "speed": { "walk": 30, "burrow": 20 },
   "type": "elemental"
 }

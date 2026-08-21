@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
@@ -32,8 +33,8 @@
       "entries": ["The spider ignores movement restrictions caused by webbing."]
     }
   ],
-  "cr": 0,
   "name": "Spider",
   "source": "MM",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "beast"
 }

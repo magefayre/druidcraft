@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 6,
   "hp": { "average": 82, "formula": "15d8 + 15" },
   "senses": ["blindsight 60 ft."],
   "size": "M",
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Dusk Hag",
   "source": "ERLW",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 13, "formula": "2d8 + 4" },
   "size": "M",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Mountain Goat",
   "source": "IDRotF",
+  "speed": { "walk": 40, "climb": 30 },
   "type": "beast"
 }

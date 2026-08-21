@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.5,
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "size": "M",
   "trait": [
@@ -28,8 +29,8 @@
       "entries": ["The firenewt can breathe air and water."]
     }
   ],
-  "cr": 0.5,
   "name": "Firenewt Warrior",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

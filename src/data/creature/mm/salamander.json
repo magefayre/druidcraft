@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 5,
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -46,8 +47,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Salamander",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

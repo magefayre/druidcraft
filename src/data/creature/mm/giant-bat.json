@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 22, "formula": "4d10" },
   "senses": ["blindsight 60 ft."],
   "size": "L",
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Giant Bat",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 60 },
   "type": "beast"
 }

@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 2,
   "hp": { "average": 21, "formula": "6d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -42,8 +43,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Oddlewin",
   "source": "BMT",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

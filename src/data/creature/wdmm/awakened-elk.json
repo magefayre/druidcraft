@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 13, "formula": "2d10 + 2" },
   "size": "L",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Awakened Elk",
   "source": "WDMM",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

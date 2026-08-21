@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 52, "formula": "8d10 + 8" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -38,8 +39,8 @@
       "entries": ["The octopus can breathe only underwater."]
     }
   ],
-  "cr": 1,
   "name": "Giant Rocktopus",
   "source": "OotA",
+  "speed": { "walk": 20, "climb": 10 },
   "type": "beast"
 }

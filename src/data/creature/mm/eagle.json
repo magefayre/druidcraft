@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "size": "S",
   "skill": { "perception": "+4" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Eagle",
   "source": "MM",
+  "speed": { "walk": 10, "fly": 60 },
   "type": "beast"
 }

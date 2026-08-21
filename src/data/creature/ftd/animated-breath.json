@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 6,
   "hp": { "average": 95, "formula": "10d10 + 40" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -40,8 +41,12 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Animated Breath",
   "source": "FTD",
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

@@ -33,12 +33,13 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 3,
   "hp": { "average": 60, "formula": "8d10 + 16" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
   "skill": { "perception": "+6" },
-  "cr": 3,
   "name": "Giant Goose",
   "source": "BGG",
+  "speed": { "walk": 30, "fly": 30 },
   "type": "fey"
 }

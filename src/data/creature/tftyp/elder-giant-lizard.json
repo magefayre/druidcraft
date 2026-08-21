@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 85, "formula": "9d12 + 27" },
   "senses": ["darkvision 60 ft."],
   "size": "H",
@@ -32,8 +33,8 @@
       "entries": ["The crocodile can hold its breath for 30 minutes."]
     }
   ],
-  "cr": 5,
   "name": "Elder Giant Lizard",
   "source": "TftYP",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "beast"
 }

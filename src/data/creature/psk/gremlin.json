@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Gremlin",
   "source": "PSK",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

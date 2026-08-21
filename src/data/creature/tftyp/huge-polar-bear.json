@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 65, "formula": "5d12 + 15" },
   "size": "H",
   "skill": { "perception": "+3" },
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Huge Polar Bear",
   "source": "TftYP",
+  "speed": { "walk": 40, "swim": 30 },
   "type": "beast"
 }

@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 4,
   "hp": { "average": 51, "formula": "6d10 + 18" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -34,8 +35,12 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Yeth Hound",
   "source": "MPMM",
+  "speed": {
+    "walk": 40,
+    "fly": { "number": 40, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "fey"
 }

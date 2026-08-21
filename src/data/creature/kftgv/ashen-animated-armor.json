@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 1,
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
@@ -31,8 +32,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Ashen Animated Armor",
   "source": "KftGV",
+  "speed": { "walk": 25 },
   "type": "elemental"
 }

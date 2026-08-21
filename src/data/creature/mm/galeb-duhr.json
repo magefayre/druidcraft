@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 6,
   "hp": { "average": 85, "formula": "9d8 + 45" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "M",
@@ -40,8 +41,13 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Galeb Duhr",
   "source": "MM",
+  "speed": {
+    "walk": {
+      "number": 15,
+      "condition": "(30 ft. when rolling, 60 ft. rolling downhill)"
+    }
+  },
   "type": "elemental"
 }

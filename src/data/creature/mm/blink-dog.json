@@ -23,6 +23,7 @@
     }
   ],
   "alignment": ["L", "G"],
+  "cr": 0.25,
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "size": "M",
   "skill": { "perception": "+3", "stealth": "+5" },
@@ -34,8 +35,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Blink Dog",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

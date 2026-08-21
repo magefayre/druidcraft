@@ -10,11 +10,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
-  "cr": 0,
   "name": "Lizard",
   "source": "MM",
+  "speed": { "walk": 20, "climb": 20 },
   "type": "beast"
 }

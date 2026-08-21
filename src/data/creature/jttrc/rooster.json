@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "size": "T",
   "skill": { "perception": "+4" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Rooster",
   "source": "JttRC",
+  "speed": { "walk": 10 },
   "type": "beast"
 }

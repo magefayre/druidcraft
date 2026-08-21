@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 60, "formula": "8d12 + 8" },
   "senses": ["blindsight 10 ft."],
   "size": "H",
@@ -20,8 +21,8 @@
       "entries": ["The tentacle can reach anywhere in the room."]
     }
   ],
-  "cr": 2,
   "name": "Enormous Tentacle",
   "source": "OoW",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "beast"
 }

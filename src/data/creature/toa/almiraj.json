@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "senses": ["darkvision 30 ft."],
   "size": "S",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Almiraj",
   "source": "ToA",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

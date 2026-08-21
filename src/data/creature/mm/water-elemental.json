@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 5,
   "hp": { "average": 114, "formula": "12d10 + 48" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -38,8 +39,8 @@
       ]
     }
   ],
-  "cr": 5,
   "name": "Water Elemental",
   "source": "MM",
+  "speed": { "walk": 30, "swim": 90 },
   "type": "elemental"
 }

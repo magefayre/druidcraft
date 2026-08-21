@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 4, "formula": "1d8" },
   "size": "M",
-  "cr": 0,
   "name": "Deer",
   "source": "MM",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 38, "formula": "4d10 + 16" },
   "size": "L",
-  "cr": 2,
   "name": "Aurochs",
   "source": "MPMM",
+  "speed": { "walk": 50 },
   "type": "beast"
 }

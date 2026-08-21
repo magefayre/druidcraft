@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 4,
   "hp": { "average": 45, "formula": "7d8 + 14" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 4,
   "name": "Blistercoil Weird",
   "source": "GGR",
+  "speed": { "walk": 40, "swim": 60 },
   "type": "elemental"
 }

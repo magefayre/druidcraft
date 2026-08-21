@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 3,
   "hp": { "average": 45, "formula": "6d6 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -45,8 +46,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Redcap",
   "source": "MPMM",
+  "speed": { "walk": 25 },
   "type": "fey"
 }

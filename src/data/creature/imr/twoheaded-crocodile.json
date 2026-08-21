@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "size": "L",
   "skill": { "perception": "+2", "stealth": "+2" },
@@ -37,8 +38,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Two-Headed Crocodile",
   "source": "IMR",
+  "speed": { "walk": 20, "swim": 30 },
   "type": "beast"
 }

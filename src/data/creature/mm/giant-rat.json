@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Giant Rat",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

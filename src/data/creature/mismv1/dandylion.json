@@ -33,6 +33,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 6,
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
@@ -51,8 +52,8 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Dandylion",
   "source": "MisMV1",
+  "speed": { "walk": 50 },
   "type": "fey"
 }

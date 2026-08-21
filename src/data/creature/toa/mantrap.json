@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 1,
   "hp": { "average": 45, "formula": "7d10 + 7" },
   "senses": ["tremorsense 30 ft."],
   "size": "L",
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Mantrap",
   "source": "ToA",
+  "speed": { "walk": 5 },
   "type": "plant"
 }

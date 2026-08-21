@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 0.125,
   "hp": { "average": 4, "formula": "1d6 + 1" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "S",
@@ -22,8 +23,8 @@
       ]
     }
   ],
-  "cr": 0.125,
   "name": "Twig Blight",
   "source": "MM",
+  "speed": { "walk": 20 },
   "type": "plant"
 }

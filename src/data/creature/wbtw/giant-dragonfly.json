@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 22, "formula": "4d10" },
   "size": "L",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Giant Dragonfly",
   "source": "WBtW",
+  "speed": { "walk": 10, "fly": 60 },
   "type": "beast"
 }

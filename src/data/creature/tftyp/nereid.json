@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["C", "G", "NY", "E"],
+  "cr": 2,
   "hp": { "average": 44, "formula": "8d8 + 8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -68,8 +69,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Nereid",
   "source": "TftYP",
+  "speed": { "walk": 30, "swim": 60 },
   "type": "fey"
 }

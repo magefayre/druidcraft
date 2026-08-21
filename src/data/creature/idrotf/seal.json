@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 9, "formula": "2d8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -25,8 +26,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Seal",
   "source": "IDRotF",
+  "speed": { "walk": 20, "swim": 40 },
   "type": "beast"
 }

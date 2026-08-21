@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 10 ft. (blind beyond this radius)"],
   "size": "M",
@@ -35,8 +36,12 @@
       "entries": ["The gadabout doesn't require food or sleep."]
     }
   ],
-  "cr": 0.125,
   "name": "Gadabout",
   "source": "MCV1SC",
+  "speed": {
+    "walk": 10,
+    "fly": { "number": 60, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "plant"
 }

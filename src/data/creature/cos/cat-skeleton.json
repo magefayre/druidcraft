@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 2, "formula": "1d4" },
   "size": "T",
   "skill": { "perception": "+3", "stealth": "+4" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Cat Skeleton",
   "source": "CoS",
+  "speed": { "walk": 40, "climb": 30 },
   "type": "beast"
 }

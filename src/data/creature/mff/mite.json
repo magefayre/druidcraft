@@ -16,6 +16,7 @@
     }
   ],
   "alignment": ["L", "E"],
+  "cr": 0.25,
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Mite",
   "source": "MFF",
+  "speed": { "walk": 30, "burrow": 10, "climb": 30 },
   "type": "fey"
 }

@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 42, "formula": "5d10 + 15" },
   "size": "L",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Giant Boar",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

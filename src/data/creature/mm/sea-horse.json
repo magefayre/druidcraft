@@ -2,6 +2,7 @@
   "ability": { "str": 1, "dex": 12, "con": 8, "int": 1, "wis": 10, "cha": 2 },
   "ac": [11],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "size": "T",
   "trait": [
@@ -10,8 +11,8 @@
       "entries": ["The sea horse can breathe only underwater."]
     }
   ],
-  "cr": 0,
   "name": "Sea Horse",
   "source": "MM",
+  "speed": { "swim": 20 },
   "type": "beast"
 }

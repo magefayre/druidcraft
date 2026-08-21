@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 6,
   "hp": { "average": 104, "formula": "16d8 + 32" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -37,8 +38,12 @@
       ]
     }
   ],
-  "cr": 6,
   "name": "Invisible Stalker",
   "source": "MM",
+  "speed": {
+    "walk": 50,
+    "fly": { "number": 50, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

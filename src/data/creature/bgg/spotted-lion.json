@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 66, "formula": "7d12 + 21" },
   "senses": ["darkvision 60 ft."],
   "size": "H",
@@ -29,8 +30,8 @@
       ]
     }
   ],
-  "cr": 3,
   "name": "Spotted Lion",
   "source": "BGG",
+  "speed": { "walk": 60 },
   "type": "beast"
 }

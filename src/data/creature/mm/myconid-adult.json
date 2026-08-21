@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["L", "N"],
+  "cr": 0.5,
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "senses": ["darkvision 120 ft."],
   "size": "M",
@@ -46,8 +47,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Myconid Adult",
   "source": "MM",
+  "speed": { "walk": 20 },
   "type": "plant"
 }

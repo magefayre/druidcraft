@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "E"],
+  "cr": 7,
   "hp": { "average": 84, "formula": "8d10 + 40" },
   "size": "L",
   "skill": { "perception": "+5" },
@@ -38,8 +39,8 @@
       ]
     }
   ],
-  "cr": 7,
   "name": "Cinder Hulk",
   "source": "BGG",
+  "speed": { "walk": 40 },
   "type": "elemental"
 }

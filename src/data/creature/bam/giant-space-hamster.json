@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 22, "formula": "4d10" },
   "size": "L",
-  "cr": 0.25,
   "name": "Giant Space Hamster",
   "source": "BAM",
+  "speed": { "walk": 30, "burrow": 10 },
   "type": "beast"
 }

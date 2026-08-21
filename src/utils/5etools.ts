@@ -26,7 +26,7 @@ import type {
 } from '~types'
 
 export const formatAligment = (alignment: Aligmnent[]) =>
-  alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? EMPTY
+  alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? ALIGNMENTS.U
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 

@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 1,
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "size": "M",
   "skill": { "acrobatics": "+5", "performance": "+7", "stealth": "+5" },
@@ -48,8 +49,8 @@
       "entries": ["Magic can't put the satyr to sleep."]
     }
   ],
-  "cr": 1,
   "name": "Satyr Reveler",
   "source": "MOT",
+  "speed": { "walk": 40 },
   "type": "fey"
 }

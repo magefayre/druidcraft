@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 5,
   "hp": { "average": 126, "formula": "11d12 + 55" },
   "senses": ["blindsight 60 ft."],
   "size": "H",
@@ -26,8 +27,8 @@
       "entries": ["The shark can breathe only underwater."]
     }
   ],
-  "cr": 5,
   "name": "Giant Shark",
   "source": "MM",
+  "speed": { "swim": 50 },
   "type": "beast"
 }

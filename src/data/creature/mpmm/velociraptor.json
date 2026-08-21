@@ -20,6 +20,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 10, "formula": "3d4 + 3" },
   "size": "T",
   "skill": { "perception": "+3" },
@@ -31,8 +32,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Velociraptor",
   "source": "MPMM",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

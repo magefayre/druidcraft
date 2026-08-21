@@ -29,6 +29,7 @@
     }
   ],
   "alignment": ["N", "G"],
+  "cr": 1,
   "hp": { "average": 26, "formula": "4d10 + 4" },
   "size": "L",
   "skill": { "perception": "+4" },
@@ -40,8 +41,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Drake (Large)",
   "source": "PSZ",
+  "speed": { "walk": 10, "fly": 80 },
   "type": "beast"
 }

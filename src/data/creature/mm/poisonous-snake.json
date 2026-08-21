@@ -10,11 +10,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.125,
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["blindsight 10 ft."],
   "size": "T",
-  "cr": 0.125,
   "name": "Poisonous Snake",
   "source": "MM",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "beast"
 }

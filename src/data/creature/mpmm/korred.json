@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 7,
   "hp": { "average": 93, "formula": "11d6 + 55" },
   "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
   "size": "S",
@@ -39,8 +40,8 @@
       ]
     }
   ],
-  "cr": 7,
   "name": "Korred",
   "source": "MPMM",
+  "speed": { "walk": 30, "burrow": 30 },
   "type": "fey"
 }

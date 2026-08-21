@@ -27,6 +27,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 8,
   "hp": { "formula": "9d10 + 54", "average": 103 },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "L",
@@ -51,8 +52,8 @@
       ]
     }
   ],
-  "cr": 8,
   "name": "Big Xorn",
   "source": "WDMM",
+  "speed": { "walk": 20, "burrow": 20 },
   "type": "elemental"
 }

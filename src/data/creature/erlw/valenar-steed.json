@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["N"],
+  "cr": 0.5,
   "hp": { "average": 22, "formula": "3d10 + 6" },
   "size": "L",
   "skill": { "perception": "+4" },
@@ -28,8 +29,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Valenar Steed",
   "source": "ERLW",
+  "speed": { "walk": 60 },
   "type": "fey"
 }

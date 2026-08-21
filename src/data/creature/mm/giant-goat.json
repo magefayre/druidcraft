@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.5,
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "size": "L",
   "trait": [
@@ -26,8 +27,8 @@
       ]
     }
   ],
-  "cr": 0.5,
   "name": "Giant Goat",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

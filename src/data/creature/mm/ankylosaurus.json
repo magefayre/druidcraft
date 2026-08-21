@@ -10,10 +10,11 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 3,
   "hp": { "average": 68, "formula": "8d12 + 16" },
   "size": "H",
-  "cr": 3,
   "name": "Ankylosaurus",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "beast"
 }

@@ -10,11 +10,12 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "senses": ["darkvision 30 ft."],
   "size": "L",
-  "cr": 0.25,
   "name": "Giant Lizard",
   "source": "MM",
+  "speed": { "walk": 30, "climb": 30 },
   "type": "beast"
 }

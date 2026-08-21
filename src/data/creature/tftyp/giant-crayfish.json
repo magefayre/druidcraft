@@ -14,6 +14,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 2,
   "hp": { "average": 45, "formula": "7d10 + 7" },
   "senses": ["blindsight 30 ft."],
   "size": "L",
@@ -24,8 +25,8 @@
       "entries": ["The giant crayfish can breathe air and water."]
     }
   ],
-  "cr": 2,
   "name": "Giant Crayfish",
   "source": "TftYP",
+  "speed": { "walk": 30, "swim": 30 },
   "type": "beast"
 }

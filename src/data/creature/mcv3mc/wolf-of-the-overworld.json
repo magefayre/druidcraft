@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "size": "M",
   "skill": { "perception": "+5", "stealth": "+4" },
@@ -21,8 +22,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Wolf of the Overworld",
   "source": "MCV3MC",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

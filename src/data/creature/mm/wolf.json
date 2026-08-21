@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0.25,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "size": "M",
   "skill": { "perception": "+3", "stealth": "+4" },
@@ -27,8 +28,8 @@
       ]
     }
   ],
-  "cr": 0.25,
   "name": "Wolf",
   "source": "MM",
+  "speed": { "walk": 40 },
   "type": "beast"
 }

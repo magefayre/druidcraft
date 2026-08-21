@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "size": "S",
   "skill": { "perception": "+5" },
@@ -25,8 +26,8 @@
       "entries": ["The mollymawk can hold its breath for 15 minutes."]
     }
   ],
-  "cr": 0,
   "name": "Space Mollymawk",
   "source": "BAM",
+  "speed": { "walk": 10, "fly": 50 },
   "type": "beast"
 }

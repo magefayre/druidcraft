@@ -22,6 +22,7 @@
     }
   ],
   "alignment": ["N", "E"],
+  "cr": 1,
   "hp": { "average": 22, "formula": "5d8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
@@ -33,8 +34,8 @@
       ]
     }
   ],
-  "cr": 1,
   "name": "Fire Snake",
   "source": "MM",
+  "speed": { "walk": 30 },
   "type": "elemental"
 }

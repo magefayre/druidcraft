@@ -24,6 +24,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 2,
   "hp": { "average": 32, "formula": "5d8 + 10" },
   "senses": ["darkvision 60ft."],
   "size": "M",
@@ -48,8 +49,8 @@
       ]
     }
   ],
-  "cr": 2,
   "name": "Hamadryad",
   "source": "MaBJoV",
+  "speed": { "walk": 30 },
   "type": "fey"
 }

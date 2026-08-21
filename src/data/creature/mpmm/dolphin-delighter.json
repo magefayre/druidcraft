@@ -21,6 +21,7 @@
     }
   ],
   "alignment": ["C", "G"],
+  "cr": 3,
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["blindsight 60 ft."],
   "size": "M",
@@ -31,8 +32,8 @@
       "entries": ["The dolphin can hold its breath for 20 minutes."]
     }
   ],
-  "cr": 3,
   "name": "Dolphin Delighter",
   "source": "MPMM",
+  "speed": { "walk": 0, "swim": 60 },
   "type": "fey"
 }

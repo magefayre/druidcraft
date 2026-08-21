@@ -17,6 +17,7 @@
     }
   ],
   "alignment": ["C", "N"],
+  "cr": 9,
   "hp": { "average": 102, "formula": "12d10 + 36" },
   "size": "L",
   "skill": { "perception": "+6" },
@@ -34,8 +35,12 @@
       ]
     }
   ],
-  "cr": 9,
   "name": "Lightning Hulk",
   "source": "BGG",
+  "speed": {
+    "walk": 0,
+    "fly": { "number": 90, "condition": "(hover)" },
+    "canHover": true
+  },
   "type": "elemental"
 }

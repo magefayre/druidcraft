@@ -10,6 +10,7 @@
     }
   ],
   "alignment": ["U"],
+  "cr": 0,
   "hp": { "average": 10, "formula": "3d6" },
   "size": "S",
   "trait": [
@@ -20,8 +21,8 @@
       ]
     }
   ],
-  "cr": 0,
   "name": "Awakened Shrub",
   "source": "MM",
+  "speed": { "walk": 20 },
   "type": "plant"
 }
