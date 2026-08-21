@@ -25,8 +25,9 @@
   "alignment": ["C", "N"],
   "cr": 0.5,
   "hp": { "average": 12, "formula": "5d4" },
+  "languages": ["Common", "Sylvan"],
   "size": "T",
-  "skill": { "sleight of hand": "+7", "stealth": "+7" },
+  "skill": { "sleight of hand": 7, "stealth": 7 },
   "trait": [
     {
       "name": "Flyby",

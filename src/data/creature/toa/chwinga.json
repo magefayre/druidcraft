@@ -27,7 +27,7 @@
   "hp": { "average": 5, "formula": "2d4" },
   "senses": ["blindsight 60 ft."],
   "size": "T",
-  "skill": { "acrobatics": "+7", "perception": "+7", "stealth": "+7" },
+  "skill": { "acrobatics": 7, "perception": 7, "stealth": 7 },
   "trait": [
     {
       "name": "Unusual Nature",

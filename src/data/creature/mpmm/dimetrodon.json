@@ -13,7 +13,7 @@
   "cr": 0.25,
   "hp": { "average": 19, "formula": "3d8 + 6" },
   "size": "M",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "name": "Dimetrodon",
   "source": "MPMM",
   "speed": { "walk": 30, "swim": 20 },

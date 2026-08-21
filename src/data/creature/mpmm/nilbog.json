@@ -16,11 +16,20 @@
     }
   ],
   "alignment": ["C", "N"],
+  "bonus": [
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "The nilbog takes the {@action Disengage} or {@action Hide} action."
+      ]
+    }
+  ],
   "cr": 1,
   "hp": { "average": 7, "formula": "2d6" },
+  "languages": ["Common", "Goblin"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "stealth": "+6" },
+  "skill": { "stealth": 6 },
   "trait": [
     {
       "name": "Nilbogism",

@@ -29,11 +29,26 @@
     }
   ],
   "alignment": ["L", "E"],
+  "bonus": [
+    {
+      "name": "Rally the Troops (1/Day)",
+      "entries": [
+        "The aartuk magically ends the {@condition charmed} and {@condition frightened} conditions on itself and each creature of its choice that it can see within 30 feet of itself."
+      ]
+    },
+    {
+      "name": "Tongue {@recharge}",
+      "entries": [
+        "The aartuk tries to use its gooey tongue to snare one Medium or smaller creature it can see within 30 feet of itself. The target must make a {@dc 12} Dexterity saving throw. On a failed save, the target is {@condition grappled} by the tongue (escape {@dc 11}) and pulled up to 25 feet toward the aartuk. The tongue can grapple one creature at a time."
+      ]
+    }
+  ],
   "cr": 2,
   "hp": { "average": 52, "formula": "8d8 + 16" },
+  "languages": ["Aartuk"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "stealth": "+4" },
+  "skill": { "stealth": 4 },
   "trait": [
     {
       "name": "Spider Climb",

@@ -6,6 +6,7 @@
   "hp": { "average": 13, "formula": "3d8" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "False Appearance",

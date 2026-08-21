@@ -27,11 +27,52 @@
     }
   ],
   "alignment": ["C", "G"],
+  "bonus": [
+    {
+      "name": "Bubbles of Whimsy (2/Day)",
+      "entries": [
+        "Coral produces a stream of magical bubbles from her horn. These bubbles float toward a creature Coral can see within 60 feet of herself. Roll a {@dice d6} to determine the bubbles' effect:",
+        {
+          "type": "list",
+          "items": [
+            {
+              "name": "1-2: Bolstering Treat",
+              "type": "item",
+              "entries": [
+                "The bubbles transform into {@dice 1d4} cookies that appear in the target's space. The target gains 11 ({@dice 2d8 + 2}) temporary hit points if it immediately uses its reaction to eat one of the cookies. Any leftover cookies are delicious but confer no benefits."
+              ]
+            },
+            {
+              "name": "3-4: Sparkle Burst",
+              "type": "item",
+              "entries": [
+                "The bubbles transform into glitter that swirls around the target before bursting outward. Each creature within 5 feet of the target must succeed on a {@dc 16} Constitution saving throw or have the {@condition blinded} condition until the start of Coral's next turn."
+              ]
+            },
+            {
+              "name": "5-6: Stink Bomb Shield",
+              "type": "item",
+              "entries": [
+                "The bubbles transform into a foul-smelling cloud of gas that surrounds and shields the target. The target has {@quickref Cover||3||half cover} until the gas disappears at the start of Coral's next turn."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gift of Speech (1/Day)",
+      "entries": [
+        "Coral targets one Beast she can see within 10 feet of herself. The target gains the ability to understand and speak Common or Sylvan (Coral's choice) for 10 minutes."
+      ]
+    }
+  ],
   "cr": 9,
   "hp": { "average": 135, "formula": "18d10 + 36" },
+  "languages": ["Common", "Primordial", "Sylvan"],
   "senses": ["blindsight 60 ft."],
   "size": "L",
-  "skill": { "arcana": "+6", "insight": "+8", "perception": "+8" },
+  "skill": { "arcana": 6, "insight": 8, "perception": 8 },
   "trait": [
     {
       "name": "Magic Resistance",

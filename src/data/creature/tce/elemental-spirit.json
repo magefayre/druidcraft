@@ -24,8 +24,10 @@
   ],
   "alignment": ["U"],
   "hp": { "special": "50 + 10 for each spell level above 4th" },
+  "languages": ["Primordial", "understands the languages you speak"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Amorphous Form (Air, Fire, and Water Only)",

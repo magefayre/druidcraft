@@ -23,8 +23,10 @@
   "alignment": ["N"],
   "cr": 5,
   "hp": { "average": 114, "formula": "12d10 + 48" },
+  "languages": ["Aquan"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Water Form",

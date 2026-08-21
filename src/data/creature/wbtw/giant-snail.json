@@ -20,6 +20,7 @@
   "hp": { "average": 22, "formula": "4d10" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Salt Osmosis",

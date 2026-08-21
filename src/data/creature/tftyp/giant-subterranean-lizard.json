@@ -32,7 +32,7 @@
   "cr": 4,
   "hp": { "average": 66, "formula": "7d12 + 21" },
   "size": "H",
-  "skill": { "stealth": "+3" },
+  "skill": { "stealth": 3 },
   "name": "Giant Subterranean Lizard",
   "source": "TftYP",
   "speed": { "walk": 30, "swim": 50 },

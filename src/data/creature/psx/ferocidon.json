@@ -19,7 +19,7 @@
   "cr": 2,
   "hp": { "average": 51, "formula": "6d10 + 18" },
   "size": "L",
-  "skill": { "perception": "+5" },
+  "skill": { "perception": 5 },
   "trait": [
     {
       "name": "Pounce",

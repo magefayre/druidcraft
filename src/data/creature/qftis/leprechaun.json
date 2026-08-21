@@ -29,11 +29,20 @@
     }
   ],
   "alignment": ["N"],
+  "bonus": [
+    {
+      "name": "Cunning Trick",
+      "entries": [
+        "The leprechaun takes the {@action Disengage} or {@action Hide} action or makes a Dexterity ({@skill Sleight of Hand}) check."
+      ]
+    }
+  ],
   "cr": 4,
   "hp": { "average": 52, "formula": "8d6 + 24" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+4", "sleight of hand": "+7", "stealth": "+5" },
+  "skill": { "perception": 4, "sleight of hand": 7, "stealth": 5 },
   "trait": [
     {
       "name": "Industrious",

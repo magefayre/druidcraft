@@ -33,9 +33,10 @@
   "alignment": ["L", "N"],
   "cr": 4,
   "hp": { "average": 45, "formula": "7d8 + 14" },
+  "languages": ["Common", "Goblin"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "arcana": "+5" },
+  "skill": { "arcana": 5 },
   "trait": [
     {
       "name": "Army Arcana",

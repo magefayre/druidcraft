@@ -19,9 +19,10 @@
   "alignment": ["N"],
   "cr": 0.125,
   "hp": { "average": 11, "formula": "2d6 + 4" },
+  "languages": ["Terran"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+2", "stealth": "+2" },
+  "skill": { "perception": 2, "stealth": 2 },
   "trait": [
     {
       "name": "Iron Scent",

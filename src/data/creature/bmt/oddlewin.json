@@ -23,11 +23,20 @@
     }
   ],
   "alignment": ["C", "N"],
+  "bonus": [
+    {
+      "name": "Nimble Escape",
+      "entries": [
+        "Oddlewin takes the {@action Disengage} or {@action Hide} action."
+      ]
+    }
+  ],
   "cr": 2,
   "hp": { "average": 21, "formula": "6d6" },
+  "languages": ["Common", "Goblin", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "performance": "+4", "stealth": "+6" },
+  "skill": { "performance": 4, "stealth": 6 },
   "trait": [
     {
       "name": "Fortune Teller",

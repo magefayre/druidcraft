@@ -18,6 +18,7 @@
   "hp": { "average": 26, "formula": "4d8 + 8" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Illumination",

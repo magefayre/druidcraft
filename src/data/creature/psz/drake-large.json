@@ -31,8 +31,12 @@
   "alignment": ["N", "G"],
   "cr": 1,
   "hp": { "average": 26, "formula": "4d10 + 4" },
+  "languages": [
+    "Giant Eagle",
+    "understands Common and Auran but can't speak them"
+  ],
   "size": "L",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Keen Sight",

@@ -13,6 +13,7 @@
   "cr": 0.25,
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "size": "L",
+  "skill": {},
   "name": "Axe Beak",
   "source": "MM",
   "speed": { "walk": 50 },

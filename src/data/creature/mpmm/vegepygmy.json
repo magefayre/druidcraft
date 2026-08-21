@@ -18,9 +18,10 @@
   "alignment": ["N"],
   "cr": 0.25,
   "hp": { "average": 13, "formula": "3d6 + 3" },
+  "languages": ["Vegepygmy"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+2", "stealth": "+4" },
+  "skill": { "perception": 2, "stealth": 4 },
   "trait": [
     {
       "name": "Plant Camouflage",

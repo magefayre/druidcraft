@@ -20,7 +20,7 @@
   "hp": { "average": 52, "formula": "8d10 + 8" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+4", "stealth": "+5" },
+  "skill": { "perception": 4, "stealth": 5 },
   "trait": [
     {
       "name": "Hold Breath",

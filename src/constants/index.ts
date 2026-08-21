@@ -1,5 +1,7 @@
 import type { Aligmnent, MonsterRating, Size, Speed, Spell } from '~types'
 
+export const ABILITY_BASE = 10
+
 export const ALIGNMENTS = {
   C: 'Chaotic',
   E: 'Evil',

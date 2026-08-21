@@ -14,6 +14,7 @@
   "hp": { "average": 32, "formula": "5d10 + 5" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Adhesive Blossoms",

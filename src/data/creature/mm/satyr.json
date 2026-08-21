@@ -31,8 +31,9 @@
   "alignment": ["C", "N"],
   "cr": 0.5,
   "hp": { "average": 31, "formula": "7d8" },
+  "languages": ["Common", "Elvish", "Sylvan"],
   "size": "M",
-  "skill": { "perception": "+2", "performance": "+6", "stealth": "+5" },
+  "skill": { "perception": 2, "performance": 6, "stealth": 5 },
   "trait": [
     {
       "name": "Magic Resistance",

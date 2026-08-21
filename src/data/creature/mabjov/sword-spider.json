@@ -26,7 +26,7 @@
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "senses": ["tremorsense 60 ft."],
   "size": "L",
-  "skill": { "stealth": "+7" },
+  "skill": { "stealth": 7 },
   "trait": [
     {
       "name": "Spider Climb",

@@ -13,8 +13,10 @@ import type {
   Monster,
   MonsterRatings,
   Monsters,
+  MonsterSkills,
   MonsterType,
-  Size
+  Size,
+  Skills
 } from '~types'
 import {
   getCircleFormsCR,
@@ -59,6 +61,12 @@ const parseRating = (
 }
 
 const parseSize = (sizes: Size[]) => sizes.at(0)
+
+const parseSkill = (skills: MonsterSkills = {}) =>
+  Object.entries(skills).reduce<Skills>(
+    (skills, [skill, modifier]) => ({ ...skills, [skill]: parseInt(modifier) }),
+    {}
+  )
 
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
@@ -118,14 +126,15 @@ const filterMonsters = (
       ac,
       action,
       alignment,
+      bonus,
       cha,
       con,
       dex,
       hp,
       int,
+      languages,
       name,
       senses,
-      skill,
       str,
       trait,
       wis
@@ -144,15 +153,18 @@ const filterMonsters = (
       spell
     }
     const details: CreatureDetails = {
+      // TODO: immunities + resistances
       ability: { str, dex, con, int, wis, cha },
       ac,
       action,
       alignment,
+      bonus,
       cr,
       hp,
+      languages,
       senses,
       size: parseSize(monster.size),
-      skill,
+      skill: parseSkill(monster.skill),
       trait,
       name,
       source,

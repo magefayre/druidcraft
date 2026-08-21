@@ -12,8 +12,10 @@
   "alignment": ["L", "E"],
   "cr": 1,
   "hp": { "average": 18, "formula": "4d6 + 4" },
+  "languages": ["Sylvan"],
   "senses": ["darkvision 30 ft."],
   "size": "S",
+  "skill": {},
   "trait": [
     {
       "name": "Agile Flier",

@@ -27,11 +27,21 @@
     }
   ],
   "alignment": ["C", "N"],
+  "bonus": [
+    {
+      "name": "Command Hair",
+      "entries": [
+        "The korred has at least one 50-foot-long rope woven out of its hair. The korred commands one such rope within 30 feet of it to move up to 20 feet and entangle a Large or smaller creature that the korred can see. The target must succeed on a {@dc 13} Dexterity saving throw or become {@condition grappled} by the rope (escape {@dc 13}). Until this grapple ends, the target is {@condition restrained}. The korred can use a bonus action to release the target, which is also freed if the korred dies or becomes {@condition incapacitated}.",
+        "A rope of korred hair has AC 20 and 20 hit points. It regains 1 hit point at the start of each of the korred's turns while the rope has at least 1 hit point and the korred is alive. If the rope drops to 0 hit points, it is destroyed."
+      ]
+    }
+  ],
   "cr": 7,
   "hp": { "average": 93, "formula": "11d6 + 55" },
+  "languages": ["Dwarvish", "Gnomish", "Sylvan", "Terran", "Undercommon"],
   "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
   "size": "S",
-  "skill": { "athletics": "+9", "perception": "+5", "stealth": "+5" },
+  "skill": { "athletics": 9, "perception": 5, "stealth": 5 },
   "trait": [
     {
       "name": "Stone Camouflage",

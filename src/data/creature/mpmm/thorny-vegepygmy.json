@@ -14,7 +14,7 @@
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "perception": "+4", "stealth": "+3" },
+  "skill": { "perception": 4, "stealth": 3 },
   "trait": [
     {
       "name": "Plant Camouflage",

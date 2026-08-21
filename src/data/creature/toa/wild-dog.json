@@ -13,7 +13,7 @@
   "cr": 0,
   "hp": { "average": 3, "formula": "1d6" },
   "size": "S",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Keen Hearing and Smell",

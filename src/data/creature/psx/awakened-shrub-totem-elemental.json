@@ -12,7 +12,9 @@
   "alignment": ["U"],
   "cr": 0,
   "hp": { "average": 10, "formula": "3d6" },
+  "languages": ["one language known by its creator"],
   "size": "S",
+  "skill": {},
   "trait": [
     {
       "name": "False Appearance",

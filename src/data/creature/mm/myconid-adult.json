@@ -33,6 +33,7 @@
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "senses": ["darkvision 120 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Distress Spores",

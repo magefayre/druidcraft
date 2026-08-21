@@ -21,6 +21,7 @@
   "hp": { "average": 39, "formula": "6d10 + 6" },
   "senses": ["darkvision 30 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Amphibious",

@@ -26,6 +26,7 @@
   "cr": 1,
   "hp": { "average": 28, "formula": "3d10 + 12" },
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Magic Resistance",

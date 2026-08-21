@@ -29,8 +29,10 @@
   "alignment": ["N"],
   "cr": 7,
   "hp": { "average": 123, "formula": "19d8 + 38" },
+  "languages": ["Ignan", "one language of its creator's choice"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Illumination",

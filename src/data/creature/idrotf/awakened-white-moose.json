@@ -31,7 +31,9 @@
   "alignment": ["N", "E"],
   "cr": 3,
   "hp": { "average": 68, "formula": "8d10 + 24" },
+  "languages": ["Druidic"],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Charge",

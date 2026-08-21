@@ -13,7 +13,7 @@
   "cr": 0,
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "size": "T",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Keen Sight",

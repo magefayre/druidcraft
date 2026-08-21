@@ -21,7 +21,7 @@
   "hp": { "average": 66, "formula": "7d12 + 21" },
   "senses": ["darkvision 60 ft."],
   "size": "H",
-  "skill": { "perception": "+5", "stealth": "+6" },
+  "skill": { "perception": 5, "stealth": 6 },
   "trait": [
     {
       "name": "Pack Tactics",

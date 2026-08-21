@@ -32,6 +32,7 @@
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 30 ft."],
   "size": "M",
+  "skill": {},
   "name": "Tri-flower Frond",
   "source": "ToA",
   "speed": { "walk": 5 },

@@ -25,14 +25,10 @@
   "alignment": [{ "special": "neutral oozy" }],
   "cr": 3,
   "hp": { "formula": "11d8 + 33", "average": 82 },
+  "languages": ["Common", "Draconic", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": {
-    "arcana": "+3",
-    "deception": "+4",
-    "perception": "+4",
-    "stealth": "+3"
-  },
+  "skill": { "arcana": 3, "deception": 4, "perception": 4, "stealth": 3 },
   "trait": [
     {
       "name": "Amorphous",

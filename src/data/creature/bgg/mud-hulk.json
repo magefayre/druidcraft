@@ -19,7 +19,9 @@
   "alignment": ["C", "E"],
   "cr": 3,
   "hp": { "average": 68, "formula": "8d10 + 24" },
+  "languages": ["Giant", "Terran"],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Amorphous",

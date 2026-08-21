@@ -16,13 +16,14 @@
   "alignment": ["C", "E"],
   "cr": 1,
   "hp": { "average": 10, "formula": "3d4 + 3" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "T",
   "skill": {
-    "acrobatics": "+8",
-    "sleight of hand": "+8",
-    "stealth": "+8",
-    "perception": "+5"
+    "acrobatics": 8,
+    "sleight of hand": 8,
+    "stealth": 8,
+    "perception": 5
   },
   "trait": [
     {

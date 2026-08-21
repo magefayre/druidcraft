@@ -18,9 +18,10 @@
   "alignment": ["N", "E"],
   "cr": 0.25,
   "hp": { "average": 27, "formula": "6d6 + 6" },
+  "languages": ["Aquan", "Terran"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "stealth": "+3" },
+  "skill": { "stealth": 3 },
   "trait": [
     {
       "name": "Death Burst",

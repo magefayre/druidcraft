@@ -10,10 +10,19 @@
     }
   ],
   "alignment": ["U"],
+  "bonus": [
+    {
+      "name": "Attach to Hull",
+      "entries": [
+        "The leech attaches itself to a ship's hull in its space, dealing 2 ({@damage 1d4}) piercing damage to the ship (ignoring the ship's damage threshold). This damage can't be repaired until the leech is scraped off the hull. While the leech is attached, its speed is 0, and it can detach itself as a bonus action. As an action, a creature within reach of the leech can to try to scrape it off the hull, doing so with a successful {@dc 18} Strength check. On a failed check, the action is wasted as the leech remains attached to the hull. Removing the leech in this way deals no damage to the leech or the ship."
+      ]
+    }
+  ],
   "cr": 1,
   "hp": { "average": 27, "formula": "5d4 + 15" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
+  "skill": {},
   "trait": [
     {
       "name": "Spelljammer Overload",

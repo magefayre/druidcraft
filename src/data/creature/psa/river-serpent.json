@@ -20,7 +20,7 @@
   "hp": { "average": 60, "formula": "8d12 + 8" },
   "senses": ["blindsight 10 ft."],
   "size": "H",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "name": "River Serpent",
   "source": "PSA",
   "speed": { "walk": 30, "swim": 30 },

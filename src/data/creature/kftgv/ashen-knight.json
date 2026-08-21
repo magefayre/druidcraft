@@ -35,7 +35,9 @@
   "alignment": ["L", "E"],
   "cr": 3,
   "hp": { "average": 52, "formula": "8d8 + 16" },
+  "languages": ["any one language (usually Common)"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Brave",

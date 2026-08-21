@@ -24,8 +24,9 @@
   "alignment": ["N"],
   "cr": 0.25,
   "hp": { "average": 18, "formula": "4d6 + 4" },
+  "languages": ["understands the languages of its creator but can't speak"],
   "size": "S",
-  "skill": { "performance": "+4" },
+  "skill": { "performance": 4 },
   "trait": [
     {
       "name": "Death Burst",

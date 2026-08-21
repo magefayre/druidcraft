@@ -22,8 +22,10 @@
   "alignment": ["N", "E"],
   "cr": 5,
   "hp": { "average": 66, "formula": "7d8 + 35" },
+  "languages": ["Ignan", "Terran"],
   "senses": ["darkvision 240 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Explode",

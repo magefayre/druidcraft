@@ -43,9 +43,10 @@
   "alignment": ["L", "G"],
   "cr": 9,
   "hp": { "average": 143, "formula": "22d8 + 44" },
+  "languages": ["Common", "Elvish", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "arcana": "+8", "nature": "+8", "perception": "+9" },
+  "skill": { "arcana": 8, "nature": 8, "perception": 9 },
   "trait": [
     {
       "name": "Magic Resistance",

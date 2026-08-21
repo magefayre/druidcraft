@@ -14,7 +14,7 @@
   "hp": { "average": 9, "formula": "2d8" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "perception": "+3", "stealth": "+5" },
+  "skill": { "perception": 3, "stealth": 5 },
   "trait": [
     {
       "name": "Keen Hearing and Smell",

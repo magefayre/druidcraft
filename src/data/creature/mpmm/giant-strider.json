@@ -19,6 +19,7 @@
   "cr": 1,
   "hp": { "average": 22, "formula": "3d10 + 6" },
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Fire Absorption",

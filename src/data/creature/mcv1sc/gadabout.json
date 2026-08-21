@@ -24,6 +24,7 @@
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 10 ft. (blind beyond this radius)"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Air Envelope",

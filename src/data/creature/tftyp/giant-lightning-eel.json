@@ -21,6 +21,7 @@
   "hp": { "average": 42, "formula": "5d10 + 15" },
   "senses": ["blindsight 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Water Breathing",

@@ -10,11 +10,20 @@
     }
   ],
   "alignment": ["N", "E"],
+  "bonus": [
+    {
+      "name": "Shadow Teleport {@recharge 5}",
+      "entries": [
+        "The meenlock teleports to an unoccupied space within 30 feet of it, provided that both the space it's teleporting from and its destination are in dim light or darkness. The destination need not be within line of sight."
+      ]
+    }
+  ],
   "cr": 2,
   "hp": { "average": 31, "formula": "7d6 + 7" },
+  "languages": ["telepathy 120 ft."],
   "senses": ["darkvision 120 ft."],
   "size": "S",
-  "skill": { "perception": "+4", "stealth": "+6", "survival": "+2" },
+  "skill": { "perception": 4, "stealth": 6, "survival": 2 },
   "trait": [
     {
       "name": "Fear Aura",

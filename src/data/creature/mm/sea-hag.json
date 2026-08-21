@@ -32,8 +32,10 @@
   "alignment": ["C", "E"],
   "cr": 2,
   "hp": { "average": 52, "formula": "7d8 + 21" },
+  "languages": ["Aquan", "Common", "Giant"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
     {

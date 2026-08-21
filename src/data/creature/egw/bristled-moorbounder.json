@@ -26,6 +26,7 @@
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Bladed Hide",

@@ -14,7 +14,7 @@
   "hp": { "average": 13, "formula": "3d8" },
   "senses": ["blindsight 30 ft."],
   "size": "M",
-  "skill": { "stealth": "+4" },
+  "skill": { "stealth": 4 },
   "trait": [
     { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
   ],

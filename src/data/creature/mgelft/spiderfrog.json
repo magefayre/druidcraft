@@ -14,7 +14,7 @@
   "hp": { "formula": "2d8 + 4", "average": 13 },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+3", "stealth": "+7" },
+  "skill": { "perception": 3, "stealth": 7 },
   "trait": [
     {
       "name": "Amphibious",

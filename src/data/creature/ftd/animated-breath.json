@@ -17,10 +17,20 @@
     }
   ],
   "alignment": ["N", "E"],
+  "bonus": [
+    {
+      "name": "Lightning Burst (Lightning Form Only)",
+      "entries": [
+        "The animated breath magically teleports to an unoccupied space it can see within 30 feet of it. Each creature within 5 feet of the animated breath after it teleports takes 3 ({@damage 1d6}) lightning damage."
+      ]
+    }
+  ],
   "cr": 6,
   "hp": { "average": 95, "formula": "10d10 + 40" },
+  "languages": ["understands Draconic but can't speak"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Chromatic Form",

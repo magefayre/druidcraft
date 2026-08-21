@@ -22,8 +22,10 @@
   "alignment": ["C", "E"],
   "cr": 2,
   "hp": { "average": 45, "formula": "6d10 + 12" },
+  "languages": ["Abyssal", "Undercommon"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Mushroom Portal",

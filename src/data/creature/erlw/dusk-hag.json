@@ -29,9 +29,10 @@
   "alignment": ["N", "E"],
   "cr": 6,
   "hp": { "average": 82, "formula": "15d8 + 15" },
+  "languages": ["Common", "Giant", "Infernal"],
   "senses": ["blindsight 60 ft."],
   "size": "M",
-  "skill": { "deception": "+7", "insight": "+6", "perception": "+6" },
+  "skill": { "deception": 7, "insight": 6, "perception": 6 },
   "trait": [
     {
       "name": "Magic Resistance",

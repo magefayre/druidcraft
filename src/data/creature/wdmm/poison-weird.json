@@ -19,8 +19,10 @@
   "alignment": ["N"],
   "cr": 4,
   "hp": { "average": 58, "formula": "9d10 + 9" },
+  "languages": ["understands Aquan but doesn't speak"],
   "senses": ["blindsight 30 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Invisible in Water",

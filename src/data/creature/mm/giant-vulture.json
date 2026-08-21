@@ -24,8 +24,9 @@
   "alignment": ["N", "E"],
   "cr": 1,
   "hp": { "average": 22, "formula": "3d10 + 6" },
+  "languages": ["understands Common but can't speak"],
   "size": "L",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Keen Sight and Smell",

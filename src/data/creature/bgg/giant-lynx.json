@@ -19,9 +19,10 @@
   "alignment": ["N"],
   "cr": 0.5,
   "hp": { "average": 22, "formula": "4d8 + 4" },
+  "languages": ["Giant", "Sylvan"],
   "senses": ["truesight 60 ft."],
   "size": "M",
-  "skill": { "perception": "+6", "stealth": "+6" },
+  "skill": { "perception": 6, "stealth": 6 },
   "trait": [
     {
       "name": "Lynx's Sight (1/Day)",

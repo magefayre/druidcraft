@@ -25,14 +25,10 @@
   "alignment": ["N"],
   "cr": 4,
   "hp": { "average": 71, "formula": "13d8 + 13" },
+  "languages": ["all"],
   "senses": ["truesight 60 ft."],
   "size": "M",
-  "skill": {
-    "arcana": "+5",
-    "deception": "+6",
-    "history": "+5",
-    "perception": "+6"
-  },
+  "skill": { "arcana": 5, "deception": 6, "history": 5, "perception": 6 },
   "trait": [
     {
       "name": "Legendary Resistance (2/Day)",

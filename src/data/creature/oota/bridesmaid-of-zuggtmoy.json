@@ -25,8 +25,10 @@
   "alignment": ["C", "E"],
   "cr": 0.125,
   "hp": { "average": 22, "formula": "5d8" },
+  "languages": ["understands Abyssal but can't speak"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Fungus Stride",

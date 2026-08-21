@@ -26,6 +26,7 @@
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "senses": ["blindsight 60 ft."],
   "size": "L",
+  "skill": {},
   "name": "Giant Scorpion",
   "source": "MM",
   "speed": { "walk": 40 },

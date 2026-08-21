@@ -14,7 +14,7 @@
   "hp": { "average": 3, "formula": "1d6" },
   "senses": ["darkvision 30 ft."],
   "size": "S",
-  "skill": { "perception": "+4", "stealth": "+5" },
+  "skill": { "perception": 4, "stealth": 5 },
   "trait": [
     {
       "name": "Keen Senses",

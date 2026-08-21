@@ -24,8 +24,10 @@
   "alignment": ["C", "E"],
   "cr": 2,
   "hp": { "average": 63, "formula": "7d8 + 21" },
+  "languages": ["Terran"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "False Appearance",

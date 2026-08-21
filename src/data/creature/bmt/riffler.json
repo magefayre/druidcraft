@@ -35,14 +35,10 @@
   "alignment": ["C", "N"],
   "cr": 5,
   "hp": { "average": 90, "formula": "20d6 + 20" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": {
-    "arcana": "+6",
-    "insight": "+5",
-    "sleight of hand": "+9",
-    "stealth": "+6"
-  },
+  "skill": { "arcana": 6, "insight": 5, "sleight of hand": 9, "stealth": 6 },
   "trait": [
     {
       "name": "Card Sense",

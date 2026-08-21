@@ -14,6 +14,7 @@
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["blindsight 10 ft."],
   "size": "T",
+  "skill": {},
   "name": "Poisonous Snake",
   "source": "MM",
   "speed": { "walk": 30, "swim": 30 },

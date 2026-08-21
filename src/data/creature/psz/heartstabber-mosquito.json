@@ -15,6 +15,7 @@
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["darkvision 60 ft."],
   "size": "T",
+  "skill": {},
   "name": "Heartstabber Mosquito",
   "source": "PSZ",
   "speed": { "walk": 10, "fly": 40 },

@@ -13,7 +13,7 @@
   "cr": 0.25,
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "size": "L",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "name": "Hadrosaurus",
   "source": "MPMM",
   "speed": { "walk": 40 },

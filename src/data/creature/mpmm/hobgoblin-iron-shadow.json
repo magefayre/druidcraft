@@ -38,9 +38,10 @@
   "alignment": ["L", "N"],
   "cr": 2,
   "hp": { "average": 32, "formula": "5d8 + 10" },
+  "languages": ["Common", "Goblin"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "acrobatics": "+5", "athletics": "+4", "stealth": "+5" },
+  "skill": { "acrobatics": 5, "athletics": 4, "stealth": 5 },
   "trait": [
     {
       "name": "Unarmored Defense",

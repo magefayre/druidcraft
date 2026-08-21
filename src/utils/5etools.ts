@@ -1,6 +1,7 @@
 import titleize from 'titleize'
 
 import {
+  ABILITY_BASE,
   ALIGNMENTS,
   CR,
   CR_LABELS,
@@ -17,7 +18,9 @@ import {
 import SOURCES from '~data/sources.json' with { type: 'json' }
 import type {
   Aligmnent,
+  ArmorClass,
   Creature,
+  Health,
   MonsterType,
   Size,
   Speed,
@@ -25,10 +28,24 @@ import type {
   Spell
 } from '~types'
 
+export const formatAC = (ac: ArmorClass[]) => JSON.stringify(ac)
+
 export const formatAligment = (alignment: Aligmnent[]) =>
   alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? ALIGNMENTS.U
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
+
+export const formatHP = (hp: Health) => {
+  if ('special' in hp) return hp.special
+
+  return [hp.average, `(${hp.formula})`].join(' ')
+}
+
+export const formatPB = (level: number) =>
+  formatModifier(Math.max(2, 1 + Math.round(level / 4)))
+
+export const formatModifier = (value: number) =>
+  [value > 0 && '+', value].filter(Boolean).join('')
 
 export const formatSize = (size: Size) => SIZES[size]
 
@@ -61,6 +78,9 @@ export const formatType = (type: MonsterType) => titleize(type)
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
 
+export const getModifier = (ability: number) =>
+  Math.floor((ability - ABILITY_BASE) / 2)
+
 export const getMaxCR = ({
   level,
   circleForms = false
@@ -76,19 +96,15 @@ export const getMaxCR = ({
   return null
 }
 
+export const getPassivePerception = (wis: number, perception: number) =>
+  ABILITY_BASE + (perception ?? getModifier(wis))
+
 export const getSpellCR = (spell?: Spell, level?: number) => {
   if (typeof spell?.upcast === 'boolean' && level) return level
   if (typeof spell?.maxCR === 'boolean') return spell?.level
 
   return spell?.maxCR
 }
-
-export const getTypeCR = (type: MonsterType) =>
-  Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
-    const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
-
-    return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
-  }, undefined)
 
 export const getSummonLimit = (cr: number) => {
   const min = Math.min(...(Object.keys(CR_LIMITS) as unknown as number[]))
@@ -97,6 +113,13 @@ export const getSummonLimit = (cr: number) => {
 
   return CR_LIMITS[cr]
 }
+
+export const getTypeCR = (type: MonsterType) =>
+  Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
+    const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
+
+    return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
+  }, undefined)
 
 export const isCoreSource = (source: string) =>
   Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&

@@ -18,9 +18,10 @@
   "alignment": ["N", "E"],
   "cr": 4,
   "hp": { "average": 51, "formula": "6d10 + 18" },
+  "languages": ["understands Common, Elvish and Sylvan but can't speak"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+5" },
+  "skill": { "perception": 5 },
   "trait": [
     {
       "name": "Sunlight Banishment",

@@ -19,6 +19,7 @@
   "cr": 5,
   "hp": { "average": 95, "formula": "10d12 + 30" },
   "size": "H",
+  "skill": {},
   "trait": [
     {
       "name": "Trampling Charge",

@@ -20,6 +20,7 @@
   "hp": { "average": 60, "formula": "11d8 + 11" },
   "senses": ["blindsight 30 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "False Appearance",

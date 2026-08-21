@@ -20,6 +20,7 @@
   "hp": { "average": 13, "formula": "2d10 + 2" },
   "senses": ["blindsight 10 ft."],
   "size": "L",
+  "skill": {},
   "name": "Constrictor Snake",
   "source": "MM",
   "speed": { "walk": 30, "swim": 30 },

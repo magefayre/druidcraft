@@ -13,7 +13,7 @@
   "cr": 0.25,
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "size": "M",
-  "skill": { "perception": "+4", "survival": "+4" },
+  "skill": { "perception": 4, "survival": 4 },
   "name": "Space Swine",
   "source": "BAM",
   "speed": { "walk": 40, "fly": 40 },

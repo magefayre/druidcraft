@@ -25,9 +25,10 @@
   "alignment": ["N", "E"],
   "cr": 0.25,
   "hp": { "average": 22, "formula": "5d6 + 5" },
+  "languages": ["Auran", "Ignan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+2", "stealth": "+4" },
+  "skill": { "perception": 2, "stealth": 4 },
   "trait": [
     {
       "name": "Death Burst",

@@ -36,11 +36,46 @@
     }
   ],
   "alignment": ["C", "N"],
+  "bonus": [
+    {
+      "name": "Boggle Oil",
+      "entries": [
+        "The boggle excretes nonflammable oil from its pores, giving itself one of the following benefits of its choice until it uses this bonus action again:",
+        {
+          "type": "list",
+          "style": "list-hang-notitle",
+          "items": [
+            {
+              "name": "Slippery Oil",
+              "type": "item",
+              "entries": [
+                "The boggle has advantage on Dexterity ({@skill Acrobatics}) checks made to escape bonds and end grapples, and it can move through openings large enough for a Tiny creature without squeezing."
+              ]
+            },
+            {
+              "name": "Sticky Oil",
+              "type": "item",
+              "entries": [
+                "The boggle has advantage on Strength ({@skill Athletics}) checks made to grapple and any ability check made to maintain a hold on another creature, a surface, or an object. The boggle can also climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dimensional Rift",
+      "entries": [
+        "The boggle creates an {@condition invisible} and immobile rift within an opening or frame it can see within 5 feet of it, provided that the space is no bigger than 10 feet on any side. The dimensional rift bridges the distance between that space and a point within 30 feet of it that the boggle can see or specify by distance and direction (such as \"30 feet straight up\"). While next to the rift, the boggle can see through it and is considered to be next to the destination as well, and anything the boggle puts through the rift (including a portion of its body) emerges at the destination. Only the boggle can use the rift, and it lasts until the end of the boggle's next turn."
+      ]
+    }
+  ],
   "cr": 0.125,
   "hp": { "average": 18, "formula": "4d6 + 4" },
+  "languages": ["Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+5", "sleight of hand": "+6", "stealth": "+6" },
+  "skill": { "perception": 5, "sleight of hand": 6, "stealth": 6 },
   "name": "Boggle",
   "source": "MPMM",
   "speed": { "walk": 30, "climb": 30 },

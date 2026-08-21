@@ -13,7 +13,7 @@
   "cr": 2,
   "hp": { "average": 30, "formula": "4d12 + 4" },
   "size": "H",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "trait": [
     {
       "name": "Flyby",

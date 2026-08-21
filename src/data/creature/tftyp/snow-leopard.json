@@ -20,7 +20,7 @@
   "hp": { "average": 37, "formula": "5d10 + 10" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+3", "stealth": "+6" },
+  "skill": { "perception": 3, "stealth": 6 },
   "trait": [
     {
       "name": "Keen Smell",

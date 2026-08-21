@@ -13,6 +13,7 @@
   "cr": 2,
   "hp": { "average": 38, "formula": "4d10 + 16" },
   "size": "L",
+  "skill": {},
   "name": "Aurochs",
   "source": "MPMM",
   "speed": { "walk": 50 },

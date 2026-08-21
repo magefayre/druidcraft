@@ -13,6 +13,7 @@
   "cr": 4,
   "hp": { "average": 76, "formula": "8d12 + 24" },
   "size": "H",
+  "skill": {},
   "name": "Stegosaurus",
   "source": "MPMM",
   "speed": { "walk": 40 },

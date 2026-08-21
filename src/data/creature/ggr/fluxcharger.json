@@ -24,8 +24,10 @@
   "alignment": ["C", "N"],
   "cr": 7,
   "hp": { "average": 60, "formula": "8d10 + 16" },
+  "languages": ["Draconic"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Amplify Lightning",

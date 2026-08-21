@@ -25,9 +25,10 @@
   "alignment": ["N", "G"],
   "cr": 4,
   "hp": { "average": 82, "formula": "11d6 + 44" },
+  "languages": ["Common", "Terran"],
   "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
   "size": "S",
-  "skill": { "athletics": "+6", "perception": "+4", "survival": "+4" },
+  "skill": { "athletics": 6, "perception": 4, "survival": 4 },
   "trait": [
     {
       "name": "Magic Resistance",

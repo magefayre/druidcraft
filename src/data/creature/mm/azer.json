@@ -19,7 +19,9 @@
   "alignment": ["L", "N"],
   "cr": 2,
   "hp": { "average": 39, "formula": "6d8 + 12" },
+  "languages": ["Ignan"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Heated Body",

@@ -18,8 +18,10 @@
   ],
   "cr": 0.5,
   "hp": { "average": 26, "formula": "4d8 + 8" },
+  "languages": ["Deep Speech", "the languages the creature knew in life"],
   "senses": ["blindsight 30 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Semblance of Life",

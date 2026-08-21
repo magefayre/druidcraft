@@ -13,6 +13,7 @@
   "cr": 0.25,
   "hp": { "average": 9, "formula": "2d8" },
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Quickness {@recharge 5}",

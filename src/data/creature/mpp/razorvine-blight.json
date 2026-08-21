@@ -22,9 +22,10 @@
   "alignment": ["N", "E"],
   "cr": 1,
   "hp": { "average": 27, "formula": "5d8 + 5" },
+  "languages": ["understands Common but can't speak"],
   "senses": ["blindsight 60 ft. (can't see beyond this radius)"],
   "size": "M",
-  "skill": { "stealth": "+4" },
+  "skill": { "stealth": 4 },
   "trait": [
     {
       "name": "False Appearance",

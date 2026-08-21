@@ -19,7 +19,7 @@
   "cr": 2,
   "hp": { "average": 52, "formula": "7d10 + 14" },
   "size": "L",
-  "skill": { "perception": "+3", "stealth": "+6" },
+  "skill": { "perception": 3, "stealth": 6 },
   "trait": [
     {
       "name": "Keen Smell",

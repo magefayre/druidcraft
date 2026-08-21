@@ -23,9 +23,10 @@
   "alignment": ["N"],
   "cr": 6,
   "hp": { "average": 104, "formula": "16d8 + 32" },
+  "languages": ["Auran", "understands Common but doesn't speak it"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "perception": "+8", "stealth": "+10" },
+  "skill": { "perception": 8, "stealth": 10 },
   "trait": [
     {
       "name": "Invisibility",

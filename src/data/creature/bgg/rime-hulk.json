@@ -22,7 +22,9 @@
   "alignment": ["N", "E"],
   "cr": 5,
   "hp": { "average": 85, "formula": "9d10 + 36" },
+  "languages": ["Aquan", "Giant"],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Death Burst",

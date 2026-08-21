@@ -35,14 +35,10 @@
   "alignment": ["C", "E"],
   "cr": 7,
   "hp": { "average": 91, "formula": "14d8 + 28" },
+  "languages": ["Auran", "Common", "Giant"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": {
-    "nature": "+4",
-    "perception": "+4",
-    "stealth": "+6",
-    "survival": "+4"
-  },
+  "skill": { "nature": 4, "perception": 4, "stealth": 6, "survival": 4 },
   "trait": [
     {
       "name": "Control Weather (1/Day)",

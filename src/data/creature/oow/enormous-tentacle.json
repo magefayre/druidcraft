@@ -14,7 +14,7 @@
   "hp": { "average": 60, "formula": "8d12 + 8" },
   "senses": ["blindsight 10 ft."],
   "size": "H",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "trait": [
     {
       "name": "Reach",

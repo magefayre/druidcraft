@@ -13,7 +13,7 @@
   "cr": 1,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "size": "L",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Rampage",

@@ -20,6 +20,7 @@
   "hp": { "average": 7, "formula": "2d6" },
   "senses": ["darkvision 60 ft."],
   "size": "S",
+  "skill": {},
   "trait": [
     {
       "name": "Water Breathing",

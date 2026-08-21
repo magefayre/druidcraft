@@ -37,9 +37,10 @@
   "alignment": ["C", "N"],
   "cr": 3,
   "hp": { "average": 63, "formula": "14d8" },
+  "languages": ["Common", "Elvish", "Sylvan"],
   "senses": ["darkvision 60ft."],
   "size": "M",
-  "skill": { "performance": "+5", "persuasion": "+5", "stealth": "+6" },
+  "skill": { "performance": 5, "persuasion": 5, "stealth": 6 },
   "trait": [
     {
       "name": "Amphibious",

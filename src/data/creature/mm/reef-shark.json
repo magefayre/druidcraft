@@ -14,7 +14,7 @@
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "senses": ["blindsight 30 ft."],
   "size": "M",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "trait": [
     {
       "name": "Pack Tactics",

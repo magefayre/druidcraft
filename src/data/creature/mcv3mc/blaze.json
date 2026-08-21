@@ -18,6 +18,7 @@
   "hp": { "average": 75, "formula": "10d8 + 30" },
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Blaze Rod",

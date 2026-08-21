@@ -29,8 +29,9 @@
   "alignment": ["C", "N"],
   "cr": 6,
   "hp": { "average": 94, "formula": "9d10 + 45" },
+  "languages": ["Auran", "Giant"],
   "size": "L",
-  "skill": { "perception": "+4", "stealth": "+8" },
+  "skill": { "perception": 4, "stealth": 8 },
   "trait": [
     {
       "name": "Air Form",

@@ -13,6 +13,7 @@
   "cr": 0.5,
   "hp": { "average": 13, "formula": "3d8" },
   "size": "M",
+  "skill": {},
   "name": "Giant Wasp",
   "source": "MM",
   "speed": { "walk": 10, "fly": 50 },

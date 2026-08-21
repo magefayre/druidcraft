@@ -18,9 +18,10 @@
   "alignment": ["U"],
   "cr": 4,
   "hp": { "average": 142, "formula": "15d10 + 60" },
+  "languages": ["understands Elvish"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Raking Charge",

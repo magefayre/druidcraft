@@ -29,8 +29,10 @@
   "alignment": ["N", "E"],
   "cr": 1,
   "hp": { "average": 33, "formula": "6d8 + 6" },
+  "languages": ["Draconic", "Ignan"],
   "senses": ["darkvision 120 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Amphibious",

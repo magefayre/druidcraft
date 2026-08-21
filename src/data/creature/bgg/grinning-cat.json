@@ -29,11 +29,26 @@
     }
   ],
   "alignment": ["C", "N"],
+  "bonus": [
+    {
+      "name": "Fade Back",
+      "entries": [
+        "The grinning cat becomes visible or makes part of its body visible. Any equipment the cat wears or carries on a visible part of its body also becomes visible."
+      ]
+    },
+    {
+      "name": "Grinning Step",
+      "entries": [
+        "The grinning cat teleports, along with any equipment it is wearing or carrying, up to 60 feet to an unoccupied space it can see."
+      ]
+    }
+  ],
   "cr": 1,
   "hp": { "average": 45, "formula": "7d10 + 7" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+4", "stealth": "+6" },
+  "skill": { "perception": 4, "stealth": 6 },
   "trait": [
     {
       "name": "Magic Resistance",

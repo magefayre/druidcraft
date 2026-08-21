@@ -20,7 +20,7 @@
   "cr": 0.5,
   "hp": { "average": 19, "formula": "3d8 + 6" },
   "size": "M",
-  "skill": { "athletics": "+5", "perception": "+3" },
+  "skill": { "athletics": 5, "perception": 3 },
   "name": "Ape",
   "source": "MM",
   "speed": { "walk": 30, "climb": 30 },

@@ -30,9 +30,10 @@
   "alignment": ["N"],
   "cr": 1,
   "hp": { "average": 22, "formula": "5d8" },
+  "languages": ["Elvish", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": { "perception": "+4", "stealth": "+5" },
+  "skill": { "perception": 4, "stealth": 5 },
   "trait": [
     {
       "name": "Magic Resistance",

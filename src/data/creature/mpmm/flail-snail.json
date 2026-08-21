@@ -30,6 +30,7 @@
   "hp": { "average": 52, "formula": "5d10 + 25" },
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Antimagic Shell",

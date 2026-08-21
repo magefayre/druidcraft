@@ -29,9 +29,10 @@
   "alignment": ["C", "E"],
   "cr": 3,
   "hp": { "average": 45, "formula": "6d6 + 24" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "athletics": "+6", "perception": "+3" },
+  "skill": { "athletics": 6, "perception": 3 },
   "trait": [
     {
       "name": "Iron Boots",

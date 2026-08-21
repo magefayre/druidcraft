@@ -32,14 +32,10 @@
   "alignment": ["N", "E"],
   "cr": 3,
   "hp": { "average": 82, "formula": "11d8 + 33" },
+  "languages": ["Common", "Draconic", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": {
-    "arcana": "+3",
-    "deception": "+4",
-    "perception": "+4",
-    "stealth": "+3"
-  },
+  "skill": { "arcana": 3, "deception": 4, "perception": 4, "stealth": 3 },
   "trait": [
     { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
     {

@@ -31,7 +31,7 @@
   "cr": 0.5,
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "size": "S",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "name": "Frilled Deathspitter",
   "source": "PSX",
   "speed": { "walk": 40 },

@@ -23,9 +23,19 @@
     }
   ],
   "alignment": ["N", "G"],
+  "bonus": [
+    {
+      "name": "Move Soul Light",
+      "entries": [
+        "The brigganock moves its soul light up to 30 feet in any direction to an unoccupied space it can see. At the end of the current turn, the light returns to the brigganock."
+      ]
+    }
+  ],
   "cr": 0.125,
   "hp": { "average": 9, "formula": "2d4 + 4" },
+  "languages": ["Common", "Sylvan"],
   "size": "T",
+  "skill": {},
   "trait": [
     {
       "name": "Fey Ancestry",

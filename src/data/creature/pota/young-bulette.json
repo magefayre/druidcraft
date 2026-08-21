@@ -13,6 +13,7 @@
   "cr": 2,
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Charge",

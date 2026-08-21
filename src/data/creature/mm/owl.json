@@ -14,7 +14,7 @@
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 120 ft."],
   "size": "T",
-  "skill": { "perception": "+3", "stealth": "+3" },
+  "skill": { "perception": 3, "stealth": 3 },
   "trait": [
     {
       "name": "Flyby",

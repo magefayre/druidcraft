@@ -37,8 +37,9 @@
   "alignment": ["C", "N"],
   "cr": 2,
   "hp": { "average": 38, "formula": "7d8 + 7" },
+  "languages": ["Common", "Sylvan"],
   "size": "M",
-  "skill": { "perception": "+5", "performance": "+6", "stealth": "+6" },
+  "skill": { "perception": 5, "performance": 6, "stealth": 6 },
   "trait": [
     {
       "name": "Magic Resistance",

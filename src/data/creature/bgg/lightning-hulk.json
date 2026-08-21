@@ -19,8 +19,9 @@
   "alignment": ["C", "N"],
   "cr": 9,
   "hp": { "average": 102, "formula": "12d10 + 36" },
+  "languages": ["Auran", "Giant"],
   "size": "L",
-  "skill": { "perception": "+6" },
+  "skill": { "perception": 6 },
   "trait": [
     {
       "name": "Illumination",

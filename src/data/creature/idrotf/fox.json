@@ -14,7 +14,7 @@
   "hp": { "average": 2, "formula": "1d4" },
   "senses": ["darkvision 60 ft."],
   "size": "T",
-  "skill": { "perception": "+3", "stealth": "+5" },
+  "skill": { "perception": 3, "stealth": 5 },
   "trait": [
     {
       "name": "Keen Hearing",

@@ -29,8 +29,9 @@
   "alignment": ["C", "E"],
   "cr": 4,
   "hp": { "average": 49, "formula": "9d8 + 9" },
+  "languages": ["Common", "Sylvan"],
   "size": "M",
-  "skill": { "acrobatics": "+4", "athletics": "+4", "performance": "+6" },
+  "skill": { "acrobatics": 4, "athletics": 4, "performance": 6 },
   "trait": [
     {
       "name": "Invisible in Fire",

@@ -31,8 +31,9 @@
   "alignment": ["N", "E"],
   "cr": 3,
   "hp": { "average": 52, "formula": "8d8 + 16" },
+  "languages": ["Common", "Sylvan"],
   "size": "M",
-  "skill": { "deception": "+6", "intimidation": "+6" },
+  "skill": { "deception": 6, "intimidation": 6 },
   "trait": [
     {
       "name": "Corpse Stride",

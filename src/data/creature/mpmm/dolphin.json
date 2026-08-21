@@ -14,7 +14,7 @@
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "senses": ["blindsight 60 ft."],
   "size": "M",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Hold Breath",

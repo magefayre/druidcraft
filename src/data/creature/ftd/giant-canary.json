@@ -13,6 +13,7 @@
   "cr": 0.5,
   "hp": { "average": 26, "formula": "4d10 + 4" },
   "size": "L",
+  "skill": {},
   "name": "Giant Canary",
   "source": "FTD",
   "speed": { "walk": 30, "fly": 60 },

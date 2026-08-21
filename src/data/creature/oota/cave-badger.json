@@ -26,6 +26,7 @@
   "hp": { "average": 13, "formula": "2d8 + 4" },
   "senses": ["darkvision 30 ft.", "tremorsense 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Keen Smell",

@@ -23,11 +23,18 @@
     }
   ],
   "alignment": ["C", "E"],
+  "bonus": [
+    {
+      "name": "Mischievous Stealth",
+      "entries": ["The faerie takes the {@action Hide} action."]
+    }
+  ],
   "cr": 1,
   "hp": { "average": 22, "formula": "5d6 + 5" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "perception": "+3", "stealth": "+7" },
+  "skill": { "perception": 3, "stealth": 7 },
   "name": "Faerie Pest",
   "source": "MCV4EC",
   "speed": { "walk": 30, "fly": 30 },

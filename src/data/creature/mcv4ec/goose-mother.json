@@ -40,7 +40,7 @@
   "hp": { "average": 114, "formula": "12d12 + 36" },
   "senses": ["darkvision 60 ft."],
   "size": "H",
-  "skill": { "insight": "+7", "investigation": "+4", "perception": "+10" },
+  "skill": { "insight": 7, "investigation": 4, "perception": 10 },
   "trait": [
     {
       "name": "Legendary Resistance (3/Day)",

@@ -23,8 +23,10 @@
   "alignment": ["N"],
   "cr": 5,
   "hp": { "average": 90, "formula": "12d10 + 24" },
+  "languages": ["Auran"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Air Form",

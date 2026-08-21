@@ -19,8 +19,13 @@
   "alignment": ["A"],
   "cr": 0,
   "hp": { "average": 10, "formula": "3d6" },
+  "languages": [
+    "Common",
+    "Dohwar",
+    "telepathy 30 ft. (see also Merging below)"
+  ],
   "size": "S",
-  "skill": { "deception": "+3", "insight": "+4", "persuasion": "+3" },
+  "skill": { "deception": 3, "insight": 4, "persuasion": 3 },
   "trait": [
     {
       "name": "Merging",

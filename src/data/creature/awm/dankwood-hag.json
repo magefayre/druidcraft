@@ -32,6 +32,7 @@
   "cr": 3,
   "hp": { "special": "82" },
   "size": "M",
+  "skill": {},
   "trait": [
     { "name": "Amphibious", "entries": ["The hag can breathe air and water."] },
     {

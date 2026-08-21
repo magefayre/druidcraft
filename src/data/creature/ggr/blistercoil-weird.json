@@ -12,8 +12,10 @@
   "alignment": ["C", "N"],
   "cr": 4,
   "hp": { "average": 45, "formula": "7d8 + 14" },
+  "languages": ["Draconic"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Feed on Fire",

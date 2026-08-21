@@ -31,8 +31,10 @@
   "alignment": ["C", "N"],
   "cr": 5,
   "hp": { "average": 68, "formula": "8d10 + 24" },
+  "languages": ["Giant", "Terran"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Air Form",

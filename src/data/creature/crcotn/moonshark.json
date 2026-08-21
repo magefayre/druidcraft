@@ -14,7 +14,7 @@
   "hp": { "average": 126, "formula": "11d12 + 55" },
   "senses": ["blindsight 60 ft."],
   "size": "H",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Blood Frenzy",

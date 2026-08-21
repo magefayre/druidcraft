@@ -13,6 +13,7 @@
   "cr": 3,
   "hp": { "average": 68, "formula": "8d12 + 16" },
   "size": "H",
+  "skill": {},
   "name": "Ankylosaurus",
   "source": "MM",
   "speed": { "walk": 30 },

@@ -20,7 +20,7 @@
   "hp": { "average": 26, "formula": "4d10 + 4" },
   "senses": ["blindsight 10 ft.", "darkvision 60 ft."],
   "size": "L",
-  "skill": { "stealth": "+7" },
+  "skill": { "stealth": 7 },
   "trait": [
     {
       "name": "Spider Climb",

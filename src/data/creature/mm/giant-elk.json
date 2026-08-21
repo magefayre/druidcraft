@@ -25,8 +25,12 @@
   "alignment": ["U"],
   "cr": 2,
   "hp": { "average": 42, "formula": "5d12 + 10" },
+  "languages": [
+    "Giant Elk",
+    "understands Common, Elvish, Sylvan but can't speak them"
+  ],
   "size": "H",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Charge",

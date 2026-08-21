@@ -16,8 +16,10 @@
   "alignment": ["N"],
   "cr": 5,
   "hp": { "average": 126, "formula": "12d10 + 60" },
+  "languages": ["Terran"],
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Earth Glide",

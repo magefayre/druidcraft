@@ -14,7 +14,7 @@
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "senses": ["blindsight 10 ft."],
   "size": "L",
-  "skill": { "perception": "+2" },
+  "skill": { "perception": 2 },
   "name": "Giant Coral Snake",
   "source": "GoS",
   "speed": { "walk": 30, "swim": 30 },

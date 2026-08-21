@@ -13,6 +13,7 @@
   "cr": 0.125,
   "hp": { "average": 11, "formula": "2d8 + 2" },
   "size": "M",
+  "skill": {},
   "name": "Pony",
   "source": "MM",
   "speed": { "walk": 40 },

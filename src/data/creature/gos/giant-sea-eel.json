@@ -14,7 +14,7 @@
   "hp": { "average": 19, "formula": "3d10 + 3" },
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+2", "stealth": "+4" },
+  "skill": { "perception": 2, "stealth": 4 },
   "trait": [
     {
       "name": "Water Breathing",

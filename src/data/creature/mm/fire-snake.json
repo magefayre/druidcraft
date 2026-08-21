@@ -24,8 +24,10 @@
   "alignment": ["N", "E"],
   "cr": 1,
   "hp": { "average": 22, "formula": "5d8" },
+  "languages": ["understands Ignan but can't speak"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Heated Body",

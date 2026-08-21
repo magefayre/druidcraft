@@ -18,9 +18,10 @@
   "alignment": ["L", "E"],
   "cr": 0.25,
   "hp": { "average": 7, "formula": "2d6" },
+  "languages": ["Sylvan", "Undercommon"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
-  "skill": { "deception": "+3", "stealth": "+6" },
+  "skill": { "deception": 3, "stealth": 6 },
   "trait": [
     {
       "name": "Vexing Presence",

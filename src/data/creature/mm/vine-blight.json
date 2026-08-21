@@ -18,9 +18,10 @@
   "alignment": ["N", "E"],
   "cr": 0.5,
   "hp": { "average": 26, "formula": "4d8 + 4" },
+  "languages": ["Common"],
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
-  "skill": { "stealth": "+1" },
+  "skill": { "stealth": 1 },
   "trait": [
     {
       "name": "False Appearance",

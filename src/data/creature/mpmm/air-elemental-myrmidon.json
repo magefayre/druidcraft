@@ -29,8 +29,10 @@
   "alignment": ["N"],
   "cr": 7,
   "hp": { "average": 117, "formula": "18d8 + 36" },
+  "languages": ["Auran", "one language of its creator's choice"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
+  "skill": {},
   "name": "Air Elemental Myrmidon",
   "source": "MPMM",
   "speed": {

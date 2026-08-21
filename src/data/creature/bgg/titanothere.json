@@ -13,6 +13,7 @@
   "cr": 5,
   "hp": { "average": 136, "formula": "13d12 + 52" },
   "size": "H",
+  "skill": {},
   "trait": [
     {
       "name": "Beast of Burden",

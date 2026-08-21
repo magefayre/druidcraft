@@ -23,7 +23,7 @@
   "cr": 0.25,
   "hp": { "average": 10, "formula": "3d4 + 3" },
   "size": "T",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Pack Tactics",

@@ -14,6 +14,7 @@
   "hp": { "average": 4, "formula": "1d6 + 1" },
   "senses": ["blindsight 30 ft."],
   "size": "S",
+  "skill": {},
   "name": "Hellwasp Grub",
   "source": "BGDIA",
   "speed": { "walk": 30, "climb": 30 },

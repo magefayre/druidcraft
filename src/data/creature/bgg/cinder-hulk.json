@@ -29,8 +29,9 @@
   "alignment": ["C", "E"],
   "cr": 7,
   "hp": { "average": 84, "formula": "8d10 + 40" },
+  "languages": ["Giant", "Ignan"],
   "size": "L",
-  "skill": { "perception": "+5" },
+  "skill": { "perception": 5 },
   "trait": [
     {
       "name": "Death Burst",

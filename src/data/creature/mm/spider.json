@@ -14,7 +14,7 @@
   "hp": { "average": 1, "formula": "1d4 - 1" },
   "senses": ["darkvision 30 ft."],
   "size": "T",
-  "skill": { "stealth": "+4" },
+  "skill": { "stealth": 4 },
   "trait": [
     {
       "name": "Spider Climb",

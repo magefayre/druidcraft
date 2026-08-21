@@ -28,9 +28,10 @@
   "alignment": ["U"],
   "cr": 9,
   "hp": { "average": 168, "formula": "16d12 + 64" },
+  "languages": ["Primordial"],
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "size": "H",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Burning Fury",

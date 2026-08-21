@@ -22,7 +22,9 @@
   "alignment": ["N"],
   "cr": 0.5,
   "hp": { "average": 27, "formula": "5d8 + 5" },
+  "languages": ["Draconic", "Ignan"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Amphibious",

@@ -19,9 +19,10 @@
   "alignment": ["U"],
   "cr": 2,
   "hp": { "average": 75, "formula": "10d10 + 20" },
+  "languages": ["understands Elvish"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
-  "skill": { "perception": "+4", "stealth": "+5" },
+  "skill": { "perception": 4, "stealth": 5 },
   "trait": [
     {
       "name": "Pounce",

@@ -35,7 +35,9 @@
   "alignment": ["C", "G"],
   "cr": 2,
   "hp": { "average": 45, "formula": "6d10 + 12" },
+  "languages": ["Common", "Druidic", "Elvish", "Sylvan"],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "False Appearance",

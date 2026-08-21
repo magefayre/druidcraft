@@ -19,8 +19,9 @@
   "alignment": ["N"],
   "cr": 0.5,
   "hp": { "average": 19, "formula": "3d8 + 6" },
+  "languages": ["understands Common", "Elvish", "and Sylvan but can't speak"],
   "size": "M",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Bonding",

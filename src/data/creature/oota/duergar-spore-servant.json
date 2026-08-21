@@ -16,6 +16,7 @@
   "hp": { "average": 26, "formula": "4d8 + 8" },
   "senses": ["blindsight 30 ft. (blind beyond this radius)"],
   "size": "M",
+  "skill": {},
   "name": "Duergar Spore Servant",
   "source": "OotA",
   "speed": { "walk": 15 },

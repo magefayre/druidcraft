@@ -37,9 +37,10 @@
   "alignment": ["C", "N"],
   "cr": 3,
   "hp": { "average": 45, "formula": "6d8 + 18" },
+  "languages": ["Common", "Sylvan"],
   "senses": ["darkvision 30 ft."],
   "size": "M",
-  "skill": { "acrobatics": "+5", "deception": "+8", "stealth": "+5" },
+  "skill": { "acrobatics": 5, "deception": 8, "stealth": 5 },
   "trait": [
     {
       "name": "Magic Resistance",

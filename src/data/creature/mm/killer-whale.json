@@ -14,7 +14,7 @@
   "hp": { "average": 90, "formula": "12d12 + 12" },
   "senses": ["blindsight 120 ft."],
   "size": "H",
-  "skill": { "perception": "+3" },
+  "skill": { "perception": 3 },
   "trait": [
     {
       "name": "Echolocation",

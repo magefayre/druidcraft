@@ -6,6 +6,7 @@
   "cr": 0,
   "hp": { "average": 5, "formula": "1d8 + 1" },
   "size": "M",
+  "skill": {},
   "trait": null,
   "name": "Pig",
   "source": "SKT",

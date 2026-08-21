@@ -13,10 +13,40 @@ export type Ability = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
 export type Abilities = Partial<Record<Ability, number>>
 export type Action = { name: string; entries: string[] }
 export type Aligmnent = 'U' | 'N' | 'L' | 'C' | 'G' | 'E'
+export type ArmorClass = number | { ac: number; from: string[] }
+export type Condition =
+  | 'blinded'
+  | 'charmed'
+  | 'deafened'
+  | 'exhaustion'
+  | 'frightened'
+  | 'grappled'
+  | 'incapacitated'
+  | 'invisible'
+  | 'paralyzed'
+  | 'petrified'
+  | 'poisoned'
+  | 'prone'
+  | 'restrainedv'
+  | 'stunned'
+  | 'unconscious'
+export type Damage =
+  | 'acid'
+  | 'bludgeoning'
+  | 'cold'
+  | 'fire'
+  | 'force'
+  | 'lightning'
+  | 'necrotic'
+  | 'piercing'
+  | 'poision'
+  | 'psychic'
+  | 'radiant'
+  | 'slashing'
+  | 'thunder'
 export type Feature = 'elementalForms'
 export type Features = Partial<Record<Feature, boolean>>
-export type Health = { average: number; formula: string }
-export type Modifier = `+${number}`
+export type Health = { average: number; formula: string } | { special: number }
 export type Size = 'T' | 'S' | 'M' | 'L' | 'H' | 'G'
 export type Skill =
   | 'acrobatics'
@@ -36,7 +66,7 @@ export type Skill =
   | 'sleight of hand'
   | 'stealth'
   | 'survival'
-export type Skills = Partial<Record<Skill, Modifier>>
+export type Skills = Partial<Record<Skill, number>>
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
 export type Speeds = Partial<Record<Speed, number>>
 
@@ -56,32 +86,43 @@ export type Creature = CreatureBase & {
 export type CreatureDetails = CreatureBase &
   Pick<
     Monster,
-    'ac' | 'action' | 'alignment' | 'hp' | 'senses' | 'skill' | 'trait' | 'type'
-  > & { ability: Abilities; size: Size }
+    | 'ac'
+    | 'action'
+    | 'alignment'
+    | 'bonus'
+    | 'hp'
+    | 'languages'
+    | 'senses'
+    | 'trait'
+    | 'type'
+  > & { ability: Abilities; size: Size; skill?: Skills }
 
 export type CreatureURL = Pick<Creature, 'source' | 'name'>
 
 export type Monster = {
   _copy: Partial<Creature>
-  ac: number[]
-  action: Action[]
+  ac: ArmorClass[]
+  action?: Action[]
   alignment: Aligmnent[]
+  bonus?: Action[]
   cr: string
   hp: Health
   isNpc?: boolean
+  languages?: string[]
   name: string
   reprintedAs?: string[]
   senses: string[]
   size: Size[]
-  skill: Skills
+  skill?: MonsterSkills
   source: string
   speed?: Speeds
   summonedBySpell?: string
-  trait: Action[]
+  trait?: Action[]
   type: MonsterType
 } & { [key in Ability]: number }
 
 export type Monsters = { monster: Monster[] }
+export type MonsterSkills = Partial<Record<Skill, string>>
 export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
 export type MonsterRatings = Record<string, number>
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'

@@ -18,8 +18,10 @@
   "alignment": ["N"],
   "cr": 0.25,
   "hp": { "average": 22, "formula": "5d6 + 5" },
+  "languages": ["Draconic", "Ignan"],
   "senses": ["darkvision 60 ft."],
   "size": "S",
+  "skill": {},
   "trait": [
     {
       "name": "Death Burst",

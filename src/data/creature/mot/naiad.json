@@ -23,8 +23,9 @@
   "alignment": ["C", "N"],
   "cr": 2,
   "hp": { "average": 31, "formula": "7d8" },
+  "languages": ["Common", "Sylvan"],
   "size": "M",
-  "skill": { "persuasion": "+6", "sleight of hand": "+5" },
+  "skill": { "persuasion": 6, "sleight of hand": 5 },
   "trait": [
     {
       "name": "Amphibious",

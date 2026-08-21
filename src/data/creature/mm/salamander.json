@@ -31,8 +31,10 @@
   "alignment": ["N", "E"],
   "cr": 5,
   "hp": { "average": 90, "formula": "12d10 + 24" },
+  "languages": ["Ignan"],
   "senses": ["darkvision 60 ft."],
   "size": "L",
+  "skill": {},
   "trait": [
     {
       "name": "Heated Body",

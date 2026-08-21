@@ -12,7 +12,9 @@
   "alignment": ["U"],
   "cr": 3,
   "hp": { "average": 68, "formula": "8d12 + 16" },
+  "languages": ["understands Goblin but can't speak"],
   "size": "H",
+  "skill": {},
   "trait": [
     {
       "name": "Amphibious",

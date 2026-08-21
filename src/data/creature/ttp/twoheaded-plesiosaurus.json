@@ -13,7 +13,7 @@
   "cr": 4,
   "hp": { "average": 100, "formula": "8d10 + 24" },
   "size": "L",
-  "skill": { "perception": "+3", "stealth": "+4" },
+  "skill": { "perception": 3, "stealth": 4 },
   "trait": [
     {
       "name": "Hold Breath",

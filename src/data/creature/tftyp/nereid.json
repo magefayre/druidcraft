@@ -31,14 +31,10 @@
   "alignment": ["C", "G", "NY", "E"],
   "cr": 2,
   "hp": { "average": 44, "formula": "8d8 + 8" },
+  "languages": ["Aquan", "Common", "Elvish", "Sylvan"],
   "senses": ["darkvision 60 ft."],
   "size": "M",
-  "skill": {
-    "acrobatics": "+5",
-    "nature": "+3",
-    "stealth": "+5",
-    "survival": "+4"
-  },
+  "skill": { "acrobatics": 5, "nature": 3, "stealth": 5, "survival": 4 },
   "trait": [
     {
       "name": "Amphibious",

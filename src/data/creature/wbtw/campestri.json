@@ -18,9 +18,12 @@
   "alignment": ["U"],
   "cr": 0,
   "hp": { "average": 2, "formula": "1d4" },
+  "languages": [
+    "understands Common but speaks only through the use of its Mimicry trait"
+  ],
   "senses": ["tremorsense 30 ft."],
   "size": "T",
-  "skill": { "perception": "+4" },
+  "skill": { "perception": 4 },
   "trait": [
     {
       "name": "Mimicry",

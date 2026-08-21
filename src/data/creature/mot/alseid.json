@@ -23,8 +23,9 @@
   "alignment": ["C", "G"],
   "cr": 1,
   "hp": { "average": 22, "formula": "4d8 + 4" },
+  "languages": ["Common", "Sylvan"],
   "size": "M",
-  "skill": { "persuasion": "+6" },
+  "skill": { "persuasion": 6 },
   "trait": [
     {
       "name": "Hide in Plain Sight",

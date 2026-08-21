@@ -25,8 +25,9 @@
   "alignment": ["L", "G"],
   "cr": 0.25,
   "hp": { "average": 22, "formula": "4d8 + 4" },
+  "languages": ["Blink Dog", "understands Sylvan but can't speak it"],
   "size": "M",
-  "skill": { "perception": "+3", "stealth": "+5" },
+  "skill": { "perception": 3, "stealth": 5 },
   "trait": [
     {
       "name": "Keen Hearing and Smell",

@@ -18,6 +18,7 @@
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "size": "M",
+  "skill": {},
   "trait": [
     {
       "name": "Antimagic Susceptibility",

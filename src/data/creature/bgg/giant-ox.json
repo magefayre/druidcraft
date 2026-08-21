@@ -12,7 +12,9 @@
   "alignment": ["U"],
   "cr": 3,
   "hp": { "average": 105, "formula": "10d12 + 40" },
+  "languages": ["understands Giant and Sylvan but can't speak"],
   "size": "H",
+  "skill": {},
   "trait": [
     {
       "name": "Beast of Burden",
