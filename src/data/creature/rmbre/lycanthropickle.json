@@ -1,0 +1,28 @@
+{
+  "name": "Lycanthropickle",
+  "ability": { "str": 6, "dex": 13, "con": 12, "int": 4, "wis": 8, "cha": 3 },
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 4, "formula": "1d6 + 1" },
+  "senses": ["blindsight 60 ft. (blind beyond this radius)"],
+  "skill": { "stealth": "+3" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the lycanthropickle remains motionless, it is indistinguishable from a pickle."
+      ]
+    }
+  ],
+  "type": "plant",
+  "cr": 0.125,
+  "speed": { "walk": 20 }
+}

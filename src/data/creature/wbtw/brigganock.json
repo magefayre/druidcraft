@@ -1,0 +1,51 @@
+{
+  "name": "Brigganock",
+  "ability": {
+    "str": 4,
+    "dex": 15,
+    "con": 14,
+    "int": 10,
+    "wis": 11,
+    "cha": 13
+  },
+  "action": [
+    {
+      "name": "Pickaxe",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Time Lapse (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The brigganock accelerates the passage of time around itself, enabling it to accomplish up to 1 hour of work in a matter of seconds. This work can't affect any creature other than the brigganock, or any object being worn or carried by another creature, and the activity must take place within a 10-foot cube. For example, the brigganock could use this action to rapidly carve a pumpkin, cook and eat dinner, move a pile of stones, or tie a dozen knots in a length of rope."
+      ]
+    }
+  ],
+  "alignment": ["N", "G"],
+  "hp": { "average": 9, "formula": "2d4 + 4" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Fey Ancestry",
+      "entries": [
+        "The brigganock has advantage on saving throws against being {@condition charmed}, and magic can't put it to sleep."
+      ]
+    },
+    {
+      "name": "Soul Light",
+      "entries": [
+        "The brigganock is accompanied by an insubstantial, invulnerable ball of light that contains its soul. The brigganock can't turn off the light or control its brightness. The soul light sheds bright light in a 10-foot radius and dim light for an additional 10 feet. If the brigganock dies, its soul light fades away."
+      ]
+    },
+    {
+      "name": "Tunneler",
+      "entries": [
+        "Using a pickaxe or similar tool, a brigganock can burrow through solid rock at a speed of 5 feet, leaving a 6-inch-diameter tunnel in its wake."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 0.125,
+  "speed": { "walk": 15 }
+}

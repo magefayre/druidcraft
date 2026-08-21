@@ -1,0 +1,40 @@
+{
+  "name": "Polar Bear",
+  "ability": { "str": 20, "dex": 10, "con": 16, "int": 2, "wis": 13, "cha": 7 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bear makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d8 + 5}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}12 ({@damage 2d6 + 5}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 42, "formula": "5d10 + 15" },
+  "skill": { "perception": "+3" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 2,
+  "rating": 2,
+  "speed": { "walk": 40, "swim": 30 }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Vegepygmy",
+  "ability": { "str": 7, "dex": 14, "con": 13, "int": 6, "wis": 11, "cha": 7 },
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage."
+      ]
+    },
+    {
+      "name": "Sling",
+      "entries": [
+        "{@atk rw} {@hit 4} to hit, range 30/120 ft., one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["N"],
+  "hp": { "average": 13, "formula": "3d6 + 3" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+2", "stealth": "+4" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Plant Camouflage",
+      "entries": [
+        "The vegepygmy has advantage on Dexterity ({@skill Stealth}) checks it makes in any terrain with ample obscuring vegetation."
+      ]
+    },
+    {
+      "name": "Regeneration",
+      "entries": [
+        "The vegepygmy regains 3 hit points at the start of its turn. If it takes cold, fire, or necrotic damage, this trait doesn't function at the start of the vegepygmy's next turn. The vegepygmy dies only if it starts its turn with 0 hit points and doesn't regenerate."
+      ]
+    }
+  ],
+  "type": "plant",
+  "cr": 0.25,
+  "speed": { "walk": 30 }
+}

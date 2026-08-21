@@ -1,0 +1,33 @@
+{
+  "name": "Moonshark",
+  "ability": { "str": 23, "dex": 11, "con": 21, "int": 1, "wis": 10, "cha": 5 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}22 ({@damage 3d10 + 6}) piercing damage. If the shark misses, it can use a bonus action to swim up to 25 feet. This movement doesn't provoke opportunity attacks."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 126, "formula": "11d12 + 55" },
+  "senses": ["blindsight 60 ft."],
+  "skill": { "perception": "+3" },
+  "size": ["H"],
+  "trait": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": ["The shark can breathe only underwater."]
+    }
+  ],
+  "type": "beast",
+  "cr": 5,
+  "rating": 4,
+  "speed": { "swim": 50 }
+}

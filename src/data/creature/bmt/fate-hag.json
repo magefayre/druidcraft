@@ -1,0 +1,52 @@
+{
+  "name": "Fate Hag",
+  "ability": {
+    "str": 12,
+    "dex": 14,
+    "con": 13,
+    "int": 12,
+    "wis": 18,
+    "cha": 15
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hag makes two Shears attacks. It can replace one attack with a use of Spellcasting."
+      ]
+    },
+    {
+      "name": "Shears",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) force damage. If the target is a creature, it has disadvantage on attack rolls until the end of the hag's next turn."
+      ]
+    }
+  ],
+  "alignment": ["N"],
+  "hp": { "average": 71, "formula": "13d8 + 13" },
+  "senses": ["truesight 60 ft."],
+  "skill": {
+    "arcana": "+5",
+    "deception": "+6",
+    "history": "+5",
+    "perception": "+6"
+  },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Legendary Resistance (2/Day)",
+      "entries": [
+        "If the hag fails a saving throw, it can choose to succeed instead."
+      ]
+    },
+    {
+      "name": "Trace the Threads (1/Day)",
+      "entries": [
+        "The hag can cast the {@spell Legend Lore} spell, requiring no material components and using Wisdom as the spellcasting ability."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 4,
+  "speed": { "walk": 30 }
+}

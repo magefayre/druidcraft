@@ -1,0 +1,40 @@
+{
+  "name": "Air Elemental Myrmidon",
+  "ability": {
+    "str": 18,
+    "dex": 14,
+    "con": 14,
+    "int": 9,
+    "wis": 10,
+    "cha": 10
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The myrmidon makes three Flail attacks."]
+    },
+    {
+      "name": "Flail",
+      "entries": [
+        "{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) force damage."
+      ]
+    },
+    {
+      "name": "Lightning Strike {@recharge}",
+      "entries": [
+        "The myrmidon makes one Flail attack. On a hit, the target takes an extra 18 ({@damage 4d8}) lightning damage, and the target must succeed on a {@dc 13} Constitution saving throw or be {@condition stunned} until the end of the myrmidon's next turn."
+      ]
+    }
+  ],
+  "alignment": ["N"],
+  "hp": { "average": 117, "formula": "18d8 + 36" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["M"],
+  "type": "elemental",
+  "cr": 7,
+  "speed": {
+    "walk": 30,
+    "fly": { "number": 30, "condition": "(hover)" },
+    "canHover": true
+  }
+}

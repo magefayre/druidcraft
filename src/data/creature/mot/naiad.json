@@ -1,0 +1,48 @@
+{
+  "name": "Naiad",
+  "ability": {
+    "str": 10,
+    "dex": 16,
+    "con": 11,
+    "int": 15,
+    "wis": 10,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The naiad makes two psychic touch attacks."]
+    },
+    {
+      "name": "Psychic Touch",
+      "entries": [
+        "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) psychic damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 31, "formula": "7d8" },
+  "skill": { "persuasion": "+6", "sleight of hand": "+5" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The naiad can breathe air and water."]
+    },
+    {
+      "name": "Invisible in Water",
+      "entries": [
+        "The naiad is {@condition invisible} while fully immersed in water."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The naiad has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 2,
+  "speed": { "walk": 30, "swim": 30 }
+}

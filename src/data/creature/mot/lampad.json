@@ -1,0 +1,52 @@
+{
+  "name": "Lampad",
+  "ability": {
+    "str": 12,
+    "dex": 13,
+    "con": 14,
+    "int": 11,
+    "wis": 12,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The lampad attacks twice with its necrotic touch or chill touch."
+      ]
+    },
+    {
+      "name": "Necrotic Touch",
+      "entries": [
+        "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) necrotic damage."
+      ]
+    },
+    {
+      "name": "Chill Touch (Cantrip)",
+      "entries": [
+        "{@atk rs} {@hit 6} to hit, range 120 ft., one creature. {@h}9 ({@damage 2d8}) necrotic damage, and the target can't regain hit points until the start of the lampad's next turn. If the target is undead, it has disadvantage on attack rolls against the lampad until the end of the lampad's next turn."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 52, "formula": "8d8 + 16" },
+  "skill": { "deception": "+6", "intimidation": "+6" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Corpse Stride",
+      "entries": [
+        "Once on its turn, the lampad can use 10 feet of its movement to step magically into one creature's corpse within its reach and emerge from a second creature's corpse within 60 feet of the first corpse, appearing in an unoccupied space within 5 feet of the second corpse. Both corpses must be Medium or bigger."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The lampad has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 3,
+  "speed": { "walk": 30 }
+}

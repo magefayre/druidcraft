@@ -1,0 +1,36 @@
+{
+  "name": "Hulking Crab",
+  "ability": { "str": 19, "dex": 8, "con": 16, "int": 3, "wis": 11, "cha": 3 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The crab makes two attacks with its claws."]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}20 ({@damage 3d10 + 4}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 15}). The crab has two claws, each of which can grapple only one target"
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 76, "formula": "8d12 + 24" },
+  "senses": ["blindsight 30 ft."],
+  "skill": { "stealth": "+2" },
+  "size": ["H"],
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The crab can breathe air and water."]
+    },
+    {
+      "name": "Shell Camouflage",
+      "entries": [
+        "While the crab remains motionless with its eyestalks and pincers tucked close to its body, it resembles a natural formation or a pile of detritus. A creature within 30 feet of it can discern its true nature with a successful {@dc 15} Intelligence ({@skill Nature}) check."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 5,
+  "speed": { "walk": 20, "swim": 30 }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Giant Bat",
+  "ability": { "str": 15, "dex": 16, "con": 11, "int": 2, "wis": 12, "cha": 6 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 22, "formula": "4d10" },
+  "senses": ["blindsight 60 ft."],
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The bat can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The bat has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 1,
+  "speed": { "walk": 10, "fly": 60 }
+}

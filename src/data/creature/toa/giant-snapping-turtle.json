@@ -1,0 +1,31 @@
+{
+  "name": "Giant Snapping Turtle",
+  "ability": { "str": 19, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 5 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}18 ({@damage 4d6 + 4}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 75, "formula": "10d10 + 20" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The turtle can breathe air and water."]
+    },
+    {
+      "name": "Stable",
+      "entries": [
+        "Whenever an effect knocks the turtle {@condition prone}, it can make a {@dc 10} Constitution saving throw to avoid being knocked {@condition prone}. A {@condition prone} turtle is upside down. To stand up, it must succeed on a {@dc 10} Dexterity check on its turn and then use all its movement for that turn."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 3,
+  "speed": { "walk": 30, "swim": 40 }
+}

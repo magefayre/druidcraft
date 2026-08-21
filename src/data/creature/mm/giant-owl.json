@@ -1,0 +1,42 @@
+{
+  "name": "Giant Owl",
+  "ability": {
+    "str": 13,
+    "dex": 15,
+    "con": 12,
+    "int": 8,
+    "wis": 13,
+    "cha": 10
+  },
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}8 ({@damage 2d6 + 1}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["N"],
+  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "senses": ["darkvision 120 ft."],
+  "skill": { "perception": "+5", "stealth": "+4" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "The owl has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or sight."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.25,
+  "rating": 1,
+  "speed": { "walk": 5, "fly": 60 }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Owl",
+  "ability": { "str": 3, "dex": 13, "con": 8, "int": 2, "wis": 12, "cha": 7 },
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}1 slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "senses": ["darkvision 120 ft."],
+  "skill": { "perception": "+3", "stealth": "+3" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "The owl has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or sight."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 4,
+  "speed": { "walk": 5, "fly": 60 }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Black Bear",
+  "ability": { "str": 15, "dex": 10, "con": 14, "int": 2, "wis": 12, "cha": 7 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The bear makes two attacks: one with its bite and one with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 19, "formula": "3d8 + 6" },
+  "skill": { "perception": "+3" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The bear has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.5,
+  "rating": 1,
+  "speed": { "walk": 40, "climb": 30 }
+}

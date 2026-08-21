@@ -1,0 +1,50 @@
+{
+  "name": "Sludge Hag",
+  "ability": {
+    "str": 18,
+    "dex": 12,
+    "con": 16,
+    "int": 13,
+    "wis": 14,
+    "cha": 14
+  },
+  "action": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "The sludge hag collapses into a oily pool of sludge. While motionless, the sludge hag is indistinguishable from any other oily pool of oozy drippiness."
+      ]
+    },
+    {
+      "name": "Sludge Slap",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}12 ({@damage 1d8 + 8}) bludgeoning damage, plus 4 ({@damage 1d8}) acid damage. Sludge Slap does both bludgeoning and acid damage."
+      ]
+    }
+  ],
+  "alignment": [{ "special": "neutral oozy" }],
+  "hp": { "formula": "11d8 + 33", "average": 82 },
+  "senses": ["darkvision 60 ft."],
+  "skill": {
+    "arcana": "+3",
+    "deception": "+4",
+    "perception": "+4",
+    "stealth": "+3"
+  },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The sludge hag can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Amphibious",
+      "entries": ["The sludge hag can breathe air and water."]
+    }
+  ],
+  "type": "fey",
+  "cr": 3,
+  "speed": { "walk": 30 }
+}

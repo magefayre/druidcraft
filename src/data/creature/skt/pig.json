@@ -1,0 +1,13 @@
+{
+  "name": "Pig",
+  "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 9, "cha": 5 },
+  "action": null,
+  "alignment": ["U"],
+  "hp": { "average": 5, "formula": "1d8 + 1" },
+  "size": ["M"],
+  "trait": null,
+  "type": "beast",
+  "cr": 0,
+  "rating": 1,
+  "speed": { "walk": 30 }
+}

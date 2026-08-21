@@ -1,0 +1,51 @@
+{
+  "name": "Hamadryad",
+  "ability": {
+    "str": 10,
+    "dex": 16,
+    "con": 14,
+    "int": 14,
+    "wis": 10,
+    "cha": 15
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The hamadryad makes two Claw attacks."]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, range 5 ft., one target. {@h}5 ({@damage 1d4 + 3}) plus 10 ({@damage 3d6}) poison damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 32, "formula": "5d8 + 10" },
+  "senses": ["darkvision 60ft."],
+  "skill": { "perception": "+2", "stealth": "+6" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The hamadryad has advantage on saving throws against spells and other magical effects."
+      ]
+    },
+    {
+      "name": "Speak with Beasts and Plants",
+      "entries": [
+        "The hamadryad can communicate with Beasts and Plants as if they shared a language."
+      ]
+    },
+    {
+      "name": "Tree Stride",
+      "entries": [
+        "Once on her turn, the hamadryad can use 10 feet of her movement to step magically into one living tree within her reach and emerge from a second living tree within 60 feet of the first tree, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be Large in size or bigger."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 2,
+  "speed": { "walk": 30 }
+}

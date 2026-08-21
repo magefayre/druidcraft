@@ -1,0 +1,39 @@
+{
+  "name": "Spider",
+  "ability": { "str": 2, "dex": 14, "con": 8, "int": 1, "wis": 10, "cha": 2 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}1 piercing damage, and the target must succeed on a {@dc 9} Constitution saving throw or take 2 ({@damage 1d4}) poison damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "senses": ["darkvision 30 ft."],
+  "skill": { "stealth": "+4" },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Spider Climb",
+      "entries": [
+        "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      ]
+    },
+    {
+      "name": "Web Sense",
+      "entries": [
+        "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web."
+      ]
+    },
+    {
+      "name": "Web Walker",
+      "entries": ["The spider ignores movement restrictions caused by webbing."]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 3,
+  "speed": { "walk": 20, "climb": 20 }
+}

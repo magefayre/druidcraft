@@ -1,0 +1,44 @@
+{
+  "name": "Alseid",
+  "ability": {
+    "str": 15,
+    "dex": 10,
+    "con": 12,
+    "int": 13,
+    "wis": 14,
+    "cha": 18
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The alseid makes two radiant touch attacks."]
+    },
+    {
+      "name": "Radiant Touch",
+      "entries": [
+        "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) radiant damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "G"],
+  "hp": { "average": 22, "formula": "4d8 + 4" },
+  "skill": { "persuasion": "+6" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Hide in Plain Sight",
+      "entries": [
+        "The alseid has advantage on Dexterity ({@skill Stealth}) checks made to hide while it is in grassland."
+      ]
+    },
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "The alseid has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 1,
+  "speed": { "walk": 30 }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Giant Rat",
+  "ability": { "str": 7, "dex": 15, "con": 11, "int": 2, "wis": 10, "cha": 4 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 7, "formula": "2d6" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The rat has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.125,
+  "rating": 1,
+  "speed": { "walk": 30 }
+}

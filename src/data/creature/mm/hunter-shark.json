@@ -1,0 +1,33 @@
+{
+  "name": "Hunter Shark",
+  "ability": { "str": 18, "dex": 13, "con": 15, "int": 1, "wis": 10, "cha": 4 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d8 + 4}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 45, "formula": "6d10 + 12" },
+  "senses": ["blindsight 30 ft."],
+  "skill": { "perception": "+2" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": ["The shark can breathe only underwater."]
+    }
+  ],
+  "type": "beast",
+  "cr": 2,
+  "rating": 3,
+  "speed": { "swim": 40 }
+}

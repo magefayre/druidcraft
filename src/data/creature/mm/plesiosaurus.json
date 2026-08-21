@@ -1,0 +1,26 @@
+{
+  "name": "Plesiosaurus",
+  "ability": { "str": 18, "dex": 15, "con": 16, "int": 2, "wis": 12, "cha": 5 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 10 ft., one target. {@h}14 ({@damage 3d6 + 4}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 68, "formula": "8d10 + 24" },
+  "skill": { "perception": "+3", "stealth": "+4" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Hold Breath",
+      "entries": ["The plesiosaurus can hold its breath for 1 hour."]
+    }
+  ],
+  "type": "beast",
+  "cr": 2,
+  "rating": 1,
+  "speed": { "walk": 20, "swim": 40 }
+}

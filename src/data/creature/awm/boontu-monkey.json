@@ -1,0 +1,26 @@
+{
+  "name": "Boontu Monkey",
+  "ability": { "str": 8, "dex": 14, "con": 11, "int": 5, "wis": 12, "cha": 6 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}1 ({@damage 1d4 - 1}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "special": "3" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The Boontu monkey has advantage on an attack roll against a creature if at least one of the boontu monkey's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "speed": { "walk": 20, "climb": 20 }
+}

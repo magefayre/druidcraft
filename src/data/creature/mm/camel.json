@@ -1,0 +1,19 @@
+{
+  "name": "Camel",
+  "ability": { "str": 16, "dex": 8, "con": 14, "int": 2, "wis": 8, "cha": 5 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d4}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 15, "formula": "2d10 + 4" },
+  "size": ["L"],
+  "type": "beast",
+  "cr": 0.125,
+  "rating": 3,
+  "speed": { "walk": 50 }
+}

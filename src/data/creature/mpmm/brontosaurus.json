@@ -1,0 +1,25 @@
+{
+  "name": "Brontosaurus",
+  "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
+  "action": [
+    {
+      "name": "Stomp",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 20 ft., one target. {@h}27 ({@damage 5d8 + 5}) bludgeoning damage, and the target must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 20 ft., one target. {@h}32 ({@damage 6d8 + 5}) bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 121, "formula": "9d20 + 27" },
+  "size": ["G"],
+  "type": "beast",
+  "cr": 5,
+  "rating": 3,
+  "speed": { "walk": 30 }
+}

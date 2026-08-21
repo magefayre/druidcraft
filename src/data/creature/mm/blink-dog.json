@@ -1,0 +1,40 @@
+{
+  "name": "Blink Dog",
+  "ability": {
+    "str": 12,
+    "dex": 17,
+    "con": 12,
+    "int": 10,
+    "wis": 13,
+    "cha": 11
+  },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage."
+      ]
+    },
+    {
+      "name": "Teleport {@recharge 4}",
+      "entries": [
+        "The dog magically teleports, along with any equipment it is wearing or carrying, up to 40 feet to an unoccupied space it can see. Before or after teleporting, the dog can make one bite attack."
+      ]
+    }
+  ],
+  "alignment": ["L", "G"],
+  "hp": { "average": 22, "formula": "4d8 + 4" },
+  "skill": { "perception": "+3", "stealth": "+5" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The dog has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 0.25,
+  "speed": { "walk": 40 }
+}

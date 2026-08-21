@@ -1,0 +1,20 @@
+{
+  "name": "Scorpion",
+  "ability": { "str": 2, "dex": 11, "con": 8, "int": 1, "wis": 8, "cha": 2 },
+  "action": [
+    {
+      "name": "Sting",
+      "entries": [
+        "{@atk mw} {@hit 2} to hit, reach 5 ft., one creature. {@h}1 piercing damage, and the target must make a {@dc 9} Constitution saving throw, taking 4 ({@damage 1d8}) poison damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "senses": ["blindsight 10 ft."],
+  "size": ["T"],
+  "type": "beast",
+  "cr": 0,
+  "rating": 1,
+  "speed": { "walk": 10 }
+}

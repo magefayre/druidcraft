@@ -1,0 +1,45 @@
+{
+  "name": "Azer",
+  "ability": {
+    "str": 17,
+    "dex": 12,
+    "con": 15,
+    "int": 12,
+    "wis": 13,
+    "cha": 10
+  },
+  "action": [
+    {
+      "name": "Warhammer",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) bludgeoning damage, or 8 ({@damage 1d10 + 3}) bludgeoning damage if used with two hands to make a melee attack, plus 3 ({@damage 1d6}) fire damage."
+      ]
+    }
+  ],
+  "alignment": ["L", "N"],
+  "hp": { "average": 39, "formula": "6d8 + 12" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Heated Body",
+      "entries": [
+        "A creature that touches the azer or hits it with a melee attack while within 5 feet of it takes 5 ({@damage 1d10}) fire damage."
+      ]
+    },
+    {
+      "name": "Heated Weapons",
+      "entries": [
+        "When the azer hits with a metal melee weapon, it deals an extra 3 ({@damage 1d6}) fire damage (included in the attack)."
+      ]
+    },
+    {
+      "name": "Illumination",
+      "entries": [
+        "The azer sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 2,
+  "speed": { "walk": 30 }
+}

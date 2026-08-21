@@ -1,0 +1,45 @@
+{
+  "name": "Coral",
+  "ability": {
+    "str": 20,
+    "dex": 13,
+    "con": 15,
+    "int": 14,
+    "wis": 18,
+    "cha": 19
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["Coral makes two Hoof attacks and uses Tail Thump."]
+    },
+    {
+      "name": "Hoof",
+      "entries": [
+        "{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}12 ({@damage 2d6 + 5}) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Tail Thump",
+      "entries": [
+        "Coral slams her tail down, unleashing a burst of magical force toward one creature she can see within 60 feet of her. The target must make a {@dc 16} Dexterity saving throw. On a failed save, the target takes 22 ({@damage 4d10}) force damage and has the {@condition prone} condition. On a successful save, the target takes half as much damage only. If this damage reduces the target to 0 hit points, the target dies, and its body is reduced to fine dust."
+      ]
+    }
+  ],
+  "alignment": ["C", "G"],
+  "hp": { "average": 135, "formula": "18d10 + 36" },
+  "senses": ["blindsight 60 ft."],
+  "skill": { "arcana": "+6", "insight": "+8", "perception": "+8" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Magic Resistance",
+      "entries": [
+        "Coral has advantage on saving throws against spells and other magical effects."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 9,
+  "speed": { "walk": 10, "fly": 60, "swim": 60 }
+}

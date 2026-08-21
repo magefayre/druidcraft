@@ -1,0 +1,20 @@
+{
+  "name": "Tribal Warrior Spore Servant",
+  "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 6, "cha": 1 },
+  "action": [
+    {
+      "name": "Spear",
+      "entries": [
+        "{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage, or 5 ({@damage 1d8 + 1}) piercing damage if used with two hands to make a melee attack."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "senses": ["blindsight 30 ft. (blind beyond this radius)"],
+  "size": ["M"],
+  "trait": null,
+  "type": "plant",
+  "cr": 0.125,
+  "speed": { "walk": 20 }
+}

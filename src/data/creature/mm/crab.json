@@ -1,0 +1,24 @@
+{
+  "name": "Crab",
+  "ability": { "str": 2, "dex": 11, "con": 10, "int": 1, "wis": 8, "cha": 2 },
+  "action": [
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 bludgeoning damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 2, "formula": "1d4" },
+  "senses": ["blindsight 30 ft."],
+  "skill": { "stealth": "+2" },
+  "size": ["T"],
+  "trait": [
+    { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
+  ],
+  "type": "beast",
+  "cr": 0,
+  "rating": 2,
+  "speed": { "walk": 20, "swim": 20 }
+}

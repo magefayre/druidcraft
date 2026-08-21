@@ -1,0 +1,62 @@
+{
+  "name": "Riffler",
+  "ability": {
+    "str": 8,
+    "dex": 16,
+    "con": 12,
+    "int": 11,
+    "wis": 15,
+    "cha": 17
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The riffler makes two Spectral Card attacks."]
+    },
+    {
+      "name": "Spectral Card",
+      "entries": [
+        "{@atk ms,rs} {@hit 6} to hit, reach 5 ft. or range 60 ft., one target. {@h}8 ({@damage 1d10 + 3}) force damage plus 5 ({@damage 1d10}) damage that is radiant if the {@dice d10} roll is an even number and necrotic if it's odd."
+      ]
+    },
+    {
+      "name": "Card Spray {@recharge 5}",
+      "entries": [
+        "The riffler magically unleashes a spray of spectral cards in a 30-foot cone. Each creature in that area must make a {@dc 14} Dexterity saving throw. On a failed save, a creature takes 27 ({@damage 5d10}) force damage and has the {@condition restrained} condition for 1 minute as cards bind it. On a successful save, a creature takes half as much damage only. A {@condition restrained} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    },
+    {
+      "name": "Plane Shift",
+      "entries": [
+        "The riffler casts the {@spell Plane Shift} spell targeting only itself, requiring no material components and using Charisma as the spellcasting ability."
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 90, "formula": "20d6 + 20" },
+  "senses": ["darkvision 60 ft."],
+  "skill": {
+    "arcana": "+6",
+    "insight": "+5",
+    "sleight of hand": "+9",
+    "stealth": "+6"
+  },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Card Sense",
+      "entries": [
+        "The riffler can smell the presence of magical cards, including Decks of Many Things and other magical decks, within 1 mile of itself. It knows the direction to any such cards in that range. Effects that protect a target from divination magic block this sense."
+      ]
+    },
+    {
+      "name": "Riffling Step",
+      "entries": [
+        "The riffler can burrow through any nonmagical material that isn't iron, shuffling the substance through which the riffler moves aside like cards to form a tunnel that closes behind the riffler."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 5,
+  "speed": { "walk": 30, "burrow": 20 }
+}

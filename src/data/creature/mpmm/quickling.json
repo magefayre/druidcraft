@@ -1,0 +1,43 @@
+{
+  "name": "Quickling",
+  "ability": { "str": 4, "dex": 23, "con": 13, "int": 10, "wis": 12, "cha": 7 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The quickling makes three Dagger attacks."]
+    },
+    {
+      "name": "Dagger",
+      "entries": [
+        "{@atk mw,rw} {@hit 8} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}8 ({@damage 1d4 + 6}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "E"],
+  "hp": { "average": 10, "formula": "3d4 + 3" },
+  "senses": ["darkvision 60 ft."],
+  "skill": {
+    "acrobatics": "+8",
+    "sleight of hand": "+8",
+    "stealth": "+8",
+    "perception": "+5"
+  },
+  "size": ["T"],
+  "trait": [
+    {
+      "name": "Blurred Movement",
+      "entries": [
+        "Attack rolls against the quickling have disadvantage unless it is {@condition incapacitated} or its speed is 0."
+      ]
+    },
+    {
+      "name": "Evasion",
+      "entries": [
+        "If the quickling is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw and only half damage if it fails, provided it isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 1,
+  "speed": { "walk": 120 }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Detached Shadow",
+  "ability": { "str": 6, "dex": 14, "con": 13, "int": 6, "wis": 10, "cha": 8 },
+  "action": [
+    {
+      "name": "Strength Drain",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}9 ({@damage 2d6 + 2}) necrotic damage, and the target's Strength score is reduced by {@dice 1d4}. The target falls {@condition unconscious} if this reduces its Strength to 0. The creature regains consciousness and the reduction to its Strength score disappears after it finishes a short or long rest."
+      ]
+    }
+  ],
+  "alignment": ["C", "E"],
+  "hp": { "average": 16, "formula": "3d8 + 3" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "stealth": "+4" },
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Amorphous",
+      "entries": [
+        "The shadow can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    },
+    {
+      "name": "Shadow Stealth",
+      "entries": [
+        "While in dim light or darkness, the shadow can take the {@action Hide} action as a bonus action. Its stealth bonus is also improved to +6."
+      ]
+    },
+    {
+      "name": "Sunlight Weakness",
+      "entries": [
+        "While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 0.5,
+  "speed": { "walk": 40 }
+}

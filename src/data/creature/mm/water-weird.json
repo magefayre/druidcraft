@@ -1,0 +1,40 @@
+{
+  "name": "Water Weird",
+  "ability": {
+    "str": 17,
+    "dex": 16,
+    "con": 13,
+    "int": 11,
+    "wis": 10,
+    "cha": 10
+  },
+  "action": [
+    {
+      "name": "Constrict",
+      "entries": [
+        "{@atk mw} {@hit 5} to hit, reach 10 ft., one creature. {@h}13 ({@damage 3d6 + 3}) bludgeoning damage. If the target is Medium or smaller, it is {@condition grappled} (escape {@dc 13}) and pulled 5 feet toward the water weird. Until this grapple ends, the target is {@condition restrained}, the water weird tries to drown it, and the water weird can't constrict another target."
+      ]
+    }
+  ],
+  "alignment": ["N"],
+  "hp": { "average": 58, "formula": "9d10 + 9" },
+  "senses": ["blindsight 30 ft."],
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Invisible in Water",
+      "entries": [
+        "The water weird is {@condition invisible} while fully immersed in water."
+      ]
+    },
+    {
+      "name": "Water Bound",
+      "entries": [
+        "The water weird dies if it leaves the water to which it is bound or if that water is destroyed."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 3,
+  "speed": { "walk": 0, "swim": 60 }
+}

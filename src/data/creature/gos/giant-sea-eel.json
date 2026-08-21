@@ -1,0 +1,26 @@
+{
+  "name": "Giant Sea Eel",
+  "ability": { "str": 11, "dex": 14, "con": 12, "int": 7, "wis": 10, "cha": 7 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d10 + 2}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+2", "stealth": "+4" },
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Water Breathing",
+      "entries": ["The eel can breathe only underwater."]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.5,
+  "speed": { "walk": 0, "swim": 40 }
+}

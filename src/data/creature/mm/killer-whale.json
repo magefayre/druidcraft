@@ -1,0 +1,39 @@
+{
+  "name": "Killer Whale",
+  "ability": { "str": 19, "dex": 10, "con": 13, "int": 3, "wis": 12, "cha": 7 },
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}21 ({@damage 5d6 + 4}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 90, "formula": "12d12 + 12" },
+  "senses": ["blindsight 120 ft."],
+  "skill": { "perception": "+3" },
+  "size": ["H"],
+  "trait": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The whale can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Hold Breath",
+      "entries": ["The whale can hold its breath for 30 minutes."]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The whale has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 3,
+  "rating": 2,
+  "speed": { "swim": 60 }
+}

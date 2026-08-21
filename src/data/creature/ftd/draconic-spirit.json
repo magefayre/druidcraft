@@ -1,0 +1,48 @@
+{
+  "name": "Draconic Spirit",
+  "ability": {
+    "str": 19,
+    "dex": 14,
+    "con": 17,
+    "int": 10,
+    "wis": 14,
+    "cha": 14
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The dragon makes a number of Rend attacks equal to half the spell's level (rounded down), and it uses Breath Weapon."
+      ]
+    },
+    {
+      "name": "Rend",
+      "entries": [
+        "{@atk mw} your spell attack modifier to hit, reach 10 ft., one target. {@h}{@damage 1d6 + 4 + summonSpellLevel} piercing damage."
+      ]
+    },
+    {
+      "name": "Breath Weapon",
+      "entries": [
+        "The dragon exhales destructive energy in a 30-foot cone. Each creature in that area must make a Dexterity saving throw against your spell save DC. A creature takes {@damage 2d6} damage of a type this dragon has resistance to (your choice) on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ],
+  "alignment": [{ "alignment": ["N"] }],
+  "hp": {
+    "special": "50 + 10 for each spell level above 5th (the dragon has a number of Hit Dice [d10s] equal to the level of the spell)"
+  },
+  "senses": ["blindsight 30 ft.", "darkvision 60 ft."],
+  "size": ["L"],
+  "trait": [
+    {
+      "name": "Shared Resistances",
+      "entries": [
+        "When you summon the dragon, choose one of its damage resistances. You have resistance to the chosen damage type until the spell ends."
+      ]
+    }
+  ],
+  "type": "dragon",
+  "speed": { "walk": 30, "fly": 60, "swim": 30 },
+  "spell": "Summon Draconic Spirit"
+}

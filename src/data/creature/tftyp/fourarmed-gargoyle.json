@@ -1,0 +1,39 @@
+{
+  "name": "Four-Armed Gargoyle",
+  "ability": { "str": 15, "dex": 11, "con": 16, "int": 6, "wis": 11, "cha": 7 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The gargoyle makes three attacks: one with its bite and two with its claws."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d6 + 2}) slashing damage."
+      ]
+    }
+  ],
+  "alignment": ["C", "E"],
+  "hp": { "average": 63, "formula": "7d8 + 21" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the gargoyle remains motionless, it is indistinguishable from an inanimate statue."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 2,
+  "speed": { "walk": 30, "fly": 60 }
+}

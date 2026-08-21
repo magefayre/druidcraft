@@ -1,0 +1,39 @@
+{
+  "name": "Fire Snake",
+  "ability": { "str": 12, "dex": 14, "con": 11, "int": 7, "wis": 10, "cha": 8 },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The snake makes two attacks: one with its bite and one with its tail."
+      ]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage plus 3 ({@damage 1d6}) fire damage."
+      ]
+    },
+    {
+      "name": "Tail",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) bludgeoning damage plus 3 ({@damage 1d6}) fire damage."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 22, "formula": "5d8" },
+  "senses": ["darkvision 60 ft."],
+  "size": ["M"],
+  "trait": [
+    {
+      "name": "Heated Body",
+      "entries": [
+        "A creature that touches the snake or hits it with a melee attack while within 5 feet of it takes 3 ({@damage 1d6}) fire damage."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 1,
+  "speed": { "walk": 30 }
+}

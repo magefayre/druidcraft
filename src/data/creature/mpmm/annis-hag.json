@@ -1,0 +1,43 @@
+{
+  "name": "Annis Hag",
+  "ability": {
+    "str": 21,
+    "dex": 12,
+    "con": 14,
+    "int": 13,
+    "wis": 14,
+    "cha": 15
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The annis makes one Bite attack and two Claw attacks."]
+    },
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}15 ({@damage 3d6 + 5}) piercing damage."
+      ]
+    },
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}15 ({@damage 3d6 + 5}) slashing damage."
+      ]
+    },
+    {
+      "name": "Crushing Hug",
+      "entries": [
+        "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}36 ({@damage 9d6 + 5}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 15}) if it is a Large or smaller creature. Until the grapple ends, the target takes 36 ({@damage 9d6 + 5}) bludgeoning damage at the start of each of the hag's turns. The hag can't make attacks while grappling a creature in this way."
+      ]
+    }
+  ],
+  "alignment": ["C", "E"],
+  "hp": { "average": 90, "formula": "12d10 + 24" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "deception": "+5", "perception": "+5" },
+  "size": ["L"],
+  "type": "fey",
+  "cr": 6,
+  "speed": { "walk": 40 }
+}

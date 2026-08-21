@@ -1,0 +1,34 @@
+{
+  "name": "Dust Mephit",
+  "ability": { "str": 5, "dex": 14, "con": 10, "int": 9, "wis": 11, "cha": 10 },
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+      ]
+    },
+    {
+      "name": "Blinding Breath {@recharge}",
+      "entries": [
+        "The mephit exhales a 15-foot cone of blinding dust. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 17, "formula": "5d6" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+2", "stealth": "+4" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it explodes in a burst of dust. Each creature within 5 feet of it must then succeed on a {@dc 10} Constitution saving throw or be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the saving throw on each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 0.5,
+  "speed": { "walk": 30, "fly": 30 }
+}

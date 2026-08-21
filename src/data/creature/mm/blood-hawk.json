@@ -1,0 +1,34 @@
+{
+  "name": "Blood Hawk",
+  "ability": { "str": 6, "dex": 14, "con": 10, "int": 3, "wis": 14, "cha": 5 },
+  "action": [
+    {
+      "name": "Beak",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+      ]
+    }
+  ],
+  "alignment": ["U"],
+  "hp": { "average": 7, "formula": "2d6" },
+  "skill": { "perception": "+4" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The hawk has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The hawk has advantage on an attack roll against a creature if at least one of the hawk's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "type": "beast",
+  "cr": 0.125,
+  "rating": 1,
+  "speed": { "walk": 10, "fly": 60 }
+}

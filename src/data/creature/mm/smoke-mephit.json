@@ -1,0 +1,41 @@
+{
+  "name": "Smoke Mephit",
+  "ability": {
+    "str": 6,
+    "dex": 14,
+    "con": 12,
+    "int": 10,
+    "wis": 10,
+    "cha": 11
+  },
+  "action": [
+    {
+      "name": "Claws",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one creature. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+      ]
+    },
+    {
+      "name": "Cinder Breath {@recharge}",
+      "entries": [
+        "The mephit exhales a 15-foot cone of smoldering ash. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw or be {@condition blinded} until the end of the mephit's next turn."
+      ]
+    }
+  ],
+  "alignment": ["N", "E"],
+  "hp": { "average": 22, "formula": "5d6 + 5" },
+  "senses": ["darkvision 60 ft."],
+  "skill": { "perception": "+2", "stealth": "+4" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it leaves behind a cloud of smoke that fills a 5-foot-radius sphere centered on its space. The sphere is {@quickref Vision and Light||2||heavily obscured}. Wind disperses the cloud, which otherwise lasts for 1 minute."
+      ]
+    }
+  ],
+  "type": "elemental",
+  "cr": 0.25,
+  "speed": { "walk": 30, "fly": 30 }
+}

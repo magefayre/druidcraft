@@ -1,0 +1,45 @@
+{
+  "name": "Korred",
+  "ability": {
+    "str": 23,
+    "dex": 14,
+    "con": 20,
+    "int": 10,
+    "wis": 15,
+    "cha": 9
+  },
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The korred makes two Greatclub or Rock attacks."]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}10 ({@damage 1d8 + 6}) bludgeoning damage, or 19 ({@damage 3d8 + 6}) bludgeoning damage if the korred is on the ground."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "{@atk rw} {@hit 9} to hit, range 60/120 ft., one target. {@h}10 ({@damage 1d8 + 6}) bludgeoning damage, or 19 ({@damage 3d8 + 6}) bludgeoning damage if the korred is on the ground."
+      ]
+    }
+  ],
+  "alignment": ["C", "N"],
+  "hp": { "average": 93, "formula": "11d6 + 55" },
+  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "skill": { "athletics": "+9", "perception": "+5", "stealth": "+5" },
+  "size": ["S"],
+  "trait": [
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The korred has advantage on Dexterity ({@skill Stealth}) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "type": "fey",
+  "cr": 7,
+  "speed": { "walk": 30, "burrow": 30 }
+}
