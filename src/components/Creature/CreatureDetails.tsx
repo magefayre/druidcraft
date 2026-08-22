@@ -1,3 +1,4 @@
+import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 import titleize from 'titleize'
 
@@ -8,14 +9,17 @@ import {
   formatAligment,
   formatCR,
   formatHP,
+  formatList,
   formatModifier,
   formatPB,
   formatSize,
+  formatSpeed,
   formatType,
   getModifier,
   getPassivePerception
 } from '~utils/5etools'
 
+import styles from './CreatureDetails.module.scss'
 import type { CreatureDetailsProps } from './types'
 
 const ActionList = ({
@@ -28,11 +32,34 @@ const ActionList = ({
   if (!actions?.length) return null
 
   return (
-    <>
-      <hr />
+    <div className={styles.actions}>
       <h2>{heading}</h2>
-      <p>{JSON.stringify(actions)}</p>
-    </>
+      <List unstyled>
+        {actions.map(({ name, entries }) => (
+          <li key={name}>
+            <strong>
+              <em>{name}.</em>
+            </strong>{' '}
+            {entries.join('. ')}
+          </li>
+        ))}
+      </List>
+    </div>
+  )
+}
+
+const DefinitionList = props => (
+  <List as="dl" className={styles.list} {...props} />
+)
+
+const Definition = ({ label, children, visible = true }) => {
+  if (!visible) return null
+
+  return (
+    <div>
+      <dt>{label}</dt>
+      <dd>{children}</dd>
+    </div>
   )
 }
 
@@ -46,14 +73,13 @@ const ModifierList = <T extends string>({
   if (!modifiers) return null
 
   return (
-    <p>
-      {label}:{' '}
-      {Object.keys(modifiers).map(key => (
-        <span key={key}>
-          {titleize(key)} {formatModifier(modifiers[key])},{' '}
-        </span>
-      ))}
-    </p>
+    <Definition label={label}>
+      {formatList(
+        Object.keys(modifiers).map(key =>
+          [titleize(key), formatModifier(modifiers[key])].join(' ')
+        )
+      )}
+    </Definition>
   )
 }
 
@@ -78,35 +104,48 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
   trait,
   type
 }) => (
-  <Section>
+  <Section className={styles.root}>
     <h1>{name}</h1>
     <p>
-      {formatSize(size)} {formatType(type)}, {formatAligment(alignment)}
+      <em>
+        {formatSize(size)} {formatType(type)}, {formatAligment(alignment)}
+      </em>
     </p>
-    <hr />
-    <p>Armor Class: {formatAC(ac)}</p>
-    <p>Hit Points: {formatHP(hp)}</p>
-    <p>Speed: {JSON.stringify(speed)}</p>
-    <hr />
-    {Object.entries(ability).map(([ability, value]) => (
-      <p key={ability}>
-        {ability.toUpperCase()}: {value} ({formatModifier(getModifier(value))})
-      </p>
-    ))}
-    <hr />
-    <ModifierList label="Saving Throws" modifiers={save} />
-    <ModifierList label="Skills" modifiers={skill} />
-    {resist && <p>Damage Resistances: {JSON.stringify(resist)}</p>}
-    {immune && <p>Damage Immunities: {JSON.stringify(immune)}</p>}
-    {condition && <p>Condition Immunities: {JSON.stringify(condition)}</p>}
-    <p>
-      Senses: {JSON.stringify(senses)} Passive Perception{' '}
-      {getPassivePerception(ability.wis, skill?.perception)}
-    </p>
-    <p>Languages: {JSON.stringify(languages)}</p>
-    <p>
-      Challenge: {formatCR(cr)} {cr && <>(PB {formatPB(cr)})</>}
-    </p>
+    <DefinitionList>
+      <Definition label="Armor Class">{formatAC(ac)}</Definition>
+      <Definition label="Hit Points">{formatHP(hp)}</Definition>
+      <Definition label="Speed">{formatSpeed(speed)}</Definition>
+    </DefinitionList>
+    <DefinitionList>
+      {Object.entries(ability).map(([ability, value]) => (
+        <Definition key={ability} label={ability.toUpperCase()}>
+          {value} ({formatModifier(getModifier(value))})
+        </Definition>
+      ))}
+    </DefinitionList>
+    <DefinitionList>
+      <ModifierList label="Saving Throws" modifiers={save} />
+      <ModifierList label="Skills" modifiers={skill} />
+      <Definition label="Damage Resistances" visible={!!resist}>
+        {formatList(resist)}
+      </Definition>
+      <Definition label="Damage Immunities" visible={!!immune}>
+        {formatList(immune)}
+      </Definition>
+      <Definition label="Condition Immunities" visible={!!condition}>
+        {formatList(condition)}
+      </Definition>
+      <Definition label="Senses">
+        {formatList([
+          ...senses,
+          `passive Perception ${getPassivePerception(ability.wis, skill?.perception)}`
+        ])}
+      </Definition>
+      <Definition label="Languages">{formatList(languages)}</Definition>
+      <Definition label="Challenge">
+        {formatCR(cr)} {cr !== undefined && <>(PB {formatPB(cr)})</>}
+      </Definition>
+    </DefinitionList>
     <ActionList heading="Traits" actions={trait} />
     <ActionList heading="Actions" actions={action} />
     <ActionList heading="Bonus Actions" actions={bonus} />

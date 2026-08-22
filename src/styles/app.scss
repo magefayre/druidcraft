@@ -13,6 +13,7 @@
   --border: light-dark(#{colors.$mist}, #{colors.$twilight});
   --selection: light-dark(#{colors.$white}, #{colors.$midnight});
   --highlight: light-dark(#{colors.$smoke}, #{colors.$twilight});
+  --content-colon: ':';
 
   color-scheme: light dark;
 }
