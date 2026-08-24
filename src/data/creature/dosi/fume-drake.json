@@ -3,7 +3,7 @@
   "source": "DoSI",
   "size": "S",
   "type": "elemental",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [12],
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "speed": { "walk": 30, "fly": 30 },

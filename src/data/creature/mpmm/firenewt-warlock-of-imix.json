@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "M",
   "type": "elemental",
-  "alignment": ["N", "E"],
+  "alignment": ["T", "N", "E"],
   "ac": [10],
   "hp": { "average": 33, "formula": "6d8 + 6" },
   "speed": { "walk": 30 },

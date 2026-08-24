@@ -8,6 +8,7 @@ import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
 import type {
   Ability,
+  Aligmnent,
   Creature,
   CreatureDetails,
   Features,
@@ -32,6 +33,17 @@ import {
   fetchScript,
   fetchToken
 } from './utils'
+
+const parseAlignment = (
+  alignment?: Aligmnent[],
+  prefix?: string
+): Aligmnent[] => {
+  if (!alignment?.length) return undefined
+
+  return [!!prefix ? ('T' as Aligmnent) : undefined, ...alignment].filter(
+    Boolean
+  )
+}
 
 const parseCR = (cr: string | { cr: string }): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -130,7 +142,6 @@ const filterMonsters = (
     const {
       ac,
       action,
-      alignment,
       bonus,
       cha,
       con,
@@ -165,7 +176,7 @@ const filterMonsters = (
       source,
       size: parseSize(monster.size),
       type,
-      alignment,
+      alignment: parseAlignment(monster.alignment, monster.alignmentPrefix),
       ac,
       hp,
       speed,

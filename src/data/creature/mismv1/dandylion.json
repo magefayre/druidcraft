@@ -3,7 +3,7 @@
   "source": "MisMV1",
   "size": "L",
   "type": "fey",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [14],
   "hp": { "average": 90, "formula": "12d10 + 24" },
   "speed": { "walk": 50 },

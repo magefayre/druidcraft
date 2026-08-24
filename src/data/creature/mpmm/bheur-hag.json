@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "M",
   "type": "fey",
-  "alignment": ["C", "E"],
+  "alignment": ["T", "C", "E"],
   "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "hp": { "average": 91, "formula": "14d8 + 28" },
   "speed": {

@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "S",
   "type": "fey",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "hp": { "average": 93, "formula": "11d6 + 55" },
   "speed": { "walk": 30, "burrow": 30 },

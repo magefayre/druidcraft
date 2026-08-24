@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "M",
   "type": "elemental",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [{ "ac": 13, "from": ["{@item shield|PHB}"] }],
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "speed": { "walk": 30 },

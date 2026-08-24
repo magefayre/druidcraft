@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "M",
   "type": "plant",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "hp": { "average": 27, "formula": "5d8 + 5" },
   "speed": { "walk": 30 },

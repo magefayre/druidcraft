@@ -3,7 +3,7 @@
   "source": "BGG",
   "size": "L",
   "type": "elemental",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [15],
   "hp": { "average": 94, "formula": "9d10 + 45" },
   "speed": {

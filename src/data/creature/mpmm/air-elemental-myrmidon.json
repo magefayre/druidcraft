@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "M",
   "type": "elemental",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
   "hp": { "average": 117, "formula": "18d8 + 36" },
   "speed": {

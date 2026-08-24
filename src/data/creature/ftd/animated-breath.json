@@ -3,7 +3,7 @@
   "source": "FTD",
   "size": "L",
   "type": "elemental",
-  "alignment": ["N", "E"],
+  "alignment": ["T", "N", "E"],
   "ac": [
     { "ac": 15, "from": ["natural armor"] },
     { "ac": 17, "condition": "cold form only", "braces": true }

@@ -3,7 +3,7 @@
   "source": "QftIS",
   "size": "S",
   "type": "elemental",
-  "alignment": ["N", "G"],
+  "alignment": ["T", "N", "G"],
   "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "hp": { "average": 82, "formula": "11d6 + 44" },
   "speed": { "walk": 30, "burrow": 20 },

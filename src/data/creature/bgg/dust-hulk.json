@@ -3,7 +3,7 @@
   "source": "BGG",
   "size": "L",
   "type": "elemental",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "hp": { "average": 68, "formula": "8d10 + 24" },
   "speed": {

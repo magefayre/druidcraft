@@ -3,7 +3,7 @@
   "source": "MCV4EC",
   "size": "M",
   "type": "fey",
-  "alignment": ["C", "G"],
+  "alignment": ["T", "C", "G"],
   "ac": [12],
   "hp": { "average": 38, "formula": "7d8 + 7" },
   "speed": {

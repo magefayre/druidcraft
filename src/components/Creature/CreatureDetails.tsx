@@ -1,13 +1,15 @@
-import { List } from '@newhighsco/chipset'
 import type { FC } from 'react'
 import titleize from 'titleize'
 
+import ActionList from '~components/ActionList'
+import DefinitionList, { Definition } from '~components/DefinitionList'
+import DiceRoller from '~components/DiceRoller'
 import Section from '~components/Section'
-import type { Action } from '~types'
 import {
   formatAC,
   formatAligment,
   formatCR,
+  formatDamage,
   formatHP,
   formatList,
   formatModifier,
@@ -22,58 +24,17 @@ import {
 import styles from './CreatureDetails.module.scss'
 import type { CreatureDetailsProps } from './types'
 
-const ActionList = ({
-  heading,
-  actions
-}: {
-  heading: string
-  actions?: Action[]
-}) => {
-  if (!actions?.length) return null
-
-  return (
-    <div className={styles.actions}>
-      <h2>{heading}</h2>
-      <List unstyled>
-        {actions.map(({ name, entries }) => (
-          <li key={name}>
-            <strong>
-              <em>{name}.</em>
-            </strong>{' '}
-            {entries.join('. ')}
-          </li>
-        ))}
-      </List>
-    </div>
-  )
-}
-
-const DefinitionList = props => (
-  <List as="dl" className={styles.list} {...props} />
-)
-
-const Definition = ({ label, children, visible = true }) => {
-  if (!visible) return null
-
-  return (
-    <div>
-      <dt>{label}</dt>
-      <dd>{children}</dd>
-    </div>
-  )
-}
-
 const ModifierList = <T extends string>({
-  label,
+  term,
   modifiers
 }: {
-  label: string
+  term: string
   modifiers?: Partial<Record<T, number>>
 }) => {
   if (!modifiers) return null
 
   return (
-    <Definition label={label}>
+    <Definition term={term}>
       {formatList(
         Object.keys(modifiers).map(key =>
           [titleize(key), formatModifier(modifiers[key])].join(' ')
@@ -97,14 +58,14 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
   name,
   resist,
   save,
-  senses,
+  senses = [],
   size,
   skill,
   speed,
   trait,
   type
 }) => (
-  <Section className={styles.root}>
+  <Section>
     <h1>{name}</h1>
     <p>
       <em>
@@ -112,41 +73,48 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
       </em>
     </p>
     <DefinitionList>
-      <Definition label="Armor Class">{formatAC(ac)}</Definition>
-      <Definition label="Hit Points">{formatHP(hp)}</Definition>
-      <Definition label="Speed">{formatSpeed(speed)}</Definition>
+      <Definition term="Armor Class">{formatAC(ac)}</Definition>
+      <Definition term="Hit Points">{formatHP(hp)}</Definition>
+      <Definition term="Speed">{formatSpeed(speed)}</Definition>
+    </DefinitionList>
+    <DefinitionList className={styles.abilities}>
+      {Object.entries(ability).map(([ability, value]) => {
+        const modifier = getModifier(value)
+
+        return (
+          <Definition key={ability} term={ability.toUpperCase()}>
+            <DiceRoller dice="1d20" bonus={modifier}>
+              {value} ({formatModifier(modifier)})
+            </DiceRoller>
+          </Definition>
+        )
+      })}
     </DefinitionList>
     <DefinitionList>
-      {Object.entries(ability).map(([ability, value]) => (
-        <Definition key={ability} label={ability.toUpperCase()}>
-          {value} ({formatModifier(getModifier(value))})
-        </Definition>
-      ))}
-    </DefinitionList>
-    <DefinitionList>
-      <ModifierList label="Saving Throws" modifiers={save} />
-      <ModifierList label="Skills" modifiers={skill} />
-      <Definition label="Damage Resistances" visible={!!resist}>
-        {formatList(resist)}
+      <ModifierList term="Saving Throws" modifiers={save} />
+      <ModifierList term="Skills" modifiers={skill} />
+      <Definition term="Damage Resistances" visible={!!resist}>
+        {formatDamage(resist)}
       </Definition>
-      <Definition label="Damage Immunities" visible={!!immune}>
+      <Definition term="Damage Immunities" visible={!!immune}>
         {formatList(immune)}
       </Definition>
-      <Definition label="Condition Immunities" visible={!!condition}>
+      <Definition term="Condition Immunities" visible={!!condition}>
         {formatList(condition)}
       </Definition>
-      <Definition label="Senses">
+      <Definition term="Senses">
         {formatList([
           ...senses,
           `passive Perception ${getPassivePerception(ability.wis, skill?.perception)}`
         ])}
       </Definition>
-      <Definition label="Languages">{formatList(languages)}</Definition>
-      <Definition label="Challenge">
+      <Definition term="Languages">{formatList(languages)}</Definition>
+      <Definition term="Challenge">
         {formatCR(cr)} {cr !== undefined && <>(PB {formatPB(cr)})</>}
       </Definition>
     </DefinitionList>
     <ActionList heading="Traits" actions={trait} />
+    {/* TODO: add `spellcasting` to Actions */}
     <ActionList heading="Actions" actions={action} />
     <ActionList heading="Bonus Actions" actions={bonus} />
   </Section>

@@ -3,7 +3,7 @@
   "source": "BGG",
   "size": "L",
   "type": "elemental",
-  "alignment": ["C", "E"],
+  "alignment": ["T", "C", "E"],
   "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "hp": { "average": 84, "formula": "8d10 + 40" },
   "speed": { "walk": 40 },

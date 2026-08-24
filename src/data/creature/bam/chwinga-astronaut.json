@@ -3,7 +3,7 @@
   "source": "BAM",
   "size": "T",
   "type": "elemental",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [15],
   "hp": { "average": 7, "formula": "3d4" },
   "speed": { "walk": 20, "climb": 20, "swim": 20 },

@@ -3,7 +3,7 @@
   "source": "BAM",
   "size": "M",
   "type": "plant",
-  "alignment": ["L", "E"],
+  "alignment": ["T", "L", "E"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "hp": { "average": 52, "formula": "8d8 + 16" },
   "speed": { "walk": 20, "climb": 20 },

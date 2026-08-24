@@ -3,7 +3,7 @@
   "source": "BGG",
   "size": "M",
   "type": "fey",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [14],
   "hp": { "average": 22, "formula": "4d8 + 4" },
   "speed": { "walk": 30, "climb": 30 },

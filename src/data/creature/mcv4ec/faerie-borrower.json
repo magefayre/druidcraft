@@ -3,7 +3,7 @@
   "source": "MCV4EC",
   "size": "T",
   "type": "fey",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [15],
   "hp": { "average": 12, "formula": "5d4" },
   "speed": { "walk": 10, "fly": 30 },

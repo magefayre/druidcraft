@@ -3,7 +3,7 @@
   "source": "WBtW",
   "size": "L",
   "type": "plant",
-  "alignment": ["C", "G"],
+  "alignment": ["T", "C", "G"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "hp": { "average": 45, "formula": "6d10 + 12" },
   "speed": { "walk": 30 },

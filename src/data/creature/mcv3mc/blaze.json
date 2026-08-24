@@ -3,7 +3,7 @@
   "source": "MCV3MC",
   "size": "M",
   "type": "elemental",
-  "alignment": ["N", "E"],
+  "alignment": ["T", "N", "E"],
   "ac": [13],
   "hp": { "average": 75, "formula": "10d8 + 30" },
   "speed": {

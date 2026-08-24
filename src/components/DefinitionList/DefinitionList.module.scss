@@ -1,0 +1,15 @@
+@use '~styles/functions';
+
+.root {
+  gap: functions.spacing(0.5);
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: inherit;
+  }
+
+  dt::after {
+    content: var(--content-colon);
+  }
+}

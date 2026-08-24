@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "S",
   "type": "fey",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [14],
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "speed": { "walk": 30, "climb": 30 },

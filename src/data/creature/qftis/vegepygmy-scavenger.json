@@ -3,7 +3,7 @@
   "source": "QftIS",
   "size": "S",
   "type": "plant",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [{ "ac": 13, "from": ["natural armor"] }],
   "hp": { "average": 13, "formula": "3d6 + 3" },
   "speed": { "walk": 30 },

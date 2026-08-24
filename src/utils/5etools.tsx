@@ -1,5 +1,6 @@
 import titleize from 'titleize'
 
+import DiceRoller from '~components/DiceRoller'
 import {
   ABILITY_BASE,
   ALIGNMENTS,
@@ -20,6 +21,8 @@ import type {
   Aligmnent,
   ArmorClass,
   Creature,
+  Damage,
+  DamageResistance,
   Health,
   MonsterType,
   Size,
@@ -28,18 +31,75 @@ import type {
   Spell
 } from '~types'
 
-export const formatAC = (acs: ArmorClass[]) => JSON.stringify(acs)
+export const formatAC = (ac: ArmorClass[]) => {
+  const { base, detailed } = ac.reduce(
+    (parsed, value) => {
+      const setBase = (value: string | number, details?: string[]) => {
+        if (parsed.base === undefined) {
+          parsed.base = value
+        } else {
+          details.unshift(`${value}`)
+        }
 
-// TODO: aligment can have `alignmentPrefix`
+        if (details?.length) {
+          parsed.detailed.push(details.join(' '))
+        }
+      }
+
+      if (typeof value === 'number') {
+        setBase(value)
+      }
+
+      if (typeof value !== 'number' && 'special' in value) {
+        setBase(value.special)
+      }
+
+      if (typeof value !== 'number' && 'ac' in value) {
+        setBase(value.ac, value.from ?? [value.condition])
+      }
+
+      return parsed
+    },
+    { base: undefined, detailed: [] }
+  )
+
+  return [base, detailed.length ? `(${detailed.join('; ')})` : undefined]
+    .filter(Boolean)
+    .join(' ')
+}
+
 export const formatAligment = (alignment: Aligmnent[]) =>
   alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? ALIGNMENTS.U
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
+export const formatDamage = (damage: Array<Damage | DamageResistance>) => {
+  const { plain, detailed } = damage.reduce(
+    (parsed, value) => {
+      if (typeof value === 'string') {
+        parsed.plain.push(value)
+      } else {
+        parsed.detailed.push(
+          `${formatList(value.resist, { style: 'long' })} ${value.note}`
+        )
+      }
+
+      return parsed
+    },
+    { plain: [], detailed: [] }
+  )
+
+  return [formatList(plain), ...detailed].filter(Boolean).join('; ')
+}
+
 export const formatHP = (hp: Health) => {
   if ('special' in hp) return hp.special
 
-  return [hp.average, `(${hp.formula})`].join(' ')
+  return (
+    <>
+      {hp.average} (<DiceRoller>{hp.formula}</DiceRoller>)
+    </>
+  )
 }
 
 export const formatList = (
@@ -48,14 +108,18 @@ export const formatList = (
 ) => {
   if (!list) return EMPTY
 
-  return new Intl.ListFormat(undefined, options).format(list)
+  return new Intl.ListFormat('en-GB', options).format(list)
 }
+
+export const formatModifier = (value: number) =>
+  [value > 0 ? '+' : undefined, value].join('')
 
 export const formatPB = (level: number) =>
   formatModifier(Math.max(2, 1 + Math.round(level / 4)))
 
-export const formatModifier = (value: number) =>
-  [value > 0 && '+', value].filter(Boolean).join('')
+export const formatRecharge = (value?: number) => {
+  return [value, 6].filter(Boolean).join('-')
+}
 
 export const formatSize = (size: Size) => SIZES[size]
 
@@ -74,7 +138,7 @@ export const formatSpeedLimits = (level: number) => {
 
   if (!limits.length) return EMPTY
 
-  return `No ${formatList(limits, { style: 'short', type: 'disjunction' })} speed`
+  return `No ${formatList(limits, { style: 'long', type: 'disjunction' })} speed`
 }
 
 export const formatSpellLevel = (level: number) =>

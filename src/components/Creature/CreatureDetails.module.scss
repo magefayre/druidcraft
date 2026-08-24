@@ -1,21 +1,14 @@
-@use '~styles/functions';
+.abilities {
+  display: flex;
+  justify-content: space-between;
 
-.root {
-  .list {
-    border-top: 1px solid currentColor;
-
-    & > div {
-      display: flex;
-      flex: wrap;
-      gap: functions.spacing(0.5);
-    }
-
-    dt::after {
-      content: var(--content-colon);
-    }
+  & > div {
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
   }
-}
 
-.actions {
-  border-top: 1px solid currentColor;
+  dt::after {
+    content: none;
+  }
 }

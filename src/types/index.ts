@@ -12,11 +12,11 @@ declare global {
 export type Ability = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
 export type Abilities = Partial<Record<Ability, number>>
 export type Action = { name: string; entries: string[] }
-export type Aligmnent = 'U' | 'N' | 'L' | 'C' | 'G' | 'E'
+export type Aligmnent = 'U' | 'N' | 'L' | 'C' | 'G' | 'E' | 'T'
 export type ArmorClass =
   | number
-  | { ac: number; from: string[] }
-  | { ac: number; condition: string; braces: true }
+  | { ac: number; from?: string[]; condition?: string }
+  | { special: string }
 export type Condition =
   | 'blinded'
   | 'charmed'
@@ -47,6 +47,7 @@ export type Damage =
   | 'radiant'
   | 'slashing'
   | 'thunder'
+export type DamageResistance = { resist: Damage[]; note: string }
 export type Feature = 'elementalForms'
 export type Features = Partial<Record<Feature, boolean>>
 export type Health = { average: number; formula: string } | { special: number }
@@ -114,6 +115,7 @@ export type Monster = {
   ac: ArmorClass[]
   action?: Action[]
   alignment: Aligmnent[]
+  alignmentPrefix?: string
   bonus?: Action[]
   conditionImmune?: Condition[]
   cr: string
@@ -123,7 +125,7 @@ export type Monster = {
   languages?: string[]
   name: string
   reprintedAs?: string[]
-  resist?: Damage[]
+  resist?: Array<Damage | DamageResistance>
   save?: Partial<Record<Ability, string>>
   senses: string[]
   size: Size[]

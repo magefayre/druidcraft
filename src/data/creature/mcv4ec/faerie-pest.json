@@ -3,7 +3,7 @@
   "source": "MCV4EC",
   "size": "S",
   "type": "fey",
-  "alignment": ["C", "E"],
+  "alignment": ["T", "C", "E"],
   "ac": [{ "ac": 14, "from": ["{@item leather armor|PHB}"] }],
   "hp": { "average": 22, "formula": "5d6 + 5" },
   "speed": { "walk": 30, "fly": 30 },

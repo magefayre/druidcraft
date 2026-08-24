@@ -8,7 +8,8 @@ export const ALIGNMENTS = {
   G: 'Good',
   L: 'Lawful',
   N: 'Neutral',
-  U: 'Unaligned'
+  U: 'Unaligned',
+  T: 'Typically'
 } satisfies Readonly<Record<Aligmnent, string>>
 
 export const CR = { walk: 0.25, swim: 0.5, fly: 1 }

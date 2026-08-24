@@ -3,7 +3,7 @@
   "source": "BAM",
   "size": "M",
   "type": "elemental",
-  "alignment": ["N", "E"],
+  "alignment": ["T", "N", "E"],
   "ac": [{ "ac": 19, "from": ["natural armor"] }],
   "hp": { "average": 66, "formula": "7d8 + 35" },
   "speed": { "walk": 0, "fly": 120 },

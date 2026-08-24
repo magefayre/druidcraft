@@ -3,7 +3,7 @@
   "source": "JttRC",
   "size": "T",
   "type": "fey",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [15],
   "hp": { "average": 21, "formula": "6d4 + 6" },
   "speed": { "walk": 30, "fly": 40 },

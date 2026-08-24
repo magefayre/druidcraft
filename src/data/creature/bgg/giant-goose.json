@@ -3,7 +3,7 @@
   "source": "BGG",
   "size": "L",
   "type": "fey",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [13],
   "hp": { "average": 60, "formula": "8d10 + 16" },
   "speed": { "walk": 30, "fly": 30 },

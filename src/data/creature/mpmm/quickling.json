@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "T",
   "type": "fey",
-  "alignment": ["C", "E"],
+  "alignment": ["T", "C", "E"],
   "ac": [16],
   "hp": { "average": 10, "formula": "3d4 + 3" },
   "speed": { "walk": 120 },

@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "M",
   "type": "fey",
-  "alignment": ["L", "N"],
+  "alignment": ["T", "L", "N"],
   "ac": [
     { "ac": 13, "from": ["{@item studded leather armor|PHB|studded leather}"] }
   ],

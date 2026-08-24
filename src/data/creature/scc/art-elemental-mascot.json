@@ -3,7 +3,7 @@
   "source": "SCC",
   "size": "S",
   "type": "elemental",
-  "alignment": ["N"],
+  "alignment": ["T", "N"],
   "ac": [11],
   "hp": { "average": 18, "formula": "4d6 + 4" },
   "speed": { "walk": 30 },

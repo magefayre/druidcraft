@@ -3,7 +3,7 @@
   "source": "MPMM",
   "size": "S",
   "type": "fey",
-  "alignment": ["C", "N"],
+  "alignment": ["T", "C", "N"],
   "ac": [{ "ac": 13, "from": ["{@item leather armor|PHB}"] }],
   "hp": { "average": 7, "formula": "2d6" },
   "speed": { "walk": 30 },

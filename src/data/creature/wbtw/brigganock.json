@@ -3,7 +3,7 @@
   "source": "WBtW",
   "size": "T",
   "type": "fey",
-  "alignment": ["N", "G"],
+  "alignment": ["T", "N", "G"],
   "ac": [12],
   "hp": { "average": 9, "formula": "2d4 + 4" },
   "speed": { "walk": 15 },
