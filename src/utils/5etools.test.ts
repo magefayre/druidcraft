@@ -21,9 +21,6 @@ describe('formatAC', () => {
     expect(formatAC([{ ac: 15, from: ['natural armor'] }])).toEqual(
       '15 (natural armor)'
     )
-    // expect(formatAC([{ ac: 15, from: ['{@item hide armor|phb}'] }])).toEqual(
-    //   '15 (plate armor)'
-    // )
     expect(
       formatAC([
         { ac: 15, from: ['natural armor'] },

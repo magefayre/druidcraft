@@ -1,10 +1,10 @@
 import { List } from '@newhighsco/chipset'
-import { type FC, Fragment, type PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
+import Tags from '~components/Tags'
 import type { Action } from '~types'
 
 import styles from './ActionList.module.scss'
-import { parseTags } from './utils'
 
 type Props = { heading: string; actions?: Action[] }
 
@@ -23,9 +23,11 @@ const ActionList: FC<Props> = ({ heading, actions }) => {
       <List unstyled>
         {actions.map(({ name, entries }) => (
           <li key={name}>
-            <h3 className={styles.name}>{parseTags(name)}</h3>
+            <h3 className={styles.name}>
+              <Tags>{name}</Tags>
+            </h3>
             {entries.map(entry => (
-              <Fragment key={entry}>{parseTags(entry)} </Fragment>
+              <Tags key={entry}>{entry}</Tags>
             ))}
           </li>
         ))}

@@ -5,6 +5,7 @@ import ActionList from '~components/ActionList'
 import DefinitionList, { Definition } from '~components/DefinitionList'
 import DiceRoller from '~components/DiceRoller'
 import Section from '~components/Section'
+import Tags from '~components/Tags'
 import {
   formatAC,
   formatAligment,
@@ -73,7 +74,9 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
       </em>
     </p>
     <DefinitionList>
-      <Definition term="Armor Class">{formatAC(ac)}</Definition>
+      <Definition term="Armor Class">
+        <Tags>{formatAC(ac)}</Tags>
+      </Definition>
       <Definition term="Hit Points">{formatHP(hp)}</Definition>
       <Definition term="Speed">{formatSpeed(speed)}</Definition>
     </DefinitionList>
@@ -93,15 +96,19 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
     <DefinitionList>
       <ModifierList term="Saving Throws" modifiers={save} />
       <ModifierList term="Skills" modifiers={skill} />
-      <Definition term="Damage Resistances" visible={!!resist}>
-        {formatDamage(resist)}
-      </Definition>
-      <Definition term="Damage Immunities" visible={!!immune}>
-        {formatList(immune)}
-      </Definition>
-      <Definition term="Condition Immunities" visible={!!condition}>
-        {formatList(condition)}
-      </Definition>
+      {resist && (
+        <Definition term="Damage Resistances">
+          {formatDamage(resist)}
+        </Definition>
+      )}
+      {immune && (
+        <Definition term="Damage Immunities">{formatList(immune)}</Definition>
+      )}
+      {condition && (
+        <Definition term="Condition Immunities">
+          {formatList(condition)}
+        </Definition>
+      )}
       <Definition term="Senses">
         {formatList([
           ...senses,
