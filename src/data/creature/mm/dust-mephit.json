@@ -9,6 +9,7 @@
   "speed": { "walk": 30, "fly": 30 },
   "ability": { "str": 5, "dex": 14, "con": 10, "int": 9, "wis": 11, "cha": 10 },
   "skill": { "perception": 2, "stealth": 4 },
+  "vulnerable": ["fire"],
   "immune": ["poison"],
   "condition": ["poisoned"],
   "senses": ["darkvision 60 ft."],
@@ -33,6 +34,14 @@
       "name": "Blinding Breath {@recharge}",
       "entries": [
         "The mephit exhales a 15-foot cone of blinding dust. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "entries": [
+        "The mephit can innately cast {@spell sleep}, requiring no material components. Its innate spellcasting ability is Charisma."
       ]
     }
   ]

@@ -1,0 +1,18 @@
+@use '~styles/functions';
+
+.root {
+  border-block: 1px solid var(--border);
+  display: flex;
+  padding-block: functions.spacing(1);
+
+  > div {
+    align-items: center;
+    flex: 1 0;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  dt::after {
+    content: none;
+  }
+}

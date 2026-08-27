@@ -6,18 +6,20 @@ import yargs from 'yargs'
 
 import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
-import type {
-  Ability,
-  Aligmnent,
-  Creature,
-  CreatureDetails,
-  Features,
-  Monster,
-  MonsterRatings,
-  Monsters,
-  MonsterType,
-  Size,
-  Skill
+import type { Action } from '~types'
+import {
+  type Ability,
+  type Aligmnent,
+  type Creature,
+  type CreatureDetails,
+  type Features,
+  type Monster,
+  type MonsterRatings,
+  type Monsters,
+  type MonsterSpell,
+  type MonsterType,
+  type Size,
+  type Skill
 } from '~types'
 import {
   getCircleFormsCR,
@@ -88,6 +90,12 @@ const parseModifiers = <T extends string>(
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
+const parseSpellcasting = (spellcasting?: MonsterSpell[]) =>
+  spellcasting?.map<Action>(spell => ({
+    name: spell.name,
+    entries: spell.headerEntries
+  }))
+
 const parseType = (type: string | { type: string; swarmSize: string }) => {
   if (
     typeof type !== 'string' &&
@@ -129,9 +137,9 @@ const filterMonsters = (
       monster = { ...base, ...monster }
     }
 
-    const { source, speed } = monster
+    const { source, summonedBySpell } = monster
     const cr = parseCR(monster.cr)!
-    const spell = parseSpell(monster.summonedBySpell)
+    const spell = parseSpell(summonedBySpell)
     const type = parseType(monster.type)
     const include =
       type === filters.type &&
@@ -142,6 +150,8 @@ const filterMonsters = (
     const {
       ac,
       action,
+      alignment,
+      alignmentPrefix,
       bonus,
       cha,
       con,
@@ -151,12 +161,20 @@ const filterMonsters = (
       immune,
       int,
       languages,
+      legendary,
       name,
+      reaction,
       resist,
+      save,
       senses,
+      size,
+      skill,
+      speed,
+      spellcasting,
       str,
       trait,
-      wis
+      wis,
+      vulnerable
     } = monster
     const features = filters.features?.(name)
     const rating = filters.ratings
@@ -174,15 +192,16 @@ const filterMonsters = (
     const details: CreatureDetails = {
       name,
       source,
-      size: parseSize(monster.size),
+      size: parseSize(size),
       type,
-      alignment: parseAlignment(monster.alignment, monster.alignmentPrefix),
+      alignment: parseAlignment(alignment, alignmentPrefix),
       ac,
       hp,
       speed,
       ability: { str, dex, con, int, wis, cha },
-      save: parseModifiers<Ability>(monster.save),
-      skill: parseModifiers<Skill>(monster.skill),
+      save: parseModifiers<Ability>(save),
+      skill: parseModifiers<Skill>(skill),
+      vulnerable,
       resist,
       immune,
       condition,
@@ -191,7 +210,10 @@ const filterMonsters = (
       cr,
       trait,
       action,
-      bonus
+      spellcasting: parseSpellcasting(spellcasting),
+      legendary,
+      bonus,
+      reaction
     }
 
     return [...creatures, { summary, details }]

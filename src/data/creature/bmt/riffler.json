@@ -58,5 +58,13 @@
         "The riffler casts the {@spell Plane Shift} spell targeting only itself, requiring no material components and using Charisma as the spellcasting ability."
       ]
     }
+  ],
+  "reaction": [
+    {
+      "name": "Shuffle Destiny",
+      "entries": [
+        "When a creature the riffler can see within 30 feet of itself makes an ability check, an attack roll, or a saving throw, the riffler can magically force that creature to roll a {@dice d6} and either add the number rolled to the total or subtract it from the total (riffler's choice), potentially changing the outcome."
+      ]
+    }
   ]
 }

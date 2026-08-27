@@ -47,6 +47,14 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting (Psionics)",
+      "entries": [
+        "The aartuk casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability:"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Rally the Troops (1/Day)",

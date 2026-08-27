@@ -8,6 +8,7 @@
   "hp": { "average": 126, "formula": "12d10 + 60" },
   "speed": { "walk": 30, "burrow": 30 },
   "ability": { "str": 20, "dex": 8, "con": 20, "int": 5, "wis": 10, "cha": 5 },
+  "vulnerable": ["thunder"],
   "resist": [
     {
       "resist": ["bludgeoning", "piercing", "slashing"],

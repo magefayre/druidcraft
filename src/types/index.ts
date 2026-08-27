@@ -96,16 +96,20 @@ export type CreatureDetails = CreatureBase &
     | 'hp'
     | 'immune'
     | 'languages'
+    | 'legendary'
+    | 'reaction'
     | 'resist'
     | 'senses'
     | 'trait'
     | 'type'
+    | 'vulnerable'
   > & {
     ability: Abilities
     condition?: Condition[]
     save?: Partial<Record<Ability, number>>
     size: Size
     skill?: Partial<Record<Skill, number>>
+    spellcasting?: Action[]
   }
 
 export type CreatureURL = Pick<Creature, 'source' | 'name'>
@@ -123,7 +127,9 @@ export type Monster = {
   immune?: Damage[]
   isNpc?: boolean
   languages?: string[]
+  legendary?: Action[]
   name: string
+  reaction?: Action[]
   reprintedAs?: string[]
   resist?: Array<Damage | DamageResistance>
   save?: Partial<Record<Ability, string>>
@@ -132,14 +138,17 @@ export type Monster = {
   skill?: Partial<Record<Skill, string>>
   source: string
   speed?: Speeds
+  spellcasting?: MonsterSpell[]
   summonedBySpell?: string
   trait?: Action[]
   type: MonsterType
+  vulnerable?: Damage[]
 } & { [key in Ability]: number }
 
 export type Monsters = { monster: Monster[] }
 export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
 export type MonsterRatings = Record<string, number>
+export type MonsterSpell = { name: string; headerEntries: string[] }
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
 
 export type Spell = {

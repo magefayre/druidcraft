@@ -12,6 +12,7 @@
     "canHover": true
   },
   "ability": { "str": 12, "dex": 10, "con": 14, "int": 1, "wis": 6, "cha": 1 },
+  "vulnerable": ["fire"],
   "condition": [
     "blinded",
     "charmed",

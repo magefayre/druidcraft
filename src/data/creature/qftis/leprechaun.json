@@ -54,11 +54,27 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The leprechaun casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Cunning Trick",
       "entries": [
         "The leprechaun takes the {@action Disengage} or {@action Hide} action or makes a Dexterity ({@skill Sleight of Hand}) check."
+      ]
+    }
+  ],
+  "reaction": [
+    {
+      "name": "Astonishing Luck",
+      "entries": [
+        "When the leprechaun fails an ability check, an attack roll, or a saving throw, it can roll a new {@dice d20} and choose which roll to use, potentially turning the failure into a success."
       ]
     }
   ]

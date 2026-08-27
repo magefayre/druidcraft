@@ -41,5 +41,13 @@
         "The mephit exhales a 15-foot cone of scalding steam. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw, taking 4 ({@damage 1d8}) fire damage on a failed save, or half as much damage on a successful one."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "entries": [
+        "The mephit can innately cast {@spell blur}, requiring no material components. Its innate spellcasting ability is Charisma."
+      ]
+    }
   ]
 }

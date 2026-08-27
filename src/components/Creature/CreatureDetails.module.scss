@@ -1,14 +1,62 @@
-.abilities {
-  display: flex;
+@use '~styles/breakpoints.module';
+@use '~styles/functions';
+@use '~styles/mixins';
+
+.root {
+  align-items: center;
+  flex-direction: column-reverse;
   justify-content: space-between;
 
-  & > div {
-    align-items: center;
-    flex-direction: column;
-    gap: 0;
+  @include mixins.mq(breakpoints.$tablet) {
+    align-items: start;
+    flex-direction: row-reverse;
+  }
+}
+
+.heading {
+  border-block-end: 1px solid var(--border);
+  padding-block-end: functions.spacing(2);
+
+  h1 {
+    font-size: x-large;
   }
 
-  dt::after {
-    content: none;
+  p {
+    font-style: italic;
+    font-size: medium;
   }
+}
+
+.image {
+  flex-shrink: 0;
+  max-width: functions.spacing(24);
+
+  img {
+    padding: functions.spacing(2);
+  }
+}
+
+.content {
+  display: inherit;
+  font-size: medium;
+  flex-direction: column;
+  gap: functions.spacing(2);
+  padding: functions.spacing(2);
+}
+
+.copy {
+  display: inherit;
+  flex-direction: inherit;
+  gap: inherit;
+
+  @include mixins.mq(breakpoints.$desktop) {
+    flex-direction: row;
+  }
+}
+
+.column {
+  display: inherit;
+  flex: 1 0;
+  flex-direction: column;
+  gap: inherit;
 }

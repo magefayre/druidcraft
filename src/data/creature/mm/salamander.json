@@ -15,6 +15,7 @@
     "wis": 10,
     "cha": 12
   },
+  "vulnerable": ["cold"],
   "resist": [
     {
       "resist": ["bludgeoning", "piercing", "slashing"],

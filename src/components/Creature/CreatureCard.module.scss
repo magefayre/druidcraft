@@ -18,7 +18,7 @@
 }
 
 .image {
-  width: functions.spacing(8);
+  flex-basis: functions.spacing(8);
 
   img {
     padding: functions.spacing(0.5);
@@ -27,7 +27,6 @@
 
 .content {
   align-items: inherit;
-  border-top: unset;
   display: inherit;
   flex-grow: 1;
   gap: functions.spacing(1);

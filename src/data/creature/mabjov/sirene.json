@@ -56,5 +56,13 @@
         "The sirene casts {@spell suggestion} with a range of 1 mile that affects all creatures of the sirene's choosing in range. Each target has disadvantage on the saving throw."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The sirene casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ]
+    }
   ]
 }

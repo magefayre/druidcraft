@@ -48,5 +48,13 @@
         "The hag magically turns {@condition invisible} until she attacks or casts a spell, or until her {@status concentration} ends (as if {@status concentration||concentrating} on a spell). While {@condition invisible}, she leaves no physical evidence of her passage, so she can be tracked only by magic. Any equipment she wears or carries is {@condition invisible} with her."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The hag's innate spellcasting ability is Charisma (spell save {@dc 12}). She can innately cast the following spells, requiring no material components:"
+      ]
+    }
   ]
 }

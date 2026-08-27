@@ -38,5 +38,13 @@
         "The leech attaches itself to a ship's hull in its space, dealing 2 ({@damage 1d4}) piercing damage to the ship (ignoring the ship's damage threshold). This damage can't be repaired until the leech is scraped off the hull. While the leech is attached, its speed is 0, and it can detach itself as a bonus action. As an action, a creature within reach of the leech can to try to scrape it off the hull, doing so with a successful {@dc 18} Strength check. On a failed check, the action is wasted as the leech remains attached to the hull. Removing the leech in this way deals no damage to the leech or the ship."
       ]
     }
+  ],
+  "reaction": [
+    {
+      "name": "Magical Discharge (1/Day)",
+      "entries": [
+        "When it takes damage, the leech can discharge a bolt of magical energy from its eye that targets one creature it can see within 30 feet of itself. The target must succeed on a {@dc 13} Dexterity saving throw or take 10 ({@damage 3d6}) force damage and be {@condition stunned} until the end of its next turn."
+      ]
+    }
   ]
 }

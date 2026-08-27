@@ -51,5 +51,21 @@
         "{@atk rs} {@hit 6} to hit, range 120 ft., one target. {@h}5 ({@damage 1d10}) fire damage."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The oread's spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+      ]
+    }
+  ],
+  "reaction": [
+    {
+      "name": "Hellish Rebuke (2nd-Level Spell; 1/Day)",
+      "entries": [
+        "When the oread is damaged by a creature within 60 feet of the oread that it can see, the creature that damaged the oread must make a {@dc 14} Dexterity saving throw, taking 16 ({@damage 3d10}) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
   ]
 }

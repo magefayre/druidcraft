@@ -44,5 +44,13 @@
         "{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}36 ({@damage 9d6 + 5}) bludgeoning damage, and the target is {@condition grappled} (escape {@dc 15}) if it is a Large or smaller creature. Until the grapple ends, the target takes 36 ({@damage 9d6 + 5}) bludgeoning damage at the start of each of the hag's turns. The hag can't make attacks while grappling a creature in this way."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The hag casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 13}):"
+      ]
+    }
   ]
 }

@@ -53,6 +53,14 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The brigganock casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 11}):"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Move Soul Light",

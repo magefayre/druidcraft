@@ -40,6 +40,14 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Guiding Light (2/Day)",

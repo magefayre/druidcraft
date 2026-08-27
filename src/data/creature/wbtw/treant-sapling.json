@@ -15,6 +15,7 @@
     "wis": 12,
     "cha": 10
   },
+  "vulnerable": ["fire"],
   "resist": ["bludgeoning", "piercing"],
   "languages": ["Common", "Druidic", "Elvish", "Sylvan"],
   "cr": 2,

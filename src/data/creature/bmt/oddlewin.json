@@ -49,11 +49,27 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "Oddlewin casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Nimble Escape",
       "entries": [
         "Oddlewin takes the {@action Disengage} or {@action Hide} action."
+      ]
+    }
+  ],
+  "reaction": [
+    {
+      "name": "Reversal of Fortune",
+      "entries": [
+        "In response to another creature dealing damage to Oddlewin, Oddlewin reduces the damage to 0 and regains 9 ({@dice 2d8}) hit points."
       ]
     }
   ]

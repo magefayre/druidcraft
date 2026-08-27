@@ -1,15 +1,17 @@
 @use '~styles/functions';
 
 .root {
-  gap: functions.spacing(0.5);
-
-  & > div {
+  > div {
     display: flex;
     flex-wrap: wrap;
-    gap: inherit;
+    gap: functions.spacing(0.5);
   }
 
-  dt::after {
-    content: var(--content-colon);
+  dt {
+    font-weight: bold;
+
+    &::after {
+      content: var(--content-colon);
+    }
   }
 }

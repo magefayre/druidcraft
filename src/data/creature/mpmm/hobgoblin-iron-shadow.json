@@ -53,5 +53,13 @@
         "The hobgoblin teleports, along with any equipment it is wearing or carrying, up to 30 feet to an unoccupied space it can see. Both the space it leaves and its destination must be in dim light or darkness."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The hobgoblin casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 12}):"
+      ]
+    }
   ]
 }

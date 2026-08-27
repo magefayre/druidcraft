@@ -32,5 +32,13 @@
         "The wynling magically turns {@condition invisible}, along with any equipment it is wearing or carrying, for 1 minute or until it makes an attack roll."
       ]
     }
+  ],
+  "reaction": [
+    {
+      "name": "Trickster's Flight",
+      "entries": [
+        "Immediately after a creature the wynling can see misses the wynling with an attack roll, the wynling can move up to 30 feet. This movement doesn't provoke opportunity attacks."
+      ]
+    }
   ]
 }

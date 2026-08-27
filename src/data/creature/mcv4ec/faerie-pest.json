@@ -33,6 +33,14 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Mischievous Stealth",

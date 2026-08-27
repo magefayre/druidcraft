@@ -9,6 +9,7 @@
   "speed": { "walk": 20 },
   "ability": { "str": 6, "dex": 13, "con": 12, "int": 4, "wis": 8, "cha": 3 },
   "skill": { "stealth": 3 },
+  "vulnerable": ["fire"],
   "condition": ["blinded", "deafened"],
   "senses": ["blindsight 60 ft. (blind beyond this radius)"],
   "languages": ["understands Common but can't speak"],

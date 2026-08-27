@@ -24,5 +24,13 @@
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d4 + 4}) piercing damage."
       ]
     }
+  ],
+  "reaction": [
+    {
+      "name": "Uncanny Dodge",
+      "entries": [
+        "The dragonfly halves the damage it takes from an attack made against it, provided it can see the attacker."
+      ]
+    }
   ]
 }

@@ -8,6 +8,7 @@
   "hp": { "average": 10, "formula": "3d6" },
   "speed": { "walk": 20 },
   "ability": { "str": 3, "dex": 8, "con": 11, "int": 10, "wis": 10, "cha": 6 },
+  "vulnerable": ["fire"],
   "resist": ["piercing"],
   "languages": ["one language known by its creator"],
   "cr": 0,

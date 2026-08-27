@@ -9,6 +9,7 @@
   "speed": { "walk": 40 },
   "ability": { "str": 6, "dex": 14, "con": 13, "int": 6, "wis": 10, "cha": 8 },
   "skill": { "stealth": 4 },
+  "vulnerable": ["bludgeoning"],
   "resist": [
     "acid",
     "cold",

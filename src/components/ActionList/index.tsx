@@ -10,7 +10,7 @@ type Props = { heading: string; actions?: Action[] }
 
 export const ActionLabel: FC<PropsWithChildren> = ({ children }) => (
   <>
-    <em className={styles.label}>{children}</em>{' '}
+    <span className={styles.label}>{children}</span>{' '}
   </>
 )
 
@@ -18,8 +18,8 @@ const ActionList: FC<Props> = ({ heading, actions }) => {
   if (!actions?.length) return null
 
   return (
-    <div className={styles.actions}>
-      <h2>{heading}</h2>
+    <div className={styles.root}>
+      <h2 className={styles.heading}>{heading}</h2>
       <List unstyled>
         {actions.map(({ name, entries }) => (
           <li key={name}>

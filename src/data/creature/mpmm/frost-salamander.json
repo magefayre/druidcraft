@@ -10,6 +10,7 @@
   "ability": { "str": 20, "dex": 12, "con": 18, "int": 7, "wis": 11, "cha": 7 },
   "save": { "con": 8, "wis": 4 },
   "skill": { "perception": 4 },
+  "vulnerable": ["fire"],
   "immune": ["cold"],
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],
   "languages": ["Primordial"],

@@ -44,5 +44,13 @@
         "{@atk mw} {@hit 6} to hit, one target. {@h}17 ({@damage 2d8 + 4}) slashing damage."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The hag's spellcasting ability is Charisma (spell save {@dc 12}). It can innately cast the following spells:"
+      ]
+    }
   ]
 }

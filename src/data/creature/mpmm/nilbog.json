@@ -35,11 +35,27 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The nilbog casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Nimble Escape",
       "entries": [
         "The nilbog takes the {@action Disengage} or {@action Hide} action."
+      ]
+    }
+  ],
+  "reaction": [
+    {
+      "name": "Reversal of Fortune",
+      "entries": [
+        "In response to another creature dealing damage to the nilbog, the nilbog reduces the damage to 0 and regains 3 ({@dice 1d6}) hit points."
       ]
     }
   ]

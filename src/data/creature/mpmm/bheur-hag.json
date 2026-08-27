@@ -68,5 +68,13 @@
         "The hag feeds on the corpse of one enemy within reach that died within the past minute. Each creature of the hag's choice that is within 60 feet and able to see the feeding must succeed on a {@dc 15} Wisdom saving throw or be {@condition frightened} of the hag for 1 minute. While {@condition frightened} in this way, a creature is {@condition incapacitated}, can't understand what others say, can't read, and speaks only in gibberish. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the hag's Horrific Feast for the next 24 hours."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "While holding or riding the graystaff, the hag casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+      ]
+    }
   ]
 }

@@ -52,6 +52,14 @@
       ]
     }
   ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The korred casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability (spell save {@dc 13}):"
+      ]
+    }
+  ],
   "bonus": [
     {
       "name": "Command Hair",

@@ -34,5 +34,13 @@
         "Until the end of its next turn, the khargra can fly through nonmagical earth and stone. While doing so, it doesn't disturb the material it moves through. It can end its movement within earth or stone, but if it remains within earth or stone when this ability ends, it takes 14 ({@damage 4d6}) force damage and immediately moves to the nearest unoccupied space."
       ]
     }
+  ],
+  "reaction": [
+    {
+      "name": "Opportunistic Hunger",
+      "entries": [
+        "When a creature the khargra can see within 5 feet of it hits it with a metal weapon, the khargra can make a bite attack against that creature."
+      ]
+    }
   ]
 }

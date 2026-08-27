@@ -57,5 +57,21 @@
         "The dandylion releases a burst of seedpods from its tail, filling a 10-foot-radius sphere centered on itself. Each creature of the dandylion's choice in the sphere can immediately end one of the following conditions on itself (creature's choice): {@condition blinded}, {@condition deafened}, {@condition paralyzed}, or {@condition poisoned}. In addition, all soil in the sphere's area is enriched, restoring withered vegetation in the area to full health and causing all crops in the area to produce twice the normal harvest for the next year."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The dandylion casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
+      ]
+    }
+  ],
+  "reaction": [
+    {
+      "name": "Roar of Pride",
+      "entries": [
+        "When a creature within 60 feet of the dandylion hits it with an attack roll, the dandylion can unleash a furious roar. The creature that triggered this reaction must succeed on a {@dc 15} Wisdom saving throw or have the {@condition frightened} condition until the end of the dandylion's next turn."
+      ]
+    }
   ]
 }

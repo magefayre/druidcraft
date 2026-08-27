@@ -66,5 +66,13 @@
         "The dryad targets one magic item it can see within 120 feet of it. If the magic item isn't an artifact, its magical properties are suppressed for 10 minutes, until the dryad is {@condition incapacitated} or dies, or until the dryad uses a bonus action to end the effect."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The dryad's innate spellcasting ability is Charisma (spell save {@dc 17}). The dryad can innately cast the following spells, requiring no material components:"
+      ]
+    }
   ]
 }

@@ -57,5 +57,13 @@
         "The dryad can have no more than one humanoid and up to three beasts {@condition charmed} at a time."
       ]
     }
+  ],
+  "spellcasting": [
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The dryad's innate spellcasting ability is Charisma (spell save {@dc 14}). The dryad can innately cast the following spells, requiring no material components:"
+      ]
+    }
   ]
 }

@@ -1,5 +1,14 @@
-.actions {
-  border-top: 1px solid currentColor;
+@use '~styles/functions';
+
+.root {
+  break-before: always;
+}
+
+.heading {
+  border-block-end: 1px solid var(--border);
+  font-size: larger;
+  margin-block-end: functions.spacing(1);
+  padding-block-end: functions.spacing(1);
 }
 
 .name {
@@ -12,6 +21,10 @@
   }
 }
 
-.label::after {
-  content: var(--content-colon);
+.label {
+  font-style: italic;
+
+  &::after {
+    content: var(--content-colon);
+  }
 }

@@ -8,6 +8,7 @@
   "hp": { "average": 59, "formula": "7d12 + 14" },
   "speed": { "walk": 20 },
   "ability": { "str": 19, "dex": 6, "con": 15, "int": 10, "wis": 10, "cha": 7 },
+  "vulnerable": ["fire"],
   "resist": ["bludgeoning", "piercing"],
   "languages": ["one language known by its creator"],
   "cr": 2,
