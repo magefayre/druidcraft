@@ -1,11 +1,10 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import { formatSlug, url } from '~components/Creature/utils'
+import { slugifyName, slugifySource, url } from '~components/Creature/utils'
 import { loadCreatures, loadData } from '~data/utils'
 import type { CreatureLayoutProps } from '~layouts/creature'
 import CreatureLayout from '~layouts/creature'
 import type { CreatureDetails } from '~types'
-import { formatSource } from '~utils/5etools'
 
 const CreaturePage: NextPage<CreatureLayoutProps> = props => (
   <CreatureLayout {...props} />
@@ -26,11 +25,16 @@ export const getStaticProps = (async ({ params }) => {
 export const getStaticPaths = (async () => {
   const creatures = Object.values(
     await loadCreatures([
-      // 'beast', 'dragon', 'elemental', 'fey', 'plant'
+      'beast',
+      'dragon',
+      'elemental',
+      // TODO: Handle broken Fey Spirit
+      // 'fey',
+      'plant'
     ])
   ).flat()
   const paths = creatures.map(({ source, name }) => ({
-    params: { source: formatSource(source), slug: formatSlug(name) }
+    params: { source: slugifySource(source), slug: slugifyName(name) }
   }))
 
   return { paths, fallback: true }

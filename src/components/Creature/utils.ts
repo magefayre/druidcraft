@@ -3,10 +3,10 @@ import urlJoin from 'url-join'
 
 import type { CreatureURL } from '~types'
 
-export const formatSlug = (name: string) =>
+export const slugifyName = (name: string) =>
   slugify(name, { customReplacements: [['-', '']], decamelize: false })
 
-export const formatSource = (source: string) =>
+export const slugifySource = (source: string) =>
   slugify(source, { separator: '' })
 
 export const tokenURL = ({ source, name }: CreatureURL) =>
@@ -15,6 +15,6 @@ export const tokenURL = ({ source, name }: CreatureURL) =>
 export const url = ({ source, name }: CreatureURL, parse: boolean = true) =>
   urlJoin(
     '/creature',
-    parse ? formatSource(source) : source,
-    parse ? formatSlug(name) : name
+    parse ? slugifySource(source) : source,
+    parse ? slugifyName(name) : name
   )
