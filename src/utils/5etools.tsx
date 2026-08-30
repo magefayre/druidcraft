@@ -110,13 +110,7 @@ export const formatList = (
 ) => {
   if (!list) return EMPTY
 
-  try {
-    return new Intl.ListFormat('en-GB', options).format(list)
-  } catch {
-    console.log(111, list)
-
-    throw new Error('brokes')
-  }
+  return new Intl.ListFormat('en-GB', options).format(list)
 }
 
 export const formatModifier = (value: number) =>
