@@ -11,7 +11,7 @@ import styles from './Checkbox.module.scss'
 type Props = Omit<FilterFieldProps<'input'>, 'type'> &
   PropTypes.InferProps<Icon.propTypes>
 
-const Checkbox: FC<Props> = ({ id, label, icon, onChange }) => {
+const Checkbox: FC<Props> = ({ id, label, icon, checked, onChange }) => {
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
     onChange?.(id, e.target.checked)
   }
@@ -21,6 +21,7 @@ const Checkbox: FC<Props> = ({ id, label, icon, onChange }) => {
       <input
         id={id}
         name={id}
+        checked={checked}
         type="checkbox"
         className={styles.input}
         onChange={handleChange}
