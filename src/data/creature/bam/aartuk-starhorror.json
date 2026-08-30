@@ -45,14 +45,14 @@
       "entries": [
         "{@atk rs} {@hit 2} to hit, range 60 ft., one target. {@h}7 ({@damage 3d4}) radiant damage."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting (Psionics)",
       "entries": [
-        "The aartuk casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability:"
-      ]
+        "The aartuk casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability:",
+        "{@frequency 1e} {@spell revivify}, {@spell speak with plants}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

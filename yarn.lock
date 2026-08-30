@@ -3066,7 +3066,7 @@ __metadata:
     sass: "npm:1.103.1"
     semantic-release: "npm:25.0.9"
     stylelint: "npm:17.14.1"
-    titleize: "npm:4.0.0"
+    title-case: "npm:4.3.2"
     tsx: "npm:4.23.13"
     typescript: "npm:6.0.3"
     usehooks-ts: "npm:3.1.1"
@@ -13180,10 +13180,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"titleize@npm:4.0.0":
-  version: 4.0.0
-  resolution: "titleize@npm:4.0.0"
-  checksum: 10c0/94bb07a310b39f2d75854ff028389796d996271f682750d24e7f43a4e71945044189efda3a6ad63e3358865a88aea06051d4e849c435464de4915678f135f373
+"title-case@npm:4.3.2":
+  version: 4.3.2
+  resolution: "title-case@npm:4.3.2"
+  checksum: 10c0/f040c5b0586e3a4ac5881e59ac060ebfa56dae611b0d513ad211fa7f92597d418395fa902fe9d7ee49f98e557e88421e274680b22a3b04dd1ce1c577225444d3
   languageName: node
   linkType: hard
 

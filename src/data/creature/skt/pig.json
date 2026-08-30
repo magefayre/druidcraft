@@ -8,7 +8,5 @@
   "hp": { "average": 5, "formula": "1d8 + 1" },
   "speed": { "walk": 30 },
   "ability": { "str": 13, "dex": 11, "con": 12, "int": 2, "wis": 9, "cha": 5 },
-  "cr": 0,
-  "trait": null,
-  "action": null
+  "cr": 0
 }

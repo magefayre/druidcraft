@@ -27,6 +27,13 @@
       "entries": [
         "While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma."
       ]
+    },
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "entries": [
+        "The mephit can innately cast {@spell heat metal} (spell save {@dc 10}), requiring no material components. Its innate spellcasting ability is Charisma.",
+        "{@frequency At will} {@spell heat metal}"
+      ]
     }
   ],
   "action": [
@@ -40,14 +47,6 @@
       "name": "Fire Breath {@recharge}",
       "entries": [
         "The mephit exhales a 15-foot cone of fire. Each creature in that area must make a {@dc 11} Dexterity saving throw, taking 7 ({@damage 2d6}) fire damage on a failed save, or half as much damage on a successful one."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting (1/Day)",
-      "entries": [
-        "The mephit can innately cast {@spell heat metal} (spell save {@dc 10}), requiring no material components. Its innate spellcasting ability is Charisma."
       ]
     }
   ]

@@ -37,6 +37,15 @@
       "entries": [
         "The naiad has advantage on saving throws against spells and other magical effects."
       ]
+    },
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The naiad's spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:",
+        "{@frequency At will} {@spell minor illusion}",
+        "{@frequency 3} {@spell phantasmal force}",
+        "{@frequency 1e} {@spell fly}, {@spell hypnotic pattern}"
+      ]
     }
   ],
   "action": [
@@ -48,14 +57,6 @@
       "name": "Psychic Touch",
       "entries": [
         "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) psychic damage."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting",
-      "entries": [
-        "The naiad's spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:"
       ]
     }
   ]

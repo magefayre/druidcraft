@@ -44,14 +44,14 @@
       "entries": [
         "The chwinga takes shelter inside a rock, a bush, a tree, or a natural source of fresh water in its space. The chwinga can't be targeted by any attack, spell, or other effect while it is magically protected in this way, and the shelter doesn't impair the chwinga's blindsight. The chwinga can use its action to emerge from a shelter. If its shelter is destroyed, the chwinga is forced out and appears in the shelter's space, but is otherwise unharmed."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The chwinga casts one of the following spells, requiring no material or verbal components and using Charisma as the spellcasting ability:"
-      ]
+        "The chwinga casts one of the following spells, requiring no material or verbal components and using Charisma as the spellcasting ability:",
+        "{@frequency At will} {@spell druidcraft}, {@spell guidance}, {@spell pass without trace}, {@spell resistance}"
+      ],
+      "type": "action"
     }
   ]
 }

@@ -60,7 +60,7 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "sass": "1.103.1",
-    "titleize": "4.0.0",
+    "title-case": "4.3.2",
     "usehooks-ts": "3.1.1"
   },
   "devDependencies": {

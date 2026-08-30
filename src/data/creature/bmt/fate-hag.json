@@ -47,14 +47,15 @@
       "entries": [
         "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}8 ({@damage 1d8 + 4}) force damage. If the target is a creature, it has disadvantage on attack rolls until the end of the hag's next turn."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "While holding its shears, the hag casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 14}):"
-      ]
+        "While holding its shears, the hag casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 14}):",
+        "{@frequency At will} {@spell Bless}, {@spell Guidance}, {@spell Silent Image}",
+        "{@frequency 1e} {@spell Bane}, {@spell Bestow Curse}, {@spell Divination}, {@spell Scrying} (as an action)"
+      ],
+      "type": "action"
     }
   ],
   "legendary": [

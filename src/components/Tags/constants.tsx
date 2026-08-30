@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { titleCase } from 'title-case'
 
 import { ActionLabel } from '~components/ActionList'
 import DiceRoller from '~components/DiceRoller'
@@ -28,6 +29,18 @@ export const TAGS = {
   dc: save => `DC ${save}`,
   dice: diceRoller,
   filter: label => label,
+  frequency: label => {
+    const { groups: { times, each } = {} } =
+      label.match(/(?<times>\d+)(?<each>e)?/) ?? {}
+
+    return (
+      <ActionLabel subheading>
+        {times
+          ? [`${times}/day`, each && 'each'].filter(Boolean).join(' ')
+          : label}
+      </ActionLabel>
+    )
+  },
   h: () => <ActionLabel>Hit</ActionLabel>,
   hit: args => {
     const modifier = parseInt(args)
@@ -52,7 +65,7 @@ export const TAGS = {
   ),
   sense: sense => sense,
   skill: (skill: Skill) => skill,
-  spell: spell => spell,
+  spell: spell => titleCase(spell),
   status: status => status,
   table: label => label
 } satisfies Readonly<Record<Tag, (...args: string[]) => ReactNode>>

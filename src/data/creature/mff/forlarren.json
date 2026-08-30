@@ -25,6 +25,15 @@
       "entries": [
         "The forlarren has advantage on saving throws against spells and other magical effects."
       ]
+    },
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The forlarren's innate spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:",
+        "{@frequency At will} {@spell expeditious retreat}, {@spell false life}, {@spell minor illusion}, {@spell prestidigitation}",
+        "{@frequency 3e} {@spell aid}, {@spell misty step}, {@spell Tasha's hideous laughter}",
+        "{@frequency 1e} {@spell heal}, {@spell heat metal}, {@spell mirror image}"
+      ]
     }
   ],
   "action": [
@@ -50,14 +59,6 @@
       "name": "Chromatic Ray",
       "entries": [
         "{@atk rs} {@hit 6} to hit, range 60 ft., one target. {@h}3 ({@damage 1d6}) lightning damage plus 3 ({@damage 1d6}) fire damage plus 3 ({@damage 1d6}) cold damage."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting",
-      "entries": [
-        "The forlarren's innate spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:"
       ]
     }
   ]

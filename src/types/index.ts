@@ -11,7 +11,8 @@ declare global {
 
 export type Ability = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
 export type Abilities = Partial<Record<Ability, number>>
-export type Action = { name: string; entries: string[] }
+export type ActionType = 'action'
+export type Action = { name: string; entries: string[]; type?: ActionType }
 export type Aligmnent = 'U' | 'N' | 'L' | 'C' | 'G' | 'E' | 'T'
 export type ArmorClass =
   | number
@@ -109,7 +110,6 @@ export type CreatureDetails = CreatureBase &
     save?: Partial<Record<Ability, number>>
     size: Size
     skill?: Partial<Record<Skill, number>>
-    spellcasting?: Action[]
   }
 
 export type CreatureURL = Pick<Creature, 'source' | 'name'>
@@ -148,7 +148,14 @@ export type Monster = {
 export type Monsters = { monster: Monster[] }
 export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
 export type MonsterRatings = Record<string, number>
-export type MonsterSpell = { name: string; headerEntries: string[] }
+export type MonsterSpell = {
+  name: string
+  headerEntries?: string[]
+  footerEntries?: string[]
+  will?: string[]
+  daily?: Record<`${number}e`, string[]>
+  displayAs?: ActionType
+}
 export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
 
 export type Spell = {

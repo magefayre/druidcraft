@@ -21,6 +21,5 @@
       "name": "Water Breathing",
       "entries": ["The quipper can breathe only underwater."]
     }
-  ],
-  "action": null
+  ]
 }

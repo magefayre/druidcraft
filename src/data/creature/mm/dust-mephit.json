@@ -21,6 +21,13 @@
       "entries": [
         "When the mephit dies, it explodes in a burst of dust. Each creature within 5 feet of it must then succeed on a {@dc 10} Constitution saving throw or be {@condition blinded} for 1 minute. A {@condition blinded} creature can repeat the saving throw on each of its turns, ending the effect on itself on a success."
       ]
+    },
+    {
+      "name": "Innate Spellcasting (1/Day)",
+      "entries": [
+        "The mephit can innately cast {@spell sleep}, requiring no material components. Its innate spellcasting ability is Charisma.",
+        "{@frequency At will} {@spell sleep}"
+      ]
     }
   ],
   "action": [
@@ -34,14 +41,6 @@
       "name": "Blinding Breath {@recharge}",
       "entries": [
         "The mephit exhales a 15-foot cone of blinding dust. Each creature in that area must succeed on a {@dc 10} Dexterity saving throw or be {@condition blinded} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting (1/Day)",
-      "entries": [
-        "The mephit can innately cast {@spell sleep}, requiring no material components. Its innate spellcasting ability is Charisma."
       ]
     }
   ]

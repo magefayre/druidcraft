@@ -32,6 +32,15 @@
       "entries": [
         "The oread has advantage on saving throws against spells and other magical effects."
       ]
+    },
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The oread's spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:",
+        "{@frequency At will} {@spell fire bolt} (see \"Actions\" below)",
+        "{@frequency 3} {@spell burning hands}",
+        "{@frequency 1e} {@spell hellish rebuke} (see \"Reactions\" below), {@spell scorching ray}"
+      ]
     }
   ],
   "action": [
@@ -49,14 +58,6 @@
       "name": "Fire Bolt (Cantrip)",
       "entries": [
         "{@atk rs} {@hit 6} to hit, range 120 ft., one target. {@h}5 ({@damage 1d10}) fire damage."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting",
-      "entries": [
-        "The oread's spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
       ]
     }
   ],

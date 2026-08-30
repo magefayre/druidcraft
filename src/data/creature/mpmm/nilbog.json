@@ -33,14 +33,14 @@
       "entries": [
         "The nilbog targets one creature it can see within 60 feet of it. The target must succeed on a {@dc 12} Wisdom saving throw or take 5 ({@damage 2d4}) psychic damage and have disadvantage on its next attack roll before the end of its next turn."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The nilbog casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):"
-      ]
+        "The nilbog casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):",
+        "{@frequency At will} {@spell mage hand}, {@spell Tasha's hideous laughter}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

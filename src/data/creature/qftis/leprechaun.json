@@ -52,14 +52,16 @@
       "entries": [
         "The leprechaun touches a creature and magically gifts the target a measure of luck. The creature gains the leprechaun's Astonishing Luck reaction. The creature can use the reaction three times, after which this gift goes away. The leprechaun can revoke this gift from a creature at any time (no action required). A creature can benefit from only one leprechaun's Gift of Luck at a time."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The leprechaun casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
-      ]
+        "The leprechaun casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):",
+        "{@frequency At will} {@spell Mending} (as an action), {@spell Prestidigitation}",
+        "{@frequency 2e} {@spell Invisibility}, {@spell Phantasmal Force}",
+        "{@frequency 1e} {@spell Fabricate} (as an action), {@spell Mislead}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

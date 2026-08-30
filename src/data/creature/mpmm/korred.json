@@ -50,14 +50,15 @@
       "entries": [
         "{@atk rw} {@hit 9} to hit, range 60/120 ft., one target. {@h}10 ({@damage 1d8 + 6}) bludgeoning damage, or 19 ({@damage 3d8 + 6}) bludgeoning damage if the korred is on the ground."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The korred casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability (spell save {@dc 13}):"
-      ]
+        "The korred casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability (spell save {@dc 13}):",
+        "{@frequency At will} {@spell commune with nature} (as an action), {@spell meld into stone}, {@spell stone shape}",
+        "{@frequency 1} {@spell Otto's irresistible dance}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

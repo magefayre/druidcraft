@@ -51,14 +51,15 @@
       "entries": [
         "The brigganock accelerates the passage of time around itself, enabling it to accomplish up to 1 hour of work in a matter of seconds. This work can't affect any creature other than the brigganock, or any object being worn or carried by another creature, and the activity must take place within a 10-foot cube. For example, the brigganock could use this action to rapidly carve a pumpkin, cook and eat dinner, move a pile of stones, or tie a dozen knots in a length of rope."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The brigganock casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 11}):"
-      ]
+        "The brigganock casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 11}):",
+        "{@frequency At will} {@spell minor illusion}, {@spell spare the dying}",
+        "{@frequency 1e} {@spell animal friendship}, {@spell faerie fire}, {@spell meld into stone}, {@spell silence}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

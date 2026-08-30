@@ -38,14 +38,15 @@
       "entries": [
         "{@atk ms,rs} {@hit 6} to hit, reach 5 ft. or range 30 ft., one target. {@h}7 ({@damage 2d6}) radiant damage, and if the target is a creature, it must succeed on a {@dc 14} Dexterity saving throw or be wreathed in light until the end of the faerie's next turn. While a creature is wreathed in light, attack rolls against the creature have advantage, and the creature can't benefit from the {@condition invisible} condition."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
-      ]
+        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:",
+        "{@frequency At will} {@spell dancing lights}, {@spell detect magic}, {@spell prestidigitation}",
+        "{@frequency 1} {@spell locate creature}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

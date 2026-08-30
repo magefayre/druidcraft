@@ -33,6 +33,14 @@
       "entries": [
         "The alseid has advantage on saving throws against spells and other magical effects."
       ]
+    },
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The alseid's spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:",
+        "{@frequency 3e} {@spell cure wounds}, {@spell charm person}, {@spell sleep}",
+        "{@frequency 1e} {@spell calm emotions}, {@spell lesser restoration}, {@spell plant growth}"
+      ]
     }
   ],
   "action": [
@@ -44,14 +52,6 @@
       "name": "Radiant Touch",
       "entries": [
         "{@atk ms} {@hit 6} to hit, reach 5 ft., one target. {@h}9 ({@damage 1d10 + 4}) radiant damage."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting",
-      "entries": [
-        "The alseid's spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:"
       ]
     }
   ]

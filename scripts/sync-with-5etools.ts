@@ -6,7 +6,7 @@ import yargs from 'yargs'
 
 import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
-import type { Action } from '~types'
+import type { Action, ActionType } from '~types'
 import {
   type Ability,
   type Aligmnent,
@@ -22,6 +22,7 @@ import {
   type Skill
 } from '~types'
 import {
+  formatList,
   getCircleFormsCR,
   getTypeCR,
   sortAlphabetically,
@@ -35,6 +36,21 @@ import {
   fetchScript,
   fetchToken
 } from './utils'
+
+const parseActions = (
+  actions: Action[] = [],
+  spellcasting: Action[] = [],
+  type?: ActionType
+) => {
+  const parsed = [
+    ...(actions ?? []),
+    ...spellcasting.filter(action => action.type === type)
+  ]
+
+  if (!parsed.length) return undefined
+
+  return parsed
+}
 
 const parseAlignment = (
   alignment?: Aligmnent[],
@@ -91,10 +107,29 @@ const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
 const parseSpellcasting = (spellcasting?: MonsterSpell[]) =>
-  spellcasting?.map<Action>(spell => ({
-    name: spell.name,
-    entries: spell.headerEntries
-  }))
+  spellcasting?.map<Action>(
+    ({
+      name,
+      headerEntries = [' '],
+      footerEntries = [],
+      will,
+      daily,
+      displayAs
+    }) => {
+      const entries = [
+        ...headerEntries,
+        will && `{@frequency At will} ${formatList(will)}`,
+        ...(daily
+          ? Object.entries(daily).map(
+              ([key, value]) => `{@frequency ${key}} ${formatList(value)}`
+            )
+          : []),
+        ...footerEntries
+      ].filter(Boolean)
+
+      return { name, entries, type: displayAs }
+    }
+  )
 
 const parseType = (type: string | { type: string; swarmSize: string }) => {
   if (
@@ -170,7 +205,6 @@ const filterMonsters = (
       size,
       skill,
       speed,
-      spellcasting,
       str,
       trait,
       wis,
@@ -180,6 +214,7 @@ const filterMonsters = (
     const rating = filters.ratings
       ? parseRating(base?.name ?? name, features, ratings)
       : undefined
+    const spellcasting = parseSpellcasting(monster.spellcasting)
     const summary: Creature = {
       name,
       source,
@@ -208,13 +243,16 @@ const filterMonsters = (
       senses,
       languages,
       cr,
-      trait,
-      action,
-      spellcasting: parseSpellcasting(spellcasting),
+      trait: parseActions(trait, spellcasting),
+      action: parseActions(action, spellcasting, 'action'),
       legendary,
       bonus,
       reaction
     }
+
+    // if (spellcasting) {
+    //   console.log(111, name, spellcasting)
+    // }
 
     return [...creatures, { summary, details }]
   }, [])

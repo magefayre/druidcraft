@@ -38,14 +38,15 @@
       "entries": [
         "The faerie hurls magical taunts at one creature it can see within 60 feet of itself. The creature must succeed on a {@dc 13} Wisdom saving throw or take 3 ({@damage 1d6}) psychic damage and have disadvantage on attack rolls and ability checks until the start of the faerie's next turn."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
-      ]
+        "The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):",
+        "{@frequency At will} {@spell prestidigitation}",
+        "{@frequency 1} {@spell silent image}"
+      ],
+      "type": "action"
     }
   ],
   "reaction": [

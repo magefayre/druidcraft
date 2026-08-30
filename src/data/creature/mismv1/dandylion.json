@@ -56,14 +56,16 @@
       "entries": [
         "The dandylion releases a burst of seedpods from its tail, filling a 10-foot-radius sphere centered on itself. Each creature of the dandylion's choice in the sphere can immediately end one of the following conditions on itself (creature's choice): {@condition blinded}, {@condition deafened}, {@condition paralyzed}, or {@condition poisoned}. In addition, all soil in the sphere's area is enriched, restoring withered vegetation in the area to full health and causing all crops in the area to produce twice the normal harvest for the next year."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The dandylion casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):"
-      ]
+        "The dandylion casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 15}):",
+        "{@frequency At will} {@spell druidcraft}, {@spell guidance}, {@spell purify food and drink}",
+        "{@frequency 1} {@spell speak with plants}",
+        "{@frequency 2e} {@spell entangle}, {@spell goodberry}"
+      ],
+      "type": "action"
     }
   ],
   "reaction": [

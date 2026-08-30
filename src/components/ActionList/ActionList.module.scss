@@ -11,6 +11,12 @@
   padding-block-end: functions.spacing(1);
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: functions.spacing(1);
+}
+
 .name {
   display: inline;
   font-style: italic;
@@ -22,9 +28,15 @@
 }
 
 .label {
+  display: inline-block;
   font-style: italic;
 
   &::after {
     content: var(--content-colon);
   }
+}
+
+.subheading {
+  font-style: normal;
+  font-weight: bold;
 }

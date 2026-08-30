@@ -1,4 +1,4 @@
-import titleize from 'titleize'
+import { titleCase } from 'title-case'
 
 import DiceRoller from '~components/DiceRoller'
 import {
@@ -144,7 +144,7 @@ export const formatSpeedLimits = (level: number) => {
 export const formatSpellLevel = (level: number) =>
   level === 0 ? 'Cantrip' : `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
 
-export const formatType = (type: MonsterType) => titleize(type)
+export const formatType = (type: MonsterType) => titleCase(type)
 
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))

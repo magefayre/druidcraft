@@ -37,14 +37,14 @@
       "entries": [
         "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting (Psionics)",
       "entries": [
-        "The dohwar casts the following spell, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 11}):"
-      ]
+        "The dohwar casts the following spell, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 11}):",
+        "{@frequency 3} {@spell detect thoughts}"
+      ],
+      "type": "action"
     }
   ]
 }

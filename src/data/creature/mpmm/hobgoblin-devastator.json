@@ -47,14 +47,15 @@
       "entries": [
         "{@atk rs} {@hit 5} to hit, range 60 ft., one target. {@h}21 ({@damage 4d8 + 3}) force damage, and the target is knocked {@condition prone}."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "The hobgoblin casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13}):"
-      ]
+        "The hobgoblin casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13}):",
+        "{@frequency At will} {@spell mage hand}, {@spell prestidigitation}",
+        "{@frequency 2e} {@spell fireball}, {@spell fly}, {@spell fog cloud}, {@spell gust of wind}, {@spell lightning bolt}"
+      ],
+      "type": "action"
     }
   ]
 }

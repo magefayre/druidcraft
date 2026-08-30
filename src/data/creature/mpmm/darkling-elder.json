@@ -37,14 +37,13 @@
       "entries": [
         "{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) slashing damage plus 7 ({@damage 2d6}) necrotic damage."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Darkness (Recharges after a Short or Long Rest)",
       "entries": [
         "The darkling elder casts {@spell darkness}, requiring no spell components and using Wisdom as the spellcasting ability."
-      ]
+      ],
+      "type": "action"
     }
   ]
 }

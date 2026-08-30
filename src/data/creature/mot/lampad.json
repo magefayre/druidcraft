@@ -33,6 +33,13 @@
       "entries": [
         "The lampad has advantage on saving throws against spells and other magical effects."
       ]
+    },
+    {
+      "name": "Innate Spellcasting",
+      "entries": [
+        "The lampad's spellcasting ability is Charisma ({@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:",
+        "{@frequency At will} {@spell chill touch} (see \"Actions\" below), {@spell gentle repose}"
+      ]
     }
   ],
   "action": [
@@ -52,14 +59,6 @@
       "name": "Chill Touch (Cantrip)",
       "entries": [
         "{@atk rs} {@hit 6} to hit, range 120 ft., one creature. {@h}9 ({@damage 2d8}) necrotic damage, and the target can't regain hit points until the start of the lampad's next turn. If the target is undead, it has disadvantage on attack rolls against the lampad until the end of the lampad's next turn."
-      ]
-    }
-  ],
-  "spellcasting": [
-    {
-      "name": "Innate Spellcasting",
-      "entries": [
-        "The lampad's spellcasting ability is Charisma ({@hit 6} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
       ]
     }
   ]

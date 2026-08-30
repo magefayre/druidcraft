@@ -47,14 +47,14 @@
       "entries": [
         "Oddlewin conjures magical cards that slash at the air in a 5-foot cube within 60 feet of Oddlewin until the start of Oddlewin's next turn. A creature that starts its turn in the cube or that enters that area for the first time on a turn takes 10 ({@damage 4d4}) slashing damage."
       ]
-    }
-  ],
-  "spellcasting": [
+    },
     {
       "name": "Spellcasting",
       "entries": [
-        "Oddlewin casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):"
-      ]
+        "Oddlewin casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):",
+        "{@frequency At will} {@spell Mage Hand}, {@spell Tasha's Hideous Laughter}"
+      ],
+      "type": "action"
     }
   ],
   "bonus": [

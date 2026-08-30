@@ -1,6 +1,6 @@
 import { Card } from '@newhighsco/chipset'
 import type { FC } from 'react'
-import titleize from 'titleize'
+import { titleCase } from 'title-case'
 
 import AbilityList from '~components/AbilityList'
 import ActionList from '~components/ActionList'
@@ -40,7 +40,7 @@ const ModifierList = <T extends string>({
     <Definition term={term}>
       {formatList(
         Object.keys(modifiers).map(key =>
-          [titleize(key), formatModifier(modifiers[key])].join(' ')
+          [titleCase(key), formatModifier(modifiers[key])].join(' ')
         )
       )}
     </Definition>
@@ -50,7 +50,7 @@ const ModifierList = <T extends string>({
 const CreatureDetails: FC<CreatureDetailsProps> = ({
   ability,
   ac,
-  action,
+  action = [],
   alignment,
   bonus,
   condition,
@@ -143,7 +143,6 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
       </div>
       <div className={styles.column}>
         <ActionList heading="Traits" actions={trait} />
-        {/* TODO: add `spellcasting` to Actions */}
         <ActionList heading="Actions" actions={action} />
         <ActionList heading="Legendary Actions" actions={legendary} />
         <ActionList heading="Bonus Actions" actions={bonus} />

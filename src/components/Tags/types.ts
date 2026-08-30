@@ -10,6 +10,7 @@ export type Tag =
   | 'dc'
   | 'dice'
   | 'filter'
+  | 'frequency'
   | 'h'
   | 'hit'
   | 'hom'
