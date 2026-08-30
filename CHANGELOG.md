@@ -1,3 +1,15 @@
+## [1.17.18](https://github.com/magefayre/druidcraft/compare/v1.17.17...v1.17.18) (2026-08-30)
+
+## [1.17.17](https://github.com/magefayre/druidcraft/compare/v1.17.16...v1.17.17) (2026-08-27)
+
+## [1.17.16](https://github.com/magefayre/druidcraft/compare/v1.17.15...v1.17.16) (2026-08-25)
+
+## [1.17.15](https://github.com/magefayre/druidcraft/compare/v1.17.14...v1.17.15) (2026-08-21)
+
+## [1.17.14](https://github.com/magefayre/druidcraft/compare/v1.17.13...v1.17.14) (2026-08-21)
+
+## [1.17.13](https://github.com/magefayre/druidcraft/compare/v1.17.12...v1.17.13) (2026-08-20)
+
 ## [1.17.12](https://github.com/magefayre/druidcraft/compare/v1.17.11...v1.17.12) (2026-08-13)
 
 ## [1.17.11](https://github.com/magefayre/druidcraft/compare/v1.17.10...v1.17.11) (2026-08-12)
