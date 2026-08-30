@@ -22,7 +22,7 @@ import type {
   ArmorClass,
   Creature,
   Damage,
-  DamageResistance,
+  DamageDetails,
   Health,
   MonsterType,
   Size,
@@ -73,14 +73,14 @@ export const formatAligment = (alignment: Aligmnent[]) =>
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
-export const formatDamage = (damage: Array<Damage | DamageResistance>) => {
+export const formatDamage = (damage: Array<Damage | DamageDetails>) => {
   const { plain, detailed } = damage.reduce(
     (parsed, value) => {
       if (typeof value === 'string') {
         parsed.plain.push(value)
       } else {
         parsed.detailed.push(
-          `${formatList(value.resist, { style: 'long' })} ${value.note}`
+          `${formatList(value.immune ?? value.resist, { style: 'long' })} ${value.note}`
         )
       }
 
@@ -110,7 +110,13 @@ export const formatList = (
 ) => {
   if (!list) return EMPTY
 
-  return new Intl.ListFormat('en-GB', options).format(list)
+  try {
+    return new Intl.ListFormat('en-GB', options).format(list)
+  } catch {
+    console.log(111, list)
+
+    throw new Error('brokes')
+  }
 }
 
 export const formatModifier = (value: number) =>
@@ -129,7 +135,7 @@ export const formatSource = (source: string) => SOURCES[source]
 
 export const formatSpeed = (speed: Speeds) =>
   formatList(
-    Object.entries(speed).reduce((all, [key, value]) => {
+    Object.entries(speed).reduce((speeds, [key, value]) => {
       let condition = undefined
 
       if (typeof value !== 'number') {
@@ -140,7 +146,7 @@ export const formatSpeed = (speed: Speeds) =>
       const distance = formatDistance(value)
 
       return [
-        ...all,
+        ...speeds,
         [key !== 'walk' && key, distance, condition].filter(Boolean).join(' ')
       ]
     }, [])

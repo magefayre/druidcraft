@@ -48,7 +48,9 @@ export type Damage =
   | 'radiant'
   | 'slashing'
   | 'thunder'
-export type DamageResistance = { resist: Damage[]; note: string }
+export type DamageDetails = {
+  [Key in keyof Pick<CreatureDetails, 'immune' | 'resist'>]: Damage[]
+} & { note: string }
 export type Feature = 'elementalForms'
 export type Features = Partial<Record<Feature, boolean>>
 export type Health = { average: number; formula: string } | { special: number }
@@ -126,14 +128,14 @@ export type Monster = {
   conditionImmune?: Condition[]
   cr: string
   hp: Health
-  immune?: Damage[]
+  immune?: Array<Damage | DamageDetails>
   isNpc?: boolean
   languages?: string[]
   legendary?: Action[]
   name: string
   reaction?: Action[]
   reprintedAs?: string[]
-  resist?: Array<Damage | DamageResistance>
+  resist?: Array<Damage | DamageDetails>
   save?: Partial<Record<Ability, string>>
   senses: string[]
   size: Size[]

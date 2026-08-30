@@ -120,7 +120,7 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
           )}
           {immune && (
             <Definition term="Damage Immunities">
-              {formatList(immune)}
+              {formatDamage(immune)}
             </Definition>
           )}
           {condition && (
