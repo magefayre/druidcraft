@@ -6,11 +6,7 @@
   "alignment": ["T", "N", "E"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "hp": { "average": 51, "formula": "6d10 + 18" },
-  "speed": {
-    "walk": 40,
-    "fly": { "number": 40, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 40, "fly": { "number": 40, "condition": "(hover)" } },
   "ability": { "str": 18, "dex": 17, "con": 16, "int": 5, "wis": 12, "cha": 7 },
   "skill": { "perception": 5 },
   "immune": [

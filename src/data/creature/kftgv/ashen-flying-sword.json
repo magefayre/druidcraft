@@ -6,11 +6,7 @@
   "alignment": ["L", "E"],
   "ac": [{ "ac": 17, "from": ["natural armor"] }],
   "hp": { "average": 17, "formula": "5d6" },
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 50, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 0, "fly": { "number": 50, "condition": "(hover)" } },
   "ability": { "str": 12, "dex": 15, "con": 11, "int": 1, "wis": 5, "cha": 1 },
   "save": { "dex": 4 },
   "immune": ["fire", "poison", "psychic"],

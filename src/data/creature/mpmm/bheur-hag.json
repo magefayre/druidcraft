@@ -8,8 +8,7 @@
   "hp": { "average": 91, "formula": "14d8 + 28" },
   "speed": {
     "walk": 30,
-    "fly": { "number": 50, "condition": "(hover, Graystaff magic)" },
-    "canHover": true
+    "fly": { "number": 50, "condition": "(hover, Graystaff magic)" }
   },
   "ability": {
     "str": 13,

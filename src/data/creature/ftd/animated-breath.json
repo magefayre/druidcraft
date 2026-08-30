@@ -9,11 +9,7 @@
     { "ac": 17, "condition": "cold form only", "braces": true }
   ],
   "hp": { "average": 95, "formula": "10d10 + 40" },
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } },
   "ability": { "str": 19, "dex": 11, "con": 18, "int": 6, "wis": 10, "cha": 5 },
   "resist": [
     {

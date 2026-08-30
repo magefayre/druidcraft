@@ -6,10 +6,7 @@
   "alignment": ["U"],
   "ac": [{ "ac": 14, "from": ["natural armor"] }],
   "hp": { "average": 85, "formula": "9d12 + 27" },
-  "speed": {
-    "fly": { "number": 50, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "fly": { "number": 50, "condition": "(hover)" } },
   "ability": { "str": 21, "dex": 9, "con": 17, "int": 2, "wis": 10, "cha": 7 },
   "skill": { "stealth": 5 },
   "cr": 5,

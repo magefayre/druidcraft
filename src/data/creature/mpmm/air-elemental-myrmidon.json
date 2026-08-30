@@ -6,11 +6,7 @@
   "alignment": ["T", "N"],
   "ac": [{ "ac": 18, "from": ["{@item plate armor|PHB|plate}"] }],
   "hp": { "average": 117, "formula": "18d8 + 36" },
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } },
   "ability": {
     "str": 18,
     "dex": 14,

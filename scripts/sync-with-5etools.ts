@@ -6,7 +6,7 @@ import yargs from 'yargs'
 
 import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS } from '~constants'
-import type { Action, ActionType } from '~types'
+import type { Action, ActionType, Speeds } from '~types'
 import {
   type Ability,
   type Aligmnent,
@@ -103,6 +103,8 @@ const parseModifiers = <T extends string>(
   )
 }
 
+const parseSpeeds = (speeds: Speeds) => ({ ...speeds, canHover: undefined })
+
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
@@ -182,6 +184,7 @@ const filterMonsters = (
 
     if (!include) return creatures
 
+    const speed = parseSpeeds(monster.speed)
     const {
       ac,
       action,
@@ -204,7 +207,6 @@ const filterMonsters = (
       senses,
       size,
       skill,
-      speed,
       str,
       trait,
       wis,
@@ -249,10 +251,6 @@ const filterMonsters = (
       bonus,
       reaction
     }
-
-    // if (spellcasting) {
-    //   console.log(111, name, spellcasting)
-    // }
 
     return [...creatures, { summary, details }]
   }, [])

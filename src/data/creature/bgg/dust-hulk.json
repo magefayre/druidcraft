@@ -6,11 +6,7 @@
   "alignment": ["T", "C", "N"],
   "ac": [{ "ac": 16, "from": ["natural armor"] }],
   "hp": { "average": 68, "formula": "8d10 + 24" },
-  "speed": {
-    "walk": 0,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 0, "fly": { "number": 30, "condition": "(hover)" } },
   "ability": {
     "str": 15,
     "dex": 19,

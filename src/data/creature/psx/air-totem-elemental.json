@@ -6,10 +6,7 @@
   "alignment": ["N"],
   "ac": [15],
   "hp": { "average": 90, "formula": "12d10 + 24" },
-  "speed": {
-    "fly": { "number": 90, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "fly": { "number": 90, "condition": "(hover)" } },
   "ability": { "str": 14, "dex": 20, "con": 14, "int": 6, "wis": 10, "cha": 6 },
   "resist": [
     "lightning",

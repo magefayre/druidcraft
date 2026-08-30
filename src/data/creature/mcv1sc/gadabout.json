@@ -6,11 +6,7 @@
   "alignment": ["U"],
   "ac": [{ "ac": 11, "from": ["natural armor"] }],
   "hp": { "average": 11, "formula": "2d8 + 2" },
-  "speed": {
-    "walk": 10,
-    "fly": { "number": 60, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 10, "fly": { "number": 60, "condition": "(hover)" } },
   "ability": { "str": 12, "dex": 10, "con": 14, "int": 1, "wis": 6, "cha": 1 },
   "vulnerable": ["fire"],
   "condition": [

@@ -132,11 +132,7 @@
     "name": "Faerie Pathlighter",
     "source": "MCV4EC",
     "cr": 2,
-    "speed": {
-      "walk": 30,
-      "fly": { "number": 30, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } }
   },
   { "name": "Hamadryad", "source": "MaBJoV", "cr": 2, "speed": { "walk": 30 } },
   {
@@ -214,11 +210,7 @@
     "name": "Yeth Hound",
     "source": "MPMM",
     "cr": 4,
-    "speed": {
-      "walk": 40,
-      "fly": { "number": 40, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 40, "fly": { "number": 40, "condition": "(hover)" } }
   },
   {
     "name": "Riffler",
@@ -235,8 +227,7 @@
     "cr": 7,
     "speed": {
       "walk": 30,
-      "fly": { "number": 50, "condition": "(hover, Graystaff magic)" },
-      "canHover": true
+      "fly": { "number": 50, "condition": "(hover, Graystaff magic)" }
     }
   },
   {

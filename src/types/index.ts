@@ -72,7 +72,9 @@ export type Skill =
   | 'stealth'
   | 'survival'
 export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
-export type Speeds = Partial<Record<Speed, number>>
+export type Speeds = Partial<
+  Record<Speed, number | { number: number; condition: string }>
+>
 
 type CreatureBase = {
   cr?: number

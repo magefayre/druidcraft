@@ -92,6 +92,8 @@ export const formatDamage = (damage: Array<Damage | DamageResistance>) => {
   return [formatList(plain), ...detailed].filter(Boolean).join('; ')
 }
 
+export const formatDistance = (value: number) => `${value} ft.`
+
 export const formatHP = (hp: Health) => {
   if ('special' in hp) return hp.special
 
@@ -125,7 +127,24 @@ export const formatSize = (size: Size) => SIZES[size]
 
 export const formatSource = (source: string) => SOURCES[source]
 
-export const formatSpeed = (speed: Speeds) => JSON.stringify(speed)
+export const formatSpeed = (speed: Speeds) =>
+  formatList(
+    Object.entries(speed).reduce((all, [key, value]) => {
+      let condition = undefined
+
+      if (typeof value !== 'number') {
+        condition = value.condition
+        value = value.number
+      }
+
+      const distance = formatDistance(value)
+
+      return [
+        ...all,
+        [key !== 'walk' && key, distance, condition].filter(Boolean).join(' ')
+      ]
+    }, [])
+  )
 
 export const formatSpeedLimits = (level: number) => {
   if (level < LEVELS.walk) return EMPTY

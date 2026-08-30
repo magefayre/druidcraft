@@ -118,7 +118,6 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
               {formatDamage(resist)}
             </Definition>
           )}
-          {/* TODO: combine Immunities */}
           {immune && (
             <Definition term="Damage Immunities">
               {formatList(immune)}

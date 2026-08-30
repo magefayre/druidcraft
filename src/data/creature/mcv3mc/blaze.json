@@ -8,8 +8,7 @@
   "hp": { "average": 75, "formula": "10d8 + 30" },
   "speed": {
     "walk": 20,
-    "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
-    "canHover": true
+    "fly": { "number": 20, "condition": "(vertical movement only; hover)" }
   },
   "ability": { "str": 16, "dex": 17, "con": 16, "int": 6, "wis": 10, "cha": 7 },
   "resist": [

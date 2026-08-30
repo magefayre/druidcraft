@@ -6,11 +6,7 @@
   "alignment": ["T", "C", "G"],
   "ac": [12],
   "hp": { "average": 38, "formula": "7d8 + 7" },
-  "speed": {
-    "walk": 30,
-    "fly": { "number": 30, "condition": "(hover)" },
-    "canHover": true
-  },
+  "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } },
   "ability": {
     "str": 10,
     "dex": 14,
