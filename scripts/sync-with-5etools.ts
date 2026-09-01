@@ -5,7 +5,7 @@ import { join } from 'node:path'
 import plur from 'plur'
 import yargs from 'yargs'
 
-import { ELEMENTAL_FORMS, LEVELS } from '~constants'
+import { ELEMENTAL_FORMS, LEVELS, SPEEDS } from '~constants'
 import type {
   Creature,
   CreatureType,
@@ -52,10 +52,16 @@ const parseRating = (
   return ratings[name]
 }
 
-const parseSpeeds = (speeds: Monster['speed']): Speeds => ({
-  ...speeds,
-  canHover: undefined
-})
+const parseSpeeds = (speeds: Monster['speed']) => {
+  if (typeof speeds === 'number') {
+    return { walk: speeds } as Speeds
+  }
+
+  return Object.keys(SPEEDS).reduce<Speeds>(
+    (parsed, key) => ({ ...parsed, [key]: speeds[key] }),
+    {}
+  )
+}
 
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
