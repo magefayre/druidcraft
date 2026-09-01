@@ -1,3 +1,6 @@
+import type { Creature as Monster } from './5etools/bestiary'
+import type { _SpeedMode, CreatureType } from './5etools/util'
+
 declare global {
   var Parser: {
     SOURCE_JSON_TO_FULL: Record<Source, string>
@@ -9,13 +12,16 @@ declare global {
   }
 }
 
+export type { CreatureType, Monster }
+
 export type Feature = 'elementalForms'
 export type Features = Partial<Record<Feature, boolean>>
 export type Source = string
-export type Speed = '' | 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
-export type Speeds = Partial<Record<Speed, number>>
+export type Speed = '' | _SpeedMode
+export type Speeds = Partial<
+  Record<Speed, number | { number: number; condition: string }>
+>
 export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
-export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
 
 export type Creature = {
   cr?: number
@@ -27,16 +33,6 @@ export type Creature = {
   spell?: string
 }
 
-export type Monster = Creature & {
-  _copy: Partial<Creature>
-  cr: string
-  isNpc?: boolean
-  reprintedAs?: string[]
-  summonedBySpell?: string
-  type: MonsterType
-}
-
-export type Monsters = { monster: Monster[] }
 export type MonsterRatings = Record<string, number>
 
 export type Spell = {
@@ -45,6 +41,6 @@ export type Spell = {
   limit?: boolean | number
   maxCR?: boolean | number
   spell?: boolean
-  type: MonsterType
+  type: CreatureType
   upcast?: true | Record<number, number>
 }

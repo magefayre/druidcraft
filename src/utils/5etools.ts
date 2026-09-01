@@ -12,7 +12,7 @@ import {
 } from '~constants'
 import type {
   Creature,
-  MonsterType,
+  CreatureType,
   Source,
   Speed,
   Speeds,
@@ -68,7 +68,7 @@ export const getSpellCR = (spell?: Spell, level?: number) => {
   return spell?.maxCR
 }
 
-export const getTypeCR = (type: MonsterType) =>
+export const getTypeCR = (type: CreatureType) =>
   Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
     const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
 
