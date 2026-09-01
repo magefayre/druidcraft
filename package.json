@@ -50,7 +50,7 @@
     "@newhighsco/next-plugin-svgr": "3.0.176",
     "@newhighsco/press-start": "2.9.4",
     "@newhighsco/ts-config": "1.2.2",
-    "@sindresorhus/slugify": "3.0.0",
+    "@sindresorhus/slugify": "3.0.1",
     "@sindresorhus/transliterate": "2.3.1",
     "next": "16.3.4",
     "next-compose-plugins": "2.2.1",
