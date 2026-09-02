@@ -1,4 +1,4 @@
-import type { Creature, MonsterType, Speed } from '~types'
+import type { Creature, CreatureType, Speed } from '~types'
 
 export type WildShapeFormData = {
   level: number
@@ -9,5 +9,5 @@ export type WildShapeFormData = {
 }
 
 export type WildShapeProps = {
-  creatures: Record<Extract<MonsterType, 'beast' | 'elemental'>, Creature[]>
+  creatures: Record<Extract<CreatureType, 'beast' | 'elemental'>, Creature[]>
 }

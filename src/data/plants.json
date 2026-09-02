@@ -35,11 +35,7 @@
     "cr": 0.125,
     "name": "Gadabout",
     "source": "MCV1SC",
-    "speed": {
-      "walk": 10,
-      "fly": { "number": 60, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 10, "fly": { "number": 60, "condition": "(hover)" } }
   },
   {
     "cr": 0.125,
@@ -99,11 +95,7 @@
     "cr": 0.5,
     "name": "Gas Spore",
     "source": "MM",
-    "speed": {
-      "walk": 0,
-      "fly": { "number": 10, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 0, "fly": { "number": 10, "condition": "(hover)" } }
   },
   {
     "cr": 0.5,

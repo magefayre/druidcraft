@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import type { Option } from '~components/Select'
 import { EMPTY_OPTION } from '~components/Select/constants'
 import { DESCENDING, SEPARATOR, SPELL_LEVELS, SPELLS } from '~constants'
-import type { Creature, MonsterType, Spell } from '~types'
+import type { Creature, CreatureType, Spell } from '~types'
 import { formatSpellLevel, getSpellCR, sortCreatures } from '~utils/5etools'
 
 import type { SummonFormData } from './types'
@@ -40,7 +40,7 @@ export const useSummons = <T extends Creature>({
   maxCR,
   selected: { sort, spell }
 }: {
-  creatures: Record<MonsterType, T[]>
+  creatures: Record<CreatureType, T[]>
   filters?: Spell
   maxCR?: number
   selected?: SummonFormData

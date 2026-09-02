@@ -5,16 +5,17 @@ import { join } from 'node:path'
 import plur from 'plur'
 import yargs from 'yargs'
 
-import { ELEMENTAL_FORMS, LEVELS } from '~constants'
+import { ELEMENTAL_FORMS, LEVELS, SPEEDS } from '~constants'
 import type {
   Creature,
+  CreatureType,
   Features,
   Monster,
   MonsterRatings,
-  Monsters,
-  MonsterType,
-  Source
+  Source,
+  Speeds
 } from '~types'
+import type { BestiarySchema } from '~types/5etools/bestiary'
 import {
   getCircleFormsCR,
   getTypeCR,
@@ -24,7 +25,7 @@ import {
 
 import { fetchData, fetchRatings, fetchScript, fetchToken } from './utils'
 
-const parseCR = (cr: string | { cr: string }): number | undefined => {
+const parseCR = (cr: Monster['cr']): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
   if (typeof cr === 'string') {
     if (!isNaN(cr as unknown as number)) return Number(cr)
@@ -51,25 +52,37 @@ const parseRating = (
   return ratings[name]
 }
 
+const parseSpeeds = (speeds: Monster['speed']) => {
+  if (typeof speeds === 'number') {
+    return { walk: speeds } as Speeds
+  }
+
+  return Object.keys(SPEEDS).reduce<Speeds>(
+    (parsed, key) => ({ ...parsed, [key]: speeds[key] }),
+    {}
+  )
+}
+
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
-const parseType = (type: string | { type: string; swarmSize: string }) => {
+const parseType = (type: Monster['type']): CreatureType => {
   if (
     typeof type !== 'string' &&
     type?.hasOwnProperty('type') &&
+    typeof type?.type === 'string' &&
     !type.swarmSize
   ) {
     return parseType(type.type)
   }
 
-  if (typeof type === 'string') return type as MonsterType
+  if (typeof type === 'string') return type
 
   return undefined
 }
 
 type MonsterFilters = {
-  type: MonsterType
+  type: CreatureType
   maxCR?: number
   ratings?: boolean
   features?: (name: string) => Features
@@ -81,31 +94,40 @@ const filterMonsters = (
   ratings: MonsterRatings
 ) => {
   const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
-    const { _copy } = monster
-    const base = monsters.find(
-      ({ name, source }) =>
-        _copy?.name === name &&
-        _copy?.name !== monster.name &&
-        _copy?.source === source
-    )
+    let base = undefined
 
-    if (!!base) {
-      monster = { ...base, ...monster }
+    if ('_copy' in monster) {
+      const { _copy } = monster
+
+      base = monsters.find(
+        ({ name, source }) =>
+          _copy.name === name &&
+          _copy.name !== monster.name &&
+          _copy.source === source
+      )
+
+      if (!!base) {
+        monster = { ...base, ...monster }
+      }
     }
 
-    const { name, source, speed } = monster
+    const { name, source, summonedBySpell } = monster
     const cr = parseCR(monster.cr)!
-    const spell = parseSpell(monster.summonedBySpell)
+    const spell = parseSpell(summonedBySpell)
     const type = parseType(monster.type)
+    const include =
+      type === filters.type &&
+      (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
+
+    if (!include) return creatures
+
+    const speed = parseSpeeds(monster.speed)
     const features = filters.features?.(name)
     const rating = filters.ratings
       ? parseRating(base?.name ?? name, features, ratings)
       : undefined
 
-    return type === filters.type &&
-      (cr <= (filters.maxCR ?? Number.MAX_SAFE_INTEGER) || (!cr && !!spell))
-      ? [...creatures, { cr, features, name, rating, source, speed, spell }]
-      : creatures
+    return [...creatures, { cr, features, name, rating, source, speed, spell }]
   }, [])
 
   return creatures
@@ -130,7 +152,7 @@ const filterMonsters = (
 
   await Promise.all(
     Object.values(monsterURLs).map(async url => {
-      const { monster } = await fetchData<Monsters>('bestiary', url)
+      const { monster } = await fetchData<BestiarySchema>('bestiary', url)
 
       monsters.push(
         ...monster.filter(({ isNpc, reprintedAs }) => !isNpc && !reprintedAs)
