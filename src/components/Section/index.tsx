@@ -7,7 +7,7 @@ import styles from './Section.module.scss'
 
 type Props = PropTypes.InferProps<ContentContainer.propTypes>
 
-const Section: FC<Props> = ({ children, className, theme }) => (
+const Section: FC<Props> = ({ className, theme, ...rest }) => (
   <ContentContainer
     className={classNames(styles.root, className)}
     theme={{ root: theme?.root }}
@@ -16,9 +16,8 @@ const Section: FC<Props> = ({ children, className, theme }) => (
       gutter
       size="desktopLarge"
       theme={{ content: theme?.content }}
-    >
-      {children}
-    </ContentContainer>
+      {...rest}
+    />
   </ContentContainer>
 )
 export default Section
