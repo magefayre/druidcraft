@@ -8,8 +8,8 @@
   "hp": { "special": "50 + 10 for each spell level above 4th" },
   "speed": {
     "walk": 40,
-    "fly": { "number": 40, "condition": "(air only; hover)" },
     "burrow": { "number": 40, "condition": "(earth only)" },
+    "fly": { "number": 40, "condition": "(air only; hover)" },
     "swim": { "number": 40, "condition": "(water only)" }
   },
   "ability": {
@@ -21,18 +21,11 @@
     "cha": 16
   },
   "resist": [
-    { "resist": ["lightning", "thunder"], "cond": true, "note": "(Air only)" },
-    {
-      "resist": ["piercing", "slashing"],
-      "cond": true,
-      "note": "(Earth only)"
-    },
-    { "resist": ["acid"], "cond": true, "note": "(Water only)" }
+    { "resist": ["lightning", "thunder"], "note": "(Air only)" },
+    { "resist": ["piercing", "slashing"], "note": "(Earth only)" },
+    { "resist": ["acid"], "note": "(Water only)" }
   ],
-  "immune": [
-    "poison",
-    { "immune": ["fire"], "cond": true, "note": "(Fire only)" }
-  ],
+  "immune": ["poison", { "immune": ["fire"], "note": "(Fire only)" }],
   "condition": [
     "exhaustion",
     "paralyzed",

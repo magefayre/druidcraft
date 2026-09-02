@@ -12,8 +12,7 @@
   "immune": [
     {
       "immune": ["bludgeoning", "piercing", "slashing"],
-      "note": "from nonmagical attacks not made with silvered weapons",
-      "cond": true
+      "note": "from nonmagical attacks not made with silvered weapons"
     }
   ],
   "condition": ["charmed", "exhaustion", "frightened"],

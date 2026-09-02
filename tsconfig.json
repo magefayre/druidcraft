@@ -15,6 +15,7 @@
       "~testing": ["./src/testing"],
       "~theme": ["./src/theme"],
       "~types": ["./src/types"],
+      "~types/*": ["./src/types/*"],
       "~utils/*": ["./src/utils/*"]
     },
     "types": ["vitest/globals"]

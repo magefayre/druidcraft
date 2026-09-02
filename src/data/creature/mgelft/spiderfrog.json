@@ -3,7 +3,7 @@
   "source": "MGELFT",
   "size": "S",
   "type": "beast",
-  "alignment": [{ "special": "chaotic sticky" }],
+  "alignment": ["chaotic sticky"],
   "ac": [13],
   "hp": { "formula": "2d8 + 4", "average": 13 },
   "speed": { "walk": 30, "climb": 30 },

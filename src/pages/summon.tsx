@@ -3,7 +3,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import { SPELLS } from '~constants'
 import { loadCreatures } from '~data/utils'
 import SummonLayout, { type SummonLayoutProps } from '~layouts/summon'
-import type { MonsterType } from '~types'
+import type { CreatureType } from '~types'
 import { canonicalUrl } from '~utils/urls'
 
 const meta = {
@@ -20,7 +20,7 @@ const SummonPage: NextPage<Props> = props => (
 )
 
 export const getStaticProps = (async () => {
-  const types = Object.values(SPELLS).reduce<MonsterType[]>(
+  const types = Object.values(SPELLS).reduce<CreatureType[]>(
     (types, { type }) => (!types.includes(type) ? [...types, type] : types),
     []
   )

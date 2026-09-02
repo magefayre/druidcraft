@@ -110,17 +110,17 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
           <ModifierList term="Skills" modifiers={skill} />
           {vulnerable && (
             <Definition term="Damage Vulnerabilities">
-              {formatDamage(vulnerable)}
+              {formatDamage(vulnerable, 'vulnerable')}
             </Definition>
           )}
           {resist && (
             <Definition term="Damage Resistances">
-              {formatDamage(resist)}
+              {formatDamage(resist, 'resist')}
             </Definition>
           )}
           {immune && (
             <Definition term="Damage Immunities">
-              {formatDamage(immune)}
+              {formatDamage(immune, 'immune')}
             </Definition>
           )}
           {condition && (

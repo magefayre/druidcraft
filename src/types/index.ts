@@ -1,82 +1,36 @@
+import type { Creature as Monster } from './5etools/bestiary'
+import type {
+  _SpeedMode,
+  AbilityScoreAbbreviation as Ability,
+  Alignment as _Alignment,
+  CreatureType,
+  DataCondition as Condition,
+  DataDamageType as _Damage,
+  EntrySpellcasting,
+  Size,
+  SkillNameLower as Skill
+} from './5etools/util'
+
 declare global {
   var Parser: {
-    SOURCE_JSON_TO_FULL: Record<string, string>
-    SOURCES_CORE_SUPPLEMENTS: Set<string>
-    SOURCES_NON_STANDARD_WOTC: Set<string>
-    SOURCES_VANILLA: Set<string>
+    SOURCE_JSON_TO_FULL: Record<Source, string>
+    SOURCES_CORE_SUPPLEMENTS: Set<Source>
+    SOURCES_NON_STANDARD_WOTC: Set<Source>
+    SOURCES_VANILLA: Set<Source>
     SRC_MCVX_PREFIX: string
     SRC_PS_PREFIX: string
   }
 }
 
-export type Ability = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
+export type { Ability, Condition, CreatureType, Monster, Size, Skill }
+
 export type Abilities = Partial<Record<Ability, number>>
-export type ActionType = 'action'
+
 export type Action = { name: string; entries: string[]; type?: ActionType }
-export type Aligmnent = 'U' | 'N' | 'L' | 'C' | 'G' | 'E' | 'T'
-export type ArmorClass =
-  | number
-  | { ac: number; from?: string[]; condition?: string }
-  | { special: string }
-export type Condition =
-  | 'blinded'
-  | 'charmed'
-  | 'deafened'
-  | 'exhaustion'
-  | 'frightened'
-  | 'grappled'
-  | 'incapacitated'
-  | 'invisible'
-  | 'paralyzed'
-  | 'petrified'
-  | 'poisoned'
-  | 'prone'
-  | 'restrainedv'
-  | 'stunned'
-  | 'unconscious'
-export type Damage =
-  | 'acid'
-  | 'bludgeoning'
-  | 'cold'
-  | 'fire'
-  | 'force'
-  | 'lightning'
-  | 'necrotic'
-  | 'piercing'
-  | 'poision'
-  | 'psychic'
-  | 'radiant'
-  | 'slashing'
-  | 'thunder'
-export type DamageDetails = {
-  [Key in keyof Pick<CreatureDetails, 'immune' | 'resist'>]: Damage[]
-} & { note: string }
-export type Feature = 'elementalForms'
-export type Features = Partial<Record<Feature, boolean>>
-export type Health = { average: number; formula: string } | { special: number }
-export type Size = 'T' | 'S' | 'M' | 'L' | 'H' | 'G'
-export type Skill =
-  | 'acrobatics'
-  | 'animal handling'
-  | 'arcana'
-  | 'athletics'
-  | 'deception'
-  | 'history'
-  | 'insight'
-  | 'intimidation'
-  | 'medicine'
-  | 'nature'
-  | 'perception'
-  | 'performance'
-  | 'persuasion'
-  | 'religion'
-  | 'sleight of hand'
-  | 'stealth'
-  | 'survival'
-export type Speed = 'walk' | 'burrow' | 'climb' | 'swim' | 'fly'
-export type Speeds = Partial<
-  Record<Speed, number | { number: number; condition: string }>
->
+
+export type ActionType = EntrySpellcasting['displayAs']
+
+export type Alignment = _Alignment | 'T'
 
 type CreatureBase = {
   cr?: number
@@ -91,76 +45,53 @@ export type Creature = CreatureBase & {
   spell?: string
 }
 
-export type CreatureDetails = CreatureBase &
-  Pick<
-    Monster,
-    | 'ac'
-    | 'action'
-    | 'alignment'
-    | 'bonus'
-    | 'hp'
-    | 'immune'
-    | 'languages'
-    | 'legendary'
-    | 'reaction'
-    | 'resist'
-    | 'senses'
-    | 'trait'
-    | 'type'
-    | 'vulnerable'
-  > & {
-    ability: Abilities
-    condition?: Condition[]
-    save?: Partial<Record<Ability, number>>
-    size: Size
-    skill?: Partial<Record<Skill, number>>
-  }
+export type CreatureDetails = CreatureBase & {
+  ability: Abilities
+  ac?: Monster['ac']
+  action?: Action[]
+  alignment: Array<Alignment | string>
+  bonus?: Action[]
+  condition?: Condition[]
+  hp?: Monster['hp']
+  immune?: Array<Damage | DamageDetails>
+  languages?: string[]
+  legendary?: Action[]
+  reaction?: Action[]
+  resist?: Array<Damage | DamageDetails>
+  save?: Partial<Record<Ability, number>>
+  senses?: string[]
+  size: Size
+  skill?: Partial<Record<Skill, number>>
+  trait?: Action[]
+  type: CreatureType
+  vulnerable?: Array<Damage | DamageDetails>
+}
 
 export type CreatureURL = Pick<Creature, 'source' | 'name'>
 
-export type Monster = {
-  _copy: Partial<Creature>
-  ac: ArmorClass[]
-  action?: Action[]
-  alignment: Aligmnent[]
-  alignmentPrefix?: string
-  bonus?: Action[]
-  conditionImmune?: Condition[]
-  cr: string
-  hp: Health
-  immune?: Array<Damage | DamageDetails>
-  isNpc?: boolean
-  languages?: string[]
-  legendary?: Action[]
-  name: string
-  reaction?: Action[]
-  reprintedAs?: string[]
-  resist?: Array<Damage | DamageDetails>
-  save?: Partial<Record<Ability, string>>
-  senses: string[]
-  size: Size[]
-  skill?: Partial<Record<Skill, string>>
-  source: string
-  speed?: Speeds
-  spellcasting?: MonsterSpell[]
-  summonedBySpell?: string
-  trait?: Action[]
-  type: MonsterType
-  vulnerable?: Damage[]
-} & { [key in Ability]: number }
+export type Damage = _Damage | string
 
-export type Monsters = { monster: Monster[] }
-export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
-export type MonsterRatings = Record<string, number>
-export type MonsterSpell = {
-  name: string
-  headerEntries?: string[]
-  footerEntries?: string[]
-  will?: string[]
-  daily?: Record<`${number}e`, string[]>
-  displayAs?: ActionType
+export type DamageDetails = { [Key in DamageType]?: Damage[] } & {
+  note: string
 }
-export type MonsterType = 'beast' | 'dragon' | 'elemental' | 'fey' | 'plant'
+
+export type DamageType = 'immune' | 'resist' | 'vulnerable'
+
+export type Feature = 'elementalForms'
+
+export type Features = Partial<Record<Feature, boolean>>
+
+export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
+
+export type MonsterRatings = Record<string, number>
+
+export type Source = string
+
+export type Speed = '' | _SpeedMode
+
+export type Speeds = Partial<
+  Record<Speed, number | { number: number; condition: string }>
+>
 
 export type Spell = {
   creatures?: Record<string, number>
@@ -168,6 +99,6 @@ export type Spell = {
   limit?: boolean | number
   maxCR?: boolean | number
   spell?: boolean
-  type: MonsterType
+  type: CreatureType
   upcast?: true | Record<number, number>
 }

@@ -12,9 +12,7 @@
   "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } },
   "ability": { "str": 19, "dex": 11, "con": 18, "int": 6, "wis": 10, "cha": 5 },
   "resist": [
-    {
-      "special": "damage of the type matching the animated breath's form (acid, cold, fire, lightning, or poison)"
-    }
+    "damage of the type matching the animated breath's form (acid, cold, fire, lightning, or poison)"
   ],
   "condition": [
     "exhaustion",

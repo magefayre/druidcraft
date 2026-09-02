@@ -1,5 +1,5 @@
-import type { Creature, MonsterType } from '~types'
+import type { Creature, CreatureType } from '~types'
 
 export type SummonFormData = { sort: string; spell: string; upcast: number }
 
-export type SummonProps = { creatures: Record<MonsterType, Creature[]> }
+export type SummonProps = { creatures: Record<CreatureType, Creature[]> }

@@ -16,11 +16,7 @@
     "fire",
     "lightning",
     "thunder",
-    {
-      "resist": ["piercing", "slashing"],
-      "note": "from nonmagical attacks",
-      "cond": true
-    }
+    { "resist": ["piercing", "slashing"], "note": "from nonmagical attacks" }
   ],
   "immune": ["necrotic", "poison"],
   "condition": [

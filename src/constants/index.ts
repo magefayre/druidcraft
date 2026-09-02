@@ -1,4 +1,4 @@
-import type { Aligmnent, MonsterRating, Size, Speed, Spell } from '~types'
+import type { Alignment, MonsterRating, Size, Speed, Spell } from '~types'
 
 export const ABILITY_BASE = 10
 
@@ -10,7 +10,7 @@ export const ALIGNMENTS = {
   N: 'Neutral',
   U: 'Unaligned',
   T: 'Typically'
-} satisfies Readonly<Record<Aligmnent, string>>
+} as Readonly<Record<Alignment, string>>
 
 export const CR = { walk: 0.25, swim: 0.5, fly: 1 }
 
@@ -62,7 +62,7 @@ export const SIZES = {
   L: 'Large',
   H: 'Huge',
   G: 'Gargantuan'
-} satisfies Readonly<Record<Size, string>>
+} as Readonly<Record<Size, string>>
 
 export const SORTING = {
   CR: { min: 'Low', max: 'High' },
@@ -74,8 +74,8 @@ export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
   burrow: { singular: 'Burrows', continuous: 'burrowing' },
   climb: { singular: 'Climbs', continuous: 'climbing' },
-  swim: { icon: true, singular: 'Swims', continuous: 'swimming' },
-  fly: { icon: true, singular: 'Flies', continuous: 'flying' }
+  fly: { icon: true, singular: 'Flies', continuous: 'flying' },
+  swim: { icon: true, singular: 'Swims', continuous: 'swimming' }
 } as Readonly<
   Record<Speed, { icon?: boolean; singular: string; continuous: string }>
 >

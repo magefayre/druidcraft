@@ -20,8 +20,7 @@
     "thunder",
     {
       "resist": ["bludgeoning", "piercing", "slashing"],
-      "note": "from nonmagical attacks",
-      "cond": true
+      "note": "from nonmagical attacks"
     }
   ],
   "immune": ["poison"],

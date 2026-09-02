@@ -3,7 +3,7 @@
   "source": "FTD",
   "size": "L",
   "type": "dragon",
-  "alignment": [{ "alignment": ["N"] }],
+  "alignment": ["N"],
   "ac": [{ "special": "14 + the level of the spell (natural armor)" }],
   "hp": {
     "special": "50 + 10 for each spell level above 5th (the dragon has a number of Hit Dice [d10s] equal to the level of the spell)"
@@ -20,12 +20,10 @@
   "resist": [
     {
       "resist": ["acid", "cold", "fire", "lightning", "poison"],
-      "cond": true,
       "note": "(Chromatic and Metallic Only)"
     },
     {
       "resist": ["force", "necrotic", "psychic", "radiant", "thunder"],
-      "cond": true,
       "note": "(Gem Only)"
     }
   ],

@@ -18,20 +18,20 @@ import {
 } from '~constants'
 import SOURCES from '~data/sources.json' with { type: 'json' }
 import type {
-  Aligmnent,
-  ArmorClass,
   Creature,
+  CreatureDetails,
+  CreatureType,
   Damage,
   DamageDetails,
-  Health,
-  MonsterType,
+  DamageType,
+  Monster,
   Size,
   Speed,
   Speeds,
   Spell
 } from '~types'
 
-export const formatAC = (ac: ArmorClass[]) => {
+export const formatAC = (ac: Monster['ac']) => {
   const { base, detailed } = ac.reduce(
     (parsed, value) => {
       const setBase = (value: string | number, details?: string[]) => {
@@ -68,19 +68,24 @@ export const formatAC = (ac: ArmorClass[]) => {
     .join(' ')
 }
 
-export const formatAligment = (alignment: Aligmnent[]) =>
-  alignment?.map(axis => ALIGNMENTS[axis]).join(' ') ?? ALIGNMENTS.U
+export const formatAligment = (alignment: CreatureDetails['alignment']) =>
+  alignment
+    ?.map(alignment => ALIGNMENTS[alignment] ?? titleCase(alignment))
+    .join(' ') ?? ALIGNMENTS.U
 
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
-export const formatDamage = (damage: Array<Damage | DamageDetails>) => {
+export const formatDamage = <T extends DamageType>(
+  damage: Array<Damage | DamageDetails>,
+  type: T
+) => {
   const { plain, detailed } = damage.reduce(
     (parsed, value) => {
       if (typeof value === 'string') {
         parsed.plain.push(value)
       } else {
         parsed.detailed.push(
-          `${formatList(value.immune ?? value.resist, { style: 'long' })} ${value.note}`
+          `${formatList(value[type], { style: 'long' })} ${value.note}`
         )
       }
 
@@ -94,7 +99,7 @@ export const formatDamage = (damage: Array<Damage | DamageDetails>) => {
 
 export const formatDistance = (value: number) => `${value} ft.`
 
-export const formatHP = (hp: Health) => {
+export const formatHP = (hp: Monster['hp']) => {
   if ('special' in hp) return hp.special
 
   return (
@@ -146,24 +151,31 @@ export const formatSpeed = (speed: Speeds) =>
     }, [])
   )
 
-export const formatSpeedLimits = (level: number) => {
+export const formatSpeedLimits = (level: number, locale?: string) => {
   if (level < LEVELS.walk) return EMPTY
 
-  const limits = Object.entries(SPEEDS).reduce<string[]>(
-    (limits, [key, { continuous }]) =>
-      level < LEVELS[key] ? [continuous, ...limits] : limits,
-    []
-  )
+  const limits = Object.entries(SPEEDS)
+    .sort(([a], [b]) => LEVELS[a] - LEVELS[b])
+    .reduce<string[]>(
+      (limits, [key, { continuous }]) =>
+        level < LEVELS[key] ? [continuous, ...limits] : limits,
+      []
+    )
 
   if (!limits.length) return EMPTY
 
-  return `No ${formatList(limits, { style: 'long', type: 'disjunction' })} speed`
+  const formatter = new Intl.ListFormat(locale, {
+    style: 'short',
+    type: 'disjunction'
+  })
+
+  return `No ${formatter.format(limits)} speed`
 }
 
 export const formatSpellLevel = (level: number) =>
   level === 0 ? 'Cantrip' : `${level}${LEVEL_SUFFIXES[PLURALS.select(level)]}`
 
-export const formatType = (type: MonsterType) => titleCase(type)
+export const formatType = (type: CreatureType) => titleCase(type)
 
 export const getCircleFormsCR = (level: number) =>
   Math.max(LEVELS.min, Math.floor(level / 3))
@@ -204,7 +216,7 @@ export const getSummonLimit = (cr: number) => {
   return CR_LIMITS[cr]
 }
 
-export const getTypeCR = (type: MonsterType) =>
+export const getTypeCR = (type: CreatureType) =>
   Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
     const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
 

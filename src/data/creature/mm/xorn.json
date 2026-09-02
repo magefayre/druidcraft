@@ -19,8 +19,7 @@
   "resist": [
     {
       "resist": ["piercing", "slashing"],
-      "note": "from nonmagical attacks that aren't adamantine",
-      "cond": true
+      "note": "from nonmagical attacks that aren't adamantine"
     }
   ],
   "senses": ["darkvision 60 ft.", "tremorsense 60 ft."],

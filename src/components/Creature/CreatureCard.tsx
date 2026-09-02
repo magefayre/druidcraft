@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 import Rating from '~components/Rating'
 import Sprite from '~components/Sprite'
-import { EMPTY, SPEEDS } from '~constants'
+import { EMPTY, LEVELS, SPEEDS } from '~constants'
 import { formatCR, formatSource } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
@@ -80,19 +80,21 @@ const CreatureCard: FC<CreatureCardProps> = ({
         </Tooltip>
       )}
       {speedLimits &&
-        Object.entries(SPEEDS).map(([type, { icon, singular }]) => {
-          if (!icon || !speed[type]) return null
+        Object.entries(SPEEDS)
+          .sort(([a], [b]) => LEVELS[a] - LEVELS[b])
+          .map(([type, { icon, singular }]) => {
+            if (!icon || !speed[type]) return null
 
-          return (
-            <Tooltip
-              key={type}
-              toggle={<Sprite id={type} className={styles.icon} />}
-              {...tooltipContent}
-            >
-              {singular}
-            </Tooltip>
-          )
-        })}
+            return (
+              <Tooltip
+                key={type}
+                toggle={<Sprite id={type} className={styles.icon} />}
+                {...tooltipContent}
+              >
+                {singular}
+              </Tooltip>
+            )
+          })}
       {crLabel !== EMPTY && (
         <Tooltip
           toggle={`CR ${crLabel}`}
