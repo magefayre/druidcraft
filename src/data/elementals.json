@@ -4,10 +4,9 @@
     "source": "TCE",
     "speed": {
       "walk": 40,
-      "fly": { "number": 40, "condition": "(air only; hover)" },
       "burrow": { "number": 40, "condition": "(earth only)" },
-      "swim": { "number": 40, "condition": "(water only)" },
-      "canHover": true
+      "fly": { "number": 40, "condition": "(air only; hover)" },
+      "swim": { "number": 40, "condition": "(water only)" }
     },
     "spell": "Summon Elemental"
   },
@@ -39,11 +38,7 @@
     "cr": 0.25,
     "name": "Ashen Flying Sword",
     "source": "KftGV",
-    "speed": {
-      "walk": 0,
-      "fly": { "number": 50, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 0, "fly": { "number": 50, "condition": "(hover)" } }
   },
   {
     "cr": 0.25,
@@ -200,10 +195,7 @@
     "cr": 5,
     "name": "Acidic Mist Apparition",
     "source": "GotSF",
-    "speed": {
-      "fly": { "number": 90, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "fly": { "number": 90, "condition": "(hover)" } }
   },
   {
     "cr": 5,
@@ -211,19 +203,13 @@
     "name": "Air Elemental",
     "rating": 3,
     "source": "MM",
-    "speed": {
-      "fly": { "number": 90, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "fly": { "number": 90, "condition": "(hover)" } }
   },
   {
     "cr": 5,
     "name": "Air Totem Elemental",
     "source": "PSX",
-    "speed": {
-      "fly": { "number": 90, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "fly": { "number": 90, "condition": "(hover)" } }
   },
   {
     "cr": 5,
@@ -237,19 +223,14 @@
     "source": "MCV3MC",
     "speed": {
       "walk": 20,
-      "fly": { "number": 20, "condition": "(vertical movement only; hover)" },
-      "canHover": true
+      "fly": { "number": 20, "condition": "(vertical movement only; hover)" }
     }
   },
   {
     "cr": 5,
     "name": "Dust Hulk",
     "source": "BGG",
-    "speed": {
-      "walk": 0,
-      "fly": { "number": 30, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 0, "fly": { "number": 30, "condition": "(hover)" } }
   },
   {
     "cr": 5,
@@ -311,11 +292,7 @@
     "cr": 6,
     "name": "Animated Breath",
     "source": "FTD",
-    "speed": {
-      "walk": 30,
-      "fly": { "number": 30, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } }
   },
   {
     "cr": 6,
@@ -332,31 +309,19 @@
     "cr": 6,
     "name": "Invisible Stalker",
     "source": "MM",
-    "speed": {
-      "walk": 50,
-      "fly": { "number": 50, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 50, "fly": { "number": 50, "condition": "(hover)" } }
   },
   {
     "cr": 6,
     "name": "Mist Hulk",
     "source": "BGG",
-    "speed": {
-      "walk": 0,
-      "fly": { "number": 40, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 0, "fly": { "number": 40, "condition": "(hover)" } }
   },
   {
     "cr": 7,
     "name": "Air Elemental Myrmidon",
     "source": "MPMM",
-    "speed": {
-      "walk": 30,
-      "fly": { "number": 30, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } }
   },
   { "cr": 7, "name": "Cinder Hulk", "source": "BGG", "speed": { "walk": 40 } },
   {
@@ -399,10 +364,6 @@
     "cr": 9,
     "name": "Lightning Hulk",
     "source": "BGG",
-    "speed": {
-      "walk": 0,
-      "fly": { "number": 90, "condition": "(hover)" },
-      "canHover": true
-    }
+    "speed": { "walk": 0, "fly": { "number": 90, "condition": "(hover)" } }
   }
 ]

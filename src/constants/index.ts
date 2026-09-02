@@ -50,8 +50,8 @@ export const SPEEDS = {
   walk: { singular: 'Walks', continuous: 'walking' },
   burrow: { singular: 'Burrows', continuous: 'burrowing' },
   climb: { singular: 'Climbs', continuous: 'climbing' },
-  swim: { icon: true, singular: 'Swims', continuous: 'swimming' },
-  fly: { icon: true, singular: 'Flies', continuous: 'flying' }
+  fly: { icon: true, singular: 'Flies', continuous: 'flying' },
+  swim: { icon: true, singular: 'Swims', continuous: 'swimming' }
 } as Readonly<
   Record<Speed, { icon?: boolean; singular: string; continuous: string }>
 >
