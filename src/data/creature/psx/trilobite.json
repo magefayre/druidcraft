@@ -1,0 +1,25 @@
+{
+  "name": "Trilobite",
+  "source": "PSX",
+  "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 11, "from": ["natural armor"] }],
+  "hp": { "average": 2, "formula": "1d4" },
+  "speed": { "walk": 20, "swim": 20 },
+  "ability": { "str": 2, "dex": 11, "con": 10, "int": 1, "wis": 8, "cha": 2 },
+  "skill": { "stealth": 2 },
+  "senses": ["blindsight 30 ft."],
+  "cr": 0,
+  "trait": [
+    { "name": "Amphibious", "entries": ["The crab can breathe air and water."] }
+  ],
+  "action": [
+    {
+      "name": "Claw",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 bludgeoning damage."
+      ]
+    }
+  ]
+}

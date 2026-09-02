@@ -1,0 +1,60 @@
+{
+  "name": "Elemental Spirit",
+  "source": "TCE",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["U"],
+  "ac": [{ "special": "11 + the level of the spell (natural armor)" }],
+  "hp": { "special": "50 + 10 for each spell level above 4th" },
+  "speed": {
+    "walk": 40,
+    "burrow": { "number": 40, "condition": "(earth only)" },
+    "fly": { "number": 40, "condition": "(air only; hover)" },
+    "swim": { "number": 40, "condition": "(water only)" }
+  },
+  "ability": {
+    "str": 18,
+    "dex": 15,
+    "con": 17,
+    "int": 4,
+    "wis": 10,
+    "cha": 16
+  },
+  "resist": [
+    { "resist": ["lightning", "thunder"], "note": "(Air only)" },
+    { "resist": ["piercing", "slashing"], "note": "(Earth only)" },
+    { "resist": ["acid"], "note": "(Water only)" }
+  ],
+  "immune": ["poison", { "immune": ["fire"], "note": "(Fire only)" }],
+  "condition": [
+    "exhaustion",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "unconscious"
+  ],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Primordial", "understands the languages you speak"],
+  "trait": [
+    {
+      "name": "Amorphous Form (Air, Fire, and Water Only)",
+      "entries": [
+        "The elemental can move through a space as narrow as 1 inch wide without squeezing."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The elemental makes a number of attacks equal to half this spell's level (rounded down)."
+      ]
+    },
+    {
+      "name": "Slam",
+      "entries": [
+        "{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target. {@h}{@damage 1d10 + 4 + summonSpellLevel} bludgeoning damage (Air, Earth, and Water only) or fire damage (Fire only)."
+      ]
+    }
+  ]
+}

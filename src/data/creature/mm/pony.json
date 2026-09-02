@@ -1,0 +1,20 @@
+{
+  "name": "Pony",
+  "source": "MM",
+  "size": "M",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [10],
+  "hp": { "average": 11, "formula": "2d8 + 2" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 15, "dex": 10, "con": 13, "int": 2, "wis": 11, "cha": 7 },
+  "cr": 0.125,
+  "action": [
+    {
+      "name": "Hooves",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d4 + 2}) bludgeoning damage."
+      ]
+    }
+  ]
+}

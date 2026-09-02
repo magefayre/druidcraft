@@ -1,0 +1,61 @@
+{
+  "name": "Hobgoblin Devastator",
+  "source": "MPMM",
+  "size": "M",
+  "type": "fey",
+  "alignment": ["T", "L", "N"],
+  "ac": [
+    { "ac": 13, "from": ["{@item studded leather armor|PHB|studded leather}"] }
+  ],
+  "hp": { "average": 45, "formula": "7d8 + 14" },
+  "speed": { "walk": 30 },
+  "ability": {
+    "str": 13,
+    "dex": 12,
+    "con": 14,
+    "int": 16,
+    "wis": 13,
+    "cha": 11
+  },
+  "skill": { "arcana": 5 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Common", "Goblin"],
+  "cr": 4,
+  "trait": [
+    {
+      "name": "Army Arcana",
+      "entries": [
+        "When the hobgoblin casts a spell that causes damage or that forces other creatures to make a saving throw, it can choose itself and any number of allies to be immune to the damage caused by the spell and to succeed on the required saving throw."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The hobgoblin makes two Quarterstaff or Devastating Bolt attacks."
+      ]
+    },
+    {
+      "name": "Quarterstaff",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) bludgeoning damage, or 5 ({@damage 1d8 + 1}) bludgeoning damage if used with two hands, plus 13 ({@damage 3d8}) force damage."
+      ]
+    },
+    {
+      "name": "Devastating Bolt",
+      "entries": [
+        "{@atk rs} {@hit 5} to hit, range 60 ft., one target. {@h}21 ({@damage 4d8 + 3}) force damage, and the target is knocked {@condition prone}."
+      ]
+    },
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The hobgoblin casts one of the following spells, using Intelligence as the spellcasting ability (spell save {@dc 13}):",
+        "{@frequency At will} {@spell mage hand}, {@spell prestidigitation}",
+        "{@frequency 2e} {@spell fireball}, {@spell fly}, {@spell fog cloud}, {@spell gust of wind}, {@spell lightning bolt}"
+      ],
+      "type": "action"
+    }
+  ]
+}

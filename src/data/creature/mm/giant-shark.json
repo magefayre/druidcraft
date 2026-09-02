@@ -1,0 +1,34 @@
+{
+  "name": "Giant Shark",
+  "source": "MM",
+  "size": "H",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 126, "formula": "11d12 + 55" },
+  "speed": { "swim": 50 },
+  "ability": { "str": 23, "dex": 11, "con": 21, "int": 1, "wis": 10, "cha": 5 },
+  "skill": { "perception": 3 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 5,
+  "trait": [
+    {
+      "name": "Blood Frenzy",
+      "entries": [
+        "The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      ]
+    },
+    {
+      "name": "Water Breathing",
+      "entries": ["The shark can breathe only underwater."]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}22 ({@damage 3d10 + 6}) piercing damage."
+      ]
+    }
+  ]
+}

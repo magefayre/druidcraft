@@ -1,0 +1,72 @@
+{
+  "name": "Korred",
+  "source": "MPMM",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["T", "C", "N"],
+  "ac": [{ "ac": 17, "from": ["natural armor"] }],
+  "hp": { "average": 93, "formula": "11d6 + 55" },
+  "speed": { "walk": 30, "burrow": 30 },
+  "ability": {
+    "str": 23,
+    "dex": 14,
+    "con": 20,
+    "int": 10,
+    "wis": 15,
+    "cha": 9
+  },
+  "skill": { "athletics": 9, "perception": 5, "stealth": 5 },
+  "resist": [
+    {
+      "resist": ["bludgeoning", "piercing", "slashing"],
+      "note": "from nonmagical attacks"
+    }
+  ],
+  "senses": ["darkvision 120 ft.", "tremorsense 120 ft."],
+  "languages": ["Dwarvish", "Gnomish", "Sylvan", "Terran", "Undercommon"],
+  "cr": 7,
+  "trait": [
+    {
+      "name": "Stone Camouflage",
+      "entries": [
+        "The korred has advantage on Dexterity ({@skill Stealth}) checks made to hide in rocky terrain."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The korred makes two Greatclub or Rock attacks."]
+    },
+    {
+      "name": "Greatclub",
+      "entries": [
+        "{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}10 ({@damage 1d8 + 6}) bludgeoning damage, or 19 ({@damage 3d8 + 6}) bludgeoning damage if the korred is on the ground."
+      ]
+    },
+    {
+      "name": "Rock",
+      "entries": [
+        "{@atk rw} {@hit 9} to hit, range 60/120 ft., one target. {@h}10 ({@damage 1d8 + 6}) bludgeoning damage, or 19 ({@damage 3d8 + 6}) bludgeoning damage if the korred is on the ground."
+      ]
+    },
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The korred casts one of the following spells, requiring no spell components and using Wisdom as the spellcasting ability (spell save {@dc 13}):",
+        "{@frequency At will} {@spell commune with nature} (as an action), {@spell meld into stone}, {@spell stone shape}",
+        "{@frequency 1} {@spell Otto's irresistible dance}"
+      ],
+      "type": "action"
+    }
+  ],
+  "bonus": [
+    {
+      "name": "Command Hair",
+      "entries": [
+        "The korred has at least one 50-foot-long rope woven out of its hair. The korred commands one such rope within 30 feet of it to move up to 20 feet and entangle a Large or smaller creature that the korred can see. The target must succeed on a {@dc 13} Dexterity saving throw or become {@condition grappled} by the rope (escape {@dc 13}). Until this grapple ends, the target is {@condition restrained}. The korred can use a bonus action to release the target, which is also freed if the korred dies or becomes {@condition incapacitated}.",
+        "A rope of korred hair has AC 20 and 20 hit points. It regains 1 hit point at the start of each of the korred's turns while the rope has at least 1 hit point and the korred is alive. If the rope drops to 0 hit points, it is destroyed."
+      ]
+    }
+  ]
+}

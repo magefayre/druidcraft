@@ -1,29 +1,113 @@
-import { existsSync, mkdirSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
 import plur from 'plur'
 import yargs from 'yargs'
 
+import { url } from '~components/Creature/utils'
 import { ELEMENTAL_FORMS, LEVELS, SPEEDS } from '~constants'
 import type {
-  Creature,
-  CreatureType,
-  Features,
-  Monster,
-  MonsterRatings,
-  Source,
+  Abilities,
+  Action,
+  ActionType,
+  Condition,
+  Damage,
+  DamageDetails,
+  DamageType,
   Speeds
 } from '~types'
-import type { BestiarySchema } from '~types/5etools/bestiary'
 import {
+  type Ability,
+  type Alignment,
+  type Creature,
+  type CreatureDetails,
+  type CreatureType,
+  type Features,
+  type Monster,
+  type MonsterRatings,
+  type Size,
+  type Skill
+} from '~types'
+import type {
+  AbilityScore,
+  BestiarySchema,
+  Entry,
+  EntryList
+} from '~types/5etools/bestiary'
+import {
+  formatList,
   getCircleFormsCR,
   getTypeCR,
   sortAlphabetically,
   sortCreatures
 } from '~utils/5etools'
 
-import { fetchData, fetchRatings, fetchScript, fetchToken } from './utils'
+import {
+  ensureDir,
+  fetchData,
+  fetchRatings,
+  fetchScript,
+  fetchToken,
+  filterStrings
+} from './utils'
+
+const parseAbilities = (abilities: Record<Ability, AbilityScore>) =>
+  Object.entries(abilities).reduce<Abilities>(
+    (abilities, [ability, value]) => ({
+      ...abilities,
+      [ability]: typeof value === 'number' ? value : undefined
+    }),
+    {}
+  )
+
+const parseActions = (
+  actions: Monster[ActionType],
+  spellcasting: Action[] = [],
+  type?: ActionType
+) => {
+  const parsed: Action[] = [
+    ...(actions ?? []).map(({ name, entries }) => ({
+      name,
+      entries: entries.flatMap((entry: EntryList) => {
+        if (typeof entry === 'string') return entry
+        if ('items' in entry)
+          return entry.items?.map(item => {
+            const {
+              name,
+              entry,
+              entries = [entry]
+            } = item as { name: string; entry?: Entry; entries?: Entry[] }
+
+            return `{@subheading ${name}} ${formatList(entries?.filter(filterStrings))}`
+          })
+
+        return undefined
+      })
+    })),
+    ...spellcasting.filter(action => action.type === type)
+  ]
+
+  if (!parsed.length) return undefined
+
+  return parsed
+}
+
+const parseAlignment = (
+  alignments?: Monster['alignment'],
+  prefix?: string
+): CreatureDetails['alignment'] => {
+  if (!alignments?.length) return undefined
+
+  return [
+    !!prefix ? ('T' as Alignment) : undefined,
+    ...alignments.flatMap(alignment => {
+      if (typeof alignment === 'string') return alignment
+      if ('special' in alignment) return alignment.special
+
+      return parseAlignment(alignment.alignment)
+    })
+  ].filter(Boolean)
+}
 
 const parseCR = (cr: Monster['cr']): number | undefined => {
   if (typeof cr !== 'string' && cr?.hasOwnProperty('cr')) return parseCR(cr.cr)
@@ -40,6 +124,37 @@ const parseCR = (cr: Monster['cr']): number | undefined => {
   return undefined
 }
 
+const parseConditions = (conditions: Monster['conditionImmune']) => {
+  if (!conditions) return undefined
+
+  return conditions.reduce<Condition[]>((conditions, condition) => {
+    if (typeof condition !== 'string') return conditions
+
+    return [...conditions, condition]
+  }, [])
+}
+
+const parseDamages = <T extends DamageType>(
+  damages: Monster[T],
+  type: DamageType
+) => {
+  if (!damages) return undefined
+
+  return damages.reduce<Array<Damage | DamageDetails>>((damages, damage) => {
+    const parse = () => {
+      if (typeof damage === 'string') return damage
+
+      if ('special' in damage) return damage.special
+
+      const { note } = damage
+
+      return { [type]: damage[type], note }
+    }
+
+    return [...damages, parse()]
+  }, [])
+}
+
 const parseRating = (
   name: string,
   features: Features,
@@ -50,6 +165,19 @@ const parseRating = (
   }
 
   return ratings[name]
+}
+
+const parseSize = (sizes: Size[]) => sizes.at(0)
+
+const parseModifiers = <T extends string>(
+  skills: Partial<Record<T, string>>
+) => {
+  if (!skills) return undefined
+
+  return Object.keys(skills).reduce(
+    (parsed, key) => ({ ...parsed, [key]: parseInt(skills[key]) }),
+    {}
+  )
 }
 
 const parseSpeeds = (speeds: Monster['speed']) => {
@@ -65,6 +193,26 @@ const parseSpeeds = (speeds: Monster['speed']) => {
 
 const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
+
+const parseSpellcasting = (spellcasting?: Monster['spellcasting']) =>
+  spellcasting?.map(
+    ({ name, headerEntries, footerEntries, will, daily, displayAs }) => {
+      const entries = [
+        ...(headerEntries ?? [' ']),
+        will &&
+          `{@frequency At will} ${formatList(will.filter(filterStrings))}`,
+        ...(daily
+          ? Object.entries(daily).map(
+              ([key, value]) =>
+                `{@frequency ${key}} ${formatList(value.filter(filterStrings))}`
+            )
+          : []),
+        ...(footerEntries ?? [])
+      ].filter(Boolean)
+
+      return { name, entries, type: displayAs } as Action
+    }
+  )
 
 const parseType = (type: Monster['type']): CreatureType => {
   if (
@@ -93,7 +241,9 @@ const filterMonsters = (
   filters: MonsterFilters,
   ratings: MonsterRatings
 ) => {
-  const creatures = monsters.reduce<Creature[]>((creatures, monster) => {
+  const creatures = monsters.reduce<
+    { summary: Creature; details: CreatureDetails }[]
+  >((creatures, monster) => {
     let base = undefined
 
     if ('_copy' in monster) {
@@ -101,9 +251,9 @@ const filterMonsters = (
 
       base = monsters.find(
         ({ name, source }) =>
-          _copy.name === name &&
-          _copy.name !== monster.name &&
-          _copy.source === source
+          _copy?.name === name &&
+          _copy?.name !== monster.name &&
+          _copy?.source === source
       )
 
       if (!!base) {
@@ -111,7 +261,7 @@ const filterMonsters = (
       }
     }
 
-    const { name, source, summonedBySpell } = monster
+    const { source, summonedBySpell } = monster
     const cr = parseCR(monster.cr)!
     const spell = parseSpell(summonedBySpell)
     const type = parseType(monster.type)
@@ -122,12 +272,74 @@ const filterMonsters = (
     if (!include) return creatures
 
     const speed = parseSpeeds(monster.speed)
+    const {
+      ac,
+      action,
+      alignment,
+      alignmentPrefix,
+      bonus,
+      cha,
+      con,
+      conditionImmune: condition,
+      dex,
+      hp,
+      immune,
+      int,
+      languages,
+      legendary,
+      name,
+      reaction,
+      resist,
+      save,
+      senses,
+      size,
+      skill,
+      str,
+      trait,
+      wis,
+      vulnerable
+    } = monster
     const features = filters.features?.(name)
     const rating = filters.ratings
       ? parseRating(base?.name ?? name, features, ratings)
       : undefined
+    const spellcasting = parseSpellcasting(monster.spellcasting)
+    const summary: Creature = {
+      name,
+      source,
+      cr,
+      features,
+      rating,
+      speed,
+      spell
+    }
+    const details: CreatureDetails = {
+      name,
+      source,
+      size: parseSize(size),
+      type,
+      alignment: parseAlignment(alignment, alignmentPrefix),
+      ac,
+      hp,
+      speed,
+      ability: parseAbilities({ str, dex, con, int, wis, cha }),
+      save: parseModifiers<Ability>(save),
+      skill: parseModifiers<Skill>(skill),
+      vulnerable: parseDamages(vulnerable, 'vulnerable'),
+      resist: parseDamages(resist, 'resist'),
+      immune: parseDamages(immune, 'immune'),
+      condition: parseConditions(condition),
+      senses,
+      languages,
+      cr,
+      trait: parseActions(trait, spellcasting),
+      action: parseActions(action, spellcasting, 'action'),
+      legendary: parseActions(legendary),
+      bonus: parseActions(bonus),
+      reaction: parseActions(reaction)
+    }
 
-    return [...creatures, { cr, features, name, rating, source, speed, spell }]
+    return [...creatures, { summary, details }]
   }, [])
 
   return creatures
@@ -140,11 +352,9 @@ const filterMonsters = (
     })
     .parse()
 
-  if (!existsSync(outputDir)) {
-    mkdirSync(outputDir, { recursive: true })
-  }
+  ensureDir(outputDir)
 
-  const monsterURLs = await fetchData<Record<Source, string>>(
+  const monsterURLs = await fetchData<Record<string, string>>(
     'bestiary',
     'index.json'
   )
@@ -181,12 +391,19 @@ const filterMonsters = (
 
       await writeFile(
         join(outputDir, `${plur(filters.type)}.json`),
-        JSON.stringify(creatures.sort(sortCreatures()))
+        JSON.stringify(
+          creatures.map(({ summary }) => summary).sort(sortCreatures())
+        )
       )
 
       await Promise.all(
-        creatures.map(async ({ name, source }) => {
-          await fetchToken({ name, source })
+        creatures.map(async ({ details }) => {
+          const filename = join(outputDir, `${url(details)}.json`)
+
+          ensureDir(filename)
+
+          await writeFile(filename, JSON.stringify(details))
+          await fetchToken(details)
         })
       )
 
@@ -200,7 +417,7 @@ const filterMonsters = (
     .sort(([, a], [, b]) => sortAlphabetically(a, b))
     .reduce(
       (books, [source, name]) =>
-        creatures.flat().some(creature => creature.source === source) &&
+        creatures.flat().some(({ summary }) => summary.source === source) &&
         !books[source]
           ? { ...books, [source]: name }
           : books,

@@ -1,0 +1,29 @@
+{
+  "name": "Flying Snake",
+  "source": "MM",
+  "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [14],
+  "hp": { "average": 5, "formula": "2d4" },
+  "speed": { "walk": 30, "fly": 60, "swim": 30 },
+  "ability": { "str": 4, "dex": 18, "con": 11, "int": 2, "wis": 12, "cha": 5 },
+  "senses": ["blindsight 10 ft."],
+  "cr": 0.125,
+  "trait": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}1 piercing damage plus 7 ({@damage 3d4}) poison damage."
+      ]
+    }
+  ]
+}

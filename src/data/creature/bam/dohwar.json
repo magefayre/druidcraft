@@ -1,0 +1,50 @@
+{
+  "name": "Dohwar",
+  "source": "BAM",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["A"],
+  "ac": [11],
+  "hp": { "average": 10, "formula": "3d6" },
+  "speed": { "walk": 20, "swim": 20 },
+  "ability": {
+    "str": 5,
+    "dex": 12,
+    "con": 11,
+    "int": 11,
+    "wis": 14,
+    "cha": 13
+  },
+  "save": { "dex": 3, "wis": 4 },
+  "skill": { "deception": 3, "insight": 4, "persuasion": 3 },
+  "languages": [
+    "Common",
+    "Dohwar",
+    "telepathy 30 ft. (see also Merging below)"
+  ],
+  "cr": 0,
+  "trait": [
+    {
+      "name": "Merging",
+      "entries": [
+        "Two dohwars can have a telepathic conversation with each other and a third willing creature of their choice, provided all three are within 30 feet of one another."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}3 ({@damage 1d4 + 1}) piercing damage."
+      ]
+    },
+    {
+      "name": "Spellcasting (Psionics)",
+      "entries": [
+        "The dohwar casts the following spell, requiring no spell components and using Charisma as the spellcasting ability (spell save {@dc 11}):",
+        "{@frequency 3} {@spell detect thoughts}"
+      ],
+      "type": "action"
+    }
+  ]
+}

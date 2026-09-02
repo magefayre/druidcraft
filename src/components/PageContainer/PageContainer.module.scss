@@ -1,8 +1,0 @@
-@use '~styles/functions';
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: functions.spacing(2);
-  padding-block-end: functions.spacing(2);
-}

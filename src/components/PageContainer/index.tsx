@@ -6,7 +6,7 @@ import type { FC, PropsWithChildren } from 'react'
 import Footer from '~components/Footer'
 import Header from '~components/Header'
 
-export type PageContainerProps = PropsWithChildren<{ meta: NextSeoProps }>
+export type PageContainerProps = PropsWithChildren<{ meta?: NextSeoProps }>
 
 const PageContainer: FC<PageContainerProps> = ({ meta, children }) => (
   <ThemedPageContainer header={<Header />} footer={<Footer />}>

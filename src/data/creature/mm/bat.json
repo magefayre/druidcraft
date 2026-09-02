@@ -1,0 +1,35 @@
+{
+  "name": "Bat",
+  "source": "MM",
+  "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 5, "fly": 30 },
+  "ability": { "str": 2, "dex": 15, "con": 8, "int": 2, "wis": 12, "cha": 4 },
+  "senses": ["blindsight 60 ft."],
+  "cr": 0,
+  "trait": [
+    {
+      "name": "Echolocation",
+      "entries": [
+        "The bat can't use its blindsight while {@condition deafened}."
+      ]
+    },
+    {
+      "name": "Keen Hearing",
+      "entries": [
+        "The bat has advantage on Wisdom ({@skill Perception}) checks that rely on hearing."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one creature. {@h}1 piercing damage."
+      ]
+    }
+  ]
+}

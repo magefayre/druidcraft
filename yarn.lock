@@ -3135,6 +3135,7 @@ __metadata:
     sass: "npm:1.103.1"
     semantic-release: "npm:25.0.9"
     stylelint: "npm:17.14.1"
+    title-case: "npm:4.3.2"
     tsx: "npm:4.23.13"
     typescript: "npm:6.0.3"
     usehooks-ts: "npm:3.1.1"
@@ -13409,6 +13410,13 @@ __metadata:
   version: 3.1.0
   resolution: "tinyrainbow@npm:3.1.0"
   checksum: 10c0/f11cf387a26c5c9255bec141a90ac511b26172981b10c3e50053bc6700ea7d2336edcc4a3a21dbb8412fe7c013477d2ba4d7e4877800f3f8107be5105aad6511
+  languageName: node
+  linkType: hard
+
+"title-case@npm:4.3.2":
+  version: 4.3.2
+  resolution: "title-case@npm:4.3.2"
+  checksum: 10c0/f040c5b0586e3a4ac5881e59ac060ebfa56dae611b0d513ad211fa7f92597d418395fa902fe9d7ee49f98e557e88421e274680b22a3b04dd1ce1c577225444d3
   languageName: node
   linkType: hard
 

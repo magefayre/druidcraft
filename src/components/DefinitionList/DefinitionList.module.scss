@@ -1,0 +1,17 @@
+@use '~styles/functions';
+
+.root {
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 functions.spacing(0.5);
+  }
+
+  dt {
+    font-weight: bold;
+
+    &::after {
+      content: var(--content-colon);
+    }
+  }
+}

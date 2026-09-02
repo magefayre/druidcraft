@@ -1,5 +1,4 @@
-import { Icon } from '@newhighsco/chipset'
-import classNames from 'classnames'
+import { classNames, Icon } from '@newhighsco/chipset'
 import type { FC } from 'react'
 
 import config from '~config'

@@ -1,0 +1,47 @@
+{
+  "name": "Giant Owl",
+  "source": "MM",
+  "size": "L",
+  "type": "beast",
+  "alignment": ["N"],
+  "ac": [12],
+  "hp": { "average": 19, "formula": "3d10 + 3" },
+  "speed": { "walk": 5, "fly": 60 },
+  "ability": {
+    "str": 13,
+    "dex": 15,
+    "con": 12,
+    "int": 8,
+    "wis": 13,
+    "cha": 10
+  },
+  "skill": { "perception": 5, "stealth": 4 },
+  "senses": ["darkvision 120 ft."],
+  "languages": [
+    "Giant Owl",
+    "understands Common, Elvish, and Sylvan but can't speak them"
+  ],
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Flyby",
+      "entries": [
+        "The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Keen Hearing and Sight",
+      "entries": [
+        "The owl has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or sight."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}8 ({@damage 2d6 + 1}) slashing damage."
+      ]
+    }
+  ]
+}

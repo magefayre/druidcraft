@@ -6,252 +6,252 @@
     "spell": "Summon Fey"
   },
   {
-    "cr": 0,
     "name": "Dohwar",
     "source": "BAM",
+    "cr": 0,
     "speed": { "walk": 20, "swim": 20 }
   },
   {
-    "cr": 0,
     "name": "Killmoulis",
     "source": "MFF",
+    "cr": 0,
     "speed": { "walk": 30, "climb": 30 }
   },
   {
-    "cr": 0.125,
     "name": "Boggle",
     "source": "MPMM",
+    "cr": 0.125,
     "speed": { "walk": 30, "climb": 30 }
   },
   {
-    "cr": 0.125,
     "name": "Brigganock",
     "source": "WBtW",
+    "cr": 0.125,
     "speed": { "walk": 15 }
   },
   {
-    "cr": 0.125,
     "name": "Valenar Hawk",
     "source": "ERLW",
+    "cr": 0.125,
     "speed": { "walk": 10, "fly": 60 }
   },
-  { "cr": 0.25, "name": "Blink Dog", "source": "MM", "speed": { "walk": 40 } },
+  { "name": "Blink Dog", "source": "MM", "cr": 0.25, "speed": { "walk": 40 } },
   {
-    "cr": 0.25,
     "name": "Mite",
     "source": "MFF",
+    "cr": 0.25,
     "speed": { "walk": 30, "burrow": 10, "climb": 30 }
   },
   {
-    "cr": 0.25,
     "name": "Pixie",
     "source": "MM",
+    "cr": 0.25,
     "speed": { "walk": 10, "fly": 30 }
   },
   {
-    "cr": 0.25,
     "name": "Sprite",
     "source": "MM",
+    "cr": 0.25,
     "speed": { "walk": 10, "fly": 40 }
   },
-  { "cr": 0.5, "name": "Darkling", "source": "MPMM", "speed": { "walk": 30 } },
+  { "name": "Darkling", "source": "MPMM", "cr": 0.5, "speed": { "walk": 30 } },
   {
-    "cr": 0.5,
     "name": "Detached Shadow",
     "source": "WBtW",
+    "cr": 0.5,
     "speed": { "walk": 40 }
   },
   {
-    "cr": 0.5,
     "name": "Faerie Borrower",
     "source": "MCV4EC",
+    "cr": 0.5,
     "speed": { "walk": 10, "fly": 30 }
   },
   {
-    "cr": 0.5,
     "name": "Giant Lynx",
     "source": "BGG",
+    "cr": 0.5,
     "speed": { "walk": 30, "climb": 30 }
   },
-  { "cr": 0.5, "name": "Reflection", "source": "TCE", "speed": { "walk": 40 } },
-  { "cr": 0.5, "name": "Satyr", "source": "MM", "speed": { "walk": 40 } },
+  { "name": "Reflection", "source": "TCE", "cr": 0.5, "speed": { "walk": 40 } },
+  { "name": "Satyr", "source": "MM", "cr": 0.5, "speed": { "walk": 40 } },
   {
-    "cr": 0.5,
     "name": "Valenar Hound",
     "source": "ERLW",
+    "cr": 0.5,
     "speed": { "walk": 40 }
   },
   {
-    "cr": 0.5,
     "name": "Valenar Steed",
     "source": "ERLW",
+    "cr": 0.5,
     "speed": { "walk": 60 }
   },
   {
-    "cr": 0.5,
     "name": "Wynling",
     "source": "JttRC",
+    "cr": 0.5,
     "speed": { "walk": 30, "fly": 40 }
   },
-  { "cr": 1, "name": "Alseid", "source": "MOT", "speed": { "walk": 30 } },
-  { "cr": 1, "name": "Dryad", "source": "MM", "speed": { "walk": 30 } },
+  { "name": "Alseid", "source": "MOT", "cr": 1, "speed": { "walk": 30 } },
+  { "name": "Dryad", "source": "MM", "cr": 1, "speed": { "walk": 30 } },
   {
-    "cr": 1,
     "name": "Faerie Pest",
     "source": "MCV4EC",
+    "cr": 1,
     "speed": { "walk": 30, "fly": 30 }
   },
-  { "cr": 1, "name": "Giant Ram", "source": "BGG", "speed": { "walk": 50 } },
+  { "name": "Giant Ram", "source": "BGG", "cr": 1, "speed": { "walk": 50 } },
   {
-    "cr": 1,
     "name": "Grinning Cat",
     "source": "BGG",
+    "cr": 1,
     "speed": { "walk": 40, "climb": 40 }
   },
-  { "cr": 1, "name": "Nilbog", "source": "MPMM", "speed": { "walk": 30 } },
-  { "cr": 1, "name": "Quickling", "source": "MPMM", "speed": { "walk": 120 } },
+  { "name": "Nilbog", "source": "MPMM", "cr": 1, "speed": { "walk": 30 } },
+  { "name": "Quickling", "source": "MPMM", "cr": 1, "speed": { "walk": 120 } },
   {
-    "cr": 1,
     "name": "Satyr Reveler",
     "source": "MOT",
+    "cr": 1,
     "speed": { "walk": 40 }
   },
   {
-    "cr": 1,
     "name": "Screaming Devilkin",
     "source": "MFF",
+    "cr": 1,
     "speed": { "walk": 0, "fly": 40 }
   },
   {
-    "cr": 2,
     "name": "Darkling Elder",
     "source": "MPMM",
+    "cr": 2,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 2,
     "name": "Faerie Pathlighter",
     "source": "MCV4EC",
+    "cr": 2,
     "speed": { "walk": 30, "fly": { "number": 30, "condition": "(hover)" } }
   },
-  { "cr": 2, "name": "Hamadryad", "source": "MaBJoV", "speed": { "walk": 30 } },
+  { "name": "Hamadryad", "source": "MaBJoV", "cr": 2, "speed": { "walk": 30 } },
   {
-    "cr": 2,
     "name": "Hobgoblin Iron Shadow",
     "source": "MPMM",
+    "cr": 2,
     "speed": { "walk": 40 }
   },
-  { "cr": 2, "name": "Meenlock", "source": "MPMM", "speed": { "walk": 30 } },
+  { "name": "Meenlock", "source": "MPMM", "cr": 2, "speed": { "walk": 30 } },
   {
-    "cr": 2,
     "name": "Naiad",
     "source": "MOT",
+    "cr": 2,
     "speed": { "walk": 30, "swim": 30 }
   },
   {
-    "cr": 2,
     "name": "Nereid",
     "source": "TftYP",
+    "cr": 2,
     "speed": { "walk": 30, "swim": 60 }
   },
-  { "cr": 2, "name": "Oddlewin", "source": "BMT", "speed": { "walk": 30 } },
+  { "name": "Oddlewin", "source": "BMT", "cr": 2, "speed": { "walk": 30 } },
   {
-    "cr": 2,
     "name": "Satyr Thornbearer",
     "source": "MOT",
+    "cr": 2,
     "speed": { "walk": 40 }
   },
   {
-    "cr": 2,
     "name": "Sea Hag",
     "source": "MM",
+    "cr": 2,
     "speed": { "walk": 30, "swim": 40 }
   },
-  { "cr": 3, "name": "Dankwood Hag", "source": "AWM", "speed": { "walk": 30 } },
+  { "name": "Dankwood Hag", "source": "AWM", "cr": 3, "speed": { "walk": 30 } },
   {
-    "cr": 3,
     "name": "Dolphin Delighter",
     "source": "MPMM",
+    "cr": 3,
     "speed": { "walk": 0, "swim": 60 }
   },
-  { "cr": 3, "name": "Forlarren", "source": "MFF", "speed": { "walk": 40 } },
+  { "name": "Forlarren", "source": "MFF", "cr": 3, "speed": { "walk": 40 } },
   {
-    "cr": 3,
     "name": "Giant Goose",
     "source": "BGG",
+    "cr": 3,
     "speed": { "walk": 30, "fly": 30 }
   },
-  { "cr": 3, "name": "Giant Ox", "source": "BGG", "speed": { "walk": 40 } },
-  { "cr": 3, "name": "Green Hag", "source": "MM", "speed": { "walk": 30 } },
-  { "cr": 3, "name": "Lampad", "source": "MOT", "speed": { "walk": 30 } },
-  { "cr": 3, "name": "Redcap", "source": "MPMM", "speed": { "walk": 25 } },
+  { "name": "Giant Ox", "source": "BGG", "cr": 3, "speed": { "walk": 40 } },
+  { "name": "Green Hag", "source": "MM", "cr": 3, "speed": { "walk": 30 } },
+  { "name": "Lampad", "source": "MOT", "cr": 3, "speed": { "walk": 30 } },
+  { "name": "Redcap", "source": "MPMM", "cr": 3, "speed": { "walk": 25 } },
   {
-    "cr": 3,
     "name": "Sirene",
     "source": "MaBJoV",
+    "cr": 3,
     "speed": { "walk": 30, "swim": 30 }
   },
   {
-    "cr": 3,
     "name": "Sludge Hag",
     "source": "MGELFT",
+    "cr": 3,
     "speed": { "walk": 30 }
   },
-  { "cr": 4, "name": "Fate Hag", "source": "BMT", "speed": { "walk": 30 } },
+  { "name": "Fate Hag", "source": "BMT", "cr": 4, "speed": { "walk": 30 } },
   {
-    "cr": 4,
     "name": "Hobgoblin Devastator",
     "source": "MPMM",
+    "cr": 4,
     "speed": { "walk": 30 }
   },
-  { "cr": 4, "name": "Leprechaun", "source": "QftIS", "speed": { "walk": 30 } },
-  { "cr": 4, "name": "Oread", "source": "MOT", "speed": { "walk": 30 } },
+  { "name": "Leprechaun", "source": "QftIS", "cr": 4, "speed": { "walk": 30 } },
+  { "name": "Oread", "source": "MOT", "cr": 4, "speed": { "walk": 30 } },
   {
-    "cr": 4,
     "name": "Yeth Hound",
     "source": "MPMM",
+    "cr": 4,
     "speed": { "walk": 40, "fly": { "number": 40, "condition": "(hover)" } }
   },
   {
-    "cr": 5,
     "name": "Riffler",
     "source": "BMT",
+    "cr": 5,
     "speed": { "walk": 30, "burrow": 20 }
   },
-  { "cr": 6, "name": "Annis Hag", "source": "MPMM", "speed": { "walk": 40 } },
-  { "cr": 6, "name": "Dandylion", "source": "MisMV1", "speed": { "walk": 50 } },
-  { "cr": 6, "name": "Dusk Hag", "source": "ERLW", "speed": { "walk": 30 } },
+  { "name": "Annis Hag", "source": "MPMM", "cr": 6, "speed": { "walk": 40 } },
+  { "name": "Dandylion", "source": "MisMV1", "cr": 6, "speed": { "walk": 50 } },
+  { "name": "Dusk Hag", "source": "ERLW", "cr": 6, "speed": { "walk": 30 } },
   {
-    "cr": 7,
     "name": "Bheur Hag",
     "source": "MPMM",
+    "cr": 7,
     "speed": {
       "walk": 30,
       "fly": { "number": 50, "condition": "(hover, Graystaff magic)" }
     }
   },
   {
-    "cr": 7,
     "name": "Goose Mother",
     "source": "MCV4EC",
+    "cr": 7,
     "speed": { "walk": 40, "fly": 40 }
   },
   {
-    "cr": 7,
     "name": "Korred",
     "source": "MPMM",
+    "cr": 7,
     "speed": { "walk": 30, "burrow": 30 }
   },
   {
-    "cr": 9,
     "name": "Conclave Dryad",
     "source": "GGR",
+    "cr": 9,
     "speed": { "walk": 30 }
   },
   {
-    "cr": 9,
     "name": "Coral",
     "source": "MisMV1",
+    "cr": 9,
     "speed": { "walk": 10, "fly": 60, "swim": 60 }
   }
 ]

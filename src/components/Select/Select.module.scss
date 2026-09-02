@@ -21,7 +21,7 @@
       appearance: base-select;
       border: 1px solid var(--border);
       border-radius: inherit;
-      margin-top: functions.spacing(0.5);
+      margin-block-start: functions.spacing(0.5);
       max-height: 75vh;
       padding: functions.spacing(0.5);
     }

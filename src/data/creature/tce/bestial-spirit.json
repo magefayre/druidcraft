@@ -1,0 +1,52 @@
+{
+  "name": "Bestial Spirit",
+  "source": "TCE",
+  "size": "S",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "special": "11 + the level of the spell (natural armor)" }],
+  "hp": {
+    "special": "20 (Air only) or 30 (Land and Water only) + 5 for each spell level above 2nd"
+  },
+  "speed": {
+    "walk": 30,
+    "climb": { "number": 30, "condition": "(land only)" },
+    "fly": { "number": 60, "condition": "(air only)" },
+    "swim": { "number": 30, "condition": "(water only)" }
+  },
+  "ability": { "str": 18, "dex": 11, "con": 16, "int": 4, "wis": 14, "cha": 5 },
+  "senses": ["darkvision 60 ft."],
+  "languages": ["understands the languages you speak"],
+  "trait": [
+    {
+      "name": "Water Breathing (Water Only)",
+      "entries": ["The beast can breathe only underwater."]
+    },
+    {
+      "name": "Flyby (Air Only)",
+      "entries": [
+        "The beast doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      ]
+    },
+    {
+      "name": "Pack Tactics (Land and Water Only)",
+      "entries": [
+        "The beast has advantage on an attack roll against a creature if at least one of the beast's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The beast makes a number of attacks equal to half this spell's level (rounded down)."
+      ]
+    },
+    {
+      "name": "Maul",
+      "entries": [
+        "{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target. {@h}{@damage 1d8 + 4 + summonSpellLevel} piercing damage."
+      ]
+    }
+  ]
+}

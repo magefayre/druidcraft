@@ -24,12 +24,10 @@ describe('url', () => {
       '/creature/mm/giant-fire-beetle'
     )
 
-    const preserveCharacters = [':', '*']
-
-    expect(
-      url({ source: ':source', name: ':name' }, { preserveCharacters })
-    ).toEqual('/creature/:source/:name')
-    expect(url({ source: ':slug*', name: '' }, { preserveCharacters })).toEqual(
+    expect(url({ source: ':source', name: ':name' }, false)).toEqual(
+      '/creature/:source/:name'
+    )
+    expect(url({ source: ':slug*', name: '' }, false)).toEqual(
       '/creature/:slug*'
     )
   })

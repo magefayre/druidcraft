@@ -3,9 +3,13 @@ import { useMemo } from 'react'
 import type { Option } from '~components/Select'
 import { EMPTY_OPTION } from '~components/Select/constants'
 import { CR, DESCENDING, LEVELS, SEPARATOR, SPEEDS } from '~constants'
-import SOURCES from '~data/sources.json' with { type: 'json' }
 import type { Creature, Features } from '~types'
-import { getMaxCR, sortAlphabetically, sortCreatures } from '~utils/5etools'
+import {
+  formatSource,
+  getMaxCR,
+  sortAlphabetically,
+  sortCreatures
+} from '~utils/5etools'
 
 import type { WildShapeFormData, WildShapeProps } from './types'
 
@@ -33,11 +37,13 @@ export const useSources = (creatures: Creature[]) =>
         .reduce<Option[]>(
           (sources, { source }) =>
             !sources.find(({ value }) => value === source)
-              ? [...sources, { value: source, label: SOURCES[source] }]
+              ? [...sources, { value: source, label: formatSource(source) }]
               : sources,
           []
         )
-        .sort((a, b) => sortAlphabetically(SOURCES[a.value], SOURCES[b.value])),
+        .sort((a, b) =>
+          sortAlphabetically(formatSource(a.value), formatSource(b.value))
+        ),
     [creatures]
   )
 

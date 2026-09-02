@@ -1,0 +1,29 @@
+{
+  "name": "Chimeric Rat",
+  "source": "IDRotF",
+  "size": "T",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [10],
+  "hp": { "average": 1, "formula": "1d4 - 1" },
+  "speed": { "walk": 20 },
+  "ability": { "str": 2, "dex": 11, "con": 9, "int": 2, "wis": 10, "cha": 4 },
+  "senses": ["darkvision 30 ft."],
+  "cr": 0,
+  "trait": [
+    {
+      "name": "Keen Smell",
+      "entries": [
+        "The rat has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 0} to hit, reach 5 ft., one target. {@h}1 piercing damage."
+      ]
+    }
+  ]
+}

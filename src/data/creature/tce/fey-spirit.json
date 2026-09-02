@@ -1,0 +1,46 @@
+{
+  "name": "Fey Spirit",
+  "source": "TCE",
+  "size": "S",
+  "type": "fey",
+  "alignment": ["U"],
+  "ac": [{ "special": "12 + the level of the spell (natural armor)" }],
+  "hp": { "special": "30 + 10 for each spell level above 3rd" },
+  "speed": { "walk": 40 },
+  "ability": {
+    "str": 13,
+    "dex": 16,
+    "con": 14,
+    "int": 14,
+    "wis": 11,
+    "cha": 16
+  },
+  "condition": ["charmed"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Sylvan", "understands the languages you speak"],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": [
+        "The fey makes a number of attacks equal to half this spell's level (rounded down)."
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "entries": [
+        "{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target. {@h}{@damage 1d6 + 3 + summonSpellLevel} piercing damage {@damage + 1d6} force damage."
+      ]
+    }
+  ],
+  "bonus": [
+    {
+      "name": "Fey Step",
+      "entries": [
+        "The fey magically teleports up to 30 feet to an unoccupied space it can see. Then one of the following effects occurs, based on the fey's chosen mood:",
+        "{@subheading Fuming} The fey has advantage on the next attack roll it makes before the end of this turn.",
+        "{@subheading Mirthful} The fey can force one creature it can see within 10 feet of it to make a Wisdom saving throw against your spell save DC. Unless the save succeeds, the target is {@condition charmed} by you and the fey for 1 minute or until the target takes any damage.",
+        "{@subheading Tricksy} The fey can fill a 5-foot cube within 5 feet of it with magical darkness, which lasts until the end of its next turn."
+      ]
+    }
+  ]
+}

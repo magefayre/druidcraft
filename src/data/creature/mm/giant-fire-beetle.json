@@ -1,0 +1,29 @@
+{
+  "name": "Giant Fire Beetle",
+  "source": "MM",
+  "size": "S",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [{ "ac": 13, "from": ["natural armor"] }],
+  "hp": { "average": 4, "formula": "1d6 + 1" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 8, "dex": 10, "con": 12, "int": 1, "wis": 7, "cha": 3 },
+  "senses": ["blindsight 30 ft."],
+  "cr": 0,
+  "trait": [
+    {
+      "name": "Illumination",
+      "entries": [
+        "The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 ft.."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}2 ({@damage 1d6 - 1}) slashing damage."
+      ]
+    }
+  ]
+}

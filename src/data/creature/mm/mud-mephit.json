@@ -1,0 +1,45 @@
+{
+  "name": "Mud Mephit",
+  "source": "MM",
+  "size": "S",
+  "type": "elemental",
+  "alignment": ["N", "E"],
+  "ac": [11],
+  "hp": { "average": 27, "formula": "6d6 + 6" },
+  "speed": { "walk": 20, "fly": 20, "swim": 20 },
+  "ability": { "str": 8, "dex": 12, "con": 12, "int": 9, "wis": 11, "cha": 7 },
+  "skill": { "stealth": 3 },
+  "immune": ["poison"],
+  "condition": ["poisoned"],
+  "senses": ["darkvision 60 ft."],
+  "languages": ["Aquan", "Terran"],
+  "cr": 0.25,
+  "trait": [
+    {
+      "name": "Death Burst",
+      "entries": [
+        "When the mephit dies, it explodes in a burst of sticky mud. Each Medium or smaller creature within 5 feet of it must succeed on a {@dc 11} Dexterity saving throw or be {@condition restrained} until the end of the creature's next turn."
+      ]
+    },
+    {
+      "name": "False Appearance",
+      "entries": [
+        "While the mephit remains motionless, it is indistinguishable from an ordinary mound of mud."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Fists",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one creature. {@h}4 ({@damage 1d6 + 1}) bludgeoning damage."
+      ]
+    },
+    {
+      "name": "Mud Breath {@recharge}",
+      "entries": [
+        "The mephit belches viscid mud onto one creature within 5 feet of it. If the target is Medium or smaller, it must succeed on a {@dc 11} Dexterity saving throw or be {@condition restrained} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Firenewt Warlock of Imix",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["T", "N", "E"],
+  "ac": [10],
+  "hp": { "average": 33, "formula": "6d8 + 6" },
+  "speed": { "walk": 30 },
+  "ability": {
+    "str": 13,
+    "dex": 11,
+    "con": 12,
+    "int": 9,
+    "wis": 11,
+    "cha": 14
+  },
+  "immune": ["fire"],
+  "senses": ["darkvision 120 ft."],
+  "languages": ["Draconic", "Ignan"],
+  "cr": 1,
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The firenewt can breathe air and water."]
+    },
+    {
+      "name": "Devil's Sight",
+      "entries": [
+        "Magical darkness doesn't impede the firenewt's {@sense darkvision}."
+      ]
+    },
+    {
+      "name": "Imix's Blessing",
+      "entries": [
+        "When the firenewt reduces an enemy to 0 hit points, the firenewt gains 5 temporary hit points."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The firenewt makes three Morningstar or Fire Ray attacks."]
+    },
+    {
+      "name": "Morningstar",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) piercing damage."
+      ]
+    },
+    {
+      "name": "Fire Ray",
+      "entries": [
+        "{@atk rs} {@hit 4} to hit, range 120 ft., one target. {@h}5 ({@damage 1d6 + 2}) fire damage."
+      ]
+    },
+    {
+      "name": "Spellcasting",
+      "entries": [
+        "The firenewt casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 12}):",
+        "{@frequency At will} {@spell guidance}, {@spell light}, {@spell mage armor}, {@spell mage hand}, {@spell prestidigitation}"
+      ],
+      "type": "action"
+    }
+  ]
+}

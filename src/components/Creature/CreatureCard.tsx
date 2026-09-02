@@ -5,8 +5,7 @@ import type { FC } from 'react'
 import Rating from '~components/Rating'
 import Sprite from '~components/Sprite'
 import { EMPTY, LEVELS, SPEEDS } from '~constants'
-import SOURCES from '~data/sources.json' with { type: 'json' }
-import { formatCR } from '~utils/5etools'
+import { formatCR, formatSource } from '~utils/5etools'
 
 import { TOKEN_SIZE, tokenURL, url } from '.'
 import styles from './CreatureCard.module.scss'
@@ -48,7 +47,7 @@ const CreatureCard: FC<CreatureCardProps> = ({
             theme={{ root: styles.source, toggle: styles.sourceToggle }}
             {...tooltipHeading}
           >
-            {SOURCES[source]}
+            {formatSource(source)}
           </Tooltip>
           <Rating className={styles.rating} {...tooltipHeading}>
             {rating}

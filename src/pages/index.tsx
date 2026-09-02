@@ -19,6 +19,6 @@ export const getStaticProps = (async () => {
   })
 
   return { props: { creatures } }
-}) satisfies GetStaticProps<Props>
+}) satisfies GetStaticProps
 
 export default HomePage

@@ -1,0 +1,35 @@
+{
+  "name": "Jackal",
+  "source": "MM",
+  "size": "S",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 3, "formula": "1d6" },
+  "speed": { "walk": 40 },
+  "ability": { "str": 8, "dex": 15, "con": 11, "int": 3, "wis": 12, "cha": 6 },
+  "skill": { "perception": 3 },
+  "cr": 0,
+  "trait": [
+    {
+      "name": "Keen Hearing and Smell",
+      "entries": [
+        "The jackal has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or smell."
+      ]
+    },
+    {
+      "name": "Pack Tactics",
+      "entries": [
+        "The jackal has advantage on an attack roll against a creature if at least one of the jackal's allies is within 5 feet of the creature and the ally isn't {@condition incapacitated}."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Bite",
+      "entries": [
+        "{@atk mw} {@hit 1} to hit, reach 5 ft., one target. {@h}1 ({@damage 1d4 - 1}) piercing damage."
+      ]
+    }
+  ]
+}

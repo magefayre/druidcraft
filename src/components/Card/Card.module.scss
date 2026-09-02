@@ -25,18 +25,13 @@
 }
 
 .content {
-  border-top: inherit;
   padding: functions.spacing(1);
-
-  &:first-child {
-    border-top: unset;
-  }
 }
 
 .image {
   aspect-ratio: 1;
   height: auto;
-  padding-bottom: unset;
+  padding-block-end: unset;
 
   img {
     padding: functions.spacing(1.5);

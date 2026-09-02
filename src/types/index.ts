@@ -1,5 +1,15 @@
 import type { Creature as Monster } from './5etools/bestiary'
-import type { _SpeedMode, CreatureType } from './5etools/util'
+import type {
+  _SpeedMode,
+  AbilityScoreAbbreviation as Ability,
+  Alignment as _Alignment,
+  CreatureType,
+  DataCondition as Condition,
+  DataDamageType as _Damage,
+  EntrySpellcasting,
+  Size,
+  SkillNameLower as Skill
+} from './5etools/util'
 
 declare global {
   var Parser: {
@@ -12,28 +22,76 @@ declare global {
   }
 }
 
-export type { CreatureType, Monster }
+export type { Ability, Condition, CreatureType, Monster, Size, Skill }
 
-export type Feature = 'elementalForms'
-export type Features = Partial<Record<Feature, boolean>>
-export type Source = string
-export type Speed = '' | _SpeedMode
-export type Speeds = Partial<
-  Record<Speed, number | { number: number; condition: string }>
->
-export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
+export type Abilities = Partial<Record<Ability, number>>
 
-export type Creature = {
+export type Action = { name: string; entries: string[]; type?: ActionType }
+
+export type ActionType = EntrySpellcasting['displayAs']
+
+export type Alignment = _Alignment | 'T'
+
+type CreatureBase = {
   cr?: number
-  features?: Features
   name: string
-  rating?: number
   source: Source
   speed?: Speeds
+}
+
+export type Creature = CreatureBase & {
+  features?: Features
+  rating?: number
   spell?: string
 }
 
+export type CreatureDetails = CreatureBase & {
+  ability: Abilities
+  ac?: Monster['ac']
+  action?: Action[]
+  alignment: Array<Alignment | string>
+  bonus?: Action[]
+  condition?: Condition[]
+  hp?: Monster['hp']
+  immune?: Array<Damage | DamageDetails>
+  languages?: string[]
+  legendary?: Action[]
+  reaction?: Action[]
+  resist?: Array<Damage | DamageDetails>
+  save?: Partial<Record<Ability, number>>
+  senses?: string[]
+  size: Size
+  skill?: Partial<Record<Skill, number>>
+  trait?: Action[]
+  type: CreatureType
+  vulnerable?: Array<Damage | DamageDetails>
+}
+
+export type CreatureURL = Pick<Creature, 'source' | 'name'>
+
+export type Damage = _Damage | string
+
+export type DamageDetails = { [Key in DamageType]?: Damage[] } & {
+  note: string
+}
+
+export type DamageType = 'immune' | 'resist' | 'vulnerable'
+
+export type Feature = 'elementalForms'
+
+export type Features = Partial<Record<Feature, boolean>>
+
+export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
+
 export type MonsterRatings = Record<string, number>
+
+export type Source = string
+
+export type Speed = '' | _SpeedMode
+
+export type Speeds = Partial<
+  Record<Speed, number | { number: number; condition: string }>
+>
 
 export type Spell = {
   creatures?: Record<string, number>

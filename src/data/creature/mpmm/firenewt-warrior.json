@@ -1,0 +1,38 @@
+{
+  "name": "Firenewt Warrior",
+  "source": "MPMM",
+  "size": "M",
+  "type": "elemental",
+  "alignment": ["T", "N"],
+  "ac": [{ "ac": 13, "from": ["{@item shield|PHB}"] }],
+  "hp": { "average": 27, "formula": "5d8 + 5" },
+  "speed": { "walk": 30 },
+  "ability": { "str": 10, "dex": 13, "con": 12, "int": 7, "wis": 11, "cha": 8 },
+  "immune": ["fire"],
+  "languages": ["Draconic", "Ignan"],
+  "cr": 0.5,
+  "trait": [
+    {
+      "name": "Amphibious",
+      "entries": ["The firenewt can breathe air and water."]
+    }
+  ],
+  "action": [
+    {
+      "name": "Multiattack",
+      "entries": ["The firenewt makes two Scimitar attacks."]
+    },
+    {
+      "name": "Scimitar",
+      "entries": [
+        "{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d6 + 1}) slashing damage."
+      ]
+    },
+    {
+      "name": "Spit Fire (Recharges after a Short or Long Rest)",
+      "entries": [
+        "The firenewt spits fire at a creature within 10 feet of it. The creature must make a {@dc 11} Dexterity saving throw, taking 9 ({@damage 2d8}) fire damage on a failed save, or half as much damage on a successful one."
+      ]
+    }
+  ]
+}

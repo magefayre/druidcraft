@@ -1,0 +1,29 @@
+{
+  "name": "Eagle",
+  "source": "MM",
+  "size": "S",
+  "type": "beast",
+  "alignment": ["U"],
+  "ac": [12],
+  "hp": { "average": 3, "formula": "1d6" },
+  "speed": { "walk": 10, "fly": 60 },
+  "ability": { "str": 6, "dex": 15, "con": 10, "int": 2, "wis": 14, "cha": 7 },
+  "skill": { "perception": 4 },
+  "cr": 0,
+  "trait": [
+    {
+      "name": "Keen Sight",
+      "entries": [
+        "The eagle has advantage on Wisdom ({@skill Perception}) checks that rely on sight."
+      ]
+    }
+  ],
+  "action": [
+    {
+      "name": "Talons",
+      "entries": [
+        "{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+      ]
+    }
+  ]
+}

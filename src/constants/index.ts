@@ -1,4 +1,16 @@
-import type { MonsterRating, Speed, Spell } from '~types'
+import type { Alignment, MonsterRating, Size, Speed, Spell } from '~types'
+
+export const ABILITY_BASE = 10
+
+export const ALIGNMENTS = {
+  C: 'Chaotic',
+  E: 'Evil',
+  G: 'Good',
+  L: 'Lawful',
+  N: 'Neutral',
+  U: 'Unaligned',
+  T: 'Typically'
+} as Readonly<Record<Alignment, string>>
 
 export const CR = { walk: 0.25, swim: 0.5, fly: 1 }
 
@@ -34,11 +46,23 @@ export const LEVEL_SUFFIXES = {
 
 export const PLURALS = new Intl.PluralRules('en', { type: 'ordinal' })
 
-export const RATINGS = { red: 1, orange: 2, green: 3, blue: 4 } as Readonly<
-  Record<MonsterRating, number>
->
+export const RATINGS = {
+  red: 1,
+  orange: 2,
+  green: 3,
+  blue: 4
+} satisfies Readonly<Record<MonsterRating, number>>
 
 export const SEPARATOR = ':'
+
+export const SIZES = {
+  T: 'Tiny',
+  S: 'Small',
+  M: 'Medium',
+  L: 'Large',
+  H: 'Huge',
+  G: 'Gargantuan'
+} as Readonly<Record<Size, string>>
 
 export const SORTING = {
   CR: { min: 'Low', max: 'High' },

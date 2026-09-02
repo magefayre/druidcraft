@@ -1,6 +1,7 @@
 import { EMPTY, SPELL_LEVELS } from '~constants'
 import type { Creature, Speeds } from '~types'
 import {
+  formatAC,
   formatCR,
   formatSpeedLimits,
   formatSpellLevel,
@@ -13,6 +14,24 @@ import {
 } from '~utils/5etools'
 
 const speed: Speeds = { swim: 30, fly: 30 }
+
+describe('formatAC', () => {
+  it('should format AC as expected', () => {
+    expect(formatAC([15])).toEqual('15')
+    expect(formatAC([{ ac: 15, from: ['natural armor'] }])).toEqual(
+      '15 (natural armor)'
+    )
+    expect(
+      formatAC([
+        { ac: 15, from: ['natural armor'] },
+        { ac: 17, condition: 'cold form only' }
+      ])
+    ).toEqual('15 (natural armor; 17 cold form only)')
+    expect(
+      formatAC([{ special: '15 + the level of the spell (natural armor)' }])
+    ).toEqual('15 + the level of the spell (natural armor)')
+  })
+})
 
 describe('formatCR', () => {
   it('should format CR as expected', () => {

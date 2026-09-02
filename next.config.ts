@@ -2,10 +2,6 @@ import withSvgr from '@newhighsco/next-plugin-svgr'
 import type { NextConfig } from 'next'
 import withPlugins from 'next-compose-plugins'
 
-import { url } from '~components/Creature/utils'
-
-const preserveCharacters = [':', '*']
-
 const nextConfig: NextConfig = {
   images: { formats: ['image/avif', 'image/webp'] },
   i18n: { locales: ['en'], defaultLocale: 'en' },
@@ -13,12 +9,7 @@ const nextConfig: NextConfig = {
   redirects: () => [
     {
       source: '/beast/:slug*',
-      destination: url({ source: ':slug*', name: '' }, { preserveCharacters }),
-      permanent: true
-    },
-    {
-      source: url({ source: ':source', name: ':name' }, { preserveCharacters }),
-      destination: 'https://2014.5e.tools/bestiary/:name-:source.html',
+      destination: '/creatures/:slug*',
       permanent: true
     }
   ],
