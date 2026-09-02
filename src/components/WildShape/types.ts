@@ -1,10 +1,10 @@
-import type { Creature, CreatureType, Speed } from '~types'
+import type { Creature, CreatureType, Source, Speed } from '~types'
 
 export type WildShapeFormData = {
   level: number
   circleForms: boolean
   sort: string
-  source: string[]
+  source: Source[]
   speed: Speed | ''
 }
 

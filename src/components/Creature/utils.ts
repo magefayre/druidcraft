@@ -1,12 +1,12 @@
 import slugify from '@sindresorhus/slugify'
 import urlJoin from 'url-join'
 
-import type { CreatureURL } from '~types'
+import type { CreatureURL, Source } from '~types'
 
 export const slugifyName = (name: string) =>
   slugify(name, { customReplacements: [['-', '']], decamelize: false })
 
-export const slugifySource = (source: string) =>
+export const slugifySource = (source: Source) =>
   slugify(source, { separator: '' })
 
 export const tokenURL = ({ source, name }: CreatureURL) =>

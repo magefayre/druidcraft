@@ -12816,6 +12816,7 @@ export type ItemPropertyOrWrapperArray = [
         | "AF|XDMG"
         | "BF|DMG"
         | "BF|XDMG"
+        | "Evo|AU"
         | "F"
         | "F|XPHB"
         | "H"
@@ -12846,6 +12847,7 @@ export type ItemPropertyOrWrapperArray = [
          * - AF|XDMG: Ammunition (futuristic)
          * - BF|DMG: Burst Fire
          * - BF|XDMG: Burst Fire
+         * - Evo|AU: Evolving Item
          * - F: Finesse
          * - F|XPHB: Finesse
          * - H: Heavy
@@ -12875,6 +12877,7 @@ export type ItemPropertyOrWrapperArray = [
           | "AF|XDMG"
           | "BF|DMG"
           | "BF|XDMG"
+          | "Evo|AU"
           | "F"
           | "F|XPHB"
           | "H"
@@ -12907,6 +12910,7 @@ export type ItemPropertyOrWrapperArray = [
         | "AF|XDMG"
         | "BF|DMG"
         | "BF|XDMG"
+        | "Evo|AU"
         | "F"
         | "F|XPHB"
         | "H"
@@ -12937,6 +12941,7 @@ export type ItemPropertyOrWrapperArray = [
          * - AF|XDMG: Ammunition (futuristic)
          * - BF|DMG: Burst Fire
          * - BF|XDMG: Burst Fire
+         * - Evo|AU: Evolving Item
          * - F: Finesse
          * - F|XPHB: Finesse
          * - H: Heavy
@@ -12966,6 +12971,7 @@ export type ItemPropertyOrWrapperArray = [
           | "AF|XDMG"
           | "BF|DMG"
           | "BF|XDMG"
+          | "Evo|AU"
           | "F"
           | "F|XPHB"
           | "H"
@@ -14529,6 +14535,7 @@ export type Prerequisite = [
  * - AF|XDMG: Ammunition (futuristic)
  * - BF|DMG: Burst Fire
  * - BF|XDMG: Burst Fire
+ * - Evo|AU: Evolving Item
  * - F: Finesse
  * - F|XPHB: Finesse
  * - H: Heavy
@@ -14559,6 +14566,7 @@ export type ItemPropertyArray = [
     | "AF|XDMG"
     | "BF|DMG"
     | "BF|XDMG"
+    | "Evo|AU"
     | "F"
     | "F|XPHB"
     | "H"
@@ -14588,6 +14596,7 @@ export type ItemPropertyArray = [
     | "AF|XDMG"
     | "BF|DMG"
     | "BF|XDMG"
+    | "Evo|AU"
     | "F"
     | "F|XPHB"
     | "H"

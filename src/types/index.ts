@@ -35,7 +35,7 @@ export type Alignment = _Alignment | 'T'
 type CreatureBase = {
   cr?: number
   name: string
-  source: string
+  source: Source
   speed?: Speeds
 }
 

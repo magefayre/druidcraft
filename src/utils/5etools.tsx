@@ -27,6 +27,7 @@ import type {
   DamageType,
   Monster,
   Size,
+  Source,
   Speed,
   Speeds,
   Spell
@@ -134,7 +135,7 @@ export const formatRecharge = (value?: number) => {
 
 export const formatSize = (size: Size) => SIZES[size]
 
-export const formatSource = (source: string) => SOURCES[source]
+export const formatSource = (source: Source) => SOURCES[source]
 
 export const formatSpeed = (speed: Speeds) =>
   formatList(
@@ -227,7 +228,7 @@ export const getTypeCR = (type: CreatureType) =>
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
 
-export const isCoreSource = (source: string) =>
+export const isCoreSource = (source: Source) =>
   Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
   !source.startsWith(Parser.SRC_MCVX_PREFIX) &&
   !source.startsWith(Parser.SRC_PS_PREFIX) &&
