@@ -3,9 +3,10 @@ import { useRouter } from 'next/router'
 
 import { CreatureDetails } from '~components/Creature'
 import type { CreatureDetailsProps } from '~components/Creature/types'
-import { url } from '~components/Creature/utils'
+import { summary, url } from '~components/Creature/utils'
 import PageContainer from '~components/PageContainer'
 import LoadingPageContainer from '~components/PageContainer/LoadingPageContainer'
+import { formatList, formatSource } from '~utils/5etools'
 import { canonicalUrl } from '~utils/urls'
 
 export type CreatureLayoutProps = CreatureDetailsProps
@@ -15,10 +16,14 @@ const CreatureLayout: NextPage<CreatureLayoutProps> = creature => {
 
   if (isFallback) return <LoadingPageContainer />
 
-  const { name, source } = creature
+  const { alignment, name, size, source, type } = creature
   const meta = {
     title: [name, 'Creatures'].join(' | '),
-    description: 'TODO: description',
+    description: formatList([
+      name,
+      formatSource(source),
+      summary({ size, type, alignment })
+    ]),
     canonical: canonicalUrl(url({ source, name }))
   }
 

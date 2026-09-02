@@ -2,8 +2,6 @@ import withSvgr from '@newhighsco/next-plugin-svgr'
 import type { NextConfig } from 'next'
 import withPlugins from 'next-compose-plugins'
 
-import { url } from '~components/Creature/utils'
-
 const nextConfig: NextConfig = {
   images: { formats: ['image/avif', 'image/webp'] },
   i18n: { locales: ['en'], defaultLocale: 'en' },
@@ -11,7 +9,7 @@ const nextConfig: NextConfig = {
   redirects: () => [
     {
       source: '/beast/:slug*',
-      destination: url({ source: ':slug*', name: '' }, false),
+      destination: '/creatures/:slug*',
       permanent: true
     }
   ],

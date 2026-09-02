@@ -9,23 +9,20 @@ import Section from '~components/Section'
 import Tags from '~components/Tags'
 import {
   formatAC,
-  formatAligment,
   formatCR,
   formatDamage,
   formatHP,
   formatList,
   formatModifier,
   formatPB,
-  formatSize,
   formatSpeed,
-  formatType,
   getPassivePerception
 } from '~utils/5etools'
 
 import { IMAGE_SIZE } from './constants'
 import styles from './CreatureDetails.module.scss'
 import type { CreatureDetailsProps } from './types'
-import { tokenURL } from './utils'
+import { summary, tokenURL } from './utils'
 
 const ModifierList = <T extends string>({
   term,
@@ -77,9 +74,7 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
       heading={
         <>
           <h1>{name}</h1>
-          <p>
-            {formatSize(size)} {formatType(type)}, {formatAligment(alignment)}
-          </p>
+          <p>{summary({ size, type, alignment })}</p>
         </>
       }
       image={{
