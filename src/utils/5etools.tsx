@@ -18,6 +18,7 @@ import {
 } from '~constants'
 import SOURCES from '~data/sources.json' with { type: 'json' }
 import type {
+  Condition,
   Creature,
   CreatureDetails,
   CreatureType,
@@ -76,8 +77,9 @@ export const formatAligment = (alignment: CreatureDetails['alignment']) =>
 export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 
 export const formatDamage = <T extends DamageType>(
-  damage: Array<Damage | DamageDetails>,
-  type: T
+  damage: Array<Damage | DamageDetails> = [],
+  type: T,
+  condition: Condition[] = []
 ) => {
   const { plain, detailed } = damage.reduce(
     (parsed, value) => {
@@ -94,7 +96,9 @@ export const formatDamage = <T extends DamageType>(
     { plain: [], detailed: [] }
   )
 
-  return [formatList(plain), ...detailed].filter(Boolean).join('; ')
+  return [formatList(plain), ...detailed, formatList(condition)]
+    .filter(Boolean)
+    .join('; ')
 }
 
 export const formatDistance = (value: number) => `${value} ft.`

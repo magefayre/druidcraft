@@ -101,25 +101,31 @@ const parseCR = (cr: Monster['cr']): number | undefined => {
   return undefined
 }
 
-const parseConditions = (
-  conditions: Monster['conditionImmune']
-): Condition[] => {
-  return conditions
+const parseConditions = (conditions: Monster['conditionImmune']) => {
+  if (!conditions) return undefined
+
+  return conditions.reduce<Condition[]>((conditions, condition) => {
+    if (typeof condition !== 'string') return conditions
+
+    return [...conditions, condition]
+  }, [])
 }
 
 const parseDamages = <T extends DamageType>(
   damages: Monster[T],
   type: DamageType
 ) => {
-  return damages?.reduce<Array<Damage | DamageDetails>>((damages, current) => {
+  if (!damages) return undefined
+
+  return damages.reduce<Array<Damage | DamageDetails>>((damages, damage) => {
     const parse = () => {
-      if (typeof current === 'string') return current
+      if (typeof damage === 'string') return damage
 
-      if ('special' in current) return current.special
+      if ('special' in damage) return damage.special
 
-      const { note } = current
+      const { note } = damage
 
-      return { [type]: current[type], note }
+      return { [type]: damage[type], note }
     }
 
     return [...damages, parse()]
@@ -166,27 +172,23 @@ const parseSpell = (summonedBySpell?: string) =>
   summonedBySpell?.split('|').at(0)
 
 const parseSpellcasting = (spellcasting?: Monster['spellcasting']) =>
-  spellcasting?.map<Action>(
-    ({
-      name,
-      headerEntries = [' '],
-      footerEntries = [],
-      will,
-      daily,
-      displayAs
-    }) => {
+  spellcasting?.map(
+    ({ name, headerEntries, footerEntries, will, daily, displayAs }) => {
+      const onlyStrings = (value: unknown) => typeof value === 'string'
+
       const entries = [
-        ...headerEntries,
-        will && `{@frequency At will} ${formatList(will)}`,
+        ...(headerEntries ?? [' ']),
+        will && `{@frequency At will} ${formatList(will.filter(onlyStrings))}`,
         ...(daily
           ? Object.entries(daily).map(
-              ([key, value]) => `{@frequency ${key}} ${formatList(value)}`
+              ([key, value]) =>
+                `{@frequency ${key}} ${formatList(value.filter(onlyStrings))}`
             )
           : []),
-        ...footerEntries
+        ...(footerEntries ?? [])
       ].filter(Boolean)
 
-      return { name, entries, type: displayAs }
+      return { name, entries, type: displayAs } as Action
     }
   )
 
