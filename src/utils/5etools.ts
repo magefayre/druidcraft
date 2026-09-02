@@ -24,11 +24,13 @@ export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
 export const formatSpeedLimits = (level: number, locale?: string) => {
   if (level < LEVELS.walk) return EMPTY
 
-  const limits = Object.entries(SPEEDS).reduce<string[]>(
-    (limits, [key, { continuous }]) =>
-      level < LEVELS[key] ? [continuous, ...limits] : limits,
-    []
-  )
+  const limits = Object.entries(SPEEDS)
+    .sort(([a], [b]) => LEVELS[a] - LEVELS[b])
+    .reduce<string[]>(
+      (limits, [key, { continuous }]) =>
+        level < LEVELS[key] ? [continuous, ...limits] : limits,
+      []
+    )
 
   if (!limits.length) return EMPTY
 
