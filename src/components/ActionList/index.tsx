@@ -7,21 +7,29 @@ import type { Action } from '~types'
 import styles from './ActionList.module.scss'
 
 type Props = { heading: string; actions?: Action[] }
+type LabelProps = PropsWithChildren<{ subheading?: boolean }>
 
-export const ActionLabel: FC<PropsWithChildren<{ subheading?: boolean }>> = ({
-  subheading,
-  children
-}) => {
+export const ActionLabel: FC<LabelProps> = ({ subheading, ...rest }) => {
   const Component = subheading ? 'h4' : 'span'
 
   return (
     <>
       <Component
         className={classNames(styles.label, subheading && styles.subheading)}
-      >
-        {children}
-      </Component>{' '}
+        {...rest}
+      />{' '}
     </>
+  )
+}
+
+export const ActionName: FC<LabelProps> = ({ subheading, ...rest }) => {
+  const Component = subheading ? 'h4' : 'h3'
+
+  return (
+    <Component
+      className={classNames(styles.name, subheading && styles.subheading)}
+      {...rest}
+    />
   )
 }
 
@@ -34,9 +42,9 @@ const ActionList: FC<Props> = ({ heading, actions }) => {
       <List unstyled className={styles.list}>
         {actions.map(({ name, entries }) => (
           <li key={name}>
-            <h3 className={styles.name}>
+            <ActionName>
               <Tags>{name}</Tags>
-            </h3>
+            </ActionName>
             {entries.map((entry, index) => (
               <Fragment key={[index, entry].join()}>
                 {index > 0 && <br />}

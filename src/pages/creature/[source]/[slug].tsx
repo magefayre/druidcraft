@@ -24,14 +24,7 @@ export const getStaticProps = (async ({ params }) => {
 
 export const getStaticPaths = (async () => {
   const creatures = Object.values(
-    await loadCreatures([
-      'beast',
-      'dragon',
-      'elemental',
-      // TODO: Handle broken Fey Spirit
-      // 'fey',
-      'plant'
-    ])
+    await loadCreatures(['beast', 'dragon', 'elemental', 'fey', 'plant'])
   ).flat()
   const paths = creatures.map(({ source, name }) => ({
     params: { source: slugifySource(source), slug: slugifyName(name) }

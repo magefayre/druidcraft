@@ -83,6 +83,8 @@ export const fetchToken = async ({ source, name }: CreatureURL) => {
   Readable.fromWeb(res.body).pipe(createWriteStream(filename))
 }
 
+export const filterStrings = (value: unknown) => typeof value === 'string'
+
 export const ensureDir = (filename: string) => {
   const dir = dirname(filename)
 

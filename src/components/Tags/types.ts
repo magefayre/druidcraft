@@ -21,4 +21,5 @@ export type Tag =
   | 'skill'
   | 'spell'
   | 'status'
+  | 'subheading'
   | 'table'

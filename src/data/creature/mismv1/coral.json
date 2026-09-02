@@ -53,32 +53,9 @@
       "name": "Bubbles of Whimsy (2/Day)",
       "entries": [
         "Coral produces a stream of magical bubbles from her horn. These bubbles float toward a creature Coral can see within 60 feet of herself. Roll a {@dice d6} to determine the bubbles' effect:",
-        {
-          "type": "list",
-          "items": [
-            {
-              "name": "1-2: Bolstering Treat",
-              "type": "item",
-              "entries": [
-                "The bubbles transform into {@dice 1d4} cookies that appear in the target's space. The target gains 11 ({@dice 2d8 + 2}) temporary hit points if it immediately uses its reaction to eat one of the cookies. Any leftover cookies are delicious but confer no benefits."
-              ]
-            },
-            {
-              "name": "3-4: Sparkle Burst",
-              "type": "item",
-              "entries": [
-                "The bubbles transform into glitter that swirls around the target before bursting outward. Each creature within 5 feet of the target must succeed on a {@dc 16} Constitution saving throw or have the {@condition blinded} condition until the start of Coral's next turn."
-              ]
-            },
-            {
-              "name": "5-6: Stink Bomb Shield",
-              "type": "item",
-              "entries": [
-                "The bubbles transform into a foul-smelling cloud of gas that surrounds and shields the target. The target has {@quickref Cover||3||half cover} until the gas disappears at the start of Coral's next turn."
-              ]
-            }
-          ]
-        }
+        "{@subheading 1-2: Bolstering Treat} The bubbles transform into {@dice 1d4} cookies that appear in the target's space. The target gains 11 ({@dice 2d8 + 2}) temporary hit points if it immediately uses its reaction to eat one of the cookies. Any leftover cookies are delicious but confer no benefits.",
+        "{@subheading 3-4: Sparkle Burst} The bubbles transform into glitter that swirls around the target before bursting outward. Each creature within 5 feet of the target must succeed on a {@dc 16} Constitution saving throw or have the {@condition blinded} condition until the start of Coral's next turn.",
+        "{@subheading 5-6: Stink Bomb Shield} The bubbles transform into a foul-smelling cloud of gas that surrounds and shields the target. The target has {@quickref Cover||3||half cover} until the gas disappears at the start of Coral's next turn."
       ]
     },
     {

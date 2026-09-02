@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { titleCase } from 'title-case'
 
-import { ActionLabel } from '~components/ActionList'
+import { ActionLabel, ActionName } from '~components/ActionList'
 import DiceRoller from '~components/DiceRoller'
 import type { Skill } from '~types'
 import { formatModifier, formatRecharge } from '~utils/5etools'
@@ -67,5 +67,6 @@ export const TAGS = {
   skill: (skill: Skill) => skill,
   spell: spell => titleCase(spell),
   status: status => status,
+  subheading: label => <ActionName subheading>{label}</ActionName>,
   table: label => label
 } satisfies Readonly<Record<Tag, (...args: string[]) => ReactNode>>

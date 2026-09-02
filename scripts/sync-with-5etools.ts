@@ -28,7 +28,12 @@ import {
   type Size,
   type Skill
 } from '~types'
-import type { AbilityScore, BestiarySchema } from '~types/5etools/bestiary'
+import type {
+  AbilityScore,
+  BestiarySchema,
+  Entry,
+  EntryList
+} from '~types/5etools/bestiary'
 import {
   formatList,
   getCircleFormsCR,
@@ -42,7 +47,8 @@ import {
   fetchData,
   fetchRatings,
   fetchScript,
-  fetchToken
+  fetchToken,
+  filterStrings
 } from './utils'
 
 const parseAbilities = (abilities: Record<Ability, AbilityScore>) =>
@@ -60,7 +66,24 @@ const parseActions = (
   type?: ActionType
 ) => {
   const parsed: Action[] = [
-    ...(actions ?? []).map(({ name, entries }) => ({ name, entries })),
+    ...(actions ?? []).map(({ name, entries }) => ({
+      name,
+      entries: entries.flatMap((entry: EntryList) => {
+        if (typeof entry === 'string') return entry
+        if ('items' in entry)
+          return entry.items?.map(item => {
+            const {
+              name,
+              entry,
+              entries = [entry]
+            } = item as { name: string; entry?: Entry; entries?: Entry[] }
+
+            return `{@subheading ${name}} ${formatList(entries?.filter(filterStrings))}`
+          })
+
+        return undefined
+      })
+    })),
     ...spellcasting.filter(action => action.type === type)
   ]
 
@@ -174,15 +197,14 @@ const parseSpell = (summonedBySpell?: string) =>
 const parseSpellcasting = (spellcasting?: Monster['spellcasting']) =>
   spellcasting?.map(
     ({ name, headerEntries, footerEntries, will, daily, displayAs }) => {
-      const onlyStrings = (value: unknown) => typeof value === 'string'
-
       const entries = [
         ...(headerEntries ?? [' ']),
-        will && `{@frequency At will} ${formatList(will.filter(onlyStrings))}`,
+        will &&
+          `{@frequency At will} ${formatList(will.filter(filterStrings))}`,
         ...(daily
           ? Object.entries(daily).map(
               ([key, value]) =>
-                `{@frequency ${key}} ${formatList(value.filter(onlyStrings))}`
+                `{@frequency ${key}} ${formatList(value.filter(filterStrings))}`
             )
           : []),
         ...(footerEntries ?? [])
