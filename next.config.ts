@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   redirects: () => [
     {
       source: '/beast/:slug*',
-      destination: '/creatures/:slug*',
+      destination: '/creature/:slug*',
       permanent: true
     }
   ],
