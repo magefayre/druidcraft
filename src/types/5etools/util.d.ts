@@ -8202,6 +8202,14 @@ export type Entry =
                 rarity?: "rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common";
                 additionalSpells?: AdditionalSpellsArray;
                 entries: Entry[];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: UIDs of "facility"s to be linked in a "See Also" footnote.
+                 *
+                 * Ex.: "arcane study|xdmg".
+                 */
+                seeAlsoFacility?: [string, ...string[]];
                 hasFluff?: boolean;
                 hasFluffImages?: boolean;
               }
@@ -8229,6 +8237,14 @@ export type Entry =
                 rarity?: "rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common";
                 additionalSpells?: AdditionalSpellsArray;
                 entries?: Entry[];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: UIDs of "facility"s to be linked in a "See Also" footnote.
+                 *
+                 * Ex.: "arcane study|xdmg".
+                 */
+                seeAlsoFacility?: [string, ...string[]];
                 hasFluff?: boolean;
                 hasFluffImages?: boolean;
                 _copy: CopyBlockCopyGeneric;
@@ -12273,6 +12289,27 @@ export type Entry =
           style?: "inset" | "narrow";
           slotSize?: "120" | "200" | "360" | "600" | "800" | "1000";
           collapsed?: true;
+          tag: "subclass";
+          shortName: string;
+          className: string;
+          classSource: string;
+        }
+      | {
+          name: string;
+          type: "statblock";
+          source: string;
+          page?: string | number;
+          data?: _EntryDataData;
+          id?: string;
+          srd?: boolean | string;
+          srd52?: boolean | string;
+          basicRules?: true;
+          basicRules2024?: true;
+          displayName?: string;
+          hash?: string;
+          style?: "inset" | "narrow";
+          slotSize?: "120" | "200" | "360" | "600" | "800" | "1000";
+          collapsed?: true;
           prop: "classFluff" | "crochetPatternFluff" | "monsterFluff" | "raceFluff";
           [k: string]: unknown;
         }
@@ -13868,23 +13905,41 @@ export type Prerequisite = [
      */
     membership?: [
       (
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       ),
       ...(
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       )[]
     ];
@@ -14494,23 +14549,41 @@ export type Prerequisite = [
      */
     membership?: [
       (
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       ),
       ...(
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       )[]
     ];
@@ -19181,23 +19254,41 @@ export type Prerequisite1 = [
      */
     membership?: [
       (
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       ),
       ...(
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       )[]
     ];
@@ -19689,23 +19780,41 @@ export type Prerequisite1 = [
      */
     membership?: [
       (
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       ),
       ...(
+        | "Bejeweled Conclave"
+        | "Bringers of Cosmic Dawn"
+        | "Covenant of the Grave"
+        | "Crucible Keepers"
         | "Cult of the Dragon"
         | "Emerald Enclave"
         | "Harpers"
+        | "Horizon Weavers"
         | "Lords' Alliance"
+        | "Ninth Quill"
         | "Order of the Gauntlet"
+        | "Phantasmic Circus"
         | "Purple Dragon Knights"
         | "Red Wizards"
+        | "Seers of Sea and Sky"
+        | "Sheltering Hands"
         | "Zhentarim"
       )[]
     ];
