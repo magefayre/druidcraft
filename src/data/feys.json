@@ -154,7 +154,6 @@
     "cr": 2,
     "speed": { "walk": 30, "swim": 60 }
   },
-  { "name": "Oddlewin", "source": "BMT", "cr": 2, "speed": { "walk": 30 } },
   {
     "name": "Satyr Thornbearer",
     "source": "MOT",
@@ -247,11 +246,5 @@
     "source": "GGR",
     "cr": 9,
     "speed": { "walk": 30 }
-  },
-  {
-    "name": "Coral",
-    "source": "MisMV1",
-    "cr": 9,
-    "speed": { "walk": 10, "fly": 60, "swim": 60 }
   }
 ]

@@ -116,6 +116,12 @@ export const SPELLS = {
     level: 4,
     type: 'beast'
   },
+  Polymorph: {
+    level: 4,
+    maxCR: { [LEVELS.max]: "Equal to or less than the target's CR or level" },
+    ratings: 'polymorph',
+    type: 'beast'
+  },
   'Summon Elemental': { level: 4, spell: true, type: 'elemental' },
   Awaken: {
     creatures: { 'Awakened Shrub': 1, 'Awakened Tree': 1 },

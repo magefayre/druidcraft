@@ -39,10 +39,10 @@ export const loadRatings = async (outputDir: string, cache = true) => {
   }
 
   const ratings: Ratings = {}
-  const ratingURLs = { wildshape: 'classes/druid/wild-shape' } satisfies Record<
-    RatingType,
-    string
-  >
+  const ratingURLs = {
+    polymorph: 'spells/polymorph',
+    wildshape: 'classes/druid/wild-shape'
+  } satisfies Record<RatingType, string>
 
   await Promise.all(
     Object.entries(ratingURLs).map(async ([type, url]) => {

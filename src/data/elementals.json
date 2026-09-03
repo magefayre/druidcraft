@@ -69,7 +69,7 @@
     "name": "Ashen Warhorse",
     "source": "KftGV",
     "cr": 0.5,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 3, "wildshape": 3 },
     "speed": { "walk": 60 }
   },
   {

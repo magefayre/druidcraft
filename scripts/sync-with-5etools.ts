@@ -44,7 +44,6 @@ import { fetchData, fetchScript, fetchToken } from './utils'
 type MonsterFilters = {
   type: CreatureType
   maxCR?: number
-  ratings?: boolean
   features?: (name: string) => Features
 }
 
@@ -112,9 +111,7 @@ const filterMonsters = (
       vulnerable
     } = monster
     const features = filters.features?.(name)
-    const rating = filters.ratings
-      ? parseRating(base?.name ?? name, features, ratings)
-      : undefined
+    const rating = parseRating(base?.name ?? name, features, ratings)
     const spellcasting = parseSpellcasting(monster.spellcasting)
     const summary: Creature = {
       name,
@@ -175,18 +172,23 @@ const filterMonsters = (
       const { monster } = await fetchData<BestiarySchema>('bestiary', url)
 
       monsters.push(
-        ...monster.filter(({ isNpc, reprintedAs }) => !isNpc && !reprintedAs)
+        ...monster.filter(
+          ({ isNamedCreature, isNpc, reprintedAs }) =>
+            !isNamedCreature && !isNpc && !reprintedAs
+        )
       )
     })
   )
 
-  const ratings = await loadRatings(outputDir, false)
+  const ratings = await loadRatings(outputDir)
   const data: MonsterFilters[] = [
-    { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max), ratings: true },
+    {
+      type: 'beast',
+      maxCR: Math.max(getCircleFormsCR(LEVELS.max), getTypeCR('beast'))
+    },
     {
       type: 'elemental',
       maxCR: getTypeCR('elemental'),
-      ratings: true,
       features: name =>
         ELEMENTAL_FORMS.test(name) ? { elementalForms: true } : undefined
     },

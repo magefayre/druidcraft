@@ -83,7 +83,7 @@ export type Features = Partial<Record<Feature, boolean>>
 
 export type Rating = 'red' | 'orange' | 'green' | 'blue'
 
-export type RatingType = 'wildshape'
+export type RatingType = 'polymorph' | 'wildshape'
 
 export type Ratings = Partial<Record<RatingType, Record<string, number>>>
 
@@ -99,8 +99,9 @@ export type Spell = {
   creatures?: Record<string, number>
   level: number
   limit?: boolean | number
-  maxCR?: boolean | number
+  maxCR?: boolean | number | Record<number, string>
   spell?: boolean
+  ratings?: RatingType
   type: CreatureType
   upcast?: true | Record<number, number>
 }

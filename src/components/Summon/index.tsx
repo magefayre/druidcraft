@@ -21,12 +21,13 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
     defaults,
     { initializeWithValue: false }
   )
-  const sorting = useSorting('rating')
   const spells = useSpells()
   const selected = useFormData(formData, defaults)
   const filters = SPELLS[selected.spell]
+  const rating = filters?.ratings ?? null
   const upcasting = useUpcasting(filters)
-  const maxCR = useMaxCR(filters, selected.upcast)
+  const sorting = useSorting({ rating })
+  const [maxCR, cr] = useMaxCR(filters, selected.upcast)
   const summons = useSummons({ creatures, filters, maxCR, selected })
 
   const handleChange: FilterHandler = (id, value) => {
@@ -76,7 +77,7 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
         {maxCR && (
           <dl>
             <dt>Max. CR</dt>
-            <dd>{formatCR(maxCR)}</dd>
+            <dd>{formatCR(maxCR, cr)}</dd>
           </dl>
         )}
       </Filter>
@@ -93,10 +94,14 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
               (typeof filters.limit === 'boolean' && getSummonLimit(cr)) ||
               (typeof filters.limit === 'number' && filters.limit) ||
               (filters.spell && 1)
+
+            if (!limit) return undefined
+
             const multiplier = filters.upcast?.[selected.upcast] ?? 1
 
             return limit * multiplier
           }}
+          ratings={rating}
         />
         <Sprites />
       </Section>
