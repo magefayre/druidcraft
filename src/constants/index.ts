@@ -119,7 +119,7 @@ export const SPELLS = {
   'Summon Elemental': { level: 4, spell: true, type: 'elemental' },
   Awaken: {
     creatures: { 'Awakened Shrub': 1, 'Awakened Tree': 1 },
-    level: 4,
+    level: 5,
     type: 'plant'
   },
   'Conjure Elemental': {
