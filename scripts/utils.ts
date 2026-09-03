@@ -29,16 +29,21 @@ export const fetchData = async <T>(...url: string[]): Promise<T> => {
 }
 
 export const fetchRatings = async (...url: string[]) => {
-  const res = await fetch(new URL(url.join('/'), BASE.rating))
+  const { hash, href } = new URL(url.join('/'), BASE.rating)
+  const res = await fetch(href)
 
   validateResponse(res)
 
   const ratings = selectAll(
-    `li:has(${RATING_SELECTOR})`,
+    [
+      hash && `:nth-child(1 of ${hash} ~ ul:has(${RATING_SELECTOR}))`,
+      `li:has(${RATING_SELECTOR})`
+    ]
+      .filter(Boolean)
+      .join('>'),
     parseDocument(await res.text())
   ).reduce<Ratings>((ratings, element) => {
-    const target = element as unknown as Element
-    const targets = selectAll(RATING_SELECTOR, target)
+    const targets = selectAll(RATING_SELECTOR, element as unknown as Element)
     const name = targets.map(innerText).join(' ')
 
     if (Object.keys(RATINGS).includes(name.toLowerCase())) return ratings
