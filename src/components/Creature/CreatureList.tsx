@@ -27,7 +27,7 @@ const CreatureList: FC<CreatureListProps> = ({
                 disabled={isCreatureDisabled?.(creature)}
                 limit={isCreatureLimited?.(creature)}
                 priority={index < 12}
-                rating={ratings ? rating : undefined}
+                rating={ratings ? rating?.[ratings] : undefined}
                 speedLimits={speedLimits}
               />
             </li>

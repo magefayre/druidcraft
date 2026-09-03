@@ -69,7 +69,7 @@
     "name": "Ashen Warhorse",
     "source": "KftGV",
     "cr": 0.5,
-    "rating": 3,
+    "rating": { "wildshape": 3 },
     "speed": { "walk": 60 }
   },
   {
@@ -202,7 +202,7 @@
     "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "rating": 3,
+    "rating": { "wildshape": 3 },
     "speed": { "fly": { "number": 90, "condition": "(hover)" } }
   },
   {
@@ -237,7 +237,7 @@
     "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "rating": 2,
+    "rating": { "wildshape": 2 },
     "speed": { "walk": 30, "burrow": 30 }
   },
   {
@@ -251,7 +251,7 @@
     "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "rating": 4,
+    "rating": { "wildshape": 4 },
     "speed": { "walk": 50 }
   },
   {
@@ -273,7 +273,7 @@
     "source": "MM",
     "cr": 5,
     "features": { "elementalForms": true },
-    "rating": 4,
+    "rating": { "wildshape": 4 },
     "speed": { "walk": 30, "swim": 90 }
   },
   {
