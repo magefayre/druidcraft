@@ -1,3 +1,5 @@
+## [1.18.6](https://github.com/magefayre/druidcraft/compare/v1.18.5...v1.18.6) (2026-09-03)
+
 ## [1.18.5](https://github.com/magefayre/druidcraft/compare/v1.18.4...v1.18.5) (2026-09-03)
 
 ## [1.18.4](https://github.com/magefayre/druidcraft/compare/v1.18.3...v1.18.4) (2026-09-03)
