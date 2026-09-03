@@ -37,6 +37,7 @@
     "typegen": "concurrently 'yarn:typegen:*'",
     "typegen:5etools": "json2ts -i 'node_modules/5etools-utils/schema/site/**/(bestiary|util).json' -o src/types/5etools --unreachableDefinitions",
     "typegen:next": "next typegen",
+    "presync-with-5etools": "yarn typegen:5etools",
     "sync-with-5etools": "tsx scripts/sync-with-5etools --output src/data",
     "postsync-with-5etools": "yarn format:js src/data",
     "pretest": "yarn typegen && tsc --noEmit",
