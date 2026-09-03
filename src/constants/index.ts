@@ -1,4 +1,4 @@
-import type { Alignment, MonsterRating, Size, Speed, Spell } from '~types'
+import type { Alignment, Rating, Size, Speed, Spell } from '~types'
 
 export const ABILITY_BASE = 10
 
@@ -51,7 +51,7 @@ export const RATINGS = {
   orange: 2,
   green: 3,
   blue: 4
-} satisfies Readonly<Record<MonsterRating, number>>
+} satisfies Readonly<Record<Rating, number>>
 
 export const SEPARATOR = ':'
 

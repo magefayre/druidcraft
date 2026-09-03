@@ -41,7 +41,7 @@ type CreatureBase = {
 
 export type Creature = CreatureBase & {
   features?: Features
-  rating?: number
+  rating?: Partial<Record<RatingType, number>>
   spell?: string
 }
 
@@ -81,9 +81,11 @@ export type Feature = 'elementalForms'
 
 export type Features = Partial<Record<Feature, boolean>>
 
-export type MonsterRating = 'red' | 'orange' | 'green' | 'blue'
+export type Rating = 'red' | 'orange' | 'green' | 'blue'
 
-export type MonsterRatings = Record<string, number>
+export type RatingType = 'wildshape'
+
+export type Ratings = Partial<Record<RatingType, Record<string, number>>>
 
 export type Source = string
 

@@ -1,9 +1,11 @@
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { existsSync } from 'node:fs'
+import { readFile, writeFile } from 'node:fs/promises'
+import { join, parse } from 'node:path'
 
 import plur from 'plur'
 
-import type { Creature, CreatureType } from '~types'
+import { ensureDir, fetchRatings } from '~scripts/utils'
+import type { Creature, CreatureType, Ratings, RatingType } from '~types'
 
 export const loadData = async <T>(file: string): Promise<T> =>
   await readFile(join(process.cwd(), 'src/data', `${file}.json`), 'utf8').then(
@@ -27,4 +29,34 @@ export const loadCreatures = async <T extends CreatureType, U extends Creature>(
   )
 
   return creatures
+}
+
+export const loadRatings = async (outputDir: string) => {
+  const filename = join(outputDir, 'ratings.json')
+
+  if (existsSync(filename)) {
+    return await loadData<Ratings>(parse(filename).name)
+  }
+
+  const ratings: Ratings = {}
+  const ratingURLs = { wildshape: 'classes/druid/wild-shape' } satisfies Record<
+    RatingType,
+    string
+  >
+
+  await Promise.all(
+    Object.entries(ratingURLs).map(async ([type, url]) => {
+      ratings[type] = await fetchRatings(url)
+    })
+  )
+
+  await writeData(filename, ratings)
+
+  return ratings
+}
+
+export const writeData = async (file: string, content: unknown) => {
+  ensureDir(file)
+
+  await writeFile(file, JSON.stringify(content))
 }

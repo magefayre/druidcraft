@@ -109,7 +109,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
               isSpeedLimited(level, speed, 'swim') ||
               isSpeedLimited(level, speed, 'fly'))
           }
-          ratings
+          ratings="wildshape"
           speedLimits
         />
         <Sprites />
