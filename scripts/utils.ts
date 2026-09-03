@@ -1,6 +1,5 @@
 import { createWriteStream, existsSync, mkdirSync } from 'node:fs'
-import { writeFile } from 'node:fs/promises'
-import { dirname, join, parse } from 'node:path'
+import { dirname, join } from 'node:path'
 
 import transliterate from '@sindresorhus/transliterate'
 import { selectAll } from 'css-select'
@@ -11,10 +10,9 @@ import { Readable } from 'stream'
 
 import { tokenURL } from '~components/Creature/utils'
 import { RATINGS } from '~constants'
-import { loadData } from '~data/utils'
-import type { CreatureURL, MonsterRating, MonsterRatings } from '~types'
+import type { CreatureURL, Ratings } from '~types'
 
-import { BASE } from './constants'
+import { BASE, RATING_SELECTOR } from './constants'
 
 const validateResponse = ({ ok, status, statusText, url }: Response) => {
   if (!ok) {
@@ -30,32 +28,33 @@ export const fetchData = async <T>(...url: string[]): Promise<T> => {
   return res.json()
 }
 
-export const fetchRatings = async (outputDir: string) => {
-  const filename = join(outputDir, 'ratings.json')
-
-  if (existsSync(filename)) {
-    return await loadData<MonsterRatings>(parse(filename).name)
-  }
-
-  const res = await fetch(
-    new URL('https://rpgbot.net/dnd5/characters/classes/druid/wild-shape/')
-  )
+export const fetchRatings = async (...url: string[]) => {
+  const { hash, href } = new URL(url.join('/'), BASE.rating)
+  const res = await fetch(href)
 
   validateResponse(res)
 
   const ratings = selectAll(
-    '*[class^="rating-"]',
+    [
+      hash && `:nth-child(1 of ${hash} ~ ul:has(${RATING_SELECTOR}))`,
+      `li:has(${RATING_SELECTOR})`
+    ]
+      .filter(Boolean)
+      .join('>'),
     parseDocument(await res.text())
-  ).reduce<MonsterRatings>((ratings, element) => {
-    const rating = getAttributeValue(
-      element as unknown as Element,
-      'class'
-    ).replace(/rating-(\S+)/, '$1') as MonsterRating
+  ).reduce<Ratings>((ratings, element) => {
+    const targets = selectAll(RATING_SELECTOR, element as unknown as Element)
+    const name = targets.map(innerText).join(' ')
 
-    return { ...ratings, [innerText(element)]: RATINGS[rating] }
+    if (Object.keys(RATINGS).includes(name.toLowerCase())) return ratings
+
+    const rating = getAttributeValue(targets.at(0), 'class').replace(
+      /rating-(\S+)/,
+      `$1`
+    )
+
+    return { ...ratings, [name]: RATINGS[rating] }
   }, {})
-
-  await writeFile(filename, JSON.stringify(ratings))
 
   return ratings
 }
@@ -68,10 +67,13 @@ export const fetchScript = async (url: string) => {
   return eval(await res.text())
 }
 
-export const fetchToken = async ({ source, name }: CreatureURL) => {
+export const fetchToken = async (
+  { source, name }: CreatureURL,
+  cache = true
+) => {
   const filename = join('public', tokenURL({ source, name }))
 
-  if (existsSync(filename)) return
+  if (cache && existsSync(filename)) return
 
   const res = await fetch(
     new URL(`bestiary/tokens/${source}/${transliterate(name)}.webp`, BASE.img)
