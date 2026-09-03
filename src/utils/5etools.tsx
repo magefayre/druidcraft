@@ -75,7 +75,8 @@ export const formatAligment = (alignment: CreatureDetails['alignment']) =>
     ?.map(alignment => ALIGNMENTS[alignment] ?? titleCase(alignment))
     .join(' ') ?? ALIGNMENTS.U
 
-export const formatCR = (cr: number) => CR_LABELS[cr] ?? cr ?? EMPTY
+export const formatCR = (cr: number, label?: string) =>
+  label ?? CR_LABELS[cr] ?? cr ?? EMPTY
 
 export const formatDamage = <T extends DamageType>(
   damage: Array<Damage | DamageDetails> = [],
@@ -206,11 +207,19 @@ export const getMaxCR = ({
 export const getPassivePerception = (wis: number, perception: number) =>
   ABILITY_BASE + (perception ?? getModifier(wis))
 
-export const getSpellCR = (spell?: Spell, level?: number) => {
-  if (typeof spell?.upcast === 'boolean' && level) return level
-  if (typeof spell?.maxCR === 'boolean') return spell?.level
+export const getSpellCR = (
+  spell?: Spell,
+  level?: number
+): [number, string?] | undefined => {
+  if (typeof spell?.upcast === 'boolean' && level) return [level]
+  if (typeof spell?.maxCR === 'boolean') return [spell?.level]
+  if (typeof spell?.maxCR === 'object') {
+    const [key, value] = Object.entries(spell.maxCR).at(0)
 
-  return spell?.maxCR
+    return [parseInt(key), value]
+  }
+
+  return [spell?.maxCR]
 }
 
 export const getSummonLimit = (cr: number) => {
@@ -223,7 +232,7 @@ export const getSummonLimit = (cr: number) => {
 
 export const getTypeCR = (type: CreatureType) =>
   Object.values(SPELLS).reduce<number | undefined>((cr, spell) => {
-    const maxCR = getSpellCR(spell, SPELL_LEVELS.max)
+    const [maxCR] = getSpellCR(spell, SPELL_LEVELS.max)
 
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
@@ -243,26 +252,28 @@ export const sortAlphabetically = <T extends string>(
   descending?: boolean
 ) => (descending ? sortAlphabetically(b, a) : a.localeCompare(b))
 
-export const sortNumerically = <T extends Creature>(
-  key: keyof T,
-  a: T,
-  b: T,
-  descending?: boolean
-) => {
-  if (descending) return sortNumerically(key, b, a)
+export const sortNumerically = (a: number, b: number, descending?: boolean) => {
+  if (descending) return sortNumerically(b, a)
 
   const fallback = Number.MIN_SAFE_INTEGER
 
-  return Number(a[key] ?? fallback) - Number(b[key] ?? fallback)
+  return Number(a ?? fallback) - Number(b ?? fallback)
 }
 
 export const sortCreatures =
   <T extends Creature>(sortBy: keyof T = 'cr', descending?: boolean) =>
   (a: T, b: T) => {
-    const isNumeric = ['cr', 'rating'].includes(sortBy as string)
+    const [primaryKey, secondaryKey] = (sortBy as string).split('.')
+    const isNumeric = ['cr', 'rating'].includes(primaryKey)
 
-    if (isNumeric && a[sortBy] !== b[sortBy]) {
-      return sortNumerically(sortBy, a, b, descending)
+    const getValue = (item: T) => {
+      if (secondaryKey) return item[primaryKey]?.[secondaryKey]
+
+      return item[primaryKey]
+    }
+
+    if (isNumeric && getValue(a) !== getValue(b)) {
+      return sortNumerically(getValue(a), getValue(b), descending)
     }
 
     if (a.name !== b.name) {

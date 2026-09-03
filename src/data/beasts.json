@@ -16,21 +16,21 @@
     "name": "Baboon",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 30, "climb": 30 }
   },
   {
     "name": "Badger",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 2, "wildshape": 2 },
     "speed": { "walk": 20, "burrow": 5 }
   },
   {
     "name": "Bat",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 4, "wildshape": 3 },
     "speed": { "walk": 5, "fly": 30 }
   },
   {
@@ -43,28 +43,28 @@
     "name": "Cat",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 40, "climb": 30 }
   },
   {
     "name": "Cat Skeleton",
     "source": "CoS",
     "cr": 0,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 40, "climb": 30 }
   },
   {
     "name": "Chimeric Baboon",
     "source": "IDRotF",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 30, "climb": 30 }
   },
   {
     "name": "Chimeric Cat",
     "source": "IDRotF",
     "cr": 0,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 40, "climb": 30 }
   },
   {
@@ -89,56 +89,56 @@
     "name": "Chimeric Rat",
     "source": "IDRotF",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 4, "wildshape": 2 },
     "speed": { "walk": 20 }
   },
   {
     "name": "Chimeric Weasel",
     "source": "IDRotF",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 30 }
   },
   {
     "name": "Crab",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 2, "wildshape": 2 },
     "speed": { "walk": 20, "swim": 20 }
   },
   {
     "name": "Crow",
     "source": "WDMM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 10, "fly": 50 }
   },
   {
     "name": "Deer",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "walk": 50 }
   },
   {
     "name": "Eagle",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 3, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Falcon",
     "source": "WDH",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 3, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Fish",
     "source": "GoS",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "swim": 40 }
   },
   {
@@ -157,20 +157,21 @@
     "name": "Frog",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 20, "swim": 20 }
   },
   {
     "name": "Giant Fire Beetle",
     "source": "MM",
     "cr": 0,
+    "rating": { "polymorph": 1 },
     "speed": { "walk": 30 }
   },
   {
     "name": "Goat",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -183,21 +184,21 @@
     "name": "Hawk",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 3, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Hyena",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "walk": 50 }
   },
   {
     "name": "Jackal",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -210,91 +211,91 @@
     "name": "Lizard",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 3, "wildshape": 2 },
     "speed": { "walk": 20, "climb": 20 }
   },
   {
     "name": "Macaw",
     "source": "PSX",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 10, "fly": 50 }
   },
   {
     "name": "Octopus",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 2, "wildshape": 4 },
     "speed": { "walk": 5, "swim": 30 }
   },
   {
     "name": "Owl",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 4, "wildshape": 4 },
     "speed": { "walk": 5, "fly": 60 }
   },
   {
     "name": "Parrot",
     "source": "PSX",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 10, "fly": 50 }
   },
   {
     "name": "Peacock",
     "source": "BGDIA",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 10, "fly": 50 }
   },
   {
     "name": "Pig",
     "source": "SKT",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 30 }
   },
   {
     "name": "Piranha",
     "source": "PSX",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "swim": 40 }
   },
   {
     "name": "Quipper",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "swim": 40 }
   },
   {
     "name": "Rat",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 4, "wildshape": 2 },
     "speed": { "walk": 20 }
   },
   {
     "name": "Raven",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 10, "fly": 50 }
   },
   {
     "name": "Rooster",
     "source": "JttRC",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 3, "wildshape": 1 },
     "speed": { "walk": 10 }
   },
   {
     "name": "Scorpion",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10 }
   },
   {
@@ -314,7 +315,7 @@
     "name": "Sheep",
     "source": "SKT",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 30 }
   },
   {
@@ -327,7 +328,7 @@
     "name": "Space Hamster",
     "source": "WDMM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 4, "wildshape": 2 },
     "speed": { "walk": 20 }
   },
   {
@@ -340,55 +341,56 @@
     "name": "Spider",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 2, "wildshape": 3 },
     "speed": { "walk": 20, "climb": 20 }
   },
   {
     "name": "Trilobite",
     "source": "PSX",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 2, "wildshape": 2 },
     "speed": { "walk": 20, "swim": 20 }
   },
   {
     "name": "Vulture",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 10, "fly": 50 }
   },
   {
     "name": "Weasel",
     "source": "MM",
     "cr": 0,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 30 }
   },
   {
     "name": "Wild Dog",
     "source": "ToA",
     "cr": 0,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Blood Hawk",
     "source": "MM",
     "cr": 0.125,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 3, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Camel",
     "source": "MM",
     "cr": 0.125,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 3, "wildshape": 3 },
     "speed": { "walk": 50 }
   },
   {
     "name": "Dolphin",
     "source": "MPMM",
     "cr": 0.125,
+    "rating": { "polymorph": 3 },
     "speed": { "walk": 0, "swim": 60 }
   },
   {
@@ -423,14 +425,14 @@
     "name": "Heartstabber Mosquito",
     "source": "PSZ",
     "cr": 0.125,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 40 }
   },
   {
     "name": "Mastiff",
     "source": "MM",
     "cr": 0.125,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 3, "wildshape": 3 },
     "speed": { "walk": 40 }
   },
   {
@@ -443,7 +445,7 @@
     "name": "Mule",
     "source": "MM",
     "cr": 0.125,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 2, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -457,14 +459,14 @@
     "name": "Pony",
     "source": "MM",
     "cr": 0.125,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Stirge",
     "source": "MM",
     "cr": 0.125,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 40 }
   },
   {
@@ -478,14 +480,14 @@
     "name": "Aerosaur (Small)",
     "source": "PSX",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Awakened Elk",
     "source": "WDMM",
     "cr": 0.25,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 3, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
@@ -499,7 +501,7 @@
     "name": "Boar",
     "source": "MM",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -520,7 +522,7 @@
     "name": "Cow",
     "source": "VGM",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 30 }
   },
   {
@@ -554,21 +556,21 @@
     "name": "Drake (Small)",
     "source": "PSK",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Drake (Small)",
     "source": "PSZ",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Elk",
     "source": "MM",
     "cr": 0.25,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 3, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   { "name": "Fastieth", "source": "ERLW", "cr": 0.25, "speed": { "walk": 50 } },
@@ -649,14 +651,14 @@
     "name": "Golden Stag",
     "source": "HotDQ",
     "cr": 0.25,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 3, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
     "name": "Hadrosaurus",
     "source": "MPMM",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -672,26 +674,32 @@
     "rating": { "wildshape": 1 },
     "speed": { "walk": 30, "swim": 30 }
   },
-  { "name": "Ox", "source": "MPMM", "cr": 0.25, "speed": { "walk": 30 } },
+  {
+    "name": "Ox",
+    "source": "MPMM",
+    "cr": 0.25,
+    "rating": { "polymorph": 1 },
+    "speed": { "walk": 30 }
+  },
   {
     "name": "Panther",
     "source": "MM",
     "cr": 0.25,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 50, "climb": 40 }
   },
   {
     "name": "Pteranodon",
     "source": "MM",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
     "name": "Reindeer",
     "source": "IDRotF",
     "cr": 0.25,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 3, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
@@ -707,14 +715,14 @@
     "name": "Sled Dog",
     "source": "RoT",
     "cr": 0.25,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Small Drake",
     "source": "PSA",
     "cr": 0.25,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 10, "fly": 60 }
   },
   {
@@ -746,7 +754,7 @@
     "name": "Wolf",
     "source": "MM",
     "cr": 0.25,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 40 }
   },
   {
@@ -759,7 +767,7 @@
     "name": "Yak",
     "source": "SKT",
     "cr": 0.25,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 3, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
@@ -773,7 +781,7 @@
     "name": "Ape",
     "source": "MM",
     "cr": 0.5,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 1, "wildshape": 4 },
     "speed": { "walk": 30, "climb": 30 }
   },
   {
@@ -794,7 +802,7 @@
     "name": "Crocodile",
     "source": "MM",
     "cr": 0.5,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 20, "swim": 30 }
   },
   {
@@ -894,7 +902,7 @@
     "name": "Warhorse",
     "source": "MM",
     "cr": 0.5,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 3, "wildshape": 3 },
     "speed": { "walk": 60 }
   },
   {
@@ -916,7 +924,7 @@
     "name": "Deinonychus",
     "source": "MPMM",
     "cr": 1,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 40 }
   },
   {
@@ -1034,7 +1042,7 @@
     "name": "Lion",
     "source": "MM",
     "cr": 1,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 50 }
   },
   { "name": "Moorbounder", "source": "EGW", "cr": 1, "speed": { "walk": 70 } },
@@ -1042,14 +1050,14 @@
     "name": "Snow Leopard",
     "source": "TftYP",
     "cr": 1,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Tiger",
     "source": "MM",
     "cr": 1,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -1069,20 +1077,21 @@
     "name": "Allosaurus",
     "source": "MM",
     "cr": 2,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 60 }
   },
   {
     "name": "Aurochs",
     "source": "MPMM",
     "cr": 2,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 1, "wildshape": 3 },
     "speed": { "walk": 50 }
   },
   {
     "name": "Cave Bear",
     "source": "MM",
     "cr": 2,
+    "rating": { "polymorph": 1 },
     "speed": { "walk": 40, "swim": 30 }
   },
   {
@@ -1096,7 +1105,7 @@
     "name": "Ferocidon",
     "source": "PSX",
     "cr": 2,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 60 }
   },
   {
@@ -1171,7 +1180,7 @@
     "name": "Plesiosaurus",
     "source": "MM",
     "cr": 2,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 20, "swim": 40 }
   },
   {
@@ -1185,7 +1194,7 @@
     "name": "Quetzalcoatlus",
     "source": "MPMM",
     "cr": 2,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 4, "wildshape": 4 },
     "speed": { "walk": 10, "fly": 80 }
   },
   {
@@ -1198,7 +1207,7 @@
     "name": "Rhinoceros",
     "source": "MM",
     "cr": 2,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -1219,21 +1228,21 @@
     "name": "Shoal Serpent",
     "source": "PSZ",
     "cr": 2,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 20, "swim": 40 }
   },
   {
     "name": "Young Bulette",
     "source": "PotA",
     "cr": 2,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Aegisaur",
     "source": "PSX",
     "cr": 3,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 1, "wildshape": 4 },
     "speed": { "walk": 30 }
   },
   {
@@ -1247,7 +1256,7 @@
     "name": "Ankylosaurus",
     "source": "MM",
     "cr": 3,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 1, "wildshape": 4 },
     "speed": { "walk": 30 }
   },
   {
@@ -1319,7 +1328,7 @@
     "name": "Elephant",
     "source": "MM",
     "cr": 4,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40 }
   },
   {
@@ -1344,7 +1353,7 @@
     "name": "Hippopotamus",
     "source": "PSA",
     "cr": 4,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 40, "swim": 30 }
   },
   {
@@ -1357,14 +1366,14 @@
     "name": "Stegosaurus",
     "source": "MPMM",
     "cr": 4,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Two-Headed Plesiosaurus",
     "source": "TTP",
     "cr": 4,
-    "rating": { "wildshape": 1 },
+    "rating": { "polymorph": 1, "wildshape": 1 },
     "speed": { "walk": 20, "swim": 40 }
   },
   {
@@ -1378,21 +1387,21 @@
     "name": "Baloth",
     "source": "PSZ",
     "cr": 5,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
     "name": "Brontosaurus",
     "source": "MPMM",
     "cr": 5,
-    "rating": { "wildshape": 3 },
+    "rating": { "polymorph": 3, "wildshape": 3 },
     "speed": { "walk": 30 }
   },
   {
     "name": "Ceratops",
     "source": "PSX",
     "cr": 5,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
@@ -1454,7 +1463,7 @@
     "name": "Triceratops",
     "source": "MM",
     "cr": 5,
-    "rating": { "wildshape": 2 },
+    "rating": { "polymorph": 1, "wildshape": 2 },
     "speed": { "walk": 50 }
   },
   {
@@ -1468,21 +1477,72 @@
     "name": "Cerodon",
     "source": "PSA",
     "cr": 6,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 4, "wildshape": 4 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Mammoth",
     "source": "MM",
     "cr": 6,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 4, "wildshape": 4 },
     "speed": { "walk": 40 }
   },
   {
     "name": "Terastodon",
     "source": "PSZ",
     "cr": 6,
-    "rating": { "wildshape": 4 },
+    "rating": { "polymorph": 4, "wildshape": 4 },
     "speed": { "walk": 40 }
+  },
+  {
+    "name": "Deep Spider",
+    "source": "MaBJoV",
+    "cr": 7,
+    "speed": { "walk": 30, "climb": 30 }
+  },
+  {
+    "name": "Giant Ape",
+    "source": "MM",
+    "cr": 7,
+    "speed": { "walk": 40, "climb": 40 }
+  },
+  {
+    "name": "Huge Giant Crab",
+    "source": "TftYP",
+    "cr": 8,
+    "speed": { "walk": 30, "swim": 30 }
+  },
+  {
+    "name": "Sperm Whale",
+    "source": "IDRotF",
+    "cr": 8,
+    "speed": { "walk": 0, "swim": 60 }
+  },
+  {
+    "name": "Terra Stomper",
+    "source": "PSZ",
+    "cr": 8,
+    "rating": { "polymorph": 4 },
+    "speed": { "walk": 50 }
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "source": "MM",
+    "cr": 8,
+    "rating": { "polymorph": 4 },
+    "speed": { "walk": 50 }
+  },
+  {
+    "name": "Tyrant",
+    "source": "PSX",
+    "cr": 8,
+    "rating": { "polymorph": 4 },
+    "speed": { "walk": 50 }
+  },
+  {
+    "name": "Sky Leviathan",
+    "source": "PSK",
+    "cr": 10,
+    "speed": { "fly": { "number": 50, "condition": "(hover)" } }
   }
 ]

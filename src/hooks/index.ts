@@ -17,23 +17,25 @@ export const useFormData = <T>(selected: T, defaults: T) =>
     [selected]
   )
 
-export const useSorting = <T extends keyof Creature>(...exclude: T[]) =>
-  useMemo<Option[]>(
-    () =>
-      Object.entries(SORTING).reduce((options, [key, { min, max }]) => {
-        const value = key.toLowerCase()
-        const label = (a: string, b: string) => `${key}: ${a}-${b}`
+export const useSorting = <T extends keyof Creature>(
+  filters: Record<T, unknown>
+) =>
+  useMemo<Option[]>(() => {
+    return Object.entries(SORTING).reduce((options, [name, { min, max }]) => {
+      const key = name.toLowerCase()
+      const filter = filters?.[key]
+      const value = [key, filter].filter(Boolean).join('.')
+      const label = (a: string, b: string) => `${name}: ${a}-${b}`
 
-        return !exclude?.includes(value as T)
-          ? [
-              ...options,
-              { value, label: label(min, max) },
-              {
-                value: [value, DESCENDING].join(SEPARATOR),
-                label: label(max, min)
-              }
-            ]
-          : options
-      }, []),
-    [exclude]
-  )
+      return filter !== null
+        ? [
+            ...options,
+            { value, label: label(min, max) },
+            {
+              value: [value, DESCENDING].join(SEPARATOR),
+              label: label(max, min)
+            }
+          ]
+        : options
+    }, [])
+  }, [filters])

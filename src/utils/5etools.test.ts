@@ -1,4 +1,4 @@
-import { EMPTY, SPELL_LEVELS } from '~constants'
+import { EMPTY, LEVELS, SPELL_LEVELS } from '~constants'
 import type { Creature, Speeds } from '~types'
 import {
   formatAC,
@@ -38,6 +38,7 @@ describe('formatCR', () => {
     expect(formatCR(undefined)).toEqual(EMPTY)
     expect(formatCR(0.5)).toEqual('1/2')
     expect(formatCR(1)).toEqual(1)
+    expect(formatCR(1, 'label')).toEqual('label')
   })
 })
 
@@ -130,16 +131,19 @@ describe('getMaxCR', () => {
 
 describe('getSpellCR', () => {
   it('should calculate the spell CR as expected', () => {
-    expect(getSpellCR()).toEqual(undefined)
-    expect(getSpellCR({ level: 1, type: 'beast' })).toEqual(undefined)
-    expect(getSpellCR({ level: 1, type: 'beast', maxCR: 10 })).toEqual(10)
-    expect(getSpellCR({ level: 1, type: 'beast', maxCR: true })).toEqual(1)
-    expect(getSpellCR({ level: 1, type: 'beast', upcast: true })).toEqual(
+    expect(getSpellCR()).toEqual([undefined])
+    expect(getSpellCR({ level: 1, type: 'beast' })).toEqual([undefined])
+    expect(getSpellCR({ level: 1, type: 'beast', maxCR: 10 })).toEqual([10])
+    expect(getSpellCR({ level: 1, type: 'beast', maxCR: true })).toEqual([1])
+    expect(
+      getSpellCR({ level: 1, type: 'beast', maxCR: { 10: 'label' } })
+    ).toEqual([10, 'label'])
+    expect(getSpellCR({ level: 1, type: 'beast', upcast: true })).toEqual([
       undefined
-    )
-    expect(getSpellCR({ level: 1, type: 'beast', upcast: true }, 20)).toEqual(
+    ])
+    expect(getSpellCR({ level: 1, type: 'beast', upcast: true }, 20)).toEqual([
       20
-    )
+    ])
   })
 })
 
@@ -157,7 +161,7 @@ describe('getSummonLimit', () => {
 
 describe('getTypeCR', () => {
   it('should calculate the creature type CR as expected', () => {
-    expect(getTypeCR('beast')).toEqual(2)
+    expect(getTypeCR('beast')).toEqual(LEVELS.max)
     expect(getTypeCR('dragon')).toEqual(undefined)
     expect(getTypeCR('elemental')).toEqual(SPELL_LEVELS.max)
     expect(getTypeCR('fey')).toEqual(SPELL_LEVELS.max)

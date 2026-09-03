@@ -9,6 +9,7 @@ import Select from '~components/Select'
 import { Sprites } from '~components/Sprite'
 import { LEVELS } from '~constants'
 import { useFormData, useSorting } from '~hooks'
+import type { RatingType } from '~types'
 import { formatCR, formatSpeedLimits, isSpeedLimited } from '~utils/5etools'
 
 import {
@@ -43,7 +44,8 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
   const levels = useLevels(circleForms)
   const speeds = useSpeeds(level)
   const sources = useSources(creatures.beast)
-  const sorting = useSorting()
+  const rating: RatingType = 'wildshape'
+  const sorting = useSorting({ rating })
 
   const handleChange: FilterHandler = (id, value) => {
     setFormData(formData => ({ ...formData, [id]: value }))
@@ -109,7 +111,7 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
               isSpeedLimited(level, speed, 'swim') ||
               isSpeedLimited(level, speed, 'fly'))
           }
-          ratings="wildshape"
+          ratings={rating}
           speedLimits
         />
         <Sprites />
