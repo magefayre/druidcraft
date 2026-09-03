@@ -8,3 +8,4 @@ export const BASE = {
     `https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-src/refs/tags/${VERSION}/`
   )
 }
+export const RATING_SELECTOR = '*[class^="rating-"]'

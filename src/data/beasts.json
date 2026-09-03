@@ -877,7 +877,13 @@
     "rating": { "wildshape": 1 },
     "speed": { "walk": 40 }
   },
-  { "name": "Reef Shark", "source": "MM", "cr": 0.5, "speed": { "swim": 40 } },
+  {
+    "name": "Reef Shark",
+    "source": "MM",
+    "cr": 0.5,
+    "rating": { "wildshape": 4 },
+    "speed": { "swim": 40 }
+  },
   {
     "name": "Space Eel",
     "source": "BAM",
@@ -895,12 +901,14 @@
     "name": "Awakened Brown Bear",
     "source": "WDMM",
     "cr": 1,
+    "rating": { "wildshape": 3 },
     "speed": { "walk": 40, "climb": 30 }
   },
   {
     "name": "Brown Bear",
     "source": "MM",
     "cr": 1,
+    "rating": { "wildshape": 3 },
     "speed": { "walk": 40, "climb": 30 }
   },
   { "name": "Clawfoot", "source": "ERLW", "cr": 1, "speed": { "walk": 40 } },
@@ -957,6 +965,7 @@
     "name": "Giant Octopus",
     "source": "MM",
     "cr": 1,
+    "rating": { "wildshape": 1 },
     "speed": { "walk": 10, "swim": 60 }
   },
   {
@@ -970,6 +979,7 @@
     "name": "Giant Rocktopus",
     "source": "OotA",
     "cr": 1,
+    "rating": { "wildshape": 1 },
     "speed": { "walk": 20, "climb": 10 }
   },
   {
@@ -1003,6 +1013,7 @@
     "name": "Gnarlid",
     "source": "PSZ",
     "cr": 1,
+    "rating": { "wildshape": 3 },
     "speed": { "walk": 40, "climb": 30 }
   },
   {

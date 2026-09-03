@@ -10,9 +10,9 @@ import { Readable } from 'stream'
 
 import { tokenURL } from '~components/Creature/utils'
 import { RATINGS } from '~constants'
-import type { CreatureURL, Rating, Ratings } from '~types'
+import type { CreatureURL, Ratings } from '~types'
 
-import { BASE } from './constants'
+import { BASE, RATING_SELECTOR } from './constants'
 
 const validateResponse = ({ ok, status, statusText, url }: Response) => {
   if (!ok) {
@@ -34,18 +34,21 @@ export const fetchRatings = async (...url: string[]) => {
   validateResponse(res)
 
   const ratings = selectAll(
-    '*[class^="rating-"]',
+    `li:has(${RATING_SELECTOR})`,
     parseDocument(await res.text())
   ).reduce<Ratings>((ratings, element) => {
-    const rating = getAttributeValue(
-      element as unknown as Element,
-      'class'
-    ).replace(/rating-(\S+)/, '$1') as Rating
-    const name = innerText(element)
+    const target = element as unknown as Element
+    const targets = selectAll(RATING_SELECTOR, target)
+    const name = targets.map(innerText).join(' ')
 
-    if (!!RATINGS[name.toLowerCase()]) return ratings
+    if (Object.keys(RATINGS).includes(name.toLowerCase())) return ratings
 
-    return { ...ratings, [name]: RATINGS[rating] }
+    const rating =
+      RATINGS[
+        getAttributeValue(targets.at(0), 'class').replace(/rating-(\S+)/, '$1')
+      ]
+
+    return { ...ratings, [name]: rating }
   }, {})
 
   return ratings
@@ -59,10 +62,13 @@ export const fetchScript = async (url: string) => {
   return eval(await res.text())
 }
 
-export const fetchToken = async ({ source, name }: CreatureURL) => {
+export const fetchToken = async (
+  { source, name }: CreatureURL,
+  cache = true
+) => {
   const filename = join('public', tokenURL({ source, name }))
 
-  if (existsSync(filename)) return
+  if (cache && existsSync(filename)) return
 
   const res = await fetch(
     new URL(`bestiary/tokens/${source}/${transliterate(name)}.webp`, BASE.img)

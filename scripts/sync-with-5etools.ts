@@ -180,7 +180,7 @@ const filterMonsters = (
     })
   )
 
-  const ratings = await loadRatings(outputDir)
+  const ratings = await loadRatings(outputDir, false)
   const data: MonsterFilters[] = [
     { type: 'beast', maxCR: getCircleFormsCR(LEVELS.max), ratings: true },
     {

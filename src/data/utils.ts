@@ -31,10 +31,10 @@ export const loadCreatures = async <T extends CreatureType, U extends Creature>(
   return creatures
 }
 
-export const loadRatings = async (outputDir: string) => {
+export const loadRatings = async (outputDir: string, cache = true) => {
   const filename = join(outputDir, 'ratings.json')
 
-  if (existsSync(filename)) {
+  if (cache && existsSync(filename)) {
     return await loadData<Ratings>(parse(filename).name)
   }
 
