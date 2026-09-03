@@ -2,6 +2,7 @@
 
 .root {
   > div {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 0 functions.spacing(0.5);
