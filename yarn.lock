@@ -5,9 +5,9 @@ __metadata:
   version: 10
   cacheKey: 10c0
 
-"5etools-utils@npm:0.16.42":
-  version: 0.16.42
-  resolution: "5etools-utils@npm:0.16.42"
+"5etools-utils@npm:0.16.43":
+  version: 0.16.43
+  resolution: "5etools-utils@npm:0.16.43"
   dependencies:
     ajv: "npm:^8.18.0"
     ajv-formats: "npm:^3.0.1"
@@ -34,7 +34,7 @@ __metadata:
     test-img-source-names-ua: bin/test-img-source-names-ua.js
     test-json-brew: bin/test-json-brew.js
     test-json-ua: bin/test-json-ua.js
-  checksum: 10c0/a03cc91bb86dd26c3a26d218d6f808efea4a28b81260cb7fa195d7839d0106d92846801d3ac47c0e23141e4fcb2cda2202ec2ddd09e75fdc0e4126b6baae5585
+  checksum: 10c0/fbded810ff2fc3ac2d3ca12e165e067881ee785408c25e4a0e4c7e57d834e3efd4d9b8a535bda6dbc1d57acdba87fa16b9b6f90a344788e9abd37a9a0c6676bb
   languageName: node
   linkType: hard
 
@@ -3088,7 +3088,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@magefayre/druidcraft@workspace:."
   dependencies:
-    5etools-utils: "npm:0.16.42"
+    5etools-utils: "npm:0.16.43"
     "@commitlint/cli": "npm:21.2.2"
     "@newhighsco/browserslist-config": "npm:3.0.1"
     "@newhighsco/chipset": "npm:7.4.2"
