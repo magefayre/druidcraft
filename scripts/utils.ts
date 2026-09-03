@@ -48,12 +48,12 @@ export const fetchRatings = async (...url: string[]) => {
 
     if (Object.keys(RATINGS).includes(name.toLowerCase())) return ratings
 
-    const rating =
-      RATINGS[
-        getAttributeValue(targets.at(0), 'class').replace(/rating-(\S+)/, '$1')
-      ]
+    const rating = getAttributeValue(targets.at(0), 'class').replace(
+      /rating-(\S+)/,
+      `$1`
+    )
 
-    return { ...ratings, [name]: rating }
+    return { ...ratings, [name]: RATINGS[rating] }
   }, {})
 
   return ratings
