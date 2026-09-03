@@ -15,11 +15,15 @@ jobs:
         uses: ./.github/actions/setup
       - name: Sync with 5etools
         run: yarn sync-with-5etools
+      - name: Verify changes
+        run: git status
       - name: Commit changes
         uses: github-actions-x/commit@722d56b8968bf00ced78407bbe2ead81062d8baa # v2.9
         with:
           commit-message: 'chore: sync with 5etools'
+          email: bots@magefayre.com
           files: public/tokens/** src/data/** src/types/5etools/**
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: magefayre[bot]
           push-branch: ${{ github.head_ref }}
           rebase: true
