@@ -22,7 +22,7 @@ export const summary = ({ alignment, size, type }: Partial<CreatureDetails>) =>
   ])
 
 export const tokenURL = ({ source, name }: CreatureURL) =>
-  urlJoin('/tokens', `${source}-${name}.webp`)
+  urlJoin('/tokens', slugifySource(source), `${slugifyName(name)}.webp`)
 
 export const url = ({ source, name }: CreatureURL, parse: boolean = true) =>
   urlJoin(
