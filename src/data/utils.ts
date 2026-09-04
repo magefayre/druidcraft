@@ -8,9 +8,9 @@ import { ensureDir, fetchRatings } from '~scripts/utils'
 import type { Creature, CreatureType, Ratings, RatingType } from '~types'
 
 export const loadData = async <T>(file: string): Promise<T> =>
-  await readFile(join(process.cwd(), 'src/data', `${file}.json`), 'utf8').then(
-    JSON.parse
-  )
+  await readFile(join(process.cwd(), 'src/data', `${file}.json`), 'utf8')
+    .then(JSON.parse)
+    .catch(() => undefined)
 
 export const loadCreatures = async <T extends CreatureType, U extends Creature>(
   types: T | T[],
