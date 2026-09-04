@@ -89,7 +89,7 @@
     "@testing-library/user-event": "14.6.7",
     "@types/react": "19.2.18",
     "@vitejs/plugin-react": "6.1.1",
-    "@vitest/coverage-v8": "4.1.11",
+    "@vitest/coverage-v8": "5.0.0",
     "concurrently": "10.0.5",
     "css-select": "7.0.0",
     "domhandler": "6.0.1",
@@ -105,7 +105,8 @@
     "stylelint": "17.14.1",
     "tsx": "4.23.13",
     "typescript": "6.0.3",
-    "vitest": "4.1.11",
+    "vite": "8.2.2",
+    "vitest": "5.0.0",
     "yargs": "18.1.0"
   },
   "browserslist": [
