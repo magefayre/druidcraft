@@ -5,14 +5,16 @@ __metadata:
   version: 10
   cacheKey: 10c0
 
-"5etools-utils@npm:0.16.43":
-  version: 0.16.43
-  resolution: "5etools-utils@npm:0.16.43"
+"5etools-utils@npm:0.17.1":
+  version: 0.17.1
+  resolution: "5etools-utils@npm:0.17.1"
   dependencies:
+    "@eslint/js": "npm:^10.0.1"
     ajv: "npm:^8.18.0"
     ajv-formats: "npm:^3.0.1"
     commander: "npm:^14.0.3"
-    eslint: "npm:^10.0.1"
+    eslint: "npm:^10.10.0"
+    globals: "npm:^17.4.0"
     hasha: "npm:^7.0.0"
     he: "npm:^1.2.0"
     json-source-map: "npm:^0.6.1"
@@ -34,7 +36,8 @@ __metadata:
     test-img-source-names-ua: bin/test-img-source-names-ua.js
     test-json-brew: bin/test-json-brew.js
     test-json-ua: bin/test-json-ua.js
-  checksum: 10c0/fbded810ff2fc3ac2d3ca12e165e067881ee785408c25e4a0e4c7e57d834e3efd4d9b8a535bda6dbc1d57acdba87fa16b9b6f90a344788e9abd37a9a0c6676bb
+    vet-eslint: bin/lint-js.js
+  checksum: 10c0/ea28c61adf4a4799ff4dd48f99c072aa20a8a181512ac4c28ecd46d89cdcba52051a967b91c254c284d7777f352d56cb3ee7f932e53ae3725550f9dc5034ae67
   languageName: node
   linkType: hard
 
@@ -2573,7 +2576,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:10.0.1":
+"@eslint/js@npm:10.0.1, @eslint/js@npm:^10.0.1":
   version: 10.0.1
   resolution: "@eslint/js@npm:10.0.1"
   peerDependencies:
@@ -3061,7 +3064,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@magefayre/druidcraft@workspace:."
   dependencies:
-    5etools-utils: "npm:0.16.43"
+    5etools-utils: "npm:0.17.1"
     "@commitlint/cli": "npm:21.2.2"
     "@newhighsco/browserslist-config": "npm:3.0.1"
     "@newhighsco/chipset": "npm:7.4.2"
@@ -7320,7 +7323,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:10.10.0, eslint@npm:^10.0.1":
+"eslint@npm:10.10.0, eslint@npm:^10.10.0":
   version: 10.10.0
   resolution: "eslint@npm:10.10.0"
   dependencies:
@@ -7944,7 +7947,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^17.11.0":
+"globals@npm:^17.11.0, globals@npm:^17.4.0":
   version: 17.12.0
   resolution: "globals@npm:17.12.0"
   checksum: 10c0/8325cf8818c848871d17c32974c2c74e9c5f09c1b0e04421886f64f21e77c3e95f3ba25586743895a73acd860ada151132481d87d44a1f12993ae7758a694d03
