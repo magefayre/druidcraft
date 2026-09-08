@@ -1,4 +1,4 @@
-export const VERSION = 'v1.219.2'
+export const VERSION = 'v1.219.3'
 export const BASE = {
   img: new URL(
     `https://raw.githubusercontent.com/5etools-mirror-3/5etools-2014-img/refs/tags/${VERSION}/`
