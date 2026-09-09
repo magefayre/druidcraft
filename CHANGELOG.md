@@ -1,3 +1,11 @@
+## [1.18.7](https://github.com/magefayre/druidcraft/compare/v1.18.6...v1.18.7) (2026-09-09)
+
+### Bug Fixes
+
+* **creatures:** handle invalid URLs ([#375](https://github.com/magefayre/druidcraft/issues/375)) ([0de6c87](https://github.com/magefayre/druidcraft/commit/0de6c87770895de9d3518726f98ed14f65d023c1)), closes [#365](https://github.com/magefayre/druidcraft/issues/365)
+* **deps:** update dependency 5etools-mirror-3/5etools-2014-src to v1.219.3 ([#387](https://github.com/magefayre/druidcraft/issues/387)) ([9dc6a3b](https://github.com/magefayre/druidcraft/commit/9dc6a3bf9e29b8ee185e47006cfa74e0d912c09a))
+* **deps:** update dependency sass to v1.104.0 ([#374](https://github.com/magefayre/druidcraft/issues/374)) ([f8b6bb3](https://github.com/magefayre/druidcraft/commit/f8b6bb3adcee5a997d49f6d858ee465d63cbfd41))
+
 ## [1.18.6](https://github.com/magefayre/druidcraft/compare/v1.18.5...v1.18.6) (2026-09-03)
 
 ## [1.18.5](https://github.com/magefayre/druidcraft/compare/v1.18.4...v1.18.5) (2026-09-03)
