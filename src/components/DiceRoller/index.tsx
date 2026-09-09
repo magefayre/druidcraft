@@ -1,3 +1,4 @@
+import { Button } from '@newhighsco/chipset'
 import type { FC, MouseEventHandler, PropsWithChildren } from 'react'
 
 type Props = PropsWithChildren<{ dice?: string; bonus?: number }>
@@ -7,7 +8,7 @@ const DiceRoller: FC<Props> = ({ dice, bonus, children }) => {
     console.log(111, dice, bonus, children)
   }
 
-  return <button onClick={handleRoll}>{children}</button>
+  return <Button onClick={handleRoll}>{children}</Button>
 }
 
 export default DiceRoller

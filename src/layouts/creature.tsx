@@ -6,6 +6,7 @@ import type { CreatureDetailsProps } from '~components/Creature/types'
 import { summary, url } from '~components/Creature/utils'
 import PageContainer from '~components/PageContainer'
 import LoadingPageContainer from '~components/PageContainer/LoadingPageContainer'
+import Section from '~components/Section'
 import { formatList, formatSource } from '~utils/5etools'
 import { canonicalUrl } from '~utils/urls'
 
@@ -29,7 +30,9 @@ const CreatureLayout: NextPage<CreatureLayoutProps> = creature => {
 
   return (
     <PageContainer meta={meta}>
-      <CreatureDetails {...creature} />
+      <Section>
+        <CreatureDetails {...creature} />
+      </Section>
     </PageContainer>
   )
 }
