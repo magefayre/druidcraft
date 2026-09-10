@@ -1,3 +1,9 @@
+## [1.18.9](https://github.com/magefayre/druidcraft/compare/v1.18.8...v1.18.9) (2026-09-10)
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v19.3.0 ([#392](https://github.com/magefayre/druidcraft/issues/392)) ([557b096](https://github.com/magefayre/druidcraft/commit/557b0963166e248a630615ea2e047f2d5d243e16))
+
 ## [1.18.8](https://github.com/magefayre/druidcraft/compare/v1.18.7...v1.18.8) (2026-09-09)
 
 ### Bug Fixes
