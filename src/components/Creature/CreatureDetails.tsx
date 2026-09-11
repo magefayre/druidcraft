@@ -5,12 +5,12 @@ import { titleCase } from 'title-case'
 import AbilityList from '~components/AbilityList'
 import ActionList from '~components/ActionList'
 import DefinitionList, { Definition } from '~components/DefinitionList'
+import HitPoints from '~components/HitPoints'
 import Tags from '~components/Tags'
 import {
   formatAC,
   formatCR,
   formatDamage,
-  formatHP,
   formatList,
   formatModifier,
   formatPB,
@@ -97,7 +97,18 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
         <Definition term="Armor Class">
           <Tags>{formatAC(ac)}</Tags>
         </Definition>
-        <Definition term="Hit Points">{formatHP(hp)}</Definition>
+        <Definition term="Hit Points">
+          {'special' in hp ? (
+            hp.special
+          ) : (
+            <HitPoints
+              name={name}
+              max={hp.average}
+              placeholder={hp.formula}
+              readOnly={!dialog}
+            />
+          )}
+        </Definition>
         <Definition term="Speed">{formatSpeed(speed)}</Definition>
       </DefinitionList>
       <AbilityList abilities={ability} />

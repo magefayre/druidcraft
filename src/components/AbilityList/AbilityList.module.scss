@@ -1,14 +1,17 @@
 @use '~styles/functions';
 
 .root {
+  align-items: baseline;
   border-block: 1px solid var(--border);
   display: flex;
+  gap: functions.spacing(0.25);
+  justify-content: space-around;
   padding-block: functions.spacing(1);
 
   > div {
     align-items: center;
-    flex: 1 0;
     flex-direction: column;
+    flex-grow: 0;
     gap: 0;
   }
 

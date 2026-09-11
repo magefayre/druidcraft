@@ -1,6 +1,10 @@
 @use '~styles/functions';
 
 .root {
+  > * + * {
+    margin-top: functions.spacing(0.25);
+  }
+
   > div {
     align-items: center;
     display: flex;

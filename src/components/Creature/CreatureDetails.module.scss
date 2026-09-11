@@ -7,7 +7,7 @@
   flex-direction: column-reverse;
   justify-content: space-between;
 
-  @include mixins.mq(breakpoints.$tablet) {
+  @include mixins.mq(breakpoints.$tablet-landscape) {
     align-items: start;
     flex-direction: row-reverse;
   }
