@@ -1,0 +1,30 @@
+@use '~styles/breakpoints.module';
+@use '~styles/functions';
+
+.root {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: functions.spacing(1);
+  inset: functions.spacing(2);
+  margin: auto;
+  max-width: breakpoints.$desktop-large;
+  overflow: hidden auto;
+  overscroll-behavior: contain;
+
+  &::backdrop {
+    backdrop-filter: blur(0.75em) grayscale(50%);
+    overscroll-behavior: contain;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.close {
+  border: unset;
+  inset-block-start: functions.spacing(1);
+  inset-inline-end: functions.spacing(1);
+  line-height: 1;
+  position: absolute;
+}
