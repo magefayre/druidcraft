@@ -1,4 +1,4 @@
-import { Card } from '@newhighsco/chipset'
+import { Card, classNames } from '@newhighsco/chipset'
 import type { FC } from 'react'
 import { titleCase } from 'title-case'
 
@@ -14,6 +14,7 @@ import {
   formatList,
   formatModifier,
   formatPB,
+  formatSource,
   formatSpeed,
   getPassivePerception
 } from '~utils/5etools'
@@ -136,6 +137,13 @@ const CreatureDetails: FC<CreatureDetailsProps> = ({
       <ActionList heading="Legendary Actions" actions={legendary} />
       <ActionList heading="Bonus Actions" actions={bonus} />
       <ActionList heading="Reactions" actions={reaction} />
+    </div>
+    <div className={classNames(styles.column, styles.full)}>
+      <DefinitionList>
+        <Definition term="Source">
+          <em>{formatSource(source)}</em>
+        </Definition>
+      </DefinitionList>
     </div>
   </Card>
 )
