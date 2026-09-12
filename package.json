@@ -64,7 +64,7 @@
     "postcss": "8.5.28",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "sass": "1.104.0",
+    "sass": "1.104.1",
     "title-case": "4.3.2",
     "usehooks-ts": "3.1.1"
   },
