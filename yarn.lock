@@ -5,9 +5,9 @@ __metadata:
   version: 10
   cacheKey: 10c0
 
-"5etools-utils@npm:0.17.2":
-  version: 0.17.2
-  resolution: "5etools-utils@npm:0.17.2"
+"5etools-utils@npm:0.17.3":
+  version: 0.17.3
+  resolution: "5etools-utils@npm:0.17.3"
   dependencies:
     "@eslint/js": "npm:^10.0.1"
     ajv: "npm:^8.18.0"
@@ -37,7 +37,7 @@ __metadata:
     test-json-brew: bin/test-json-brew.js
     test-json-ua: bin/test-json-ua.js
     vet-eslint: bin/lint-js.js
-  checksum: 10c0/427370b5931d4a617d7df07de3f648be0e904d816d3301e76dae09476786697e39c7d6b47662ef741ba47de7fe69abfd7c21ee6d46c0f40720b4f7314f984c45
+  checksum: 10c0/c169d354f81d3704c09f7b1139e60020413f32466bffe6e931a811a03d6f827b8cc50d1caf2e3d042ee273435173bcb6d37b10b9fffdea2862933a44fb2b13e1
   languageName: node
   linkType: hard
 
@@ -3064,7 +3064,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@magefayre/druidcraft@workspace:."
   dependencies:
-    5etools-utils: "npm:0.17.2"
+    5etools-utils: "npm:0.17.3"
     "@commitlint/cli": "npm:21.2.2"
     "@newhighsco/browserslist-config": "npm:3.0.1"
     "@newhighsco/chipset": "npm:7.5.0"
