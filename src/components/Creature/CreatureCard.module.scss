@@ -64,7 +64,7 @@
     1px -1px 0 var(--background),
     -1px 1px 0 var(--background),
     -1px -1px 0 var(--background);
-  width: functions.spacing(4);
+  min-width: functions.spacing(4);
 }
 
 .source {

@@ -1,7 +1,12 @@
 @use '~styles/functions';
 
 .root {
+  > * + * {
+    margin-top: functions.spacing(0.25);
+  }
+
   > div {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 0 functions.spacing(0.5);
