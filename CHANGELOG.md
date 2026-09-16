@@ -1,3 +1,21 @@
+## [1.18.11](https://github.com/magefayre/druidcraft/compare/v1.18.10...v1.18.11) (2026-09-12)
+
+### Bug Fixes
+
+* **deps:** update dependency sass to v1.104.1 ([#397](https://github.com/magefayre/druidcraft/issues/397)) ([13edbc4](https://github.com/magefayre/druidcraft/commit/13edbc478023924ef33180aa9ed0cd2ec756f773))
+
+## [1.18.10](https://github.com/magefayre/druidcraft/compare/v1.18.9...v1.18.10) (2026-09-11)
+
+### Bug Fixes
+
+* **deps:** update dependency next to v16.3.5 ([#396](https://github.com/magefayre/druidcraft/issues/396)) ([1459ea2](https://github.com/magefayre/druidcraft/commit/1459ea24e16c83a533d64425be98f0832eadff7f))
+
+## [1.18.9](https://github.com/magefayre/druidcraft/compare/v1.18.8...v1.18.9) (2026-09-10)
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v19.3.0 ([#392](https://github.com/magefayre/druidcraft/issues/392)) ([557b096](https://github.com/magefayre/druidcraft/commit/557b0963166e248a630615ea2e047f2d5d243e16))
+
 ## [1.18.8](https://github.com/magefayre/druidcraft/compare/v1.18.7...v1.18.8) (2026-09-09)
 
 ### Bug Fixes
