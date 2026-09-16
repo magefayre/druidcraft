@@ -1,3 +1,9 @@
+## [1.19.0](https://github.com/magefayre/druidcraft/compare/v1.18.11...v1.19.0) (2026-09-16)
+
+### Features
+
+* **creature:** modal view ([#391](https://github.com/magefayre/druidcraft/issues/391)) ([c08cd91](https://github.com/magefayre/druidcraft/commit/c08cd91475d6fa78715af611385f7b9ec6e40f1e)), closes [#371](https://github.com/magefayre/druidcraft/issues/371) [#370](https://github.com/magefayre/druidcraft/issues/370) [#366](https://github.com/magefayre/druidcraft/issues/366)
+
 ## [1.18.11](https://github.com/magefayre/druidcraft/compare/v1.18.10...v1.18.11) (2026-09-12)
 
 ### Bug Fixes
