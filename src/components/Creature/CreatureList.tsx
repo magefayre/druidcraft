@@ -1,7 +1,10 @@
-import { List } from '@newhighsco/chipset'
-import type { FC } from 'react'
+import { List, SmartLink } from '@newhighsco/chipset'
+import { type FC, type MouseEventHandler, useRef, useState } from 'react'
+import useSWR from 'swr'
 
-import { CreatureCard } from '.'
+import Dialog from '~components/Dialog'
+
+import { CreatureCard, CreatureDetails } from '.'
 import styles from './CreatureList.module.scss'
 import type { CreatureListProps } from './types'
 
@@ -12,7 +15,23 @@ const CreatureList: FC<CreatureListProps> = ({
   ratings,
   speedLimits
 }) => {
+  const dialogRef = useRef(null)
+  const [href, setHref] = useState<string>(null)
+  const { data } = useSWR(href ? ['/api', href].join('/') : null, (...args) =>
+    fetch(...args).then(res => res.json())
+  )
+
   if (!creatures?.length) return null
+
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = async e => {
+    e.preventDefault()
+
+    const { pathname } = new URL((e.target as HTMLAnchorElement).href)
+
+    setHref(pathname)
+
+    dialogRef.current.showModal()
+  }
 
   return (
     <>
@@ -29,11 +48,21 @@ const CreatureList: FC<CreatureListProps> = ({
                 priority={index < 12}
                 rating={ratings ? rating?.[ratings] : undefined}
                 speedLimits={speedLimits}
+                renderLink={props => (
+                  <SmartLink
+                    {...props}
+                    onClick={handleClick}
+                    prefetch={false}
+                  />
+                )}
               />
             </li>
           )
         })}
       </List>
+      <Dialog ref={dialogRef}>
+        {data && <CreatureDetails {...data} dialog />}
+      </Dialog>
     </>
   )
 }

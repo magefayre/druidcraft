@@ -15,12 +15,12 @@ const AbilityList: FC<Props> = ({ abilities }) => {
   return (
     <DefinitionList className={styles.root}>
       {Object.entries(abilities).map(([ability, value]) => {
-        const modifier = getModifier(value)
+        const modifier = formatModifier(getModifier(value))
 
         return (
           <Definition key={ability} term={ability.toUpperCase()}>
             <DiceRoller dice="1d20" bonus={modifier}>
-              {value} ({formatModifier(modifier)})
+              {value} ({modifier})
             </DiceRoller>
           </Definition>
         )

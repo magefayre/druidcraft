@@ -1,6 +1,5 @@
 import { titleCase } from 'title-case'
 
-import DiceRoller from '~components/DiceRoller'
 import {
   ABILITY_BASE,
   ALIGNMENTS,
@@ -105,16 +104,6 @@ export const formatDamage = <T extends DamageType>(
 
 export const formatDistance = (value: number) => `${value} ft.`
 
-export const formatHP = (hp: Monster['hp']) => {
-  if ('special' in hp) return hp.special
-
-  return (
-    <>
-      {hp.average} (<DiceRoller>{hp.formula}</DiceRoller>)
-    </>
-  )
-}
-
 export const formatList = (
   list: string[],
   options: Intl.ListFormatOptions = { style: 'narrow' }
@@ -125,7 +114,7 @@ export const formatList = (
 }
 
 export const formatModifier = (value: number) =>
-  [value > 0 ? '+' : undefined, value].join('')
+  [value >= 0 ? '+' : undefined, value].join('')
 
 export const formatPB = (level: number) =>
   formatModifier(Math.max(2, 1 + Math.round(level / 4)))

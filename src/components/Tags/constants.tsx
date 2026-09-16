@@ -43,11 +43,11 @@ export const TAGS = {
   },
   h: () => <ActionLabel>Hit</ActionLabel>,
   hit: args => {
-    const modifier = parseInt(args)
+    const modifier = formatModifier(parseInt(args))
 
     return (
       <DiceRoller dice="1d20" bonus={modifier}>
-        {formatModifier(modifier)}
+        {modifier}
       </DiceRoller>
     )
   },

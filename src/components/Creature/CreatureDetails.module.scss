@@ -7,7 +7,7 @@
   flex-direction: column-reverse;
   justify-content: space-between;
 
-  @include mixins.mq(breakpoints.$tablet) {
+  @include mixins.mq(breakpoints.$tablet-landscape) {
     align-items: start;
     flex-direction: row-reverse;
   }
@@ -47,6 +47,7 @@
 .copy {
   display: inherit;
   flex-direction: inherit;
+  flex-wrap: wrap;
   gap: inherit;
 
   @include mixins.mq(breakpoints.$desktop) {
@@ -59,4 +60,12 @@
   flex: 1 0;
   flex-direction: column;
   gap: inherit;
+
+  &.full {
+    flex-basis: 100%;
+  }
+}
+
+.dialog {
+  border: unset;
 }
