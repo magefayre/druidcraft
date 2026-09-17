@@ -117,7 +117,7 @@ export const formatModifier = (value: number) =>
   [value >= 0 ? '+' : undefined, value].join('')
 
 export const formatPB = (level: number) =>
-  formatModifier(Math.max(2, 1 + Math.round(level / 4)))
+  formatModifier(Math.max(2, Math.floor((level - 1) / 4) + 2))
 
 export const formatRecharge = (value?: number) => {
   return [value, 6].filter(Boolean).join('-')
@@ -146,7 +146,7 @@ export const formatSpeed = (speed: Speeds) =>
     }, [])
   )
 
-export const formatSpeedLimits = (level: number, locale?: string) => {
+export const formatSpeedLimits = (level: number) => {
   if (level < LEVELS.walk) return EMPTY
 
   const limits = Object.entries(SPEEDS)
@@ -159,12 +159,7 @@ export const formatSpeedLimits = (level: number, locale?: string) => {
 
   if (!limits.length) return EMPTY
 
-  const formatter = new Intl.ListFormat(locale, {
-    style: 'short',
-    type: 'disjunction'
-  })
-
-  return `No ${formatter.format(limits)} speed`
+  return `No ${formatList(limits, { style: 'short', type: 'disjunction' })} speed`
 }
 
 export const formatSpellLevel = (level: number) =>

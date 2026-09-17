@@ -2,7 +2,12 @@ import { EMPTY, LEVELS, SPELL_LEVELS } from '~constants'
 import type { Creature, Speeds } from '~types'
 import {
   formatAC,
+  formatAligment,
   formatCR,
+  formatDistance,
+  formatList,
+  formatModifier,
+  formatPB,
   formatSpeedLimits,
   formatSpellLevel,
   getMaxCR,
@@ -33,12 +38,71 @@ describe('formatAC', () => {
   })
 })
 
+describe('formatAligment', () => {
+  it('should format alignment as expected', () => {
+    expect(formatAligment(['N'])).toEqual('Neutral')
+    expect(formatAligment(['N', 'G'])).toEqual('Neutral Good')
+    expect(formatAligment(['N', 'G', 'Usually'])).toEqual(
+      'Neutral Good Usually'
+    )
+  })
+})
+
 describe('formatCR', () => {
   it('should format CR as expected', () => {
     expect(formatCR(undefined)).toEqual(EMPTY)
     expect(formatCR(0.5)).toEqual('1/2')
     expect(formatCR(1)).toEqual(1)
     expect(formatCR(1, 'label')).toEqual('label')
+  })
+})
+
+describe('formatDistance', () => {
+  it('should format distance as expected', () => {
+    expect(formatDistance(10)).toEqual('10 ft.')
+  })
+})
+
+describe('formatList', () => {
+  it('should format a list as expected', () => {
+    expect(formatList(['a', 'b', 'c'])).toEqual('a, b, c')
+  })
+})
+
+describe('formatModifier', () => {
+  it('should format modifier as expected', () => {
+    expect(formatModifier(1)).toEqual('+1')
+    expect(formatModifier(0)).toEqual('+0')
+    expect(formatModifier(-1)).toEqual('-1')
+  })
+})
+
+describe('formatPB', () => {
+  it('should format PB as expected', () => {
+    expect(formatPB(0)).toEqual('+2')
+    expect(formatPB(0.125)).toEqual('+2')
+    expect(formatPB(0.25)).toEqual('+2')
+    expect(formatPB(0.5)).toEqual('+2')
+    expect(formatPB(1)).toEqual('+2')
+    expect(formatPB(2)).toEqual('+2')
+    expect(formatPB(3)).toEqual('+2')
+    expect(formatPB(4)).toEqual('+2')
+    expect(formatPB(5)).toEqual('+3')
+    expect(formatPB(6)).toEqual('+3')
+    expect(formatPB(7)).toEqual('+3')
+    expect(formatPB(8)).toEqual('+3')
+    expect(formatPB(9)).toEqual('+4')
+    expect(formatPB(10)).toEqual('+4')
+    expect(formatPB(11)).toEqual('+4')
+    expect(formatPB(12)).toEqual('+4')
+    expect(formatPB(13)).toEqual('+5')
+    expect(formatPB(14)).toEqual('+5')
+    expect(formatPB(15)).toEqual('+5')
+    expect(formatPB(16)).toEqual('+5')
+    expect(formatPB(17)).toEqual('+6')
+    expect(formatPB(18)).toEqual('+6')
+    expect(formatPB(19)).toEqual('+6')
+    expect(formatPB(20)).toEqual('+6')
   })
 })
 
