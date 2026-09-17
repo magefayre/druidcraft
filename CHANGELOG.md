@@ -1,3 +1,9 @@
+## [1.19.1](https://github.com/magefayre/druidcraft/compare/v1.19.0...v1.19.1) (2026-09-17)
+
+### Bug Fixes
+
+* correctly format PB ([c09c909](https://github.com/magefayre/druidcraft/commit/c09c9098b6835fc7b88099a80a31bc027e85138d))
+
 ## [1.19.0](https://github.com/magefayre/druidcraft/compare/v1.18.11...v1.19.0) (2026-09-16)
 
 ### Features
