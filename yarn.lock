@@ -3092,6 +3092,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:5.0.1"
     concurrently: "npm:10.0.5"
     css-select: "npm:7.0.0"
+    dice-roller-parser: "npm:0.1.8"
     domhandler: "npm:6.0.1"
     domutils: "npm:4.0.2"
     eslint: "npm:10.10.0"
@@ -6527,6 +6528,13 @@ __metadata:
   version: 2.1.2
   resolution: "detect-libc@npm:2.1.2"
   checksum: 10c0/acc675c29a5649fa1fb6e255f993b8ee829e510b6b56b0910666949c80c364738833417d0edb5f90e4e46be17228b0f2b66a010513984e18b15deeeac49369c4
+  languageName: node
+  linkType: hard
+
+"dice-roller-parser@npm:0.1.8":
+  version: 0.1.8
+  resolution: "dice-roller-parser@npm:0.1.8"
+  checksum: 10c0/ee5cf35a3b47aa93ed9fdd2abae9c4cc1f207042fdf05551aa668d73d3f10495bab3e82df752ba370f6bd589febaf437c53035c4985de68daf49715e6187ffa5
   languageName: node
   linkType: hard
 

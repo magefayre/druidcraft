@@ -48,7 +48,7 @@ const ActionList: FC<Props> = ({ heading, actions }) => {
             {entries.map((entry, index) => (
               <Fragment key={[index, entry].join()}>
                 {index > 0 && <br />}
-                <Tags>{entry}</Tags>
+                <Tags label={name}>{entry}</Tags>
               </Fragment>
             ))}
           </li>

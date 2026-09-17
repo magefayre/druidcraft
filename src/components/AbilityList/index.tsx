@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 
 import DefinitionList, { Definition } from '~components/DefinitionList'
-import DiceRoller from '~components/DiceRoller'
+import { DiceRoller } from '~components/Dice'
 import type { Abilities } from '~types'
 import { formatModifier, getModifier } from '~utils/5etools'
 
@@ -16,10 +16,11 @@ const AbilityList: FC<Props> = ({ abilities }) => {
     <DefinitionList className={styles.root}>
       {Object.entries(abilities).map(([ability, value]) => {
         const modifier = formatModifier(getModifier(value))
+        const term = ability.toUpperCase()
 
         return (
-          <Definition key={ability} term={ability.toUpperCase()}>
-            <DiceRoller dice="1d20" bonus={modifier}>
+          <Definition key={ability} term={term}>
+            <DiceRoller dice="1d20" modifier={modifier} label={term}>
               {value} ({modifier})
             </DiceRoller>
           </Definition>
