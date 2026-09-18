@@ -221,12 +221,6 @@ export const getTypeCR = (type: CreatureType) =>
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
 
-export const isCoreSource = (source: Source) =>
-  Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
-  !source.startsWith(Parser.SRC_MCVX_PREFIX) &&
-  !source.startsWith(Parser.SRC_PS_PREFIX) &&
-  !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
-
 export const isSpeedLimited = (level: number, speed: Speeds, type: Speed) =>
   level < LEVELS[type] && !!speed[type]
 
