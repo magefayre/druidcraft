@@ -5047,6 +5047,7 @@ export type Entry =
                  * - MNT: Mount
                  * - MNT|XPHB: Mount
                  * - OTH: Other
+                 * - OTH|XPHB: Other
                  * - P: Potion
                  * - P|XPHB: Potion
                  * - R: Ranged Weapon
@@ -5115,6 +5116,7 @@ export type Entry =
                   | "MNT"
                   | "MNT|XPHB"
                   | "OTH"
+                  | "OTH|XPHB"
                   | "P"
                   | "P|XPHB"
                   | "R"
@@ -5182,6 +5184,7 @@ export type Entry =
                  * - MNT: Mount
                  * - MNT|XPHB: Mount
                  * - OTH: Other
+                 * - OTH|XPHB: Other
                  * - P: Potion
                  * - P|XPHB: Potion
                  * - R: Ranged Weapon
@@ -5250,6 +5253,7 @@ export type Entry =
                   | "MNT"
                   | "MNT|XPHB"
                   | "OTH"
+                  | "OTH|XPHB"
                   | "P"
                   | "P|XPHB"
                   | "R"
@@ -13494,6 +13498,7 @@ export type Prerequisite = [
      * - MNT: Mount
      * - MNT|XPHB: Mount
      * - OTH: Other
+     * - OTH|XPHB: Other
      * - P: Potion
      * - P|XPHB: Potion
      * - R: Ranged Weapon
@@ -13563,6 +13568,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -13631,6 +13637,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -14138,6 +14145,7 @@ export type Prerequisite = [
      * - MNT: Mount
      * - MNT|XPHB: Mount
      * - OTH: Other
+     * - OTH|XPHB: Other
      * - P: Potion
      * - P|XPHB: Potion
      * - R: Ranged Weapon
@@ -14207,6 +14215,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -14275,6 +14284,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -18929,6 +18939,7 @@ export type Prerequisite1 = [
      * - MNT: Mount
      * - MNT|XPHB: Mount
      * - OTH: Other
+     * - OTH|XPHB: Other
      * - P: Potion
      * - P|XPHB: Potion
      * - R: Ranged Weapon
@@ -18998,6 +19009,7 @@ export type Prerequisite1 = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -19066,6 +19078,7 @@ export type Prerequisite1 = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -19455,6 +19468,7 @@ export type Prerequisite1 = [
      * - MNT: Mount
      * - MNT|XPHB: Mount
      * - OTH: Other
+     * - OTH|XPHB: Other
      * - P: Potion
      * - P|XPHB: Potion
      * - R: Ranged Weapon
@@ -19524,6 +19538,7 @@ export type Prerequisite1 = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -19592,6 +19607,7 @@ export type Prerequisite1 = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -23426,6 +23442,7 @@ export interface _Item {
    * - MNT: Mount
    * - MNT|XPHB: Mount
    * - OTH: Other
+   * - OTH|XPHB: Other
    * - P: Potion
    * - P|XPHB: Potion
    * - R: Ranged Weapon
@@ -23494,6 +23511,7 @@ export interface _Item {
     | "MNT"
     | "MNT|XPHB"
     | "OTH"
+    | "OTH|XPHB"
     | "P"
     | "P|XPHB"
     | "R"
@@ -23561,6 +23579,7 @@ export interface _Item {
    * - MNT: Mount
    * - MNT|XPHB: Mount
    * - OTH: Other
+   * - OTH|XPHB: Other
    * - P: Potion
    * - P|XPHB: Potion
    * - R: Ranged Weapon
@@ -23629,6 +23648,7 @@ export interface _Item {
     | "MNT"
     | "MNT|XPHB"
     | "OTH"
+    | "OTH|XPHB"
     | "P"
     | "P|XPHB"
     | "R"
