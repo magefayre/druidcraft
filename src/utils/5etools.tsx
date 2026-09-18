@@ -69,7 +69,7 @@ export const formatAC = (ac: Monster['ac']) => {
     .join(' ')
 }
 
-export const formatAligment = (alignment: CreatureDetails['alignment']) =>
+export const formatAligment = (alignment?: CreatureDetails['alignment']) =>
   alignment
     ?.map(alignment => ALIGNMENTS[alignment] ?? titleCase(alignment))
     .join(' ') ?? ALIGNMENTS.U
@@ -105,7 +105,7 @@ export const formatDamage = <T extends DamageType>(
 export const formatDistance = (value: number) => `${value} ft.`
 
 export const formatList = (
-  list: string[],
+  list?: string[],
   options: Intl.ListFormatOptions = { style: 'narrow' }
 ) => {
   if (!list) return EMPTY
@@ -239,7 +239,10 @@ export const sortNumerically = (a: number, b: number, descending?: boolean) => {
 }
 
 export const sortCreatures =
-  <T extends Creature>(sortBy: keyof T = 'cr', descending?: boolean) =>
+  <T extends Creature>(
+    sortBy: keyof T | `rating.${string}` = 'cr',
+    descending?: boolean
+  ) =>
   (a: T, b: T) => {
     const [primaryKey, secondaryKey] = (sortBy as string).split('.')
     const isNumeric = ['cr', 'rating'].includes(primaryKey)

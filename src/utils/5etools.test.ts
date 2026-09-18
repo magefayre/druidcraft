@@ -45,6 +45,7 @@ describe('formatAC', () => {
 
 describe('formatAligment', () => {
   it('should format alignment as expected', () => {
+    expect(formatAligment()).toEqual('Unaligned')
     expect(formatAligment(['N'])).toEqual('Neutral')
     expect(formatAligment(['N', 'G'])).toEqual('Neutral Good')
     expect(formatAligment(['N', 'G', 'Something'])).toEqual(
@@ -83,6 +84,8 @@ describe('formatDistance', () => {
 
 describe('formatList', () => {
   it('should format a list as expected', () => {
+    expect(formatList()).toEqual(EMPTY)
+    expect(formatList([])).toEqual('')
     expect(formatList(['a', 'b', 'c'])).toEqual('a, b, c')
   })
 })
@@ -321,47 +324,61 @@ describe('isSpeedLimited', () => {
 describe('sortCreatures', () => {
   it('should sort the creatures as expected', () => {
     const creatures: Creature[] = [
-      { name: 'UndefinedCR', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-Z', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-A', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'BBB', speed },
-      { cr: 2, name: 'HighestCR', source: 'AAA', speed }
+      { name: 'UndefinedCR', source: 'AAA' },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } }
     ]
 
     expect(creatures.sort(sortCreatures())).toEqual([
-      { name: 'UndefinedCR', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-A', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-Z', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'BBB', speed }
+      { name: 'UndefinedCR', source: 'AAA' },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } }
     ])
     expect(creatures.sort(sortCreatures('cr'))).toEqual([
-      { name: 'UndefinedCR', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-A', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-Z', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'BBB', speed }
+      { name: 'UndefinedCR', source: 'AAA' },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } }
     ])
     expect(creatures.sort(sortCreatures('cr', true))).toEqual([
-      { cr: 2, name: 'HighestCR', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'BBB', speed },
-      { cr: 1, name: 'LowestCR-A', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-Z', source: 'AAA', speed },
-      { name: 'UndefinedCR', source: 'AAA', speed }
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { name: 'UndefinedCR', source: 'AAA' }
     ])
     expect(creatures.sort(sortCreatures('name'))).toEqual([
-      { cr: 2, name: 'HighestCR', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'BBB', speed },
-      { cr: 1, name: 'LowestCR-A', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-Z', source: 'AAA', speed },
-      { name: 'UndefinedCR', source: 'AAA', speed }
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { name: 'UndefinedCR', source: 'AAA' }
     ])
     expect(creatures.sort(sortCreatures('name', true))).toEqual([
-      { name: 'UndefinedCR', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-Z', source: 'AAA', speed },
-      { cr: 1, name: 'LowestCR-A', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'AAA', speed },
-      { cr: 2, name: 'HighestCR', source: 'BBB', speed }
+      { name: 'UndefinedCR', source: 'AAA' },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } }
+    ])
+    expect(creatures.sort(sortCreatures('rating.wildshape'))).toEqual([
+      { name: 'UndefinedCR', source: 'AAA' },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } }
+    ])
+    expect(creatures.sort(sortCreatures('rating.wildshape', true))).toEqual([
+      { cr: 2, name: 'HighestCR', source: 'AAA', rating: { wildshape: 2 } },
+      { cr: 2, name: 'HighestCR', source: 'BBB', rating: { wildshape: 2 } },
+      { cr: 1, name: 'LowestCR-A', source: 'AAA', rating: { wildshape: 1 } },
+      { cr: 1, name: 'LowestCR-Z', source: 'AAA', rating: { wildshape: 1 } },
+      { name: 'UndefinedCR', source: 'AAA' }
     ])
   })
 })
