@@ -4,13 +4,18 @@ import {
   formatAC,
   formatAligment,
   formatCR,
+  formatDamage,
   formatDistance,
   formatList,
   formatModifier,
   formatPB,
+  formatRecharge,
+  formatSpeed,
   formatSpeedLimits,
   formatSpellLevel,
   getMaxCR,
+  getModifier,
+  getPassivePerception,
   getSpellCR,
   getSummonLimit,
   getTypeCR,
@@ -42,8 +47,8 @@ describe('formatAligment', () => {
   it('should format alignment as expected', () => {
     expect(formatAligment(['N'])).toEqual('Neutral')
     expect(formatAligment(['N', 'G'])).toEqual('Neutral Good')
-    expect(formatAligment(['N', 'G', 'Usually'])).toEqual(
-      'Neutral Good Usually'
+    expect(formatAligment(['N', 'G', 'Something'])).toEqual(
+      'Neutral Good Something'
     )
   })
 })
@@ -54,6 +59,19 @@ describe('formatCR', () => {
     expect(formatCR(0.5)).toEqual('1/2')
     expect(formatCR(1)).toEqual(1)
     expect(formatCR(1, 'label')).toEqual('label')
+  })
+})
+
+describe('formatDamage', () => {
+  it('should format damage as expected', () => {
+    expect(formatDamage(['fire'], 'immune')).toEqual('fire')
+    expect(formatDamage(['fire, cold'], 'immune')).toEqual('fire, cold')
+    expect(
+      formatDamage(
+        ['fire, cold', { immune: ['acid', 'thunder'], note: '(Note)' }],
+        'immune'
+      )
+    ).toEqual('fire, cold; acid and thunder (Note)')
   })
 })
 
@@ -103,6 +121,25 @@ describe('formatPB', () => {
     expect(formatPB(18)).toEqual('+6')
     expect(formatPB(19)).toEqual('+6')
     expect(formatPB(20)).toEqual('+6')
+  })
+})
+
+describe('formatRecharge', () => {
+  it('should format recharge as expected', () => {
+    expect(formatRecharge()).toEqual('6')
+    expect(formatRecharge(1)).toEqual('1-6')
+  })
+})
+
+describe('formatSpeed', () => {
+  it('should format speed as expected', () => {
+    expect(
+      formatSpeed({
+        walk: 10,
+        swim: 20,
+        fly: { condition: 'hover', number: 30 }
+      })
+    ).toEqual('10 ft., swim 20 ft., fly 30 ft. hover')
   })
 })
 
@@ -190,6 +227,39 @@ describe('getMaxCR', () => {
     expect(getMaxCR({ level: 18, circleForms })).toEqual(6)
     expect(getMaxCR({ level: 19, circleForms })).toEqual(6)
     expect(getMaxCR({ level: 20, circleForms })).toEqual(6)
+  })
+})
+
+describe('getModifier', () => {
+  it('should calculate the modifier as expected', () => {
+    expect(getModifier(0)).toEqual(-5)
+    expect(getModifier(1)).toEqual(-5)
+    expect(getModifier(2)).toEqual(-4)
+    expect(getModifier(3)).toEqual(-4)
+    expect(getModifier(4)).toEqual(-3)
+    expect(getModifier(5)).toEqual(-3)
+    expect(getModifier(6)).toEqual(-2)
+    expect(getModifier(7)).toEqual(-2)
+    expect(getModifier(8)).toEqual(-1)
+    expect(getModifier(9)).toEqual(-1)
+    expect(getModifier(10)).toEqual(0)
+    expect(getModifier(11)).toEqual(0)
+    expect(getModifier(12)).toEqual(1)
+    expect(getModifier(13)).toEqual(1)
+    expect(getModifier(14)).toEqual(2)
+    expect(getModifier(15)).toEqual(2)
+    expect(getModifier(16)).toEqual(3)
+    expect(getModifier(17)).toEqual(3)
+    expect(getModifier(18)).toEqual(4)
+    expect(getModifier(19)).toEqual(4)
+    expect(getModifier(20)).toEqual(5)
+  })
+})
+
+describe('getPassivePerception', () => {
+  it('should calculate passive perception as expected', () => {
+    expect(getPassivePerception(20)).toEqual(15)
+    expect(getPassivePerception(10, 10)).toEqual(20)
   })
 })
 

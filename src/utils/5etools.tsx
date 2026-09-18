@@ -188,7 +188,7 @@ export const getMaxCR = ({
   return null
 }
 
-export const getPassivePerception = (wis: number, perception: number) =>
+export const getPassivePerception = (wis: number, perception?: number) =>
   ABILITY_BASE + (perception ?? getModifier(wis))
 
 export const getSpellCR = (
