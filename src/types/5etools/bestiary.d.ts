@@ -8275,7 +8275,19 @@ export type Entry =
                   | "The Driftwood Tavern"
                   | "One-Eyed Jax"
                   | "The Moonstone Mask"
-                  | "The Hissing Stones";
+                  | "The Hissing Stones"
+                  | "Barbarian"
+                  | "Bard"
+                  | "Cleric"
+                  | "Druid"
+                  | "Fighter"
+                  | "Monk"
+                  | "Paladin"
+                  | "Ranger"
+                  | "Rogue"
+                  | "Sorcerer"
+                  | "Warlock"
+                  | "Wizard";
                 /**
                  * - C: Vegetarian [aka "cheese"]
                  * - V: Vegan
@@ -8384,7 +8396,19 @@ export type Entry =
                   | "The Driftwood Tavern"
                   | "One-Eyed Jax"
                   | "The Moonstone Mask"
-                  | "The Hissing Stones";
+                  | "The Hissing Stones"
+                  | "Barbarian"
+                  | "Bard"
+                  | "Cleric"
+                  | "Druid"
+                  | "Fighter"
+                  | "Monk"
+                  | "Paladin"
+                  | "Ranger"
+                  | "Rogue"
+                  | "Sorcerer"
+                  | "Warlock"
+                  | "Wizard";
                 /**
                  * - C: Vegetarian [aka "cheese"]
                  * - V: Vegan
