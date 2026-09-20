@@ -3123,7 +3123,7 @@ __metadata:
     stylelint: "npm:17.15.0"
     swr: "npm:2.5.1"
     title-case: "npm:4.3.2"
-    tsx: "npm:4.23.13"
+    tsx: "npm:4.23.14"
     typescript: "npm:6.0.3"
     usehooks-ts: "npm:3.1.1"
     vite: "npm:8.3.0"
@@ -13372,9 +13372,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:4.23.13":
-  version: 4.23.13
-  resolution: "tsx@npm:4.23.13"
+"tsx@npm:4.23.14":
+  version: 4.23.14
+  resolution: "tsx@npm:4.23.14"
   dependencies:
     esbuild: "npm:~0.28.0"
     fsevents: "npm:~2.3.3"
@@ -13383,7 +13383,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10c0/dc99c8988b42ec2443963a0b9051f42d068bc7e2a44e82f3b94b40539a991c5c01ea3ee049cf317d1040b2245711dd4c64ace9ac875f3b07edee29f610702e3c
+  checksum: 10c0/1a0883c86c9fb7c52a01a34554ea953813b9a01b898599f747b6b0e046de955c1c4b156032de039e5f70f32af93a2298bb561a3335fd34073b8a47915d9ce99c
   languageName: node
   linkType: hard
 
