@@ -723,7 +723,15 @@ export type TagNameStatsAbbreviation = "itemProperty";
  * This interface was referenced by `Util`'s JSON-Schema
  * via the `definition` "propNameStats".
  */
-export type PropNameStats = "classFluff" | "crochetPatternFluff" | "monsterFluff" | "raceFluff";
+export type PropNameStats =
+  | "backgroundFluff"
+  | "classFluff"
+  | "crochetPatternFluff"
+  | "itemFluff"
+  | "monsterFluff"
+  | "raceFluff"
+  | "recipeFluff"
+  | "spellFluff";
 /**
  * This interface was referenced by `Util`'s JSON-Schema
  * via the `definition` "abilityScoreAbbreviation".
@@ -8035,41 +8043,84 @@ export type Entry =
                  * - X: Omnivorous
                  */
                 diet?: "C" | "V" | "X";
-                miscTags?: ("alcohol" | "feast")[];
+                /**
+                 * @minItems 1
+                 */
+                miscTags?: ["alcohol" | "feast", ...("alcohol" | "feast")[]];
                 /**
                  * One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.
+                 *
+                 * @minItems 1
                  */
-                allergenGroups?: (
-                  | "celery"
-                  | "crustaceans"
-                  | "eggs"
-                  | "fish"
-                  | "gluten"
-                  | "lupin"
-                  | "milk"
-                  | "molluscs"
-                  | "mustard"
-                  | "nuts"
-                  | "peanuts"
-                  | "sesame"
-                  | "soya"
-                  | "sulphites"
-                )[];
-                dishTypes?: (
-                  | "appetizer"
-                  | "bread"
-                  | "cocktail"
-                  | "dessert"
-                  | "drink"
-                  | "entree"
-                  | "libation"
-                  | "pastry"
-                  | "salad"
-                  | "side"
-                  | "snack"
-                  | "soup"
-                  | "sweet"
-                )[];
+                allergenGroups?: [
+                  (
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  ),
+                  ...(
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                dishTypes?: [
+                  (
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  ),
+                  ...(
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  )[]
+                ];
                 hasFluff?: boolean;
                 hasFluffImages?: boolean;
               }
@@ -8156,41 +8207,84 @@ export type Entry =
                  * - X: Omnivorous
                  */
                 diet?: "C" | "V" | "X";
-                miscTags?: ("alcohol" | "feast")[];
+                /**
+                 * @minItems 1
+                 */
+                miscTags?: ["alcohol" | "feast", ...("alcohol" | "feast")[]];
                 /**
                  * One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.
+                 *
+                 * @minItems 1
                  */
-                allergenGroups?: (
-                  | "celery"
-                  | "crustaceans"
-                  | "eggs"
-                  | "fish"
-                  | "gluten"
-                  | "lupin"
-                  | "milk"
-                  | "molluscs"
-                  | "mustard"
-                  | "nuts"
-                  | "peanuts"
-                  | "sesame"
-                  | "soya"
-                  | "sulphites"
-                )[];
-                dishTypes?: (
-                  | "appetizer"
-                  | "bread"
-                  | "cocktail"
-                  | "dessert"
-                  | "drink"
-                  | "entree"
-                  | "libation"
-                  | "pastry"
-                  | "salad"
-                  | "side"
-                  | "snack"
-                  | "soup"
-                  | "sweet"
-                )[];
+                allergenGroups?: [
+                  (
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  ),
+                  ...(
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                dishTypes?: [
+                  (
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  ),
+                  ...(
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  )[]
+                ];
                 hasFluff?: boolean;
                 hasFluffImages?: boolean;
                 _copy: CopyBlockCopyGeneric;
@@ -12338,7 +12432,15 @@ export type Entry =
           style?: "inset" | "narrow";
           slotSize?: "120" | "200" | "360" | "600" | "800" | "1000";
           collapsed?: true;
-          prop: "classFluff" | "crochetPatternFluff" | "monsterFluff" | "raceFluff";
+          prop:
+            | "backgroundFluff"
+            | "classFluff"
+            | "crochetPatternFluff"
+            | "itemFluff"
+            | "monsterFluff"
+            | "raceFluff"
+            | "recipeFluff"
+            | "spellFluff";
           [k: string]: unknown;
         }
       | {
