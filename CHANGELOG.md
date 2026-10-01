@@ -1,3 +1,27 @@
+## [1.19.4](https://github.com/magefayre/druidcraft/compare/v1.19.3...v1.19.4) (2026-09-30)
+
+### Bug Fixes
+
+* **deps:** update dependency sass to v1.105.1 ([#433](https://github.com/magefayre/druidcraft/issues/433)) ([62ddfd2](https://github.com/magefayre/druidcraft/commit/62ddfd27540eeffd4e7cc03d70a627840df792a2))
+
+## [1.19.3](https://github.com/magefayre/druidcraft/compare/v1.19.2...v1.19.3) (2026-09-30)
+
+### Bug Fixes
+
+* **deps:** update dependency 5etools-mirror-3/5etools-2014-src to v1.220.1 ([#432](https://github.com/magefayre/druidcraft/issues/432)) ([5e4ddf4](https://github.com/magefayre/druidcraft/commit/5e4ddf42f8079f593a939701e5929c86e9b61661))
+
+## [1.19.2](https://github.com/magefayre/druidcraft/compare/v1.19.1...v1.19.2) (2026-09-30)
+
+### Bug Fixes
+
+* **deps:** update dependency next to v16.3.7 ([#428](https://github.com/magefayre/druidcraft/issues/428)) ([eba3ff2](https://github.com/magefayre/druidcraft/commit/eba3ff236fc8c6bfaa7392d62d1e71f75846804d))
+
+## [1.19.1](https://github.com/magefayre/druidcraft/compare/v1.19.0...v1.19.1) (2026-09-17)
+
+### Bug Fixes
+
+* correctly format PB ([c09c909](https://github.com/magefayre/druidcraft/commit/c09c9098b6835fc7b88099a80a31bc027e85138d))
+
 ## [1.19.0](https://github.com/magefayre/druidcraft/compare/v1.18.11...v1.19.0) (2026-09-16)
 
 ### Features

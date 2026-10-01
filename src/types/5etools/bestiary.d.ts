@@ -5261,6 +5261,7 @@ export type Entry =
                  * - MNT: Mount
                  * - MNT|XPHB: Mount
                  * - OTH: Other
+                 * - OTH|XPHB: Other
                  * - P: Potion
                  * - P|XPHB: Potion
                  * - R: Ranged Weapon
@@ -5329,6 +5330,7 @@ export type Entry =
                   | "MNT"
                   | "MNT|XPHB"
                   | "OTH"
+                  | "OTH|XPHB"
                   | "P"
                   | "P|XPHB"
                   | "R"
@@ -5396,6 +5398,7 @@ export type Entry =
                  * - MNT: Mount
                  * - MNT|XPHB: Mount
                  * - OTH: Other
+                 * - OTH|XPHB: Other
                  * - P: Potion
                  * - P|XPHB: Potion
                  * - R: Ranged Weapon
@@ -5464,6 +5467,7 @@ export type Entry =
                   | "MNT"
                   | "MNT|XPHB"
                   | "OTH"
+                  | "OTH|XPHB"
                   | "P"
                   | "P|XPHB"
                   | "R"
@@ -8271,48 +8275,103 @@ export type Entry =
                   | "The Driftwood Tavern"
                   | "One-Eyed Jax"
                   | "The Moonstone Mask"
-                  | "The Hissing Stones";
+                  | "The Hissing Stones"
+                  | "Barbarian"
+                  | "Bard"
+                  | "Cleric"
+                  | "Druid"
+                  | "Fighter"
+                  | "Monk"
+                  | "Paladin"
+                  | "Ranger"
+                  | "Rogue"
+                  | "Sorcerer"
+                  | "Warlock"
+                  | "Wizard";
                 /**
                  * - C: Vegetarian [aka "cheese"]
                  * - V: Vegan
                  * - X: Omnivorous
                  */
                 diet?: "C" | "V" | "X";
-                miscTags?: ("alcohol" | "feast")[];
+                /**
+                 * @minItems 1
+                 */
+                miscTags?: ["alcohol" | "feast", ...("alcohol" | "feast")[]];
                 /**
                  * One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.
+                 *
+                 * @minItems 1
                  */
-                allergenGroups?: (
-                  | "celery"
-                  | "crustaceans"
-                  | "eggs"
-                  | "fish"
-                  | "gluten"
-                  | "lupin"
-                  | "milk"
-                  | "molluscs"
-                  | "mustard"
-                  | "nuts"
-                  | "peanuts"
-                  | "sesame"
-                  | "soya"
-                  | "sulphites"
-                )[];
-                dishTypes?: (
-                  | "appetizer"
-                  | "bread"
-                  | "cocktail"
-                  | "dessert"
-                  | "drink"
-                  | "entree"
-                  | "libation"
-                  | "pastry"
-                  | "salad"
-                  | "side"
-                  | "snack"
-                  | "soup"
-                  | "sweet"
-                )[];
+                allergenGroups?: [
+                  (
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  ),
+                  ...(
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                dishTypes?: [
+                  (
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  ),
+                  ...(
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  )[]
+                ];
                 hasFluff?: boolean;
                 hasFluffImages?: boolean;
               }
@@ -8380,48 +8439,103 @@ export type Entry =
                   | "The Driftwood Tavern"
                   | "One-Eyed Jax"
                   | "The Moonstone Mask"
-                  | "The Hissing Stones";
+                  | "The Hissing Stones"
+                  | "Barbarian"
+                  | "Bard"
+                  | "Cleric"
+                  | "Druid"
+                  | "Fighter"
+                  | "Monk"
+                  | "Paladin"
+                  | "Ranger"
+                  | "Rogue"
+                  | "Sorcerer"
+                  | "Warlock"
+                  | "Wizard";
                 /**
                  * - C: Vegetarian [aka "cheese"]
                  * - V: Vegan
                  * - X: Omnivorous
                  */
                 diet?: "C" | "V" | "X";
-                miscTags?: ("alcohol" | "feast")[];
+                /**
+                 * @minItems 1
+                 */
+                miscTags?: ["alcohol" | "feast", ...("alcohol" | "feast")[]];
                 /**
                  * One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.
+                 *
+                 * @minItems 1
                  */
-                allergenGroups?: (
-                  | "celery"
-                  | "crustaceans"
-                  | "eggs"
-                  | "fish"
-                  | "gluten"
-                  | "lupin"
-                  | "milk"
-                  | "molluscs"
-                  | "mustard"
-                  | "nuts"
-                  | "peanuts"
-                  | "sesame"
-                  | "soya"
-                  | "sulphites"
-                )[];
-                dishTypes?: (
-                  | "appetizer"
-                  | "bread"
-                  | "cocktail"
-                  | "dessert"
-                  | "drink"
-                  | "entree"
-                  | "libation"
-                  | "pastry"
-                  | "salad"
-                  | "side"
-                  | "snack"
-                  | "soup"
-                  | "sweet"
-                )[];
+                allergenGroups?: [
+                  (
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  ),
+                  ...(
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                dishTypes?: [
+                  (
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  ),
+                  ...(
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  )[]
+                ];
                 hasFluff?: boolean;
                 hasFluffImages?: boolean;
                 _copy: CopyBlockCopyGeneric;
@@ -12596,7 +12710,15 @@ export type Entry =
           style?: "inset" | "narrow";
           slotSize?: "120" | "200" | "360" | "600" | "800" | "1000";
           collapsed?: true;
-          prop: "classFluff" | "crochetPatternFluff" | "monsterFluff" | "raceFluff";
+          prop:
+            | "backgroundFluff"
+            | "classFluff"
+            | "crochetPatternFluff"
+            | "itemFluff"
+            | "monsterFluff"
+            | "raceFluff"
+            | "recipeFluff"
+            | "spellFluff";
           [k: string]: unknown;
         }
       | {
@@ -13495,6 +13617,7 @@ export type Prerequisite = [
      * - MNT: Mount
      * - MNT|XPHB: Mount
      * - OTH: Other
+     * - OTH|XPHB: Other
      * - P: Potion
      * - P|XPHB: Potion
      * - R: Ranged Weapon
@@ -13564,6 +13687,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -13632,6 +13756,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -14139,6 +14264,7 @@ export type Prerequisite = [
      * - MNT: Mount
      * - MNT|XPHB: Mount
      * - OTH: Other
+     * - OTH|XPHB: Other
      * - P: Potion
      * - P|XPHB: Potion
      * - R: Ranged Weapon
@@ -14208,6 +14334,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -14276,6 +14403,7 @@ export type Prerequisite = [
         | "MNT"
         | "MNT|XPHB"
         | "OTH"
+        | "OTH|XPHB"
         | "P"
         | "P|XPHB"
         | "R"
@@ -21297,6 +21425,7 @@ export interface _Item {
    * - MNT: Mount
    * - MNT|XPHB: Mount
    * - OTH: Other
+   * - OTH|XPHB: Other
    * - P: Potion
    * - P|XPHB: Potion
    * - R: Ranged Weapon
@@ -21365,6 +21494,7 @@ export interface _Item {
     | "MNT"
     | "MNT|XPHB"
     | "OTH"
+    | "OTH|XPHB"
     | "P"
     | "P|XPHB"
     | "R"
@@ -21432,6 +21562,7 @@ export interface _Item {
    * - MNT: Mount
    * - MNT|XPHB: Mount
    * - OTH: Other
+   * - OTH|XPHB: Other
    * - P: Potion
    * - P|XPHB: Potion
    * - R: Ranged Weapon
@@ -21500,6 +21631,7 @@ export interface _Item {
     | "MNT"
     | "MNT|XPHB"
     | "OTH"
+    | "OTH|XPHB"
     | "P"
     | "P|XPHB"
     | "R"

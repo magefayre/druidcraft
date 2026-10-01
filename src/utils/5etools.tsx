@@ -69,7 +69,7 @@ export const formatAC = (ac: Monster['ac']) => {
     .join(' ')
 }
 
-export const formatAligment = (alignment: CreatureDetails['alignment']) =>
+export const formatAligment = (alignment?: CreatureDetails['alignment']) =>
   alignment
     ?.map(alignment => ALIGNMENTS[alignment] ?? titleCase(alignment))
     .join(' ') ?? ALIGNMENTS.U
@@ -105,7 +105,7 @@ export const formatDamage = <T extends DamageType>(
 export const formatDistance = (value: number) => `${value} ft.`
 
 export const formatList = (
-  list: string[],
+  list?: string[],
   options: Intl.ListFormatOptions = { style: 'narrow' }
 ) => {
   if (!list) return EMPTY
@@ -117,7 +117,7 @@ export const formatModifier = (value: number) =>
   [value >= 0 ? '+' : undefined, value].join('')
 
 export const formatPB = (level: number) =>
-  formatModifier(Math.max(2, 1 + Math.round(level / 4)))
+  formatModifier(Math.max(2, Math.floor((level - 1) / 4) + 2))
 
 export const formatRecharge = (value?: number) => {
   return [value, 6].filter(Boolean).join('-')
@@ -146,7 +146,7 @@ export const formatSpeed = (speed: Speeds) =>
     }, [])
   )
 
-export const formatSpeedLimits = (level: number, locale?: string) => {
+export const formatSpeedLimits = (level: number) => {
   if (level < LEVELS.walk) return EMPTY
 
   const limits = Object.entries(SPEEDS)
@@ -159,12 +159,7 @@ export const formatSpeedLimits = (level: number, locale?: string) => {
 
   if (!limits.length) return EMPTY
 
-  const formatter = new Intl.ListFormat(locale, {
-    style: 'short',
-    type: 'disjunction'
-  })
-
-  return `No ${formatter.format(limits)} speed`
+  return `No ${formatList(limits, { style: 'short', type: 'disjunction' })} speed`
 }
 
 export const formatSpellLevel = (level: number) =>
@@ -193,7 +188,7 @@ export const getMaxCR = ({
   return null
 }
 
-export const getPassivePerception = (wis: number, perception: number) =>
+export const getPassivePerception = (wis: number, perception?: number) =>
   ABILITY_BASE + (perception ?? getModifier(wis))
 
 export const getSpellCR = (
@@ -226,12 +221,6 @@ export const getTypeCR = (type: CreatureType) =>
     return spell.type === type && (cr === undefined || maxCR > cr) ? maxCR : cr
   }, undefined)
 
-export const isCoreSource = (source: Source) =>
-  Parser.SOURCES_CORE_SUPPLEMENTS.has(source) &&
-  !source.startsWith(Parser.SRC_MCVX_PREFIX) &&
-  !source.startsWith(Parser.SRC_PS_PREFIX) &&
-  !Parser.SOURCES_NON_STANDARD_WOTC.has(source)
-
 export const isSpeedLimited = (level: number, speed: Speeds, type: Speed) =>
   level < LEVELS[type] && !!speed[type]
 
@@ -250,7 +239,10 @@ export const sortNumerically = (a: number, b: number, descending?: boolean) => {
 }
 
 export const sortCreatures =
-  <T extends Creature>(sortBy: keyof T = 'cr', descending?: boolean) =>
+  <T extends Creature>(
+    sortBy: keyof T | `rating.${string}` = 'cr',
+    descending?: boolean
+  ) =>
   (a: T, b: T) => {
     const [primaryKey, secondaryKey] = (sortBy as string).split('.')
     const isNumeric = ['cr', 'rating'].includes(primaryKey)
