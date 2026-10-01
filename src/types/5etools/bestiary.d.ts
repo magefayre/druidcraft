@@ -2255,9 +2255,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "monster";
@@ -4416,9 +4413,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "legendaryGroup";
@@ -4469,9 +4463,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "spell";
@@ -5196,9 +5187,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "action";
@@ -5210,9 +5198,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "item";
@@ -5779,9 +5764,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "background";
@@ -5880,9 +5862,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "charoption";
@@ -5945,9 +5924,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "condition";
@@ -5959,9 +5935,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "disease";
@@ -5973,9 +5946,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "status";
@@ -5987,9 +5957,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "cult";
@@ -6042,9 +6009,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "boon";
@@ -6089,9 +6053,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "deity";
@@ -6426,9 +6387,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "feat";
@@ -6601,9 +6559,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "language";
@@ -6668,9 +6623,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "object";
@@ -7049,9 +7001,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "optionalfeature";
@@ -7286,9 +7235,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "psionic";
@@ -7469,9 +7415,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "race";
@@ -8204,9 +8147,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "recipe";
@@ -8547,9 +8487,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "reward";
@@ -8632,9 +8569,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "table";
@@ -8646,9 +8580,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "trap";
@@ -8772,9 +8703,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "hazard";
@@ -8837,9 +8765,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "variantrule";
@@ -8902,9 +8827,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "vehicle";
@@ -12410,9 +12332,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "vehicleUpgrade";
@@ -12489,9 +12408,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "skill";
@@ -12528,9 +12444,6 @@ export type Entry =
           type: "statblockInline";
           /**
            * @minItems 1
-           *
-           * This interface was referenced by `undefined`'s JSON-Schema definition
-           * via the `patternProperty` "^[a-zA-Z]+$".
            */
           dependencies?: [string, ...string[]];
           dataType: "sense";
@@ -18867,6 +18780,157 @@ export type CreatureVersion =
         }
     )
   | CreatureData1;
+/**
+ * An array of keys that are copied from within the current document. e.g. "item", "monsterFluff", "background" etc.
+ *
+ * @minItems 1
+ *
+ * Items: This is the list of props for which there is a `_copy` implementation. `_copy` may not be declared for props other than these.
+ */
+export type InternalCopies = [
+  (
+    | "monster"
+    | "monsterFluff"
+    | "monsterTemplate"
+    | "legendaryGroup"
+    | "class"
+    | "classFluff"
+    | "subclass"
+    | "subclassFluff"
+    | "classFeature"
+    | "subclassFeature"
+    | "spell"
+    | "spellFluff"
+    | "action"
+    | "item"
+    | "itemGroup"
+    | "baseitem"
+    | "itemProperty"
+    | "itemType"
+    | "itemMastery"
+    | "magicvariant"
+    | "itemFluff"
+    | "background"
+    | "backgroundFluff"
+    | "charoption"
+    | "charoptionFluff"
+    | "condition"
+    | "conditionFluff"
+    | "disease"
+    | "diseaseFluff"
+    | "status"
+    | "statusFluff"
+    | "cult"
+    | "boon"
+    | "deity"
+    | "feat"
+    | "featFluff"
+    | "language"
+    | "languageFluff"
+    | "object"
+    | "objectFluff"
+    | "optionalfeature"
+    | "optionalfeatureFluff"
+    | "psionic"
+    | "race"
+    | "raceFeature"
+    | "subrace"
+    | "raceFluff"
+    | "reward"
+    | "recipe"
+    | "recipeFluff"
+    | "rewardFluff"
+    | "table"
+    | "trap"
+    | "trapFluff"
+    | "hazard"
+    | "hazardFluff"
+    | "variantrule"
+    | "vehicle"
+    | "vehicleUpgrade"
+    | "vehicleFluff"
+    | "skill"
+    | "sense"
+    | "deck"
+    | "card"
+    | "facility"
+    | "facilityFluff"
+    | "encounterShape"
+    | "crochetPattern"
+    | "crochetPatternFluff"
+  ),
+  ...(
+    | "monster"
+    | "monsterFluff"
+    | "monsterTemplate"
+    | "legendaryGroup"
+    | "class"
+    | "classFluff"
+    | "subclass"
+    | "subclassFluff"
+    | "classFeature"
+    | "subclassFeature"
+    | "spell"
+    | "spellFluff"
+    | "action"
+    | "item"
+    | "itemGroup"
+    | "baseitem"
+    | "itemProperty"
+    | "itemType"
+    | "itemMastery"
+    | "magicvariant"
+    | "itemFluff"
+    | "background"
+    | "backgroundFluff"
+    | "charoption"
+    | "charoptionFluff"
+    | "condition"
+    | "conditionFluff"
+    | "disease"
+    | "diseaseFluff"
+    | "status"
+    | "statusFluff"
+    | "cult"
+    | "boon"
+    | "deity"
+    | "feat"
+    | "featFluff"
+    | "language"
+    | "languageFluff"
+    | "object"
+    | "objectFluff"
+    | "optionalfeature"
+    | "optionalfeatureFluff"
+    | "psionic"
+    | "race"
+    | "raceFeature"
+    | "subrace"
+    | "raceFluff"
+    | "reward"
+    | "recipe"
+    | "recipeFluff"
+    | "rewardFluff"
+    | "table"
+    | "trap"
+    | "trapFluff"
+    | "hazard"
+    | "hazardFluff"
+    | "variantrule"
+    | "vehicle"
+    | "vehicleUpgrade"
+    | "vehicleFluff"
+    | "skill"
+    | "sense"
+    | "deck"
+    | "card"
+    | "facility"
+    | "facilityFluff"
+    | "encounterShape"
+    | "crochetPattern"
+    | "crochetPatternFluff"
+  )[]
+];
 
 export interface BestiarySchema {
   monster?: Creature[];
@@ -23358,6 +23422,11 @@ export interface CreatureData1 {
   basicRules2024?: true;
 }
 export interface MetaBlock {
+  /**
+   * A map of `"<data property>": ["<JsonSource1>", ..., "<JsonSourceN>"]`. Entities from these sources can then be extended/referenced in this file.
+   *
+   * Note: when copying classes/subclasses/class features/subclass features, the array should consist of "<classIdentifier1>", ..., "<classIdentifierN>" items, where "classIdentifierN" matches the keys in "5etools/data/class/index.json" (when copying class/etc. homebrew, normal "source"-based linking applies).
+   */
   dependencies?: {
     /**
      * @minItems 1
@@ -23367,6 +23436,7 @@ export interface MetaBlock {
      */
     [k: string]: [string, ...string[]];
   };
+  internalCopies?: InternalCopies;
   otherSources?: {
     /**
      * Keys are other sources to be loaded; values are `otherSources` sources from that source to search for.
@@ -23376,7 +23446,6 @@ export interface MetaBlock {
     };
     [k: string]: unknown;
   };
-  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `BestiarySchema`'s JSON-Schema

@@ -10,11 +10,159 @@
  *
  * This interface was referenced by `Util`'s JSON-Schema
  * via the `definition` "metaDependenciesArray".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^[a-zA-Z]+$".
  */
 export type MetaDependenciesArray = [string, ...string[]];
+/**
+ * An array of keys that are copied from within the current document. e.g. "item", "monsterFluff", "background" etc.
+ *
+ * @minItems 1
+ *
+ * Items: This is the list of props for which there is a `_copy` implementation. `_copy` may not be declared for props other than these.
+ */
+export type InternalCopies = [
+  (
+    | "monster"
+    | "monsterFluff"
+    | "monsterTemplate"
+    | "legendaryGroup"
+    | "class"
+    | "classFluff"
+    | "subclass"
+    | "subclassFluff"
+    | "classFeature"
+    | "subclassFeature"
+    | "spell"
+    | "spellFluff"
+    | "action"
+    | "item"
+    | "itemGroup"
+    | "baseitem"
+    | "itemProperty"
+    | "itemType"
+    | "itemMastery"
+    | "magicvariant"
+    | "itemFluff"
+    | "background"
+    | "backgroundFluff"
+    | "charoption"
+    | "charoptionFluff"
+    | "condition"
+    | "conditionFluff"
+    | "disease"
+    | "diseaseFluff"
+    | "status"
+    | "statusFluff"
+    | "cult"
+    | "boon"
+    | "deity"
+    | "feat"
+    | "featFluff"
+    | "language"
+    | "languageFluff"
+    | "object"
+    | "objectFluff"
+    | "optionalfeature"
+    | "optionalfeatureFluff"
+    | "psionic"
+    | "race"
+    | "raceFeature"
+    | "subrace"
+    | "raceFluff"
+    | "reward"
+    | "recipe"
+    | "recipeFluff"
+    | "rewardFluff"
+    | "table"
+    | "trap"
+    | "trapFluff"
+    | "hazard"
+    | "hazardFluff"
+    | "variantrule"
+    | "vehicle"
+    | "vehicleUpgrade"
+    | "vehicleFluff"
+    | "skill"
+    | "sense"
+    | "deck"
+    | "card"
+    | "facility"
+    | "facilityFluff"
+    | "encounterShape"
+    | "crochetPattern"
+    | "crochetPatternFluff"
+  ),
+  ...(
+    | "monster"
+    | "monsterFluff"
+    | "monsterTemplate"
+    | "legendaryGroup"
+    | "class"
+    | "classFluff"
+    | "subclass"
+    | "subclassFluff"
+    | "classFeature"
+    | "subclassFeature"
+    | "spell"
+    | "spellFluff"
+    | "action"
+    | "item"
+    | "itemGroup"
+    | "baseitem"
+    | "itemProperty"
+    | "itemType"
+    | "itemMastery"
+    | "magicvariant"
+    | "itemFluff"
+    | "background"
+    | "backgroundFluff"
+    | "charoption"
+    | "charoptionFluff"
+    | "condition"
+    | "conditionFluff"
+    | "disease"
+    | "diseaseFluff"
+    | "status"
+    | "statusFluff"
+    | "cult"
+    | "boon"
+    | "deity"
+    | "feat"
+    | "featFluff"
+    | "language"
+    | "languageFluff"
+    | "object"
+    | "objectFluff"
+    | "optionalfeature"
+    | "optionalfeatureFluff"
+    | "psionic"
+    | "race"
+    | "raceFeature"
+    | "subrace"
+    | "raceFluff"
+    | "reward"
+    | "recipe"
+    | "recipeFluff"
+    | "rewardFluff"
+    | "table"
+    | "trap"
+    | "trapFluff"
+    | "hazard"
+    | "hazardFluff"
+    | "variantrule"
+    | "vehicle"
+    | "vehicleUpgrade"
+    | "vehicleFluff"
+    | "skill"
+    | "sense"
+    | "deck"
+    | "card"
+    | "facility"
+    | "facilityFluff"
+    | "encounterShape"
+    | "crochetPattern"
+    | "crochetPatternFluff"
+  )[]
+];
 /**
  * "uri-reference" is unsuitable for brew, as it requires URL-encoding "'" (see: https://www.ietf.org/rfc/rfc3986.txt)
  *
@@ -20985,9 +21133,21 @@ export interface Util {
  * via the `definition` "metaBlock".
  */
 export interface MetaBlock {
+  /**
+   * A map of `"<data property>": ["<JsonSource1>", ..., "<JsonSourceN>"]`. Entities from these sources can then be extended/referenced in this file.
+   *
+   * Note: when copying classes/subclasses/class features/subclass features, the array should consist of "<classIdentifier1>", ..., "<classIdentifierN>" items, where "classIdentifierN" matches the keys in "5etools/data/class/index.json" (when copying class/etc. homebrew, normal "source"-based linking applies).
+   */
   dependencies?: {
-    [k: string]: MetaDependenciesArray;
+    /**
+     * @minItems 1
+     *
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^[a-zA-Z]+$".
+     */
+    [k: string]: [string, ...string[]];
   };
+  internalCopies?: InternalCopies;
   otherSources?: {
     /**
      * Keys are other sources to be loaded; values are `otherSources` sources from that source to search for.
@@ -20997,7 +21157,6 @@ export interface MetaBlock {
     };
     [k: string]: unknown;
   };
-  [k: string]: unknown;
 }
 export interface EntrySection {
   name?: string;
