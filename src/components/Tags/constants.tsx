@@ -2,13 +2,11 @@ import type { ReactNode } from 'react'
 import { titleCase } from 'title-case'
 
 import { ActionLabel, ActionName } from '~components/ActionList'
-import DiceRoller from '~components/DiceRoller'
+import { DiceRoller } from '~components/Dice'
 import type { Skill } from '~types'
 import { formatModifier, formatRecharge } from '~utils/5etools'
 
 import type { Attack, Tag } from './types'
-
-const diceRoller = (formula: string) => <DiceRoller>{formula}</DiceRoller>
 
 const ATTACKS = {
   ms: 'Melee Spell',
@@ -25,9 +23,11 @@ export const TAGS = {
   book: label => label,
   condition: condition => condition,
   creature: creature => creature,
-  damage: diceRoller,
+  damage: (formula: string, label: string) => (
+    <DiceRoller formula={formula} label={[label, '(damage'].join(' ')} />
+  ),
   dc: save => `DC ${save}`,
-  dice: diceRoller,
+  dice: (formula: string) => <DiceRoller formula={formula} />,
   filter: label => label,
   frequency: label => {
     const { groups: { times, each } = {} } =
@@ -42,11 +42,11 @@ export const TAGS = {
     )
   },
   h: () => <ActionLabel>Hit</ActionLabel>,
-  hit: args => {
-    const modifier = formatModifier(parseInt(args))
+  hit: (value, label) => {
+    const modifier = formatModifier(parseInt(value))
 
     return (
-      <DiceRoller dice="1d20" bonus={modifier}>
+      <DiceRoller formula={['1d20', modifier, label, '(to hit)'].join(' ')}>
         {modifier}
       </DiceRoller>
     )
@@ -57,7 +57,7 @@ export const TAGS = {
   recharge: value => (
     <>
       (Recharge{' '}
-      <DiceRoller dice="1d6">
+      <DiceRoller formula="1d6">
         {formatRecharge(!!value ? parseInt(value) : undefined)}
       </DiceRoller>
       )

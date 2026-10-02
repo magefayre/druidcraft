@@ -8,7 +8,7 @@ import {
   useState
 } from 'react'
 
-import DiceRoller from '~components/DiceRoller'
+import { DiceRoller } from '~components/Dice'
 
 import styles from './HitPoints.module.scss'
 
@@ -30,7 +30,11 @@ const HitPoints: FC<Props> = ({
   if (readOnly) {
     return (
       <>
-        {max} (<DiceRoller>{placeholder}</DiceRoller>)
+        {max} (
+        <DiceRoller formula={placeholder} label="Hit Points">
+          {placeholder}
+        </DiceRoller>
+        )
       </>
     )
   }

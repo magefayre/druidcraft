@@ -77,6 +77,8 @@ export type DamageDetails = { [Key in DamageType]?: Damage[] } & {
 
 export type DamageType = 'immune' | 'resist' | 'vulnerable'
 
+export type Dice = 4 | 6 | 8 | 10 | 12 | 20
+
 export type Feature = 'elementalForms'
 
 export type Features = Partial<Record<Feature, boolean>>

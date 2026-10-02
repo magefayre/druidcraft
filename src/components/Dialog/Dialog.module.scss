@@ -7,6 +7,7 @@
   border-radius: functions.spacing(1);
   inset: functions.spacing(2);
   margin: auto;
+  min-width: 200px;
   max-width: breakpoints.$desktop-large;
   overflow: hidden auto;
   overscroll-behavior: contain;
