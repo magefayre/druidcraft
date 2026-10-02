@@ -5,7 +5,6 @@ import { CreatureList } from '~components/Creature'
 import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
-import { Sprites } from '~components/Sprite'
 import { SPELLS } from '~constants'
 import { useFormData, useSorting } from '~hooks'
 import { formatCR, getSummonLimit } from '~utils/5etools'
@@ -103,7 +102,6 @@ const Summon: FC<SummonProps> = ({ creatures }) => {
           }}
           ratings={rating}
         />
-        <Sprites />
       </Section>
     </>
   )

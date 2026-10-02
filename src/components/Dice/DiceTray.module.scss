@@ -1,9 +1,55 @@
+@use '~styles/functions';
+
 .root {
-  background: var(--background);
-  box-shadow: 0 -1px 0 0 var(--border);
-  overflow: hidden auto;
   position: sticky;
-  padding: 1em;
   bottom: 0;
   z-index: 3;
+
+  &[open]::details-content {
+    align-items: last baseline;
+    background: var(--background);
+    box-shadow: 0 -1px 0 0 var(--border);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden auto;
+    padding: functions.spacing(2);
+    position: relative;
+  }
+
+  &:has(.toggle:hover)::details-content {
+    background: var(--muted-background);
+  }
+}
+
+.toggle {
+  align-items: center;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-block-end: 0;
+  border-radius: functions.spacing(1) functions.spacing(1) 0 0;
+  cursor: pointer;
+  display: inline-flex;
+  gap: functions.spacing(0.5);
+  padding: functions.spacing(0.5) functions.spacing(1.25);
+  position: relative;
+  margin-inline: functions.spacing(2);
+  z-index: 1;
+
+  &:hover {
+    background: var(--muted-background);
+  }
+
+  &:focus-visible {
+    border-color: currentColor;
+    outline: none;
+  }
+}
+
+.reset {
+  margin-left: auto;
+}
+
+.roll {
+  display: inline-flex;
+  gap: functions.spacing(0.5);
 }

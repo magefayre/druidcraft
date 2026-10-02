@@ -6,6 +6,7 @@ import type { FC, PropsWithChildren } from 'react'
 import { DiceTray } from '~components/Dice'
 import Footer from '~components/Footer'
 import Header from '~components/Header'
+import { Sprites } from '~components/Sprite'
 
 export type PageContainerProps = PropsWithChildren<{ meta?: NextSeoProps }>
 
@@ -21,6 +22,7 @@ const PageContainer: FC<PageContainerProps> = ({ meta, children }) => (
   >
     <Meta {...meta} />
     {children}
+    <Sprites />
   </ThemedPageContainer>
 )
 
