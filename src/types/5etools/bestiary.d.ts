@@ -6021,9 +6021,7 @@ export type Entry =
                 referenceSources?: ReferenceSources;
                 reprintedAs?: ReprintedAs;
                 type: "Demonic";
-                ability?: {
-                  entry: Entry;
-                };
+                abilityEntry?: Entry;
                 signatureSpells?: {
                   entry: Entry;
                 };
@@ -6037,9 +6035,7 @@ export type Entry =
                 referenceSources?: ReferenceSources;
                 reprintedAs?: ReprintedAs;
                 type?: "Demonic";
-                ability?: {
-                  entry: Entry;
-                };
+                abilityEntry?: Entry;
                 signatureSpells?: {
                   entry: Entry;
                 };
@@ -8509,9 +8505,7 @@ export type Entry =
                   | "Fragment of Suffering"
                   | "Other"
                   | "Piety Trait";
-                ability?: {
-                  entry: Entry;
-                };
+                abilityEntry?: Entry;
                 rarity?: "rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common";
                 additionalSpells?: AdditionalSpellsArray;
                 entries: Entry[];
@@ -8544,9 +8538,7 @@ export type Entry =
                   | "Fragment of Suffering"
                   | "Other"
                   | "Piety Trait";
-                ability?: {
-                  entry: Entry;
-                };
+                abilityEntry?: Entry;
                 rarity?: "rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common";
                 additionalSpells?: AdditionalSpellsArray;
                 entries?: Entry[];
