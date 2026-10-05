@@ -2132,8 +2132,122 @@ export type Entry =
   | EntryDice
   | EntryAbilityDc
   | EntryAbilityAttackMod
-  | AbilityGeneric
-  | EntryLink
+  | (
+      | {
+          name?: string;
+          type: "abilityGeneric";
+          source?: string;
+          page?: string | number;
+          data?: _EntryDataData;
+          id?: string;
+          srd?: boolean | string;
+          srd52?: boolean | string;
+          basicRules?: true;
+          basicRules2024?: true;
+          text: string;
+          attributes?: ("str" | "dex" | "con" | "int" | "wis" | "cha")[];
+        }
+      | {
+          name?: string;
+          type: "abilityGeneric";
+          source?: string;
+          page?: string | number;
+          data?: _EntryDataData;
+          id?: string;
+          srd?: boolean | string;
+          srd52?: boolean | string;
+          basicRules?: true;
+          basicRules2024?: true;
+          entry: string;
+          attributes?: ("str" | "dex" | "con" | "int" | "wis" | "cha")[];
+        }
+    )
+  | (
+      | {
+          name?: string;
+          type: "link";
+          source?: string;
+          page?: string | number;
+          data?: _EntryDataData;
+          id?: string;
+          srd?: boolean | string;
+          srd52?: boolean | string;
+          basicRules?: true;
+          basicRules2024?: true;
+          text: string;
+          href:
+            | {
+                type?: "internal";
+                path: string;
+                hash?: string;
+                hashPreEncoded?: boolean;
+                subhashes?: (
+                  | {
+                      key: string;
+                      values: string[];
+                      preEncoded?: boolean;
+                    }
+                  | {
+                      key: string;
+                      value: string;
+                      preEncoded?: boolean;
+                    }
+                )[];
+                hover?: {
+                  page: string | number;
+                  source: string;
+                  /**
+                   * Optional; overrides the href hash for hover handlers.
+                   */
+                  hash?: string;
+                  hashPreEncoded?: boolean;
+                };
+              }
+            | MediaHrefExternal;
+        }
+      | {
+          name?: string;
+          type: "link";
+          source?: string;
+          page?: string | number;
+          data?: _EntryDataData;
+          id?: string;
+          srd?: boolean | string;
+          srd52?: boolean | string;
+          basicRules?: true;
+          basicRules2024?: true;
+          entry: string;
+          href:
+            | {
+                type?: "internal";
+                path: string;
+                hash?: string;
+                hashPreEncoded?: boolean;
+                subhashes?: (
+                  | {
+                      key: string;
+                      values: string[];
+                      preEncoded?: boolean;
+                    }
+                  | {
+                      key: string;
+                      value: string;
+                      preEncoded?: boolean;
+                    }
+                )[];
+                hover?: {
+                  page: string | number;
+                  source: string;
+                  /**
+                   * Optional; overrides the href hash for hover handlers.
+                   */
+                  hash?: string;
+                  hashPreEncoded?: boolean;
+                };
+              }
+            | MediaHrefExternal;
+        }
+    )
   | EntryOptFeature
   | EntryInset
   | EntryInsetReadaloud
@@ -12423,6 +12537,10221 @@ export type Entry =
           style?: "inset" | "narrow";
           collapsed?: true;
         }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "monster";
+          statblockData:
+            | {
+                name: string;
+                /**
+                 * Used anywhere a shortened form of the creatures name is required (e.g. in legendary action headers).
+                 *
+                 * If not supplied, a shortened name will be automatically generated from the creature's full name.
+                 *
+                 * Alternatively use "true" if the "shortName" should be an exact copy of the creature's "name".
+                 */
+                shortName?: string | boolean;
+                alias?: Alias1;
+                group?: Group1;
+                /**
+                 * Used in sidekicks, which can have levels (and generally do not have alignment)
+                 */
+                level?: number;
+                /**
+                 * Items: - F: Fine
+                 * - D: Diminutive
+                 * - T: Tiny
+                 * - S: Small
+                 * - M: Medium
+                 * - L: Large
+                 * - H: Huge
+                 * - G: Gargantuan
+                 * - C: Colossal
+                 * - V: Varies.
+                 */
+                size: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                sizeNote?: string;
+                type:
+                  | {
+                      type:
+                        | (
+                            | "aberration"
+                            | "beast"
+                            | "celestial"
+                            | "construct"
+                            | "dragon"
+                            | "elemental"
+                            | "fey"
+                            | "fiend"
+                            | "giant"
+                            | "humanoid"
+                            | "monstrosity"
+                            | "ooze"
+                            | "plant"
+                            | "undead"
+                            | "vehicle"
+                          )
+                        | {
+                            choose: (
+                              | "aberration"
+                              | "beast"
+                              | "celestial"
+                              | "construct"
+                              | "dragon"
+                              | "elemental"
+                              | "fey"
+                              | "fiend"
+                              | "giant"
+                              | "humanoid"
+                              | "monstrosity"
+                              | "ooze"
+                              | "plant"
+                              | "undead"
+                              | "vehicle"
+                            )[];
+                          };
+                      /**
+                       * - F: Fine
+                       * - D: Diminutive
+                       * - T: Tiny
+                       * - S: Small
+                       * - M: Medium
+                       * - L: Large
+                       * - H: Huge
+                       * - G: Gargantuan
+                       * - C: Colossal
+                       * - V: Varies.
+                       */
+                      swarmSize?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                      tags?: (
+                        | string
+                        | {
+                            tag: string;
+                            prefix: string;
+                            prefixHidden?: true;
+                          }
+                      )[];
+                      sidekickType?: "expert" | "spellcaster" | "warrior";
+                      sidekickTags?: (
+                        | string
+                        | {
+                            tag: string;
+                            prefix: string;
+                            prefixHidden?: true;
+                          }
+                      )[];
+                      sidekickHidden?: true;
+                      note?: string;
+                    }
+                  | (
+                      | "aberration"
+                      | "beast"
+                      | "celestial"
+                      | "construct"
+                      | "dragon"
+                      | "elemental"
+                      | "fey"
+                      | "fiend"
+                      | "giant"
+                      | "humanoid"
+                      | "monstrosity"
+                      | "ooze"
+                      | "plant"
+                      | "undead"
+                      | "vehicle"
+                    );
+                source: string;
+                /**
+                 * Sub-source text that is shown when hovered.
+                 */
+                sourceSub?: string;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * Prefer "reprintedAs", where available.
+                 */
+                isReprinted?: true;
+                alignment?: (
+                  | ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")
+                  | {
+                      /**
+                       * Items: - L: Lawful
+                       * - N: Neutral
+                       * - NX: Neutral (law/chaos axis)
+                       * - NY: Neutral (good/evil axis)
+                       * - C: Chaotic
+                       * - G: Good
+                       * - E: Evil
+                       * - U: Unaligned
+                       * - A: Any
+                       */
+                      alignment: ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")[];
+                      chance?: number;
+                      note?: string;
+                    }
+                  | {
+                      special: string;
+                    }
+                )[];
+                alignmentPrefix?: string;
+                ac?: (
+                  | {
+                      ac: number;
+                      from?: string[];
+                      condition?: string;
+                      braces?: true;
+                    }
+                  | {
+                      special: string;
+                    }
+                  | number
+                )[];
+                hp?:
+                  | {
+                      average: number;
+                      formula: string;
+                    }
+                  | {
+                      special: string;
+                    };
+                speed?:
+                  | {
+                      walk?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      burrow?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      climb?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      fly?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      canHover?: true;
+                      swim?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      choose?: {
+                        /**
+                         * @minItems 2
+                         */
+                        from: [
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                        ];
+                        amount: number;
+                        note?: string;
+                      };
+                      alternate?: {
+                        walk?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        burrow?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        climb?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        fly?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        swim?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * @minItems 1
+                       */
+                      hidden?: [
+                        "walk" | "burrow" | "climb" | "fly" | "swim",
+                        ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                      ];
+                    }
+                  | number
+                  | "Varies";
+                initiative?:
+                  | {
+                      initiative?: number;
+                      /**
+                       * - 1: Proficient
+                       * - 2: Expertise
+                       *
+                       * This interface was referenced by `undefined`'s JSON-Schema definition
+                       * via the `patternProperty` "".
+                       *
+                       * This interface was referenced by `undefined`'s JSON-Schema definition
+                       * via the `patternProperty` "".
+                       */
+                      proficiency?: 1 | 2;
+                      advantageMode?: "adv" | "dis";
+                    }
+                  | number;
+                str?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                dex?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                con?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                int?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                wis?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                cha?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                save?: {
+                  str?: string;
+                  dex?: string;
+                  con?: string;
+                  int?: string;
+                  wis?: string;
+                  cha?: string;
+                };
+                skill?: {
+                  acrobatics?: string;
+                  "animal handling"?: string;
+                  arcana?: string;
+                  athletics?: string;
+                  deception?: string;
+                  history?: string;
+                  insight?: string;
+                  intimidation?: string;
+                  investigation?: string;
+                  medicine?: string;
+                  nature?: string;
+                  perception?: string;
+                  performance?: string;
+                  persuasion?: string;
+                  religion?: string;
+                  "sleight of hand"?: string;
+                  stealth?: string;
+                  survival?: string;
+                  other?: {
+                    oneOf?: {
+                      acrobatics?: string;
+                      "animal handling"?: string;
+                      arcana?: string;
+                      athletics?: string;
+                      deception?: string;
+                      history?: string;
+                      insight?: string;
+                      intimidation?: string;
+                      investigation?: string;
+                      medicine?: string;
+                      nature?: string;
+                      perception?: string;
+                      performance?: string;
+                      persuasion?: string;
+                      religion?: string;
+                      "sleight of hand"?: string;
+                      stealth?: string;
+                      survival?: string;
+                      [k: string]: unknown;
+                    };
+                    [k: string]: unknown;
+                  }[];
+                };
+                tool?: {
+                  "artisan's tools"?: string;
+                  "alchemist's supplies"?: string;
+                  "brewer's supplies"?: string;
+                  "calligrapher's supplies"?: string;
+                  "carpenter's tools"?: string;
+                  "cartographer's tools"?: string;
+                  "cobbler's tools"?: string;
+                  "cook's utensils"?: string;
+                  "glassblower's tools"?: string;
+                  "jeweler's tools"?: string;
+                  "leatherworker's tools"?: string;
+                  "mason's tools"?: string;
+                  "painter's supplies"?: string;
+                  "potter's tools"?: string;
+                  "smith's tools"?: string;
+                  "tinker's tools"?: string;
+                  "weaver's tools"?: string;
+                  "woodcarver's tools"?: string;
+                  "disguise kit"?: string;
+                  "forgery kit"?: string;
+                  "gaming set"?: string;
+                  "dragonchess set"?: string;
+                  "dice set"?: string;
+                  "three-dragon ante set"?: string;
+                  "playing card set"?: string;
+                  "herbalism kit"?: string;
+                  "musical instrument"?: string;
+                  bagpipes?: string;
+                  drum?: string;
+                  dulcimer?: string;
+                  flute?: string;
+                  horn?: string;
+                  lute?: string;
+                  lyre?: string;
+                  "pan flute"?: string;
+                  shawm?: string;
+                  viol?: string;
+                  "navigator's tools"?: string;
+                  "thieves' tools"?: string;
+                  "poisoner's kit"?: string;
+                  vehicles?: string;
+                  "vehicles (air)"?: string;
+                  "vehicles (land)"?: string;
+                  "vehicles (water)"?: string;
+                  "vehicles (space)"?: string;
+                };
+                gear?: (
+                  | string
+                  | {
+                      /**
+                       * An item UID, e.g. "longsword|phb"
+                       */
+                      item: string;
+                      quantity?: number;
+                      displayName?: string;
+                    }
+                )[];
+                senses?: [string, ...string[]] | null;
+                passive?: number | string | null;
+                languages?: [string, ...string[]] | null;
+                pbNote?: string;
+                cr?:
+                  | string
+                  | {
+                      cr: string;
+                      lair?: string;
+                      coven?: string;
+                      xp?: number;
+                      xpLair?: number;
+                    };
+                vulnerable?: DamageVulnerabilityArray1;
+                resist?: DamageResistArray1;
+                immune?: DamageImmunityArray1;
+                conditionImmune?: ConditionImmunityArray1;
+                spellcasting?: EntrySpellcasting[] | null;
+                trait?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                        type?: "entries" | "inset";
+                        /**
+                         * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                         */
+                        sort?: number;
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                        type?: "entries" | "inset";
+                        /**
+                         * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                         */
+                        sort?: number;
+                      }[]
+                    ]
+                  | null;
+                actionNote?: string;
+                /**
+                 * @minItems 1
+                 */
+                actionHeader?: [Entry, ...Entry[]];
+                action?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                bonusNote?: string;
+                /**
+                 * @minItems 1
+                 */
+                bonusHeader?: [Entry, ...Entry[]];
+                bonus?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                reactionNote?: string;
+                /**
+                 * @minItems 1
+                 */
+                reactionHeader?: [Entry, ...Entry[]];
+                reaction?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                legendaryGroup?: {
+                  name: string;
+                  source: string;
+                };
+                legendaryActions?: number;
+                legendaryActionsLair?: number;
+                /**
+                 * @minItems 1
+                 */
+                legendaryHeader?: [Entry, ...Entry[]];
+                legendary?:
+                  | [
+                      {
+                        name?: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name?: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                /**
+                 * @minItems 1
+                 */
+                mythicHeader?: [Entry, ...Entry[]];
+                mythic?:
+                  | [
+                      {
+                        name?: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name?: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                variant?:
+                  | (
+                      | {
+                          name: string;
+                          type: "variant";
+                          source?: string;
+                          page?: string | number;
+                          data?: _EntryDataData;
+                          id?: string;
+                          srd?: boolean | string;
+                          srd52?: boolean | string;
+                          basicRules?: true;
+                          basicRules2024?: true;
+                          entries: Entry[];
+                          token?: {
+                            name: string;
+                            source: string;
+                            page?: string | number;
+                            [k: string]: unknown;
+                          };
+                          _version?:
+                            | {
+                                name?: string;
+                                source?: string;
+                                addAs: string;
+                              }
+                            | {
+                                name?: string;
+                                source?: string;
+                                addHeadersAs: string;
+                              };
+                        }
+                      | {
+                          name?: string;
+                          type: "inset";
+                          source?: string;
+                          page?: string | number;
+                          data?: _EntryDataData;
+                          id?: string;
+                          srd?: boolean | string;
+                          srd52?: boolean | string;
+                          basicRules?: true;
+                          basicRules2024?: true;
+                          entries: Entry[];
+                          style?: string;
+                          token?: {
+                            name: string;
+                            source: string;
+                            page?: string | number;
+                            [k: string]: unknown;
+                          };
+                          _version?:
+                            | {
+                                name?: string;
+                                source?: string;
+                                addAs: string;
+                              }
+                            | {
+                                name?: string;
+                                source?: string;
+                                addHeadersAs: string;
+                              };
+                        }
+                    )[]
+                  | null;
+                page?: string | number;
+                familiar?: true | null;
+                additionalSources?: AdditionalSources1;
+                hasToken?: true;
+                tokenCredit?: string;
+                tokenCustom?: true;
+                foundryTokenScale?: number;
+                altArt?: AltArt;
+                token?: Token;
+                isNamedCreature?: true | null;
+                /**
+                 * Used to flag adventure NPCs
+                 */
+                isNpc?: true | null;
+                /**
+                 * @minItems 1
+                 */
+                environment?: [
+                  (
+                    | "any"
+                    | "underwater"
+                    | "coastal"
+                    | "mountain"
+                    | "grassland"
+                    | "hill"
+                    | "arctic"
+                    | "urban"
+                    | "forest"
+                    | "swamp"
+                    | "underdark"
+                    | "desert"
+                    | "badlands"
+                    | "farmland"
+                    | "planar"
+                    | "planar, transitive"
+                    | "planar, elemental"
+                    | "planar, inner"
+                    | "planar, upper"
+                    | "planar, lower"
+                    | "planar, feywild"
+                    | "planar, shadowfell"
+                    | "planar, water"
+                    | "planar, earth"
+                    | "planar, fire"
+                    | "planar, air"
+                    | "planar, ooze"
+                    | "planar, magma"
+                    | "planar, ash"
+                    | "planar, ice"
+                    | "planar, elemental chaos"
+                    | "planar, ethereal"
+                    | "planar, astral"
+                    | "planar, arborea"
+                    | "planar, arcadia"
+                    | "planar, beastlands"
+                    | "planar, bytopia"
+                    | "planar, elysium"
+                    | "planar, mount celestia"
+                    | "planar, ysgard"
+                    | "planar, abyss"
+                    | "planar, acheron"
+                    | "planar, carceri"
+                    | "planar, gehenna"
+                    | "planar, hades"
+                    | "planar, nine hells"
+                    | "planar, pandemonium"
+                    | "planar, limbo"
+                    | "planar, mechanus"
+                    | "planar, outlands"
+                  ),
+                  ...(
+                    | "any"
+                    | "underwater"
+                    | "coastal"
+                    | "mountain"
+                    | "grassland"
+                    | "hill"
+                    | "arctic"
+                    | "urban"
+                    | "forest"
+                    | "swamp"
+                    | "underdark"
+                    | "desert"
+                    | "badlands"
+                    | "farmland"
+                    | "planar"
+                    | "planar, transitive"
+                    | "planar, elemental"
+                    | "planar, inner"
+                    | "planar, upper"
+                    | "planar, lower"
+                    | "planar, feywild"
+                    | "planar, shadowfell"
+                    | "planar, water"
+                    | "planar, earth"
+                    | "planar, fire"
+                    | "planar, air"
+                    | "planar, ooze"
+                    | "planar, magma"
+                    | "planar, ash"
+                    | "planar, ice"
+                    | "planar, elemental chaos"
+                    | "planar, ethereal"
+                    | "planar, astral"
+                    | "planar, arborea"
+                    | "planar, arcadia"
+                    | "planar, beastlands"
+                    | "planar, bytopia"
+                    | "planar, elysium"
+                    | "planar, mount celestia"
+                    | "planar, ysgard"
+                    | "planar, abyss"
+                    | "planar, acheron"
+                    | "planar, carceri"
+                    | "planar, gehenna"
+                    | "planar, hades"
+                    | "planar, nine hells"
+                    | "planar, pandemonium"
+                    | "planar, limbo"
+                    | "planar, mechanus"
+                    | "planar, outlands"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                treasure?: [
+                  "any" | "individual" | "arcana" | "armaments" | "implements" | "relics",
+                  ...("any" | "individual" | "arcana" | "armaments" | "implements" | "relics")[]
+                ];
+                soundClip?: MediaHrefInternal | MediaHrefExternal;
+                dragonCastingColor?:
+                  | "black"
+                  | "blue"
+                  | "green"
+                  | "red"
+                  | "white"
+                  | "brass"
+                  | "bronze"
+                  | "copper"
+                  | "gold"
+                  | "silver"
+                  | "deep"
+                  | "spirit";
+                dragonAge?: "young" | "adult" | "wyrmling" | "greatwyrm" | "ancient" | "aspect";
+                traitTags?: (
+                  | "Aggressive"
+                  | "Ambusher"
+                  | "Amorphous"
+                  | "Amphibious"
+                  | "Antimagic Susceptibility"
+                  | "Beast of Burden"
+                  | "Brute"
+                  | "Camouflage"
+                  | "Charge"
+                  | "Damage Absorption"
+                  | "Death Burst"
+                  | "Devil's Sight"
+                  | "Ethereal Sight"
+                  | "False Appearance"
+                  | "Fey Ancestry"
+                  | "Flyby"
+                  | "Hold Breath"
+                  | "Illumination"
+                  | "Immutable Form"
+                  | "Incorporeal Movement"
+                  | "Keen Senses"
+                  | "Legendary Resistances"
+                  | "Light Sensitivity"
+                  | "Magic Resistance"
+                  | "Magic Weapons"
+                  | "Mimicry"
+                  | "Pack Tactics"
+                  | "Pounce"
+                  | "Rampage"
+                  | "Reckless"
+                  | "Regeneration"
+                  | "Rejuvenation"
+                  | "Shapechanger"
+                  | "Siege Monster"
+                  | "Sneak Attack"
+                  | "Spell Immunity"
+                  | "Spider Climb"
+                  | "Sunlight Sensitivity"
+                  | "Sure-Footed"
+                  | "Tree Stride"
+                  | "Tunneler"
+                  | "Turn Immunity"
+                  | "Turn Resistance"
+                  | "Undead Fortitude"
+                  | "Unusual Nature"
+                  | "Water Breathing"
+                  | "Web Sense"
+                  | "Web Walker"
+                )[];
+                actionTags?: (
+                  | "Breath Weapon"
+                  | "Frightful Presence"
+                  | "Multiattack"
+                  | "Parry"
+                  | "Shapechanger"
+                  | "Swallow"
+                  | "Teleport"
+                  | "Tentacles"
+                )[];
+                /**
+                 * Items: - X: Any (Choose)
+                 * - XX: All
+                 * - CS: Can't Speak Known Languages
+                 * - LF: Languages Known in Life
+                 * - TP: Telepathy
+                 * - OTH: Other
+                 * - -
+                 * - AB: Abyssal
+                 * - AQ: Aquan
+                 * - AU: Auran
+                 * - C: Common
+                 * - CE: Celestial
+                 * - CSL: Common Sign Language
+                 * - D: Dwarvish
+                 * - DR: Draconic
+                 * - DS: Deep Speech
+                 * - DU: Druidic
+                 * - E: Elvish
+                 * - G: Gnomish
+                 * - GI: Giant
+                 * - GO: Goblin
+                 * - GTH: Gith
+                 * - H: Halfling
+                 * - I: Infernal
+                 * - IG: Ignan
+                 * - O: Orc
+                 * - P: Primordial
+                 * - S: Sylvan
+                 * - T: Terran
+                 * - TC: Thieves' cant
+                 * - U: Undercommon
+                 */
+                languageTags?: (
+                  | "X"
+                  | "XX"
+                  | "CS"
+                  | "LF"
+                  | "TP"
+                  | "OTH"
+                  | "AB"
+                  | "AQ"
+                  | "AU"
+                  | "C"
+                  | "CE"
+                  | "CSL"
+                  | "D"
+                  | "DR"
+                  | "DS"
+                  | "DU"
+                  | "E"
+                  | "G"
+                  | "GI"
+                  | "GO"
+                  | "GTH"
+                  | "H"
+                  | "I"
+                  | "IG"
+                  | "O"
+                  | "P"
+                  | "S"
+                  | "T"
+                  | "TC"
+                  | "U"
+                )[];
+                /**
+                 * Items: - B: Blindsight
+                 * - D: Darkvision
+                 * - SD: Superior Darkvision
+                 * - T: Tremorsense
+                 * - U: Truesight
+                 */
+                senseTags?: ("B" | "D" | "SD" | "T" | "U")[];
+                /**
+                 * Items: - P: Psionics
+                 * - I: Innate
+                 * - F: Form Only
+                 * - S: Shared
+                 * - O: Other
+                 * - CA: Class, Artificer
+                 * - CB: Class, Bard
+                 * - CC: Class, Cleric
+                 * - CD: Class, Druid
+                 * - CP: Class, Paladin
+                 * - CR: Class, Ranger
+                 * - CS: Class, Sorcerer
+                 * - CL: Class, Warlock
+                 * - CW: Class, Wizard
+                 */
+                spellcastingTags?: (
+                  "P" | "I" | "F" | "S" | "O" | "CA" | "CB" | "CC" | "CD" | "CP" | "CR" | "CS" | "CL" | "CW"
+                )[];
+                /**
+                 * Items: - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                damageTags?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                /**
+                 * Items: - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                damageTagsSpell?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                /**
+                 * Items: - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                damageTagsLegendary?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                /**
+                 * Items: - AOE: Has Areas of Effect
+                 * - CUR: Inflicts Curse
+                 * - DIS: Inflicts Disease
+                 * - HPR: Has HP Reduction
+                 * - MW: Has Weapon Attacks, Melee
+                 * - RW: Has Weapon Attacks, Ranged
+                 * - MA: Has Attacks, Melee
+                 * - RA: Has Attacks, Ranged
+                 * - RCH: Has Reach Attacks
+                 * - MLW: Has Melee Weapons
+                 * - RNG: Has Ranged Weapons
+                 * - THW: Has Thrown Weapons
+                 */
+                miscTags?: (
+                  "AOE" | "CUR" | "DIS" | "HPR" | "MW" | "RW" | "MA" | "RA" | "RCH" | "MLW" | "RNG" | "THW"
+                )[];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: A UID, e.g. "longsword|phb"
+                 */
+                attachedItems?: [string, ...string[]];
+                conditionInflict?: TagsConditions;
+                conditionInflictLegendary?: TagsConditions;
+                conditionInflictSpell?: TagsConditions;
+                savingThrowForced?: TagsSavingThrow;
+                savingThrowForcedLegendary?: TagsSavingThrow;
+                savingThrowForcedSpell?: TagsSavingThrow;
+                /**
+                 * Intended for homebrew use only.
+                 */
+                footer?: Entry[];
+                legacy?: true;
+                /**
+                 * The spell used to summon this creature; specifically for TCE-esque summon spells.
+                 */
+                summonedBySpell?: string;
+                /**
+                 * The level of the spell used to summon this creature; specifically for TCE-esque summon spells.
+                 */
+                summonedBySpellLevel?: number;
+                /**
+                 * The class which can summon this creature; e.g. for those granted by some TCE class features.
+                 */
+                summonedByClass?: string;
+                /**
+                 * If this creature should be scalable by summoning/owning player level.
+                 */
+                summonedScaleByPlayerLevel?: true;
+                /**
+                 * An internal flag indicating this creature is a copy of another, and is a temporary/placeholder entry which will be factored out using the "_copy" format at a later date.
+                 */
+                _isCopy?: boolean;
+                _versions?: (
+                  | (
+                      | {
+                          name: string;
+                          source: string;
+                          _mod?: _ModObject;
+                          _templates?: _TemplatesArray;
+                          _preserve?: _PreserveObject;
+                          [k: string]: unknown;
+                        }
+                      | {
+                          _abstract: {
+                            name: string;
+                            source: string;
+                            _mod: _ModObject;
+                            _preserve?: _PreserveObject1;
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          _implementations: [
+                            {
+                              _variables: {
+                                [k: string]: unknown;
+                              };
+                              [k: string]: unknown;
+                            },
+                            ...{
+                              _variables: {
+                                [k: string]: unknown;
+                              };
+                              [k: string]: unknown;
+                            }[]
+                          ];
+                        }
+                    )
+                  | CreatureData
+                )[];
+                hasFluff?: true;
+                hasFluffImages?: true;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                /**
+                 * Used anywhere a shortened form of the creatures name is required (e.g. in legendary action headers).
+                 *
+                 * If not supplied, a shortened name will be automatically generated from the creature's full name.
+                 *
+                 * Alternatively use "true" if the "shortName" should be an exact copy of the creature's "name".
+                 */
+                shortName?: string | boolean;
+                alias?: Alias1;
+                group?: Group1;
+                /**
+                 * Used in sidekicks, which can have levels (and generally do not have alignment)
+                 */
+                level?: number;
+                /**
+                 * Items: - F: Fine
+                 * - D: Diminutive
+                 * - T: Tiny
+                 * - S: Small
+                 * - M: Medium
+                 * - L: Large
+                 * - H: Huge
+                 * - G: Gargantuan
+                 * - C: Colossal
+                 * - V: Varies.
+                 */
+                size?: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                sizeNote?: string;
+                type?:
+                  | {
+                      type:
+                        | (
+                            | "aberration"
+                            | "beast"
+                            | "celestial"
+                            | "construct"
+                            | "dragon"
+                            | "elemental"
+                            | "fey"
+                            | "fiend"
+                            | "giant"
+                            | "humanoid"
+                            | "monstrosity"
+                            | "ooze"
+                            | "plant"
+                            | "undead"
+                            | "vehicle"
+                          )
+                        | {
+                            choose: (
+                              | "aberration"
+                              | "beast"
+                              | "celestial"
+                              | "construct"
+                              | "dragon"
+                              | "elemental"
+                              | "fey"
+                              | "fiend"
+                              | "giant"
+                              | "humanoid"
+                              | "monstrosity"
+                              | "ooze"
+                              | "plant"
+                              | "undead"
+                              | "vehicle"
+                            )[];
+                          };
+                      /**
+                       * - F: Fine
+                       * - D: Diminutive
+                       * - T: Tiny
+                       * - S: Small
+                       * - M: Medium
+                       * - L: Large
+                       * - H: Huge
+                       * - G: Gargantuan
+                       * - C: Colossal
+                       * - V: Varies.
+                       */
+                      swarmSize?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                      tags?: (
+                        | string
+                        | {
+                            tag: string;
+                            prefix: string;
+                            prefixHidden?: true;
+                          }
+                      )[];
+                      sidekickType?: "expert" | "spellcaster" | "warrior";
+                      sidekickTags?: (
+                        | string
+                        | {
+                            tag: string;
+                            prefix: string;
+                            prefixHidden?: true;
+                          }
+                      )[];
+                      sidekickHidden?: true;
+                      note?: string;
+                    }
+                  | (
+                      | "aberration"
+                      | "beast"
+                      | "celestial"
+                      | "construct"
+                      | "dragon"
+                      | "elemental"
+                      | "fey"
+                      | "fiend"
+                      | "giant"
+                      | "humanoid"
+                      | "monstrosity"
+                      | "ooze"
+                      | "plant"
+                      | "undead"
+                      | "vehicle"
+                    );
+                source?: string;
+                /**
+                 * Sub-source text that is shown when hovered.
+                 */
+                sourceSub?: string;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * Prefer "reprintedAs", where available.
+                 */
+                isReprinted?: true;
+                alignment?: (
+                  | ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")
+                  | {
+                      /**
+                       * Items: - L: Lawful
+                       * - N: Neutral
+                       * - NX: Neutral (law/chaos axis)
+                       * - NY: Neutral (good/evil axis)
+                       * - C: Chaotic
+                       * - G: Good
+                       * - E: Evil
+                       * - U: Unaligned
+                       * - A: Any
+                       */
+                      alignment: ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")[];
+                      chance?: number;
+                      note?: string;
+                    }
+                  | {
+                      special: string;
+                    }
+                )[];
+                alignmentPrefix?: string;
+                ac?: (
+                  | {
+                      ac: number;
+                      from?: string[];
+                      condition?: string;
+                      braces?: true;
+                    }
+                  | {
+                      special: string;
+                    }
+                  | number
+                )[];
+                hp?:
+                  | {
+                      average: number;
+                      formula: string;
+                    }
+                  | {
+                      special: string;
+                    };
+                speed?:
+                  | {
+                      walk?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      burrow?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      climb?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      fly?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      canHover?: true;
+                      swim?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      choose?: {
+                        /**
+                         * @minItems 2
+                         */
+                        from: [
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                        ];
+                        amount: number;
+                        note?: string;
+                      };
+                      alternate?: {
+                        walk?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        burrow?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        climb?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        fly?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        swim?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * @minItems 1
+                       */
+                      hidden?: [
+                        "walk" | "burrow" | "climb" | "fly" | "swim",
+                        ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                      ];
+                    }
+                  | number
+                  | "Varies";
+                initiative?:
+                  | {
+                      initiative?: number;
+                      /**
+                       * - 1: Proficient
+                       * - 2: Expertise
+                       *
+                       * This interface was referenced by `undefined`'s JSON-Schema definition
+                       * via the `patternProperty` "".
+                       *
+                       * This interface was referenced by `undefined`'s JSON-Schema definition
+                       * via the `patternProperty` "".
+                       */
+                      proficiency?: 1 | 2;
+                      advantageMode?: "adv" | "dis";
+                    }
+                  | number;
+                str?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                dex?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                con?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                int?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                wis?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                cha?:
+                  | (number | null)
+                  | {
+                      special: string;
+                    };
+                save?: {
+                  str?: string;
+                  dex?: string;
+                  con?: string;
+                  int?: string;
+                  wis?: string;
+                  cha?: string;
+                };
+                skill?: {
+                  acrobatics?: string;
+                  "animal handling"?: string;
+                  arcana?: string;
+                  athletics?: string;
+                  deception?: string;
+                  history?: string;
+                  insight?: string;
+                  intimidation?: string;
+                  investigation?: string;
+                  medicine?: string;
+                  nature?: string;
+                  perception?: string;
+                  performance?: string;
+                  persuasion?: string;
+                  religion?: string;
+                  "sleight of hand"?: string;
+                  stealth?: string;
+                  survival?: string;
+                  other?: {
+                    oneOf?: {
+                      acrobatics?: string;
+                      "animal handling"?: string;
+                      arcana?: string;
+                      athletics?: string;
+                      deception?: string;
+                      history?: string;
+                      insight?: string;
+                      intimidation?: string;
+                      investigation?: string;
+                      medicine?: string;
+                      nature?: string;
+                      perception?: string;
+                      performance?: string;
+                      persuasion?: string;
+                      religion?: string;
+                      "sleight of hand"?: string;
+                      stealth?: string;
+                      survival?: string;
+                      [k: string]: unknown;
+                    };
+                    [k: string]: unknown;
+                  }[];
+                };
+                tool?: {
+                  "artisan's tools"?: string;
+                  "alchemist's supplies"?: string;
+                  "brewer's supplies"?: string;
+                  "calligrapher's supplies"?: string;
+                  "carpenter's tools"?: string;
+                  "cartographer's tools"?: string;
+                  "cobbler's tools"?: string;
+                  "cook's utensils"?: string;
+                  "glassblower's tools"?: string;
+                  "jeweler's tools"?: string;
+                  "leatherworker's tools"?: string;
+                  "mason's tools"?: string;
+                  "painter's supplies"?: string;
+                  "potter's tools"?: string;
+                  "smith's tools"?: string;
+                  "tinker's tools"?: string;
+                  "weaver's tools"?: string;
+                  "woodcarver's tools"?: string;
+                  "disguise kit"?: string;
+                  "forgery kit"?: string;
+                  "gaming set"?: string;
+                  "dragonchess set"?: string;
+                  "dice set"?: string;
+                  "three-dragon ante set"?: string;
+                  "playing card set"?: string;
+                  "herbalism kit"?: string;
+                  "musical instrument"?: string;
+                  bagpipes?: string;
+                  drum?: string;
+                  dulcimer?: string;
+                  flute?: string;
+                  horn?: string;
+                  lute?: string;
+                  lyre?: string;
+                  "pan flute"?: string;
+                  shawm?: string;
+                  viol?: string;
+                  "navigator's tools"?: string;
+                  "thieves' tools"?: string;
+                  "poisoner's kit"?: string;
+                  vehicles?: string;
+                  "vehicles (air)"?: string;
+                  "vehicles (land)"?: string;
+                  "vehicles (water)"?: string;
+                  "vehicles (space)"?: string;
+                };
+                gear?: (
+                  | string
+                  | {
+                      /**
+                       * An item UID, e.g. "longsword|phb"
+                       */
+                      item: string;
+                      quantity?: number;
+                      displayName?: string;
+                    }
+                )[];
+                senses?: [string, ...string[]] | null;
+                passive?: number | string | null;
+                languages?: [string, ...string[]] | null;
+                pbNote?: string;
+                cr?:
+                  | string
+                  | {
+                      cr: string;
+                      lair?: string;
+                      coven?: string;
+                      xp?: number;
+                      xpLair?: number;
+                    };
+                vulnerable?: DamageVulnerabilityArray1;
+                resist?: DamageResistArray1;
+                immune?: DamageImmunityArray1;
+                conditionImmune?: ConditionImmunityArray1;
+                spellcasting?: EntrySpellcasting[] | null;
+                trait?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                        type?: "entries" | "inset";
+                        /**
+                         * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                         */
+                        sort?: number;
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                        type?: "entries" | "inset";
+                        /**
+                         * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                         */
+                        sort?: number;
+                      }[]
+                    ]
+                  | null;
+                actionNote?: string;
+                /**
+                 * @minItems 1
+                 */
+                actionHeader?: [Entry, ...Entry[]];
+                action?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                bonusNote?: string;
+                /**
+                 * @minItems 1
+                 */
+                bonusHeader?: [Entry, ...Entry[]];
+                bonus?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                reactionNote?: string;
+                /**
+                 * @minItems 1
+                 */
+                reactionHeader?: [Entry, ...Entry[]];
+                reaction?:
+                  | [
+                      {
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                legendaryGroup?: {
+                  name: string;
+                  source: string;
+                };
+                legendaryActions?: number;
+                legendaryActionsLair?: number;
+                /**
+                 * @minItems 1
+                 */
+                legendaryHeader?: [Entry, ...Entry[]];
+                legendary?:
+                  | [
+                      {
+                        name?: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name?: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                /**
+                 * @minItems 1
+                 */
+                mythicHeader?: [Entry, ...Entry[]];
+                mythic?:
+                  | [
+                      {
+                        name?: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        name?: string;
+                        entries: Entry[];
+                      }[]
+                    ]
+                  | null;
+                variant?:
+                  | (
+                      | {
+                          name: string;
+                          type: "variant";
+                          source?: string;
+                          page?: string | number;
+                          data?: _EntryDataData;
+                          id?: string;
+                          srd?: boolean | string;
+                          srd52?: boolean | string;
+                          basicRules?: true;
+                          basicRules2024?: true;
+                          entries: Entry[];
+                          token?: {
+                            name: string;
+                            source: string;
+                            page?: string | number;
+                            [k: string]: unknown;
+                          };
+                          _version?:
+                            | {
+                                name?: string;
+                                source?: string;
+                                addAs: string;
+                              }
+                            | {
+                                name?: string;
+                                source?: string;
+                                addHeadersAs: string;
+                              };
+                        }
+                      | {
+                          name?: string;
+                          type: "inset";
+                          source?: string;
+                          page?: string | number;
+                          data?: _EntryDataData;
+                          id?: string;
+                          srd?: boolean | string;
+                          srd52?: boolean | string;
+                          basicRules?: true;
+                          basicRules2024?: true;
+                          entries: Entry[];
+                          style?: string;
+                          token?: {
+                            name: string;
+                            source: string;
+                            page?: string | number;
+                            [k: string]: unknown;
+                          };
+                          _version?:
+                            | {
+                                name?: string;
+                                source?: string;
+                                addAs: string;
+                              }
+                            | {
+                                name?: string;
+                                source?: string;
+                                addHeadersAs: string;
+                              };
+                        }
+                    )[]
+                  | null;
+                page?: string | number;
+                familiar?: true | null;
+                additionalSources?: AdditionalSources1;
+                hasToken?: true;
+                tokenCredit?: string;
+                tokenCustom?: true;
+                foundryTokenScale?: number;
+                altArt?: AltArt;
+                token?: Token;
+                isNamedCreature?: true | null;
+                /**
+                 * Used to flag adventure NPCs
+                 */
+                isNpc?: true | null;
+                /**
+                 * @minItems 1
+                 */
+                environment?: [
+                  (
+                    | "any"
+                    | "underwater"
+                    | "coastal"
+                    | "mountain"
+                    | "grassland"
+                    | "hill"
+                    | "arctic"
+                    | "urban"
+                    | "forest"
+                    | "swamp"
+                    | "underdark"
+                    | "desert"
+                    | "badlands"
+                    | "farmland"
+                    | "planar"
+                    | "planar, transitive"
+                    | "planar, elemental"
+                    | "planar, inner"
+                    | "planar, upper"
+                    | "planar, lower"
+                    | "planar, feywild"
+                    | "planar, shadowfell"
+                    | "planar, water"
+                    | "planar, earth"
+                    | "planar, fire"
+                    | "planar, air"
+                    | "planar, ooze"
+                    | "planar, magma"
+                    | "planar, ash"
+                    | "planar, ice"
+                    | "planar, elemental chaos"
+                    | "planar, ethereal"
+                    | "planar, astral"
+                    | "planar, arborea"
+                    | "planar, arcadia"
+                    | "planar, beastlands"
+                    | "planar, bytopia"
+                    | "planar, elysium"
+                    | "planar, mount celestia"
+                    | "planar, ysgard"
+                    | "planar, abyss"
+                    | "planar, acheron"
+                    | "planar, carceri"
+                    | "planar, gehenna"
+                    | "planar, hades"
+                    | "planar, nine hells"
+                    | "planar, pandemonium"
+                    | "planar, limbo"
+                    | "planar, mechanus"
+                    | "planar, outlands"
+                  ),
+                  ...(
+                    | "any"
+                    | "underwater"
+                    | "coastal"
+                    | "mountain"
+                    | "grassland"
+                    | "hill"
+                    | "arctic"
+                    | "urban"
+                    | "forest"
+                    | "swamp"
+                    | "underdark"
+                    | "desert"
+                    | "badlands"
+                    | "farmland"
+                    | "planar"
+                    | "planar, transitive"
+                    | "planar, elemental"
+                    | "planar, inner"
+                    | "planar, upper"
+                    | "planar, lower"
+                    | "planar, feywild"
+                    | "planar, shadowfell"
+                    | "planar, water"
+                    | "planar, earth"
+                    | "planar, fire"
+                    | "planar, air"
+                    | "planar, ooze"
+                    | "planar, magma"
+                    | "planar, ash"
+                    | "planar, ice"
+                    | "planar, elemental chaos"
+                    | "planar, ethereal"
+                    | "planar, astral"
+                    | "planar, arborea"
+                    | "planar, arcadia"
+                    | "planar, beastlands"
+                    | "planar, bytopia"
+                    | "planar, elysium"
+                    | "planar, mount celestia"
+                    | "planar, ysgard"
+                    | "planar, abyss"
+                    | "planar, acheron"
+                    | "planar, carceri"
+                    | "planar, gehenna"
+                    | "planar, hades"
+                    | "planar, nine hells"
+                    | "planar, pandemonium"
+                    | "planar, limbo"
+                    | "planar, mechanus"
+                    | "planar, outlands"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                treasure?: [
+                  "any" | "individual" | "arcana" | "armaments" | "implements" | "relics",
+                  ...("any" | "individual" | "arcana" | "armaments" | "implements" | "relics")[]
+                ];
+                soundClip?: MediaHrefInternal | MediaHrefExternal;
+                dragonCastingColor?:
+                  | "black"
+                  | "blue"
+                  | "green"
+                  | "red"
+                  | "white"
+                  | "brass"
+                  | "bronze"
+                  | "copper"
+                  | "gold"
+                  | "silver"
+                  | "deep"
+                  | "spirit";
+                dragonAge?: "young" | "adult" | "wyrmling" | "greatwyrm" | "ancient" | "aspect";
+                traitTags?: (
+                  | "Aggressive"
+                  | "Ambusher"
+                  | "Amorphous"
+                  | "Amphibious"
+                  | "Antimagic Susceptibility"
+                  | "Beast of Burden"
+                  | "Brute"
+                  | "Camouflage"
+                  | "Charge"
+                  | "Damage Absorption"
+                  | "Death Burst"
+                  | "Devil's Sight"
+                  | "Ethereal Sight"
+                  | "False Appearance"
+                  | "Fey Ancestry"
+                  | "Flyby"
+                  | "Hold Breath"
+                  | "Illumination"
+                  | "Immutable Form"
+                  | "Incorporeal Movement"
+                  | "Keen Senses"
+                  | "Legendary Resistances"
+                  | "Light Sensitivity"
+                  | "Magic Resistance"
+                  | "Magic Weapons"
+                  | "Mimicry"
+                  | "Pack Tactics"
+                  | "Pounce"
+                  | "Rampage"
+                  | "Reckless"
+                  | "Regeneration"
+                  | "Rejuvenation"
+                  | "Shapechanger"
+                  | "Siege Monster"
+                  | "Sneak Attack"
+                  | "Spell Immunity"
+                  | "Spider Climb"
+                  | "Sunlight Sensitivity"
+                  | "Sure-Footed"
+                  | "Tree Stride"
+                  | "Tunneler"
+                  | "Turn Immunity"
+                  | "Turn Resistance"
+                  | "Undead Fortitude"
+                  | "Unusual Nature"
+                  | "Water Breathing"
+                  | "Web Sense"
+                  | "Web Walker"
+                )[];
+                actionTags?: (
+                  | "Breath Weapon"
+                  | "Frightful Presence"
+                  | "Multiattack"
+                  | "Parry"
+                  | "Shapechanger"
+                  | "Swallow"
+                  | "Teleport"
+                  | "Tentacles"
+                )[];
+                /**
+                 * Items: - X: Any (Choose)
+                 * - XX: All
+                 * - CS: Can't Speak Known Languages
+                 * - LF: Languages Known in Life
+                 * - TP: Telepathy
+                 * - OTH: Other
+                 * - -
+                 * - AB: Abyssal
+                 * - AQ: Aquan
+                 * - AU: Auran
+                 * - C: Common
+                 * - CE: Celestial
+                 * - CSL: Common Sign Language
+                 * - D: Dwarvish
+                 * - DR: Draconic
+                 * - DS: Deep Speech
+                 * - DU: Druidic
+                 * - E: Elvish
+                 * - G: Gnomish
+                 * - GI: Giant
+                 * - GO: Goblin
+                 * - GTH: Gith
+                 * - H: Halfling
+                 * - I: Infernal
+                 * - IG: Ignan
+                 * - O: Orc
+                 * - P: Primordial
+                 * - S: Sylvan
+                 * - T: Terran
+                 * - TC: Thieves' cant
+                 * - U: Undercommon
+                 */
+                languageTags?: (
+                  | "X"
+                  | "XX"
+                  | "CS"
+                  | "LF"
+                  | "TP"
+                  | "OTH"
+                  | "AB"
+                  | "AQ"
+                  | "AU"
+                  | "C"
+                  | "CE"
+                  | "CSL"
+                  | "D"
+                  | "DR"
+                  | "DS"
+                  | "DU"
+                  | "E"
+                  | "G"
+                  | "GI"
+                  | "GO"
+                  | "GTH"
+                  | "H"
+                  | "I"
+                  | "IG"
+                  | "O"
+                  | "P"
+                  | "S"
+                  | "T"
+                  | "TC"
+                  | "U"
+                )[];
+                /**
+                 * Items: - B: Blindsight
+                 * - D: Darkvision
+                 * - SD: Superior Darkvision
+                 * - T: Tremorsense
+                 * - U: Truesight
+                 */
+                senseTags?: ("B" | "D" | "SD" | "T" | "U")[];
+                /**
+                 * Items: - P: Psionics
+                 * - I: Innate
+                 * - F: Form Only
+                 * - S: Shared
+                 * - O: Other
+                 * - CA: Class, Artificer
+                 * - CB: Class, Bard
+                 * - CC: Class, Cleric
+                 * - CD: Class, Druid
+                 * - CP: Class, Paladin
+                 * - CR: Class, Ranger
+                 * - CS: Class, Sorcerer
+                 * - CL: Class, Warlock
+                 * - CW: Class, Wizard
+                 */
+                spellcastingTags?: (
+                  "P" | "I" | "F" | "S" | "O" | "CA" | "CB" | "CC" | "CD" | "CP" | "CR" | "CS" | "CL" | "CW"
+                )[];
+                /**
+                 * Items: - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                damageTags?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                /**
+                 * Items: - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                damageTagsSpell?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                /**
+                 * Items: - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                damageTagsLegendary?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                /**
+                 * Items: - AOE: Has Areas of Effect
+                 * - CUR: Inflicts Curse
+                 * - DIS: Inflicts Disease
+                 * - HPR: Has HP Reduction
+                 * - MW: Has Weapon Attacks, Melee
+                 * - RW: Has Weapon Attacks, Ranged
+                 * - MA: Has Attacks, Melee
+                 * - RA: Has Attacks, Ranged
+                 * - RCH: Has Reach Attacks
+                 * - MLW: Has Melee Weapons
+                 * - RNG: Has Ranged Weapons
+                 * - THW: Has Thrown Weapons
+                 */
+                miscTags?: (
+                  "AOE" | "CUR" | "DIS" | "HPR" | "MW" | "RW" | "MA" | "RA" | "RCH" | "MLW" | "RNG" | "THW"
+                )[];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: A UID, e.g. "longsword|phb"
+                 */
+                attachedItems?: [string, ...string[]];
+                conditionInflict?: TagsConditions;
+                conditionInflictLegendary?: TagsConditions;
+                conditionInflictSpell?: TagsConditions;
+                savingThrowForced?: TagsSavingThrow;
+                savingThrowForcedLegendary?: TagsSavingThrow;
+                savingThrowForcedSpell?: TagsSavingThrow;
+                /**
+                 * Intended for homebrew use only.
+                 */
+                footer?: Entry[];
+                legacy?: true;
+                /**
+                 * The spell used to summon this creature; specifically for TCE-esque summon spells.
+                 */
+                summonedBySpell?: string;
+                /**
+                 * The level of the spell used to summon this creature; specifically for TCE-esque summon spells.
+                 */
+                summonedBySpellLevel?: number;
+                /**
+                 * The class which can summon this creature; e.g. for those granted by some TCE class features.
+                 */
+                summonedByClass?: string;
+                /**
+                 * If this creature should be scalable by summoning/owning player level.
+                 */
+                summonedScaleByPlayerLevel?: true;
+                /**
+                 * An internal flag indicating this creature is a copy of another, and is a temporary/placeholder entry which will be factored out using the "_copy" format at a later date.
+                 */
+                _isCopy?: boolean;
+                _versions?: (
+                  | (
+                      | {
+                          name: string;
+                          source: string;
+                          _mod?: _ModObject;
+                          _templates?: _TemplatesArray;
+                          _preserve?: _PreserveObject;
+                          [k: string]: unknown;
+                        }
+                      | {
+                          _abstract: {
+                            name: string;
+                            source: string;
+                            _mod: _ModObject;
+                            _preserve?: _PreserveObject1;
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          _implementations: [
+                            {
+                              _variables: {
+                                [k: string]: unknown;
+                              };
+                              [k: string]: unknown;
+                            },
+                            ...{
+                              _variables: {
+                                [k: string]: unknown;
+                              };
+                              [k: string]: unknown;
+                            }[]
+                          ];
+                        }
+                    )
+                  | CreatureData
+                )[];
+                hasFluff?: true;
+                hasFluffImages?: true;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "legendaryGroup";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                /**
+                 * @minItems 1
+                 */
+                lairActions?: [Entry, ...Entry[]];
+                /**
+                 * @minItems 1
+                 */
+                regionalEffects?: [Entry, ...Entry[]];
+                /**
+                 * @minItems 1
+                 */
+                mythicEncounter?: [Entry, ...Entry[]];
+                _versions?: VersionsArray;
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                /**
+                 * @minItems 1
+                 */
+                lairActions?: [Entry, ...Entry[]];
+                /**
+                 * @minItems 1
+                 */
+                regionalEffects?: [Entry, ...Entry[]];
+                /**
+                 * @minItems 1
+                 */
+                mythicEncounter?: [Entry, ...Entry[]];
+                _versions?: VersionsArray;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "spell";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                level: number;
+                /**
+                 * - A: Abjuration
+                 * - C: Conjuration
+                 * - D: Divination
+                 * - E: Enchantment
+                 * - V: Evocation
+                 * - I: Illusion
+                 * - N: Necromancy
+                 * - T: Transmutation
+                 * - P: Psychic
+                 */
+                school: "A" | "C" | "D" | "E" | "V" | "I" | "N" | "T" | "P";
+                /**
+                 * @minItems 1
+                 */
+                subschools?: ["contaminated", ..."contaminated"[]];
+                meta?: {
+                  ritual?: boolean;
+                  technomagic?: boolean;
+                };
+                time: Time[];
+                range: {
+                  type:
+                    | "special"
+                    | "point"
+                    | "line"
+                    | "cube"
+                    | "cone"
+                    | "emanation"
+                    | "radius"
+                    | "sphere"
+                    | "hemisphere"
+                    | "cylinder";
+                  distance?: {
+                    type: "feet" | "yards" | "miles" | "self" | "touch" | "unlimited" | "plane" | "sight";
+                    amount?: number;
+                  };
+                };
+                components?: {
+                  v?: boolean;
+                  s?: boolean;
+                  m?:
+                    | {
+                        text: string;
+                        /**
+                         * In copper pieces.
+                         */
+                        cost?: number;
+                        consume?: boolean | "optional";
+                      }
+                    | (boolean | string);
+                  /**
+                   * "Royalty" components, as introduced in Acquisitions Incorporated
+                   */
+                  r?: boolean;
+                };
+                duration: DurationEffect;
+                entries: Entry[];
+                entriesHigherLevel?: Entry[];
+                source: string;
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                damageInflict?: (
+                  | "acid"
+                  | "bludgeoning"
+                  | "cold"
+                  | "fire"
+                  | "force"
+                  | "lightning"
+                  | "necrotic"
+                  | "piercing"
+                  | "poison"
+                  | "psychic"
+                  | "radiant"
+                  | "slashing"
+                  | "thunder"
+                )[];
+                /**
+                 * @minItems 1
+                 */
+                damageResist?: [
+                  (
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  ),
+                  ...(
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                damageImmune?: [
+                  (
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  ),
+                  ...(
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                damageVulnerable?: [
+                  (
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  ),
+                  ...(
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  )[]
+                ];
+                conditionInflict?: TagsConditions;
+                conditionImmune?: TagsConditions;
+                savingThrow?: TagsSavingThrow;
+                /**
+                 * @minItems 1
+                 */
+                abilityCheck?: [
+                  "strength" | "constitution" | "dexterity" | "intelligence" | "wisdom" | "charisma",
+                  ...("strength" | "constitution" | "dexterity" | "intelligence" | "wisdom" | "charisma")[]
+                ];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: - M: Melee
+                 * - R: Ranged
+                 * - O: Other/Unknown
+                 */
+                spellAttack?: ["M" | "R" | "O", ...("M" | "R" | "O")[]];
+                /**
+                 * By convention, only the effects of the spell cast at its base level are considered when populating these.
+                 *
+                 * - C: Cube
+                 * - E: Emanation
+                 * - H: Hemisphere
+                 * - L: Line
+                 * - MT: Multiple Targets
+                 * - N: Cone
+                 * - Q: Square
+                 * - R: Circle
+                 * - ST: Single Target
+                 * - S: Sphere
+                 * - W: Wall
+                 * - Y: Cylinder
+                 *
+                 * @minItems 1
+                 */
+                areaTags?: [
+                  "ST" | "MT" | "R" | "N" | "C" | "Y" | "H" | "E" | "L" | "S" | "Q" | "W",
+                  ...("ST" | "MT" | "R" | "N" | "C" | "Y" | "H" | "E" | "L" | "S" | "Q" | "W")[]
+                ];
+                /**
+                 * - AAD: Additional Attack Damage
+                 * - ADV: Grants Advantage
+                 * - BO: Burns Objects
+                 * - DFT: Difficult Terrain
+                 * - FMV: Forced Movement
+                 * - HL: Healing
+                 * - LGT: Creates Light
+                 * - LGTS: Creates Sunlight
+                 * - MAC: Modifies AC
+                 * - OBJ: Affects Objects
+                 * - OBS: Obscures Vision
+                 * - PIR: Permanent If Repeated
+                 * - PRM: Permanent Effects
+                 * - PS: Plane Shifting
+                 * - RO: Rollable Effects
+                 * - SCL: Scaling Effects
+                 * - SCT: Scaling Targets
+                 * - SMN: Summons Creature
+                 * - SGT: Requires Sight
+                 * - THP: Grants Temporary Hit Points
+                 * - TP: Teleportation
+                 * - UA: Uses Action
+                 * - UBA: Uses Bonus Action
+                 *
+                 * @minItems 1
+                 */
+                miscTags?: [
+                  (
+                    | "AAD"
+                    | "ADV"
+                    | "BO"
+                    | "DFT"
+                    | "FMV"
+                    | "HL"
+                    | "LGT"
+                    | "LGTS"
+                    | "MAC"
+                    | "OBJ"
+                    | "OBS"
+                    | "PIR"
+                    | "PRM"
+                    | "PS"
+                    | "RO"
+                    | "SCL"
+                    | "SCT"
+                    | "SMN"
+                    | "SGT"
+                    | "THP"
+                    | "TP"
+                    | "UA"
+                    | "UBA"
+                  ),
+                  ...(
+                    | "AAD"
+                    | "ADV"
+                    | "BO"
+                    | "DFT"
+                    | "FMV"
+                    | "HL"
+                    | "LGT"
+                    | "LGTS"
+                    | "MAC"
+                    | "OBJ"
+                    | "OBS"
+                    | "PIR"
+                    | "PRM"
+                    | "PS"
+                    | "RO"
+                    | "SCL"
+                    | "SCT"
+                    | "SMN"
+                    | "SGT"
+                    | "THP"
+                    | "TP"
+                    | "UA"
+                    | "UBA"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                affectsCreatureType?: [
+                  (
+                    | "aberration"
+                    | "beast"
+                    | "celestial"
+                    | "construct"
+                    | "dragon"
+                    | "elemental"
+                    | "fey"
+                    | "fiend"
+                    | "giant"
+                    | "humanoid"
+                    | "monstrosity"
+                    | "ooze"
+                    | "plant"
+                    | "undead"
+                    | "vehicle"
+                  ),
+                  ...(
+                    | "aberration"
+                    | "beast"
+                    | "celestial"
+                    | "construct"
+                    | "dragon"
+                    | "elemental"
+                    | "fey"
+                    | "fiend"
+                    | "giant"
+                    | "humanoid"
+                    | "monstrosity"
+                    | "ooze"
+                    | "plant"
+                    | "undead"
+                    | "vehicle"
+                  )[]
+                ];
+                legacy?: true;
+                scalingLevelDice?: ScalingLevelDiceItem[] | ScalingLevelDiceItem;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                level?: number;
+                /**
+                 * - A: Abjuration
+                 * - C: Conjuration
+                 * - D: Divination
+                 * - E: Enchantment
+                 * - V: Evocation
+                 * - I: Illusion
+                 * - N: Necromancy
+                 * - T: Transmutation
+                 * - P: Psychic
+                 */
+                school?: "A" | "C" | "D" | "E" | "V" | "I" | "N" | "T" | "P";
+                /**
+                 * @minItems 1
+                 */
+                subschools?: ["contaminated", ..."contaminated"[]];
+                meta?: {
+                  ritual?: boolean;
+                  technomagic?: boolean;
+                };
+                time?: Time[];
+                range?: {
+                  type:
+                    | "special"
+                    | "point"
+                    | "line"
+                    | "cube"
+                    | "cone"
+                    | "emanation"
+                    | "radius"
+                    | "sphere"
+                    | "hemisphere"
+                    | "cylinder";
+                  distance?: {
+                    type: "feet" | "yards" | "miles" | "self" | "touch" | "unlimited" | "plane" | "sight";
+                    amount?: number;
+                  };
+                };
+                components?: {
+                  v?: boolean;
+                  s?: boolean;
+                  m?:
+                    | {
+                        text: string;
+                        /**
+                         * In copper pieces.
+                         */
+                        cost?: number;
+                        consume?: boolean | "optional";
+                      }
+                    | (boolean | string);
+                  /**
+                   * "Royalty" components, as introduced in Acquisitions Incorporated
+                   */
+                  r?: boolean;
+                };
+                duration?: DurationEffect;
+                entries?: Entry[];
+                entriesHigherLevel?: Entry[];
+                source?: string;
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                damageInflict?: (
+                  | "acid"
+                  | "bludgeoning"
+                  | "cold"
+                  | "fire"
+                  | "force"
+                  | "lightning"
+                  | "necrotic"
+                  | "piercing"
+                  | "poison"
+                  | "psychic"
+                  | "radiant"
+                  | "slashing"
+                  | "thunder"
+                )[];
+                /**
+                 * @minItems 1
+                 */
+                damageResist?: [
+                  (
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  ),
+                  ...(
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                damageImmune?: [
+                  (
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  ),
+                  ...(
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                damageVulnerable?: [
+                  (
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  ),
+                  ...(
+                    | "acid"
+                    | "bludgeoning"
+                    | "cold"
+                    | "fire"
+                    | "force"
+                    | "lightning"
+                    | "necrotic"
+                    | "piercing"
+                    | "poison"
+                    | "psychic"
+                    | "radiant"
+                    | "slashing"
+                    | "thunder"
+                  )[]
+                ];
+                conditionInflict?: TagsConditions;
+                conditionImmune?: TagsConditions;
+                savingThrow?: TagsSavingThrow;
+                /**
+                 * @minItems 1
+                 */
+                abilityCheck?: [
+                  "strength" | "constitution" | "dexterity" | "intelligence" | "wisdom" | "charisma",
+                  ...("strength" | "constitution" | "dexterity" | "intelligence" | "wisdom" | "charisma")[]
+                ];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: - M: Melee
+                 * - R: Ranged
+                 * - O: Other/Unknown
+                 */
+                spellAttack?: ["M" | "R" | "O", ...("M" | "R" | "O")[]];
+                /**
+                 * By convention, only the effects of the spell cast at its base level are considered when populating these.
+                 *
+                 * - C: Cube
+                 * - E: Emanation
+                 * - H: Hemisphere
+                 * - L: Line
+                 * - MT: Multiple Targets
+                 * - N: Cone
+                 * - Q: Square
+                 * - R: Circle
+                 * - ST: Single Target
+                 * - S: Sphere
+                 * - W: Wall
+                 * - Y: Cylinder
+                 *
+                 * @minItems 1
+                 */
+                areaTags?: [
+                  "ST" | "MT" | "R" | "N" | "C" | "Y" | "H" | "E" | "L" | "S" | "Q" | "W",
+                  ...("ST" | "MT" | "R" | "N" | "C" | "Y" | "H" | "E" | "L" | "S" | "Q" | "W")[]
+                ];
+                /**
+                 * - AAD: Additional Attack Damage
+                 * - ADV: Grants Advantage
+                 * - BO: Burns Objects
+                 * - DFT: Difficult Terrain
+                 * - FMV: Forced Movement
+                 * - HL: Healing
+                 * - LGT: Creates Light
+                 * - LGTS: Creates Sunlight
+                 * - MAC: Modifies AC
+                 * - OBJ: Affects Objects
+                 * - OBS: Obscures Vision
+                 * - PIR: Permanent If Repeated
+                 * - PRM: Permanent Effects
+                 * - PS: Plane Shifting
+                 * - RO: Rollable Effects
+                 * - SCL: Scaling Effects
+                 * - SCT: Scaling Targets
+                 * - SMN: Summons Creature
+                 * - SGT: Requires Sight
+                 * - THP: Grants Temporary Hit Points
+                 * - TP: Teleportation
+                 * - UA: Uses Action
+                 * - UBA: Uses Bonus Action
+                 *
+                 * @minItems 1
+                 */
+                miscTags?: [
+                  (
+                    | "AAD"
+                    | "ADV"
+                    | "BO"
+                    | "DFT"
+                    | "FMV"
+                    | "HL"
+                    | "LGT"
+                    | "LGTS"
+                    | "MAC"
+                    | "OBJ"
+                    | "OBS"
+                    | "PIR"
+                    | "PRM"
+                    | "PS"
+                    | "RO"
+                    | "SCL"
+                    | "SCT"
+                    | "SMN"
+                    | "SGT"
+                    | "THP"
+                    | "TP"
+                    | "UA"
+                    | "UBA"
+                  ),
+                  ...(
+                    | "AAD"
+                    | "ADV"
+                    | "BO"
+                    | "DFT"
+                    | "FMV"
+                    | "HL"
+                    | "LGT"
+                    | "LGTS"
+                    | "MAC"
+                    | "OBJ"
+                    | "OBS"
+                    | "PIR"
+                    | "PRM"
+                    | "PS"
+                    | "RO"
+                    | "SCL"
+                    | "SCT"
+                    | "SMN"
+                    | "SGT"
+                    | "THP"
+                    | "TP"
+                    | "UA"
+                    | "UBA"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                affectsCreatureType?: [
+                  (
+                    | "aberration"
+                    | "beast"
+                    | "celestial"
+                    | "construct"
+                    | "dragon"
+                    | "elemental"
+                    | "fey"
+                    | "fiend"
+                    | "giant"
+                    | "humanoid"
+                    | "monstrosity"
+                    | "ooze"
+                    | "plant"
+                    | "undead"
+                    | "vehicle"
+                  ),
+                  ...(
+                    | "aberration"
+                    | "beast"
+                    | "celestial"
+                    | "construct"
+                    | "dragon"
+                    | "elemental"
+                    | "fey"
+                    | "fiend"
+                    | "giant"
+                    | "humanoid"
+                    | "monstrosity"
+                    | "ooze"
+                    | "plant"
+                    | "undead"
+                    | "vehicle"
+                  )[]
+                ];
+                legacy?: true;
+                scalingLevelDice?: ScalingLevelDiceItem[] | ScalingLevelDiceItem;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "action";
+          statblockData: Action;
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "item";
+          statblockData:
+            | _Item
+            | {
+                name?: string;
+                alias?: Alias1;
+                group?: Group1;
+                /**
+                 * - $|DMG: Treasure
+                 * - $A|DMG: Treasure (Art Object)
+                 * - $A|XDMG: Treasure (Art Object)
+                 * - $C: Treasure (Coinage)
+                 * - $C|XPHB: Treasure (Coinage)
+                 * - $G|DMG: Treasure (Gemstone)
+                 * - $G|XDMG: Treasure (Gemstone)
+                 * - A: Ammunition
+                 * - A|XPHB: Ammunition
+                 * - AF|DMG: Ammunition (futuristic)
+                 * - AF|XDMG: Ammunition (futuristic)
+                 * - AIR|DMG: Vehicle (air)
+                 * - AIR|XPHB: Vehicle (air)
+                 * - AT: Artisan Tool
+                 * - AT|XPHB: Artisan Tool
+                 * - EXP|DMG: Explosive
+                 * - EXP|XDMG: Explosive
+                 * - FD: Food and Drink
+                 * - FD|XPHB: Food and Drink
+                 * - G: Adventuring Gear
+                 * - G|XPHB: Adventuring Gear
+                 * - GS: Gaming Set
+                 * - GS|XPHB: Gaming Set
+                 * - GV|DMG: Generic Variant
+                 * - GV|XDMG: Generic Variant
+                 * - HA: Heavy Armor
+                 * - HA|XPHB: Heavy Armor
+                 * - INS: Instrument
+                 * - INS|XPHB: Instrument
+                 * - LA: Light Armor
+                 * - LA|XPHB: Light Armor
+                 * - M: Melee Weapon
+                 * - M|XPHB: Melee Weapon
+                 * - MA: Medium Armor
+                 * - MA|XPHB: Medium Armor
+                 * - MNT: Mount
+                 * - MNT|XPHB: Mount
+                 * - OTH: Other
+                 * - OTH|XPHB: Other
+                 * - P: Potion
+                 * - P|XPHB: Potion
+                 * - R: Ranged Weapon
+                 * - R|XPHB: Ranged Weapon
+                 * - RD|DMG: Rod
+                 * - RD|XDMG: Rod
+                 * - RG|DMG: Ring
+                 * - RG|XDMG: Ring
+                 * - S: Shield
+                 * - S|XPHB: Shield
+                 * - SC|DMG: Scroll
+                 * - SC|XPHB: Scroll
+                 * - SCF: Spellcasting Focus
+                 * - SCF|XPHB: Spellcasting Focus
+                 * - SHP: Vehicle (water)
+                 * - SHP|XPHB: Vehicle (water)
+                 * - SPC|AAG: Vehicle (space)
+                 * - T: Tool
+                 * - T|XPHB: Tool
+                 * - TAH: Tack and Harness
+                 * - TAH|XPHB: Tack and Harness
+                 * - TB|XDMG: Trade Bar
+                 * - TG: Trade Good
+                 * - TG|XPHB: Trade Good
+                 * - VEH: Vehicle (land)
+                 * - VEH|XPHB: Vehicle (land)
+                 * - WD|DMG: Wand
+                 * - WD|XDMG: Wand
+                 */
+                type?:
+                  | "$|DMG"
+                  | "$A|DMG"
+                  | "$A|XDMG"
+                  | "$C"
+                  | "$C|XPHB"
+                  | "$G|DMG"
+                  | "$G|XDMG"
+                  | "A"
+                  | "A|XPHB"
+                  | "AF|DMG"
+                  | "AF|XDMG"
+                  | "AIR|DMG"
+                  | "AIR|XPHB"
+                  | "AT"
+                  | "AT|XPHB"
+                  | "EXP|DMG"
+                  | "EXP|XDMG"
+                  | "FD"
+                  | "FD|XPHB"
+                  | "G"
+                  | "G|XPHB"
+                  | "GS"
+                  | "GS|XPHB"
+                  | "GV|DMG"
+                  | "GV|XDMG"
+                  | "HA"
+                  | "HA|XPHB"
+                  | "INS"
+                  | "INS|XPHB"
+                  | "LA"
+                  | "LA|XPHB"
+                  | "M"
+                  | "M|XPHB"
+                  | "MA"
+                  | "MA|XPHB"
+                  | "MNT"
+                  | "MNT|XPHB"
+                  | "OTH"
+                  | "OTH|XPHB"
+                  | "P"
+                  | "P|XPHB"
+                  | "R"
+                  | "R|XPHB"
+                  | "RD|DMG"
+                  | "RD|XDMG"
+                  | "RG|DMG"
+                  | "RG|XDMG"
+                  | "S"
+                  | "S|XPHB"
+                  | "SC|DMG"
+                  | "SC|XPHB"
+                  | "SCF"
+                  | "SCF|XPHB"
+                  | "SHP"
+                  | "SHP|XPHB"
+                  | "SPC|AAG"
+                  | "T"
+                  | "T|XPHB"
+                  | "TAH"
+                  | "TAH|XPHB"
+                  | "TB|XDMG"
+                  | "TG"
+                  | "TG|XDMG"
+                  | "VEH"
+                  | "VEH|XPHB"
+                  | "WD|DMG"
+                  | "WD|XDMG";
+                /**
+                 * - $|DMG: Treasure
+                 * - $A|DMG: Treasure (Art Object)
+                 * - $A|XDMG: Treasure (Art Object)
+                 * - $C: Treasure (Coinage)
+                 * - $C|XPHB: Treasure (Coinage)
+                 * - $G|DMG: Treasure (Gemstone)
+                 * - $G|XDMG: Treasure (Gemstone)
+                 * - A: Ammunition
+                 * - A|XPHB: Ammunition
+                 * - AF|DMG: Ammunition (futuristic)
+                 * - AF|XDMG: Ammunition (futuristic)
+                 * - AIR|DMG: Vehicle (air)
+                 * - AIR|XPHB: Vehicle (air)
+                 * - AT: Artisan Tool
+                 * - AT|XPHB: Artisan Tool
+                 * - EXP|DMG: Explosive
+                 * - EXP|XDMG: Explosive
+                 * - FD: Food and Drink
+                 * - FD|XPHB: Food and Drink
+                 * - G: Adventuring Gear
+                 * - G|XPHB: Adventuring Gear
+                 * - GS: Gaming Set
+                 * - GS|XPHB: Gaming Set
+                 * - GV|DMG: Generic Variant
+                 * - GV|XDMG: Generic Variant
+                 * - HA: Heavy Armor
+                 * - HA|XPHB: Heavy Armor
+                 * - INS: Instrument
+                 * - INS|XPHB: Instrument
+                 * - LA: Light Armor
+                 * - LA|XPHB: Light Armor
+                 * - M: Melee Weapon
+                 * - M|XPHB: Melee Weapon
+                 * - MA: Medium Armor
+                 * - MA|XPHB: Medium Armor
+                 * - MNT: Mount
+                 * - MNT|XPHB: Mount
+                 * - OTH: Other
+                 * - OTH|XPHB: Other
+                 * - P: Potion
+                 * - P|XPHB: Potion
+                 * - R: Ranged Weapon
+                 * - R|XPHB: Ranged Weapon
+                 * - RD|DMG: Rod
+                 * - RD|XDMG: Rod
+                 * - RG|DMG: Ring
+                 * - RG|XDMG: Ring
+                 * - S: Shield
+                 * - S|XPHB: Shield
+                 * - SC|DMG: Scroll
+                 * - SC|XPHB: Scroll
+                 * - SCF: Spellcasting Focus
+                 * - SCF|XPHB: Spellcasting Focus
+                 * - SHP: Vehicle (water)
+                 * - SHP|XPHB: Vehicle (water)
+                 * - SPC|AAG: Vehicle (space)
+                 * - T: Tool
+                 * - T|XPHB: Tool
+                 * - TAH: Tack and Harness
+                 * - TAH|XPHB: Tack and Harness
+                 * - TB|XDMG: Trade Bar
+                 * - TG: Trade Good
+                 * - TG|XPHB: Trade Good
+                 * - VEH: Vehicle (land)
+                 * - VEH|XPHB: Vehicle (land)
+                 * - WD|DMG: Wand
+                 * - WD|XDMG: Wand
+                 */
+                typeAlt?:
+                  | "$|DMG"
+                  | "$A|DMG"
+                  | "$A|XDMG"
+                  | "$C"
+                  | "$C|XPHB"
+                  | "$G|DMG"
+                  | "$G|XDMG"
+                  | "A"
+                  | "A|XPHB"
+                  | "AF|DMG"
+                  | "AF|XDMG"
+                  | "AIR|DMG"
+                  | "AIR|XPHB"
+                  | "AT"
+                  | "AT|XPHB"
+                  | "EXP|DMG"
+                  | "EXP|XDMG"
+                  | "FD"
+                  | "FD|XPHB"
+                  | "G"
+                  | "G|XPHB"
+                  | "GS"
+                  | "GS|XPHB"
+                  | "GV|DMG"
+                  | "GV|XDMG"
+                  | "HA"
+                  | "HA|XPHB"
+                  | "INS"
+                  | "INS|XPHB"
+                  | "LA"
+                  | "LA|XPHB"
+                  | "M"
+                  | "M|XPHB"
+                  | "MA"
+                  | "MA|XPHB"
+                  | "MNT"
+                  | "MNT|XPHB"
+                  | "OTH"
+                  | "OTH|XPHB"
+                  | "P"
+                  | "P|XPHB"
+                  | "R"
+                  | "R|XPHB"
+                  | "RD|DMG"
+                  | "RD|XDMG"
+                  | "RG|DMG"
+                  | "RG|XDMG"
+                  | "S"
+                  | "S|XPHB"
+                  | "SC|DMG"
+                  | "SC|XPHB"
+                  | "SCF"
+                  | "SCF|XPHB"
+                  | "SHP"
+                  | "SHP|XPHB"
+                  | "SPC|AAG"
+                  | "T"
+                  | "T|XPHB"
+                  | "TAH"
+                  | "TAH|XPHB"
+                  | "TB|XDMG"
+                  | "TG"
+                  | "TG|XDMG"
+                  | "VEH"
+                  | "VEH|XPHB"
+                  | "WD|DMG"
+                  | "WD|XDMG";
+                rarity?:
+                  | ("rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common")
+                  | ("none" | "unknown" | "unknown (magic)" | "varies");
+                source?: string;
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                reprintedAs?: ReprintedAs1;
+                baseItem?: string;
+                ac?: number;
+                age?: "futuristic" | "modern" | "renaissance";
+                /**
+                 * Of a mount/beast, not a container.
+                 */
+                carryingCapacity?: number;
+                dmg1?: string;
+                /**
+                 * The versatile or alternative damage dice of the weapon, e.g. "1d10"
+                 */
+                dmg2?: string;
+                /**
+                 * - A: Acid
+                 * - B: Bludgeoning
+                 * - C: Cold
+                 * - F: Fire
+                 * - O: Force
+                 * - L: Lightning
+                 * - N: Necrotic
+                 * - P: Piercing
+                 * - I: Poison
+                 * - Y: Psychic
+                 * - R: Radiant
+                 * - S: Slashing
+                 * - T: Thunder
+                 */
+                dmgType?: "A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T";
+                entries?: Entry[];
+                additionalEntries?: Entry[];
+                property?: ItemPropertyOrWrapperArray;
+                range?: string;
+                reload?: string | number;
+                reqAttune?: string | boolean;
+                /**
+                 * Used for filtering.
+                 */
+                reqAttuneAlt?: string | boolean;
+                curse?: boolean;
+                vulnerable?: DamageVulnerabilityArray1;
+                resist?: DamageResistArray1;
+                immune?: DamageImmunityArray1;
+                conditionImmune?: ConditionImmunityArray1;
+                /**
+                 * A descriptive field that can be used to complete entries in variants.
+                 */
+                detail1?: string;
+                /**
+                 * A descriptive field that can be used to complete entries in variants.
+                 */
+                detail2?: string;
+                scfType?: "arcane" | "druid" | "holy";
+                speed?: number;
+                stealth?: boolean;
+                strength?: string | null;
+                /**
+                 * Maximum dexterity modifier for medium armor.
+                 */
+                dexterityMax?: number | null;
+                firearm?: boolean;
+                /**
+                 * Adds the italicized "Staff" text to the item info line (below the name).
+                 */
+                staff?: boolean;
+                /**
+                 * Item Tier as per XGE p135
+                 */
+                tier?: "minor" | "major";
+                /**
+                 * In copper pieces.
+                 */
+                value?: number | null;
+                valueMult?: number;
+                valueRarity?:
+                  | ("rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common")
+                  | ("none" | "unknown" | "unknown (magic)" | "varies");
+                weaponCategory?: "simple" | "martial";
+                weight?: number;
+                weightMult?: number;
+                weightNote?: string;
+                wondrous?: boolean;
+                tattoo?: boolean;
+                sentient?: boolean;
+                poison?: boolean;
+                poisonTypes?: ("contact" | "ingested" | "injury" | "inhaled")[];
+                crew?: number;
+                /**
+                 * For crews specified as an X-Y min-max.
+                 */
+                crewMin?: number;
+                /**
+                 * For crews specified as an X-Y min-max.
+                 */
+                crewMax?: number;
+                capPassenger?: number;
+                capCargo?: number;
+                vehSpeed?: number;
+                vehAc?: number;
+                vehHp?: number;
+                vehDmgThresh?: number;
+                /**
+                 * In copper pieces per mile per passenger.
+                 */
+                travelCost?: number;
+                /**
+                 * In copper pieces per 100 lbs per mile.
+                 */
+                shippingCost?: number;
+                charges?: string | number;
+                recharge?:
+                  | "round"
+                  | "restShort"
+                  | "restLong"
+                  | "dawn"
+                  | "dusk"
+                  | "midnight"
+                  | "week"
+                  | "month"
+                  | "year"
+                  | "decade"
+                  | "century"
+                  | "special";
+                rechargeAmount?: number | string;
+                optionalfeatures?: ItemOptionalfeatures;
+                classFeatures?: ItemClassFeatures;
+                attachedSpells?:
+                  | [string, ...string[]]
+                  | {
+                      rest?: _ItemAttachedSpellsFrequency;
+                      daily?: _ItemAttachedSpellsFrequency;
+                      limited?: _ItemAttachedSpellsFrequency;
+                      charges?: _ItemAttachedSpellsCharges;
+                      resource?: _ItemAttachedSpellsCharges;
+                      will?: _ItemAttachedSpellsArrayOfSpell;
+                      ritual?: _ItemAttachedSpellsArrayOfSpell;
+                      other?: _ItemAttachedSpellsArrayOfSpell;
+                      /**
+                       * Optionally specify the ability score used for e.g. racial spellcasting
+                       */
+                      ability?:
+                        | {
+                            choose: ("str" | "dex" | "con" | "int" | "wis" | "cha")[];
+                          }
+                        | ("str" | "dex" | "con" | "int" | "wis" | "cha" | "inherit");
+                      /**
+                       * Optional resource name for resource-cast spells in this group
+                       */
+                      resourceName?: string;
+                    };
+                ability?: ItemAbility;
+                /**
+                 * Item can be used as a spellcasting focus
+                 */
+                focus?:
+                  | boolean
+                  | (
+                      | "Artificer"
+                      | "Bard"
+                      | "Cleric"
+                      | "Druid"
+                      | "Paladin"
+                      | "Ranger"
+                      | "Sorcerer"
+                      | "Warlock"
+                      | "Wizard"
+                    )[];
+                lootTables?: string[];
+                critThreshold?: number;
+                bonusAc?: string;
+                bonusWeapon?: string;
+                bonusWeaponAttack?: string;
+                bonusWeaponDamage?: string;
+                bonusWeaponCritDamage?: string;
+                bonusSpellAttack?: string;
+                bonusSpellDamage?: string;
+                bonusSpellSaveDc?: string;
+                bonusSavingThrow?: string;
+                bonusAbilityCheck?: string;
+                bonusProficiencyBonus?: string;
+                bonusSavingThrowConcentration?: string;
+                modifySpeed?: ItemModifySpeed;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                legacy?: true;
+                /**
+                 * If the item's pack contents should be treated as one atomic unit, rather than handled as individual sub-items.
+                 */
+                atomicPackContents?: boolean;
+                containerCapacity?: {
+                  /**
+                   * Value in pounds.
+                   */
+                  weight?: number[];
+                  /**
+                   * Value in cubic feet.
+                   */
+                  volume?: number[];
+                  item?: {
+                    /**
+                     * This interface was referenced by `undefined`'s JSON-Schema definition
+                     * via the `patternProperty` ".*".
+                     */
+                    [k: string]: number;
+                  }[];
+                  /**
+                   * If the container renders its contents weightless.
+                   */
+                  weightless?: boolean;
+                };
+                ammoType?:
+                  | "energy cell"
+                  | "energy cell|xdmg"
+                  | "modern bullet"
+                  | "blowgun needle|phb"
+                  | "crossbow bolt|phb"
+                  | "arrow|phb"
+                  | "renaissance bullet"
+                  | "sling bullet|phb"
+                  | "needle|xphb"
+                  | "bolt|xphb"
+                  | "arrow|xphb"
+                  | "firearm bullet|xphb"
+                  | "sling bullet|xphb";
+                packContents?: PackContents;
+                grantsProficiency?: boolean;
+                grantsLanguage?: boolean;
+                spellScrollLevel?: number;
+                /**
+                 * @minItems 1
+                 *
+                 * Items: UIDs of "deck"s to be linked in a "See Also" footnote.
+                 *
+                 * Ex.: "deck of many things|dmg".
+                 */
+                seeAlsoDeck?: [string, ...string[]];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: UIDs of "vehicle"s to be linked in a "See Also" footnote.
+                 *
+                 * Ex.: "rowboat|gos".
+                 */
+                seeAlsoVehicle?: [string, ...string[]];
+                reqAttuneTags?: ReqAttuneTags;
+                reqAttuneAltTags?: ReqAttuneTags;
+                miscTags?: ItemMiscTags;
+                mastery?: ItemMastery;
+                reach?: number;
+                light?: ItemLight;
+                /**
+                 * Values given in inches.
+                 */
+                barDimensions?: {
+                  l: number;
+                  w: number;
+                  h: number;
+                };
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                /**
+                 * Whether this item has references within its data to dedicated "itemEntry"s.
+                 */
+                hasRefs?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "background";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * A context-sensitive behaviour hint. Generally, entities marked with `"edition": "one"` will not be modified (as they are assumed to be up-to-date) prior to display/use, and entities lacking an `"edition"` or using `"edition": "classic"` may be modified to better suit modern rules. For example:
+                 * - Classes/subclasses: an edition mismatch between class and subclass will prompt the renderer to add a note that the subclass is from a different game edition, and that feature levels may have to be adjusted accordingly (notably, when rendering synthetic subclass copies)
+                 * - Plutonium, when using the "Modern (2024)" rules version: non-"one" species will be stripped of their ability scores; non-"one" backgrounds will gain extra ability scores; etc.
+                 */
+                edition?: "classic" | "one";
+                prerequisite?: Prerequisite;
+                skillProficiencies: SkillProficiencies1;
+                toolProficiencies?: ToolProficiencies1;
+                languageProficiencies?: LanguageProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                feats?: AdditionalFeatsArray;
+                entries: Entry[];
+                additionalSources?: AdditionalSources1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                startingEquipment?: StartingEquipment;
+                additionalSpells?: AdditionalSpellsArray;
+                ability?: AbilityScores1;
+                /**
+                 * A lookup of other properties which should be tied to the "Feature: ..." entry. This is used when e.g. customizing a background during import to a VTT.
+                 */
+                fromFeature?: {
+                  /**
+                   * This interface was referenced by `undefined`'s JSON-Schema definition
+                   * via the `patternProperty` "^.*$".
+                   */
+                  [k: string]: true;
+                };
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * A context-sensitive behaviour hint. Generally, entities marked with `"edition": "one"` will not be modified (as they are assumed to be up-to-date) prior to display/use, and entities lacking an `"edition"` or using `"edition": "classic"` may be modified to better suit modern rules. For example:
+                 * - Classes/subclasses: an edition mismatch between class and subclass will prompt the renderer to add a note that the subclass is from a different game edition, and that feature levels may have to be adjusted accordingly (notably, when rendering synthetic subclass copies)
+                 * - Plutonium, when using the "Modern (2024)" rules version: non-"one" species will be stripped of their ability scores; non-"one" backgrounds will gain extra ability scores; etc.
+                 */
+                edition?: "classic" | "one";
+                prerequisite?: Prerequisite;
+                skillProficiencies?: SkillProficiencies1;
+                toolProficiencies?: ToolProficiencies1;
+                languageProficiencies?: LanguageProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                feats?: AdditionalFeatsArray;
+                entries?: Entry[];
+                additionalSources?: AdditionalSources1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                startingEquipment?: StartingEquipment;
+                additionalSpells?: AdditionalSpellsArray;
+                ability?: AbilityScores1;
+                /**
+                 * A lookup of other properties which should be tied to the "Feature: ..." entry. This is used when e.g. customizing a background during import to a VTT.
+                 */
+                fromFeature?: {
+                  /**
+                   * This interface was referenced by `undefined`'s JSON-Schema definition
+                   * via the `patternProperty` "^.*$".
+                   */
+                  [k: string]: true;
+                };
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "charoption";
+          statblockData:
+            | {
+                name: string;
+                entries: Entry[];
+                source: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * Items: - CS: Character Secret
+                 * - DG: Dark Gift
+                 * - OF: Optional Feature
+                 * - PTH: Path
+                 * - RF:B Replacement Feature: Background
+                 * - SG: Supernatural Gift
+                 */
+                optionType: ("CS" | "DG" | "OF" | "PTH" | "RF:B" | "SG")[];
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                prerequisite?: Prerequisite;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                entries?: Entry[];
+                source?: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * Items: - CS: Character Secret
+                 * - DG: Dark Gift
+                 * - OF: Optional Feature
+                 * - PTH: Path
+                 * - RF:B Replacement Feature: Background
+                 * - SG: Supernatural Gift
+                 */
+                optionType?: ("CS" | "DG" | "OF" | "PTH" | "RF:B" | "SG")[];
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                prerequisite?: Prerequisite;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "condition";
+          statblockData: Status;
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "disease";
+          statblockData: Disease;
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "status";
+          statblockData: Status;
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "cult";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                legacy?: true;
+                type?: "Demonic" | "Diabolical" | "Elder Evil" | "Elemental";
+                goal?: {
+                  entry: string;
+                };
+                cultists?: {
+                  entry: string;
+                };
+                signatureSpells?: {
+                  entry: string;
+                };
+                entries: Entry[];
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                legacy?: true;
+                type?: "Demonic" | "Diabolical" | "Elder Evil" | "Elemental";
+                goal?: {
+                  entry: string;
+                };
+                cultists?: {
+                  entry: string;
+                };
+                signatureSpells?: {
+                  entry: string;
+                };
+                entries?: Entry[];
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "boon";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                type: "Demonic";
+                abilityEntry?: Entry;
+                signatureSpells?: {
+                  entry: Entry;
+                };
+                entries: Entry[];
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                type?: "Demonic";
+                abilityEntry?: Entry;
+                signatureSpells?: {
+                  entry: Entry;
+                };
+                entries?: Entry[];
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "deity";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                reprintAlias?: string;
+                /**
+                 * @minItems 1
+                 *
+                 * Items: - L: Lawful
+                 * - N: Neutral
+                 * - NX: Neutral (law/chaos axis)
+                 * - NY: Neutral (good/evil axis)
+                 * - C: Chaotic
+                 * - G: Good
+                 * - E: Evil
+                 * - U: Unaligned
+                 * - A: Any
+                 */
+                alignment?: [
+                  "L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A",
+                  ...("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")[]
+                ];
+                title?: string;
+                pantheon:
+                  | "Amaranthine"
+                  | "Celtic"
+                  | "Dawn War"
+                  | "Dragonlance"
+                  | "Drow"
+                  | "Dwarven"
+                  | "Eberron"
+                  | "Egyptian"
+                  | "Elven"
+                  | "Faerûnian"
+                  | "Forgotten Realms"
+                  | "Gnomish"
+                  | "Greek"
+                  | "Greyhawk"
+                  | "Halfling"
+                  | "Nonhuman"
+                  | "Norse"
+                  | "Orc"
+                  | "Gnome"
+                  | "Duergar"
+                  | "Exandria"
+                  | "Theros"
+                  | "Unknown"
+                  | "Yuan-ti"
+                  | "Umbral"
+                  | "Shadow Realm Godlings"
+                  | "Shadow Realm Dark Gods";
+                category?: string;
+                /**
+                 * @minItems 1
+                 */
+                domains?: [
+                  (
+                    | "Arcana"
+                    | "Community"
+                    | "Death"
+                    | "Forge"
+                    | "Grave"
+                    | "Knowledge"
+                    | "Life"
+                    | "Light"
+                    | "Moon"
+                    | "Nature"
+                    | "Night"
+                    | "Order"
+                    | "Peace"
+                    | "Tempest"
+                    | "Trickery"
+                    | "Twilight"
+                    | "Unknown"
+                    | "War"
+                    | "Apocalypse"
+                    | "Wine"
+                    | "Cat"
+                    | "Darkness"
+                    | "Hunger"
+                    | "Hunting"
+                    | "Justice"
+                    | "Keeper"
+                    | "Labyrinth"
+                    | "Lust"
+                    | "Mercy"
+                    | "Ocean"
+                    | "Portal"
+                    | "Prophecy"
+                    | "Shadow"
+                    | "Travel"
+                    | "Void"
+                    | "Wind"
+                  ),
+                  ...(
+                    | "Arcana"
+                    | "Community"
+                    | "Death"
+                    | "Forge"
+                    | "Grave"
+                    | "Knowledge"
+                    | "Life"
+                    | "Light"
+                    | "Moon"
+                    | "Nature"
+                    | "Night"
+                    | "Order"
+                    | "Peace"
+                    | "Tempest"
+                    | "Trickery"
+                    | "Twilight"
+                    | "Unknown"
+                    | "War"
+                    | "Apocalypse"
+                    | "Wine"
+                    | "Cat"
+                    | "Darkness"
+                    | "Hunger"
+                    | "Hunting"
+                    | "Justice"
+                    | "Keeper"
+                    | "Labyrinth"
+                    | "Lust"
+                    | "Mercy"
+                    | "Ocean"
+                    | "Portal"
+                    | "Prophecy"
+                    | "Shadow"
+                    | "Travel"
+                    | "Void"
+                    | "Wind"
+                  )[]
+                ];
+                /**
+                 * The nouveau form of "title", first seen in MTF
+                 */
+                province?: string;
+                symbol?: string;
+                dogma?: string;
+                favoredWeapons?: string;
+                plane?: string;
+                worshipers?: string;
+                source: string;
+                entries?: Entry[];
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                /**
+                 * @minItems 1
+                 */
+                altNames?: [string, ...string[]];
+                symbolImg?: EntryImage;
+                legacy?: true;
+                /**
+                 * A UID of an existing deity that this deity extends. e.g. "Bahgtru|Orc|SCAG"
+                 */
+                customExtensionOf?: string;
+                piety?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                reprintAlias?: string;
+                /**
+                 * @minItems 1
+                 *
+                 * Items: - L: Lawful
+                 * - N: Neutral
+                 * - NX: Neutral (law/chaos axis)
+                 * - NY: Neutral (good/evil axis)
+                 * - C: Chaotic
+                 * - G: Good
+                 * - E: Evil
+                 * - U: Unaligned
+                 * - A: Any
+                 */
+                alignment?: [
+                  "L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A",
+                  ...("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")[]
+                ];
+                title?: string;
+                pantheon?:
+                  | "Amaranthine"
+                  | "Celtic"
+                  | "Dawn War"
+                  | "Dragonlance"
+                  | "Drow"
+                  | "Dwarven"
+                  | "Eberron"
+                  | "Egyptian"
+                  | "Elven"
+                  | "Faerûnian"
+                  | "Forgotten Realms"
+                  | "Gnomish"
+                  | "Greek"
+                  | "Greyhawk"
+                  | "Halfling"
+                  | "Nonhuman"
+                  | "Norse"
+                  | "Orc"
+                  | "Gnome"
+                  | "Duergar"
+                  | "Exandria"
+                  | "Theros"
+                  | "Unknown"
+                  | "Yuan-ti"
+                  | "Umbral"
+                  | "Shadow Realm Godlings"
+                  | "Shadow Realm Dark Gods";
+                category?: string;
+                /**
+                 * @minItems 1
+                 */
+                domains?: [
+                  (
+                    | "Arcana"
+                    | "Community"
+                    | "Death"
+                    | "Forge"
+                    | "Grave"
+                    | "Knowledge"
+                    | "Life"
+                    | "Light"
+                    | "Moon"
+                    | "Nature"
+                    | "Night"
+                    | "Order"
+                    | "Peace"
+                    | "Tempest"
+                    | "Trickery"
+                    | "Twilight"
+                    | "Unknown"
+                    | "War"
+                    | "Apocalypse"
+                    | "Wine"
+                    | "Cat"
+                    | "Darkness"
+                    | "Hunger"
+                    | "Hunting"
+                    | "Justice"
+                    | "Keeper"
+                    | "Labyrinth"
+                    | "Lust"
+                    | "Mercy"
+                    | "Ocean"
+                    | "Portal"
+                    | "Prophecy"
+                    | "Shadow"
+                    | "Travel"
+                    | "Void"
+                    | "Wind"
+                  ),
+                  ...(
+                    | "Arcana"
+                    | "Community"
+                    | "Death"
+                    | "Forge"
+                    | "Grave"
+                    | "Knowledge"
+                    | "Life"
+                    | "Light"
+                    | "Moon"
+                    | "Nature"
+                    | "Night"
+                    | "Order"
+                    | "Peace"
+                    | "Tempest"
+                    | "Trickery"
+                    | "Twilight"
+                    | "Unknown"
+                    | "War"
+                    | "Apocalypse"
+                    | "Wine"
+                    | "Cat"
+                    | "Darkness"
+                    | "Hunger"
+                    | "Hunting"
+                    | "Justice"
+                    | "Keeper"
+                    | "Labyrinth"
+                    | "Lust"
+                    | "Mercy"
+                    | "Ocean"
+                    | "Portal"
+                    | "Prophecy"
+                    | "Shadow"
+                    | "Travel"
+                    | "Void"
+                    | "Wind"
+                  )[]
+                ];
+                /**
+                 * The nouveau form of "title", first seen in MTF
+                 */
+                province?: string;
+                symbol?: string;
+                dogma?: string;
+                favoredWeapons?: string;
+                plane?: string;
+                worshipers?: string;
+                source?: string;
+                entries?: Entry[];
+                page?: string | number;
+                additionalSources?: AdditionalSources1;
+                /**
+                 * @minItems 1
+                 */
+                altNames?: [string, ...string[]];
+                symbolImg?: EntryImage;
+                legacy?: true;
+                /**
+                 * A UID of an existing deity that this deity extends. e.g. "Bahgtru|Orc|SCAG"
+                 */
+                customExtensionOf?: string;
+                piety?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "feat";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                prerequisite?: Prerequisite;
+                source: string;
+                additionalSources?: AdditionalSources1;
+                page?: string | number;
+                entries: Entry[];
+                ability?: AbilityScores1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                repeatable?: boolean;
+                repeatableNote?: string;
+                repeatableHidden?: true;
+                /**
+                 * - D: Dragonmark
+                 * - DG: Dark Gift
+                 * - G: General
+                 * - O: Origin
+                 * - FS: Fighting Style
+                 * - FS:P: Fighting Style (Paladin)
+                 * - FS:R: Fighting Style (Ranger)
+                 * - EB: Epic Boon
+                 */
+                category?: "D" | "DG" | "G" | "O" | "FS" | "FS:P" | "FS:R" | "EB";
+                additionalSpells?: AdditionalSpellsArray;
+                languageProficiencies?: LanguageProficiencies1;
+                skillProficiencies?: SkillProficiencies1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                toolProficiencies?: ToolProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                savingThrowProficiencies?: SavingThrowProficiencies1;
+                optionalfeatureProgression?: OptionalfeatureProgression;
+                featProgression?: FeatProgression;
+                expertise?: Expertise1;
+                resist?: DamageResistArrayPlayer;
+                immune?: DamageImmunityArrayPlayer;
+                vulnerable?: DamageVulnerabilityArrayPlayer;
+                conditionImmune?: ConditionImmunityArrayPlayer;
+                senses?: SensesArray;
+                bonusSenses?: SensesArray;
+                /**
+                 * Additional filter-only tags, to be used when more specific data ("skillProficiencies", etc.) is not appropriate, due to e.g. conditional or temporary effects.
+                 */
+                traitTags?:
+                  | (
+                      | (
+                          | "Skill Proficiency"
+                          | "Armor Proficiency"
+                          | "Weapon Proficiency"
+                          | "Tool Proficiency"
+                          | "Language Proficiency"
+                        )
+                      | (
+                          | "Amphibious"
+                          | "Improved Resting"
+                          | "Magic Resistance"
+                          | "Natural Armor"
+                          | "Natural Weapon"
+                          | "Powerful Build"
+                          | "Skill Bonus Dice"
+                          | "Sunlight Sensitivity"
+                          | "Speed"
+                          | "Tool Bonus Dice"
+                          | "Damage Resistance"
+                          | "Damage Immunity"
+                          | "Condition Immunity"
+                        )
+                    )[]
+                  | null;
+                hasFluff?: true;
+                hasFluffImages?: true;
+                _versions?: VersionsArray;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                prerequisite?: Prerequisite;
+                source?: string;
+                additionalSources?: AdditionalSources1;
+                page?: string | number;
+                entries?: Entry[];
+                ability?: AbilityScores1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                repeatable?: boolean;
+                repeatableNote?: string;
+                repeatableHidden?: true;
+                /**
+                 * - D: Dragonmark
+                 * - DG: Dark Gift
+                 * - G: General
+                 * - O: Origin
+                 * - FS: Fighting Style
+                 * - FS:P: Fighting Style (Paladin)
+                 * - FS:R: Fighting Style (Ranger)
+                 * - EB: Epic Boon
+                 */
+                category?: "D" | "DG" | "G" | "O" | "FS" | "FS:P" | "FS:R" | "EB";
+                additionalSpells?: AdditionalSpellsArray;
+                languageProficiencies?: LanguageProficiencies1;
+                skillProficiencies?: SkillProficiencies1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                toolProficiencies?: ToolProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                savingThrowProficiencies?: SavingThrowProficiencies1;
+                optionalfeatureProgression?: OptionalfeatureProgression;
+                featProgression?: FeatProgression;
+                expertise?: Expertise1;
+                resist?: DamageResistArrayPlayer;
+                immune?: DamageImmunityArrayPlayer;
+                vulnerable?: DamageVulnerabilityArrayPlayer;
+                conditionImmune?: ConditionImmunityArrayPlayer;
+                senses?: SensesArray;
+                bonusSenses?: SensesArray;
+                /**
+                 * Additional filter-only tags, to be used when more specific data ("skillProficiencies", etc.) is not appropriate, due to e.g. conditional or temporary effects.
+                 */
+                traitTags?:
+                  | (
+                      | (
+                          | "Skill Proficiency"
+                          | "Armor Proficiency"
+                          | "Weapon Proficiency"
+                          | "Tool Proficiency"
+                          | "Language Proficiency"
+                        )
+                      | (
+                          | "Amphibious"
+                          | "Improved Resting"
+                          | "Magic Resistance"
+                          | "Natural Armor"
+                          | "Natural Weapon"
+                          | "Powerful Build"
+                          | "Skill Bonus Dice"
+                          | "Sunlight Sensitivity"
+                          | "Speed"
+                          | "Tool Bonus Dice"
+                          | "Damage Resistance"
+                          | "Damage Immunity"
+                          | "Condition Immunity"
+                        )
+                    )[]
+                  | null;
+                hasFluff?: true;
+                hasFluffImages?: true;
+                _versions?: VersionsArray;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "language";
+          statblockData:
+            | {
+                name: string;
+                entries?: Entry[];
+                source: string;
+                page?: string | number;
+                legacy?: true;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                typicalSpeakers?: string[];
+                origin?: string;
+                script?: string;
+                type?: "standard" | "rare" | "exotic" | "secret";
+                additionalSources?: AdditionalSources1;
+                dialects?: string[];
+                /**
+                 * A list of direct URLs to font files.
+                 */
+                fonts?: string[];
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                entries?: Entry[];
+                source?: string;
+                page?: string | number;
+                legacy?: true;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                typicalSpeakers?: string[];
+                origin?: string;
+                script?: string;
+                type?: "standard" | "rare" | "exotic" | "secret";
+                additionalSources?: AdditionalSources1;
+                dialects?: string[];
+                /**
+                 * A list of direct URLs to font files.
+                 */
+                fonts?: string[];
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "object";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * Items: - F: Fine
+                 * - D: Diminutive
+                 * - T: Tiny
+                 * - S: Small
+                 * - M: Medium
+                 * - L: Large
+                 * - H: Huge
+                 * - G: Gargantuan
+                 * - C: Colossal
+                 * - V: Varies.
+                 */
+                size: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                creatureType?:
+                  | "aberration"
+                  | "beast"
+                  | "celestial"
+                  | "construct"
+                  | "dragon"
+                  | "elemental"
+                  | "fey"
+                  | "fiend"
+                  | "giant"
+                  | "humanoid"
+                  | "monstrosity"
+                  | "ooze"
+                  | "plant"
+                  | "undead"
+                  | "vehicle";
+                /**
+                 * - G: Generic
+                 * - SW: Siege Weapon
+                 * - U: Unknown
+                 */
+                objectType: "GEN" | "SW" | "U";
+                str?: number;
+                dex?: number;
+                con?: number;
+                int?: number;
+                wis?: number;
+                cha?: number;
+                ac?:
+                  | number
+                  | {
+                      special: string;
+                    };
+                hp:
+                  | number
+                  | {
+                      special: string;
+                    };
+                speed?:
+                  | {
+                      walk?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      burrow?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      climb?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      fly?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      canHover?: true;
+                      swim?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      choose?: {
+                        /**
+                         * @minItems 2
+                         */
+                        from: [
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                        ];
+                        amount: number;
+                        note?: string;
+                      };
+                      alternate?: {
+                        walk?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        burrow?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        climb?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        fly?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        swim?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * @minItems 1
+                       */
+                      hidden?: [
+                        "walk" | "burrow" | "climb" | "fly" | "swim",
+                        ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                      ];
+                    }
+                  | number
+                  | "Varies";
+                senses?: string[];
+                resist?: DamageResistArray1;
+                conditionImmune?: ConditionImmunityArray1;
+                immune?: DamageImmunityArray1;
+                vulnerable?: DamageVulnerabilityArray1;
+                entries?: Entry[];
+                /**
+                 * Actions available with the object, like firing a siege weapon. Uses the normal entries data.
+                 */
+                actionEntries?: Entry[];
+                token?: Token;
+                tokenCredit?: string;
+                tokenCustom?: true;
+                foundryTokenScale?: number;
+                altArt?: AltArt;
+                isNpc?: boolean;
+                hasToken?: boolean;
+                hasFluff?: true;
+                hasFluffImages?: true;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * Items: - F: Fine
+                 * - D: Diminutive
+                 * - T: Tiny
+                 * - S: Small
+                 * - M: Medium
+                 * - L: Large
+                 * - H: Huge
+                 * - G: Gargantuan
+                 * - C: Colossal
+                 * - V: Varies.
+                 */
+                size?: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                creatureType?:
+                  | "aberration"
+                  | "beast"
+                  | "celestial"
+                  | "construct"
+                  | "dragon"
+                  | "elemental"
+                  | "fey"
+                  | "fiend"
+                  | "giant"
+                  | "humanoid"
+                  | "monstrosity"
+                  | "ooze"
+                  | "plant"
+                  | "undead"
+                  | "vehicle";
+                /**
+                 * - G: Generic
+                 * - SW: Siege Weapon
+                 * - U: Unknown
+                 */
+                objectType?: "GEN" | "SW" | "U";
+                str?: number;
+                dex?: number;
+                con?: number;
+                int?: number;
+                wis?: number;
+                cha?: number;
+                ac?:
+                  | number
+                  | {
+                      special: string;
+                    };
+                hp?:
+                  | number
+                  | {
+                      special: string;
+                    };
+                speed?:
+                  | {
+                      walk?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      burrow?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      climb?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      fly?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      canHover?: true;
+                      swim?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      choose?: {
+                        /**
+                         * @minItems 2
+                         */
+                        from: [
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                        ];
+                        amount: number;
+                        note?: string;
+                      };
+                      alternate?: {
+                        walk?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        burrow?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        climb?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        fly?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        swim?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * @minItems 1
+                       */
+                      hidden?: [
+                        "walk" | "burrow" | "climb" | "fly" | "swim",
+                        ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                      ];
+                    }
+                  | number
+                  | "Varies";
+                senses?: string[];
+                resist?: DamageResistArray1;
+                conditionImmune?: ConditionImmunityArray1;
+                immune?: DamageImmunityArray1;
+                vulnerable?: DamageVulnerabilityArray1;
+                entries?: Entry[];
+                /**
+                 * Actions available with the object, like firing a siege weapon. Uses the normal entries data.
+                 */
+                actionEntries?: Entry[];
+                token?: Token;
+                tokenCredit?: string;
+                tokenCustom?: true;
+                foundryTokenScale?: number;
+                altArt?: AltArt;
+                isNpc?: boolean;
+                hasToken?: boolean;
+                hasFluff?: true;
+                hasFluffImages?: true;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "optionalfeature";
+          statblockData:
+            | {
+                name: string;
+                prerequisite?: Prerequisite;
+                entries: Entry[];
+                previousVersion?: {
+                  name: string;
+                  source: string;
+                };
+                source: string;
+                page?: string | number;
+                /**
+                 * Items: - AF: Alchemical Formula
+                 * - AI: Artificer Infusion
+                 * - AS: Arcane Shot
+                 * - AS:V1-UA: Arcane Shot, V1 (UA)
+                 * - AS:V2-UA: Arcane Shot, V2 (UA)
+                 * - ED: Elemental Discipline
+                 * - EI: Eldritch Invocation
+                 * - FS:B: Fighting Style; Bard
+                 * - FS:F: Fighting Style; Fighter
+                 * - FS:P: Fighting Style; Paladin
+                 * - FS:R: Fighting Style; Ranger
+                 * - MM: Metamagic
+                 * - MV: Maneuver
+                 * - MV:B: Maneuver, Battle Master
+                 * - MV:C2-UA: Maneuver, Cavalier V2 (UA)
+                 * - OR: Onomancy Resonant
+                 * - OTH: Other
+                 * - PB: Pact Boon
+                 * - RN: Rune Knight Rune
+                 * - RP: Renown Perk
+                 * - TT: Traveler's Trick
+                 */
+                featureType: (
+                  | "ED"
+                  | "EI"
+                  | "MM"
+                  | "MV"
+                  | "MV:B"
+                  | "OTH"
+                  | "FS:F"
+                  | "FS:B"
+                  | "FS:R"
+                  | "FS:P"
+                  | "MV:C2-UA"
+                  | "AS:V1-UA"
+                  | "AS:V2-UA"
+                  | "AS"
+                  | "PB"
+                  | "AI"
+                  | "OR"
+                  | "RN"
+                  | "AF"
+                  | "TT"
+                  | "RP"
+                )[];
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                legacy?: true;
+                reprintedAs?: ReprintedAs1;
+                isClassFeatureVariant?: boolean;
+                additionalSpells?: AdditionalSpellsArray;
+                languageProficiencies?: LanguageProficiencies1;
+                skillProficiencies?: SkillProficiencies1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                toolProficiencies?: ToolProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                consumes?:
+                  | {
+                      name:
+                        | "Bardic Inspiration"
+                        | "Superiority Die"
+                        | "Ki"
+                        | "Channel Divinity"
+                        | "Psionic Energy Die"
+                        | "Wild Shape"
+                        | "Sorcery Point"
+                        | "Arcane Shot"
+                        | "Focus Point";
+                      amount?: number;
+                    }
+                  | {
+                      name:
+                        | "Bardic Inspiration"
+                        | "Superiority Die"
+                        | "Ki"
+                        | "Channel Divinity"
+                        | "Psionic Energy Die"
+                        | "Wild Shape"
+                        | "Sorcery Point"
+                        | "Arcane Shot"
+                        | "Focus Point";
+                      amountMin: number;
+                      amountMax: number;
+                    };
+                senses?: SensesArray;
+                optionalfeatureProgression?: OptionalfeatureProgression;
+                featProgression?: FeatProgression;
+                expertise?: Expertise1;
+                resist?: DamageResistArrayPlayer;
+                immune?: DamageImmunityArrayPlayer;
+                vulnerable?: DamageVulnerabilityArrayPlayer;
+                conditionImmune?: ConditionImmunityArrayPlayer;
+                hasFluff?: true;
+                hasFluffImages?: true;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                prerequisite?: Prerequisite;
+                entries?: Entry[];
+                previousVersion?: {
+                  name: string;
+                  source: string;
+                };
+                source?: string;
+                page?: string | number;
+                /**
+                 * Items: - AF: Alchemical Formula
+                 * - AI: Artificer Infusion
+                 * - AS: Arcane Shot
+                 * - AS:V1-UA: Arcane Shot, V1 (UA)
+                 * - AS:V2-UA: Arcane Shot, V2 (UA)
+                 * - ED: Elemental Discipline
+                 * - EI: Eldritch Invocation
+                 * - FS:B: Fighting Style; Bard
+                 * - FS:F: Fighting Style; Fighter
+                 * - FS:P: Fighting Style; Paladin
+                 * - FS:R: Fighting Style; Ranger
+                 * - MM: Metamagic
+                 * - MV: Maneuver
+                 * - MV:B: Maneuver, Battle Master
+                 * - MV:C2-UA: Maneuver, Cavalier V2 (UA)
+                 * - OR: Onomancy Resonant
+                 * - OTH: Other
+                 * - PB: Pact Boon
+                 * - RN: Rune Knight Rune
+                 * - RP: Renown Perk
+                 * - TT: Traveler's Trick
+                 */
+                featureType?: (
+                  | "ED"
+                  | "EI"
+                  | "MM"
+                  | "MV"
+                  | "MV:B"
+                  | "OTH"
+                  | "FS:F"
+                  | "FS:B"
+                  | "FS:R"
+                  | "FS:P"
+                  | "MV:C2-UA"
+                  | "AS:V1-UA"
+                  | "AS:V2-UA"
+                  | "AS"
+                  | "PB"
+                  | "AI"
+                  | "OR"
+                  | "RN"
+                  | "AF"
+                  | "TT"
+                  | "RP"
+                )[];
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                legacy?: true;
+                reprintedAs?: ReprintedAs1;
+                isClassFeatureVariant?: boolean;
+                additionalSpells?: AdditionalSpellsArray;
+                languageProficiencies?: LanguageProficiencies1;
+                skillProficiencies?: SkillProficiencies1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                toolProficiencies?: ToolProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                consumes?:
+                  | {
+                      name:
+                        | "Bardic Inspiration"
+                        | "Superiority Die"
+                        | "Ki"
+                        | "Channel Divinity"
+                        | "Psionic Energy Die"
+                        | "Wild Shape"
+                        | "Sorcery Point"
+                        | "Arcane Shot"
+                        | "Focus Point";
+                      amount?: number;
+                    }
+                  | {
+                      name:
+                        | "Bardic Inspiration"
+                        | "Superiority Die"
+                        | "Ki"
+                        | "Channel Divinity"
+                        | "Psionic Energy Die"
+                        | "Wild Shape"
+                        | "Sorcery Point"
+                        | "Arcane Shot"
+                        | "Focus Point";
+                      amountMin: number;
+                      amountMax: number;
+                    };
+                senses?: SensesArray;
+                optionalfeatureProgression?: OptionalfeatureProgression;
+                featProgression?: FeatProgression;
+                expertise?: Expertise1;
+                resist?: DamageResistArrayPlayer;
+                immune?: DamageImmunityArrayPlayer;
+                vulnerable?: DamageVulnerabilityArrayPlayer;
+                conditionImmune?: ConditionImmunityArrayPlayer;
+                hasFluff?: true;
+                hasFluffImages?: true;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "psionic";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                /**
+                 * - D: Discipline
+                 * - T: Talent
+                 */
+                type: "D" | "T";
+                focus?: string;
+                order?: "Avatar" | "Awakened" | "Immortal" | "Nomad" | "Wu Jen";
+                /**
+                 * @minItems 1
+                 */
+                modes?: [
+                  {
+                    cost?: {
+                      min: number;
+                      max: number;
+                    };
+                    concentration?: {
+                      duration: number;
+                      unit: "hr" | "min" | "rnd";
+                    };
+                    name: string;
+                    entries: Entry[];
+                    /**
+                     * @minItems 1
+                     */
+                    submodes?: [
+                      {
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ];
+                  },
+                  ...{
+                    cost?: {
+                      min: number;
+                      max: number;
+                    };
+                    concentration?: {
+                      duration: number;
+                      unit: "hr" | "min" | "rnd";
+                    };
+                    name: string;
+                    entries: Entry[];
+                    /**
+                     * @minItems 1
+                     */
+                    submodes?: [
+                      {
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ];
+                  }[]
+                ];
+                entries?: Entry[];
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                /**
+                 * - D: Discipline
+                 * - T: Talent
+                 */
+                type?: "D" | "T";
+                focus?: string;
+                order?: "Avatar" | "Awakened" | "Immortal" | "Nomad" | "Wu Jen";
+                /**
+                 * @minItems 1
+                 */
+                modes?: [
+                  {
+                    cost?: {
+                      min: number;
+                      max: number;
+                    };
+                    concentration?: {
+                      duration: number;
+                      unit: "hr" | "min" | "rnd";
+                    };
+                    name: string;
+                    entries: Entry[];
+                    /**
+                     * @minItems 1
+                     */
+                    submodes?: [
+                      {
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ];
+                  },
+                  ...{
+                    cost?: {
+                      min: number;
+                      max: number;
+                    };
+                    concentration?: {
+                      duration: number;
+                      unit: "hr" | "min" | "rnd";
+                    };
+                    name: string;
+                    entries: Entry[];
+                    /**
+                     * @minItems 1
+                     */
+                    submodes?: [
+                      {
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      },
+                      ...{
+                        cost: {
+                          min: number;
+                          max: number;
+                        };
+                        name: string;
+                        entries: Entry[];
+                      }[]
+                    ];
+                  }[]
+                ];
+                entries?: Entry[];
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "race";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1 | null;
+                referenceSources?: ReferenceSources1 | null;
+                additionalSources?: AdditionalSources1;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * A context-sensitive behaviour hint. Generally, entities marked with `"edition": "one"` will not be modified (as they are assumed to be up-to-date) prior to display/use, and entities lacking an `"edition"` or using `"edition": "classic"` may be modified to better suit modern rules. For example:
+                 * - Classes/subclasses: an edition mismatch between class and subclass will prompt the renderer to add a note that the subclass is from a different game edition, and that feature levels may have to be adjusted accordingly (notably, when rendering synthetic subclass copies)
+                 * - Plutonium, when using the "Modern (2024)" rules version: non-"one" species will be stripped of their ability scores; non-"one" backgrounds will gain extra ability scores; etc.
+                 */
+                edition?: "classic" | "one";
+                ability?: AbilityScores1;
+                /**
+                 * Items: - F: Fine
+                 * - D: Diminutive
+                 * - T: Tiny
+                 * - S: Small
+                 * - M: Medium
+                 * - L: Large
+                 * - H: Huge
+                 * - G: Gargantuan
+                 * - C: Colossal
+                 * - V: Varies.
+                 */
+                size?: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                speed?:
+                  | {
+                      walk?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      burrow?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      climb?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      fly?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      canHover?: true;
+                      swim?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      choose?: {
+                        /**
+                         * @minItems 2
+                         */
+                        from: [
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                        ];
+                        amount: number;
+                        note?: string;
+                      };
+                      alternate?: {
+                        walk?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        burrow?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        climb?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        fly?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        swim?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * @minItems 1
+                       */
+                      hidden?: [
+                        "walk" | "burrow" | "climb" | "fly" | "swim",
+                        ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                      ];
+                    }
+                  | number
+                  | "Varies";
+                abilityEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                creatureTypesEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                sizeEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                speedEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                entries?: Entry[];
+                darkvision?: number;
+                blindsight?: number;
+                feats?: AdditionalFeatsArray;
+                /**
+                 * Additional filter-only tags, to be used when more specific data ("skillProficiencies", etc.) is not appropriate, due to e.g. conditional or temporary effects.
+                 */
+                traitTags?:
+                  | (
+                      | (
+                          | (
+                              | "Skill Proficiency"
+                              | "Armor Proficiency"
+                              | "Weapon Proficiency"
+                              | "Tool Proficiency"
+                              | "Language Proficiency"
+                            )
+                          | (
+                              | "Amphibious"
+                              | "Improved Resting"
+                              | "Magic Resistance"
+                              | "Natural Armor"
+                              | "Natural Weapon"
+                              | "Powerful Build"
+                              | "Skill Bonus Dice"
+                              | "Sunlight Sensitivity"
+                              | "Speed"
+                              | "Tool Bonus Dice"
+                              | "Damage Resistance"
+                              | "Damage Immunity"
+                              | "Condition Immunity"
+                            )
+                        )
+                      | ("Dragonmark" | "Monstrous Race" | "NPC Race" | "Uncommon Race")
+                    )[]
+                  | null;
+                soundClip?: MediaHrefInternal | MediaHrefExternal;
+                languageProficiencies?: LanguageProficiencies1;
+                skillProficiencies?: SkillProficiencies1 | null;
+                toolProficiencies?: ToolProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                expertise?: Expertise1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                legacy?: true;
+                lineage?: (true | ("UA1" | "VRGR")) | null;
+                heightAndWeight?: HeightAndWeight | null;
+                startingEquipment?: null | StartingEquipment;
+                additionalSpells?: null | AdditionalSpellsArray;
+                resist?: DamageResistArrayPlayer | null;
+                immune?: DamageImmunityArrayPlayer | null;
+                vulnerable?: DamageVulnerabilityArrayPlayer | null;
+                conditionImmune?: ConditionImmunityArrayPlayer | null;
+                creatureTypes?: (
+                  | {
+                      choose: (
+                        | "aberration"
+                        | "beast"
+                        | "celestial"
+                        | "construct"
+                        | "dragon"
+                        | "elemental"
+                        | "fey"
+                        | "fiend"
+                        | "giant"
+                        | "humanoid"
+                        | "monstrosity"
+                        | "ooze"
+                        | "plant"
+                        | "undead"
+                        | "vehicle"
+                      )[];
+                    }
+                  | (
+                      | "aberration"
+                      | "beast"
+                      | "celestial"
+                      | "construct"
+                      | "dragon"
+                      | "elemental"
+                      | "fey"
+                      | "fiend"
+                      | "giant"
+                      | "humanoid"
+                      | "monstrosity"
+                      | "ooze"
+                      | "plant"
+                      | "undead"
+                      | "vehicle"
+                    )
+                )[];
+                /**
+                 * @minItems 1
+                 */
+                creatureTypeTags?: [string, ...string[]];
+                age?: Age;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                _versions?: VersionsArray;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1 | null;
+                referenceSources?: ReferenceSources1 | null;
+                additionalSources?: AdditionalSources1;
+                reprintedAs?: ReprintedAs1;
+                /**
+                 * A context-sensitive behaviour hint. Generally, entities marked with `"edition": "one"` will not be modified (as they are assumed to be up-to-date) prior to display/use, and entities lacking an `"edition"` or using `"edition": "classic"` may be modified to better suit modern rules. For example:
+                 * - Classes/subclasses: an edition mismatch between class and subclass will prompt the renderer to add a note that the subclass is from a different game edition, and that feature levels may have to be adjusted accordingly (notably, when rendering synthetic subclass copies)
+                 * - Plutonium, when using the "Modern (2024)" rules version: non-"one" species will be stripped of their ability scores; non-"one" backgrounds will gain extra ability scores; etc.
+                 */
+                edition?: "classic" | "one";
+                ability?: AbilityScores1;
+                /**
+                 * Items: - F: Fine
+                 * - D: Diminutive
+                 * - T: Tiny
+                 * - S: Small
+                 * - M: Medium
+                 * - L: Large
+                 * - H: Huge
+                 * - G: Gargantuan
+                 * - C: Colossal
+                 * - V: Varies.
+                 */
+                size?: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                speed?:
+                  | {
+                      walk?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      burrow?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      climb?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      fly?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      canHover?: true;
+                      swim?:
+                        | {
+                            number: number;
+                            condition: string;
+                          }
+                        | number
+                        | true;
+                      choose?: {
+                        /**
+                         * @minItems 2
+                         */
+                        from: [
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          "walk" | "burrow" | "climb" | "fly" | "swim",
+                          ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                        ];
+                        amount: number;
+                        note?: string;
+                      };
+                      alternate?: {
+                        walk?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        burrow?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        climb?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        fly?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        swim?: (
+                          | {
+                              number: number;
+                              condition: string;
+                            }
+                          | number
+                          | true
+                        )[];
+                        [k: string]: unknown;
+                      };
+                      /**
+                       * @minItems 1
+                       */
+                      hidden?: [
+                        "walk" | "burrow" | "climb" | "fly" | "swim",
+                        ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                      ];
+                    }
+                  | number
+                  | "Varies";
+                abilityEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                creatureTypesEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                sizeEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                speedEntry?:
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entry: Entry;
+                      nameDot?: false;
+                    }
+                  | {
+                      name?: string;
+                      type: "item";
+                      source?: string;
+                      page?: string | number;
+                      data?: _EntryDataData;
+                      id?: string;
+                      srd?: boolean | string;
+                      srd52?: boolean | string;
+                      basicRules?: true;
+                      basicRules2024?: true;
+                      style?: string;
+                      entries: Entry[];
+                      nameDot?: false;
+                    };
+                entries?: Entry[];
+                darkvision?: number;
+                blindsight?: number;
+                feats?: AdditionalFeatsArray;
+                /**
+                 * Additional filter-only tags, to be used when more specific data ("skillProficiencies", etc.) is not appropriate, due to e.g. conditional or temporary effects.
+                 */
+                traitTags?:
+                  | (
+                      | (
+                          | (
+                              | "Skill Proficiency"
+                              | "Armor Proficiency"
+                              | "Weapon Proficiency"
+                              | "Tool Proficiency"
+                              | "Language Proficiency"
+                            )
+                          | (
+                              | "Amphibious"
+                              | "Improved Resting"
+                              | "Magic Resistance"
+                              | "Natural Armor"
+                              | "Natural Weapon"
+                              | "Powerful Build"
+                              | "Skill Bonus Dice"
+                              | "Sunlight Sensitivity"
+                              | "Speed"
+                              | "Tool Bonus Dice"
+                              | "Damage Resistance"
+                              | "Damage Immunity"
+                              | "Condition Immunity"
+                            )
+                        )
+                      | ("Dragonmark" | "Monstrous Race" | "NPC Race" | "Uncommon Race")
+                    )[]
+                  | null;
+                soundClip?: MediaHrefInternal | MediaHrefExternal;
+                languageProficiencies?: LanguageProficiencies1;
+                skillProficiencies?: SkillProficiencies1 | null;
+                toolProficiencies?: ToolProficiencies1;
+                skillToolLanguageProficiencies?: SkillToolLanguageProficiencies1;
+                expertise?: Expertise1;
+                weaponProficiencies?: WeaponProficiencies1;
+                armorProficiencies?: ArmorProficiencies1;
+                legacy?: true;
+                lineage?: (true | ("UA1" | "VRGR")) | null;
+                heightAndWeight?: HeightAndWeight | null;
+                startingEquipment?: null | StartingEquipment;
+                additionalSpells?: null | AdditionalSpellsArray;
+                resist?: DamageResistArrayPlayer | null;
+                immune?: DamageImmunityArrayPlayer | null;
+                vulnerable?: DamageVulnerabilityArrayPlayer | null;
+                conditionImmune?: ConditionImmunityArrayPlayer | null;
+                creatureTypes?: (
+                  | {
+                      choose: (
+                        | "aberration"
+                        | "beast"
+                        | "celestial"
+                        | "construct"
+                        | "dragon"
+                        | "elemental"
+                        | "fey"
+                        | "fiend"
+                        | "giant"
+                        | "humanoid"
+                        | "monstrosity"
+                        | "ooze"
+                        | "plant"
+                        | "undead"
+                        | "vehicle"
+                      )[];
+                    }
+                  | (
+                      | "aberration"
+                      | "beast"
+                      | "celestial"
+                      | "construct"
+                      | "dragon"
+                      | "elemental"
+                      | "fey"
+                      | "fiend"
+                      | "giant"
+                      | "humanoid"
+                      | "monstrosity"
+                      | "ooze"
+                      | "plant"
+                      | "undead"
+                      | "vehicle"
+                    )
+                )[];
+                /**
+                 * @minItems 1
+                 */
+                creatureTypeTags?: [string, ...string[]];
+                age?: Age;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                _versions?: VersionsArray;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "recipe";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                source: string;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                page?: string | number;
+                time?: {
+                  total?:
+                    | number
+                    | {
+                        min: number;
+                        max: number;
+                      };
+                  cooking?:
+                    | number
+                    | {
+                        min: number;
+                        max: number;
+                      };
+                  preparation?:
+                    | number
+                    | {
+                        min: number;
+                        max: number;
+                      };
+                };
+                serves?:
+                  | {
+                      min: number;
+                      max: number;
+                      note?: Entry;
+                    }
+                  | {
+                      exact: number;
+                      note?: Entry;
+                    };
+                makes?: Entry;
+                ingredients: Entry[];
+                equipment?: Entry[];
+                instructions: Entry[];
+                noteCook?: Entry[];
+                type?:
+                  | "Dwarven"
+                  | "Elixir/Ale"
+                  | "Elven"
+                  | "Halfling"
+                  | "Human"
+                  | "Uncommon Cuisine"
+                  | "Lost in Realmspace"
+                  | "Ravenloft"
+                  | "Sigil"
+                  | "Solamnia"
+                  | "The Feywild"
+                  | "The Rock of Bral"
+                  | "The Yawning Portal"
+                  | "The Hearth"
+                  | "The Gilded Horseshoe"
+                  | "The Pink Flumph Theater"
+                  | "The Low Lantern"
+                  | "The Halfway Inn"
+                  | "The Driftwood Tavern"
+                  | "One-Eyed Jax"
+                  | "The Moonstone Mask"
+                  | "The Hissing Stones"
+                  | "Barbarian"
+                  | "Bard"
+                  | "Cleric"
+                  | "Druid"
+                  | "Fighter"
+                  | "Monk"
+                  | "Paladin"
+                  | "Ranger"
+                  | "Rogue"
+                  | "Sorcerer"
+                  | "Warlock"
+                  | "Wizard";
+                /**
+                 * - C: Vegetarian [aka "cheese"]
+                 * - V: Vegan
+                 * - X: Omnivorous
+                 */
+                diet?: "C" | "V" | "X";
+                /**
+                 * @minItems 1
+                 */
+                miscTags?: ["alcohol" | "feast", ...("alcohol" | "feast")[]];
+                /**
+                 * One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.
+                 *
+                 * @minItems 1
+                 */
+                allergenGroups?: [
+                  (
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  ),
+                  ...(
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                dishTypes?: [
+                  (
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  ),
+                  ...(
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  )[]
+                ];
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                source?: string;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                page?: string | number;
+                time?: {
+                  total?:
+                    | number
+                    | {
+                        min: number;
+                        max: number;
+                      };
+                  cooking?:
+                    | number
+                    | {
+                        min: number;
+                        max: number;
+                      };
+                  preparation?:
+                    | number
+                    | {
+                        min: number;
+                        max: number;
+                      };
+                };
+                serves?:
+                  | {
+                      min: number;
+                      max: number;
+                      note?: Entry;
+                    }
+                  | {
+                      exact: number;
+                      note?: Entry;
+                    };
+                makes?: Entry;
+                ingredients?: Entry[];
+                equipment?: Entry[];
+                instructions?: Entry[];
+                noteCook?: Entry[];
+                type?:
+                  | "Dwarven"
+                  | "Elixir/Ale"
+                  | "Elven"
+                  | "Halfling"
+                  | "Human"
+                  | "Uncommon Cuisine"
+                  | "Lost in Realmspace"
+                  | "Ravenloft"
+                  | "Sigil"
+                  | "Solamnia"
+                  | "The Feywild"
+                  | "The Rock of Bral"
+                  | "The Yawning Portal"
+                  | "The Hearth"
+                  | "The Gilded Horseshoe"
+                  | "The Pink Flumph Theater"
+                  | "The Low Lantern"
+                  | "The Halfway Inn"
+                  | "The Driftwood Tavern"
+                  | "One-Eyed Jax"
+                  | "The Moonstone Mask"
+                  | "The Hissing Stones"
+                  | "Barbarian"
+                  | "Bard"
+                  | "Cleric"
+                  | "Druid"
+                  | "Fighter"
+                  | "Monk"
+                  | "Paladin"
+                  | "Ranger"
+                  | "Rogue"
+                  | "Sorcerer"
+                  | "Warlock"
+                  | "Wizard";
+                /**
+                 * - C: Vegetarian [aka "cheese"]
+                 * - V: Vegan
+                 * - X: Omnivorous
+                 */
+                diet?: "C" | "V" | "X";
+                /**
+                 * @minItems 1
+                 */
+                miscTags?: ["alcohol" | "feast", ...("alcohol" | "feast")[]];
+                /**
+                 * One of the 14 major food allergens; see https://erudus.com/food-allergens for more information.
+                 *
+                 * @minItems 1
+                 */
+                allergenGroups?: [
+                  (
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  ),
+                  ...(
+                    | "celery"
+                    | "crustaceans"
+                    | "eggs"
+                    | "fish"
+                    | "gluten"
+                    | "lupin"
+                    | "milk"
+                    | "molluscs"
+                    | "mustard"
+                    | "nuts"
+                    | "peanuts"
+                    | "sesame"
+                    | "soya"
+                    | "sulphites"
+                  )[]
+                ];
+                /**
+                 * @minItems 1
+                 */
+                dishTypes?: [
+                  (
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  ),
+                  ...(
+                    | "appetizer"
+                    | "bread"
+                    | "cocktail"
+                    | "dessert"
+                    | "drink"
+                    | "entree"
+                    | "libation"
+                    | "pastry"
+                    | "salad"
+                    | "side"
+                    | "snack"
+                    | "soup"
+                    | "sweet"
+                  )[]
+                ];
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "reward";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                page?: string | number;
+                legacy?: true;
+                reprintedAs?: ReprintedAs1;
+                type:
+                  | "Blessing"
+                  | "Boon"
+                  | "Charm"
+                  | "Curse"
+                  | "Draconic Gift"
+                  | "Inhabitation"
+                  | "Fragment of Suffering"
+                  | "Other"
+                  | "Piety Trait";
+                abilityEntry?: Entry;
+                rarity?: "rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common";
+                additionalSpells?: AdditionalSpellsArray;
+                entries: Entry[];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: UIDs of "facility"s to be linked in a "See Also" footnote.
+                 *
+                 * Ex.: "arcane study|xdmg".
+                 */
+                seeAlsoFacility?: [string, ...string[]];
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+              }
+            | {
+                name?: string;
+                source?: string;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                page?: string | number;
+                legacy?: true;
+                reprintedAs?: ReprintedAs1;
+                type?:
+                  | "Blessing"
+                  | "Boon"
+                  | "Charm"
+                  | "Curse"
+                  | "Draconic Gift"
+                  | "Inhabitation"
+                  | "Fragment of Suffering"
+                  | "Other"
+                  | "Piety Trait";
+                abilityEntry?: Entry;
+                rarity?: "rare" | "uncommon" | "very rare" | "legendary" | "artifact" | "common";
+                additionalSpells?: AdditionalSpellsArray;
+                entries?: Entry[];
+                /**
+                 * @minItems 1
+                 *
+                 * Items: UIDs of "facility"s to be linked in a "See Also" footnote.
+                 *
+                 * Ex.: "arcane study|xdmg".
+                 */
+                seeAlsoFacility?: [string, ...string[]];
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "table";
+          statblockData: TableData;
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "trap";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                /**
+                 * - HAUNT: Haunted Trap
+                 * - MAG: Magical Trap
+                 * - MECH: Mechanical Trap
+                 * - TRP: Trap
+                 */
+                trapHazType: "MECH" | "MAG" | "TRP" | "HAUNT";
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                trigger?: _TrapTrigger;
+                duration?: DurationEffect;
+                entries: Entry[];
+                rating?: _TrapHazardRating;
+                hauntBonus?: string;
+                legacy?: true;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                /**
+                 * - HAUNT: Haunted Trap
+                 * - MAG: Magical Trap
+                 * - MECH: Mechanical Trap
+                 * - TRP: Trap
+                 */
+                trapHazType?: "MECH" | "MAG" | "TRP" | "HAUNT";
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                trigger?: _TrapTrigger;
+                duration?: DurationEffect;
+                entries?: Entry[];
+                rating?: _TrapHazardRating;
+                hauntBonus?: string;
+                legacy?: true;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              }
+            | {
+                name: string;
+                alias?: Alias1;
+                trapHazType: "SMPL" | "CMPX";
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                entries: Entry[];
+                rating?: _TrapHazardRating;
+                trigger: _TrapTrigger;
+                initiative?: number;
+                initiativeNote?: Entry;
+                effect?: Entry[];
+                eActive?: Entry[];
+                eDynamic?: Entry[];
+                eConstant?: Entry[];
+                countermeasures: Entry[];
+                legacy?: true;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                trapHazType?: "SMPL" | "CMPX";
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                entries?: Entry[];
+                rating?: _TrapHazardRating;
+                trigger?: _TrapTrigger;
+                initiative?: number;
+                initiativeNote?: Entry;
+                effect?: Entry[];
+                eActive?: Entry[];
+                eDynamic?: Entry[];
+                eConstant?: Entry[];
+                countermeasures?: Entry[];
+                legacy?: true;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "hazard";
+          statblockData:
+            | {
+                name: string;
+                alias?: Alias1;
+                /**
+                 * - ENV: Environmental Hazard
+                 * - EST: Eldritch Storm
+                 * - GEN: Generic
+                 * - WTH: Weather
+                 * - WLD: Wilderness Hazard
+                 */
+                trapHazType?: "ENV" | "EST" | "GEN" | "WTH" | "WLD";
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                reprintedAs?: ReprintedAs1;
+                entries: Entry[];
+                legacy?: true;
+                rating?: _TrapHazardRating;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                alias?: Alias1;
+                /**
+                 * - ENV: Environmental Hazard
+                 * - EST: Eldritch Storm
+                 * - GEN: Generic
+                 * - WTH: Weather
+                 * - WLD: Wilderness Hazard
+                 */
+                trapHazType?: "ENV" | "EST" | "GEN" | "WTH" | "WLD";
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                reprintedAs?: ReprintedAs1;
+                entries?: Entry[];
+                legacy?: true;
+                rating?: _TrapHazardRating;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "variantrule";
+          statblockData:
+            | {
+                name: string;
+                type?: string;
+                entries: Entry[];
+                source: string;
+                page?: string | number;
+                /**
+                 * - C: Core
+                 * - O: Optional
+                 * - P: Prerelease
+                 * - V: Variant
+                 * - VO: Variant Optional
+                 * - VV: Variant Variant
+                 */
+                ruleType?: "C" | "O" | "V" | "VO" | "VV";
+                legacy?: true;
+                additionalSources?: AdditionalSources1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                type?: string;
+                entries?: Entry[];
+                source?: string;
+                page?: string | number;
+                /**
+                 * - C: Core
+                 * - O: Optional
+                 * - P: Prerelease
+                 * - V: Variant
+                 * - VO: Variant Optional
+                 * - VV: Variant Variant
+                 */
+                ruleType?: "C" | "O" | "V" | "VO" | "VV";
+                legacy?: true;
+                additionalSources?: AdditionalSources1;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "vehicle";
+          statblockData:
+            | (
+                | {
+                    name: string;
+                    source: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "SHIP";
+                    terrain?: VehicleTerrain;
+                    /**
+                     * - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                    dimensions?: string[];
+                    capCrew?: number;
+                    capPassenger?: number;
+                    capCargo?: number | string;
+                    pace?: number;
+                    str?: number;
+                    dex?: number;
+                    con?: number;
+                    int?: number;
+                    wis?: number;
+                    cha?: number;
+                    resist?: DamageResistArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    immune?: DamageImmunityArray1;
+                    vulnerable?: DamageVulnerabilityArray1;
+                    /**
+                     * A map of "number of vehicle actions": "number of remaining crew members"
+                     */
+                    actionThresholds?: {
+                      /**
+                       * This interface was referenced by `undefined`'s JSON-Schema definition
+                       * via the `patternProperty` "\d+".
+                       */
+                      [k: string]: number;
+                    };
+                    action?: Entry[];
+                    hull?: {
+                      ac: number;
+                      hp: number;
+                      hpNote?: string;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                    };
+                    control?: {
+                      name?: string;
+                      ac: number;
+                      hp: number;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                      entries: Entry[];
+                    }[];
+                    movement?: {
+                      name?: string;
+                      isControl?: boolean;
+                      ac: number;
+                      hp: number;
+                      hpNote?: string;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                      /**
+                       * Legacy format, from the original UA release.
+                       */
+                      locomotion?: {
+                        mode: string;
+                        entries: Entry[];
+                      }[];
+                      speed?: {
+                        mode: string;
+                        entries: Entry[];
+                      }[];
+                    }[];
+                    weapon?: {
+                      name: string;
+                      ac?: number;
+                      hp?: number;
+                      count?: number;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                      entries: Entry[];
+                    }[];
+                    other?: {
+                      name: string;
+                      entries: Entry[];
+                    }[];
+                    trait?:
+                      | {
+                          name: string;
+                          entries: Entry[];
+                          type?: "entries" | "inset";
+                          /**
+                           * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                           */
+                          sort?: number;
+                        }[]
+                      | null;
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                  }
+                | {
+                    name?: string;
+                    source?: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "SHIP";
+                    terrain?: VehicleTerrain;
+                    /**
+                     * - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                    dimensions?: string[];
+                    capCrew?: number;
+                    capPassenger?: number;
+                    capCargo?: number | string;
+                    pace?: number;
+                    str?: number;
+                    dex?: number;
+                    con?: number;
+                    int?: number;
+                    wis?: number;
+                    cha?: number;
+                    resist?: DamageResistArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    immune?: DamageImmunityArray1;
+                    vulnerable?: DamageVulnerabilityArray1;
+                    /**
+                     * A map of "number of vehicle actions": "number of remaining crew members"
+                     */
+                    actionThresholds?: {
+                      /**
+                       * This interface was referenced by `undefined`'s JSON-Schema definition
+                       * via the `patternProperty` "\d+".
+                       */
+                      [k: string]: number;
+                    };
+                    action?: Entry[];
+                    hull?: {
+                      ac: number;
+                      hp: number;
+                      hpNote?: string;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                    };
+                    control?: {
+                      name?: string;
+                      ac: number;
+                      hp: number;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                      entries: Entry[];
+                    }[];
+                    movement?: {
+                      name?: string;
+                      isControl?: boolean;
+                      ac: number;
+                      hp: number;
+                      hpNote?: string;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                      /**
+                       * Legacy format, from the original UA release.
+                       */
+                      locomotion?: {
+                        mode: string;
+                        entries: Entry[];
+                      }[];
+                      speed?: {
+                        mode: string;
+                        entries: Entry[];
+                      }[];
+                    }[];
+                    weapon?: {
+                      name: string;
+                      ac?: number;
+                      hp?: number;
+                      count?: number;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt?: number;
+                      entries: Entry[];
+                    }[];
+                    other?: {
+                      name: string;
+                      entries: Entry[];
+                    }[];
+                    trait?:
+                      | {
+                          name: string;
+                          entries: Entry[];
+                          type?: "entries" | "inset";
+                          /**
+                           * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                           */
+                          sort?: number;
+                        }[]
+                      | null;
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                    _copy: CopyBlockCopyGeneric;
+                  }
+              )
+            | (
+                | {
+                    name: string;
+                    source: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "SPELLJAMMER";
+                    terrain?: VehicleTerrain;
+                    dimensions?: string[];
+                    capCrew?: number;
+                    capCrewNote?: string;
+                    capCargo?: number | string;
+                    pace?: SpelljammerElementalAirshipPaceObj;
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    hull?: SpelljammerElementalAirshipHullObj;
+                    /**
+                     * In copper pieces.
+                     */
+                    cost?: number;
+                    /**
+                     * @minItems 1
+                     */
+                    weapon?: [SpelljammerElementalAirshipStation, ...SpelljammerElementalAirshipStation[]];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                  }
+                | {
+                    name?: string;
+                    source?: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "SPELLJAMMER";
+                    terrain?: VehicleTerrain;
+                    dimensions?: string[];
+                    capCrew?: number;
+                    capCrewNote?: string;
+                    capCargo?: number | string;
+                    pace?: SpelljammerElementalAirshipPaceObj;
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    hull?: SpelljammerElementalAirshipHullObj;
+                    /**
+                     * In copper pieces.
+                     */
+                    cost?: number;
+                    /**
+                     * @minItems 1
+                     */
+                    weapon?: [SpelljammerElementalAirshipStation, ...SpelljammerElementalAirshipStation[]];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                    _copy: CopyBlockCopyGeneric;
+                  }
+              )
+            | (
+                | {
+                    name: string;
+                    source: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "ELEMENTAL_AIRSHIP";
+                    terrain?: VehicleTerrain;
+                    capCrew?: number;
+                    capCrewNote?: string;
+                    capPassenger?: number;
+                    capCargo?: number | string;
+                    pace?: SpelljammerElementalAirshipPaceObj;
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    hull?: SpelljammerElementalAirshipHullObj;
+                    /**
+                     * In copper pieces.
+                     */
+                    cost?: number;
+                    /**
+                     * @minItems 1
+                     */
+                    weapon?: [SpelljammerElementalAirshipStation, ...SpelljammerElementalAirshipStation[]];
+                    /**
+                     * @minItems 1
+                     */
+                    station?: [SpelljammerElementalAirshipStation, ...SpelljammerElementalAirshipStation[]];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                  }
+                | {
+                    name?: string;
+                    source?: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "ELEMENTAL_AIRSHIP";
+                    terrain?: VehicleTerrain;
+                    capCrew?: number;
+                    capCrewNote?: string;
+                    capPassenger?: number;
+                    capCargo?: number | string;
+                    pace?: SpelljammerElementalAirshipPaceObj;
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    hull?: SpelljammerElementalAirshipHullObj;
+                    /**
+                     * In copper pieces.
+                     */
+                    cost?: number;
+                    /**
+                     * @minItems 1
+                     */
+                    weapon?: [SpelljammerElementalAirshipStation, ...SpelljammerElementalAirshipStation[]];
+                    /**
+                     * @minItems 1
+                     */
+                    station?: [SpelljammerElementalAirshipStation, ...SpelljammerElementalAirshipStation[]];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                    _copy: CopyBlockCopyGeneric;
+                  }
+              )
+            | (
+                | {
+                    name: string;
+                    source: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "INFWAR";
+                    terrain?: VehicleTerrain;
+                    /**
+                     * - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                    weight?: number;
+                    capCreature?: number;
+                    capCargo?: number;
+                    speed?: number;
+                    str?: number;
+                    dex?: number;
+                    con?: number;
+                    int?: number;
+                    wis?: number;
+                    cha?: number;
+                    hp?: {
+                      /**
+                       * Hit Points
+                       */
+                      hp: number;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt: number;
+                      /**
+                       * Mishap Threshold
+                       */
+                      mt?: number;
+                    };
+                    ac?: number;
+                    resist?: DamageResistArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    immune?: DamageImmunityArray1;
+                    vulnerable?: DamageVulnerabilityArray1;
+                    trait?: {
+                      name?: string;
+                      entries?: Entry[];
+                      [k: string]: unknown;
+                    }[];
+                    /**
+                     * The Action Stations section of a vehicle block, for example the "Helm" or a weapon.
+                     */
+                    actionStation?: {
+                      name?: string;
+                      entries?: Entry[];
+                      [k: string]: unknown;
+                    }[];
+                    reaction?: {
+                      name?: string;
+                      entries?: Entry[];
+                      [k: string]: unknown;
+                    }[];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                  }
+                | {
+                    name?: string;
+                    source?: string;
+                    page?: string | number;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    legacy?: true;
+                    vehicleType?: "INFWAR";
+                    terrain?: VehicleTerrain;
+                    /**
+                     * - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                    weight?: number;
+                    capCreature?: number;
+                    capCargo?: number;
+                    speed?: number;
+                    str?: number;
+                    dex?: number;
+                    con?: number;
+                    int?: number;
+                    wis?: number;
+                    cha?: number;
+                    hp?: {
+                      /**
+                       * Hit Points
+                       */
+                      hp: number;
+                      /**
+                       * Damage Threshold
+                       */
+                      dt: number;
+                      /**
+                       * Mishap Threshold
+                       */
+                      mt?: number;
+                    };
+                    ac?: number;
+                    resist?: DamageResistArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    immune?: DamageImmunityArray1;
+                    vulnerable?: DamageVulnerabilityArray1;
+                    trait?: {
+                      name?: string;
+                      entries?: Entry[];
+                      [k: string]: unknown;
+                    }[];
+                    /**
+                     * The Action Stations section of a vehicle block, for example the "Helm" or a weapon.
+                     */
+                    actionStation?: {
+                      name?: string;
+                      entries?: Entry[];
+                      [k: string]: unknown;
+                    }[];
+                    reaction?: {
+                      name?: string;
+                      entries?: Entry[];
+                      [k: string]: unknown;
+                    }[];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    hasToken?: boolean;
+                    hasFluff?: boolean;
+                    hasFluffImages?: boolean;
+                    _copy: CopyBlockCopyGeneric;
+                  }
+              )
+            | (
+                | {
+                    name: string;
+                    /**
+                     * Used anywhere a shortened form of the creatures name is required (e.g. in legendary action headers).
+                     *
+                     * If not supplied, a shortened name will be automatically generated from the creature's full name.
+                     *
+                     * Alternatively use "true" if the "shortName" should be an exact copy of the creature's "name".
+                     */
+                    shortName?: string | boolean;
+                    alias?: Alias1;
+                    group?: Group1;
+                    /**
+                     * Used in sidekicks, which can have levels (and generally do not have alignment)
+                     */
+                    level?: number;
+                    /**
+                     * Items: - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                    sizeNote?: string;
+                    type:
+                      | {
+                          type:
+                            | (
+                                | "aberration"
+                                | "beast"
+                                | "celestial"
+                                | "construct"
+                                | "dragon"
+                                | "elemental"
+                                | "fey"
+                                | "fiend"
+                                | "giant"
+                                | "humanoid"
+                                | "monstrosity"
+                                | "ooze"
+                                | "plant"
+                                | "undead"
+                                | "vehicle"
+                              )
+                            | {
+                                choose: (
+                                  | "aberration"
+                                  | "beast"
+                                  | "celestial"
+                                  | "construct"
+                                  | "dragon"
+                                  | "elemental"
+                                  | "fey"
+                                  | "fiend"
+                                  | "giant"
+                                  | "humanoid"
+                                  | "monstrosity"
+                                  | "ooze"
+                                  | "plant"
+                                  | "undead"
+                                  | "vehicle"
+                                )[];
+                              };
+                          /**
+                           * - F: Fine
+                           * - D: Diminutive
+                           * - T: Tiny
+                           * - S: Small
+                           * - M: Medium
+                           * - L: Large
+                           * - H: Huge
+                           * - G: Gargantuan
+                           * - C: Colossal
+                           * - V: Varies.
+                           */
+                          swarmSize?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                          tags?: (
+                            | string
+                            | {
+                                tag: string;
+                                prefix: string;
+                                prefixHidden?: true;
+                              }
+                          )[];
+                          sidekickType?: "expert" | "spellcaster" | "warrior";
+                          sidekickTags?: (
+                            | string
+                            | {
+                                tag: string;
+                                prefix: string;
+                                prefixHidden?: true;
+                              }
+                          )[];
+                          sidekickHidden?: true;
+                          note?: string;
+                        }
+                      | (
+                          | "aberration"
+                          | "beast"
+                          | "celestial"
+                          | "construct"
+                          | "dragon"
+                          | "elemental"
+                          | "fey"
+                          | "fiend"
+                          | "giant"
+                          | "humanoid"
+                          | "monstrosity"
+                          | "ooze"
+                          | "plant"
+                          | "undead"
+                          | "vehicle"
+                        );
+                    source: string;
+                    /**
+                     * Sub-source text that is shown when hovered.
+                     */
+                    sourceSub?: string;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    /**
+                     * Prefer "reprintedAs", where available.
+                     */
+                    isReprinted?: true;
+                    alignment?: (
+                      | ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")
+                      | {
+                          /**
+                           * Items: - L: Lawful
+                           * - N: Neutral
+                           * - NX: Neutral (law/chaos axis)
+                           * - NY: Neutral (good/evil axis)
+                           * - C: Chaotic
+                           * - G: Good
+                           * - E: Evil
+                           * - U: Unaligned
+                           * - A: Any
+                           */
+                          alignment: ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")[];
+                          chance?: number;
+                          note?: string;
+                        }
+                      | {
+                          special: string;
+                        }
+                    )[];
+                    alignmentPrefix?: string;
+                    ac?: (
+                      | {
+                          ac: number;
+                          from?: string[];
+                          condition?: string;
+                          braces?: true;
+                        }
+                      | {
+                          special: string;
+                        }
+                      | number
+                    )[];
+                    hp?:
+                      | {
+                          average: number;
+                          formula: string;
+                        }
+                      | {
+                          special: string;
+                        };
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    initiative?:
+                      | {
+                          initiative?: number;
+                          /**
+                           * - 1: Proficient
+                           * - 2: Expertise
+                           *
+                           * This interface was referenced by `undefined`'s JSON-Schema definition
+                           * via the `patternProperty` "".
+                           *
+                           * This interface was referenced by `undefined`'s JSON-Schema definition
+                           * via the `patternProperty` "".
+                           */
+                          proficiency?: 1 | 2;
+                          advantageMode?: "adv" | "dis";
+                        }
+                      | number;
+                    str?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    dex?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    con?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    int?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    wis?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    cha?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    save?: {
+                      str?: string;
+                      dex?: string;
+                      con?: string;
+                      int?: string;
+                      wis?: string;
+                      cha?: string;
+                    };
+                    skill?: {
+                      acrobatics?: string;
+                      "animal handling"?: string;
+                      arcana?: string;
+                      athletics?: string;
+                      deception?: string;
+                      history?: string;
+                      insight?: string;
+                      intimidation?: string;
+                      investigation?: string;
+                      medicine?: string;
+                      nature?: string;
+                      perception?: string;
+                      performance?: string;
+                      persuasion?: string;
+                      religion?: string;
+                      "sleight of hand"?: string;
+                      stealth?: string;
+                      survival?: string;
+                      other?: {
+                        oneOf?: {
+                          acrobatics?: string;
+                          "animal handling"?: string;
+                          arcana?: string;
+                          athletics?: string;
+                          deception?: string;
+                          history?: string;
+                          insight?: string;
+                          intimidation?: string;
+                          investigation?: string;
+                          medicine?: string;
+                          nature?: string;
+                          perception?: string;
+                          performance?: string;
+                          persuasion?: string;
+                          religion?: string;
+                          "sleight of hand"?: string;
+                          stealth?: string;
+                          survival?: string;
+                          [k: string]: unknown;
+                        };
+                        [k: string]: unknown;
+                      }[];
+                    };
+                    tool?: {
+                      "artisan's tools"?: string;
+                      "alchemist's supplies"?: string;
+                      "brewer's supplies"?: string;
+                      "calligrapher's supplies"?: string;
+                      "carpenter's tools"?: string;
+                      "cartographer's tools"?: string;
+                      "cobbler's tools"?: string;
+                      "cook's utensils"?: string;
+                      "glassblower's tools"?: string;
+                      "jeweler's tools"?: string;
+                      "leatherworker's tools"?: string;
+                      "mason's tools"?: string;
+                      "painter's supplies"?: string;
+                      "potter's tools"?: string;
+                      "smith's tools"?: string;
+                      "tinker's tools"?: string;
+                      "weaver's tools"?: string;
+                      "woodcarver's tools"?: string;
+                      "disguise kit"?: string;
+                      "forgery kit"?: string;
+                      "gaming set"?: string;
+                      "dragonchess set"?: string;
+                      "dice set"?: string;
+                      "three-dragon ante set"?: string;
+                      "playing card set"?: string;
+                      "herbalism kit"?: string;
+                      "musical instrument"?: string;
+                      bagpipes?: string;
+                      drum?: string;
+                      dulcimer?: string;
+                      flute?: string;
+                      horn?: string;
+                      lute?: string;
+                      lyre?: string;
+                      "pan flute"?: string;
+                      shawm?: string;
+                      viol?: string;
+                      "navigator's tools"?: string;
+                      "thieves' tools"?: string;
+                      "poisoner's kit"?: string;
+                      vehicles?: string;
+                      "vehicles (air)"?: string;
+                      "vehicles (land)"?: string;
+                      "vehicles (water)"?: string;
+                      "vehicles (space)"?: string;
+                    };
+                    gear?: (
+                      | string
+                      | {
+                          /**
+                           * An item UID, e.g. "longsword|phb"
+                           */
+                          item: string;
+                          quantity?: number;
+                          displayName?: string;
+                        }
+                    )[];
+                    senses?: [string, ...string[]] | null;
+                    passive?: number | string | null;
+                    languages?: [string, ...string[]] | null;
+                    pbNote?: string;
+                    cr?:
+                      | string
+                      | {
+                          cr: string;
+                          lair?: string;
+                          coven?: string;
+                          xp?: number;
+                          xpLair?: number;
+                        };
+                    vulnerable?: DamageVulnerabilityArray1;
+                    resist?: DamageResistArray1;
+                    immune?: DamageImmunityArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    spellcasting?: EntrySpellcasting[] | null;
+                    trait?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                            type?: "entries" | "inset";
+                            /**
+                             * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                             */
+                            sort?: number;
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                            type?: "entries" | "inset";
+                            /**
+                             * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                             */
+                            sort?: number;
+                          }[]
+                        ]
+                      | null;
+                    actionNote?: string;
+                    /**
+                     * @minItems 1
+                     */
+                    actionHeader?: [Entry, ...Entry[]];
+                    action?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    bonusNote?: string;
+                    /**
+                     * @minItems 1
+                     */
+                    bonusHeader?: [Entry, ...Entry[]];
+                    bonus?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    reactionNote?: string;
+                    /**
+                     * @minItems 1
+                     */
+                    reactionHeader?: [Entry, ...Entry[]];
+                    reaction?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    legendaryGroup?: {
+                      name: string;
+                      source: string;
+                    };
+                    legendaryActions?: number;
+                    legendaryActionsLair?: number;
+                    /**
+                     * @minItems 1
+                     */
+                    legendaryHeader?: [Entry, ...Entry[]];
+                    legendary?:
+                      | [
+                          {
+                            name?: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name?: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    /**
+                     * @minItems 1
+                     */
+                    mythicHeader?: [Entry, ...Entry[]];
+                    mythic?:
+                      | [
+                          {
+                            name?: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name?: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    variant?:
+                      | (
+                          | {
+                              name: string;
+                              type: "variant";
+                              source?: string;
+                              page?: string | number;
+                              data?: _EntryDataData;
+                              id?: string;
+                              srd?: boolean | string;
+                              srd52?: boolean | string;
+                              basicRules?: true;
+                              basicRules2024?: true;
+                              entries: Entry[];
+                              token?: {
+                                name: string;
+                                source: string;
+                                page?: string | number;
+                                [k: string]: unknown;
+                              };
+                              _version?:
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addAs: string;
+                                  }
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addHeadersAs: string;
+                                  };
+                            }
+                          | {
+                              name?: string;
+                              type: "inset";
+                              source?: string;
+                              page?: string | number;
+                              data?: _EntryDataData;
+                              id?: string;
+                              srd?: boolean | string;
+                              srd52?: boolean | string;
+                              basicRules?: true;
+                              basicRules2024?: true;
+                              entries: Entry[];
+                              style?: string;
+                              token?: {
+                                name: string;
+                                source: string;
+                                page?: string | number;
+                                [k: string]: unknown;
+                              };
+                              _version?:
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addAs: string;
+                                  }
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addHeadersAs: string;
+                                  };
+                            }
+                        )[]
+                      | null;
+                    page?: string | number;
+                    familiar?: true | null;
+                    additionalSources?: AdditionalSources1;
+                    hasToken?: true;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    foundryTokenScale?: number;
+                    altArt?: AltArt;
+                    token?: Token;
+                    isNamedCreature?: true | null;
+                    /**
+                     * Used to flag adventure NPCs
+                     */
+                    isNpc?: true | null;
+                    /**
+                     * @minItems 1
+                     */
+                    environment?: [
+                      (
+                        | "any"
+                        | "underwater"
+                        | "coastal"
+                        | "mountain"
+                        | "grassland"
+                        | "hill"
+                        | "arctic"
+                        | "urban"
+                        | "forest"
+                        | "swamp"
+                        | "underdark"
+                        | "desert"
+                        | "badlands"
+                        | "farmland"
+                        | "planar"
+                        | "planar, transitive"
+                        | "planar, elemental"
+                        | "planar, inner"
+                        | "planar, upper"
+                        | "planar, lower"
+                        | "planar, feywild"
+                        | "planar, shadowfell"
+                        | "planar, water"
+                        | "planar, earth"
+                        | "planar, fire"
+                        | "planar, air"
+                        | "planar, ooze"
+                        | "planar, magma"
+                        | "planar, ash"
+                        | "planar, ice"
+                        | "planar, elemental chaos"
+                        | "planar, ethereal"
+                        | "planar, astral"
+                        | "planar, arborea"
+                        | "planar, arcadia"
+                        | "planar, beastlands"
+                        | "planar, bytopia"
+                        | "planar, elysium"
+                        | "planar, mount celestia"
+                        | "planar, ysgard"
+                        | "planar, abyss"
+                        | "planar, acheron"
+                        | "planar, carceri"
+                        | "planar, gehenna"
+                        | "planar, hades"
+                        | "planar, nine hells"
+                        | "planar, pandemonium"
+                        | "planar, limbo"
+                        | "planar, mechanus"
+                        | "planar, outlands"
+                      ),
+                      ...(
+                        | "any"
+                        | "underwater"
+                        | "coastal"
+                        | "mountain"
+                        | "grassland"
+                        | "hill"
+                        | "arctic"
+                        | "urban"
+                        | "forest"
+                        | "swamp"
+                        | "underdark"
+                        | "desert"
+                        | "badlands"
+                        | "farmland"
+                        | "planar"
+                        | "planar, transitive"
+                        | "planar, elemental"
+                        | "planar, inner"
+                        | "planar, upper"
+                        | "planar, lower"
+                        | "planar, feywild"
+                        | "planar, shadowfell"
+                        | "planar, water"
+                        | "planar, earth"
+                        | "planar, fire"
+                        | "planar, air"
+                        | "planar, ooze"
+                        | "planar, magma"
+                        | "planar, ash"
+                        | "planar, ice"
+                        | "planar, elemental chaos"
+                        | "planar, ethereal"
+                        | "planar, astral"
+                        | "planar, arborea"
+                        | "planar, arcadia"
+                        | "planar, beastlands"
+                        | "planar, bytopia"
+                        | "planar, elysium"
+                        | "planar, mount celestia"
+                        | "planar, ysgard"
+                        | "planar, abyss"
+                        | "planar, acheron"
+                        | "planar, carceri"
+                        | "planar, gehenna"
+                        | "planar, hades"
+                        | "planar, nine hells"
+                        | "planar, pandemonium"
+                        | "planar, limbo"
+                        | "planar, mechanus"
+                        | "planar, outlands"
+                      )[]
+                    ];
+                    /**
+                     * @minItems 1
+                     */
+                    treasure?: [
+                      "any" | "individual" | "arcana" | "armaments" | "implements" | "relics",
+                      ...("any" | "individual" | "arcana" | "armaments" | "implements" | "relics")[]
+                    ];
+                    soundClip?: MediaHrefInternal | MediaHrefExternal;
+                    dragonCastingColor?:
+                      | "black"
+                      | "blue"
+                      | "green"
+                      | "red"
+                      | "white"
+                      | "brass"
+                      | "bronze"
+                      | "copper"
+                      | "gold"
+                      | "silver"
+                      | "deep"
+                      | "spirit";
+                    dragonAge?: "young" | "adult" | "wyrmling" | "greatwyrm" | "ancient" | "aspect";
+                    traitTags?: (
+                      | "Aggressive"
+                      | "Ambusher"
+                      | "Amorphous"
+                      | "Amphibious"
+                      | "Antimagic Susceptibility"
+                      | "Beast of Burden"
+                      | "Brute"
+                      | "Camouflage"
+                      | "Charge"
+                      | "Damage Absorption"
+                      | "Death Burst"
+                      | "Devil's Sight"
+                      | "Ethereal Sight"
+                      | "False Appearance"
+                      | "Fey Ancestry"
+                      | "Flyby"
+                      | "Hold Breath"
+                      | "Illumination"
+                      | "Immutable Form"
+                      | "Incorporeal Movement"
+                      | "Keen Senses"
+                      | "Legendary Resistances"
+                      | "Light Sensitivity"
+                      | "Magic Resistance"
+                      | "Magic Weapons"
+                      | "Mimicry"
+                      | "Pack Tactics"
+                      | "Pounce"
+                      | "Rampage"
+                      | "Reckless"
+                      | "Regeneration"
+                      | "Rejuvenation"
+                      | "Shapechanger"
+                      | "Siege Monster"
+                      | "Sneak Attack"
+                      | "Spell Immunity"
+                      | "Spider Climb"
+                      | "Sunlight Sensitivity"
+                      | "Sure-Footed"
+                      | "Tree Stride"
+                      | "Tunneler"
+                      | "Turn Immunity"
+                      | "Turn Resistance"
+                      | "Undead Fortitude"
+                      | "Unusual Nature"
+                      | "Water Breathing"
+                      | "Web Sense"
+                      | "Web Walker"
+                    )[];
+                    actionTags?: (
+                      | "Breath Weapon"
+                      | "Frightful Presence"
+                      | "Multiattack"
+                      | "Parry"
+                      | "Shapechanger"
+                      | "Swallow"
+                      | "Teleport"
+                      | "Tentacles"
+                    )[];
+                    /**
+                     * Items: - X: Any (Choose)
+                     * - XX: All
+                     * - CS: Can't Speak Known Languages
+                     * - LF: Languages Known in Life
+                     * - TP: Telepathy
+                     * - OTH: Other
+                     * - -
+                     * - AB: Abyssal
+                     * - AQ: Aquan
+                     * - AU: Auran
+                     * - C: Common
+                     * - CE: Celestial
+                     * - CSL: Common Sign Language
+                     * - D: Dwarvish
+                     * - DR: Draconic
+                     * - DS: Deep Speech
+                     * - DU: Druidic
+                     * - E: Elvish
+                     * - G: Gnomish
+                     * - GI: Giant
+                     * - GO: Goblin
+                     * - GTH: Gith
+                     * - H: Halfling
+                     * - I: Infernal
+                     * - IG: Ignan
+                     * - O: Orc
+                     * - P: Primordial
+                     * - S: Sylvan
+                     * - T: Terran
+                     * - TC: Thieves' cant
+                     * - U: Undercommon
+                     */
+                    languageTags?: (
+                      | "X"
+                      | "XX"
+                      | "CS"
+                      | "LF"
+                      | "TP"
+                      | "OTH"
+                      | "AB"
+                      | "AQ"
+                      | "AU"
+                      | "C"
+                      | "CE"
+                      | "CSL"
+                      | "D"
+                      | "DR"
+                      | "DS"
+                      | "DU"
+                      | "E"
+                      | "G"
+                      | "GI"
+                      | "GO"
+                      | "GTH"
+                      | "H"
+                      | "I"
+                      | "IG"
+                      | "O"
+                      | "P"
+                      | "S"
+                      | "T"
+                      | "TC"
+                      | "U"
+                    )[];
+                    /**
+                     * Items: - B: Blindsight
+                     * - D: Darkvision
+                     * - SD: Superior Darkvision
+                     * - T: Tremorsense
+                     * - U: Truesight
+                     */
+                    senseTags?: ("B" | "D" | "SD" | "T" | "U")[];
+                    /**
+                     * Items: - P: Psionics
+                     * - I: Innate
+                     * - F: Form Only
+                     * - S: Shared
+                     * - O: Other
+                     * - CA: Class, Artificer
+                     * - CB: Class, Bard
+                     * - CC: Class, Cleric
+                     * - CD: Class, Druid
+                     * - CP: Class, Paladin
+                     * - CR: Class, Ranger
+                     * - CS: Class, Sorcerer
+                     * - CL: Class, Warlock
+                     * - CW: Class, Wizard
+                     */
+                    spellcastingTags?: (
+                      "P" | "I" | "F" | "S" | "O" | "CA" | "CB" | "CC" | "CD" | "CP" | "CR" | "CS" | "CL" | "CW"
+                    )[];
+                    /**
+                     * Items: - A: Acid
+                     * - B: Bludgeoning
+                     * - C: Cold
+                     * - F: Fire
+                     * - O: Force
+                     * - L: Lightning
+                     * - N: Necrotic
+                     * - P: Piercing
+                     * - I: Poison
+                     * - Y: Psychic
+                     * - R: Radiant
+                     * - S: Slashing
+                     * - T: Thunder
+                     */
+                    damageTags?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                    /**
+                     * Items: - A: Acid
+                     * - B: Bludgeoning
+                     * - C: Cold
+                     * - F: Fire
+                     * - O: Force
+                     * - L: Lightning
+                     * - N: Necrotic
+                     * - P: Piercing
+                     * - I: Poison
+                     * - Y: Psychic
+                     * - R: Radiant
+                     * - S: Slashing
+                     * - T: Thunder
+                     */
+                    damageTagsSpell?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                    /**
+                     * Items: - A: Acid
+                     * - B: Bludgeoning
+                     * - C: Cold
+                     * - F: Fire
+                     * - O: Force
+                     * - L: Lightning
+                     * - N: Necrotic
+                     * - P: Piercing
+                     * - I: Poison
+                     * - Y: Psychic
+                     * - R: Radiant
+                     * - S: Slashing
+                     * - T: Thunder
+                     */
+                    damageTagsLegendary?: (
+                      "A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T"
+                    )[];
+                    /**
+                     * Items: - AOE: Has Areas of Effect
+                     * - CUR: Inflicts Curse
+                     * - DIS: Inflicts Disease
+                     * - HPR: Has HP Reduction
+                     * - MW: Has Weapon Attacks, Melee
+                     * - RW: Has Weapon Attacks, Ranged
+                     * - MA: Has Attacks, Melee
+                     * - RA: Has Attacks, Ranged
+                     * - RCH: Has Reach Attacks
+                     * - MLW: Has Melee Weapons
+                     * - RNG: Has Ranged Weapons
+                     * - THW: Has Thrown Weapons
+                     */
+                    miscTags?: (
+                      "AOE" | "CUR" | "DIS" | "HPR" | "MW" | "RW" | "MA" | "RA" | "RCH" | "MLW" | "RNG" | "THW"
+                    )[];
+                    /**
+                     * @minItems 1
+                     *
+                     * Items: A UID, e.g. "longsword|phb"
+                     */
+                    attachedItems?: [string, ...string[]];
+                    conditionInflict?: TagsConditions;
+                    conditionInflictLegendary?: TagsConditions;
+                    conditionInflictSpell?: TagsConditions;
+                    savingThrowForced?: TagsSavingThrow;
+                    savingThrowForcedLegendary?: TagsSavingThrow;
+                    savingThrowForcedSpell?: TagsSavingThrow;
+                    /**
+                     * Intended for homebrew use only.
+                     */
+                    footer?: Entry[];
+                    legacy?: true;
+                    /**
+                     * The spell used to summon this creature; specifically for TCE-esque summon spells.
+                     */
+                    summonedBySpell?: string;
+                    /**
+                     * The level of the spell used to summon this creature; specifically for TCE-esque summon spells.
+                     */
+                    summonedBySpellLevel?: number;
+                    /**
+                     * The class which can summon this creature; e.g. for those granted by some TCE class features.
+                     */
+                    summonedByClass?: string;
+                    /**
+                     * If this creature should be scalable by summoning/owning player level.
+                     */
+                    summonedScaleByPlayerLevel?: true;
+                    /**
+                     * An internal flag indicating this creature is a copy of another, and is a temporary/placeholder entry which will be factored out using the "_copy" format at a later date.
+                     */
+                    _isCopy?: boolean;
+                    _versions?: (
+                      | (
+                          | {
+                              name: string;
+                              source: string;
+                              _mod?: _ModObject;
+                              _templates?: _TemplatesArray;
+                              _preserve?: _PreserveObject;
+                              [k: string]: unknown;
+                            }
+                          | {
+                              _abstract: {
+                                name: string;
+                                source: string;
+                                _mod: _ModObject;
+                                _preserve?: _PreserveObject1;
+                                [k: string]: unknown;
+                              };
+                              /**
+                               * @minItems 1
+                               */
+                              _implementations: [
+                                {
+                                  _variables: {
+                                    [k: string]: unknown;
+                                  };
+                                  [k: string]: unknown;
+                                },
+                                ...{
+                                  _variables: {
+                                    [k: string]: unknown;
+                                  };
+                                  [k: string]: unknown;
+                                }[]
+                              ];
+                            }
+                        )
+                      | CreatureData
+                    )[];
+                    hasFluff?: true;
+                    hasFluffImages?: true;
+                    srd?: boolean | string;
+                    srd52?: boolean | string;
+                    basicRules?: true;
+                    basicRules2024?: true;
+                    vehicleType: "CREATURE";
+                    terrain: VehicleTerrain;
+                  }
+                | {
+                    name?: string;
+                    /**
+                     * Used anywhere a shortened form of the creatures name is required (e.g. in legendary action headers).
+                     *
+                     * If not supplied, a shortened name will be automatically generated from the creature's full name.
+                     *
+                     * Alternatively use "true" if the "shortName" should be an exact copy of the creature's "name".
+                     */
+                    shortName?: string | boolean;
+                    alias?: Alias1;
+                    group?: Group1;
+                    /**
+                     * Used in sidekicks, which can have levels (and generally do not have alignment)
+                     */
+                    level?: number;
+                    /**
+                     * Items: - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size?: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                    sizeNote?: string;
+                    type?:
+                      | {
+                          type:
+                            | (
+                                | "aberration"
+                                | "beast"
+                                | "celestial"
+                                | "construct"
+                                | "dragon"
+                                | "elemental"
+                                | "fey"
+                                | "fiend"
+                                | "giant"
+                                | "humanoid"
+                                | "monstrosity"
+                                | "ooze"
+                                | "plant"
+                                | "undead"
+                                | "vehicle"
+                              )
+                            | {
+                                choose: (
+                                  | "aberration"
+                                  | "beast"
+                                  | "celestial"
+                                  | "construct"
+                                  | "dragon"
+                                  | "elemental"
+                                  | "fey"
+                                  | "fiend"
+                                  | "giant"
+                                  | "humanoid"
+                                  | "monstrosity"
+                                  | "ooze"
+                                  | "plant"
+                                  | "undead"
+                                  | "vehicle"
+                                )[];
+                              };
+                          /**
+                           * - F: Fine
+                           * - D: Diminutive
+                           * - T: Tiny
+                           * - S: Small
+                           * - M: Medium
+                           * - L: Large
+                           * - H: Huge
+                           * - G: Gargantuan
+                           * - C: Colossal
+                           * - V: Varies.
+                           */
+                          swarmSize?: "T" | "S" | "M" | "L" | "H" | "G" | "V";
+                          tags?: (
+                            | string
+                            | {
+                                tag: string;
+                                prefix: string;
+                                prefixHidden?: true;
+                              }
+                          )[];
+                          sidekickType?: "expert" | "spellcaster" | "warrior";
+                          sidekickTags?: (
+                            | string
+                            | {
+                                tag: string;
+                                prefix: string;
+                                prefixHidden?: true;
+                              }
+                          )[];
+                          sidekickHidden?: true;
+                          note?: string;
+                        }
+                      | (
+                          | "aberration"
+                          | "beast"
+                          | "celestial"
+                          | "construct"
+                          | "dragon"
+                          | "elemental"
+                          | "fey"
+                          | "fiend"
+                          | "giant"
+                          | "humanoid"
+                          | "monstrosity"
+                          | "ooze"
+                          | "plant"
+                          | "undead"
+                          | "vehicle"
+                        );
+                    source?: string;
+                    /**
+                     * Sub-source text that is shown when hovered.
+                     */
+                    sourceSub?: string;
+                    otherSources?: OtherSources1;
+                    referenceSources?: ReferenceSources1;
+                    reprintedAs?: ReprintedAs1;
+                    /**
+                     * Prefer "reprintedAs", where available.
+                     */
+                    isReprinted?: true;
+                    alignment?: (
+                      | ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")
+                      | {
+                          /**
+                           * Items: - L: Lawful
+                           * - N: Neutral
+                           * - NX: Neutral (law/chaos axis)
+                           * - NY: Neutral (good/evil axis)
+                           * - C: Chaotic
+                           * - G: Good
+                           * - E: Evil
+                           * - U: Unaligned
+                           * - A: Any
+                           */
+                          alignment: ("L" | "N" | "NX" | "NY" | "C" | "G" | "E" | "U" | "A")[];
+                          chance?: number;
+                          note?: string;
+                        }
+                      | {
+                          special: string;
+                        }
+                    )[];
+                    alignmentPrefix?: string;
+                    ac?: (
+                      | {
+                          ac: number;
+                          from?: string[];
+                          condition?: string;
+                          braces?: true;
+                        }
+                      | {
+                          special: string;
+                        }
+                      | number
+                    )[];
+                    hp?:
+                      | {
+                          average: number;
+                          formula: string;
+                        }
+                      | {
+                          special: string;
+                        };
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    initiative?:
+                      | {
+                          initiative?: number;
+                          /**
+                           * - 1: Proficient
+                           * - 2: Expertise
+                           *
+                           * This interface was referenced by `undefined`'s JSON-Schema definition
+                           * via the `patternProperty` "".
+                           *
+                           * This interface was referenced by `undefined`'s JSON-Schema definition
+                           * via the `patternProperty` "".
+                           */
+                          proficiency?: 1 | 2;
+                          advantageMode?: "adv" | "dis";
+                        }
+                      | number;
+                    str?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    dex?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    con?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    int?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    wis?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    cha?:
+                      | (number | null)
+                      | {
+                          special: string;
+                        };
+                    save?: {
+                      str?: string;
+                      dex?: string;
+                      con?: string;
+                      int?: string;
+                      wis?: string;
+                      cha?: string;
+                    };
+                    skill?: {
+                      acrobatics?: string;
+                      "animal handling"?: string;
+                      arcana?: string;
+                      athletics?: string;
+                      deception?: string;
+                      history?: string;
+                      insight?: string;
+                      intimidation?: string;
+                      investigation?: string;
+                      medicine?: string;
+                      nature?: string;
+                      perception?: string;
+                      performance?: string;
+                      persuasion?: string;
+                      religion?: string;
+                      "sleight of hand"?: string;
+                      stealth?: string;
+                      survival?: string;
+                      other?: {
+                        oneOf?: {
+                          acrobatics?: string;
+                          "animal handling"?: string;
+                          arcana?: string;
+                          athletics?: string;
+                          deception?: string;
+                          history?: string;
+                          insight?: string;
+                          intimidation?: string;
+                          investigation?: string;
+                          medicine?: string;
+                          nature?: string;
+                          perception?: string;
+                          performance?: string;
+                          persuasion?: string;
+                          religion?: string;
+                          "sleight of hand"?: string;
+                          stealth?: string;
+                          survival?: string;
+                          [k: string]: unknown;
+                        };
+                        [k: string]: unknown;
+                      }[];
+                    };
+                    tool?: {
+                      "artisan's tools"?: string;
+                      "alchemist's supplies"?: string;
+                      "brewer's supplies"?: string;
+                      "calligrapher's supplies"?: string;
+                      "carpenter's tools"?: string;
+                      "cartographer's tools"?: string;
+                      "cobbler's tools"?: string;
+                      "cook's utensils"?: string;
+                      "glassblower's tools"?: string;
+                      "jeweler's tools"?: string;
+                      "leatherworker's tools"?: string;
+                      "mason's tools"?: string;
+                      "painter's supplies"?: string;
+                      "potter's tools"?: string;
+                      "smith's tools"?: string;
+                      "tinker's tools"?: string;
+                      "weaver's tools"?: string;
+                      "woodcarver's tools"?: string;
+                      "disguise kit"?: string;
+                      "forgery kit"?: string;
+                      "gaming set"?: string;
+                      "dragonchess set"?: string;
+                      "dice set"?: string;
+                      "three-dragon ante set"?: string;
+                      "playing card set"?: string;
+                      "herbalism kit"?: string;
+                      "musical instrument"?: string;
+                      bagpipes?: string;
+                      drum?: string;
+                      dulcimer?: string;
+                      flute?: string;
+                      horn?: string;
+                      lute?: string;
+                      lyre?: string;
+                      "pan flute"?: string;
+                      shawm?: string;
+                      viol?: string;
+                      "navigator's tools"?: string;
+                      "thieves' tools"?: string;
+                      "poisoner's kit"?: string;
+                      vehicles?: string;
+                      "vehicles (air)"?: string;
+                      "vehicles (land)"?: string;
+                      "vehicles (water)"?: string;
+                      "vehicles (space)"?: string;
+                    };
+                    gear?: (
+                      | string
+                      | {
+                          /**
+                           * An item UID, e.g. "longsword|phb"
+                           */
+                          item: string;
+                          quantity?: number;
+                          displayName?: string;
+                        }
+                    )[];
+                    senses?: [string, ...string[]] | null;
+                    passive?: number | string | null;
+                    languages?: [string, ...string[]] | null;
+                    pbNote?: string;
+                    cr?:
+                      | string
+                      | {
+                          cr: string;
+                          lair?: string;
+                          coven?: string;
+                          xp?: number;
+                          xpLair?: number;
+                        };
+                    vulnerable?: DamageVulnerabilityArray1;
+                    resist?: DamageResistArray1;
+                    immune?: DamageImmunityArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    spellcasting?: EntrySpellcasting[] | null;
+                    trait?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                            type?: "entries" | "inset";
+                            /**
+                             * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                             */
+                            sort?: number;
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                            type?: "entries" | "inset";
+                            /**
+                             * Forces a sort order. Traits with sort orders will always be arranged before those without.
+                             */
+                            sort?: number;
+                          }[]
+                        ]
+                      | null;
+                    actionNote?: string;
+                    /**
+                     * @minItems 1
+                     */
+                    actionHeader?: [Entry, ...Entry[]];
+                    action?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    bonusNote?: string;
+                    /**
+                     * @minItems 1
+                     */
+                    bonusHeader?: [Entry, ...Entry[]];
+                    bonus?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    reactionNote?: string;
+                    /**
+                     * @minItems 1
+                     */
+                    reactionHeader?: [Entry, ...Entry[]];
+                    reaction?:
+                      | [
+                          {
+                            name: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    legendaryGroup?: {
+                      name: string;
+                      source: string;
+                    };
+                    legendaryActions?: number;
+                    legendaryActionsLair?: number;
+                    /**
+                     * @minItems 1
+                     */
+                    legendaryHeader?: [Entry, ...Entry[]];
+                    legendary?:
+                      | [
+                          {
+                            name?: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name?: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    /**
+                     * @minItems 1
+                     */
+                    mythicHeader?: [Entry, ...Entry[]];
+                    mythic?:
+                      | [
+                          {
+                            name?: string;
+                            entries: Entry[];
+                          },
+                          ...{
+                            name?: string;
+                            entries: Entry[];
+                          }[]
+                        ]
+                      | null;
+                    variant?:
+                      | (
+                          | {
+                              name: string;
+                              type: "variant";
+                              source?: string;
+                              page?: string | number;
+                              data?: _EntryDataData;
+                              id?: string;
+                              srd?: boolean | string;
+                              srd52?: boolean | string;
+                              basicRules?: true;
+                              basicRules2024?: true;
+                              entries: Entry[];
+                              token?: {
+                                name: string;
+                                source: string;
+                                page?: string | number;
+                                [k: string]: unknown;
+                              };
+                              _version?:
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addAs: string;
+                                  }
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addHeadersAs: string;
+                                  };
+                            }
+                          | {
+                              name?: string;
+                              type: "inset";
+                              source?: string;
+                              page?: string | number;
+                              data?: _EntryDataData;
+                              id?: string;
+                              srd?: boolean | string;
+                              srd52?: boolean | string;
+                              basicRules?: true;
+                              basicRules2024?: true;
+                              entries: Entry[];
+                              style?: string;
+                              token?: {
+                                name: string;
+                                source: string;
+                                page?: string | number;
+                                [k: string]: unknown;
+                              };
+                              _version?:
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addAs: string;
+                                  }
+                                | {
+                                    name?: string;
+                                    source?: string;
+                                    addHeadersAs: string;
+                                  };
+                            }
+                        )[]
+                      | null;
+                    page?: string | number;
+                    familiar?: true | null;
+                    additionalSources?: AdditionalSources1;
+                    hasToken?: true;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    foundryTokenScale?: number;
+                    altArt?: AltArt;
+                    token?: Token;
+                    isNamedCreature?: true | null;
+                    /**
+                     * Used to flag adventure NPCs
+                     */
+                    isNpc?: true | null;
+                    /**
+                     * @minItems 1
+                     */
+                    environment?: [
+                      (
+                        | "any"
+                        | "underwater"
+                        | "coastal"
+                        | "mountain"
+                        | "grassland"
+                        | "hill"
+                        | "arctic"
+                        | "urban"
+                        | "forest"
+                        | "swamp"
+                        | "underdark"
+                        | "desert"
+                        | "badlands"
+                        | "farmland"
+                        | "planar"
+                        | "planar, transitive"
+                        | "planar, elemental"
+                        | "planar, inner"
+                        | "planar, upper"
+                        | "planar, lower"
+                        | "planar, feywild"
+                        | "planar, shadowfell"
+                        | "planar, water"
+                        | "planar, earth"
+                        | "planar, fire"
+                        | "planar, air"
+                        | "planar, ooze"
+                        | "planar, magma"
+                        | "planar, ash"
+                        | "planar, ice"
+                        | "planar, elemental chaos"
+                        | "planar, ethereal"
+                        | "planar, astral"
+                        | "planar, arborea"
+                        | "planar, arcadia"
+                        | "planar, beastlands"
+                        | "planar, bytopia"
+                        | "planar, elysium"
+                        | "planar, mount celestia"
+                        | "planar, ysgard"
+                        | "planar, abyss"
+                        | "planar, acheron"
+                        | "planar, carceri"
+                        | "planar, gehenna"
+                        | "planar, hades"
+                        | "planar, nine hells"
+                        | "planar, pandemonium"
+                        | "planar, limbo"
+                        | "planar, mechanus"
+                        | "planar, outlands"
+                      ),
+                      ...(
+                        | "any"
+                        | "underwater"
+                        | "coastal"
+                        | "mountain"
+                        | "grassland"
+                        | "hill"
+                        | "arctic"
+                        | "urban"
+                        | "forest"
+                        | "swamp"
+                        | "underdark"
+                        | "desert"
+                        | "badlands"
+                        | "farmland"
+                        | "planar"
+                        | "planar, transitive"
+                        | "planar, elemental"
+                        | "planar, inner"
+                        | "planar, upper"
+                        | "planar, lower"
+                        | "planar, feywild"
+                        | "planar, shadowfell"
+                        | "planar, water"
+                        | "planar, earth"
+                        | "planar, fire"
+                        | "planar, air"
+                        | "planar, ooze"
+                        | "planar, magma"
+                        | "planar, ash"
+                        | "planar, ice"
+                        | "planar, elemental chaos"
+                        | "planar, ethereal"
+                        | "planar, astral"
+                        | "planar, arborea"
+                        | "planar, arcadia"
+                        | "planar, beastlands"
+                        | "planar, bytopia"
+                        | "planar, elysium"
+                        | "planar, mount celestia"
+                        | "planar, ysgard"
+                        | "planar, abyss"
+                        | "planar, acheron"
+                        | "planar, carceri"
+                        | "planar, gehenna"
+                        | "planar, hades"
+                        | "planar, nine hells"
+                        | "planar, pandemonium"
+                        | "planar, limbo"
+                        | "planar, mechanus"
+                        | "planar, outlands"
+                      )[]
+                    ];
+                    /**
+                     * @minItems 1
+                     */
+                    treasure?: [
+                      "any" | "individual" | "arcana" | "armaments" | "implements" | "relics",
+                      ...("any" | "individual" | "arcana" | "armaments" | "implements" | "relics")[]
+                    ];
+                    soundClip?: MediaHrefInternal | MediaHrefExternal;
+                    dragonCastingColor?:
+                      | "black"
+                      | "blue"
+                      | "green"
+                      | "red"
+                      | "white"
+                      | "brass"
+                      | "bronze"
+                      | "copper"
+                      | "gold"
+                      | "silver"
+                      | "deep"
+                      | "spirit";
+                    dragonAge?: "young" | "adult" | "wyrmling" | "greatwyrm" | "ancient" | "aspect";
+                    traitTags?: (
+                      | "Aggressive"
+                      | "Ambusher"
+                      | "Amorphous"
+                      | "Amphibious"
+                      | "Antimagic Susceptibility"
+                      | "Beast of Burden"
+                      | "Brute"
+                      | "Camouflage"
+                      | "Charge"
+                      | "Damage Absorption"
+                      | "Death Burst"
+                      | "Devil's Sight"
+                      | "Ethereal Sight"
+                      | "False Appearance"
+                      | "Fey Ancestry"
+                      | "Flyby"
+                      | "Hold Breath"
+                      | "Illumination"
+                      | "Immutable Form"
+                      | "Incorporeal Movement"
+                      | "Keen Senses"
+                      | "Legendary Resistances"
+                      | "Light Sensitivity"
+                      | "Magic Resistance"
+                      | "Magic Weapons"
+                      | "Mimicry"
+                      | "Pack Tactics"
+                      | "Pounce"
+                      | "Rampage"
+                      | "Reckless"
+                      | "Regeneration"
+                      | "Rejuvenation"
+                      | "Shapechanger"
+                      | "Siege Monster"
+                      | "Sneak Attack"
+                      | "Spell Immunity"
+                      | "Spider Climb"
+                      | "Sunlight Sensitivity"
+                      | "Sure-Footed"
+                      | "Tree Stride"
+                      | "Tunneler"
+                      | "Turn Immunity"
+                      | "Turn Resistance"
+                      | "Undead Fortitude"
+                      | "Unusual Nature"
+                      | "Water Breathing"
+                      | "Web Sense"
+                      | "Web Walker"
+                    )[];
+                    actionTags?: (
+                      | "Breath Weapon"
+                      | "Frightful Presence"
+                      | "Multiattack"
+                      | "Parry"
+                      | "Shapechanger"
+                      | "Swallow"
+                      | "Teleport"
+                      | "Tentacles"
+                    )[];
+                    /**
+                     * Items: - X: Any (Choose)
+                     * - XX: All
+                     * - CS: Can't Speak Known Languages
+                     * - LF: Languages Known in Life
+                     * - TP: Telepathy
+                     * - OTH: Other
+                     * - -
+                     * - AB: Abyssal
+                     * - AQ: Aquan
+                     * - AU: Auran
+                     * - C: Common
+                     * - CE: Celestial
+                     * - CSL: Common Sign Language
+                     * - D: Dwarvish
+                     * - DR: Draconic
+                     * - DS: Deep Speech
+                     * - DU: Druidic
+                     * - E: Elvish
+                     * - G: Gnomish
+                     * - GI: Giant
+                     * - GO: Goblin
+                     * - GTH: Gith
+                     * - H: Halfling
+                     * - I: Infernal
+                     * - IG: Ignan
+                     * - O: Orc
+                     * - P: Primordial
+                     * - S: Sylvan
+                     * - T: Terran
+                     * - TC: Thieves' cant
+                     * - U: Undercommon
+                     */
+                    languageTags?: (
+                      | "X"
+                      | "XX"
+                      | "CS"
+                      | "LF"
+                      | "TP"
+                      | "OTH"
+                      | "AB"
+                      | "AQ"
+                      | "AU"
+                      | "C"
+                      | "CE"
+                      | "CSL"
+                      | "D"
+                      | "DR"
+                      | "DS"
+                      | "DU"
+                      | "E"
+                      | "G"
+                      | "GI"
+                      | "GO"
+                      | "GTH"
+                      | "H"
+                      | "I"
+                      | "IG"
+                      | "O"
+                      | "P"
+                      | "S"
+                      | "T"
+                      | "TC"
+                      | "U"
+                    )[];
+                    /**
+                     * Items: - B: Blindsight
+                     * - D: Darkvision
+                     * - SD: Superior Darkvision
+                     * - T: Tremorsense
+                     * - U: Truesight
+                     */
+                    senseTags?: ("B" | "D" | "SD" | "T" | "U")[];
+                    /**
+                     * Items: - P: Psionics
+                     * - I: Innate
+                     * - F: Form Only
+                     * - S: Shared
+                     * - O: Other
+                     * - CA: Class, Artificer
+                     * - CB: Class, Bard
+                     * - CC: Class, Cleric
+                     * - CD: Class, Druid
+                     * - CP: Class, Paladin
+                     * - CR: Class, Ranger
+                     * - CS: Class, Sorcerer
+                     * - CL: Class, Warlock
+                     * - CW: Class, Wizard
+                     */
+                    spellcastingTags?: (
+                      "P" | "I" | "F" | "S" | "O" | "CA" | "CB" | "CC" | "CD" | "CP" | "CR" | "CS" | "CL" | "CW"
+                    )[];
+                    /**
+                     * Items: - A: Acid
+                     * - B: Bludgeoning
+                     * - C: Cold
+                     * - F: Fire
+                     * - O: Force
+                     * - L: Lightning
+                     * - N: Necrotic
+                     * - P: Piercing
+                     * - I: Poison
+                     * - Y: Psychic
+                     * - R: Radiant
+                     * - S: Slashing
+                     * - T: Thunder
+                     */
+                    damageTags?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                    /**
+                     * Items: - A: Acid
+                     * - B: Bludgeoning
+                     * - C: Cold
+                     * - F: Fire
+                     * - O: Force
+                     * - L: Lightning
+                     * - N: Necrotic
+                     * - P: Piercing
+                     * - I: Poison
+                     * - Y: Psychic
+                     * - R: Radiant
+                     * - S: Slashing
+                     * - T: Thunder
+                     */
+                    damageTagsSpell?: ("A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T")[];
+                    /**
+                     * Items: - A: Acid
+                     * - B: Bludgeoning
+                     * - C: Cold
+                     * - F: Fire
+                     * - O: Force
+                     * - L: Lightning
+                     * - N: Necrotic
+                     * - P: Piercing
+                     * - I: Poison
+                     * - Y: Psychic
+                     * - R: Radiant
+                     * - S: Slashing
+                     * - T: Thunder
+                     */
+                    damageTagsLegendary?: (
+                      "A" | "B" | "C" | "F" | "O" | "L" | "N" | "P" | "I" | "Y" | "R" | "S" | "T"
+                    )[];
+                    /**
+                     * Items: - AOE: Has Areas of Effect
+                     * - CUR: Inflicts Curse
+                     * - DIS: Inflicts Disease
+                     * - HPR: Has HP Reduction
+                     * - MW: Has Weapon Attacks, Melee
+                     * - RW: Has Weapon Attacks, Ranged
+                     * - MA: Has Attacks, Melee
+                     * - RA: Has Attacks, Ranged
+                     * - RCH: Has Reach Attacks
+                     * - MLW: Has Melee Weapons
+                     * - RNG: Has Ranged Weapons
+                     * - THW: Has Thrown Weapons
+                     */
+                    miscTags?: (
+                      "AOE" | "CUR" | "DIS" | "HPR" | "MW" | "RW" | "MA" | "RA" | "RCH" | "MLW" | "RNG" | "THW"
+                    )[];
+                    /**
+                     * @minItems 1
+                     *
+                     * Items: A UID, e.g. "longsword|phb"
+                     */
+                    attachedItems?: [string, ...string[]];
+                    conditionInflict?: TagsConditions;
+                    conditionInflictLegendary?: TagsConditions;
+                    conditionInflictSpell?: TagsConditions;
+                    savingThrowForced?: TagsSavingThrow;
+                    savingThrowForcedLegendary?: TagsSavingThrow;
+                    savingThrowForcedSpell?: TagsSavingThrow;
+                    /**
+                     * Intended for homebrew use only.
+                     */
+                    footer?: Entry[];
+                    legacy?: true;
+                    /**
+                     * The spell used to summon this creature; specifically for TCE-esque summon spells.
+                     */
+                    summonedBySpell?: string;
+                    /**
+                     * The level of the spell used to summon this creature; specifically for TCE-esque summon spells.
+                     */
+                    summonedBySpellLevel?: number;
+                    /**
+                     * The class which can summon this creature; e.g. for those granted by some TCE class features.
+                     */
+                    summonedByClass?: string;
+                    /**
+                     * If this creature should be scalable by summoning/owning player level.
+                     */
+                    summonedScaleByPlayerLevel?: true;
+                    /**
+                     * An internal flag indicating this creature is a copy of another, and is a temporary/placeholder entry which will be factored out using the "_copy" format at a later date.
+                     */
+                    _isCopy?: boolean;
+                    _versions?: (
+                      | (
+                          | {
+                              name: string;
+                              source: string;
+                              _mod?: _ModObject;
+                              _templates?: _TemplatesArray;
+                              _preserve?: _PreserveObject;
+                              [k: string]: unknown;
+                            }
+                          | {
+                              _abstract: {
+                                name: string;
+                                source: string;
+                                _mod: _ModObject;
+                                _preserve?: _PreserveObject1;
+                                [k: string]: unknown;
+                              };
+                              /**
+                               * @minItems 1
+                               */
+                              _implementations: [
+                                {
+                                  _variables: {
+                                    [k: string]: unknown;
+                                  };
+                                  [k: string]: unknown;
+                                },
+                                ...{
+                                  _variables: {
+                                    [k: string]: unknown;
+                                  };
+                                  [k: string]: unknown;
+                                }[]
+                              ];
+                            }
+                        )
+                      | CreatureData
+                    )[];
+                    hasFluff?: true;
+                    hasFluffImages?: true;
+                    srd?: boolean | string;
+                    srd52?: boolean | string;
+                    basicRules?: true;
+                    basicRules2024?: true;
+                    vehicleType?: "CREATURE";
+                    terrain?: VehicleTerrain;
+                    _copy: CopyBlockCopyGeneric;
+                  }
+              )
+            | (
+                | {
+                    name: string;
+                    source: string;
+                    page?: string | number;
+                    reprintedAs?: ReprintedAs1;
+                    /**
+                     * Items: - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                    creatureType?:
+                      | "aberration"
+                      | "beast"
+                      | "celestial"
+                      | "construct"
+                      | "dragon"
+                      | "elemental"
+                      | "fey"
+                      | "fiend"
+                      | "giant"
+                      | "humanoid"
+                      | "monstrosity"
+                      | "ooze"
+                      | "plant"
+                      | "undead"
+                      | "vehicle";
+                    /**
+                     * - G: Generic
+                     * - SW: Siege Weapon
+                     * - U: Unknown
+                     */
+                    objectType?: "GEN" | "SW" | "U";
+                    str?: number;
+                    dex?: number;
+                    con?: number;
+                    int?: number;
+                    wis?: number;
+                    cha?: number;
+                    ac?:
+                      | number
+                      | {
+                          special: string;
+                        };
+                    hp?:
+                      | number
+                      | {
+                          special: string;
+                        };
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    senses?: string[];
+                    resist?: DamageResistArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    immune?: DamageImmunityArray1;
+                    vulnerable?: DamageVulnerabilityArray1;
+                    entries?: Entry[];
+                    /**
+                     * Actions available with the object, like firing a siege weapon. Uses the normal entries data.
+                     */
+                    actionEntries?: Entry[];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    foundryTokenScale?: number;
+                    altArt?: AltArt;
+                    isNpc?: boolean;
+                    hasToken?: boolean;
+                    hasFluff?: true;
+                    hasFluffImages?: true;
+                    srd?: boolean | string;
+                    srd52?: boolean | string;
+                    basicRules?: true;
+                    basicRules2024?: true;
+                    capCrew?: number;
+                    capPassenger?: number;
+                    capCargo?: number | string;
+                    dimensions?: string[];
+                    vehicleType: "OBJECT";
+                    terrain: VehicleTerrain;
+                  }
+                | {
+                    name?: string;
+                    source?: string;
+                    page?: string | number;
+                    reprintedAs?: ReprintedAs1;
+                    /**
+                     * Items: - F: Fine
+                     * - D: Diminutive
+                     * - T: Tiny
+                     * - S: Small
+                     * - M: Medium
+                     * - L: Large
+                     * - H: Huge
+                     * - G: Gargantuan
+                     * - C: Colossal
+                     * - V: Varies.
+                     */
+                    size?: ("T" | "S" | "M" | "L" | "H" | "G" | "V")[];
+                    creatureType?:
+                      | "aberration"
+                      | "beast"
+                      | "celestial"
+                      | "construct"
+                      | "dragon"
+                      | "elemental"
+                      | "fey"
+                      | "fiend"
+                      | "giant"
+                      | "humanoid"
+                      | "monstrosity"
+                      | "ooze"
+                      | "plant"
+                      | "undead"
+                      | "vehicle";
+                    /**
+                     * - G: Generic
+                     * - SW: Siege Weapon
+                     * - U: Unknown
+                     */
+                    objectType?: "GEN" | "SW" | "U";
+                    str?: number;
+                    dex?: number;
+                    con?: number;
+                    int?: number;
+                    wis?: number;
+                    cha?: number;
+                    ac?:
+                      | number
+                      | {
+                          special: string;
+                        };
+                    hp?:
+                      | number
+                      | {
+                          special: string;
+                        };
+                    speed?:
+                      | {
+                          walk?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          burrow?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          climb?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          fly?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          canHover?: true;
+                          swim?:
+                            | {
+                                number: number;
+                                condition: string;
+                              }
+                            | number
+                            | true;
+                          choose?: {
+                            /**
+                             * @minItems 2
+                             */
+                            from: [
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              "walk" | "burrow" | "climb" | "fly" | "swim",
+                              ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                            ];
+                            amount: number;
+                            note?: string;
+                          };
+                          alternate?: {
+                            walk?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            burrow?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            climb?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            fly?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            swim?: (
+                              | {
+                                  number: number;
+                                  condition: string;
+                                }
+                              | number
+                              | true
+                            )[];
+                            [k: string]: unknown;
+                          };
+                          /**
+                           * @minItems 1
+                           */
+                          hidden?: [
+                            "walk" | "burrow" | "climb" | "fly" | "swim",
+                            ...("walk" | "burrow" | "climb" | "fly" | "swim")[]
+                          ];
+                        }
+                      | number
+                      | "Varies";
+                    senses?: string[];
+                    resist?: DamageResistArray1;
+                    conditionImmune?: ConditionImmunityArray1;
+                    immune?: DamageImmunityArray1;
+                    vulnerable?: DamageVulnerabilityArray1;
+                    entries?: Entry[];
+                    /**
+                     * Actions available with the object, like firing a siege weapon. Uses the normal entries data.
+                     */
+                    actionEntries?: Entry[];
+                    token?: Token;
+                    tokenCredit?: string;
+                    tokenCustom?: true;
+                    foundryTokenScale?: number;
+                    altArt?: AltArt;
+                    isNpc?: boolean;
+                    hasToken?: boolean;
+                    hasFluff?: true;
+                    hasFluffImages?: true;
+                    srd?: boolean | string;
+                    srd52?: boolean | string;
+                    basicRules?: true;
+                    basicRules2024?: true;
+                    capCrew?: number;
+                    capPassenger?: number;
+                    capCargo?: number | string;
+                    dimensions?: string[];
+                    vehicleType?: "OBJECT";
+                    terrain?: VehicleTerrain;
+                    _copy: CopyBlockCopyGeneric;
+                  }
+              );
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "vehicleUpgrade";
+          statblockData:
+            | {
+                name: string;
+                entries: Entry[];
+                source: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                legacy?: true;
+                /**
+                 * @minItems 1
+                 *
+                 * Items: - IWM:A: Infernal War Machine Upgrade, Armor
+                 * - IWM:G: Infernal War Machine Upgrade, Gadget
+                 * - IWM:W: Infernal War Machine Variant, Weapon
+                 * - SHP:F: Ship Upgrade, Figurehead
+                 * - SHP:H: Ship Upgrade, Hull
+                 * - SHP:M: Ship Upgrade, Movement
+                 * - SHP:O: Ship Upgrade, Miscellaneous
+                 * - SHP:W: Ship Upgrade, Weapon
+                 */
+                upgradeType: [
+                  "SHP:H" | "SHP:M" | "SHP:W" | "SHP:F" | "SHP:O" | "IWM:W" | "IWM:A" | "IWM:G",
+                  ...("SHP:H" | "SHP:M" | "SHP:W" | "SHP:F" | "SHP:O" | "IWM:W" | "IWM:A" | "IWM:G")[]
+                ];
+                /**
+                 * In copper pieces.
+                 */
+                cost?: number;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+              }
+            | {
+                name?: string;
+                entries?: Entry[];
+                source?: string;
+                page?: string | number;
+                otherSources?: OtherSources1;
+                referenceSources?: ReferenceSources1;
+                reprintedAs?: ReprintedAs1;
+                legacy?: true;
+                /**
+                 * @minItems 1
+                 *
+                 * Items: - IWM:A: Infernal War Machine Upgrade, Armor
+                 * - IWM:G: Infernal War Machine Upgrade, Gadget
+                 * - IWM:W: Infernal War Machine Variant, Weapon
+                 * - SHP:F: Ship Upgrade, Figurehead
+                 * - SHP:H: Ship Upgrade, Hull
+                 * - SHP:M: Ship Upgrade, Movement
+                 * - SHP:O: Ship Upgrade, Miscellaneous
+                 * - SHP:W: Ship Upgrade, Weapon
+                 */
+                upgradeType?: [
+                  "SHP:H" | "SHP:M" | "SHP:W" | "SHP:F" | "SHP:O" | "IWM:W" | "IWM:A" | "IWM:G",
+                  ...("SHP:H" | "SHP:M" | "SHP:W" | "SHP:F" | "SHP:O" | "IWM:W" | "IWM:A" | "IWM:G")[]
+                ];
+                /**
+                 * In copper pieces.
+                 */
+                cost?: number;
+                hasFluff?: boolean;
+                hasFluffImages?: boolean;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "skill";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                ability?: "str" | "dex" | "con" | "int" | "wis" | "cha";
+                entries: Entry[];
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                ability?: "str" | "dex" | "con" | "int" | "wis" | "cha";
+                entries?: Entry[];
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
+      | {
+          type: "statblockInline";
+          /**
+           * @minItems 1
+           */
+          dependencies?: [string, ...string[]];
+          statblockType: "sense";
+          statblockData:
+            | {
+                name: string;
+                source: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                entries: Entry[];
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+              }
+            | {
+                name?: string;
+                source?: string;
+                page?: string | number;
+                reprintedAs?: ReprintedAs1;
+                entries?: Entry[];
+                srd?: boolean | string;
+                srd52?: boolean | string;
+                basicRules?: true;
+                basicRules2024?: true;
+                _copy: CopyBlockCopyGeneric;
+              };
+          style?: "inset" | "narrow";
+          collapsed?: true;
+        }
     )
   | (
       | {
@@ -21476,62 +31805,6 @@ export interface EntryAbilityAttackMod {
   basicRules?: true;
   basicRules2024?: true;
   attributes: ("str" | "dex" | "con" | "int" | "wis" | "cha" | "spellcasting")[];
-}
-export interface AbilityGeneric {
-  name?: string;
-  type: "abilityGeneric";
-  source?: string;
-  page?: string | number;
-  data?: _EntryDataData;
-  id?: string;
-  srd?: boolean | string;
-  srd52?: boolean | string;
-  basicRules?: true;
-  basicRules2024?: true;
-  text: string;
-  attributes?: ("str" | "dex" | "con" | "int" | "wis" | "cha")[];
-}
-export interface EntryLink {
-  name?: string;
-  type: "link";
-  source?: string;
-  page?: string | number;
-  data?: _EntryDataData;
-  id?: string;
-  srd?: boolean | string;
-  srd52?: boolean | string;
-  basicRules?: true;
-  basicRules2024?: true;
-  text: string;
-  href:
-    | {
-        type?: "internal";
-        path: string;
-        hash?: string;
-        hashPreEncoded?: boolean;
-        subhashes?: (
-          | {
-              key: string;
-              values: string[];
-              preEncoded?: boolean;
-            }
-          | {
-              key: string;
-              value: string;
-              preEncoded?: boolean;
-            }
-        )[];
-        hover?: {
-          page: string | number;
-          source: string;
-          /**
-           * Optional; overrides the href hash for hover handlers.
-           */
-          hash?: string;
-          hashPreEncoded?: boolean;
-        };
-      }
-    | MediaHrefExternal;
 }
 export interface MediaHrefExternal {
   type?: "external";
