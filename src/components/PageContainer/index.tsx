@@ -3,15 +3,26 @@ import { Meta } from '@newhighsco/press-start'
 import type { NextSeoProps } from 'next-seo'
 import type { FC, PropsWithChildren } from 'react'
 
+import { DiceTray } from '~components/Dice'
 import Footer from '~components/Footer'
 import Header from '~components/Header'
+import { Sprites } from '~components/Sprite'
 
 export type PageContainerProps = PropsWithChildren<{ meta?: NextSeoProps }>
 
 const PageContainer: FC<PageContainerProps> = ({ meta, children }) => (
-  <ThemedPageContainer header={<Header />} footer={<Footer />}>
+  <ThemedPageContainer
+    header={<Header />}
+    footer={
+      <>
+        <DiceTray />
+        <Footer />
+      </>
+    }
+  >
     <Meta {...meta} />
     {children}
+    <Sprites />
   </ThemedPageContainer>
 )
 

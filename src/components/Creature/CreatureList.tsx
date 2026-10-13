@@ -3,6 +3,7 @@ import { type FC, type MouseEventHandler, useRef, useState } from 'react'
 import useSWR from 'swr'
 
 import Dialog from '~components/Dialog'
+import { DiceTray } from '~components/Dice'
 
 import { CreatureCard, CreatureDetails } from '.'
 import styles from './CreatureList.module.scss'
@@ -62,6 +63,7 @@ const CreatureList: FC<CreatureListProps> = ({
       </List>
       <Dialog ref={dialogRef}>
         {data && <CreatureDetails {...data} dialog />}
+        <DiceTray />
       </Dialog>
     </>
   )

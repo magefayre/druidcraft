@@ -3,7 +3,8 @@
 .root {
   border: 1px solid var(--border);
   border-radius: functions.spacing(1);
-  padding: functions.spacing(0.25) functions.spacing(0.5);
+  line-height: 1;
+  padding: functions.spacing(0.5) functions.spacing(0.5);
   vertical-align: unset;
 
   &:hover {

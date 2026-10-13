@@ -4,13 +4,17 @@ import type { FC, PropsWithChildren } from 'react'
 
 import styles from './DefinitionList.module.scss'
 
-type DefinitionProps = PropsWithChildren<{ term: string }>
+type DefinitionProps = PropsWithChildren<{ term: string; className?: string }>
 type DefinitionListProps = PropTypes.InferProps<List.propTypes>
 
-export const Definition: FC<DefinitionProps> = ({ term, children }) => (
+export const Definition: FC<DefinitionProps> = ({
+  term,
+  children,
+  className
+}) => (
   <div>
     <dt>{term}</dt>
-    <dd>{children}</dd>
+    <dd className={className}>{children}</dd>
   </div>
 )
 

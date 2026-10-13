@@ -6,7 +6,6 @@ import { CreatureList } from '~components/Creature'
 import Filter, { type FilterHandler } from '~components/Filter'
 import Section from '~components/Section'
 import Select from '~components/Select'
-import { Sprites } from '~components/Sprite'
 import { LEVELS } from '~constants'
 import { useFormData, useSorting } from '~hooks'
 import type { RatingType } from '~types'
@@ -114,7 +113,6 @@ const WildShape: FC<WildShapeProps> = ({ creatures }) => {
           ratings={rating}
           speedLimits
         />
-        <Sprites />
       </Section>
     </>
   )
