@@ -1,3 +1,9 @@
+## [1.20.0](https://github.com/magefayre/druidcraft/compare/v1.19.6...v1.20.0) (2026-10-13)
+
+### Features
+
+* dice rolling ([#434](https://github.com/magefayre/druidcraft/issues/434)) ([19afba9](https://github.com/magefayre/druidcraft/commit/19afba9265eaa8afa8d381fd2a14586d472e817e))
+
 ## [1.19.6](https://github.com/magefayre/druidcraft/compare/v1.19.5...v1.19.6) (2026-10-05)
 
 ### Bug Fixes
