@@ -1,3 +1,9 @@
+## [1.20.2](https://github.com/magefayre/druidcraft/compare/v1.20.1...v1.20.2) (2026-10-13)
+
+### Bug Fixes
+
+* **deps:** update dependency 5etools-mirror-3/5etools-2014-src to v1.221.0 ([#462](https://github.com/magefayre/druidcraft/issues/462)) ([a6bbf3b](https://github.com/magefayre/druidcraft/commit/a6bbf3b8ed3b3c6a07d17912b8e7d735dbbdcdba))
+
 ## [1.20.1](https://github.com/magefayre/druidcraft/compare/v1.20.0...v1.20.1) (2026-10-13)
 
 ### Bug Fixes
