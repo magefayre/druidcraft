@@ -1,3 +1,9 @@
+## [1.20.1](https://github.com/magefayre/druidcraft/compare/v1.20.0...v1.20.1) (2026-10-13)
+
+### Bug Fixes
+
+* **deps:** update dependency postcss to v8.5.30 ([#456](https://github.com/magefayre/druidcraft/issues/456)) ([ba9dbc3](https://github.com/magefayre/druidcraft/commit/ba9dbc33a5c7a5aa7328d85c24f79dddb4239946))
+
 ## [1.20.0](https://github.com/magefayre/druidcraft/compare/v1.19.6...v1.20.0) (2026-10-13)
 
 ### Features
