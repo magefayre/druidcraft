@@ -72,7 +72,7 @@
   },
   "devDependencies": {
     "5etools-utils": "0.17.23",
-    "@commitlint/cli": "21.2.3",
+    "@commitlint/cli": "21.2.4",
     "@newhighsco/browserslist-config": "3.0.1",
     "@newhighsco/commitlint-config": "1.3.6",
     "@newhighsco/editor-config": "1.2.0",
