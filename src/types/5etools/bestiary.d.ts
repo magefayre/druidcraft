@@ -4700,6 +4700,7 @@ export type Entry =
                 /**
                  * - AAD: Additional Attack Damage
                  * - ADV: Grants Advantage
+                 * - ALT: Targets Allies
                  * - BO: Burns Objects
                  * - DFT: Difficult Terrain
                  * - FMV: Forced Movement
@@ -4721,6 +4722,7 @@ export type Entry =
                  * - TP: Teleportation
                  * - UA: Uses Action
                  * - UBA: Uses Bonus Action
+                 * - WLT: Targets Willing Creatures
                  *
                  * @minItems 1
                  */
@@ -4728,6 +4730,7 @@ export type Entry =
                   (
                     | "AAD"
                     | "ADV"
+                    | "ALT"
                     | "BO"
                     | "DFT"
                     | "FMV"
@@ -4749,10 +4752,12 @@ export type Entry =
                     | "TP"
                     | "UA"
                     | "UBA"
+                    | "WLT"
                   ),
                   ...(
                     | "AAD"
                     | "ADV"
+                    | "ALT"
                     | "BO"
                     | "DFT"
                     | "FMV"
@@ -4774,6 +4779,7 @@ export type Entry =
                     | "TP"
                     | "UA"
                     | "UBA"
+                    | "WLT"
                   )[]
                 ];
                 /**
@@ -5056,6 +5062,7 @@ export type Entry =
                 /**
                  * - AAD: Additional Attack Damage
                  * - ADV: Grants Advantage
+                 * - ALT: Targets Allies
                  * - BO: Burns Objects
                  * - DFT: Difficult Terrain
                  * - FMV: Forced Movement
@@ -5077,6 +5084,7 @@ export type Entry =
                  * - TP: Teleportation
                  * - UA: Uses Action
                  * - UBA: Uses Bonus Action
+                 * - WLT: Targets Willing Creatures
                  *
                  * @minItems 1
                  */
@@ -5084,6 +5092,7 @@ export type Entry =
                   (
                     | "AAD"
                     | "ADV"
+                    | "ALT"
                     | "BO"
                     | "DFT"
                     | "FMV"
@@ -5105,10 +5114,12 @@ export type Entry =
                     | "TP"
                     | "UA"
                     | "UBA"
+                    | "WLT"
                   ),
                   ...(
                     | "AAD"
                     | "ADV"
+                    | "ALT"
                     | "BO"
                     | "DFT"
                     | "FMV"
@@ -5130,6 +5141,7 @@ export type Entry =
                     | "TP"
                     | "UA"
                     | "UBA"
+                    | "WLT"
                   )[]
                 ];
                 /**
