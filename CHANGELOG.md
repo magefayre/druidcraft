@@ -1,3 +1,9 @@
+## [1.20.7](https://github.com/magefayre/druidcraft/compare/v1.20.6...v1.20.7) (2026-10-28)
+
+### Bug Fixes
+
+* **deps:** update dependency @newhighsco/press-start to v2.9.8 ([#483](https://github.com/magefayre/druidcraft/issues/483)) ([46f4314](https://github.com/magefayre/druidcraft/commit/46f4314dc857903fe5ca0913ef52b3063dceae69))
+
 ## [1.20.6](https://github.com/magefayre/druidcraft/compare/v1.20.5...v1.20.6) (2026-10-28)
 
 ### Bug Fixes
