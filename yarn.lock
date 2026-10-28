@@ -2742,17 +2742,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/react@npm:6.0.2":
-  version: 6.0.2
-  resolution: "@iconify/react@npm:6.0.2"
-  dependencies:
-    "@iconify/types": "npm:^2.0.0"
-  peerDependencies:
-    react: ">=16"
-  checksum: 10c0/1f53f588361d658c6f077fefcc31d52f6f5d375f06b63dd13cc73b71fd28cf9409edece921ea8fa5195a79d02ff9162aff8472c14e858c0178067eecc3128460
-  languageName: node
-  linkType: hard
-
 "@iconify/react@npm:6.0.3":
   version: 6.0.3
   resolution: "@iconify/react@npm:6.0.3"
@@ -3132,7 +3121,7 @@ __metadata:
     "@newhighsco/lint-staged-config": "npm:1.1.4"
     "@newhighsco/next-plugin-svgr": "npm:3.0.176"
     "@newhighsco/postcss-config": "npm:4.0.92"
-    "@newhighsco/press-start": "npm:2.9.7"
+    "@newhighsco/press-start": "npm:2.9.8"
     "@newhighsco/prettier-config": "npm:2.3.18"
     "@newhighsco/release-config": "npm:1.5.11"
     "@newhighsco/stylelint-config": "npm:4.0.58"
@@ -3187,22 +3176,6 @@ __metadata:
   dependencies:
     browserslist-config-baseline: "npm:0.5.0"
   checksum: 10c0/7349ccf4756c19a98aedd2b3620cf457fdb4f2b95e74089a608d606d03d90ecf39e5d0f4626f29b3f962dbc3432ee9245fe4cd769a9cceb8f015f90ffb78aa89
-  languageName: node
-  linkType: hard
-
-"@newhighsco/chipset@npm:7.5.2":
-  version: 7.5.2
-  resolution: "@newhighsco/chipset@npm:7.5.2"
-  dependencies:
-    "@dr.pogodin/react-themes": "npm:1.11.0"
-    "@iconify/react": "npm:6.0.2"
-    classnames: "npm:2.5.1"
-    react-device-detect: "npm:2.2.3"
-    url-join: "npm:5.1.1"
-  peerDependencies:
-    react: ^19
-    react-dom: ^19
-  checksum: 10c0/cf8b6a1ec40284e6b5824d2e5647744371796ec935260140a68ed4eb6d50b48adacd4d869297d195a9865bae4caf5c688bdf90f6face9cc98ad3dd233b3c0e97
   languageName: node
   linkType: hard
 
@@ -3312,15 +3285,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@newhighsco/press-start@npm:2.9.7":
-  version: 2.9.7
-  resolution: "@newhighsco/press-start@npm:2.9.7"
+"@newhighsco/press-start@npm:2.9.8":
+  version: 2.9.8
+  resolution: "@newhighsco/press-start@npm:2.9.8"
   dependencies:
-    "@newhighsco/chipset": "npm:7.5.2"
+    "@newhighsco/chipset": "npm:7.5.3"
     next-seo: "npm:6.8.0"
   peerDependencies:
     next: ^16
-  checksum: 10c0/4fd6de1f958678076bdf437e0842a19b2e90b7af46c3db2bf513345eb7e426ba7902727f5ff8e4db97a61ac81edd71ce38eef6efc9358d0a781e3539e48ad2af
+  checksum: 10c0/0f07b64aad245218c00d32b9a4c4faf8955b857bec51dfb48760db9c7c74f1acdc3fea0c384233aa808a36c4ee1ffa57a150217add7a18642e76e6f5a3cff5b5
   languageName: node
   linkType: hard
 
