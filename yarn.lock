@@ -3114,14 +3114,14 @@ __metadata:
     5etools-utils: "npm:0.17.24"
     "@commitlint/cli": "npm:21.2.4"
     "@newhighsco/browserslist-config": "npm:3.0.1"
-    "@newhighsco/chipset": "npm:7.5.3"
+    "@newhighsco/chipset": "npm:7.5.5"
     "@newhighsco/commitlint-config": "npm:1.3.6"
     "@newhighsco/editor-config": "npm:1.2.0"
     "@newhighsco/eslint-config": "npm:7.1.54"
     "@newhighsco/lint-staged-config": "npm:1.1.4"
     "@newhighsco/next-plugin-svgr": "npm:3.0.176"
     "@newhighsco/postcss-config": "npm:4.0.92"
-    "@newhighsco/press-start": "npm:2.9.8"
+    "@newhighsco/press-start": "npm:2.9.9"
     "@newhighsco/prettier-config": "npm:2.3.18"
     "@newhighsco/release-config": "npm:1.5.11"
     "@newhighsco/stylelint-config": "npm:4.0.58"
@@ -3179,19 +3179,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@newhighsco/chipset@npm:7.5.3":
-  version: 7.5.3
-  resolution: "@newhighsco/chipset@npm:7.5.3"
+"@newhighsco/chipset@npm:7.5.5":
+  version: 7.5.5
+  resolution: "@newhighsco/chipset@npm:7.5.5"
   dependencies:
     "@dr.pogodin/react-themes": "npm:1.11.0"
     "@iconify/react": "npm:6.0.3"
     classnames: "npm:2.5.1"
     react-device-detect: "npm:2.2.3"
-    url-join: "npm:5.1.1"
+    url-join: "npm:6.0.0"
   peerDependencies:
     react: ^19
     react-dom: ^19
-  checksum: 10c0/1efdc79f83e37df97c02fd94c24334cb6ef75509db79c30eee93bb4d49d54ae28100fb3b96cb0660aa2197d6d835eb59d545b254e28c8f7112f1075ca0bea569
+  checksum: 10c0/753d2af02e339d3ec2a67f89cce02e599ef9dc089b6d82cd5506f9551789732f067c92b38d306175b8817b8723140fa9179b6ff5bf4531f1dd398c047e5c3cef
   languageName: node
   linkType: hard
 
@@ -3285,15 +3285,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@newhighsco/press-start@npm:2.9.8":
-  version: 2.9.8
-  resolution: "@newhighsco/press-start@npm:2.9.8"
+"@newhighsco/press-start@npm:2.9.9":
+  version: 2.9.9
+  resolution: "@newhighsco/press-start@npm:2.9.9"
   dependencies:
-    "@newhighsco/chipset": "npm:7.5.3"
+    "@newhighsco/chipset": "npm:7.5.5"
     next-seo: "npm:6.8.0"
   peerDependencies:
     next: ^16
-  checksum: 10c0/0f07b64aad245218c00d32b9a4c4faf8955b857bec51dfb48760db9c7c74f1acdc3fea0c384233aa808a36c4ee1ffa57a150217add7a18642e76e6f5a3cff5b5
+  checksum: 10c0/2333e68d437bc3a78f95229fb9828a63520a1e28f70d40060223c26d3edf562b19b1d6e754c81d80544cce93a1040f8c0ab18d450041fe9e9fc7c0421e0b4dd7
   languageName: node
   linkType: hard
 
@@ -13698,7 +13698,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"url-join@npm:5.1.1, url-join@npm:^5.0.0":
+"url-join@npm:6.0.0":
+  version: 6.0.0
+  resolution: "url-join@npm:6.0.0"
+  checksum: 10c0/671c8501119b632e3ed3e84afe7fa2e21f558069ad287261a20be5d42add9387dfa1960e9e841e123ed6887e0774b8f1508c94643815670c4e05c5d0d9eeea17
+  languageName: node
+  linkType: hard
+
+"url-join@npm:^5.0.0":
   version: 5.1.1
   resolution: "url-join@npm:5.1.1"
   checksum: 10c0/517e886d302527c7faa999f13e0d131a06dce3bb1577be210cf40f55d9cad83af07c0e2160e86ebe6d095cbbe992f9bb32811897b5fa5ddcc786ab02d03c109f
