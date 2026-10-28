@@ -1,3 +1,9 @@
+## [1.20.8](https://github.com/magefayre/druidcraft/compare/v1.20.7...v1.20.8) (2026-10-28)
+
+### Bug Fixes
+
+* **deps:** update newhighsco packages ([#484](https://github.com/magefayre/druidcraft/issues/484)) ([bfdc4ab](https://github.com/magefayre/druidcraft/commit/bfdc4ab785c22565fd78ddfb660af42ac0b20b68))
+
 ## [1.20.7](https://github.com/magefayre/druidcraft/compare/v1.20.6...v1.20.7) (2026-10-28)
 
 ### Bug Fixes
