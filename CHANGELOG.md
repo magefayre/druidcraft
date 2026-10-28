@@ -1,3 +1,15 @@
+## [1.20.6](https://github.com/magefayre/druidcraft/compare/v1.20.5...v1.20.6) (2026-10-28)
+
+### Bug Fixes
+
+* **deps:** update dependency 5etools-mirror-3/5etools-2014-src to v1.221.2 ([#476](https://github.com/magefayre/druidcraft/issues/476)) ([97348e3](https://github.com/magefayre/druidcraft/commit/97348e33db41a181be9b50820ccf29d3572d2710))
+* **deps:** update dependency next to v16.4.1 [security] ([#470](https://github.com/magefayre/druidcraft/issues/470)) ([b2c7832](https://github.com/magefayre/druidcraft/commit/b2c7832b1d2e71850e435dc91fe77de64b7744f0))
+* **deps:** update dependency next to v16.4.3 ([#477](https://github.com/magefayre/druidcraft/issues/477)) ([6a4f9e7](https://github.com/magefayre/druidcraft/commit/6a4f9e7ae4d69ba960e566c0983a3ba6c6081b25))
+* **deps:** update dependency postcss to v8.5.32 ([#478](https://github.com/magefayre/druidcraft/issues/478)) ([93552f3](https://github.com/magefayre/druidcraft/commit/93552f3c0cfc1a4d7999b7fbd507726106154902))
+* **deps:** update dependency sass to v1.106.1 ([#481](https://github.com/magefayre/druidcraft/issues/481)) ([c7c3136](https://github.com/magefayre/druidcraft/commit/c7c3136ef427191b2772d2c8f3628522de872496))
+* **deps:** update newhighsco packages ([#468](https://github.com/magefayre/druidcraft/issues/468)) ([da19744](https://github.com/magefayre/druidcraft/commit/da19744877541b76efad0a4ef1fe05020f8aeef9))
+* **deps:** update react monorepo to v19.3.1 ([#479](https://github.com/magefayre/druidcraft/issues/479)) ([1af936c](https://github.com/magefayre/druidcraft/commit/1af936c32066d770928d47ad0d27ba162d5c5523))
+
 ## [1.20.5](https://github.com/magefayre/druidcraft/compare/v1.20.4...v1.20.5) (2026-10-14)
 
 ### Bug Fixes
