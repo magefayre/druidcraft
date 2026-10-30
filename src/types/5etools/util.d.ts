@@ -2924,6 +2924,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, twisting nether"
                   ),
                   ...(
                     | "any"
@@ -2976,6 +2977,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, twisting nether"
                   )[]
                 ];
                 /**
@@ -3997,6 +3999,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, twisting nether"
                   ),
                   ...(
                     | "any"
@@ -4049,6 +4052,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, twisting nether"
                   )[]
                 ];
                 /**
@@ -10497,6 +10501,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, twisting nether"
                       ),
                       ...(
                         | "any"
@@ -10549,6 +10554,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, twisting nether"
                       )[]
                     ];
                     /**
@@ -11574,6 +11580,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, twisting nether"
                       ),
                       ...(
                         | "any"
@@ -11626,6 +11633,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, twisting nether"
                       )[]
                     ];
                     /**
@@ -23283,6 +23291,7 @@ export interface CreatureData {
       | "planar, limbo"
       | "planar, mechanus"
       | "planar, outlands"
+      | "planar, twisting nether"
     ),
     ...(
       | "any"
@@ -23335,6 +23344,7 @@ export interface CreatureData {
       | "planar, limbo"
       | "planar, mechanus"
       | "planar, outlands"
+      | "planar, twisting nether"
     )[]
   ];
   /**
