@@ -3129,7 +3129,7 @@ __metadata:
     "@newhighsco/ts-config": "npm:1.2.2"
     "@newhighsco/yarn-plugin-preset": "npm:1.1.4"
     "@sindresorhus/slugify": "npm:3.0.1"
-    "@sindresorhus/transliterate": "npm:2.3.1"
+    "@sindresorhus/transliterate": "npm:3.0.0"
     "@testing-library/dom": "npm:10.4.2"
     "@testing-library/jest-dom": "npm:7.0.1"
     "@testing-library/react": "npm:16.3.3"
@@ -4359,7 +4359,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sindresorhus/transliterate@npm:2.3.1, @sindresorhus/transliterate@npm:^2.0.0":
+"@sindresorhus/transliterate@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@sindresorhus/transliterate@npm:3.0.0"
+  checksum: 10c0/87df28c55559469535465503a83e00533dd5476149d808747bf4cd60bbea479c9f1b6c174e449c09b858787be2cb6e025253b46cf2c07c90c69467d241d14ed7
+  languageName: node
+  linkType: hard
+
+"@sindresorhus/transliterate@npm:^2.0.0":
   version: 2.3.1
   resolution: "@sindresorhus/transliterate@npm:2.3.1"
   checksum: 10c0/36f065fb03212dd9815f99ee53f0333488fd59223d7933695a1cd10b869aa7d56db2cf36094bde36319f153abcc5d2cdd74fc6915327d2852a53e56688f11f6e
