@@ -1,3 +1,9 @@
+## [1.20.15](https://github.com/magefayre/druidcraft/compare/v1.20.14...v1.20.15) (2026-11-03)
+
+### Bug Fixes
+
+* **deps:** update dependency @sindresorhus/transliterate to v3 ([#500](https://github.com/magefayre/druidcraft/issues/500)) ([beed236](https://github.com/magefayre/druidcraft/commit/beed236a3e9d93615cb2cc80a38b99329f277fd6))
+
 ## [1.20.14](https://github.com/magefayre/druidcraft/compare/v1.20.13...v1.20.14) (2026-11-03)
 
 ### Bug Fixes
