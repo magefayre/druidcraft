@@ -2924,6 +2924,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, emerald dream"
                     | "planar, twisting nether"
                   ),
                   ...(
@@ -2977,6 +2978,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, emerald dream"
                     | "planar, twisting nether"
                   )[]
                 ];
@@ -3999,6 +4001,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, emerald dream"
                     | "planar, twisting nether"
                   ),
                   ...(
@@ -4052,6 +4055,7 @@ export type Entry =
                     | "planar, limbo"
                     | "planar, mechanus"
                     | "planar, outlands"
+                    | "planar, emerald dream"
                     | "planar, twisting nether"
                   )[]
                 ];
@@ -10501,6 +10505,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, emerald dream"
                         | "planar, twisting nether"
                       ),
                       ...(
@@ -10554,6 +10559,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, emerald dream"
                         | "planar, twisting nether"
                       )[]
                     ];
@@ -11580,6 +11586,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, emerald dream"
                         | "planar, twisting nether"
                       ),
                       ...(
@@ -11633,6 +11640,7 @@ export type Entry =
                         | "planar, limbo"
                         | "planar, mechanus"
                         | "planar, outlands"
+                        | "planar, emerald dream"
                         | "planar, twisting nether"
                       )[]
                     ];
@@ -14148,6 +14156,104 @@ export type Prerequisite = [
                 | "persuasion"
               )[]
             ];
+        tool?:
+          | true
+          | [
+              (
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              ),
+              ...(
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              )[]
+            ];
       },
       ...{
         armor?: "light" | "medium" | "heavy" | "shield";
@@ -14203,6 +14309,104 @@ export type Prerequisite = [
                 | "persuasion"
               )[]
             ];
+        tool?:
+          | true
+          | [
+              (
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              ),
+              ...(
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              )[]
+            ];
       }[]
     ];
     /**
@@ -14237,8 +14441,8 @@ export type Prerequisite = [
      * @minItems 1
      */
     campaign?: [
-      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft",
-      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft")[]
+      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft",
+      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft")[]
     ];
     /**
      * @minItems 1
@@ -14795,6 +14999,104 @@ export type Prerequisite = [
                 | "persuasion"
               )[]
             ];
+        tool?:
+          | true
+          | [
+              (
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              ),
+              ...(
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              )[]
+            ];
       },
       ...{
         armor?: "light" | "medium" | "heavy" | "shield";
@@ -14850,6 +15152,104 @@ export type Prerequisite = [
                 | "persuasion"
               )[]
             ];
+        tool?:
+          | true
+          | [
+              (
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              ),
+              ...(
+                | "artisan's tools"
+                | "alchemist's supplies"
+                | "brewer's supplies"
+                | "calligrapher's supplies"
+                | "carpenter's tools"
+                | "cartographer's tools"
+                | "cobbler's tools"
+                | "cook's utensils"
+                | "glassblower's tools"
+                | "jeweler's tools"
+                | "leatherworker's tools"
+                | "mason's tools"
+                | "painter's supplies"
+                | "potter's tools"
+                | "smith's tools"
+                | "tinker's tools"
+                | "weaver's tools"
+                | "woodcarver's tools"
+                | "disguise kit"
+                | "forgery kit"
+                | "gaming set"
+                | "dragonchess set"
+                | "dice set"
+                | "three-dragon ante set"
+                | "playing card set"
+                | "herbalism kit"
+                | "musical instrument"
+                | "bagpipes"
+                | "drum"
+                | "dulcimer"
+                | "flute"
+                | "horn"
+                | "lute"
+                | "lyre"
+                | "pan flute"
+                | "shawm"
+                | "viol"
+                | "navigator's tools"
+                | "thieves' tools"
+                | "poisoner's kit"
+                | "vehicles"
+                | "vehicles (air)"
+                | "vehicles (land)"
+                | "vehicles (water)"
+                | "vehicles (space)"
+              )[]
+            ];
       }[]
     ];
     /**
@@ -14884,8 +15284,8 @@ export type Prerequisite = [
      * @minItems 1
      */
     campaign?: [
-      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft",
-      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft")[]
+      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft",
+      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft")[]
     ];
     /**
      * @minItems 1
@@ -19546,6 +19946,7 @@ export type Prerequisite1 = [
          */
         weaponGroup?: "simple" | "martial";
         skill?: true | [SkillNameLower, ...SkillNameLower[]];
+        tool?: true | [ToolNameLower, ...ToolNameLower[]];
       },
       ...{
         armor?: "light" | "medium" | "heavy" | "shield";
@@ -19558,6 +19959,7 @@ export type Prerequisite1 = [
          */
         weaponGroup?: "simple" | "martial";
         skill?: true | [SkillNameLower, ...SkillNameLower[]];
+        tool?: true | [ToolNameLower, ...ToolNameLower[]];
       }[]
     ];
     /**
@@ -19592,8 +19994,8 @@ export type Prerequisite1 = [
      * @minItems 1
      */
     campaign?: [
-      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft",
-      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft")[]
+      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft",
+      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft")[]
     ];
     /**
      * @minItems 1
@@ -20075,6 +20477,7 @@ export type Prerequisite1 = [
          */
         weaponGroup?: "simple" | "martial";
         skill?: true | [SkillNameLower, ...SkillNameLower[]];
+        tool?: true | [ToolNameLower, ...ToolNameLower[]];
       },
       ...{
         armor?: "light" | "medium" | "heavy" | "shield";
@@ -20087,6 +20490,7 @@ export type Prerequisite1 = [
          */
         weaponGroup?: "simple" | "martial";
         skill?: true | [SkillNameLower, ...SkillNameLower[]];
+        tool?: true | [ToolNameLower, ...ToolNameLower[]];
       }[]
     ];
     /**
@@ -20121,8 +20525,8 @@ export type Prerequisite1 = [
      * @minItems 1
      */
     campaign?: [
-      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft",
-      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft")[]
+      "Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft",
+      ...("Dragonlance" | "Planescape" | "Eberron" | "Ravenloft" | "World of Warcraft")[]
     ];
     /**
      * @minItems 1
@@ -23291,6 +23695,7 @@ export interface CreatureData {
       | "planar, limbo"
       | "planar, mechanus"
       | "planar, outlands"
+      | "planar, emerald dream"
       | "planar, twisting nether"
     ),
     ...(
@@ -23344,6 +23749,7 @@ export interface CreatureData {
       | "planar, limbo"
       | "planar, mechanus"
       | "planar, outlands"
+      | "planar, emerald dream"
       | "planar, twisting nether"
     )[]
   ];
