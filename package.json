@@ -55,7 +55,7 @@
     "@newhighsco/next-plugin-svgr": "3.0.176",
     "@newhighsco/press-start": "2.9.10",
     "@newhighsco/ts-config": "1.2.2",
-    "@sindresorhus/slugify": "3.0.1",
+    "@sindresorhus/slugify": "4.0.0",
     "@sindresorhus/transliterate": "3.0.0",
     "dice-roller-parser": "0.1.8",
     "next": "16.4.4",
