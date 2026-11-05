@@ -7115,7 +7115,9 @@ export type Entry =
                         | "Wild Shape"
                         | "Sorcery Point"
                         | "Arcane Shot"
-                        | "Focus Point";
+                        | "Focus Point"
+                        | "Rage"
+                        | "Soul Fragment";
                       amount?: number;
                     }
                   | {
@@ -7128,7 +7130,9 @@ export type Entry =
                         | "Wild Shape"
                         | "Sorcery Point"
                         | "Arcane Shot"
-                        | "Focus Point";
+                        | "Focus Point"
+                        | "Rage"
+                        | "Soul Fragment";
                       amountMin: number;
                       amountMax: number;
                     };
@@ -7231,7 +7235,9 @@ export type Entry =
                         | "Wild Shape"
                         | "Sorcery Point"
                         | "Arcane Shot"
-                        | "Focus Point";
+                        | "Focus Point"
+                        | "Rage"
+                        | "Soul Fragment";
                       amount?: number;
                     }
                   | {
@@ -7244,7 +7250,9 @@ export type Entry =
                         | "Wild Shape"
                         | "Sorcery Point"
                         | "Arcane Shot"
-                        | "Focus Point";
+                        | "Focus Point"
+                        | "Rage"
+                        | "Soul Fragment";
                       amountMin: number;
                       amountMax: number;
                     };
@@ -21029,7 +21037,9 @@ export type ConsumesName =
   | "Wild Shape"
   | "Sorcery Point"
   | "Arcane Shot"
-  | "Focus Point";
+  | "Focus Point"
+  | "Rage"
+  | "Soul Fragment";
 /**
  * This interface was referenced by `Util`'s JSON-Schema
  * via the `definition` "consumesObject".
