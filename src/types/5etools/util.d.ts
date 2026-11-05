@@ -2276,6 +2276,7 @@ export type Entry =
                             | "plant"
                             | "undead"
                             | "vehicle"
+                            | "special"
                           )
                         | {
                             choose: (
@@ -2294,8 +2295,10 @@ export type Entry =
                               | "plant"
                               | "undead"
                               | "vehicle"
+                              | "special"
                             )[];
                           };
+                      typeHidden?: true;
                       /**
                        * - F: Fine
                        * - D: Diminutive
@@ -2345,7 +2348,9 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     );
+                typeNote?: string;
                 source: string;
                 /**
                  * Sub-source text that is shown when hovered.
@@ -2397,9 +2402,11 @@ export type Entry =
                   | {
                       average: number;
                       formula: string;
+                      isTemporary?: true;
                     }
                   | {
                       special: string;
+                      isTemporary?: true;
                     };
                 speed?:
                   | {
@@ -2602,6 +2609,7 @@ export type Entry =
                     };
                     [k: string]: unknown;
                   }[];
+                  special?: Entry;
                 };
                 tool?: {
                   "artisan's tools"?: string;
@@ -3353,6 +3361,7 @@ export type Entry =
                             | "plant"
                             | "undead"
                             | "vehicle"
+                            | "special"
                           )
                         | {
                             choose: (
@@ -3371,8 +3380,10 @@ export type Entry =
                               | "plant"
                               | "undead"
                               | "vehicle"
+                              | "special"
                             )[];
                           };
+                      typeHidden?: true;
                       /**
                        * - F: Fine
                        * - D: Diminutive
@@ -3422,7 +3433,9 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     );
+                typeNote?: string;
                 source?: string;
                 /**
                  * Sub-source text that is shown when hovered.
@@ -3474,9 +3487,11 @@ export type Entry =
                   | {
                       average: number;
                       formula: string;
+                      isTemporary?: true;
                     }
                   | {
                       special: string;
+                      isTemporary?: true;
                     };
                 speed?:
                   | {
@@ -3679,6 +3694,7 @@ export type Entry =
                     };
                     [k: string]: unknown;
                   }[];
+                  special?: Entry;
                 };
                 tool?: {
                   "artisan's tools"?: string;
@@ -4777,6 +4793,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   ),
                   ...(
                     | "aberration"
@@ -4794,6 +4811,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   )[]
                 ];
                 legacy?: true;
@@ -5139,6 +5157,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   ),
                   ...(
                     | "aberration"
@@ -5156,6 +5175,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   )[]
                 ];
                 legacy?: true;
@@ -6664,7 +6684,8 @@ export type Entry =
                   | "ooze"
                   | "plant"
                   | "undead"
-                  | "vehicle";
+                  | "vehicle"
+                  | "special";
                 /**
                  * - G: Generic
                  * - SW: Siege Weapon
@@ -6847,7 +6868,8 @@ export type Entry =
                   | "ooze"
                   | "plant"
                   | "undead"
-                  | "vehicle";
+                  | "vehicle"
+                  | "special";
                 /**
                  * - G: Generic
                  * - SW: Siege Weapon
@@ -7765,6 +7787,7 @@ export type Entry =
                         | "plant"
                         | "undead"
                         | "vehicle"
+                        | "special"
                       )[];
                     }
                   | (
@@ -7783,6 +7806,7 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     )
                 )[];
                 /**
@@ -8130,6 +8154,7 @@ export type Entry =
                         | "plant"
                         | "undead"
                         | "vehicle"
+                        | "special"
                       )[];
                     }
                   | (
@@ -8148,6 +8173,7 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     )
                 )[];
                 /**
@@ -9857,6 +9883,7 @@ export type Entry =
                                 | "plant"
                                 | "undead"
                                 | "vehicle"
+                                | "special"
                               )
                             | {
                                 choose: (
@@ -9875,8 +9902,10 @@ export type Entry =
                                   | "plant"
                                   | "undead"
                                   | "vehicle"
+                                  | "special"
                                 )[];
                               };
+                          typeHidden?: true;
                           /**
                            * - F: Fine
                            * - D: Diminutive
@@ -9926,7 +9955,9 @@ export type Entry =
                           | "plant"
                           | "undead"
                           | "vehicle"
+                          | "special"
                         );
+                    typeNote?: string;
                     source: string;
                     /**
                      * Sub-source text that is shown when hovered.
@@ -9978,9 +10009,11 @@ export type Entry =
                       | {
                           average: number;
                           formula: string;
+                          isTemporary?: true;
                         }
                       | {
                           special: string;
+                          isTemporary?: true;
                         };
                     speed?:
                       | {
@@ -10183,6 +10216,7 @@ export type Entry =
                         };
                         [k: string]: unknown;
                       }[];
+                      special?: Entry;
                     };
                     tool?: {
                       "artisan's tools"?: string;
@@ -10938,6 +10972,7 @@ export type Entry =
                                 | "plant"
                                 | "undead"
                                 | "vehicle"
+                                | "special"
                               )
                             | {
                                 choose: (
@@ -10956,8 +10991,10 @@ export type Entry =
                                   | "plant"
                                   | "undead"
                                   | "vehicle"
+                                  | "special"
                                 )[];
                               };
+                          typeHidden?: true;
                           /**
                            * - F: Fine
                            * - D: Diminutive
@@ -11007,7 +11044,9 @@ export type Entry =
                           | "plant"
                           | "undead"
                           | "vehicle"
+                          | "special"
                         );
+                    typeNote?: string;
                     source?: string;
                     /**
                      * Sub-source text that is shown when hovered.
@@ -11059,9 +11098,11 @@ export type Entry =
                       | {
                           average: number;
                           formula: string;
+                          isTemporary?: true;
                         }
                       | {
                           special: string;
+                          isTemporary?: true;
                         };
                     speed?:
                       | {
@@ -11264,6 +11305,7 @@ export type Entry =
                         };
                         [k: string]: unknown;
                       }[];
+                      special?: Entry;
                     };
                     tool?: {
                       "artisan's tools"?: string;
@@ -12006,7 +12048,8 @@ export type Entry =
                       | "ooze"
                       | "plant"
                       | "undead"
-                      | "vehicle";
+                      | "vehicle"
+                      | "special";
                     /**
                      * - G: Generic
                      * - SW: Siege Weapon
@@ -12195,7 +12238,8 @@ export type Entry =
                       | "ooze"
                       | "plant"
                       | "undead"
-                      | "vehicle";
+                      | "vehicle"
+                      | "special";
                     /**
                      * - G: Generic
                      * - SW: Siege Weapon
@@ -13430,7 +13474,8 @@ export type ReqAttuneTags = [
       | "ooze"
       | "plant"
       | "undead"
-      | "vehicle";
+      | "vehicle"
+      | "special";
     /**
      * - F: Fine
      * - D: Diminutive
@@ -13530,7 +13575,8 @@ export type ReqAttuneTags = [
       | "ooze"
       | "plant"
       | "undead"
-      | "vehicle";
+      | "vehicle"
+      | "special";
     /**
      * - F: Fine
      * - D: Diminutive
@@ -20604,7 +20650,8 @@ export type CreatureType =
   | "ooze"
   | "plant"
   | "undead"
-  | "vehicle";
+  | "vehicle"
+  | "special";
 /**
  * - L: Lawful
  * - N: Neutral
@@ -23050,6 +23097,7 @@ export interface CreatureData {
               | "plant"
               | "undead"
               | "vehicle"
+              | "special"
             )
           | {
               choose: (
@@ -23068,8 +23116,10 @@ export interface CreatureData {
                 | "plant"
                 | "undead"
                 | "vehicle"
+                | "special"
               )[];
             };
+        typeHidden?: true;
         /**
          * - F: Fine
          * - D: Diminutive
@@ -23119,7 +23169,9 @@ export interface CreatureData {
         | "plant"
         | "undead"
         | "vehicle"
+        | "special"
       );
+  typeNote?: string;
   source?: string;
   /**
    * Sub-source text that is shown when hovered.
@@ -23171,9 +23223,11 @@ export interface CreatureData {
     | {
         average: number;
         formula: string;
+        isTemporary?: true;
       }
     | {
         special: string;
+        isTemporary?: true;
       };
   speed?:
     | {
@@ -23373,6 +23427,7 @@ export interface CreatureData {
       };
       [k: string]: unknown;
     }[];
+    special?: Entry;
   };
   tool?: {
     "artisan's tools"?: string;

@@ -59,6 +59,7 @@ export type Creature =
                   | "plant"
                   | "undead"
                   | "vehicle"
+                  | "special"
                 )
               | {
                   choose: (
@@ -77,8 +78,10 @@ export type Creature =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   )[];
                 };
+            typeHidden?: true;
             /**
              * - F: Fine
              * - D: Diminutive
@@ -128,7 +131,9 @@ export type Creature =
             | "plant"
             | "undead"
             | "vehicle"
+            | "special"
           );
+      typeNote?: string;
       source: string;
       /**
        * Sub-source text that is shown when hovered.
@@ -148,9 +153,11 @@ export type Creature =
         | {
             average: number;
             formula: string;
+            isTemporary?: true;
           }
         | {
             special: string;
+            isTemporary?: true;
           };
       speed?:
         | {
@@ -329,6 +336,7 @@ export type Creature =
           };
           [k: string]: unknown;
         }[];
+        special?: Entry;
       };
       tool?: {
         "artisan's tools"?: string;
@@ -974,6 +982,7 @@ export type Creature =
                   | "plant"
                   | "undead"
                   | "vehicle"
+                  | "special"
                 )
               | {
                   choose: (
@@ -992,8 +1001,10 @@ export type Creature =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   )[];
                 };
+            typeHidden?: true;
             /**
              * - F: Fine
              * - D: Diminutive
@@ -1043,7 +1054,9 @@ export type Creature =
             | "plant"
             | "undead"
             | "vehicle"
+            | "special"
           );
+      typeNote?: string;
       source?: string;
       /**
        * Sub-source text that is shown when hovered.
@@ -1063,9 +1076,11 @@ export type Creature =
         | {
             average: number;
             formula: string;
+            isTemporary?: true;
           }
         | {
             special: string;
+            isTemporary?: true;
           };
       speed?:
         | {
@@ -1244,6 +1259,7 @@ export type Creature =
           };
           [k: string]: unknown;
         }[];
+        special?: Entry;
       };
       tool?: {
         "artisan's tools"?: string;
@@ -1961,208 +1977,6 @@ export type AbilityScore =
   | {
       special: string;
     };
-export type DamageVulnerabilityArray =
-  | (
-      | (
-          | "acid"
-          | "bludgeoning"
-          | "cold"
-          | "fire"
-          | "force"
-          | "lightning"
-          | "necrotic"
-          | "piercing"
-          | "poison"
-          | "psychic"
-          | "radiant"
-          | "slashing"
-          | "thunder"
-        )
-      | {
-          special: string;
-        }
-      | {
-          preNote?: string;
-          vulnerable: DamageVulnerabilityArray;
-          note?: string;
-          cond?: true;
-        }
-    )[]
-  | null;
-export type DamageResistArray =
-  | [
-      (
-        | (
-            | "acid"
-            | "bludgeoning"
-            | "cold"
-            | "fire"
-            | "force"
-            | "lightning"
-            | "necrotic"
-            | "piercing"
-            | "poison"
-            | "psychic"
-            | "radiant"
-            | "slashing"
-            | "thunder"
-          )
-        | {
-            special: string;
-          }
-        | {
-            preNote?: string;
-            resist: DamageResistArray;
-            note?: string;
-            cond?: true;
-          }
-      ),
-      ...(
-        | (
-            | "acid"
-            | "bludgeoning"
-            | "cold"
-            | "fire"
-            | "force"
-            | "lightning"
-            | "necrotic"
-            | "piercing"
-            | "poison"
-            | "psychic"
-            | "radiant"
-            | "slashing"
-            | "thunder"
-          )
-        | {
-            special: string;
-          }
-        | {
-            preNote?: string;
-            resist: DamageResistArray;
-            note?: string;
-            cond?: true;
-          }
-      )[]
-    ]
-  | null;
-export type DamageImmunityArray =
-  | [
-      (
-        | (
-            | "acid"
-            | "bludgeoning"
-            | "cold"
-            | "fire"
-            | "force"
-            | "lightning"
-            | "necrotic"
-            | "piercing"
-            | "poison"
-            | "psychic"
-            | "radiant"
-            | "slashing"
-            | "thunder"
-          )
-        | {
-            special: string;
-          }
-        | {
-            preNote?: string;
-            immune: DamageImmunityArray;
-            note?: string;
-            cond?: true;
-          }
-      ),
-      ...(
-        | (
-            | "acid"
-            | "bludgeoning"
-            | "cold"
-            | "fire"
-            | "force"
-            | "lightning"
-            | "necrotic"
-            | "piercing"
-            | "poison"
-            | "psychic"
-            | "radiant"
-            | "slashing"
-            | "thunder"
-          )
-        | {
-            special: string;
-          }
-        | {
-            preNote?: string;
-            immune: DamageImmunityArray;
-            note?: string;
-            cond?: true;
-          }
-      )[]
-    ]
-  | null;
-export type ConditionImmunityArray =
-  | [
-      (
-        | (
-            | "blinded"
-            | "charmed"
-            | "deafened"
-            | "exhaustion"
-            | "frightened"
-            | "grappled"
-            | "incapacitated"
-            | "invisible"
-            | "paralyzed"
-            | "petrified"
-            | "poisoned"
-            | "prone"
-            | "restrained"
-            | "stunned"
-            | "unconscious"
-            | "disease"
-          )
-        | {
-            special: string;
-          }
-        | {
-            preNote?: string;
-            conditionImmune: ConditionImmunityArray;
-            note?: string;
-            cond?: true;
-          }
-      ),
-      ...(
-        | (
-            | "blinded"
-            | "charmed"
-            | "deafened"
-            | "exhaustion"
-            | "frightened"
-            | "grappled"
-            | "incapacitated"
-            | "invisible"
-            | "paralyzed"
-            | "petrified"
-            | "poisoned"
-            | "prone"
-            | "restrained"
-            | "stunned"
-            | "unconscious"
-            | "disease"
-          )
-        | {
-            special: string;
-          }
-        | {
-            preNote?: string;
-            conditionImmune: ConditionImmunityArray;
-            note?: string;
-            cond?: true;
-          }
-      )[]
-    ]
-  | null;
 /**
  * A recursively renderable object.
  */
@@ -2317,6 +2131,7 @@ export type Entry =
                             | "plant"
                             | "undead"
                             | "vehicle"
+                            | "special"
                           )
                         | {
                             choose: (
@@ -2335,8 +2150,10 @@ export type Entry =
                               | "plant"
                               | "undead"
                               | "vehicle"
+                              | "special"
                             )[];
                           };
+                      typeHidden?: true;
                       /**
                        * - F: Fine
                        * - D: Diminutive
@@ -2386,7 +2203,9 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     );
+                typeNote?: string;
                 source: string;
                 /**
                  * Sub-source text that is shown when hovered.
@@ -2438,9 +2257,11 @@ export type Entry =
                   | {
                       average: number;
                       formula: string;
+                      isTemporary?: true;
                     }
                   | {
                       special: string;
+                      isTemporary?: true;
                     };
                 speed?:
                   | {
@@ -2643,6 +2464,7 @@ export type Entry =
                     };
                     [k: string]: unknown;
                   }[];
+                  special?: Entry;
                 };
                 tool?: {
                   "artisan's tools"?: string;
@@ -3394,6 +3216,7 @@ export type Entry =
                             | "plant"
                             | "undead"
                             | "vehicle"
+                            | "special"
                           )
                         | {
                             choose: (
@@ -3412,8 +3235,10 @@ export type Entry =
                               | "plant"
                               | "undead"
                               | "vehicle"
+                              | "special"
                             )[];
                           };
+                      typeHidden?: true;
                       /**
                        * - F: Fine
                        * - D: Diminutive
@@ -3463,7 +3288,9 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     );
+                typeNote?: string;
                 source?: string;
                 /**
                  * Sub-source text that is shown when hovered.
@@ -3515,9 +3342,11 @@ export type Entry =
                   | {
                       average: number;
                       formula: string;
+                      isTemporary?: true;
                     }
                   | {
                       special: string;
+                      isTemporary?: true;
                     };
                 speed?:
                   | {
@@ -3720,6 +3549,7 @@ export type Entry =
                     };
                     [k: string]: unknown;
                   }[];
+                  special?: Entry;
                 };
                 tool?: {
                   "artisan's tools"?: string;
@@ -4818,6 +4648,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   ),
                   ...(
                     | "aberration"
@@ -4835,6 +4666,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   )[]
                 ];
                 legacy?: true;
@@ -5180,6 +5012,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   ),
                   ...(
                     | "aberration"
@@ -5197,6 +5030,7 @@ export type Entry =
                     | "plant"
                     | "undead"
                     | "vehicle"
+                    | "special"
                   )[]
                 ];
                 legacy?: true;
@@ -6705,7 +6539,8 @@ export type Entry =
                   | "ooze"
                   | "plant"
                   | "undead"
-                  | "vehicle";
+                  | "vehicle"
+                  | "special";
                 /**
                  * - G: Generic
                  * - SW: Siege Weapon
@@ -6888,7 +6723,8 @@ export type Entry =
                   | "ooze"
                   | "plant"
                   | "undead"
-                  | "vehicle";
+                  | "vehicle"
+                  | "special";
                 /**
                  * - G: Generic
                  * - SW: Siege Weapon
@@ -7806,6 +7642,7 @@ export type Entry =
                         | "plant"
                         | "undead"
                         | "vehicle"
+                        | "special"
                       )[];
                     }
                   | (
@@ -7824,6 +7661,7 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     )
                 )[];
                 /**
@@ -8171,6 +8009,7 @@ export type Entry =
                         | "plant"
                         | "undead"
                         | "vehicle"
+                        | "special"
                       )[];
                     }
                   | (
@@ -8189,6 +8028,7 @@ export type Entry =
                       | "plant"
                       | "undead"
                       | "vehicle"
+                      | "special"
                     )
                 )[];
                 /**
@@ -9898,6 +9738,7 @@ export type Entry =
                                 | "plant"
                                 | "undead"
                                 | "vehicle"
+                                | "special"
                               )
                             | {
                                 choose: (
@@ -9916,8 +9757,10 @@ export type Entry =
                                   | "plant"
                                   | "undead"
                                   | "vehicle"
+                                  | "special"
                                 )[];
                               };
+                          typeHidden?: true;
                           /**
                            * - F: Fine
                            * - D: Diminutive
@@ -9967,7 +9810,9 @@ export type Entry =
                           | "plant"
                           | "undead"
                           | "vehicle"
+                          | "special"
                         );
+                    typeNote?: string;
                     source: string;
                     /**
                      * Sub-source text that is shown when hovered.
@@ -10019,9 +9864,11 @@ export type Entry =
                       | {
                           average: number;
                           formula: string;
+                          isTemporary?: true;
                         }
                       | {
                           special: string;
+                          isTemporary?: true;
                         };
                     speed?:
                       | {
@@ -10224,6 +10071,7 @@ export type Entry =
                         };
                         [k: string]: unknown;
                       }[];
+                      special?: Entry;
                     };
                     tool?: {
                       "artisan's tools"?: string;
@@ -10979,6 +10827,7 @@ export type Entry =
                                 | "plant"
                                 | "undead"
                                 | "vehicle"
+                                | "special"
                               )
                             | {
                                 choose: (
@@ -10997,8 +10846,10 @@ export type Entry =
                                   | "plant"
                                   | "undead"
                                   | "vehicle"
+                                  | "special"
                                 )[];
                               };
+                          typeHidden?: true;
                           /**
                            * - F: Fine
                            * - D: Diminutive
@@ -11048,7 +10899,9 @@ export type Entry =
                           | "plant"
                           | "undead"
                           | "vehicle"
+                          | "special"
                         );
+                    typeNote?: string;
                     source?: string;
                     /**
                      * Sub-source text that is shown when hovered.
@@ -11100,9 +10953,11 @@ export type Entry =
                       | {
                           average: number;
                           formula: string;
+                          isTemporary?: true;
                         }
                       | {
                           special: string;
+                          isTemporary?: true;
                         };
                     speed?:
                       | {
@@ -11305,6 +11160,7 @@ export type Entry =
                         };
                         [k: string]: unknown;
                       }[];
+                      special?: Entry;
                     };
                     tool?: {
                       "artisan's tools"?: string;
@@ -12047,7 +11903,8 @@ export type Entry =
                       | "ooze"
                       | "plant"
                       | "undead"
-                      | "vehicle";
+                      | "vehicle"
+                      | "special";
                     /**
                      * - G: Generic
                      * - SW: Siege Weapon
@@ -12236,7 +12093,8 @@ export type Entry =
                       | "ooze"
                       | "plant"
                       | "undead"
-                      | "vehicle";
+                      | "vehicle"
+                      | "special";
                     /**
                      * - G: Generic
                      * - SW: Siege Weapon
@@ -12790,6 +12648,220 @@ export type Entry =
   | number;
 export type AThumbnailImageUsedInRareCasesEGWhenLoadingAWallOfMapsToChooseFromInTheDMScreen =
   MediaHrefInternal | MediaHrefExternal;
+export type DamageVulnerabilityArray =
+  | (
+      | (
+          | "acid"
+          | "bludgeoning"
+          | "cold"
+          | "fire"
+          | "force"
+          | "lightning"
+          | "necrotic"
+          | "piercing"
+          | "poison"
+          | "psychic"
+          | "radiant"
+          | "slashing"
+          | "thunder"
+        )
+      | {
+          special: string;
+        }
+      | {
+          preNote?: string;
+          vulnerable: DamageVulnerabilityArray;
+          note?: string;
+          cond?: true;
+        }
+    )[]
+  | null;
+export type DamageResistArray =
+  | [
+      (
+        | (
+            | "acid"
+            | "bludgeoning"
+            | "cold"
+            | "fire"
+            | "force"
+            | "lightning"
+            | "necrotic"
+            | "piercing"
+            | "poison"
+            | "psychic"
+            | "radiant"
+            | "slashing"
+            | "thunder"
+          )
+        | {
+            special: string;
+          }
+        | {
+            preNote?: string;
+            resist: DamageResistArray;
+            note?: string;
+            cond?: true;
+          }
+      ),
+      ...(
+        | (
+            | "acid"
+            | "bludgeoning"
+            | "cold"
+            | "fire"
+            | "force"
+            | "lightning"
+            | "necrotic"
+            | "piercing"
+            | "poison"
+            | "psychic"
+            | "radiant"
+            | "slashing"
+            | "thunder"
+          )
+        | {
+            special: string;
+          }
+        | {
+            preNote?: string;
+            resist: DamageResistArray;
+            note?: string;
+            cond?: true;
+          }
+      )[]
+    ]
+  | null;
+export type DamageImmunityArray =
+  | [
+      (
+        | (
+            | "acid"
+            | "bludgeoning"
+            | "cold"
+            | "fire"
+            | "force"
+            | "lightning"
+            | "necrotic"
+            | "piercing"
+            | "poison"
+            | "psychic"
+            | "radiant"
+            | "slashing"
+            | "thunder"
+          )
+        | {
+            special: string;
+          }
+        | {
+            preNote?: string;
+            immune: DamageImmunityArray;
+            note?: string;
+            cond?: true;
+          }
+      ),
+      ...(
+        | (
+            | "acid"
+            | "bludgeoning"
+            | "cold"
+            | "fire"
+            | "force"
+            | "lightning"
+            | "necrotic"
+            | "piercing"
+            | "poison"
+            | "psychic"
+            | "radiant"
+            | "slashing"
+            | "thunder"
+          )
+        | {
+            special: string;
+          }
+        | {
+            preNote?: string;
+            immune: DamageImmunityArray;
+            note?: string;
+            cond?: true;
+          }
+      )[]
+    ]
+  | null;
+export type ConditionImmunityArray =
+  | [
+      (
+        | (
+            | "blinded"
+            | "charmed"
+            | "deafened"
+            | "exhaustion"
+            | "frightened"
+            | "grappled"
+            | "incapacitated"
+            | "invisible"
+            | "paralyzed"
+            | "petrified"
+            | "poisoned"
+            | "prone"
+            | "restrained"
+            | "stunned"
+            | "unconscious"
+            | "disease"
+          )
+        | {
+            special: string;
+          }
+        | {
+            preNote?: string;
+            conditionImmune: ConditionImmunityArray;
+            note?: string;
+            cond?: true;
+          }
+      ),
+      ...(
+        | (
+            | "blinded"
+            | "charmed"
+            | "deafened"
+            | "exhaustion"
+            | "frightened"
+            | "grappled"
+            | "incapacitated"
+            | "invisible"
+            | "paralyzed"
+            | "petrified"
+            | "poisoned"
+            | "prone"
+            | "restrained"
+            | "stunned"
+            | "unconscious"
+            | "disease"
+          )
+        | {
+            special: string;
+          }
+        | {
+            preNote?: string;
+            conditionImmune: ConditionImmunityArray;
+            note?: string;
+            cond?: true;
+          }
+      )[]
+    ]
+  | null;
+/**
+ * This interface was referenced by `EntrySpellcastingFrequency`'s JSON-Schema definition
+ * via the `patternProperty` "^[1-9]{1,2}e?$".
+ */
+export type _ArrayOfSpell = (
+  | string
+  | {
+      entry: string;
+      hidden: boolean;
+      [k: string]: unknown;
+    }
+)[];
 /**
  * @minItems 1
  */
@@ -13186,7 +13258,8 @@ export type ReqAttuneTags = [
       | "ooze"
       | "plant"
       | "undead"
-      | "vehicle";
+      | "vehicle"
+      | "special";
     /**
      * - F: Fine
      * - D: Diminutive
@@ -13286,7 +13359,8 @@ export type ReqAttuneTags = [
       | "ooze"
       | "plant"
       | "undead"
-      | "vehicle";
+      | "vehicle"
+      | "special";
     /**
      * - F: Fine
      * - D: Diminutive
@@ -19117,18 +19191,6 @@ export type _TrapHazardRating = [
  */
 export type VehicleTerrain = ("land" | "sea" | "air" | "space")[];
 /**
- * This interface was referenced by `EntrySpellcastingFrequency`'s JSON-Schema definition
- * via the `patternProperty` "^[1-9]{1,2}e?$".
- */
-export type _ArrayOfSpell = (
-  | string
-  | {
-      entry: string;
-      hidden: boolean;
-      [k: string]: unknown;
-    }
-)[];
-/**
  * This interface was referenced by `BestiarySchema`'s JSON-Schema
  * via the `definition` "_legendaryActions".
  */
@@ -19397,9 +19459,9 @@ export interface BestiarySchema {
   monster?: Creature[];
   _meta?: MetaBlock;
 }
-export interface EntrySpellcasting {
-  name: string;
-  type: "spellcasting";
+export interface EntrySection {
+  name?: string;
+  type: "section";
   source?: string;
   page?: string | number;
   data?: _EntryDataData;
@@ -19408,61 +19470,9 @@ export interface EntrySpellcasting {
   srd52?: boolean | string;
   basicRules?: true;
   basicRules2024?: true;
-  headerEntries?: Entry[];
-  constant?: _ArrayOfSpell;
-  will?: _ArrayOfSpell;
-  ritual?: _ArrayOfSpell;
-  rest?: EntrySpellcastingFrequency;
-  restLong?: EntrySpellcastingFrequency;
-  daily?: EntrySpellcastingFrequency;
-  weekly?: EntrySpellcastingFrequency;
-  monthly?: EntrySpellcastingFrequency;
-  yearly?: EntrySpellcastingFrequency;
-  charges?: EntrySpellcastingFrequency;
-  recharge?: EntrySpellcastingRecharge;
-  legendary?: EntrySpellcastingFrequency;
-  spells?: {
-    "0"?: {
-      spells: string[];
-    };
-    "1"?: EntrySpellcastingLevel1To9;
-    "2"?: EntrySpellcastingLevel1To9;
-    "3"?: EntrySpellcastingLevel1To9;
-    "4"?: EntrySpellcastingLevel1To9;
-    "5"?: EntrySpellcastingLevel1To9;
-    "6"?: EntrySpellcastingLevel1To9;
-    "7"?: EntrySpellcastingLevel1To9;
-    "8"?: EntrySpellcastingLevel1To9;
-    "9"?: EntrySpellcastingLevel1To9;
-  };
-  /**
-   * Allows the above properties to be specified, but not rendered. Useful if e.g. a creature can only cast one spell, and this is rendered in the header line.
-   */
-  hidden?: (
-    | "constant"
-    | "will"
-    | "rest"
-    | "restLong"
-    | "daily"
-    | "weekly"
-    | "monthly"
-    | "yearly"
-    | "ritual"
-    | "spells"
-    | "charges"
-    | "recharge"
-    | "legendary"
-  )[];
-  footerEntries?: Entry[];
-  ability?: "str" | "dex" | "con" | "int" | "wis" | "cha";
-  /**
-   * Implicitly "trait"
-   */
-  displayAs?: "trait" | "action" | "bonus" | "reaction" | "legendary" | "mythic";
-  /**
-   * The UID of an item which provides the charges required to cast any "charges" spells.
-   */
-  chargesItem?: string;
+  alias?: Alias;
+  entries: Entry[];
+  style?: string;
 }
 /**
  * A generic object for storing special data for external use-cases. Keys prefixed with "rd-" should be added as "data-" HTML attributes when rendering to HTML.
@@ -19482,21 +19492,6 @@ export interface _EntryDataData {
     isFauxGroupAdditional?: true;
   };
   [k: string]: unknown;
-}
-export interface EntrySection {
-  name?: string;
-  type: "section";
-  source?: string;
-  page?: string | number;
-  data?: _EntryDataData;
-  id?: string;
-  srd?: boolean | string;
-  srd52?: boolean | string;
-  basicRules?: true;
-  basicRules2024?: true;
-  alias?: Alias;
-  entries: Entry[];
-  style?: string;
 }
 export interface EntryEntries {
   name?: string;
@@ -20122,6 +20117,89 @@ export interface EntryAttack {
   attackType: "MW" | "RW";
   attackEntries: Entry[];
   hitEntries: Entry[];
+}
+export interface EntrySpellcasting {
+  name: string;
+  type: "spellcasting";
+  source?: string;
+  page?: string | number;
+  data?: _EntryDataData;
+  id?: string;
+  srd?: boolean | string;
+  srd52?: boolean | string;
+  basicRules?: true;
+  basicRules2024?: true;
+  headerEntries?: Entry[];
+  constant?: _ArrayOfSpell;
+  will?: _ArrayOfSpell;
+  ritual?: _ArrayOfSpell;
+  rest?: EntrySpellcastingFrequency;
+  restLong?: EntrySpellcastingFrequency;
+  daily?: EntrySpellcastingFrequency;
+  weekly?: EntrySpellcastingFrequency;
+  monthly?: EntrySpellcastingFrequency;
+  yearly?: EntrySpellcastingFrequency;
+  charges?: EntrySpellcastingFrequency;
+  recharge?: EntrySpellcastingRecharge;
+  legendary?: EntrySpellcastingFrequency;
+  spells?: {
+    "0"?: {
+      spells: string[];
+    };
+    "1"?: EntrySpellcastingLevel1To9;
+    "2"?: EntrySpellcastingLevel1To9;
+    "3"?: EntrySpellcastingLevel1To9;
+    "4"?: EntrySpellcastingLevel1To9;
+    "5"?: EntrySpellcastingLevel1To9;
+    "6"?: EntrySpellcastingLevel1To9;
+    "7"?: EntrySpellcastingLevel1To9;
+    "8"?: EntrySpellcastingLevel1To9;
+    "9"?: EntrySpellcastingLevel1To9;
+  };
+  /**
+   * Allows the above properties to be specified, but not rendered. Useful if e.g. a creature can only cast one spell, and this is rendered in the header line.
+   */
+  hidden?: (
+    | "constant"
+    | "will"
+    | "rest"
+    | "restLong"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "ritual"
+    | "spells"
+    | "charges"
+    | "recharge"
+    | "legendary"
+  )[];
+  footerEntries?: Entry[];
+  ability?: "str" | "dex" | "con" | "int" | "wis" | "cha";
+  /**
+   * Implicitly "trait"
+   */
+  displayAs?: "trait" | "action" | "bonus" | "reaction" | "legendary" | "mythic";
+  /**
+   * The UID of an item which provides the charges required to cast any "charges" spells.
+   */
+  chargesItem?: string;
+}
+export interface EntrySpellcastingFrequency {
+  [k: string]: _ArrayOfSpell;
+}
+export interface EntrySpellcastingRecharge {
+  "1"?: _ArrayOfSpell;
+  "2"?: _ArrayOfSpell;
+  "3"?: _ArrayOfSpell;
+  "4"?: _ArrayOfSpell;
+  "5"?: _ArrayOfSpell;
+  "6"?: _ArrayOfSpell;
+}
+export interface EntrySpellcastingLevel1To9 {
+  lower?: number;
+  slots?: number;
+  spells: string[];
 }
 export interface _AltArtItemSite {
   name: string;
@@ -20794,6 +20872,7 @@ export interface CreatureData {
               | "plant"
               | "undead"
               | "vehicle"
+              | "special"
             )
           | {
               choose: (
@@ -20812,8 +20891,10 @@ export interface CreatureData {
                 | "plant"
                 | "undead"
                 | "vehicle"
+                | "special"
               )[];
             };
+        typeHidden?: true;
         /**
          * - F: Fine
          * - D: Diminutive
@@ -20863,7 +20944,9 @@ export interface CreatureData {
         | "plant"
         | "undead"
         | "vehicle"
+        | "special"
       );
+  typeNote?: string;
   source?: string;
   /**
    * Sub-source text that is shown when hovered.
@@ -20915,9 +20998,11 @@ export interface CreatureData {
     | {
         average: number;
         formula: string;
+        isTemporary?: true;
       }
     | {
         special: string;
+        isTemporary?: true;
       };
   speed?:
     | {
@@ -21117,6 +21202,7 @@ export interface CreatureData {
       };
       [k: string]: unknown;
     }[];
+    special?: Entry;
   };
   tool?: {
     "artisan's tools"?: string;
@@ -22981,22 +23067,6 @@ export interface EntryIngredient {
    */
   [k: string]: number | string | "ingredient" | _EntryDataData | boolean | true | Entry | undefined;
 }
-export interface EntrySpellcastingFrequency {
-  [k: string]: _ArrayOfSpell;
-}
-export interface EntrySpellcastingRecharge {
-  "1"?: _ArrayOfSpell;
-  "2"?: _ArrayOfSpell;
-  "3"?: _ArrayOfSpell;
-  "4"?: _ArrayOfSpell;
-  "5"?: _ArrayOfSpell;
-  "6"?: _ArrayOfSpell;
-}
-export interface EntrySpellcastingLevel1To9 {
-  lower?: number;
-  slots?: number;
-  spells: string[];
-}
 /**
  * This interface was referenced by `BestiarySchema`'s JSON-Schema
  * via the `definition` "creatureData".
@@ -23050,6 +23120,7 @@ export interface CreatureData1 {
               | "plant"
               | "undead"
               | "vehicle"
+              | "special"
             )
           | {
               choose: (
@@ -23068,8 +23139,10 @@ export interface CreatureData1 {
                 | "plant"
                 | "undead"
                 | "vehicle"
+                | "special"
               )[];
             };
+        typeHidden?: true;
         /**
          * - F: Fine
          * - D: Diminutive
@@ -23119,7 +23192,9 @@ export interface CreatureData1 {
         | "plant"
         | "undead"
         | "vehicle"
+        | "special"
       );
+  typeNote?: string;
   source?: string;
   /**
    * Sub-source text that is shown when hovered.
@@ -23139,9 +23214,11 @@ export interface CreatureData1 {
     | {
         average: number;
         formula: string;
+        isTemporary?: true;
       }
     | {
         special: string;
+        isTemporary?: true;
       };
   speed?:
     | {
@@ -23317,6 +23394,7 @@ export interface CreatureData1 {
       };
       [k: string]: unknown;
     }[];
+    special?: Entry;
   };
   tool?: {
     "artisan's tools"?: string;
