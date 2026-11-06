@@ -1,3 +1,9 @@
+## [1.20.19](https://github.com/magefayre/druidcraft/compare/v1.20.18...v1.20.19) (2026-11-06)
+
+### Bug Fixes
+
+* **deps:** update dependency sass to v1.108.0 ([#509](https://github.com/magefayre/druidcraft/issues/509)) ([2491355](https://github.com/magefayre/druidcraft/commit/2491355e784867e639db96688281a860e0e7d929))
+
 ## [1.20.18](https://github.com/magefayre/druidcraft/compare/v1.20.17...v1.20.18) (2026-11-05)
 
 ### Bug Fixes
