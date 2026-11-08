@@ -1,3 +1,9 @@
+## [1.20.22](https://github.com/magefayre/druidcraft/compare/v1.20.21...v1.20.22) (2026-11-08)
+
+### Bug Fixes
+
+* **deps:** update dependency @sindresorhus/slugify to v4.0.1 ([#513](https://github.com/magefayre/druidcraft/issues/513)) ([0216798](https://github.com/magefayre/druidcraft/commit/021679813f9aebde33622b6f1b11bae87864c38e))
+
 ## [1.20.21](https://github.com/magefayre/druidcraft/compare/v1.20.20...v1.20.21) (2026-11-07)
 
 ### Bug Fixes
