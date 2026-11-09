@@ -1,3 +1,9 @@
+## [1.20.24](https://github.com/magefayre/druidcraft/compare/v1.20.23...v1.20.24) (2026-11-09)
+
+### Bug Fixes
+
+* **deps:** update dependency next to v16.4.6 ([#516](https://github.com/magefayre/druidcraft/issues/516)) ([4710fce](https://github.com/magefayre/druidcraft/commit/4710fce8d2615376c8def05f7fb1c0f11a4f1ee1))
+
 ## [1.20.23](https://github.com/magefayre/druidcraft/compare/v1.20.22...v1.20.23) (2026-11-09)
 
 ### Bug Fixes
