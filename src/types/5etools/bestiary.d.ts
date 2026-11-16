@@ -13454,9 +13454,11 @@ export type ReqAttuneTags = [
 /**
  * Items: - CF/W: Creates Food/Water
  * - CNS: Consumable
+ * - DRK: Drink
+ * - FOD: Food
  * - TT: Trinket Table
  */
-export type ItemMiscTags = ("CF/W" | "CNS" | "TT")[];
+export type ItemMiscTags = ("CF/W" | "CNS" | "DRK" | "FOD" | "TT")[];
 /**
  * @minItems 1
  */
