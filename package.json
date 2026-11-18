@@ -91,7 +91,7 @@
     "@testing-library/user-event": "14.6.12",
     "@types/react": "19.3.0",
     "@vitejs/plugin-react": "6.3.0",
-    "@vitest/coverage-v8": "5.1.0",
+    "@vitest/coverage-v8": "5.1.1",
     "concurrently": "10.0.7",
     "css-select": "7.0.0",
     "domhandler": "6.0.1",
@@ -108,7 +108,7 @@
     "tsx": "4.23.15",
     "typescript": "6.0.3",
     "vite": "8.3.8",
-    "vitest": "5.1.0",
+    "vitest": "5.1.1",
     "yargs": "18.2.0"
   },
   "resolutions": {
