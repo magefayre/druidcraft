@@ -12860,7 +12860,7 @@ export type ConditionImmunityArray =
   | null;
 /**
  * This interface was referenced by `EntrySpellcastingFrequency`'s JSON-Schema definition
- * via the `patternProperty` "^[1-9]{1,2}e?$".
+ * via the `patternProperty` "^[1-9][0-9]?e?$".
  */
 export type _ArrayOfSpell = (
   | string
@@ -18041,16 +18041,16 @@ export type AdditionalSpellsArray = [
  * @minItems 1
  *
  * This interface was referenced by `_AdditionalSpellRechargeObject`'s JSON-Schema definition
- * via the `patternProperty` "^[1-9]{1,2}e?$".
+ * via the `patternProperty` "^[1-9][0-9]?e?$".
  *
  * This interface was referenced by `_AdditionalSpellRechargeObject1`'s JSON-Schema definition
- * via the `patternProperty` "^[1-9]{1,2}e?$".
+ * via the `patternProperty` "^[1-9][0-9]?e?$".
  *
  * This interface was referenced by `_AdditionalSpellRechargeObject2`'s JSON-Schema definition
- * via the `patternProperty` "^[1-9]{1,2}e?$".
+ * via the `patternProperty` "^[1-9][0-9]?e?$".
  *
  * This interface was referenced by `_AdditionalSpellRechargeObject3`'s JSON-Schema definition
- * via the `patternProperty` "^[1-9]{1,2}e?$".
+ * via the `patternProperty` "^[1-9][0-9]?e?$".
  */
 export type _AdditionalSpellArrayOfStringOrFilterObject = [
   (
@@ -20781,7 +20781,7 @@ export interface _ModAdditionalSpellReplacementObject {
    * @minItems 1
    *
    * This interface was referenced by `_ModAdditionalSpellReplacementObject`'s JSON-Schema definition
-   * via the `patternProperty` "^(0|[1-9]e?)$".
+   * via the `patternProperty` "^(0|[1-9][0-9]?e?)$".
    */
   [k: string]: [
     {
@@ -20799,7 +20799,7 @@ export interface _ModAdditionalSpellAddRemoveObject {
    * @minItems 1
    *
    * This interface was referenced by `_ModAdditionalSpellAddRemoveObject`'s JSON-Schema definition
-   * via the `patternProperty` "^(0|[1-9]e?)$".
+   * via the `patternProperty` "^(0|[1-9][0-9]?e?)$".
    */
   [k: string]: [string, ...string[]];
 }
@@ -23031,20 +23031,7 @@ export interface EntryFlowchart {
   srd52?: boolean | string;
   basicRules?: true;
   basicRules2024?: true;
-  blocks: Entry1[];
-}
-export interface Entry1 {
-  name?: string;
-  type: string;
-  source?: string;
-  page?: string | number;
-  data?: _EntryDataData;
-  id?: string;
-  srd?: boolean | string;
-  srd52?: boolean | string;
-  basicRules?: true;
-  basicRules2024?: true;
-  [k: string]: unknown;
+  blocks: Entry[];
 }
 export interface EntryFlowBlock {
   name?: string;
@@ -23057,7 +23044,7 @@ export interface EntryFlowBlock {
   srd52?: boolean | string;
   basicRules?: true;
   basicRules2024?: true;
-  entries?: Entry1[];
+  entries?: Entry[];
 }
 export interface EntryIngredient {
   name?: string;
