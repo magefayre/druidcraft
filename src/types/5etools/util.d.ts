@@ -2766,6 +2766,7 @@ export type Entry =
                 };
                 legendaryActions?: number;
                 legendaryActionsLair?: number;
+                legendaryActionsLairCondition?: string;
                 /**
                  * @minItems 1
                  */
@@ -3851,6 +3852,7 @@ export type Entry =
                 };
                 legendaryActions?: number;
                 legendaryActionsLair?: number;
+                legendaryActionsLairCondition?: string;
                 /**
                  * @minItems 1
                  */
@@ -10381,6 +10383,7 @@ export type Entry =
                     };
                     legendaryActions?: number;
                     legendaryActionsLair?: number;
+                    legendaryActionsLairCondition?: string;
                     /**
                      * @minItems 1
                      */
@@ -11470,6 +11473,7 @@ export type Entry =
                     };
                     legendaryActions?: number;
                     legendaryActionsLair?: number;
+                    legendaryActionsLairCondition?: string;
                     /**
                      * @minItems 1
                      */
@@ -23596,6 +23600,7 @@ export interface CreatureData {
   };
   legendaryActions?: number;
   legendaryActionsLair?: number;
+  legendaryActionsLairCondition?: string;
   /**
    * @minItems 1
    */
