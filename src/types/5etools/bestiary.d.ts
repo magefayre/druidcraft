@@ -493,6 +493,7 @@ export type Creature =
       };
       legendaryActions?: _LegendaryActions;
       legendaryActionsLair?: _LegendaryActions;
+      legendaryActionsLairCondition?: string;
       /**
        * @minItems 1
        */
@@ -1416,6 +1417,7 @@ export type Creature =
       };
       legendaryActions?: _LegendaryActions;
       legendaryActionsLair?: _LegendaryActions;
+      legendaryActionsLairCondition?: string;
       /**
        * @minItems 1
        */
@@ -2621,6 +2623,7 @@ export type Entry =
                 };
                 legendaryActions?: number;
                 legendaryActionsLair?: number;
+                legendaryActionsLairCondition?: string;
                 /**
                  * @minItems 1
                  */
@@ -3706,6 +3709,7 @@ export type Entry =
                 };
                 legendaryActions?: number;
                 legendaryActionsLair?: number;
+                legendaryActionsLairCondition?: string;
                 /**
                  * @minItems 1
                  */
@@ -10236,6 +10240,7 @@ export type Entry =
                     };
                     legendaryActions?: number;
                     legendaryActionsLair?: number;
+                    legendaryActionsLairCondition?: string;
                     /**
                      * @minItems 1
                      */
@@ -11325,6 +11330,7 @@ export type Entry =
                     };
                     legendaryActions?: number;
                     legendaryActionsLair?: number;
+                    legendaryActionsLairCondition?: string;
                     /**
                      * @minItems 1
                      */
@@ -21369,6 +21375,7 @@ export interface CreatureData {
   };
   legendaryActions?: number;
   legendaryActionsLair?: number;
+  legendaryActionsLairCondition?: string;
   /**
    * @minItems 1
    */
@@ -23548,6 +23555,7 @@ export interface CreatureData1 {
   };
   legendaryActions?: _LegendaryActions;
   legendaryActionsLair?: _LegendaryActions;
+  legendaryActionsLairCondition?: string;
   /**
    * @minItems 1
    */
