@@ -3120,7 +3120,7 @@ __metadata:
     next: "npm:16.4.6"
     next-compose-plugins: "npm:2.2.1"
     next-sitemap: "npm:4.2.3"
-    plur: "npm:6.0.0"
+    plur: "npm:7.0.0"
     postcss: "npm:8.5.33"
     prettier: "npm:3.10.1"
     react: "npm:19.3.1"
@@ -11766,12 +11766,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plur@npm:6.0.0":
-  version: 6.0.0
-  resolution: "plur@npm:6.0.0"
+"plur@npm:7.0.0":
+  version: 7.0.0
+  resolution: "plur@npm:7.0.0"
   dependencies:
     irregular-plurals: "npm:^4.2.0"
-  checksum: 10c0/5c54badee70debea38e7153b197c1235847edc10952c3dd959c9610005f75013c2053be1cba87acde4531498d7a9e8b16c6b358f3940f05aa6e1aeedbc991b7a
+  checksum: 10c0/9b4d15a2f8e27db4bc6a8fc807d4dbd29795a30682e3d207b48a7fcbe789996c499f0741edc4c3fbee6b7a6261ae2988a0851661c369cf3a80382c67e57c9179
   languageName: node
   linkType: hard
 
