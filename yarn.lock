@@ -5,9 +5,9 @@ __metadata:
   version: 10
   cacheKey: 10c0
 
-"5etools-utils@npm:0.17.39":
-  version: 0.17.39
-  resolution: "5etools-utils@npm:0.17.39"
+"5etools-utils@npm:0.17.40":
+  version: 0.17.40
+  resolution: "5etools-utils@npm:0.17.40"
   dependencies:
     "@eslint/js": "npm:^10.0.1"
     ajv: "npm:^8.18.0"
@@ -37,7 +37,7 @@ __metadata:
     test-json-brew: bin/test-json-brew.js
     test-json-ua: bin/test-json-ua.js
     vet-eslint: bin/lint-js.js
-  checksum: 10c0/341fc3c056cafaad67be53691b92245a9b33a736c8744ee80c1117a55319d64fdef9286d60ccc4bc3124a9dcb058074fb2d1fd27044bbd90d148fd0ea228c38f
+  checksum: 10c0/58e08a489317ce60001f845e960816cc9cd9c164bfbb9a929f75ecb238cd4ef61df9b5ffe46c718550b201154569005639be4406ba7461ed53e5ecf89f9360a0
   languageName: node
   linkType: hard
 
@@ -3080,7 +3080,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@magefayre/druidcraft@workspace:."
   dependencies:
-    5etools-utils: "npm:0.17.39"
+    5etools-utils: "npm:0.17.40"
     "@commitlint/cli": "npm:21.2.4"
     "@newhighsco/browserslist-config": "npm:3.0.1"
     "@newhighsco/chipset": "npm:7.5.6"
@@ -3116,7 +3116,7 @@ __metadata:
     husky: "npm:9.1.7"
     jsdom: "npm:31.0.1"
     json-schema-to-typescript: "npm:16.0.0"
-    lint-staged: "npm:17.6.1"
+    lint-staged: "npm:17.6.2"
     next: "npm:16.4.6"
     next-compose-plugins: "npm:2.2.1"
     next-sitemap: "npm:4.2.3"
@@ -9980,9 +9980,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:17.6.1":
-  version: 17.6.1
-  resolution: "lint-staged@npm:17.6.1"
+"lint-staged@npm:17.6.2":
+  version: 17.6.2
+  resolution: "lint-staged@npm:17.6.2"
   dependencies:
     picomatch: "npm:^4.0.7"
     string-argv: "npm:^0.4.0"
@@ -9993,7 +9993,7 @@ __metadata:
       optional: true
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10c0/4c7433079bc174c531ccaab68bc7171f726a65c1961abbc9b26617f6d427bae76c926688124c2c2519c7540150755025207644dba50de0ba3ce65bfb1b05f7e8
+  checksum: 10c0/9a5831c45885ae2a3cf6c6eaf16c8313ee746512523d26a5e9d87a78e4d1a1835350f08623e1d34a8aa01e59ea3750d46d1b0a4d188d4ee1208a07d1977be7b5
   languageName: node
   linkType: hard
 
